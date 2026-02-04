@@ -339,7 +339,7 @@ catch (ApiException e)
 
 Like a comment
 
-Like or upvote a comment on a post.  **Supported platforms:** Facebook, Bluesky, Reddit  For Bluesky, the `cid` (content identifier) is required in the request body. 
+Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the `cid` (content identifier) is required in the request body. 
 
 ### Example
 ```csharp
@@ -444,7 +444,7 @@ catch (ApiException e)
 
 List posts with comments across all accounts
 
-Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Bluesky, YouTube, LinkedIn, Reddit, TikTok (write-only) 
+Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
 
 ### Example
 ```csharp
@@ -873,7 +873,7 @@ catch (ApiException e)
 
 Unlike a comment
 
-Remove a like from a comment.  **Supported platforms:** Facebook, Bluesky, Reddit  For Bluesky, the `likeUri` query parameter is required. 
+Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the `likeUri` query parameter is required. 
 
 ### Example
 ```csharp
