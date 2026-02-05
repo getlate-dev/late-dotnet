@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Likes** | **int** |  | [optional] 
 **Comments** | **int** |  | [optional] 
 **Shares** | **int** |  | [optional] 
+**Saves** | **int** | Number of saves/bookmarks (Instagram, Pinterest) | [optional] 
 **Clicks** | **int** |  | [optional] 
 **Views** | **int** |  | [optional] 
 **EngagementRate** | **decimal** |  | [optional] 

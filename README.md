@@ -198,6 +198,8 @@ Class | Method | HTTP request | Description
 *ConnectApi* | [**UpdateLinkedInOrganization**](docs/ConnectApi.md#updatelinkedinorganization) | **PUT** /v1/accounts/{accountId}/linkedin-organization | Switch LinkedIn account type (personal/organization)
 *ConnectApi* | [**UpdatePinterestBoards**](docs/ConnectApi.md#updatepinterestboards) | **PUT** /v1/accounts/{accountId}/pinterest-boards | Set default Pinterest board on the connection
 *ConnectApi* | [**UpdateRedditSubreddits**](docs/ConnectApi.md#updateredditsubreddits) | **PUT** /v1/accounts/{accountId}/reddit-subreddits | Set default subreddit on the connection
+*GMBFoodMenusApi* | [**GetGoogleBusinessFoodMenus**](docs/GMBFoodMenusApi.md#getgooglebusinessfoodmenus) | **GET** /v1/accounts/{accountId}/gmb-food-menus | Get Google Business Profile food menus
+*GMBFoodMenusApi* | [**UpdateGoogleBusinessFoodMenus**](docs/GMBFoodMenusApi.md#updategooglebusinessfoodmenus) | **PUT** /v1/accounts/{accountId}/gmb-food-menus | Update Google Business Profile food menus
 *GMBReviewsApi* | [**GetGoogleBusinessReviews**](docs/GMBReviewsApi.md#getgooglebusinessreviews) | **GET** /v1/accounts/{accountId}/gmb-reviews | Get Google Business Profile reviews
 *InvitesApi* | [**CreateInviteToken**](docs/InvitesApi.md#createinvitetoken) | **POST** /v1/invite/tokens | Create a team member invite token
 *LinkedInMentionsApi* | [**GetLinkedInMentions**](docs/LinkedInMentionsApi.md#getlinkedinmentions) | **GET** /v1/accounts/{accountId}/linkedin-mentions | Resolve a LinkedIn profile or company URL to a URN for @mentions
@@ -312,6 +314,12 @@ Class | Method | HTTP request | Description
  - [Model.Expired](docs/Expired.md)
  - [Model.FacebookPlatformData](docs/FacebookPlatformData.md)
  - [Model.FollowerStatsResponse](docs/FollowerStatsResponse.md)
+ - [Model.FoodMenu](docs/FoodMenu.md)
+ - [Model.FoodMenuItem](docs/FoodMenuItem.md)
+ - [Model.FoodMenuItemAttributes](docs/FoodMenuItemAttributes.md)
+ - [Model.FoodMenuItemOptionsInner](docs/FoodMenuItemOptionsInner.md)
+ - [Model.FoodMenuLabel](docs/FoodMenuLabel.md)
+ - [Model.FoodMenuSection](docs/FoodMenuSection.md)
  - [Model.GetAccountHealth200Response](docs/GetAccountHealth200Response.md)
  - [Model.GetAccountHealth200ResponsePermissions](docs/GetAccountHealth200ResponsePermissions.md)
  - [Model.GetAccountHealth200ResponsePermissionsPostingInner](docs/GetAccountHealth200ResponsePermissionsPostingInner.md)
@@ -330,6 +338,7 @@ Class | Method | HTTP request | Description
  - [Model.GetFollowerStats403Response](docs/GetFollowerStats403Response.md)
  - [Model.GetGmbLocations200Response](docs/GetGmbLocations200Response.md)
  - [Model.GetGmbLocations200ResponseLocationsInner](docs/GetGmbLocations200ResponseLocationsInner.md)
+ - [Model.GetGoogleBusinessFoodMenus200Response](docs/GetGoogleBusinessFoodMenus200Response.md)
  - [Model.GetGoogleBusinessReviews200Response](docs/GetGoogleBusinessReviews200Response.md)
  - [Model.GetGoogleBusinessReviews200ResponseReviewsInner](docs/GetGoogleBusinessReviews200ResponseReviewsInner.md)
  - [Model.GetGoogleBusinessReviews200ResponseReviewsInnerReviewReply](docs/GetGoogleBusinessReviews200ResponseReviewsInnerReviewReply.md)
@@ -437,6 +446,7 @@ Class | Method | HTTP request | Description
  - [Model.ListUsers200ResponseUsersInner](docs/ListUsers200ResponseUsersInner.md)
  - [Model.MediaItem](docs/MediaItem.md)
  - [Model.MediaUploadResponse](docs/MediaUploadResponse.md)
+ - [Model.Money](docs/Money.md)
  - [Model.Pagination](docs/Pagination.md)
  - [Model.Pending](docs/Pending.md)
  - [Model.PinterestPlatformData](docs/PinterestPlatformData.md)
@@ -532,6 +542,8 @@ Class | Method | HTTP request | Description
  - [Model.UpdateFacebookPageRequest](docs/UpdateFacebookPageRequest.md)
  - [Model.UpdateGmbLocation200Response](docs/UpdateGmbLocation200Response.md)
  - [Model.UpdateGmbLocationRequest](docs/UpdateGmbLocationRequest.md)
+ - [Model.UpdateGoogleBusinessFoodMenus200Response](docs/UpdateGoogleBusinessFoodMenus200Response.md)
+ - [Model.UpdateGoogleBusinessFoodMenusRequest](docs/UpdateGoogleBusinessFoodMenusRequest.md)
  - [Model.UpdateInboxConversation200Response](docs/UpdateInboxConversation200Response.md)
  - [Model.UpdateInboxConversation200ResponseData](docs/UpdateInboxConversation200ResponseData.md)
  - [Model.UpdateInboxConversationRequest](docs/UpdateInboxConversationRequest.md)

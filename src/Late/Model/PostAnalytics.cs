@@ -40,17 +40,19 @@ namespace Late.Model
         /// <param name="likes">likes.</param>
         /// <param name="comments">comments.</param>
         /// <param name="shares">shares.</param>
+        /// <param name="saves">Number of saves/bookmarks (Instagram, Pinterest).</param>
         /// <param name="clicks">clicks.</param>
         /// <param name="views">views.</param>
         /// <param name="engagementRate">engagementRate.</param>
         /// <param name="lastUpdated">lastUpdated.</param>
-        public PostAnalytics(int impressions = default, int reach = default, int likes = default, int comments = default, int shares = default, int clicks = default, int views = default, decimal engagementRate = default, DateTime lastUpdated = default)
+        public PostAnalytics(int impressions = default, int reach = default, int likes = default, int comments = default, int shares = default, int saves = default, int clicks = default, int views = default, decimal engagementRate = default, DateTime lastUpdated = default)
         {
             this.Impressions = impressions;
             this.Reach = reach;
             this.Likes = likes;
             this.Comments = comments;
             this.Shares = shares;
+            this.Saves = saves;
             this.Clicks = clicks;
             this.Views = views;
             this.EngagementRate = engagementRate;
@@ -103,6 +105,16 @@ namespace Late.Model
         public int Shares { get; set; }
 
         /// <summary>
+        /// Number of saves/bookmarks (Instagram, Pinterest)
+        /// </summary>
+        /// <value>Number of saves/bookmarks (Instagram, Pinterest)</value>
+        /*
+        <example>0</example>
+        */
+        [DataMember(Name = "saves", EmitDefaultValue = false)]
+        public int Saves { get; set; }
+
+        /// <summary>
         /// Gets or Sets Clicks
         /// </summary>
         /*
@@ -148,6 +160,7 @@ namespace Late.Model
             sb.Append("  Likes: ").Append(Likes).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  Shares: ").Append(Shares).Append("\n");
+            sb.Append("  Saves: ").Append(Saves).Append("\n");
             sb.Append("  Clicks: ").Append(Clicks).Append("\n");
             sb.Append("  Views: ").Append(Views).Append("\n");
             sb.Append("  EngagementRate: ").Append(EngagementRate).Append("\n");
