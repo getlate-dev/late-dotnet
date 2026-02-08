@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Platform** | **string** | Supported values: twitter, threads, instagram, youtube, facebook, linkedin, pinterest, reddit, tiktok, bluesky, googlebusiness, telegram | [optional] 
 **AccountId** | [**PlatformTargetAccountId**](PlatformTargetAccountId.md) |  | [optional] 
-**CustomContent** | **string** |  | [optional] 
+**CustomContent** | **string** | Platform-specific text override. When set, this content is used instead of the top-level post content for this platform. Useful for tailoring captions per platform (e.g. keeping tweets under 280 characters). | [optional] 
 **CustomMedia** | [**List&lt;MediaItem&gt;**](MediaItem.md) |  | [optional] 
 **ScheduledFor** | **DateTime** | Optional per-platform scheduled time override (uses post.scheduledFor when omitted) | [optional] 
 **PlatformSpecificData** | [**PlatformTargetPlatformSpecificData**](PlatformTargetPlatformSpecificData.md) |  | [optional] 

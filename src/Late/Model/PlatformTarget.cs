@@ -133,7 +133,7 @@ namespace Late.Model
         /// </summary>
         /// <param name="platform">Supported values: twitter, threads, instagram, youtube, facebook, linkedin, pinterest, reddit, tiktok, bluesky, googlebusiness, telegram.</param>
         /// <param name="accountId">accountId.</param>
-        /// <param name="customContent">customContent.</param>
+        /// <param name="customContent">Platform-specific text override. When set, this content is used instead of the top-level post content for this platform. Useful for tailoring captions per platform (e.g. keeping tweets under 280 characters)..</param>
         /// <param name="customMedia">customMedia.</param>
         /// <param name="scheduledFor">Optional per-platform scheduled time override (uses post.scheduledFor when omitted).</param>
         /// <param name="platformSpecificData">platformSpecificData.</param>
@@ -178,8 +178,9 @@ namespace Late.Model
         public PlatformTargetAccountId AccountId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CustomContent
+        /// Platform-specific text override. When set, this content is used instead of the top-level post content for this platform. Useful for tailoring captions per platform (e.g. keeping tweets under 280 characters).
         /// </summary>
+        /// <value>Platform-specific text override. When set, this content is used instead of the top-level post content for this platform. Useful for tailoring captions per platform (e.g. keeping tweets under 280 characters).</value>
         [DataMember(Name = "customContent", EmitDefaultValue = false)]
         public string CustomContent { get; set; }
 
