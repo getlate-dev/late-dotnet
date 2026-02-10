@@ -15,6 +15,7 @@ docs/AnalyticsListResponsePostsInner.md
 docs/AnalyticsOverview.md
 docs/AnalyticsSinglePostResponse.md
 docs/ApiKey.md
+docs/BlueskyPlatformData.md
 docs/BulkUploadPosts200Response.md
 docs/BulkUploadPosts200ResponseErrorsInner.md
 docs/BulkUploadPosts429Response.md
@@ -30,6 +31,10 @@ docs/ConnectBlueskyCredentials200Response.md
 docs/ConnectBlueskyCredentialsRequest.md
 docs/Connected.md
 docs/ConnectedAccount.md
+docs/ConnectionLog.md
+docs/ConnectionLogContext.md
+docs/ConnectionLogError.md
+docs/ConnectionLogSuccess.md
 docs/CreateAccountGroup201Response.md
 docs/CreateAccountGroupRequest.md
 docs/CreateApiKey201Response.md
@@ -191,6 +196,7 @@ docs/ListAccountGroups200Response.md
 docs/ListAccountGroups200ResponseGroupsInner.md
 docs/ListAccounts200Response.md
 docs/ListApiKeys200Response.md
+docs/ListConnectionLogs200Response.md
 docs/ListFacebookPages200Response.md
 docs/ListFacebookPages200ResponsePagesInner.md
 docs/ListGoogleBusinessLocations200Response.md
@@ -273,6 +279,7 @@ docs/QueueSchedule.md
 docs/QueueSlot.md
 docs/QueueSlotsResponse.md
 docs/QueueUpdateResponse.md
+docs/RedditPlatformData.md
 docs/RedditSearchApi.md
 docs/ReplyToInboxPost200Response.md
 docs/ReplyToInboxPost200ResponseData.md
@@ -391,6 +398,13 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/BlueskyPlatformDataTests.cs
+src/Late.Test/Model/ConnectionLogContextTests.cs
+src/Late.Test/Model/ConnectionLogErrorTests.cs
+src/Late.Test/Model/ConnectionLogSuccessTests.cs
+src/Late.Test/Model/ConnectionLogTests.cs
+src/Late.Test/Model/ListConnectionLogs200ResponseTests.cs
+src/Late.Test/Model/RedditPlatformDataTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountsApi.cs
@@ -444,6 +458,7 @@ src/Late/Model/AnalyticsListResponsePostsInner.cs
 src/Late/Model/AnalyticsOverview.cs
 src/Late/Model/AnalyticsSinglePostResponse.cs
 src/Late/Model/ApiKey.cs
+src/Late/Model/BlueskyPlatformData.cs
 src/Late/Model/BulkUploadPosts200Response.cs
 src/Late/Model/BulkUploadPosts200ResponseErrorsInner.cs
 src/Late/Model/BulkUploadPosts429Response.cs
@@ -457,6 +472,10 @@ src/Late/Model/ConnectBlueskyCredentials200Response.cs
 src/Late/Model/ConnectBlueskyCredentialsRequest.cs
 src/Late/Model/Connected.cs
 src/Late/Model/ConnectedAccount.cs
+src/Late/Model/ConnectionLog.cs
+src/Late/Model/ConnectionLogContext.cs
+src/Late/Model/ConnectionLogError.cs
+src/Late/Model/ConnectionLogSuccess.cs
 src/Late/Model/CreateAccountGroup201Response.cs
 src/Late/Model/CreateAccountGroupRequest.cs
 src/Late/Model/CreateApiKey201Response.cs
@@ -610,6 +629,7 @@ src/Late/Model/ListAccountGroups200Response.cs
 src/Late/Model/ListAccountGroups200ResponseGroupsInner.cs
 src/Late/Model/ListAccounts200Response.cs
 src/Late/Model/ListApiKeys200Response.cs
+src/Late/Model/ListConnectionLogs200Response.cs
 src/Late/Model/ListFacebookPages200Response.cs
 src/Late/Model/ListFacebookPages200ResponsePagesInner.cs
 src/Late/Model/ListGoogleBusinessLocations200Response.cs
@@ -686,6 +706,7 @@ src/Late/Model/QueueSchedule.cs
 src/Late/Model/QueueSlot.cs
 src/Late/Model/QueueSlotsResponse.cs
 src/Late/Model/QueueUpdateResponse.cs
+src/Late/Model/RedditPlatformData.cs
 src/Late/Model/ReplyToInboxPost200Response.cs
 src/Late/Model/ReplyToInboxPost200ResponseData.cs
 src/Late/Model/ReplyToInboxPostRequest.cs

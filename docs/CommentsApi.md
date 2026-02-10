@@ -46,7 +46,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | 
+            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID or a platform-specific post ID.
             var accountId = "accountId_example";  // string | 
             var commentId = "commentId_example";  // string | 
 
@@ -91,7 +91,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** |  |  |
+| **postId** | **string** | The post identifier. Accepts a Late post ID or a platform-specific post ID. |  |
 | **accountId** | **string** |  |  |
 | **commentId** | **string** |  |  |
 
@@ -150,7 +150,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | 
+            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID).
             var accountId = "accountId_example";  // string | 
             var subreddit = "subreddit_example";  // string? | (Reddit only) Subreddit name (optional) 
             var limit = 25;  // int? | Maximum number of comments to return (optional)  (default to 25)
@@ -198,7 +198,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** |  |  |
+| **postId** | **string** | The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). |  |
 | **accountId** | **string** |  |  |
 | **subreddit** | **string?** | (Reddit only) Subreddit name | [optional]  |
 | **limit** | **int?** | Maximum number of comments to return | [optional] [default to 25] |
@@ -586,7 +586,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | 
+            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID or a platform-specific post ID.
             var replyToInboxPostRequest = new ReplyToInboxPostRequest(); // ReplyToInboxPostRequest | 
 
             try
@@ -630,7 +630,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** |  |  |
+| **postId** | **string** | The post identifier. Accepts a Late post ID or a platform-specific post ID. |  |
 | **replyToInboxPostRequest** | [**ReplyToInboxPostRequest**](ReplyToInboxPostRequest.md) |  |  |
 
 ### Return type

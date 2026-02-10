@@ -5,7 +5,7 @@ Platform-specific overrides and options.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ThreadItems** | [**List&lt;TwitterPlatformDataThreadItemsInner&gt;**](TwitterPlatformDataThreadItemsInner.md) | Sequence of posts in a Threads thread (root then replies in order). | [optional] 
+**ThreadItems** | [**List&lt;TwitterPlatformDataThreadItemsInner&gt;**](TwitterPlatformDataThreadItemsInner.md) | Sequence of posts in a Bluesky thread (root then replies in order). | [optional] 
 **ContentType** | **string** | Type of Snapchat content to publish: - &#x60;story&#x60; - Ephemeral snap visible for 24 hours (default) - &#x60;saved_story&#x60; - Permanent story saved to Public Profile - &#x60;spotlight&#x60; - Video posted to Spotlight (Snapchat&#39;s TikTok-like feed)  | [optional] [default to ContentTypeEnum.Story]
 **FirstComment** | **string** | Optional first comment to post immediately after video upload. Up to 10,000 characters (YouTube&#39;s comment limit). | [optional] 
 **PageId** | **string** | Target Facebook Page ID for multi-page posting. If omitted, uses the selected/default page on the connection. Use GET /api/v1/accounts/{id}/facebook-page to list available pages.  | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **ThumbOffset** | **int** | Millisecond offset from the start of the video to use as the Reel thumbnail. Only applies to Reels (video posts). If a custom thumbnail URL (instagramThumbnail in mediaItems) is provided, it takes priority and this offset is ignored. Defaults to 0 (first frame).  | [optional] 
 **OrganizationUrn** | **string** | Target LinkedIn Organization URN for multi-organization posting. Format: \&quot;urn:li:organization:123456789\&quot; If omitted, uses the selected/default organization on the connection. Use GET /api/v1/accounts/{id}/linkedin-organizations to list available organizations.  | [optional] 
 **DisableLinkPreview** | **bool** | Set to true to disable automatic link previews for URLs in the post content (default is false) | [optional] 
-**Title** | **string** | Video title. Defaults to first line of content or \&quot;Untitled Video\&quot;. Must be ≤ 100 characters. | [optional] 
+**Title** | **string** | Post title. Defaults to the first line of content, truncated to 300 characters. | [optional] 
 **BoardId** | **string** | Target Pinterest board ID. If omitted, the first available board is used. | [optional] 
 **Link** | **string** | Destination link (pin URL) | [optional] 
 **CoverImageUrl** | **string** | Optional cover image for video pins | [optional] 
@@ -48,6 +48,9 @@ Name | Type | Description | Notes
 **DisableWebPagePreview** | **bool** | Disable link preview generation for URLs in the message | [optional] 
 **DisableNotification** | **bool** | Send the message silently (users will receive notification without sound) | [optional] 
 **ProtectContent** | **bool** | Protect message content from forwarding and saving | [optional] 
+**Subreddit** | **string** | Target subreddit name (without \&quot;r/\&quot; prefix). Overrides the default subreddit configured on the account connection. Use GET /api/v1/accounts/{id}/reddit-subreddits to list available subreddits.  | [optional] 
+**Url** | **string** | URL for link posts. If provided (and forceSelf is not true), creates a link post instead of a text post. | [optional] 
+**ForceSelf** | **bool** | When true, creates a text/self post even when a URL or media is provided. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

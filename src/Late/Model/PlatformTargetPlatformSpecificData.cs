@@ -166,6 +166,30 @@ namespace Late.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlatformTargetPlatformSpecificData" /> class
+        /// with the <see cref="RedditPlatformData" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of RedditPlatformData.</param>
+        public PlatformTargetPlatformSpecificData(RedditPlatformData actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlatformTargetPlatformSpecificData" /> class
+        /// with the <see cref="BlueskyPlatformData" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of BlueskyPlatformData.</param>
+        public PlatformTargetPlatformSpecificData(BlueskyPlatformData actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -180,7 +204,11 @@ namespace Late.Model
             }
             set
             {
-                if (value.GetType() == typeof(FacebookPlatformData) || value is FacebookPlatformData)
+                if (value.GetType() == typeof(BlueskyPlatformData) || value is BlueskyPlatformData)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(FacebookPlatformData) || value is FacebookPlatformData)
                 {
                     this._actualInstance = value;
                 }
@@ -197,6 +225,10 @@ namespace Late.Model
                     this._actualInstance = value;
                 }
                 else if (value.GetType() == typeof(PinterestPlatformData) || value is PinterestPlatformData)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(RedditPlatformData) || value is RedditPlatformData)
                 {
                     this._actualInstance = value;
                 }
@@ -226,7 +258,7 @@ namespace Late.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: FacebookPlatformData, GoogleBusinessPlatformData, InstagramPlatformData, LinkedInPlatformData, PinterestPlatformData, SnapchatPlatformData, TelegramPlatformData, ThreadsPlatformData, TikTokPlatformData, TwitterPlatformData, YouTubePlatformData");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: BlueskyPlatformData, FacebookPlatformData, GoogleBusinessPlatformData, InstagramPlatformData, LinkedInPlatformData, PinterestPlatformData, RedditPlatformData, SnapchatPlatformData, TelegramPlatformData, ThreadsPlatformData, TikTokPlatformData, TwitterPlatformData, YouTubePlatformData");
                 }
             }
         }
@@ -342,6 +374,26 @@ namespace Late.Model
         }
 
         /// <summary>
+        /// Get the actual instance of `RedditPlatformData`. If the actual instance is not `RedditPlatformData`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of RedditPlatformData</returns>
+        public RedditPlatformData GetRedditPlatformData()
+        {
+            return (RedditPlatformData)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `BlueskyPlatformData`. If the actual instance is not `BlueskyPlatformData`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of BlueskyPlatformData</returns>
+        public BlueskyPlatformData GetBlueskyPlatformData()
+        {
+            return (BlueskyPlatformData)this.ActualInstance;
+        }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -378,6 +430,26 @@ namespace Late.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(BlueskyPlatformData).GetProperty("AdditionalProperties") == null)
+                {
+                    newPlatformTargetPlatformSpecificData = new PlatformTargetPlatformSpecificData(JsonConvert.DeserializeObject<BlueskyPlatformData>(jsonString, PlatformTargetPlatformSpecificData.SerializerSettings));
+                }
+                else
+                {
+                    newPlatformTargetPlatformSpecificData = new PlatformTargetPlatformSpecificData(JsonConvert.DeserializeObject<BlueskyPlatformData>(jsonString, PlatformTargetPlatformSpecificData.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("BlueskyPlatformData");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into BlueskyPlatformData: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {
@@ -477,6 +549,26 @@ namespace Late.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into PinterestPlatformData: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(RedditPlatformData).GetProperty("AdditionalProperties") == null)
+                {
+                    newPlatformTargetPlatformSpecificData = new PlatformTargetPlatformSpecificData(JsonConvert.DeserializeObject<RedditPlatformData>(jsonString, PlatformTargetPlatformSpecificData.SerializerSettings));
+                }
+                else
+                {
+                    newPlatformTargetPlatformSpecificData = new PlatformTargetPlatformSpecificData(JsonConvert.DeserializeObject<RedditPlatformData>(jsonString, PlatformTargetPlatformSpecificData.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("RedditPlatformData");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into RedditPlatformData: {1}", jsonString, exception.ToString()));
             }
 
             try
