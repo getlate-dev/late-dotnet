@@ -39,12 +39,14 @@ namespace Late.Model
         /// <param name="name">name.</param>
         /// <param name="username">username.</param>
         /// <param name="picture">picture.</param>
-        public WebhookPayloadMessageMessageSender(string id = default, string name = default, string username = default, string picture = default)
+        /// <param name="instagramProfile">instagramProfile.</param>
+        public WebhookPayloadMessageMessageSender(string id = default, string name = default, string username = default, string picture = default, WebhookPayloadMessageMessageSenderInstagramProfile instagramProfile = default)
         {
             this.Id = id;
             this.Name = name;
             this.Username = username;
             this.Picture = picture;
+            this.InstagramProfile = instagramProfile;
         }
 
         /// <summary>
@@ -72,6 +74,12 @@ namespace Late.Model
         public string Picture { get; set; }
 
         /// <summary>
+        /// Gets or Sets InstagramProfile
+        /// </summary>
+        [DataMember(Name = "instagramProfile", EmitDefaultValue = false)]
+        public WebhookPayloadMessageMessageSenderInstagramProfile InstagramProfile { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -83,6 +91,7 @@ namespace Late.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Username: ").Append(Username).Append("\n");
             sb.Append("  Picture: ").Append(Picture).Append("\n");
+            sb.Append("  InstagramProfile: ").Append(InstagramProfile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

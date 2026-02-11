@@ -71,7 +71,8 @@ namespace Late.Model
         /// <param name="lastMessageAt">lastMessageAt.</param>
         /// <param name="updatedTime">updatedTime.</param>
         /// <param name="participants">participants.</param>
-        public GetInboxConversation200ResponseData(string id = default, string accountId = default, string accountUsername = default, string platform = default, StatusEnum? status = default, string participantName = default, string participantId = default, string lastMessage = default, DateTime lastMessageAt = default, DateTime updatedTime = default, List<UpdateFacebookPage200ResponseSelectedPage> participants = default)
+        /// <param name="instagramProfile">instagramProfile.</param>
+        public GetInboxConversation200ResponseData(string id = default, string accountId = default, string accountUsername = default, string platform = default, StatusEnum? status = default, string participantName = default, string participantId = default, string lastMessage = default, DateTime lastMessageAt = default, DateTime updatedTime = default, List<UpdateFacebookPage200ResponseSelectedPage> participants = default, ListInboxConversations200ResponseDataInnerInstagramProfile instagramProfile = default)
         {
             this.Id = id;
             this.AccountId = accountId;
@@ -84,6 +85,7 @@ namespace Late.Model
             this.LastMessageAt = lastMessageAt;
             this.UpdatedTime = updatedTime;
             this.Participants = participants;
+            this.InstagramProfile = instagramProfile;
         }
 
         /// <summary>
@@ -147,6 +149,12 @@ namespace Late.Model
         public List<UpdateFacebookPage200ResponseSelectedPage> Participants { get; set; }
 
         /// <summary>
+        /// Gets or Sets InstagramProfile
+        /// </summary>
+        [DataMember(Name = "instagramProfile", EmitDefaultValue = false)]
+        public ListInboxConversations200ResponseDataInnerInstagramProfile InstagramProfile { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -165,6 +173,7 @@ namespace Late.Model
             sb.Append("  LastMessageAt: ").Append(LastMessageAt).Append("\n");
             sb.Append("  UpdatedTime: ").Append(UpdatedTime).Append("\n");
             sb.Append("  Participants: ").Append(Participants).Append("\n");
+            sb.Append("  InstagramProfile: ").Append(InstagramProfile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

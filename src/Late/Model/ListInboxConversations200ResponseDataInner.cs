@@ -72,7 +72,8 @@ namespace Late.Model
         /// <param name="status">status.</param>
         /// <param name="unreadCount">Number of unread messages.</param>
         /// <param name="url">Direct link to open the conversation on the platform (if available).</param>
-        public ListInboxConversations200ResponseDataInner(string id = default, string platform = default, string accountId = default, string accountUsername = default, string participantId = default, string participantName = default, string participantPicture = default, string lastMessage = default, DateTime updatedTime = default, StatusEnum? status = default, int unreadCount = default, string url = default)
+        /// <param name="instagramProfile">instagramProfile.</param>
+        public ListInboxConversations200ResponseDataInner(string id = default, string platform = default, string accountId = default, string accountUsername = default, string participantId = default, string participantName = default, string participantPicture = default, string lastMessage = default, DateTime updatedTime = default, StatusEnum? status = default, int unreadCount = default, string url = default, ListInboxConversations200ResponseDataInnerInstagramProfile instagramProfile = default)
         {
             this.Id = id;
             this.Platform = platform;
@@ -86,6 +87,7 @@ namespace Late.Model
             this.Status = status;
             this.UnreadCount = unreadCount;
             this.Url = url;
+            this.InstagramProfile = instagramProfile;
         }
 
         /// <summary>
@@ -157,6 +159,12 @@ namespace Late.Model
         public string Url { get; set; }
 
         /// <summary>
+        /// Gets or Sets InstagramProfile
+        /// </summary>
+        [DataMember(Name = "instagramProfile", EmitDefaultValue = false)]
+        public ListInboxConversations200ResponseDataInnerInstagramProfile InstagramProfile { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -176,6 +184,7 @@ namespace Late.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  UnreadCount: ").Append(UnreadCount).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  InstagramProfile: ").Append(InstagramProfile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
