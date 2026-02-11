@@ -640,7 +640,7 @@ catch (ApiException e)
 
 <a id="updatepost"></a>
 # **UpdatePost**
-> PostUpdateResponse UpdatePost (string postId, Dictionary<string, Object> requestBody)
+> PostUpdateResponse UpdatePost (string postId, UpdatePostRequest updatePostRequest)
 
 Update a post
 
@@ -671,12 +671,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new PostsApi(httpClient, config, httpClientHandler);
             var postId = "postId_example";  // string | 
-            var requestBody = new Dictionary<string, Object>(); // Dictionary<string, Object> | 
+            var updatePostRequest = new UpdatePostRequest(); // UpdatePostRequest | 
 
             try
             {
                 // Update a post
-                PostUpdateResponse result = apiInstance.UpdatePost(postId, requestBody);
+                PostUpdateResponse result = apiInstance.UpdatePost(postId, updatePostRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -697,7 +697,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a post
-    ApiResponse<PostUpdateResponse> response = apiInstance.UpdatePostWithHttpInfo(postId, requestBody);
+    ApiResponse<PostUpdateResponse> response = apiInstance.UpdatePostWithHttpInfo(postId, updatePostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -715,7 +715,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **postId** | **string** |  |  |
-| **requestBody** | [**Dictionary&lt;string, Object&gt;**](Object.md) |  |  |
+| **updatePostRequest** | [**UpdatePostRequest**](UpdatePostRequest.md) |  |  |
 
 ### Return type
 

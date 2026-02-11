@@ -354,6 +354,7 @@ docs/UpdateInboxConversation200ResponseData.md
 docs/UpdateInboxConversationRequest.md
 docs/UpdateLinkedInOrganizationRequest.md
 docs/UpdatePinterestBoardsRequest.md
+docs/UpdatePostRequest.md
 docs/UpdateProfile200Response.md
 docs/UpdateProfileRequest.md
 docs/UpdateQueueSlot200Response.md
@@ -398,13 +399,7 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
-src/Late.Test/Model/BlueskyPlatformDataTests.cs
-src/Late.Test/Model/ConnectionLogContextTests.cs
-src/Late.Test/Model/ConnectionLogErrorTests.cs
-src/Late.Test/Model/ConnectionLogSuccessTests.cs
-src/Late.Test/Model/ConnectionLogTests.cs
-src/Late.Test/Model/ListConnectionLogs200ResponseTests.cs
-src/Late.Test/Model/RedditPlatformDataTests.cs
+src/Late.Test/Model/UpdatePostRequestTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountsApi.cs
@@ -778,6 +773,7 @@ src/Late/Model/UpdateInboxConversation200ResponseData.cs
 src/Late/Model/UpdateInboxConversationRequest.cs
 src/Late/Model/UpdateLinkedInOrganizationRequest.cs
 src/Late/Model/UpdatePinterestBoardsRequest.cs
+src/Late/Model/UpdatePostRequest.cs
 src/Late/Model/UpdateProfile200Response.cs
 src/Late/Model/UpdateProfileRequest.cs
 src/Late/Model/UpdateQueueSlot200Response.cs

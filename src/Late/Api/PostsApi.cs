@@ -173,9 +173,9 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
-        /// <param name="requestBody"></param>
+        /// <param name="updatePostRequest"></param>
         /// <returns>PostUpdateResponse</returns>
-        PostUpdateResponse UpdatePost(string postId, Dictionary<string, Object> requestBody);
+        PostUpdateResponse UpdatePost(string postId, UpdatePostRequest updatePostRequest);
 
         /// <summary>
         /// Update a post
@@ -185,9 +185,9 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
-        /// <param name="requestBody"></param>
+        /// <param name="updatePostRequest"></param>
         /// <returns>ApiResponse of PostUpdateResponse</returns>
-        ApiResponse<PostUpdateResponse> UpdatePostWithHttpInfo(string postId, Dictionary<string, Object> requestBody);
+        ApiResponse<PostUpdateResponse> UpdatePostWithHttpInfo(string postId, UpdatePostRequest updatePostRequest);
         #endregion Synchronous Operations
     }
 
@@ -361,10 +361,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
-        /// <param name="requestBody"></param>
+        /// <param name="updatePostRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostUpdateResponse</returns>
-        System.Threading.Tasks.Task<PostUpdateResponse> UpdatePostAsync(string postId, Dictionary<string, Object> requestBody, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<PostUpdateResponse> UpdatePostAsync(string postId, UpdatePostRequest updatePostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a post
@@ -374,10 +374,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
-        /// <param name="requestBody"></param>
+        /// <param name="updatePostRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostUpdateResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostUpdateResponse>> UpdatePostWithHttpInfoAsync(string postId, Dictionary<string, Object> requestBody, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<PostUpdateResponse>> UpdatePostWithHttpInfoAsync(string postId, UpdatePostRequest updatePostRequest, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -1466,11 +1466,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
-        /// <param name="requestBody"></param>
+        /// <param name="updatePostRequest"></param>
         /// <returns>PostUpdateResponse</returns>
-        public PostUpdateResponse UpdatePost(string postId, Dictionary<string, Object> requestBody)
+        public PostUpdateResponse UpdatePost(string postId, UpdatePostRequest updatePostRequest)
         {
-            Late.Client.ApiResponse<PostUpdateResponse> localVarResponse = UpdatePostWithHttpInfo(postId, requestBody);
+            Late.Client.ApiResponse<PostUpdateResponse> localVarResponse = UpdatePostWithHttpInfo(postId, updatePostRequest);
             return localVarResponse.Data;
         }
 
@@ -1479,17 +1479,17 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
-        /// <param name="requestBody"></param>
+        /// <param name="updatePostRequest"></param>
         /// <returns>ApiResponse of PostUpdateResponse</returns>
-        public Late.Client.ApiResponse<PostUpdateResponse> UpdatePostWithHttpInfo(string postId, Dictionary<string, Object> requestBody)
+        public Late.Client.ApiResponse<PostUpdateResponse> UpdatePostWithHttpInfo(string postId, UpdatePostRequest updatePostRequest)
         {
             // verify the required parameter 'postId' is set
             if (postId == null)
                 throw new Late.Client.ApiException(400, "Missing required parameter 'postId' when calling PostsApi->UpdatePost");
 
-            // verify the required parameter 'requestBody' is set
-            if (requestBody == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'requestBody' when calling PostsApi->UpdatePost");
+            // verify the required parameter 'updatePostRequest' is set
+            if (updatePostRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'updatePostRequest' when calling PostsApi->UpdatePost");
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1509,7 +1509,7 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("postId", Late.Client.ClientUtils.ParameterToString(postId)); // path parameter
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = updatePostRequest;
 
             // authentication (bearerAuth) required
             // bearer authentication required
@@ -1535,12 +1535,12 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
-        /// <param name="requestBody"></param>
+        /// <param name="updatePostRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostUpdateResponse</returns>
-        public async System.Threading.Tasks.Task<PostUpdateResponse> UpdatePostAsync(string postId, Dictionary<string, Object> requestBody, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<PostUpdateResponse> UpdatePostAsync(string postId, UpdatePostRequest updatePostRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<PostUpdateResponse> localVarResponse = await UpdatePostWithHttpInfoAsync(postId, requestBody, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<PostUpdateResponse> localVarResponse = await UpdatePostWithHttpInfoAsync(postId, updatePostRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1549,18 +1549,18 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
-        /// <param name="requestBody"></param>
+        /// <param name="updatePostRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostUpdateResponse)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<PostUpdateResponse>> UpdatePostWithHttpInfoAsync(string postId, Dictionary<string, Object> requestBody, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<PostUpdateResponse>> UpdatePostWithHttpInfoAsync(string postId, UpdatePostRequest updatePostRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'postId' is set
             if (postId == null)
                 throw new Late.Client.ApiException(400, "Missing required parameter 'postId' when calling PostsApi->UpdatePost");
 
-            // verify the required parameter 'requestBody' is set
-            if (requestBody == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'requestBody' when calling PostsApi->UpdatePost");
+            // verify the required parameter 'updatePostRequest' is set
+            if (updatePostRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'updatePostRequest' when calling PostsApi->UpdatePost");
 
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1582,7 +1582,7 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("postId", Late.Client.ClientUtils.ParameterToString(postId)); // path parameter
-            localVarRequestOptions.Data = requestBody;
+            localVarRequestOptions.Data = updatePostRequest;
 
             // authentication (bearerAuth) required
             // bearer authentication required
