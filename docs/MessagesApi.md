@@ -4,11 +4,117 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**EditInboxMessage**](MessagesApi.md#editinboxmessage) | **PATCH** /v1/inbox/conversations/{conversationId}/messages/{messageId} | Edit a message (Telegram only) |
 | [**GetInboxConversation**](MessagesApi.md#getinboxconversation) | **GET** /v1/inbox/conversations/{conversationId} | Get conversation details |
 | [**GetInboxConversationMessages**](MessagesApi.md#getinboxconversationmessages) | **GET** /v1/inbox/conversations/{conversationId}/messages | Get messages in a conversation |
 | [**ListInboxConversations**](MessagesApi.md#listinboxconversations) | **GET** /v1/inbox/conversations | List conversations across all accounts |
 | [**SendInboxMessage**](MessagesApi.md#sendinboxmessage) | **POST** /v1/inbox/conversations/{conversationId}/messages | Send a message |
 | [**UpdateInboxConversation**](MessagesApi.md#updateinboxconversation) | **PUT** /v1/inbox/conversations/{conversationId} | Update conversation status |
+
+<a id="editinboxmessage"></a>
+# **EditInboxMessage**
+> EditInboxMessage200Response EditInboxMessage (string conversationId, string messageId, EditInboxMessageRequest editInboxMessageRequest)
+
+Edit a message (Telegram only)
+
+Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class EditInboxMessageExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://getlate.dev/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new MessagesApi(httpClient, config, httpClientHandler);
+            var conversationId = "conversationId_example";  // string | The conversation ID
+            var messageId = "messageId_example";  // string | The Telegram message ID to edit
+            var editInboxMessageRequest = new EditInboxMessageRequest(); // EditInboxMessageRequest | 
+
+            try
+            {
+                // Edit a message (Telegram only)
+                EditInboxMessage200Response result = apiInstance.EditInboxMessage(conversationId, messageId, editInboxMessageRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling MessagesApi.EditInboxMessage: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the EditInboxMessageWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Edit a message (Telegram only)
+    ApiResponse<EditInboxMessage200Response> response = apiInstance.EditInboxMessageWithHttpInfo(conversationId, messageId, editInboxMessageRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling MessagesApi.EditInboxMessageWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **conversationId** | **string** | The conversation ID |  |
+| **messageId** | **string** | The Telegram message ID to edit |  |
+| **editInboxMessageRequest** | [**EditInboxMessageRequest**](EditInboxMessageRequest.md) |  |  |
+
+### Return type
+
+[**EditInboxMessage200Response**](EditInboxMessage200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Message edited |  -  |
+| **400** | Not supported or invalid request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Inbox addon required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="getinboxconversation"></a>
 # **GetInboxConversation**
@@ -333,7 +439,7 @@ catch (ApiException e)
 
 Send a message
 
-Send a message in a conversation. Requires accountId in request body.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Twitter/X: Images, videos (requires media upload) - Instagram: Not supported (API limitation) - Bluesky: Not supported (API limitation) - Reddit: Not supported (API limitation) 
+Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
 
 ### Example
 ```csharp
@@ -424,7 +530,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Message sent |  -  |
-| **400** | Bad request (e.g., attachment not supported for platform) |  -  |
+| **400** | Bad request (e.g., attachment not supported for platform, validation error) |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Inbox addon required |  -  |
 

@@ -33,6 +33,78 @@ namespace Late.Model
     public partial class SendInboxMessageRequest : IValidatableObject
     {
         /// <summary>
+        /// Facebook messaging type. Required when using messageTag.
+        /// </summary>
+        /// <value>Facebook messaging type. Required when using messageTag.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MessagingTypeEnum
+        {
+            /// <summary>
+            /// Enum RESPONSE for value: RESPONSE
+            /// </summary>
+            [EnumMember(Value = "RESPONSE")]
+            RESPONSE = 1,
+
+            /// <summary>
+            /// Enum UPDATE for value: UPDATE
+            /// </summary>
+            [EnumMember(Value = "UPDATE")]
+            UPDATE = 2,
+
+            /// <summary>
+            /// Enum MESSAGETAG for value: MESSAGE_TAG
+            /// </summary>
+            [EnumMember(Value = "MESSAGE_TAG")]
+            MESSAGETAG = 3
+        }
+
+
+        /// <summary>
+        /// Facebook messaging type. Required when using messageTag.
+        /// </summary>
+        /// <value>Facebook messaging type. Required when using messageTag.</value>
+        [DataMember(Name = "messagingType", EmitDefaultValue = false)]
+        public MessagingTypeEnum? MessagingType { get; set; }
+        /// <summary>
+        /// Facebook message tag for messaging outside 24h window. Requires messagingType MESSAGE_TAG. Instagram only supports HUMAN_AGENT.
+        /// </summary>
+        /// <value>Facebook message tag for messaging outside 24h window. Requires messagingType MESSAGE_TAG. Instagram only supports HUMAN_AGENT.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum MessageTagEnum
+        {
+            /// <summary>
+            /// Enum CONFIRMEDEVENTUPDATE for value: CONFIRMED_EVENT_UPDATE
+            /// </summary>
+            [EnumMember(Value = "CONFIRMED_EVENT_UPDATE")]
+            CONFIRMEDEVENTUPDATE = 1,
+
+            /// <summary>
+            /// Enum POSTPURCHASEUPDATE for value: POST_PURCHASE_UPDATE
+            /// </summary>
+            [EnumMember(Value = "POST_PURCHASE_UPDATE")]
+            POSTPURCHASEUPDATE = 2,
+
+            /// <summary>
+            /// Enum ACCOUNTUPDATE for value: ACCOUNT_UPDATE
+            /// </summary>
+            [EnumMember(Value = "ACCOUNT_UPDATE")]
+            ACCOUNTUPDATE = 3,
+
+            /// <summary>
+            /// Enum HUMANAGENT for value: HUMAN_AGENT
+            /// </summary>
+            [EnumMember(Value = "HUMAN_AGENT")]
+            HUMANAGENT = 4
+        }
+
+
+        /// <summary>
+        /// Facebook message tag for messaging outside 24h window. Requires messagingType MESSAGE_TAG. Instagram only supports HUMAN_AGENT.
+        /// </summary>
+        /// <value>Facebook message tag for messaging outside 24h window. Requires messagingType MESSAGE_TAG. Instagram only supports HUMAN_AGENT.</value>
+        [DataMember(Name = "messageTag", EmitDefaultValue = false)]
+        public MessageTagEnum? MessageTag { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="SendInboxMessageRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -41,8 +113,15 @@ namespace Late.Model
         /// Initializes a new instance of the <see cref="SendInboxMessageRequest" /> class.
         /// </summary>
         /// <param name="accountId">Social account ID (required).</param>
-        /// <param name="message">Message text (required).</param>
-        public SendInboxMessageRequest(string accountId = default, string message = default)
+        /// <param name="message">Message text.</param>
+        /// <param name="quickReplies">Quick reply buttons. Mutually exclusive with buttons. Max 13 items..</param>
+        /// <param name="buttons">Action buttons. Mutually exclusive with quickReplies. Max 3 items..</param>
+        /// <param name="template">template.</param>
+        /// <param name="replyMarkup">replyMarkup.</param>
+        /// <param name="messagingType">Facebook messaging type. Required when using messageTag..</param>
+        /// <param name="messageTag">Facebook message tag for messaging outside 24h window. Requires messagingType MESSAGE_TAG. Instagram only supports HUMAN_AGENT..</param>
+        /// <param name="replyTo">Platform message ID to reply to (Telegram only)..</param>
+        public SendInboxMessageRequest(string accountId = default, string message = default, List<SendInboxMessageRequestQuickRepliesInner> quickReplies = default, List<SendInboxMessageRequestButtonsInner> buttons = default, SendInboxMessageRequestTemplate template = default, SendInboxMessageRequestReplyMarkup replyMarkup = default, MessagingTypeEnum? messagingType = default, MessageTagEnum? messageTag = default, string replyTo = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -50,12 +129,14 @@ namespace Late.Model
                 throw new ArgumentNullException("accountId is a required property for SendInboxMessageRequest and cannot be null");
             }
             this.AccountId = accountId;
-            // to ensure "message" is required (not null)
-            if (message == null)
-            {
-                throw new ArgumentNullException("message is a required property for SendInboxMessageRequest and cannot be null");
-            }
             this.Message = message;
+            this.QuickReplies = quickReplies;
+            this.Buttons = buttons;
+            this.Template = template;
+            this.ReplyMarkup = replyMarkup;
+            this.MessagingType = messagingType;
+            this.MessageTag = messageTag;
+            this.ReplyTo = replyTo;
         }
 
         /// <summary>
@@ -69,8 +150,41 @@ namespace Late.Model
         /// Message text
         /// </summary>
         /// <value>Message text</value>
-        [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
+
+        /// <summary>
+        /// Quick reply buttons. Mutually exclusive with buttons. Max 13 items.
+        /// </summary>
+        /// <value>Quick reply buttons. Mutually exclusive with buttons. Max 13 items.</value>
+        [DataMember(Name = "quickReplies", EmitDefaultValue = false)]
+        public List<SendInboxMessageRequestQuickRepliesInner> QuickReplies { get; set; }
+
+        /// <summary>
+        /// Action buttons. Mutually exclusive with quickReplies. Max 3 items.
+        /// </summary>
+        /// <value>Action buttons. Mutually exclusive with quickReplies. Max 3 items.</value>
+        [DataMember(Name = "buttons", EmitDefaultValue = false)]
+        public List<SendInboxMessageRequestButtonsInner> Buttons { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Template
+        /// </summary>
+        [DataMember(Name = "template", EmitDefaultValue = false)]
+        public SendInboxMessageRequestTemplate Template { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReplyMarkup
+        /// </summary>
+        [DataMember(Name = "replyMarkup", EmitDefaultValue = false)]
+        public SendInboxMessageRequestReplyMarkup ReplyMarkup { get; set; }
+
+        /// <summary>
+        /// Platform message ID to reply to (Telegram only).
+        /// </summary>
+        /// <value>Platform message ID to reply to (Telegram only).</value>
+        [DataMember(Name = "replyTo", EmitDefaultValue = false)]
+        public string ReplyTo { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -82,6 +196,13 @@ namespace Late.Model
             sb.Append("class SendInboxMessageRequest {\n");
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
+            sb.Append("  QuickReplies: ").Append(QuickReplies).Append("\n");
+            sb.Append("  Buttons: ").Append(Buttons).Append("\n");
+            sb.Append("  Template: ").Append(Template).Append("\n");
+            sb.Append("  ReplyMarkup: ").Append(ReplyMarkup).Append("\n");
+            sb.Append("  MessagingType: ").Append(MessagingType).Append("\n");
+            sb.Append("  MessageTag: ").Append(MessageTag).Append("\n");
+            sb.Append("  ReplyTo: ").Append(ReplyTo).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

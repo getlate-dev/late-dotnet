@@ -58,13 +58,15 @@ namespace Late.Model
         /// <param name="message">message.</param>
         /// <param name="conversation">conversation.</param>
         /// <param name="account">account.</param>
+        /// <param name="metadata">metadata.</param>
         /// <param name="timestamp">timestamp.</param>
-        public WebhookPayloadMessage(EventEnum? varEvent = default, WebhookPayloadMessageMessage message = default, WebhookPayloadMessageConversation conversation = default, WebhookPayloadMessageAccount account = default, DateTime timestamp = default)
+        public WebhookPayloadMessage(EventEnum? varEvent = default, WebhookPayloadMessageMessage message = default, WebhookPayloadMessageConversation conversation = default, WebhookPayloadMessageAccount account = default, WebhookPayloadMessageMetadata metadata = default, DateTime timestamp = default)
         {
             this.Event = varEvent;
             this.Message = message;
             this.Conversation = conversation;
             this.Account = account;
+            this.Metadata = metadata;
             this.Timestamp = timestamp;
         }
 
@@ -87,6 +89,12 @@ namespace Late.Model
         public WebhookPayloadMessageAccount Account { get; set; }
 
         /// <summary>
+        /// Gets or Sets Metadata
+        /// </summary>
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        public WebhookPayloadMessageMetadata Metadata { get; set; }
+
+        /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
         [DataMember(Name = "timestamp", EmitDefaultValue = false)]
@@ -104,6 +112,7 @@ namespace Late.Model
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Conversation: ").Append(Conversation).Append("\n");
             sb.Append("  Account: ").Append(Account).Append("\n");
+            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
