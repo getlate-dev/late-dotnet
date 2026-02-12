@@ -12,6 +12,7 @@ All URIs are relative to *https://getlate.dev/api*
 | [**GetLinkedInOrganizations**](ConnectApi.md#getlinkedinorganizations) | **GET** /v1/accounts/{accountId}/linkedin-organizations | Get available LinkedIn organizations for a connected account |
 | [**GetPendingOAuthData**](ConnectApi.md#getpendingoauthdata) | **GET** /v1/connect/pending-data | Fetch pending OAuth selection data (Headless Mode) |
 | [**GetPinterestBoards**](ConnectApi.md#getpinterestboards) | **GET** /v1/accounts/{accountId}/pinterest-boards | List Pinterest boards for a connected account |
+| [**GetRedditFlairs**](ConnectApi.md#getredditflairs) | **GET** /v1/accounts/{accountId}/reddit-flairs | List available post flairs for a Reddit subreddit |
 | [**GetRedditSubreddits**](ConnectApi.md#getredditsubreddits) | **GET** /v1/accounts/{accountId}/reddit-subreddits | List Reddit subreddits for a connected account |
 | [**GetTelegramConnectStatus**](ConnectApi.md#gettelegramconnectstatus) | **GET** /v1/connect/telegram | Generate Telegram access code |
 | [**HandleOAuthCallback**](ConnectApi.md#handleoauthcallback) | **POST** /v1/connect/{platform} | Complete OAuth token exchange manually (for server-side flows) |
@@ -832,6 +833,107 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Boards list |  -  |
 | **400** | Not a Pinterest account |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Account not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getredditflairs"></a>
+# **GetRedditFlairs**
+> GetRedditFlairs200Response GetRedditFlairs (string accountId, string subreddit)
+
+List available post flairs for a Reddit subreddit
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class GetRedditFlairsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://getlate.dev/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
+            var accountId = "accountId_example";  // string | 
+            var subreddit = "subreddit_example";  // string | Subreddit name (without \"r/\" prefix) to fetch flairs for
+
+            try
+            {
+                // List available post flairs for a Reddit subreddit
+                GetRedditFlairs200Response result = apiInstance.GetRedditFlairs(accountId, subreddit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConnectApi.GetRedditFlairs: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetRedditFlairsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List available post flairs for a Reddit subreddit
+    ApiResponse<GetRedditFlairs200Response> response = apiInstance.GetRedditFlairsWithHttpInfo(accountId, subreddit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConnectApi.GetRedditFlairsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **accountId** | **string** |  |  |
+| **subreddit** | **string** | Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for |  |
+
+### Return type
+
+[**GetRedditFlairs200Response**](GetRedditFlairs200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Flairs list |  -  |
+| **400** | Not a Reddit account or missing subreddit parameter |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Account not found |  -  |
 

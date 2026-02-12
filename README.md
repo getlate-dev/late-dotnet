@@ -188,6 +188,7 @@ Class | Method | HTTP request | Description
 *ConnectApi* | [**GetLinkedInOrganizations**](docs/ConnectApi.md#getlinkedinorganizations) | **GET** /v1/accounts/{accountId}/linkedin-organizations | Get available LinkedIn organizations for a connected account
 *ConnectApi* | [**GetPendingOAuthData**](docs/ConnectApi.md#getpendingoauthdata) | **GET** /v1/connect/pending-data | Fetch pending OAuth selection data (Headless Mode)
 *ConnectApi* | [**GetPinterestBoards**](docs/ConnectApi.md#getpinterestboards) | **GET** /v1/accounts/{accountId}/pinterest-boards | List Pinterest boards for a connected account
+*ConnectApi* | [**GetRedditFlairs**](docs/ConnectApi.md#getredditflairs) | **GET** /v1/accounts/{accountId}/reddit-flairs | List available post flairs for a Reddit subreddit
 *ConnectApi* | [**GetRedditSubreddits**](docs/ConnectApi.md#getredditsubreddits) | **GET** /v1/accounts/{accountId}/reddit-subreddits | List Reddit subreddits for a connected account
 *ConnectApi* | [**GetTelegramConnectStatus**](docs/ConnectApi.md#gettelegramconnectstatus) | **GET** /v1/connect/telegram | Generate Telegram access code
 *ConnectApi* | [**HandleOAuthCallback**](docs/ConnectApi.md#handleoauthcallback) | **POST** /v1/connect/{platform} | Complete OAuth token exchange manually (for server-side flows)
@@ -425,6 +426,8 @@ Class | Method | HTTP request | Description
  - [Model.GetPostLogs200Response](docs/GetPostLogs200Response.md)
  - [Model.GetProfile200Response](docs/GetProfile200Response.md)
  - [Model.GetRedditFeed200Response](docs/GetRedditFeed200Response.md)
+ - [Model.GetRedditFlairs200Response](docs/GetRedditFlairs200Response.md)
+ - [Model.GetRedditFlairs200ResponseFlairsInner](docs/GetRedditFlairs200ResponseFlairsInner.md)
  - [Model.GetRedditSubreddits200Response](docs/GetRedditSubreddits200Response.md)
  - [Model.GetRedditSubreddits200ResponseSubredditsInner](docs/GetRedditSubreddits200ResponseSubredditsInner.md)
  - [Model.GetTelegramCommands200Response](docs/GetTelegramCommands200Response.md)

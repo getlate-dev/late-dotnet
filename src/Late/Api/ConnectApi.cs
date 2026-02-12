@@ -194,6 +194,26 @@ namespace Late.Api
         /// <returns>ApiResponse of GetPinterestBoards200Response</returns>
         ApiResponse<GetPinterestBoards200Response> GetPinterestBoardsWithHttpInfo(string accountId);
         /// <summary>
+        /// List available post flairs for a Reddit subreddit
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId"></param>
+        /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
+        /// <returns>GetRedditFlairs200Response</returns>
+        GetRedditFlairs200Response GetRedditFlairs(string accountId, string subreddit);
+
+        /// <summary>
+        /// List available post flairs for a Reddit subreddit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId"></param>
+        /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
+        /// <returns>ApiResponse of GetRedditFlairs200Response</returns>
+        ApiResponse<GetRedditFlairs200Response> GetRedditFlairsWithHttpInfo(string accountId, string subreddit);
+        /// <summary>
         /// List Reddit subreddits for a connected account
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
@@ -796,6 +816,31 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPinterestBoards200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetPinterestBoards200Response>> GetPinterestBoardsWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List available post flairs for a Reddit subreddit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId"></param>
+        /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetRedditFlairs200Response</returns>
+        System.Threading.Tasks.Task<GetRedditFlairs200Response> GetRedditFlairsAsync(string accountId, string subreddit, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// List available post flairs for a Reddit subreddit
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId"></param>
+        /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetRedditFlairs200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetRedditFlairs200Response>> GetRedditFlairsWithHttpInfoAsync(string accountId, string subreddit, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List Reddit subreddits for a connected account
         /// </summary>
@@ -2512,6 +2557,147 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetPinterestBoards", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List available post flairs for a Reddit subreddit 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId"></param>
+        /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
+        /// <returns>GetRedditFlairs200Response</returns>
+        public GetRedditFlairs200Response GetRedditFlairs(string accountId, string subreddit)
+        {
+            Late.Client.ApiResponse<GetRedditFlairs200Response> localVarResponse = GetRedditFlairsWithHttpInfo(accountId, subreddit);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List available post flairs for a Reddit subreddit 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId"></param>
+        /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
+        /// <returns>ApiResponse of GetRedditFlairs200Response</returns>
+        public Late.Client.ApiResponse<GetRedditFlairs200Response> GetRedditFlairsWithHttpInfo(string accountId, string subreddit)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GetRedditFlairs");
+
+            // verify the required parameter 'subreddit' is set
+            if (subreddit == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'subreddit' when calling ConnectApi->GetRedditFlairs");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "subreddit", subreddit));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetRedditFlairs200Response>("/v1/accounts/{accountId}/reddit-flairs", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetRedditFlairs", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List available post flairs for a Reddit subreddit 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId"></param>
+        /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetRedditFlairs200Response</returns>
+        public async System.Threading.Tasks.Task<GetRedditFlairs200Response> GetRedditFlairsAsync(string accountId, string subreddit, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<GetRedditFlairs200Response> localVarResponse = await GetRedditFlairsWithHttpInfoAsync(accountId, subreddit, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List available post flairs for a Reddit subreddit 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId"></param>
+        /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetRedditFlairs200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetRedditFlairs200Response>> GetRedditFlairsWithHttpInfoAsync(string accountId, string subreddit, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling ConnectApi->GetRedditFlairs");
+
+            // verify the required parameter 'subreddit' is set
+            if (subreddit == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'subreddit' when calling ConnectApi->GetRedditFlairs");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "subreddit", subreddit));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetRedditFlairs200Response>("/v1/accounts/{accountId}/reddit-flairs", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetRedditFlairs", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

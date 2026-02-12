@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Reddit post settings: - Posts are either \&quot;link\&quot; (with URL/media) or \&quot;self\&quot; (text-only) - If media is provided, the first media item&#39;s URL is used as the link - Use forceSelf to override and create a text post with the URL in the body - Subreddit defaults to the account&#39;s configured subreddit if omitted - Use the same accountId multiple times with different subreddit values in platformSpecificData to post to multiple subreddits - Images are automatically compressed if they exceed Reddit&#39;s 20MB limit 
+    /// Reddit post settings: - Posts are either \&quot;link\&quot; (with URL/media) or \&quot;self\&quot; (text-only) - If media is provided, the first media item&#39;s URL is used as the link - Use forceSelf to override and create a text post with the URL in the body - Subreddit defaults to the account&#39;s configured subreddit if omitted - Use the same accountId multiple times with different subreddit values in platformSpecificData to post to multiple subreddits - Images are automatically compressed if they exceed Reddit&#39;s 20MB limit - Some subreddits require a flair; if not provided, the API will attempt to use the first available flair as fallback 
     /// </summary>
     [DataContract(Name = "RedditPlatformData")]
     public partial class RedditPlatformData : IValidatableObject
@@ -39,12 +39,14 @@ namespace Late.Model
         /// <param name="title">Post title. Defaults to the first line of content, truncated to 300 characters..</param>
         /// <param name="url">URL for link posts. If provided (and forceSelf is not true), creates a link post instead of a text post..</param>
         /// <param name="forceSelf">When true, creates a text/self post even when a URL or media is provided..</param>
-        public RedditPlatformData(string subreddit = default, string title = default, string url = default, bool forceSelf = default)
+        /// <param name="flairId">Flair ID for the post. Required by some subreddits. Use GET /api/v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list available flairs. .</param>
+        public RedditPlatformData(string subreddit = default, string title = default, string url = default, bool forceSelf = default, string flairId = default)
         {
             this.Subreddit = subreddit;
             this.Title = title;
             this.Url = url;
             this.ForceSelf = forceSelf;
+            this.FlairId = flairId;
         }
 
         /// <summary>
@@ -79,6 +81,16 @@ namespace Late.Model
         public bool ForceSelf { get; set; }
 
         /// <summary>
+        /// Flair ID for the post. Required by some subreddits. Use GET /api/v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list available flairs. 
+        /// </summary>
+        /// <value>Flair ID for the post. Required by some subreddits. Use GET /api/v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list available flairs. </value>
+        /*
+        <example>a1b2c3d4-e5f6-7890-abcd-ef1234567890</example>
+        */
+        [DataMember(Name = "flairId", EmitDefaultValue = false)]
+        public string FlairId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -90,6 +102,7 @@ namespace Late.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
             sb.Append("  ForceSelf: ").Append(ForceSelf).Append("\n");
+            sb.Append("  FlairId: ").Append(FlairId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

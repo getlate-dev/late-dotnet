@@ -161,6 +161,8 @@ docs/GetPinterestBoards200ResponseBoardsInner.md
 docs/GetPostLogs200Response.md
 docs/GetProfile200Response.md
 docs/GetRedditFeed200Response.md
+docs/GetRedditFlairs200Response.md
+docs/GetRedditFlairs200ResponseFlairsInner.md
 docs/GetRedditSubreddits200Response.md
 docs/GetRedditSubreddits200ResponseSubredditsInner.md
 docs/GetTelegramCommands200Response.md
@@ -423,8 +425,8 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
-src/Late.Test/Model/ListInboxConversations200ResponseDataInnerInstagramProfileTests.cs
-src/Late.Test/Model/WebhookPayloadMessageMessageSenderInstagramProfileTests.cs
+src/Late.Test/Model/GetRedditFlairs200ResponseFlairsInnerTests.cs
+src/Late.Test/Model/GetRedditFlairs200ResponseTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -616,6 +618,8 @@ src/Late/Model/GetPinterestBoards200ResponseBoardsInner.cs
 src/Late/Model/GetPostLogs200Response.cs
 src/Late/Model/GetProfile200Response.cs
 src/Late/Model/GetRedditFeed200Response.cs
+src/Late/Model/GetRedditFlairs200Response.cs
+src/Late/Model/GetRedditFlairs200ResponseFlairsInner.cs
 src/Late/Model/GetRedditSubreddits200Response.cs
 src/Late/Model/GetRedditSubreddits200ResponseSubredditsInner.cs
 src/Late/Model/GetTelegramCommands200Response.cs
