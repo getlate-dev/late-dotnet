@@ -33,13 +33,41 @@ namespace Late.Model
     public partial class SendPrivateReplyToComment200Response : IValidatableObject
     {
         /// <summary>
+        /// Defines Platform
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PlatformEnum
+        {
+            /// <summary>
+            /// Enum Instagram for value: instagram
+            /// </summary>
+            [EnumMember(Value = "instagram")]
+            Instagram = 1,
+
+            /// <summary>
+            /// Enum Facebook for value: facebook
+            /// </summary>
+            [EnumMember(Value = "facebook")]
+            Facebook = 2
+        }
+
+
+        /// <summary>
+        /// Gets or Sets Platform
+        /// </summary>
+        /*
+        <example>instagram</example>
+        */
+        [DataMember(Name = "platform", EmitDefaultValue = false)]
+        public PlatformEnum? Platform { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="SendPrivateReplyToComment200Response" /> class.
         /// </summary>
         /// <param name="status">status.</param>
         /// <param name="messageId">The ID of the sent message.</param>
         /// <param name="commentId">The comment ID that was replied to.</param>
         /// <param name="platform">platform.</param>
-        public SendPrivateReplyToComment200Response(string status = default, string messageId = default, string commentId = default, string platform = default)
+        public SendPrivateReplyToComment200Response(string status = default, string messageId = default, string commentId = default, PlatformEnum? platform = default)
         {
             this.Status = status;
             this.MessageId = messageId;
@@ -69,15 +97,6 @@ namespace Late.Model
         /// <value>The comment ID that was replied to</value>
         [DataMember(Name = "commentId", EmitDefaultValue = false)]
         public string CommentId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Platform
-        /// </summary>
-        /*
-        <example>instagram</example>
-        */
-        [DataMember(Name = "platform", EmitDefaultValue = false)]
-        public string Platform { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

@@ -40,7 +40,7 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SendPrivateReplyToCommentRequest" /> class.
         /// </summary>
-        /// <param name="accountId">The Instagram social account ID (required).</param>
+        /// <param name="accountId">The social account ID (Instagram or Facebook) (required).</param>
         /// <param name="message">The message text to send as a private DM (required).</param>
         public SendPrivateReplyToCommentRequest(string accountId = default, string message = default)
         {
@@ -59,9 +59,9 @@ namespace Late.Model
         }
 
         /// <summary>
-        /// The Instagram social account ID
+        /// The social account ID (Instagram or Facebook)
         /// </summary>
-        /// <value>The Instagram social account ID</value>
+        /// <value>The social account ID (Instagram or Facebook)</value>
         [DataMember(Name = "accountId", IsRequired = true, EmitDefaultValue = true)]
         public string AccountId { get; set; }
 

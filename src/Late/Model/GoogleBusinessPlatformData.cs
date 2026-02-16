@@ -27,7 +27,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Google Business Profile post settings: - Posts support text content and a single image (no videos) - Images must be publicly accessible URLs - Call-to-action buttons drive user engagement - Posts appear on your Google Business Profile and in Google Search/Maps - Use locationId to post to multiple locations from the same account connection 
+    /// Google Business Profile post settings: - Posts support text content and a single image (no videos) - Images must be publicly accessible URLs - Call-to-action buttons drive user engagement - Posts appear on your Google Business Profile and in Google Search/Maps - Use locationId to post to multiple locations from the same account connection - Language is auto-detected from content; override with languageCode if needed 
     /// </summary>
     [DataContract(Name = "GoogleBusinessPlatformData")]
     public partial class GoogleBusinessPlatformData : IValidatableObject
@@ -36,10 +36,12 @@ namespace Late.Model
         /// Initializes a new instance of the <see cref="GoogleBusinessPlatformData" /> class.
         /// </summary>
         /// <param name="locationId">Target Google Business location ID for multi-location posting. Format: \&quot;locations/123456789\&quot; If omitted, uses the selected/default location on the connection. Use GET /api/v1/accounts/{id}/gmb-locations to list available locations. .</param>
+        /// <param name="languageCode">BCP 47 language code for the post content (e.g., \&quot;en\&quot;, \&quot;de\&quot;, \&quot;es\&quot;, \&quot;fr\&quot;). If omitted, the language is automatically detected from the post text. Setting this explicitly is recommended when auto-detection may not be accurate (e.g., very short posts, mixed-language content, or transliterated text). .</param>
         /// <param name="callToAction">callToAction.</param>
-        public GoogleBusinessPlatformData(string locationId = default, GoogleBusinessPlatformDataCallToAction callToAction = default)
+        public GoogleBusinessPlatformData(string locationId = default, string languageCode = default, GoogleBusinessPlatformDataCallToAction callToAction = default)
         {
             this.LocationId = locationId;
+            this.LanguageCode = languageCode;
             this.CallToAction = callToAction;
         }
 
@@ -49,6 +51,16 @@ namespace Late.Model
         /// <value>Target Google Business location ID for multi-location posting. Format: \&quot;locations/123456789\&quot; If omitted, uses the selected/default location on the connection. Use GET /api/v1/accounts/{id}/gmb-locations to list available locations. </value>
         [DataMember(Name = "locationId", EmitDefaultValue = false)]
         public string LocationId { get; set; }
+
+        /// <summary>
+        /// BCP 47 language code for the post content (e.g., \&quot;en\&quot;, \&quot;de\&quot;, \&quot;es\&quot;, \&quot;fr\&quot;). If omitted, the language is automatically detected from the post text. Setting this explicitly is recommended when auto-detection may not be accurate (e.g., very short posts, mixed-language content, or transliterated text). 
+        /// </summary>
+        /// <value>BCP 47 language code for the post content (e.g., \&quot;en\&quot;, \&quot;de\&quot;, \&quot;es\&quot;, \&quot;fr\&quot;). If omitted, the language is automatically detected from the post text. Setting this explicitly is recommended when auto-detection may not be accurate (e.g., very short posts, mixed-language content, or transliterated text). </value>
+        /*
+        <example>de</example>
+        */
+        [DataMember(Name = "languageCode", EmitDefaultValue = false)]
+        public string LanguageCode { get; set; }
 
         /// <summary>
         /// Gets or Sets CallToAction
@@ -65,6 +77,7 @@ namespace Late.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GoogleBusinessPlatformData {\n");
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
+            sb.Append("  LanguageCode: ").Append(LanguageCode).Append("\n");
             sb.Append("  CallToAction: ").Append(CallToAction).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
