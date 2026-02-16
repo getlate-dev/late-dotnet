@@ -43,7 +43,8 @@ namespace Late.Model
         /// <param name="username">Instagram username (@ symbol is optional and will be removed automatically) (required).</param>
         /// <param name="x">X coordinate position from left edge (0.0 &#x3D; left, 0.5 &#x3D; center, 1.0 &#x3D; right) (required).</param>
         /// <param name="y">Y coordinate position from top edge (0.0 &#x3D; top, 0.5 &#x3D; center, 1.0 &#x3D; bottom) (required).</param>
-        public InstagramPlatformDataUserTagsInner(string username = default, decimal x = default, decimal y = default)
+        /// <param name="mediaIndex">Zero-based index of the carousel item to tag. Defaults to 0 (first image) if omitted. Only relevant for carousel posts. Tags targeting video items or out-of-range indices are ignored. .</param>
+        public InstagramPlatformDataUserTagsInner(string username = default, decimal x = default, decimal y = default, int mediaIndex = default)
         {
             // to ensure "username" is required (not null)
             if (username == null)
@@ -53,6 +54,7 @@ namespace Late.Model
             this.Username = username;
             this.X = x;
             this.Y = y;
+            this.MediaIndex = mediaIndex;
         }
 
         /// <summary>
@@ -86,6 +88,16 @@ namespace Late.Model
         public decimal Y { get; set; }
 
         /// <summary>
+        /// Zero-based index of the carousel item to tag. Defaults to 0 (first image) if omitted. Only relevant for carousel posts. Tags targeting video items or out-of-range indices are ignored. 
+        /// </summary>
+        /// <value>Zero-based index of the carousel item to tag. Defaults to 0 (first image) if omitted. Only relevant for carousel posts. Tags targeting video items or out-of-range indices are ignored. </value>
+        /*
+        <example>0</example>
+        */
+        [DataMember(Name = "mediaIndex", EmitDefaultValue = false)]
+        public int MediaIndex { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -96,6 +108,7 @@ namespace Late.Model
             sb.Append("  Username: ").Append(Username).Append("\n");
             sb.Append("  X: ").Append(X).Append("\n");
             sb.Append("  Y: ").Append(Y).Append("\n");
+            sb.Append("  MediaIndex: ").Append(MediaIndex).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -138,6 +151,12 @@ namespace Late.Model
             if (this.Y < (decimal)0)
             {
                 yield return new ValidationResult("Invalid value for Y, must be a value greater than or equal to 0.", new [] { "Y" });
+            }
+
+            // MediaIndex (int) minimum
+            if (this.MediaIndex < (int)0)
+            {
+                yield return new ValidationResult("Invalid value for MediaIndex, must be a value greater than or equal to 0.", new [] { "MediaIndex" });
             }
 
             yield break;
