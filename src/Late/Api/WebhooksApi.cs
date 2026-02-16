@@ -124,8 +124,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
-        /// <returns>TestWebhook200Response</returns>
-        TestWebhook200Response TestWebhook(TestWebhookRequest testWebhookRequest);
+        /// <returns>UnpublishPost200Response</returns>
+        UnpublishPost200Response TestWebhook(TestWebhookRequest testWebhookRequest);
 
         /// <summary>
         /// Send test webhook
@@ -135,8 +135,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
-        /// <returns>ApiResponse of TestWebhook200Response</returns>
-        ApiResponse<TestWebhook200Response> TestWebhookWithHttpInfo(TestWebhookRequest testWebhookRequest);
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        ApiResponse<UnpublishPost200Response> TestWebhookWithHttpInfo(TestWebhookRequest testWebhookRequest);
         /// <summary>
         /// Update a webhook
         /// </summary>
@@ -272,8 +272,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestWebhook200Response</returns>
-        System.Threading.Tasks.Task<TestWebhook200Response> TestWebhookAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of UnpublishPost200Response</returns>
+        System.Threading.Tasks.Task<UnpublishPost200Response> TestWebhookAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Send test webhook
@@ -284,8 +284,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestWebhook200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestWebhook200Response>> TestWebhookWithHttpInfoAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> TestWebhookWithHttpInfoAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a webhook
         /// </summary>
@@ -1057,10 +1057,10 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
-        /// <returns>TestWebhook200Response</returns>
-        public TestWebhook200Response TestWebhook(TestWebhookRequest testWebhookRequest)
+        /// <returns>UnpublishPost200Response</returns>
+        public UnpublishPost200Response TestWebhook(TestWebhookRequest testWebhookRequest)
         {
-            Late.Client.ApiResponse<TestWebhook200Response> localVarResponse = TestWebhookWithHttpInfo(testWebhookRequest);
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = TestWebhookWithHttpInfo(testWebhookRequest);
             return localVarResponse.Data;
         }
 
@@ -1069,8 +1069,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
-        /// <returns>ApiResponse of TestWebhook200Response</returns>
-        public Late.Client.ApiResponse<TestWebhook200Response> TestWebhookWithHttpInfo(TestWebhookRequest testWebhookRequest)
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        public Late.Client.ApiResponse<UnpublishPost200Response> TestWebhookWithHttpInfo(TestWebhookRequest testWebhookRequest)
         {
             // verify the required parameter 'testWebhookRequest' is set
             if (testWebhookRequest == null)
@@ -1103,7 +1103,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TestWebhook200Response>("/v1/webhooks/test", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<UnpublishPost200Response>("/v1/webhooks/test", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1120,10 +1120,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestWebhook200Response</returns>
-        public async System.Threading.Tasks.Task<TestWebhook200Response> TestWebhookAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of UnpublishPost200Response</returns>
+        public async System.Threading.Tasks.Task<UnpublishPost200Response> TestWebhookAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<TestWebhook200Response> localVarResponse = await TestWebhookWithHttpInfoAsync(testWebhookRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = await TestWebhookWithHttpInfoAsync(testWebhookRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1133,8 +1133,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestWebhook200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<TestWebhook200Response>> TestWebhookWithHttpInfoAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UnpublishPost200Response>> TestWebhookWithHttpInfoAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'testWebhookRequest' is set
             if (testWebhookRequest == null)
@@ -1170,7 +1170,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TestWebhook200Response>("/v1/webhooks/test", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UnpublishPost200Response>("/v1/webhooks/test", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

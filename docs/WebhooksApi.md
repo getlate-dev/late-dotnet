@@ -412,7 +412,7 @@ This endpoint does not need any parameter.
 
 <a id="testwebhook"></a>
 # **TestWebhook**
-> TestWebhook200Response TestWebhook (TestWebhookRequest testWebhookRequest)
+> UnpublishPost200Response TestWebhook (TestWebhookRequest testWebhookRequest)
 
 Send test webhook
 
@@ -447,7 +447,7 @@ namespace Example
             try
             {
                 // Send test webhook
-                TestWebhook200Response result = apiInstance.TestWebhook(testWebhookRequest);
+                UnpublishPost200Response result = apiInstance.TestWebhook(testWebhookRequest);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -468,7 +468,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Send test webhook
-    ApiResponse<TestWebhook200Response> response = apiInstance.TestWebhookWithHttpInfo(testWebhookRequest);
+    ApiResponse<UnpublishPost200Response> response = apiInstance.TestWebhookWithHttpInfo(testWebhookRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -489,7 +489,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**TestWebhook200Response**](TestWebhook200Response.md)
+[**UnpublishPost200Response**](UnpublishPost200Response.md)
 
 ### Authorization
 

@@ -167,6 +167,29 @@ namespace Late.Api
         /// <returns>ApiResponse of PostRetryResponse</returns>
         ApiResponse<PostRetryResponse> RetryPostWithHttpInfo(string postId);
         /// <summary>
+        /// Delete a published post from a social media platform
+        /// </summary>
+        /// <remarks>
+        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="unpublishPostRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        UnpublishPost200Response UnpublishPost(string postId, UnpublishPostRequest unpublishPostRequest);
+
+        /// <summary>
+        /// Delete a published post from a social media platform
+        /// </summary>
+        /// <remarks>
+        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="unpublishPostRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        ApiResponse<UnpublishPost200Response> UnpublishPostWithHttpInfo(string postId, UnpublishPostRequest unpublishPostRequest);
+        /// <summary>
         /// Update a post
         /// </summary>
         /// <remarks>
@@ -354,6 +377,31 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostRetryResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PostRetryResponse>> RetryPostWithHttpInfoAsync(string postId, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete a published post from a social media platform
+        /// </summary>
+        /// <remarks>
+        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="unpublishPostRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        System.Threading.Tasks.Task<UnpublishPost200Response> UnpublishPostAsync(string postId, UnpublishPostRequest unpublishPostRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete a published post from a social media platform
+        /// </summary>
+        /// <remarks>
+        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="unpublishPostRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> UnpublishPostWithHttpInfoAsync(string postId, UnpublishPostRequest unpublishPostRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a post
         /// </summary>
@@ -1456,6 +1504,149 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RetryPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a published post from a social media platform Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="unpublishPostRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        public UnpublishPost200Response UnpublishPost(string postId, UnpublishPostRequest unpublishPostRequest)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = UnpublishPostWithHttpInfo(postId, unpublishPostRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete a published post from a social media platform Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="unpublishPostRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        public Late.Client.ApiResponse<UnpublishPost200Response> UnpublishPostWithHttpInfo(string postId, UnpublishPostRequest unpublishPostRequest)
+        {
+            // verify the required parameter 'postId' is set
+            if (postId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'postId' when calling PostsApi->UnpublishPost");
+
+            // verify the required parameter 'unpublishPostRequest' is set
+            if (unpublishPostRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'unpublishPostRequest' when calling PostsApi->UnpublishPost");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("postId", Late.Client.ClientUtils.ParameterToString(postId)); // path parameter
+            localVarRequestOptions.Data = unpublishPostRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<UnpublishPost200Response>("/v1/posts/{postId}/unpublish", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UnpublishPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete a published post from a social media platform Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="unpublishPostRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        public async System.Threading.Tasks.Task<UnpublishPost200Response> UnpublishPostAsync(string postId, UnpublishPostRequest unpublishPostRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = await UnpublishPostWithHttpInfoAsync(postId, unpublishPostRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete a published post from a social media platform Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="unpublishPostRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UnpublishPost200Response>> UnpublishPostWithHttpInfoAsync(string postId, UnpublishPostRequest unpublishPostRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'postId' is set
+            if (postId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'postId' when calling PostsApi->UnpublishPost");
+
+            // verify the required parameter 'unpublishPostRequest' is set
+            if (unpublishPostRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'unpublishPostRequest' when calling PostsApi->UnpublishPost");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("postId", Late.Client.ClientUtils.ParameterToString(postId)); // path parameter
+            localVarRequestOptions.Data = unpublishPostRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UnpublishPost200Response>("/v1/posts/{postId}/unpublish", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UnpublishPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

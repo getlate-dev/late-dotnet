@@ -10,6 +10,7 @@ All URIs are relative to *https://getlate.dev/api*
 | [**GetPost**](PostsApi.md#getpost) | **GET** /v1/posts/{postId} | Get a single post |
 | [**ListPosts**](PostsApi.md#listposts) | **GET** /v1/posts | List posts visible to the authenticated user |
 | [**RetryPost**](PostsApi.md#retrypost) | **POST** /v1/posts/{postId}/retry | Retry publishing a failed or partial post |
+| [**UnpublishPost**](PostsApi.md#unpublishpost) | **POST** /v1/posts/{postId}/unpublish | Delete a published post from a social media platform |
 | [**UpdatePost**](PostsApi.md#updatepost) | **PUT** /v1/posts/{postId} | Update a post |
 
 <a id="bulkuploadposts"></a>
@@ -635,6 +636,111 @@ catch (ApiException e)
 | **404** | Resource not found |  -  |
 | **409** | Post is currently publishing |  -  |
 | **429** | Rate limit exceeded. Can be triggered by: - **API rate limit**: Requests per minute exceeded - **Velocity limit**: 15 posts per hour per account exceeded - **Account cooldown**: Account temporarily rate-limited due to repeated errors  |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="unpublishpost"></a>
+# **UnpublishPost**
+> UnpublishPost200Response UnpublishPost (string postId, UnpublishPostRequest unpublishPostRequest)
+
+Delete a published post from a social media platform
+
+Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \"cancelled\".  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class UnpublishPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://getlate.dev/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new PostsApi(httpClient, config, httpClientHandler);
+            var postId = "postId_example";  // string | 
+            var unpublishPostRequest = new UnpublishPostRequest(); // UnpublishPostRequest | 
+
+            try
+            {
+                // Delete a published post from a social media platform
+                UnpublishPost200Response result = apiInstance.UnpublishPost(postId, unpublishPostRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PostsApi.UnpublishPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UnpublishPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete a published post from a social media platform
+    ApiResponse<UnpublishPost200Response> response = apiInstance.UnpublishPostWithHttpInfo(postId, unpublishPostRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PostsApi.UnpublishPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **postId** | **string** |  |  |
+| **unpublishPostRequest** | [**UnpublishPostRequest**](UnpublishPostRequest.md) |  |  |
+
+### Return type
+
+[**UnpublishPost200Response**](UnpublishPost200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Post deleted from platform |  -  |
+| **400** | Invalid request. Possible reasons: - Platform not recognized or not supported for deletion - Post does not have the specified platform - Post is not in \&quot;published\&quot; status on that platform - No platform post ID found (post may not have been published correctly) - No access token (account needs to be reconnected)  |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Resource not found |  -  |
+| **500** | Platform API deletion failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
