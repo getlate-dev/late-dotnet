@@ -4,21 +4,21 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CheckInstagramHashtags**](ToolsApi.md#checkinstagramhashtags) | **POST** /v1/tools/instagram/hashtag-checker | Check Instagram hashtags for bans |
-| [**DownloadBlueskyMedia**](ToolsApi.md#downloadblueskymedia) | **GET** /v1/tools/bluesky/download | Download Bluesky video |
+| [**CheckInstagramHashtags**](ToolsApi.md#checkinstagramhashtags) | **POST** /v1/tools/instagram/hashtag-checker | Check Instagram hashtag bans |
+| [**DownloadBlueskyMedia**](ToolsApi.md#downloadblueskymedia) | **GET** /v1/tools/bluesky/download | Download Bluesky media |
 | [**DownloadFacebookVideo**](ToolsApi.md#downloadfacebookvideo) | **GET** /v1/tools/facebook/download | Download Facebook video |
-| [**DownloadInstagramMedia**](ToolsApi.md#downloadinstagrammedia) | **GET** /v1/tools/instagram/download | Download Instagram reel or post |
+| [**DownloadInstagramMedia**](ToolsApi.md#downloadinstagrammedia) | **GET** /v1/tools/instagram/download | Download Instagram media |
 | [**DownloadLinkedInVideo**](ToolsApi.md#downloadlinkedinvideo) | **GET** /v1/tools/linkedin/download | Download LinkedIn video |
 | [**DownloadTikTokVideo**](ToolsApi.md#downloadtiktokvideo) | **GET** /v1/tools/tiktok/download | Download TikTok video |
-| [**DownloadTwitterMedia**](ToolsApi.md#downloadtwittermedia) | **GET** /v1/tools/twitter/download | Download Twitter/X video |
-| [**DownloadYouTubeVideo**](ToolsApi.md#downloadyoutubevideo) | **GET** /v1/tools/youtube/download | Download YouTube video or audio |
-| [**GetYouTubeTranscript**](ToolsApi.md#getyoutubetranscript) | **GET** /v1/tools/youtube/transcript | Get YouTube video transcript |
+| [**DownloadTwitterMedia**](ToolsApi.md#downloadtwittermedia) | **GET** /v1/tools/twitter/download | Download Twitter/X media |
+| [**DownloadYouTubeVideo**](ToolsApi.md#downloadyoutubevideo) | **GET** /v1/tools/youtube/download | Download YouTube video |
+| [**GetYouTubeTranscript**](ToolsApi.md#getyoutubetranscript) | **GET** /v1/tools/youtube/transcript | Get YouTube transcript |
 
 <a id="checkinstagramhashtags"></a>
 # **CheckInstagramHashtags**
 > CheckInstagramHashtags200Response CheckInstagramHashtags (CheckInstagramHashtagsRequest checkInstagramHashtagsRequest)
 
-Check Instagram hashtags for bans
+Check Instagram hashtag bans
 
 Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
 
@@ -50,7 +50,7 @@ namespace Example
 
             try
             {
-                // Check Instagram hashtags for bans
+                // Check Instagram hashtag bans
                 CheckInstagramHashtags200Response result = apiInstance.CheckInstagramHashtags(checkInstagramHashtagsRequest);
                 Debug.WriteLine(result);
             }
@@ -71,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Check Instagram hashtags for bans
+    // Check Instagram hashtag bans
     ApiResponse<CheckInstagramHashtags200Response> response = apiInstance.CheckInstagramHashtagsWithHttpInfo(checkInstagramHashtagsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -116,7 +116,7 @@ catch (ApiException e)
 # **DownloadBlueskyMedia**
 > DownloadBlueskyMedia200Response DownloadBlueskyMedia (string url)
 
-Download Bluesky video
+Download Bluesky media
 
 Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
 
@@ -148,7 +148,7 @@ namespace Example
 
             try
             {
-                // Download Bluesky video
+                // Download Bluesky media
                 DownloadBlueskyMedia200Response result = apiInstance.DownloadBlueskyMedia(url);
                 Debug.WriteLine(result);
             }
@@ -169,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Download Bluesky video
+    // Download Bluesky media
     ApiResponse<DownloadBlueskyMedia200Response> response = apiInstance.DownloadBlueskyMediaWithHttpInfo(url);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -312,7 +312,7 @@ catch (ApiException e)
 # **DownloadInstagramMedia**
 > DownloadInstagramMedia200Response DownloadInstagramMedia (string url)
 
-Download Instagram reel or post
+Download Instagram media
 
 Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
 
@@ -344,7 +344,7 @@ namespace Example
 
             try
             {
-                // Download Instagram reel or post
+                // Download Instagram media
                 DownloadInstagramMedia200Response result = apiInstance.DownloadInstagramMedia(url);
                 Debug.WriteLine(result);
             }
@@ -365,7 +365,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Download Instagram reel or post
+    // Download Instagram media
     ApiResponse<DownloadInstagramMedia200Response> response = apiInstance.DownloadInstagramMediaWithHttpInfo(url);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -610,7 +610,7 @@ catch (ApiException e)
 # **DownloadTwitterMedia**
 > DownloadInstagramMedia200Response DownloadTwitterMedia (string url, string? action = null, string? formatId = null)
 
-Download Twitter/X video
+Download Twitter/X media
 
 Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
 
@@ -644,7 +644,7 @@ namespace Example
 
             try
             {
-                // Download Twitter/X video
+                // Download Twitter/X media
                 DownloadInstagramMedia200Response result = apiInstance.DownloadTwitterMedia(url, action, formatId);
                 Debug.WriteLine(result);
             }
@@ -665,7 +665,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Download Twitter/X video
+    // Download Twitter/X media
     ApiResponse<DownloadInstagramMedia200Response> response = apiInstance.DownloadTwitterMediaWithHttpInfo(url, action, formatId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -712,7 +712,7 @@ catch (ApiException e)
 # **DownloadYouTubeVideo**
 > DownloadYouTubeVideo200Response DownloadYouTubeVideo (string url, string? action = null, string? format = null, string? quality = null, string? formatId = null)
 
-Download YouTube video or audio
+Download YouTube video
 
 Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
 
@@ -748,7 +748,7 @@ namespace Example
 
             try
             {
-                // Download YouTube video or audio
+                // Download YouTube video
                 DownloadYouTubeVideo200Response result = apiInstance.DownloadYouTubeVideo(url, action, format, quality, formatId);
                 Debug.WriteLine(result);
             }
@@ -769,7 +769,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Download YouTube video or audio
+    // Download YouTube video
     ApiResponse<DownloadYouTubeVideo200Response> response = apiInstance.DownloadYouTubeVideoWithHttpInfo(url, action, format, quality, formatId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -821,7 +821,7 @@ catch (ApiException e)
 # **GetYouTubeTranscript**
 > GetYouTubeTranscript200Response GetYouTubeTranscript (string url, string? lang = null)
 
-Get YouTube video transcript
+Get YouTube transcript
 
 Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
 
@@ -854,7 +854,7 @@ namespace Example
 
             try
             {
-                // Get YouTube video transcript
+                // Get YouTube transcript
                 GetYouTubeTranscript200Response result = apiInstance.GetYouTubeTranscript(url, lang);
                 Debug.WriteLine(result);
             }
@@ -875,7 +875,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get YouTube video transcript
+    // Get YouTube transcript
     ApiResponse<GetYouTubeTranscript200Response> response = apiInstance.GetYouTubeTranscriptWithHttpInfo(url, lang);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

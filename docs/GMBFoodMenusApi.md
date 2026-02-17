@@ -4,14 +4,14 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetGoogleBusinessFoodMenus**](GMBFoodMenusApi.md#getgooglebusinessfoodmenus) | **GET** /v1/accounts/{accountId}/gmb-food-menus | Get Google Business Profile food menus |
-| [**UpdateGoogleBusinessFoodMenus**](GMBFoodMenusApi.md#updategooglebusinessfoodmenus) | **PUT** /v1/accounts/{accountId}/gmb-food-menus | Update Google Business Profile food menus |
+| [**GetGoogleBusinessFoodMenus**](GMBFoodMenusApi.md#getgooglebusinessfoodmenus) | **GET** /v1/accounts/{accountId}/gmb-food-menus | Get food menus |
+| [**UpdateGoogleBusinessFoodMenus**](GMBFoodMenusApi.md#updategooglebusinessfoodmenus) | **PUT** /v1/accounts/{accountId}/gmb-food-menus | Update food menus |
 
 <a id="getgooglebusinessfoodmenus"></a>
 # **GetGoogleBusinessFoodMenus**
 > GetGoogleBusinessFoodMenus200Response GetGoogleBusinessFoodMenus (string accountId)
 
-Get Google Business Profile food menus
+Get food menus
 
 Fetches food menus for a connected Google Business Profile location.  Returns the full menu structure including: - Menu names and descriptions - Sections (e.g. Appetizers, Entrees, Drinks) - Items with labels, pricing, dietary info, and allergens - Item options/variants  Only available for locations with food menu support (restaurants, cafes, etc.). 
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // Get Google Business Profile food menus
+                // Get food menus
                 GetGoogleBusinessFoodMenus200Response result = apiInstance.GetGoogleBusinessFoodMenus(accountId);
                 Debug.WriteLine(result);
             }
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Google Business Profile food menus
+    // Get food menus
     ApiResponse<GetGoogleBusinessFoodMenus200Response> response = apiInstance.GetGoogleBusinessFoodMenusWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -114,7 +114,7 @@ catch (ApiException e)
 # **UpdateGoogleBusinessFoodMenus**
 > UpdateGoogleBusinessFoodMenus200Response UpdateGoogleBusinessFoodMenus (string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest)
 
-Update Google Business Profile food menus
+Update food menus
 
 Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use `updateMask` for partial updates (e.g. `\"menus\"` to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
 
@@ -147,7 +147,7 @@ namespace Example
 
             try
             {
-                // Update Google Business Profile food menus
+                // Update food menus
                 UpdateGoogleBusinessFoodMenus200Response result = apiInstance.UpdateGoogleBusinessFoodMenus(accountId, updateGoogleBusinessFoodMenusRequest);
                 Debug.WriteLine(result);
             }
@@ -168,7 +168,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update Google Business Profile food menus
+    // Update food menus
     ApiResponse<UpdateGoogleBusinessFoodMenus200Response> response = apiInstance.UpdateGoogleBusinessFoodMenusWithHttpInfo(accountId, updateGoogleBusinessFoodMenusRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

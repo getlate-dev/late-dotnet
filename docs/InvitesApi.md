@@ -4,13 +4,13 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateInviteToken**](InvitesApi.md#createinvitetoken) | **POST** /v1/invite/tokens | Create a team member invite token |
+| [**CreateInviteToken**](InvitesApi.md#createinvitetoken) | **POST** /v1/invite/tokens | Create invite token |
 
 <a id="createinvitetoken"></a>
 # **CreateInviteToken**
 > CreateInviteToken201Response CreateInviteToken (CreateInviteTokenRequest createInviteTokenRequest)
 
-Create a team member invite token
+Create invite token
 
 Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
 
@@ -42,7 +42,7 @@ namespace Example
 
             try
             {
-                // Create a team member invite token
+                // Create invite token
                 CreateInviteToken201Response result = apiInstance.CreateInviteToken(createInviteTokenRequest);
                 Debug.WriteLine(result);
             }
@@ -63,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a team member invite token
+    // Create invite token
     ApiResponse<CreateInviteToken201Response> response = apiInstance.CreateInviteTokenWithHttpInfo(createInviteTokenRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

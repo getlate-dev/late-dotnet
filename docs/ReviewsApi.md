@@ -4,15 +4,15 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DeleteInboxReviewReply**](ReviewsApi.md#deleteinboxreviewreply) | **DELETE** /v1/inbox/reviews/{reviewId}/reply | Delete a review reply |
-| [**ListInboxReviews**](ReviewsApi.md#listinboxreviews) | **GET** /v1/inbox/reviews | List reviews across all accounts |
-| [**ReplyToInboxReview**](ReviewsApi.md#replytoinboxreview) | **POST** /v1/inbox/reviews/{reviewId}/reply | Reply to a review |
+| [**DeleteInboxReviewReply**](ReviewsApi.md#deleteinboxreviewreply) | **DELETE** /v1/inbox/reviews/{reviewId}/reply | Delete review reply |
+| [**ListInboxReviews**](ReviewsApi.md#listinboxreviews) | **GET** /v1/inbox/reviews | List reviews |
+| [**ReplyToInboxReview**](ReviewsApi.md#replytoinboxreview) | **POST** /v1/inbox/reviews/{reviewId}/reply | Reply to review |
 
 <a id="deleteinboxreviewreply"></a>
 # **DeleteInboxReviewReply**
 > DeleteInboxReviewReply200Response DeleteInboxReviewReply (string reviewId, DeleteInboxReviewReplyRequest deleteInboxReviewReplyRequest)
 
-Delete a review reply
+Delete review reply
 
 Delete a reply to a review (Google Business only). Requires accountId in request body.
 
@@ -45,7 +45,7 @@ namespace Example
 
             try
             {
-                // Delete a review reply
+                // Delete review reply
                 DeleteInboxReviewReply200Response result = apiInstance.DeleteInboxReviewReply(reviewId, deleteInboxReviewReplyRequest);
                 Debug.WriteLine(result);
             }
@@ -66,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a review reply
+    // Delete review reply
     ApiResponse<DeleteInboxReviewReply200Response> response = apiInstance.DeleteInboxReviewReplyWithHttpInfo(reviewId, deleteInboxReviewReplyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -114,7 +114,7 @@ catch (ApiException e)
 # **ListInboxReviews**
 > ListInboxReviews200Response ListInboxReviews (string? profileId = null, string? platform = null, int? minRating = null, int? maxRating = null, bool? hasReply = null, string? sortBy = null, string? sortOrder = null, int? limit = null, string? cursor = null, string? accountId = null)
 
-List reviews across all accounts
+List reviews
 
 Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
 
@@ -155,7 +155,7 @@ namespace Example
 
             try
             {
-                // List reviews across all accounts
+                // List reviews
                 ListInboxReviews200Response result = apiInstance.ListInboxReviews(profileId, platform, minRating, maxRating, hasReply, sortBy, sortOrder, limit, cursor, accountId);
                 Debug.WriteLine(result);
             }
@@ -176,7 +176,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List reviews across all accounts
+    // List reviews
     ApiResponse<ListInboxReviews200Response> response = apiInstance.ListInboxReviewsWithHttpInfo(profileId, platform, minRating, maxRating, hasReply, sortBy, sortOrder, limit, cursor, accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -232,7 +232,7 @@ catch (ApiException e)
 # **ReplyToInboxReview**
 > ReplyToInboxReview200Response ReplyToInboxReview (string reviewId, ReplyToInboxReviewRequest replyToInboxReviewRequest)
 
-Reply to a review
+Reply to review
 
 Post a reply to a review. Requires accountId in request body.
 
@@ -265,7 +265,7 @@ namespace Example
 
             try
             {
-                // Reply to a review
+                // Reply to review
                 ReplyToInboxReview200Response result = apiInstance.ReplyToInboxReview(reviewId, replyToInboxReviewRequest);
                 Debug.WriteLine(result);
             }
@@ -286,7 +286,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Reply to a review
+    // Reply to review
     ApiResponse<ReplyToInboxReview200Response> response = apiInstance.ReplyToInboxReviewWithHttpInfo(reviewId, replyToInboxReviewRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

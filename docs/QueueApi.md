@@ -4,18 +4,18 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateQueueSlot**](QueueApi.md#createqueueslot) | **POST** /v1/queue/slots | Create a new queue for a profile |
-| [**DeleteQueueSlot**](QueueApi.md#deletequeueslot) | **DELETE** /v1/queue/slots | Delete a queue schedule |
-| [**GetNextQueueSlot**](QueueApi.md#getnextqueueslot) | **GET** /v1/queue/next-slot | Preview the next available queue slot (informational only) |
-| [**ListQueueSlots**](QueueApi.md#listqueueslots) | **GET** /v1/queue/slots | Get queue schedules for a profile |
-| [**PreviewQueue**](QueueApi.md#previewqueue) | **GET** /v1/queue/preview | Preview upcoming queue slots for a profile |
-| [**UpdateQueueSlot**](QueueApi.md#updatequeueslot) | **PUT** /v1/queue/slots | Create or update a queue schedule |
+| [**CreateQueueSlot**](QueueApi.md#createqueueslot) | **POST** /v1/queue/slots | Create schedule |
+| [**DeleteQueueSlot**](QueueApi.md#deletequeueslot) | **DELETE** /v1/queue/slots | Delete schedule |
+| [**GetNextQueueSlot**](QueueApi.md#getnextqueueslot) | **GET** /v1/queue/next-slot | Get next available slot |
+| [**ListQueueSlots**](QueueApi.md#listqueueslots) | **GET** /v1/queue/slots | List schedules |
+| [**PreviewQueue**](QueueApi.md#previewqueue) | **GET** /v1/queue/preview | Preview upcoming slots |
+| [**UpdateQueueSlot**](QueueApi.md#updatequeueslot) | **PUT** /v1/queue/slots | Update schedule |
 
 <a id="createqueueslot"></a>
 # **CreateQueueSlot**
 > CreateQueueSlot201Response CreateQueueSlot (CreateQueueSlotRequest createQueueSlotRequest)
 
-Create a new queue for a profile
+Create schedule
 
 Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
 
@@ -47,7 +47,7 @@ namespace Example
 
             try
             {
-                // Create a new queue for a profile
+                // Create schedule
                 CreateQueueSlot201Response result = apiInstance.CreateQueueSlot(createQueueSlotRequest);
                 Debug.WriteLine(result);
             }
@@ -68,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a new queue for a profile
+    // Create schedule
     ApiResponse<CreateQueueSlot201Response> response = apiInstance.CreateQueueSlotWithHttpInfo(createQueueSlotRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -116,7 +116,7 @@ catch (ApiException e)
 # **DeleteQueueSlot**
 > DeleteQueueSlot200Response DeleteQueueSlot (string profileId, string queueId)
 
-Delete a queue schedule
+Delete schedule
 
 Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
 
@@ -149,7 +149,7 @@ namespace Example
 
             try
             {
-                // Delete a queue schedule
+                // Delete schedule
                 DeleteQueueSlot200Response result = apiInstance.DeleteQueueSlot(profileId, queueId);
                 Debug.WriteLine(result);
             }
@@ -170,7 +170,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a queue schedule
+    // Delete schedule
     ApiResponse<DeleteQueueSlot200Response> response = apiInstance.DeleteQueueSlotWithHttpInfo(profileId, queueId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -218,7 +218,7 @@ catch (ApiException e)
 # **GetNextQueueSlot**
 > GetNextQueueSlot200Response GetNextQueueSlot (string profileId, string? queueId = null)
 
-Preview the next available queue slot (informational only)
+Get next available slot
 
 Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint's response with `scheduledFor`.** That creates a manual post, not a queue post.  Instead, use `POST /v1/posts` with `queuedFromProfile` (and optionally `queueId`). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile's default queue. 
 
@@ -251,7 +251,7 @@ namespace Example
 
             try
             {
-                // Preview the next available queue slot (informational only)
+                // Get next available slot
                 GetNextQueueSlot200Response result = apiInstance.GetNextQueueSlot(profileId, queueId);
                 Debug.WriteLine(result);
             }
@@ -272,7 +272,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Preview the next available queue slot (informational only)
+    // Get next available slot
     ApiResponse<GetNextQueueSlot200Response> response = apiInstance.GetNextQueueSlotWithHttpInfo(profileId, queueId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -321,7 +321,7 @@ catch (ApiException e)
 # **ListQueueSlots**
 > ListQueueSlots200Response ListQueueSlots (string profileId, string? queueId = null, string? all = null)
 
-Get queue schedules for a profile
+List schedules
 
 Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without `all=true`: Returns the default queue (or specific queue if queueId provided) - With `all=true`: Returns all queues for the profile 
 
@@ -355,7 +355,7 @@ namespace Example
 
             try
             {
-                // Get queue schedules for a profile
+                // List schedules
                 ListQueueSlots200Response result = apiInstance.ListQueueSlots(profileId, queueId, all);
                 Debug.WriteLine(result);
             }
@@ -376,7 +376,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get queue schedules for a profile
+    // List schedules
     ApiResponse<ListQueueSlots200Response> response = apiInstance.ListQueueSlotsWithHttpInfo(profileId, queueId, all);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -426,7 +426,7 @@ catch (ApiException e)
 # **PreviewQueue**
 > PreviewQueue200Response PreviewQueue (string profileId, int? count = null)
 
-Preview upcoming queue slots for a profile
+Preview upcoming slots
 
 ### Example
 ```csharp
@@ -457,7 +457,7 @@ namespace Example
 
             try
             {
-                // Preview upcoming queue slots for a profile
+                // Preview upcoming slots
                 PreviewQueue200Response result = apiInstance.PreviewQueue(profileId, count);
                 Debug.WriteLine(result);
             }
@@ -478,7 +478,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Preview upcoming queue slots for a profile
+    // Preview upcoming slots
     ApiResponse<PreviewQueue200Response> response = apiInstance.PreviewQueueWithHttpInfo(profileId, count);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -527,7 +527,7 @@ catch (ApiException e)
 # **UpdateQueueSlot**
 > UpdateQueueSlot200Response UpdateQueueSlot (UpdateQueueSlotRequest updateQueueSlotRequest)
 
-Create or update a queue schedule
+Update schedule
 
 Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault=true: Makes this queue the default for the profile 
 
@@ -559,7 +559,7 @@ namespace Example
 
             try
             {
-                // Create or update a queue schedule
+                // Update schedule
                 UpdateQueueSlot200Response result = apiInstance.UpdateQueueSlot(updateQueueSlotRequest);
                 Debug.WriteLine(result);
             }
@@ -580,7 +580,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create or update a queue schedule
+    // Update schedule
     ApiResponse<UpdateQueueSlot200Response> response = apiInstance.UpdateQueueSlotWithHttpInfo(updateQueueSlotRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

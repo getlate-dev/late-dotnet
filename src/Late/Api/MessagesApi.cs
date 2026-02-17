@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Edit a message (Telegram only)
+        /// Edit message
         /// </summary>
         /// <remarks>
         /// Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
@@ -42,7 +42,7 @@ namespace Late.Api
         EditInboxMessage200Response EditInboxMessage(string conversationId, string messageId, EditInboxMessageRequest editInboxMessageRequest);
 
         /// <summary>
-        /// Edit a message (Telegram only)
+        /// Edit message
         /// </summary>
         /// <remarks>
         /// Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
@@ -54,7 +54,7 @@ namespace Late.Api
         /// <returns>ApiResponse of EditInboxMessage200Response</returns>
         ApiResponse<EditInboxMessage200Response> EditInboxMessageWithHttpInfo(string conversationId, string messageId, EditInboxMessageRequest editInboxMessageRequest);
         /// <summary>
-        /// Get conversation details
+        /// Get conversation
         /// </summary>
         /// <remarks>
         /// Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
@@ -66,7 +66,7 @@ namespace Late.Api
         GetInboxConversation200Response GetInboxConversation(string conversationId, string accountId);
 
         /// <summary>
-        /// Get conversation details
+        /// Get conversation
         /// </summary>
         /// <remarks>
         /// Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
@@ -77,7 +77,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetInboxConversation200Response</returns>
         ApiResponse<GetInboxConversation200Response> GetInboxConversationWithHttpInfo(string conversationId, string accountId);
         /// <summary>
-        /// Get messages in a conversation
+        /// List messages
         /// </summary>
         /// <remarks>
         /// Fetch messages for a specific conversation. Requires accountId query parameter.
@@ -89,7 +89,7 @@ namespace Late.Api
         GetInboxConversationMessages200Response GetInboxConversationMessages(string conversationId, string accountId);
 
         /// <summary>
-        /// Get messages in a conversation
+        /// List messages
         /// </summary>
         /// <remarks>
         /// Fetch messages for a specific conversation. Requires accountId query parameter.
@@ -100,7 +100,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetInboxConversationMessages200Response</returns>
         ApiResponse<GetInboxConversationMessages200Response> GetInboxConversationMessagesWithHttpInfo(string conversationId, string accountId);
         /// <summary>
-        /// List conversations across all accounts
+        /// List conversations
         /// </summary>
         /// <remarks>
         /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
@@ -117,7 +117,7 @@ namespace Late.Api
         ListInboxConversations200Response ListInboxConversations(string? profileId = default, string? platform = default, string? status = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default);
 
         /// <summary>
-        /// List conversations across all accounts
+        /// List conversations
         /// </summary>
         /// <remarks>
         /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
@@ -133,10 +133,10 @@ namespace Late.Api
         /// <returns>ApiResponse of ListInboxConversations200Response</returns>
         ApiResponse<ListInboxConversations200Response> ListInboxConversationsWithHttpInfo(string? profileId = default, string? platform = default, string? status = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default);
         /// <summary>
-        /// Send a message
+        /// Send message
         /// </summary>
         /// <remarks>
-        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -145,10 +145,10 @@ namespace Late.Api
         SendInboxMessage200Response SendInboxMessage(string conversationId, SendInboxMessageRequest sendInboxMessageRequest);
 
         /// <summary>
-        /// Send a message
+        /// Send message
         /// </summary>
         /// <remarks>
-        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -188,7 +188,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Edit a message (Telegram only)
+        /// Edit message
         /// </summary>
         /// <remarks>
         /// Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
@@ -202,7 +202,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<EditInboxMessage200Response> EditInboxMessageAsync(string conversationId, string messageId, EditInboxMessageRequest editInboxMessageRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Edit a message (Telegram only)
+        /// Edit message
         /// </summary>
         /// <remarks>
         /// Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
@@ -215,7 +215,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (EditInboxMessage200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<EditInboxMessage200Response>> EditInboxMessageWithHttpInfoAsync(string conversationId, string messageId, EditInboxMessageRequest editInboxMessageRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get conversation details
+        /// Get conversation
         /// </summary>
         /// <remarks>
         /// Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
@@ -228,7 +228,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetInboxConversation200Response> GetInboxConversationAsync(string conversationId, string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get conversation details
+        /// Get conversation
         /// </summary>
         /// <remarks>
         /// Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
@@ -240,7 +240,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetInboxConversation200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetInboxConversation200Response>> GetInboxConversationWithHttpInfoAsync(string conversationId, string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get messages in a conversation
+        /// List messages
         /// </summary>
         /// <remarks>
         /// Fetch messages for a specific conversation. Requires accountId query parameter.
@@ -253,7 +253,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetInboxConversationMessages200Response> GetInboxConversationMessagesAsync(string conversationId, string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get messages in a conversation
+        /// List messages
         /// </summary>
         /// <remarks>
         /// Fetch messages for a specific conversation. Requires accountId query parameter.
@@ -265,7 +265,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetInboxConversationMessages200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetInboxConversationMessages200Response>> GetInboxConversationMessagesWithHttpInfoAsync(string conversationId, string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List conversations across all accounts
+        /// List conversations
         /// </summary>
         /// <remarks>
         /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
@@ -283,7 +283,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListInboxConversations200Response> ListInboxConversationsAsync(string? profileId = default, string? platform = default, string? status = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List conversations across all accounts
+        /// List conversations
         /// </summary>
         /// <remarks>
         /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
@@ -300,10 +300,10 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListInboxConversations200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListInboxConversations200Response>> ListInboxConversationsWithHttpInfoAsync(string? profileId = default, string? platform = default, string? status = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Send a message
+        /// Send message
         /// </summary>
         /// <remarks>
-        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -313,10 +313,10 @@ namespace Late.Api
         System.Threading.Tasks.Task<SendInboxMessage200Response> SendInboxMessageAsync(string conversationId, SendInboxMessageRequest sendInboxMessageRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Send a message
+        /// Send message
         /// </summary>
         /// <remarks>
-        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -563,7 +563,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Edit a message (Telegram only) Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
+        /// Edit message Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID</param>
@@ -577,7 +577,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Edit a message (Telegram only) Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
+        /// Edit message Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID</param>
@@ -639,7 +639,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Edit a message (Telegram only) Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
+        /// Edit message Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID</param>
@@ -654,7 +654,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Edit a message (Telegram only) Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
+        /// Edit message Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID</param>
@@ -720,7 +720,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get conversation details Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
+        /// Get conversation Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -733,7 +733,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get conversation details Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
+        /// Get conversation Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -788,7 +788,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get conversation details Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
+        /// Get conversation Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -802,7 +802,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get conversation details Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
+        /// Get conversation Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -861,7 +861,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get messages in a conversation Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -874,7 +874,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get messages in a conversation Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -929,7 +929,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get messages in a conversation Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -943,7 +943,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get messages in a conversation Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1002,7 +1002,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List conversations across all accounts Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
+        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1020,7 +1020,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List conversations across all accounts Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
+        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1098,7 +1098,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List conversations across all accounts Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
+        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1117,7 +1117,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List conversations across all accounts Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
+        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1199,7 +1199,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send a message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1212,7 +1212,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send a message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1269,7 +1269,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send a message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1283,7 +1283,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send a message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>

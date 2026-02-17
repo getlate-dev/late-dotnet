@@ -4,18 +4,18 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**EditInboxMessage**](MessagesApi.md#editinboxmessage) | **PATCH** /v1/inbox/conversations/{conversationId}/messages/{messageId} | Edit a message (Telegram only) |
-| [**GetInboxConversation**](MessagesApi.md#getinboxconversation) | **GET** /v1/inbox/conversations/{conversationId} | Get conversation details |
-| [**GetInboxConversationMessages**](MessagesApi.md#getinboxconversationmessages) | **GET** /v1/inbox/conversations/{conversationId}/messages | Get messages in a conversation |
-| [**ListInboxConversations**](MessagesApi.md#listinboxconversations) | **GET** /v1/inbox/conversations | List conversations across all accounts |
-| [**SendInboxMessage**](MessagesApi.md#sendinboxmessage) | **POST** /v1/inbox/conversations/{conversationId}/messages | Send a message |
+| [**EditInboxMessage**](MessagesApi.md#editinboxmessage) | **PATCH** /v1/inbox/conversations/{conversationId}/messages/{messageId} | Edit message |
+| [**GetInboxConversation**](MessagesApi.md#getinboxconversation) | **GET** /v1/inbox/conversations/{conversationId} | Get conversation |
+| [**GetInboxConversationMessages**](MessagesApi.md#getinboxconversationmessages) | **GET** /v1/inbox/conversations/{conversationId}/messages | List messages |
+| [**ListInboxConversations**](MessagesApi.md#listinboxconversations) | **GET** /v1/inbox/conversations | List conversations |
+| [**SendInboxMessage**](MessagesApi.md#sendinboxmessage) | **POST** /v1/inbox/conversations/{conversationId}/messages | Send message |
 | [**UpdateInboxConversation**](MessagesApi.md#updateinboxconversation) | **PUT** /v1/inbox/conversations/{conversationId} | Update conversation status |
 
 <a id="editinboxmessage"></a>
 # **EditInboxMessage**
 > EditInboxMessage200Response EditInboxMessage (string conversationId, string messageId, EditInboxMessageRequest editInboxMessageRequest)
 
-Edit a message (Telegram only)
+Edit message
 
 Edit the text and/or reply markup of a previously sent Telegram message. Only supported for Telegram. Returns 400 for other platforms. 
 
@@ -49,7 +49,7 @@ namespace Example
 
             try
             {
-                // Edit a message (Telegram only)
+                // Edit message
                 EditInboxMessage200Response result = apiInstance.EditInboxMessage(conversationId, messageId, editInboxMessageRequest);
                 Debug.WriteLine(result);
             }
@@ -70,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Edit a message (Telegram only)
+    // Edit message
     ApiResponse<EditInboxMessage200Response> response = apiInstance.EditInboxMessageWithHttpInfo(conversationId, messageId, editInboxMessageRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -120,7 +120,7 @@ catch (ApiException e)
 # **GetInboxConversation**
 > GetInboxConversation200Response GetInboxConversation (string conversationId, string accountId)
 
-Get conversation details
+Get conversation
 
 Retrieve details and metadata for a specific conversation. Requires accountId query parameter.
 
@@ -153,7 +153,7 @@ namespace Example
 
             try
             {
-                // Get conversation details
+                // Get conversation
                 GetInboxConversation200Response result = apiInstance.GetInboxConversation(conversationId, accountId);
                 Debug.WriteLine(result);
             }
@@ -174,7 +174,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get conversation details
+    // Get conversation
     ApiResponse<GetInboxConversation200Response> response = apiInstance.GetInboxConversationWithHttpInfo(conversationId, accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -223,7 +223,7 @@ catch (ApiException e)
 # **GetInboxConversationMessages**
 > GetInboxConversationMessages200Response GetInboxConversationMessages (string conversationId, string accountId)
 
-Get messages in a conversation
+List messages
 
 Fetch messages for a specific conversation. Requires accountId query parameter.
 
@@ -256,7 +256,7 @@ namespace Example
 
             try
             {
-                // Get messages in a conversation
+                // List messages
                 GetInboxConversationMessages200Response result = apiInstance.GetInboxConversationMessages(conversationId, accountId);
                 Debug.WriteLine(result);
             }
@@ -277,7 +277,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get messages in a conversation
+    // List messages
     ApiResponse<GetInboxConversationMessages200Response> response = apiInstance.GetInboxConversationMessagesWithHttpInfo(conversationId, accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -325,7 +325,7 @@ catch (ApiException e)
 # **ListInboxConversations**
 > ListInboxConversations200Response ListInboxConversations (string? profileId = null, string? platform = null, string? status = null, string? sortOrder = null, int? limit = null, string? cursor = null, string? accountId = null)
 
-List conversations across all accounts
+List conversations
 
 Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram 
 
@@ -363,7 +363,7 @@ namespace Example
 
             try
             {
-                // List conversations across all accounts
+                // List conversations
                 ListInboxConversations200Response result = apiInstance.ListInboxConversations(profileId, platform, status, sortOrder, limit, cursor, accountId);
                 Debug.WriteLine(result);
             }
@@ -384,7 +384,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List conversations across all accounts
+    // List conversations
     ApiResponse<ListInboxConversations200Response> response = apiInstance.ListInboxConversationsWithHttpInfo(profileId, platform, status, sortOrder, limit, cursor, accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -437,9 +437,9 @@ catch (ApiException e)
 # **SendInboxMessage**
 > SendInboxMessage200Response SendInboxMessage (string conversationId, SendInboxMessageRequest sendInboxMessageRequest)
 
-Send a message
+Send message
 
-Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky: Not supported - Reddit: Not supported  **Interactive message support:** | Field | Instagram | Facebook | Telegram | |- --|- --|- --|- --| | quickReplies | Meta quick_replies (13 max) | Meta quick_replies (13 max) | ReplyKeyboardMarkup (one_time) | | buttons | Generic template | Generic template | Inline keyboard | | template | Generic template (carousel) | Generic template (carousel) | Ignored | | replyMarkup | Ignored | Ignored | InlineKeyboardMarkup / ReplyKeyboardMarkup | | messagingType | Ignored | RESPONSE / UPDATE / MESSAGE_TAG | Ignored | | messageTag | HUMAN_AGENT only | 4 tag types | Ignored | | replyTo | Ignored | Ignored | reply_parameters |  Platform-specific fields are silently ignored on unsupported platforms. 
+Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags.  **Attachment support by platform:** - Telegram: Images, videos, documents (up to 50MB) - Facebook Messenger: Images, videos, audio, files - Instagram: Images, videos, audio via URL (8MB images, 25MB video/audio) - Twitter/X: Images, videos (requires media upload) - Bluesky/Reddit: Not supported  **Interactive messages:** Supports quick replies, buttons, templates, and reply markup. Feature availability varies by platform (Instagram, Facebook, Telegram). Unsupported fields are silently ignored. 
 
 ### Example
 ```csharp
@@ -470,7 +470,7 @@ namespace Example
 
             try
             {
-                // Send a message
+                // Send message
                 SendInboxMessage200Response result = apiInstance.SendInboxMessage(conversationId, sendInboxMessageRequest);
                 Debug.WriteLine(result);
             }
@@ -491,7 +491,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Send a message
+    // Send message
     ApiResponse<SendInboxMessage200Response> response = apiInstance.SendInboxMessageWithHttpInfo(conversationId, sendInboxMessageRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

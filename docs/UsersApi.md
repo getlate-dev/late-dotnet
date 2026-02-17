@@ -4,14 +4,14 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetUser**](UsersApi.md#getuser) | **GET** /v1/users/{userId} | Get user by id (self or invited) |
-| [**ListUsers**](UsersApi.md#listusers) | **GET** /v1/users | List team users (root + invited) |
+| [**GetUser**](UsersApi.md#getuser) | **GET** /v1/users/{userId} | Get user |
+| [**ListUsers**](UsersApi.md#listusers) | **GET** /v1/users | List users |
 
 <a id="getuser"></a>
 # **GetUser**
 > GetUser200Response GetUser (string userId)
 
-Get user by id (self or invited)
+Get user
 
 ### Example
 ```csharp
@@ -41,7 +41,7 @@ namespace Example
 
             try
             {
-                // Get user by id (self or invited)
+                // Get user
                 GetUser200Response result = apiInstance.GetUser(userId);
                 Debug.WriteLine(result);
             }
@@ -62,7 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get user by id (self or invited)
+    // Get user
     ApiResponse<GetUser200Response> response = apiInstance.GetUserWithHttpInfo(userId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -110,7 +110,7 @@ catch (ApiException e)
 # **ListUsers**
 > ListUsers200Response ListUsers ()
 
-List team users (root + invited)
+List users
 
 ### Example
 ```csharp
@@ -139,7 +139,7 @@ namespace Example
 
             try
             {
-                // List team users (root + invited)
+                // List users
                 ListUsers200Response result = apiInstance.ListUsers();
                 Debug.WriteLine(result);
             }
@@ -160,7 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List team users (root + invited)
+    // List users
     ApiResponse<ListUsers200Response> response = apiInstance.ListUsersWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

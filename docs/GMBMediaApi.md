@@ -4,15 +4,15 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateGoogleBusinessMedia**](GMBMediaApi.md#creategooglebusinessmedia) | **POST** /v1/accounts/{accountId}/gmb-media | Upload a photo to Google Business Profile |
-| [**DeleteGoogleBusinessMedia**](GMBMediaApi.md#deletegooglebusinessmedia) | **DELETE** /v1/accounts/{accountId}/gmb-media | Delete a photo from Google Business Profile |
-| [**ListGoogleBusinessMedia**](GMBMediaApi.md#listgooglebusinessmedia) | **GET** /v1/accounts/{accountId}/gmb-media | List Google Business Profile media (photos) |
+| [**CreateGoogleBusinessMedia**](GMBMediaApi.md#creategooglebusinessmedia) | **POST** /v1/accounts/{accountId}/gmb-media | Upload photo |
+| [**DeleteGoogleBusinessMedia**](GMBMediaApi.md#deletegooglebusinessmedia) | **DELETE** /v1/accounts/{accountId}/gmb-media | Delete photo |
+| [**ListGoogleBusinessMedia**](GMBMediaApi.md#listgooglebusinessmedia) | **GET** /v1/accounts/{accountId}/gmb-media | List media |
 
 <a id="creategooglebusinessmedia"></a>
 # **CreateGoogleBusinessMedia**
 > CreateGoogleBusinessMedia200Response CreateGoogleBusinessMedia (string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest)
 
-Upload a photo to Google Business Profile
+Upload photo
 
 Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - `COVER` - Cover photo - `PROFILE` - Profile photo - `LOGO` - Business logo - `EXTERIOR` - Exterior shots - `INTERIOR` - Interior shots - `FOOD_AND_DRINK` - Food and drink photos - `MENU` - Menu photos - `PRODUCT` - Product photos - `TEAMS` - Team/staff photos - `ADDITIONAL` - Other photos 
 
@@ -45,7 +45,7 @@ namespace Example
 
             try
             {
-                // Upload a photo to Google Business Profile
+                // Upload photo
                 CreateGoogleBusinessMedia200Response result = apiInstance.CreateGoogleBusinessMedia(accountId, createGoogleBusinessMediaRequest);
                 Debug.WriteLine(result);
             }
@@ -66,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Upload a photo to Google Business Profile
+    // Upload photo
     ApiResponse<CreateGoogleBusinessMedia200Response> response = apiInstance.CreateGoogleBusinessMediaWithHttpInfo(accountId, createGoogleBusinessMediaRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -114,7 +114,7 @@ catch (ApiException e)
 # **DeleteGoogleBusinessMedia**
 > DeleteGoogleBusinessMedia200Response DeleteGoogleBusinessMedia (string accountId, string mediaId)
 
-Delete a photo from Google Business Profile
+Delete photo
 
 ### Example
 ```csharp
@@ -145,7 +145,7 @@ namespace Example
 
             try
             {
-                // Delete a photo from Google Business Profile
+                // Delete photo
                 DeleteGoogleBusinessMedia200Response result = apiInstance.DeleteGoogleBusinessMedia(accountId, mediaId);
                 Debug.WriteLine(result);
             }
@@ -166,7 +166,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a photo from Google Business Profile
+    // Delete photo
     ApiResponse<DeleteGoogleBusinessMedia200Response> response = apiInstance.DeleteGoogleBusinessMediaWithHttpInfo(accountId, mediaId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -214,7 +214,7 @@ catch (ApiException e)
 # **ListGoogleBusinessMedia**
 > ListGoogleBusinessMedia200Response ListGoogleBusinessMedia (string accountId, int? pageSize = null, string? pageToken = null)
 
-List Google Business Profile media (photos)
+List media
 
 Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
 
@@ -248,7 +248,7 @@ namespace Example
 
             try
             {
-                // List Google Business Profile media (photos)
+                // List media
                 ListGoogleBusinessMedia200Response result = apiInstance.ListGoogleBusinessMedia(accountId, pageSize, pageToken);
                 Debug.WriteLine(result);
             }
@@ -269,7 +269,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List Google Business Profile media (photos)
+    // List media
     ApiResponse<ListGoogleBusinessMedia200Response> response = apiInstance.ListGoogleBusinessMediaWithHttpInfo(accountId, pageSize, pageToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

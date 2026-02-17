@@ -4,15 +4,15 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateApiKey**](APIKeysApi.md#createapikey) | **POST** /v1/api-keys | Create a new API key |
-| [**DeleteApiKey**](APIKeysApi.md#deleteapikey) | **DELETE** /v1/api-keys/{keyId} | Delete an API key |
-| [**ListApiKeys**](APIKeysApi.md#listapikeys) | **GET** /v1/api-keys | List API keys for the current user |
+| [**CreateApiKey**](APIKeysApi.md#createapikey) | **POST** /v1/api-keys | Create key |
+| [**DeleteApiKey**](APIKeysApi.md#deleteapikey) | **DELETE** /v1/api-keys/{keyId} | Delete key |
+| [**ListApiKeys**](APIKeysApi.md#listapikeys) | **GET** /v1/api-keys | List keys |
 
 <a id="createapikey"></a>
 # **CreateApiKey**
 > CreateApiKey201Response CreateApiKey (CreateApiKeyRequest createApiKeyRequest)
 
-Create a new API key
+Create key
 
 ### Example
 ```csharp
@@ -42,7 +42,7 @@ namespace Example
 
             try
             {
-                // Create a new API key
+                // Create key
                 CreateApiKey201Response result = apiInstance.CreateApiKey(createApiKeyRequest);
                 Debug.WriteLine(result);
             }
@@ -63,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a new API key
+    // Create key
     ApiResponse<CreateApiKey201Response> response = apiInstance.CreateApiKeyWithHttpInfo(createApiKeyRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -110,7 +110,7 @@ catch (ApiException e)
 # **DeleteApiKey**
 > DeleteAccountGroup200Response DeleteApiKey (string keyId)
 
-Delete an API key
+Delete key
 
 ### Example
 ```csharp
@@ -140,7 +140,7 @@ namespace Example
 
             try
             {
-                // Delete an API key
+                // Delete key
                 DeleteAccountGroup200Response result = apiInstance.DeleteApiKey(keyId);
                 Debug.WriteLine(result);
             }
@@ -161,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete an API key
+    // Delete key
     ApiResponse<DeleteAccountGroup200Response> response = apiInstance.DeleteApiKeyWithHttpInfo(keyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -208,7 +208,7 @@ catch (ApiException e)
 # **ListApiKeys**
 > ListApiKeys200Response ListApiKeys ()
 
-List API keys for the current user
+List keys
 
 ### Example
 ```csharp
@@ -237,7 +237,7 @@ namespace Example
 
             try
             {
-                // List API keys for the current user
+                // List keys
                 ListApiKeys200Response result = apiInstance.ListApiKeys();
                 Debug.WriteLine(result);
             }
@@ -258,7 +258,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List API keys for the current user
+    // List keys
     ApiResponse<ListApiKeys200Response> response = apiInstance.ListApiKeysWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

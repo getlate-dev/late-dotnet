@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a new API key
+        /// Create key
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -37,7 +37,7 @@ namespace Late.Api
         CreateApiKey201Response CreateApiKey(CreateApiKeyRequest createApiKeyRequest);
 
         /// <summary>
-        /// Create a new API key
+        /// Create key
         /// </summary>
         /// <remarks>
         /// 
@@ -47,7 +47,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateApiKey201Response</returns>
         ApiResponse<CreateApiKey201Response> CreateApiKeyWithHttpInfo(CreateApiKeyRequest createApiKeyRequest);
         /// <summary>
-        /// Delete an API key
+        /// Delete key
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -55,7 +55,7 @@ namespace Late.Api
         DeleteAccountGroup200Response DeleteApiKey(string keyId);
 
         /// <summary>
-        /// Delete an API key
+        /// Delete key
         /// </summary>
         /// <remarks>
         /// 
@@ -65,14 +65,14 @@ namespace Late.Api
         /// <returns>ApiResponse of DeleteAccountGroup200Response</returns>
         ApiResponse<DeleteAccountGroup200Response> DeleteApiKeyWithHttpInfo(string keyId);
         /// <summary>
-        /// List API keys for the current user
+        /// List keys
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListApiKeys200Response</returns>
         ListApiKeys200Response ListApiKeys();
 
         /// <summary>
-        /// List API keys for the current user
+        /// List keys
         /// </summary>
         /// <remarks>
         /// 
@@ -90,7 +90,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create a new API key
+        /// Create key
         /// </summary>
         /// <remarks>
         /// 
@@ -102,7 +102,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateApiKey201Response> CreateApiKeyAsync(CreateApiKeyRequest createApiKeyRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a new API key
+        /// Create key
         /// </summary>
         /// <remarks>
         /// 
@@ -113,7 +113,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateApiKey201Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateApiKey201Response>> CreateApiKeyWithHttpInfoAsync(CreateApiKeyRequest createApiKeyRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete an API key
+        /// Delete key
         /// </summary>
         /// <remarks>
         /// 
@@ -125,7 +125,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteAccountGroup200Response> DeleteApiKeyAsync(string keyId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete an API key
+        /// Delete key
         /// </summary>
         /// <remarks>
         /// 
@@ -136,7 +136,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (DeleteAccountGroup200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteAccountGroup200Response>> DeleteApiKeyWithHttpInfoAsync(string keyId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List API keys for the current user
+        /// List keys
         /// </summary>
         /// <remarks>
         /// 
@@ -147,7 +147,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListApiKeys200Response> ListApiKeysAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List API keys for the current user
+        /// List keys
         /// </summary>
         /// <remarks>
         /// 
@@ -370,7 +370,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new API key 
+        /// Create key 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -382,7 +382,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new API key 
+        /// Create key 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -432,7 +432,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new API key 
+        /// Create key 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -445,7 +445,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new API key 
+        /// Create key 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -499,7 +499,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete an API key 
+        /// Delete key 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -511,7 +511,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete an API key 
+        /// Delete key 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -560,7 +560,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete an API key 
+        /// Delete key 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -573,7 +573,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete an API key 
+        /// Delete key 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -626,7 +626,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List API keys for the current user 
+        /// List keys 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListApiKeys200Response</returns>
@@ -637,7 +637,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List API keys for the current user 
+        /// List keys 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListApiKeys200Response</returns>
@@ -680,7 +680,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List API keys for the current user 
+        /// List keys 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -692,7 +692,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List API keys for the current user 
+        /// List keys 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

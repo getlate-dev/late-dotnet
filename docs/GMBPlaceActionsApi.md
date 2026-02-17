@@ -4,15 +4,15 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateGoogleBusinessPlaceAction**](GMBPlaceActionsApi.md#creategooglebusinessplaceaction) | **POST** /v1/accounts/{accountId}/gmb-place-actions | Create a place action link (booking, ordering, reservation) |
-| [**DeleteGoogleBusinessPlaceAction**](GMBPlaceActionsApi.md#deletegooglebusinessplaceaction) | **DELETE** /v1/accounts/{accountId}/gmb-place-actions | Delete a place action link |
-| [**ListGoogleBusinessPlaceActions**](GMBPlaceActionsApi.md#listgooglebusinessplaceactions) | **GET** /v1/accounts/{accountId}/gmb-place-actions | List place action links (booking, ordering, reservations) |
+| [**CreateGoogleBusinessPlaceAction**](GMBPlaceActionsApi.md#creategooglebusinessplaceaction) | **POST** /v1/accounts/{accountId}/gmb-place-actions | Create action link |
+| [**DeleteGoogleBusinessPlaceAction**](GMBPlaceActionsApi.md#deletegooglebusinessplaceaction) | **DELETE** /v1/accounts/{accountId}/gmb-place-actions | Delete action link |
+| [**ListGoogleBusinessPlaceActions**](GMBPlaceActionsApi.md#listgooglebusinessplaceactions) | **GET** /v1/accounts/{accountId}/gmb-place-actions | List action links |
 
 <a id="creategooglebusinessplaceaction"></a>
 # **CreateGoogleBusinessPlaceAction**
 > CreateGoogleBusinessPlaceAction200Response CreateGoogleBusinessPlaceAction (string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest)
 
-Create a place action link (booking, ordering, reservation)
+Create action link
 
 Creates a place action link for a location.  Available action types: - `APPOINTMENT` - Booking an appointment - `ONLINE_APPOINTMENT` - Booking an online appointment - `DINING_RESERVATION` - Making a dining reservation (OpenTable, Resy, etc.) - `FOOD_ORDERING` - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - `FOOD_DELIVERY` - Ordering food for delivery only - `FOOD_TAKEOUT` - Ordering food for takeout only - `SHOP_ONLINE` - Shopping with delivery and/or pickup 
 
@@ -45,7 +45,7 @@ namespace Example
 
             try
             {
-                // Create a place action link (booking, ordering, reservation)
+                // Create action link
                 CreateGoogleBusinessPlaceAction200Response result = apiInstance.CreateGoogleBusinessPlaceAction(accountId, createGoogleBusinessPlaceActionRequest);
                 Debug.WriteLine(result);
             }
@@ -66,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a place action link (booking, ordering, reservation)
+    // Create action link
     ApiResponse<CreateGoogleBusinessPlaceAction200Response> response = apiInstance.CreateGoogleBusinessPlaceActionWithHttpInfo(accountId, createGoogleBusinessPlaceActionRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -114,7 +114,7 @@ catch (ApiException e)
 # **DeleteGoogleBusinessPlaceAction**
 > DeleteGoogleBusinessPlaceAction200Response DeleteGoogleBusinessPlaceAction (string accountId, string name)
 
-Delete a place action link
+Delete action link
 
 ### Example
 ```csharp
@@ -145,7 +145,7 @@ namespace Example
 
             try
             {
-                // Delete a place action link
+                // Delete action link
                 DeleteGoogleBusinessPlaceAction200Response result = apiInstance.DeleteGoogleBusinessPlaceAction(accountId, name);
                 Debug.WriteLine(result);
             }
@@ -166,7 +166,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a place action link
+    // Delete action link
     ApiResponse<DeleteGoogleBusinessPlaceAction200Response> response = apiInstance.DeleteGoogleBusinessPlaceActionWithHttpInfo(accountId, name);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -214,7 +214,7 @@ catch (ApiException e)
 # **ListGoogleBusinessPlaceActions**
 > ListGoogleBusinessPlaceActions200Response ListGoogleBusinessPlaceActions (string accountId, int? pageSize = null, string? pageToken = null)
 
-List place action links (booking, ordering, reservations)
+List action links
 
 Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
 
@@ -248,7 +248,7 @@ namespace Example
 
             try
             {
-                // List place action links (booking, ordering, reservations)
+                // List action links
                 ListGoogleBusinessPlaceActions200Response result = apiInstance.ListGoogleBusinessPlaceActions(accountId, pageSize, pageToken);
                 Debug.WriteLine(result);
             }
@@ -269,7 +269,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List place action links (booking, ordering, reservations)
+    // List action links
     ApiResponse<ListGoogleBusinessPlaceActions200Response> response = apiInstance.ListGoogleBusinessPlaceActionsWithHttpInfo(accountId, pageSize, pageToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -4,18 +4,18 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateWebhookSettings**](WebhooksApi.md#createwebhooksettings) | **POST** /v1/webhooks/settings | Create a new webhook |
-| [**DeleteWebhookSettings**](WebhooksApi.md#deletewebhooksettings) | **DELETE** /v1/webhooks/settings | Delete a webhook |
-| [**GetWebhookLogs**](WebhooksApi.md#getwebhooklogs) | **GET** /v1/webhooks/logs | Get webhook delivery logs |
-| [**GetWebhookSettings**](WebhooksApi.md#getwebhooksettings) | **GET** /v1/webhooks/settings | List all webhooks |
+| [**CreateWebhookSettings**](WebhooksApi.md#createwebhooksettings) | **POST** /v1/webhooks/settings | Create webhook |
+| [**DeleteWebhookSettings**](WebhooksApi.md#deletewebhooksettings) | **DELETE** /v1/webhooks/settings | Delete webhook |
+| [**GetWebhookLogs**](WebhooksApi.md#getwebhooklogs) | **GET** /v1/webhooks/logs | Get delivery logs |
+| [**GetWebhookSettings**](WebhooksApi.md#getwebhooksettings) | **GET** /v1/webhooks/settings | List webhooks |
 | [**TestWebhook**](WebhooksApi.md#testwebhook) | **POST** /v1/webhooks/test | Send test webhook |
-| [**UpdateWebhookSettings**](WebhooksApi.md#updatewebhooksettings) | **PUT** /v1/webhooks/settings | Update a webhook |
+| [**UpdateWebhookSettings**](WebhooksApi.md#updatewebhooksettings) | **PUT** /v1/webhooks/settings | Update webhook |
 
 <a id="createwebhooksettings"></a>
 # **CreateWebhookSettings**
 > UpdateWebhookSettings200Response CreateWebhookSettings (CreateWebhookSettingsRequest createWebhookSettingsRequest)
 
-Create a new webhook
+Create webhook
 
 Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
 
@@ -47,7 +47,7 @@ namespace Example
 
             try
             {
-                // Create a new webhook
+                // Create webhook
                 UpdateWebhookSettings200Response result = apiInstance.CreateWebhookSettings(createWebhookSettingsRequest);
                 Debug.WriteLine(result);
             }
@@ -68,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a new webhook
+    // Create webhook
     ApiResponse<UpdateWebhookSettings200Response> response = apiInstance.CreateWebhookSettingsWithHttpInfo(createWebhookSettingsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -115,7 +115,7 @@ catch (ApiException e)
 # **DeleteWebhookSettings**
 > UpdateRedditSubreddits200Response DeleteWebhookSettings (string id)
 
-Delete a webhook
+Delete webhook
 
 Permanently delete a webhook configuration.
 
@@ -147,7 +147,7 @@ namespace Example
 
             try
             {
-                // Delete a webhook
+                // Delete webhook
                 UpdateRedditSubreddits200Response result = apiInstance.DeleteWebhookSettings(id);
                 Debug.WriteLine(result);
             }
@@ -168,7 +168,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a webhook
+    // Delete webhook
     ApiResponse<UpdateRedditSubreddits200Response> response = apiInstance.DeleteWebhookSettingsWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -215,7 +215,7 @@ catch (ApiException e)
 # **GetWebhookLogs**
 > GetWebhookLogs200Response GetWebhookLogs (int? limit = null, string? status = null, string? varEvent = null, string? webhookId = null)
 
-Get webhook delivery logs
+Get delivery logs
 
 Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
 
@@ -250,7 +250,7 @@ namespace Example
 
             try
             {
-                // Get webhook delivery logs
+                // Get delivery logs
                 GetWebhookLogs200Response result = apiInstance.GetWebhookLogs(limit, status, varEvent, webhookId);
                 Debug.WriteLine(result);
             }
@@ -271,7 +271,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get webhook delivery logs
+    // Get delivery logs
     ApiResponse<GetWebhookLogs200Response> response = apiInstance.GetWebhookLogsWithHttpInfo(limit, status, varEvent, webhookId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -320,7 +320,7 @@ catch (ApiException e)
 # **GetWebhookSettings**
 > GetWebhookSettings200Response GetWebhookSettings ()
 
-List all webhooks
+List webhooks
 
 Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
 
@@ -351,7 +351,7 @@ namespace Example
 
             try
             {
-                // List all webhooks
+                // List webhooks
                 GetWebhookSettings200Response result = apiInstance.GetWebhookSettings();
                 Debug.WriteLine(result);
             }
@@ -372,7 +372,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List all webhooks
+    // List webhooks
     ApiResponse<GetWebhookSettings200Response> response = apiInstance.GetWebhookSettingsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -515,7 +515,7 @@ catch (ApiException e)
 # **UpdateWebhookSettings**
 > UpdateWebhookSettings200Response UpdateWebhookSettings (UpdateWebhookSettingsRequest updateWebhookSettingsRequest)
 
-Update a webhook
+Update webhook
 
 Update an existing webhook configuration. All fields except `_id` are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
 
@@ -547,7 +547,7 @@ namespace Example
 
             try
             {
-                // Update a webhook
+                // Update webhook
                 UpdateWebhookSettings200Response result = apiInstance.UpdateWebhookSettings(updateWebhookSettingsRequest);
                 Debug.WriteLine(result);
             }
@@ -568,7 +568,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a webhook
+    // Update webhook
     ApiResponse<UpdateWebhookSettings200Response> response = apiInstance.UpdateWebhookSettingsWithHttpInfo(updateWebhookSettingsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a new webhook
+        /// Create webhook
         /// </summary>
         /// <remarks>
         /// Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
@@ -40,7 +40,7 @@ namespace Late.Api
         UpdateWebhookSettings200Response CreateWebhookSettings(CreateWebhookSettingsRequest createWebhookSettingsRequest);
 
         /// <summary>
-        /// Create a new webhook
+        /// Create webhook
         /// </summary>
         /// <remarks>
         /// Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
@@ -50,7 +50,7 @@ namespace Late.Api
         /// <returns>ApiResponse of UpdateWebhookSettings200Response</returns>
         ApiResponse<UpdateWebhookSettings200Response> CreateWebhookSettingsWithHttpInfo(CreateWebhookSettingsRequest createWebhookSettingsRequest);
         /// <summary>
-        /// Delete a webhook
+        /// Delete webhook
         /// </summary>
         /// <remarks>
         /// Permanently delete a webhook configuration.
@@ -61,7 +61,7 @@ namespace Late.Api
         UpdateRedditSubreddits200Response DeleteWebhookSettings(string id);
 
         /// <summary>
-        /// Delete a webhook
+        /// Delete webhook
         /// </summary>
         /// <remarks>
         /// Permanently delete a webhook configuration.
@@ -71,7 +71,7 @@ namespace Late.Api
         /// <returns>ApiResponse of UpdateRedditSubreddits200Response</returns>
         ApiResponse<UpdateRedditSubreddits200Response> DeleteWebhookSettingsWithHttpInfo(string id);
         /// <summary>
-        /// Get webhook delivery logs
+        /// Get delivery logs
         /// </summary>
         /// <remarks>
         /// Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
@@ -85,7 +85,7 @@ namespace Late.Api
         GetWebhookLogs200Response GetWebhookLogs(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default);
 
         /// <summary>
-        /// Get webhook delivery logs
+        /// Get delivery logs
         /// </summary>
         /// <remarks>
         /// Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
@@ -98,7 +98,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetWebhookLogs200Response</returns>
         ApiResponse<GetWebhookLogs200Response> GetWebhookLogsWithHttpInfo(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default);
         /// <summary>
-        /// List all webhooks
+        /// List webhooks
         /// </summary>
         /// <remarks>
         /// Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
@@ -108,7 +108,7 @@ namespace Late.Api
         GetWebhookSettings200Response GetWebhookSettings();
 
         /// <summary>
-        /// List all webhooks
+        /// List webhooks
         /// </summary>
         /// <remarks>
         /// Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
@@ -138,7 +138,7 @@ namespace Late.Api
         /// <returns>ApiResponse of UnpublishPost200Response</returns>
         ApiResponse<UnpublishPost200Response> TestWebhookWithHttpInfo(TestWebhookRequest testWebhookRequest);
         /// <summary>
-        /// Update a webhook
+        /// Update webhook
         /// </summary>
         /// <remarks>
         /// Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
@@ -149,7 +149,7 @@ namespace Late.Api
         UpdateWebhookSettings200Response UpdateWebhookSettings(UpdateWebhookSettingsRequest updateWebhookSettingsRequest);
 
         /// <summary>
-        /// Update a webhook
+        /// Update webhook
         /// </summary>
         /// <remarks>
         /// Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
@@ -168,7 +168,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create a new webhook
+        /// Create webhook
         /// </summary>
         /// <remarks>
         /// Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
@@ -180,7 +180,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateWebhookSettings200Response> CreateWebhookSettingsAsync(CreateWebhookSettingsRequest createWebhookSettingsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a new webhook
+        /// Create webhook
         /// </summary>
         /// <remarks>
         /// Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
@@ -191,7 +191,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (UpdateWebhookSettings200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateWebhookSettings200Response>> CreateWebhookSettingsWithHttpInfoAsync(CreateWebhookSettingsRequest createWebhookSettingsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a webhook
+        /// Delete webhook
         /// </summary>
         /// <remarks>
         /// Permanently delete a webhook configuration.
@@ -203,7 +203,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateRedditSubreddits200Response> DeleteWebhookSettingsAsync(string id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a webhook
+        /// Delete webhook
         /// </summary>
         /// <remarks>
         /// Permanently delete a webhook configuration.
@@ -214,7 +214,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (UpdateRedditSubreddits200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateRedditSubreddits200Response>> DeleteWebhookSettingsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get webhook delivery logs
+        /// Get delivery logs
         /// </summary>
         /// <remarks>
         /// Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
@@ -229,7 +229,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetWebhookLogs200Response> GetWebhookLogsAsync(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get webhook delivery logs
+        /// Get delivery logs
         /// </summary>
         /// <remarks>
         /// Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
@@ -243,7 +243,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetWebhookLogs200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetWebhookLogs200Response>> GetWebhookLogsWithHttpInfoAsync(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List all webhooks
+        /// List webhooks
         /// </summary>
         /// <remarks>
         /// Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
@@ -254,7 +254,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetWebhookSettings200Response> GetWebhookSettingsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List all webhooks
+        /// List webhooks
         /// </summary>
         /// <remarks>
         /// Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
@@ -287,7 +287,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> TestWebhookWithHttpInfoAsync(TestWebhookRequest testWebhookRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a webhook
+        /// Update webhook
         /// </summary>
         /// <remarks>
         /// Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
@@ -299,7 +299,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateWebhookSettings200Response> UpdateWebhookSettingsAsync(UpdateWebhookSettingsRequest updateWebhookSettingsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update a webhook
+        /// Update webhook
         /// </summary>
         /// <remarks>
         /// Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
@@ -523,7 +523,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -535,7 +535,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -585,7 +585,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -598,7 +598,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -652,7 +652,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a webhook Permanently delete a webhook configuration.
+        /// Delete webhook Permanently delete a webhook configuration.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook ID to delete</param>
@@ -664,7 +664,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a webhook Permanently delete a webhook configuration.
+        /// Delete webhook Permanently delete a webhook configuration.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook ID to delete</param>
@@ -713,7 +713,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a webhook Permanently delete a webhook configuration.
+        /// Delete webhook Permanently delete a webhook configuration.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook ID to delete</param>
@@ -726,7 +726,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a webhook Permanently delete a webhook configuration.
+        /// Delete webhook Permanently delete a webhook configuration.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Webhook ID to delete</param>
@@ -779,7 +779,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get webhook delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// Get delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -794,7 +794,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get webhook delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// Get delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -857,7 +857,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get webhook delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// Get delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -873,7 +873,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get webhook delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// Get delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -940,7 +940,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List all webhooks Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
+        /// List webhooks Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>GetWebhookSettings200Response</returns>
@@ -951,7 +951,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List all webhooks Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
+        /// List webhooks Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of GetWebhookSettings200Response</returns>
@@ -994,7 +994,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List all webhooks Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
+        /// List webhooks Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1006,7 +1006,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List all webhooks Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
+        /// List webhooks Retrieve all configured webhooks for the authenticated user. Supports up to 10 webhooks per user.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1182,7 +1182,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -1194,7 +1194,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -1244,7 +1244,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -1257,7 +1257,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>

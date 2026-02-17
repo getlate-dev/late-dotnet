@@ -4,21 +4,21 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DeleteInboxComment**](CommentsApi.md#deleteinboxcomment) | **DELETE** /v1/inbox/comments/{postId} | Delete a comment |
-| [**GetInboxPostComments**](CommentsApi.md#getinboxpostcomments) | **GET** /v1/inbox/comments/{postId} | Get comments for a post |
-| [**HideInboxComment**](CommentsApi.md#hideinboxcomment) | **POST** /v1/inbox/comments/{postId}/{commentId}/hide | Hide a comment |
-| [**LikeInboxComment**](CommentsApi.md#likeinboxcomment) | **POST** /v1/inbox/comments/{postId}/{commentId}/like | Like a comment |
-| [**ListInboxComments**](CommentsApi.md#listinboxcomments) | **GET** /v1/inbox/comments | List posts with comments across all accounts |
-| [**ReplyToInboxPost**](CommentsApi.md#replytoinboxpost) | **POST** /v1/inbox/comments/{postId} | Reply to a post or comment |
-| [**SendPrivateReplyToComment**](CommentsApi.md#sendprivatereplytocomment) | **POST** /v1/inbox/comments/{postId}/{commentId}/private-reply | Send private reply to comment author |
-| [**UnhideInboxComment**](CommentsApi.md#unhideinboxcomment) | **DELETE** /v1/inbox/comments/{postId}/{commentId}/hide | Unhide a comment |
-| [**UnlikeInboxComment**](CommentsApi.md#unlikeinboxcomment) | **DELETE** /v1/inbox/comments/{postId}/{commentId}/like | Unlike a comment |
+| [**DeleteInboxComment**](CommentsApi.md#deleteinboxcomment) | **DELETE** /v1/inbox/comments/{postId} | Delete comment |
+| [**GetInboxPostComments**](CommentsApi.md#getinboxpostcomments) | **GET** /v1/inbox/comments/{postId} | Get post comments |
+| [**HideInboxComment**](CommentsApi.md#hideinboxcomment) | **POST** /v1/inbox/comments/{postId}/{commentId}/hide | Hide comment |
+| [**LikeInboxComment**](CommentsApi.md#likeinboxcomment) | **POST** /v1/inbox/comments/{postId}/{commentId}/like | Like comment |
+| [**ListInboxComments**](CommentsApi.md#listinboxcomments) | **GET** /v1/inbox/comments | List commented posts |
+| [**ReplyToInboxPost**](CommentsApi.md#replytoinboxpost) | **POST** /v1/inbox/comments/{postId} | Reply to comment |
+| [**SendPrivateReplyToComment**](CommentsApi.md#sendprivatereplytocomment) | **POST** /v1/inbox/comments/{postId}/{commentId}/private-reply | Send private reply |
+| [**UnhideInboxComment**](CommentsApi.md#unhideinboxcomment) | **DELETE** /v1/inbox/comments/{postId}/{commentId}/hide | Unhide comment |
+| [**UnlikeInboxComment**](CommentsApi.md#unlikeinboxcomment) | **DELETE** /v1/inbox/comments/{postId}/{commentId}/like | Unlike comment |
 
 <a id="deleteinboxcomment"></a>
 # **DeleteInboxComment**
 > DeleteInboxComment200Response DeleteInboxComment (string postId, string accountId, string commentId)
 
-Delete a comment
+Delete comment
 
 Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
 
@@ -52,7 +52,7 @@ namespace Example
 
             try
             {
-                // Delete a comment
+                // Delete comment
                 DeleteInboxComment200Response result = apiInstance.DeleteInboxComment(postId, accountId, commentId);
                 Debug.WriteLine(result);
             }
@@ -73,7 +73,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a comment
+    // Delete comment
     ApiResponse<DeleteInboxComment200Response> response = apiInstance.DeleteInboxCommentWithHttpInfo(postId, accountId, commentId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -122,7 +122,7 @@ catch (ApiException e)
 # **GetInboxPostComments**
 > GetInboxPostComments200Response GetInboxPostComments (string postId, string accountId, string? subreddit = null, int? limit = null, string? cursor = null, string? commentId = null)
 
-Get comments for a post
+Get post comments
 
 Fetch comments for a specific post. Requires accountId query parameter.
 
@@ -159,7 +159,7 @@ namespace Example
 
             try
             {
-                // Get comments for a post
+                // Get post comments
                 GetInboxPostComments200Response result = apiInstance.GetInboxPostComments(postId, accountId, subreddit, limit, cursor, commentId);
                 Debug.WriteLine(result);
             }
@@ -180,7 +180,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get comments for a post
+    // Get post comments
     ApiResponse<GetInboxPostComments200Response> response = apiInstance.GetInboxPostCommentsWithHttpInfo(postId, accountId, subreddit, limit, cursor, commentId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -232,7 +232,7 @@ catch (ApiException e)
 # **HideInboxComment**
 > HideInboxComment200Response HideInboxComment (string postId, string commentId, HideInboxCommentRequest hideInboxCommentRequest)
 
-Hide a comment
+Hide comment
 
 Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
 
@@ -266,7 +266,7 @@ namespace Example
 
             try
             {
-                // Hide a comment
+                // Hide comment
                 HideInboxComment200Response result = apiInstance.HideInboxComment(postId, commentId, hideInboxCommentRequest);
                 Debug.WriteLine(result);
             }
@@ -287,7 +287,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Hide a comment
+    // Hide comment
     ApiResponse<HideInboxComment200Response> response = apiInstance.HideInboxCommentWithHttpInfo(postId, commentId, hideInboxCommentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -337,7 +337,7 @@ catch (ApiException e)
 # **LikeInboxComment**
 > LikeInboxComment200Response LikeInboxComment (string postId, string commentId, LikeInboxCommentRequest likeInboxCommentRequest)
 
-Like a comment
+Like comment
 
 Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the `cid` (content identifier) is required in the request body. 
 
@@ -371,7 +371,7 @@ namespace Example
 
             try
             {
-                // Like a comment
+                // Like comment
                 LikeInboxComment200Response result = apiInstance.LikeInboxComment(postId, commentId, likeInboxCommentRequest);
                 Debug.WriteLine(result);
             }
@@ -392,7 +392,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Like a comment
+    // Like comment
     ApiResponse<LikeInboxComment200Response> response = apiInstance.LikeInboxCommentWithHttpInfo(postId, commentId, likeInboxCommentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -442,7 +442,7 @@ catch (ApiException e)
 # **ListInboxComments**
 > ListInboxComments200Response ListInboxComments (string? profileId = null, string? platform = null, int? minComments = null, DateTime? since = null, string? sortBy = null, string? sortOrder = null, int? limit = null, string? cursor = null, string? accountId = null)
 
-List posts with comments across all accounts
+List commented posts
 
 Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
 
@@ -482,7 +482,7 @@ namespace Example
 
             try
             {
-                // List posts with comments across all accounts
+                // List commented posts
                 ListInboxComments200Response result = apiInstance.ListInboxComments(profileId, platform, minComments, since, sortBy, sortOrder, limit, cursor, accountId);
                 Debug.WriteLine(result);
             }
@@ -503,7 +503,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List posts with comments across all accounts
+    // List commented posts
     ApiResponse<ListInboxComments200Response> response = apiInstance.ListInboxCommentsWithHttpInfo(profileId, platform, minComments, since, sortBy, sortOrder, limit, cursor, accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -558,7 +558,7 @@ catch (ApiException e)
 # **ReplyToInboxPost**
 > ReplyToInboxPost200Response ReplyToInboxPost (string postId, ReplyToInboxPostRequest replyToInboxPostRequest)
 
-Reply to a post or comment
+Reply to comment
 
 Post a reply to a post or specific comment. Requires accountId in request body.
 
@@ -591,7 +591,7 @@ namespace Example
 
             try
             {
-                // Reply to a post or comment
+                // Reply to comment
                 ReplyToInboxPost200Response result = apiInstance.ReplyToInboxPost(postId, replyToInboxPostRequest);
                 Debug.WriteLine(result);
             }
@@ -612,7 +612,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Reply to a post or comment
+    // Reply to comment
     ApiResponse<ReplyToInboxPost200Response> response = apiInstance.ReplyToInboxPostWithHttpInfo(postId, replyToInboxPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -660,7 +660,7 @@ catch (ApiException e)
 # **SendPrivateReplyToComment**
 > SendPrivateReplyToComment200Response SendPrivateReplyToComment (string postId, string commentId, SendPrivateReplyToCommentRequest sendPrivateReplyToCommentRequest)
 
-Send private reply to comment author
+Send private reply
 
 Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user's Inbox (if they follow you) or Message Requests (if they don't). Requires `instagram_business_manage_messages` permission. - Facebook: message opens a Messenger conversation with the commenter. Requires `pages_messaging` permission.  **Note:** Both permissions are already included in Late's OAuth flow. This does not create a conversation thread until the user replies back. 
 
@@ -694,7 +694,7 @@ namespace Example
 
             try
             {
-                // Send private reply to comment author
+                // Send private reply
                 SendPrivateReplyToComment200Response result = apiInstance.SendPrivateReplyToComment(postId, commentId, sendPrivateReplyToCommentRequest);
                 Debug.WriteLine(result);
             }
@@ -715,7 +715,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Send private reply to comment author
+    // Send private reply
     ApiResponse<SendPrivateReplyToComment200Response> response = apiInstance.SendPrivateReplyToCommentWithHttpInfo(postId, commentId, sendPrivateReplyToCommentRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -766,7 +766,7 @@ catch (ApiException e)
 # **UnhideInboxComment**
 > HideInboxComment200Response UnhideInboxComment (string postId, string commentId, string accountId)
 
-Unhide a comment
+Unhide comment
 
 Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
 
@@ -800,7 +800,7 @@ namespace Example
 
             try
             {
-                // Unhide a comment
+                // Unhide comment
                 HideInboxComment200Response result = apiInstance.UnhideInboxComment(postId, commentId, accountId);
                 Debug.WriteLine(result);
             }
@@ -821,7 +821,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Unhide a comment
+    // Unhide comment
     ApiResponse<HideInboxComment200Response> response = apiInstance.UnhideInboxCommentWithHttpInfo(postId, commentId, accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -871,7 +871,7 @@ catch (ApiException e)
 # **UnlikeInboxComment**
 > UnlikeInboxComment200Response UnlikeInboxComment (string postId, string commentId, string accountId, string? likeUri = null)
 
-Unlike a comment
+Unlike comment
 
 Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the `likeUri` query parameter is required. 
 
@@ -906,7 +906,7 @@ namespace Example
 
             try
             {
-                // Unlike a comment
+                // Unlike comment
                 UnlikeInboxComment200Response result = apiInstance.UnlikeInboxComment(postId, commentId, accountId, likeUri);
                 Debug.WriteLine(result);
             }
@@ -927,7 +927,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Unlike a comment
+    // Unlike comment
     ApiResponse<UnlikeInboxComment200Response> response = apiInstance.UnlikeInboxCommentWithHttpInfo(postId, commentId, accountId, likeUri);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

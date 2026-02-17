@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Delete a review reply
+        /// Delete review reply
         /// </summary>
         /// <remarks>
         /// Delete a reply to a review (Google Business only). Requires accountId in request body.
@@ -41,7 +41,7 @@ namespace Late.Api
         DeleteInboxReviewReply200Response DeleteInboxReviewReply(string reviewId, DeleteInboxReviewReplyRequest deleteInboxReviewReplyRequest);
 
         /// <summary>
-        /// Delete a review reply
+        /// Delete review reply
         /// </summary>
         /// <remarks>
         /// Delete a reply to a review (Google Business only). Requires accountId in request body.
@@ -52,7 +52,7 @@ namespace Late.Api
         /// <returns>ApiResponse of DeleteInboxReviewReply200Response</returns>
         ApiResponse<DeleteInboxReviewReply200Response> DeleteInboxReviewReplyWithHttpInfo(string reviewId, DeleteInboxReviewReplyRequest deleteInboxReviewReplyRequest);
         /// <summary>
-        /// List reviews across all accounts
+        /// List reviews
         /// </summary>
         /// <remarks>
         /// Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
@@ -72,7 +72,7 @@ namespace Late.Api
         ListInboxReviews200Response ListInboxReviews(string? profileId = default, string? platform = default, int? minRating = default, int? maxRating = default, bool? hasReply = default, string? sortBy = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default);
 
         /// <summary>
-        /// List reviews across all accounts
+        /// List reviews
         /// </summary>
         /// <remarks>
         /// Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
@@ -91,7 +91,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ListInboxReviews200Response</returns>
         ApiResponse<ListInboxReviews200Response> ListInboxReviewsWithHttpInfo(string? profileId = default, string? platform = default, int? minRating = default, int? maxRating = default, bool? hasReply = default, string? sortBy = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default);
         /// <summary>
-        /// Reply to a review
+        /// Reply to review
         /// </summary>
         /// <remarks>
         /// Post a reply to a review. Requires accountId in request body.
@@ -103,7 +103,7 @@ namespace Late.Api
         ReplyToInboxReview200Response ReplyToInboxReview(string reviewId, ReplyToInboxReviewRequest replyToInboxReviewRequest);
 
         /// <summary>
-        /// Reply to a review
+        /// Reply to review
         /// </summary>
         /// <remarks>
         /// Post a reply to a review. Requires accountId in request body.
@@ -123,7 +123,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Delete a review reply
+        /// Delete review reply
         /// </summary>
         /// <remarks>
         /// Delete a reply to a review (Google Business only). Requires accountId in request body.
@@ -136,7 +136,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteInboxReviewReply200Response> DeleteInboxReviewReplyAsync(string reviewId, DeleteInboxReviewReplyRequest deleteInboxReviewReplyRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a review reply
+        /// Delete review reply
         /// </summary>
         /// <remarks>
         /// Delete a reply to a review (Google Business only). Requires accountId in request body.
@@ -148,7 +148,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (DeleteInboxReviewReply200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteInboxReviewReply200Response>> DeleteInboxReviewReplyWithHttpInfoAsync(string reviewId, DeleteInboxReviewReplyRequest deleteInboxReviewReplyRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List reviews across all accounts
+        /// List reviews
         /// </summary>
         /// <remarks>
         /// Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
@@ -169,7 +169,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListInboxReviews200Response> ListInboxReviewsAsync(string? profileId = default, string? platform = default, int? minRating = default, int? maxRating = default, bool? hasReply = default, string? sortBy = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List reviews across all accounts
+        /// List reviews
         /// </summary>
         /// <remarks>
         /// Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
@@ -189,7 +189,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListInboxReviews200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListInboxReviews200Response>> ListInboxReviewsWithHttpInfoAsync(string? profileId = default, string? platform = default, int? minRating = default, int? maxRating = default, bool? hasReply = default, string? sortBy = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Reply to a review
+        /// Reply to review
         /// </summary>
         /// <remarks>
         /// Post a reply to a review. Requires accountId in request body.
@@ -202,7 +202,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ReplyToInboxReview200Response> ReplyToInboxReviewAsync(string reviewId, ReplyToInboxReviewRequest replyToInboxReviewRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Reply to a review
+        /// Reply to review
         /// </summary>
         /// <remarks>
         /// Post a reply to a review. Requires accountId in request body.
@@ -427,7 +427,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a review reply Delete a reply to a review (Google Business only). Requires accountId in request body.
+        /// Delete review reply Delete a reply to a review (Google Business only). Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reviewId"></param>
@@ -440,7 +440,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a review reply Delete a reply to a review (Google Business only). Requires accountId in request body.
+        /// Delete review reply Delete a reply to a review (Google Business only). Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reviewId"></param>
@@ -496,7 +496,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a review reply Delete a reply to a review (Google Business only). Requires accountId in request body.
+        /// Delete review reply Delete a reply to a review (Google Business only). Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reviewId"></param>
@@ -510,7 +510,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a review reply Delete a reply to a review (Google Business only). Requires accountId in request body.
+        /// Delete review reply Delete a reply to a review (Google Business only). Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reviewId"></param>
@@ -570,7 +570,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List reviews across all accounts Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
+        /// List reviews Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"> (optional)</param>
@@ -591,7 +591,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List reviews across all accounts Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
+        /// List reviews Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"> (optional)</param>
@@ -684,7 +684,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List reviews across all accounts Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
+        /// List reviews Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"> (optional)</param>
@@ -706,7 +706,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List reviews across all accounts Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
+        /// List reviews Fetch reviews from all connected Facebook Pages and Google Business accounts. Aggregates data with filtering and sorting options.  **Supported platforms:** Facebook, Google Business 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"> (optional)</param>
@@ -803,7 +803,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Reply to a review Post a reply to a review. Requires accountId in request body.
+        /// Reply to review Post a reply to a review. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reviewId">Review ID (URL-encoded for Google Business)</param>
@@ -816,7 +816,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Reply to a review Post a reply to a review. Requires accountId in request body.
+        /// Reply to review Post a reply to a review. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reviewId">Review ID (URL-encoded for Google Business)</param>
@@ -872,7 +872,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Reply to a review Post a reply to a review. Requires accountId in request body.
+        /// Reply to review Post a reply to a review. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reviewId">Review ID (URL-encoded for Google Business)</param>
@@ -886,7 +886,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Reply to a review Post a reply to a review. Requires accountId in request body.
+        /// Reply to review Post a reply to a review. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="reviewId">Review ID (URL-encoded for Google Business)</param>

@@ -4,14 +4,14 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetGoogleBusinessLocationDetails**](GMBLocationDetailsApi.md#getgooglebusinesslocationdetails) | **GET** /v1/accounts/{accountId}/gmb-location-details | Get Google Business Profile location details |
-| [**UpdateGoogleBusinessLocationDetails**](GMBLocationDetailsApi.md#updategooglebusinesslocationdetails) | **PUT** /v1/accounts/{accountId}/gmb-location-details | Update Google Business Profile location details |
+| [**GetGoogleBusinessLocationDetails**](GMBLocationDetailsApi.md#getgooglebusinesslocationdetails) | **GET** /v1/accounts/{accountId}/gmb-location-details | Get location details |
+| [**UpdateGoogleBusinessLocationDetails**](GMBLocationDetailsApi.md#updategooglebusinesslocationdetails) | **PUT** /v1/accounts/{accountId}/gmb-location-details | Update location details |
 
 <a id="getgooglebusinesslocationdetails"></a>
 # **GetGoogleBusinessLocationDetails**
 > GetGoogleBusinessLocationDetails200Response GetGoogleBusinessLocationDetails (string accountId, string? readMask = null)
 
-Get Google Business Profile location details
+Get location details
 
 Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the `readMask` query parameter to request specific fields. 
 
@@ -44,7 +44,7 @@ namespace Example
 
             try
             {
-                // Get Google Business Profile location details
+                // Get location details
                 GetGoogleBusinessLocationDetails200Response result = apiInstance.GetGoogleBusinessLocationDetails(accountId, readMask);
                 Debug.WriteLine(result);
             }
@@ -65,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Google Business Profile location details
+    // Get location details
     ApiResponse<GetGoogleBusinessLocationDetails200Response> response = apiInstance.GetGoogleBusinessLocationDetailsWithHttpInfo(accountId, readMask);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -114,7 +114,7 @@ catch (ApiException e)
 # **UpdateGoogleBusinessLocationDetails**
 > UpdateGoogleBusinessLocationDetails200Response UpdateGoogleBusinessLocationDetails (string accountId, UpdateGoogleBusinessLocationDetailsRequest updateGoogleBusinessLocationDetailsRequest)
 
-Update Google Business Profile location details
+Update location details
 
 Updates location details such as opening hours, special hours, business description, phone, and website.  The `updateMask` field is required and specifies which fields to update.  Common update masks: - `regularHours` - Update opening hours - `specialHours` - Update holiday/special hours - `profile.description` - Update business description - `websiteUri` - Update website URL - `phoneNumbers` - Update phone numbers - `regularHours,specialHours` - Update both at once 
 
@@ -147,7 +147,7 @@ namespace Example
 
             try
             {
-                // Update Google Business Profile location details
+                // Update location details
                 UpdateGoogleBusinessLocationDetails200Response result = apiInstance.UpdateGoogleBusinessLocationDetails(accountId, updateGoogleBusinessLocationDetailsRequest);
                 Debug.WriteLine(result);
             }
@@ -168,7 +168,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update Google Business Profile location details
+    // Update location details
     ApiResponse<UpdateGoogleBusinessLocationDetails200Response> response = apiInstance.UpdateGoogleBusinessLocationDetailsWithHttpInfo(accountId, updateGoogleBusinessLocationDetailsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

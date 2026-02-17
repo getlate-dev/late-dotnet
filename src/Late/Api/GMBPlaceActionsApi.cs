@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a place action link (booking, ordering, reservation)
+        /// Create action link
         /// </summary>
         /// <remarks>
         /// Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
@@ -41,7 +41,7 @@ namespace Late.Api
         CreateGoogleBusinessPlaceAction200Response CreateGoogleBusinessPlaceAction(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest);
 
         /// <summary>
-        /// Create a place action link (booking, ordering, reservation)
+        /// Create action link
         /// </summary>
         /// <remarks>
         /// Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
@@ -52,7 +52,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateGoogleBusinessPlaceAction200Response</returns>
         ApiResponse<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionWithHttpInfo(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest);
         /// <summary>
-        /// Delete a place action link
+        /// Delete action link
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -61,7 +61,7 @@ namespace Late.Api
         DeleteGoogleBusinessPlaceAction200Response DeleteGoogleBusinessPlaceAction(string accountId, string name);
 
         /// <summary>
-        /// Delete a place action link
+        /// Delete action link
         /// </summary>
         /// <remarks>
         /// 
@@ -72,7 +72,7 @@ namespace Late.Api
         /// <returns>ApiResponse of DeleteGoogleBusinessPlaceAction200Response</returns>
         ApiResponse<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionWithHttpInfo(string accountId, string name);
         /// <summary>
-        /// List place action links (booking, ordering, reservations)
+        /// List action links
         /// </summary>
         /// <remarks>
         /// Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
@@ -85,7 +85,7 @@ namespace Late.Api
         ListGoogleBusinessPlaceActions200Response ListGoogleBusinessPlaceActions(string accountId, int? pageSize = default, string? pageToken = default);
 
         /// <summary>
-        /// List place action links (booking, ordering, reservations)
+        /// List action links
         /// </summary>
         /// <remarks>
         /// Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
@@ -106,7 +106,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create a place action link (booking, ordering, reservation)
+        /// Create action link
         /// </summary>
         /// <remarks>
         /// Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
@@ -119,7 +119,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a place action link (booking, ordering, reservation)
+        /// Create action link
         /// </summary>
         /// <remarks>
         /// Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
@@ -131,7 +131,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateGoogleBusinessPlaceAction200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateGoogleBusinessPlaceAction200Response>> CreateGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a place action link
+        /// Delete action link
         /// </summary>
         /// <remarks>
         /// 
@@ -144,7 +144,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionAsync(string accountId, string name, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a place action link
+        /// Delete action link
         /// </summary>
         /// <remarks>
         /// 
@@ -156,7 +156,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (DeleteGoogleBusinessPlaceAction200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteGoogleBusinessPlaceAction200Response>> DeleteGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, string name, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List place action links (booking, ordering, reservations)
+        /// List action links
         /// </summary>
         /// <remarks>
         /// Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
@@ -170,7 +170,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List place action links (booking, ordering, reservations)
+        /// List action links
         /// </summary>
         /// <remarks>
         /// Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
@@ -396,7 +396,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a place action link (booking, ordering, reservation) Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
+        /// Create action link Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -409,7 +409,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a place action link (booking, ordering, reservation) Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
+        /// Create action link Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -465,7 +465,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a place action link (booking, ordering, reservation) Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
+        /// Create action link Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -479,7 +479,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a place action link (booking, ordering, reservation) Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
+        /// Create action link Creates a place action link for a location.  Available action types: - &#x60;APPOINTMENT&#x60; - Booking an appointment - &#x60;ONLINE_APPOINTMENT&#x60; - Booking an online appointment - &#x60;DINING_RESERVATION&#x60; - Making a dining reservation (OpenTable, Resy, etc.) - &#x60;FOOD_ORDERING&#x60; - Ordering food for delivery and/or takeout (DoorDash, Uber Eats, etc.) - &#x60;FOOD_DELIVERY&#x60; - Ordering food for delivery only - &#x60;FOOD_TAKEOUT&#x60; - Ordering food for takeout only - &#x60;SHOP_ONLINE&#x60; - Shopping with delivery and/or pickup 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -539,7 +539,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a place action link 
+        /// Delete action link 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -552,7 +552,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a place action link 
+        /// Delete action link 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -607,7 +607,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a place action link 
+        /// Delete action link 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -621,7 +621,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a place action link 
+        /// Delete action link 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -680,7 +680,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List place action links (booking, ordering, reservations) Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
+        /// List action links Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -694,7 +694,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List place action links (booking, ordering, reservations) Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
+        /// List action links Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -753,7 +753,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List place action links (booking, ordering, reservations) Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
+        /// List action links Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -768,7 +768,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List place action links (booking, ordering, reservations) Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
+        /// List action links Lists place action links for a Google Business Profile location.  Place actions are the booking, ordering, and reservation buttons that appear on your listing. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

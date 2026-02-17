@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get Google Business Profile reviews
+        /// Get reviews
         /// </summary>
         /// <remarks>
         /// Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
@@ -42,7 +42,7 @@ namespace Late.Api
         GetGoogleBusinessReviews200Response GetGoogleBusinessReviews(string accountId, int? pageSize = default, string? pageToken = default);
 
         /// <summary>
-        /// Get Google Business Profile reviews
+        /// Get reviews
         /// </summary>
         /// <remarks>
         /// Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
@@ -63,7 +63,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get Google Business Profile reviews
+        /// Get reviews
         /// </summary>
         /// <remarks>
         /// Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
@@ -77,7 +77,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Google Business Profile reviews
+        /// Get reviews
         /// </summary>
         /// <remarks>
         /// Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
@@ -303,7 +303,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile reviews Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
+        /// Get reviews Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -317,7 +317,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile reviews Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
+        /// Get reviews Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -376,7 +376,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile reviews Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
+        /// Get reviews Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -391,7 +391,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile reviews Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
+        /// Get reviews Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner&#39;s reply (if any) - Review timestamps  Use pagination via &#x60;nextPageToken&#x60; to fetch all reviews for locations with many reviews. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>

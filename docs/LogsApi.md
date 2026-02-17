@@ -4,17 +4,17 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetLog**](LogsApi.md#getlog) | **GET** /v1/logs/{logId} | Get a single log entry |
-| [**GetPostLogs**](LogsApi.md#getpostlogs) | **GET** /v1/posts/{postId}/logs | Get logs for a specific post |
-| [**ListConnectionLogs**](LogsApi.md#listconnectionlogs) | **GET** /v1/connections/logs | Get connection logs |
-| [**ListLogs**](LogsApi.md#listlogs) | **GET** /v1/logs | Get publishing logs (deprecated) |
-| [**ListPostsLogs**](LogsApi.md#listpostslogs) | **GET** /v1/posts/logs | Get publishing logs |
+| [**GetLog**](LogsApi.md#getlog) | **GET** /v1/logs/{logId} | Get log entry |
+| [**GetPostLogs**](LogsApi.md#getpostlogs) | **GET** /v1/posts/{postId}/logs | Get post logs |
+| [**ListConnectionLogs**](LogsApi.md#listconnectionlogs) | **GET** /v1/connections/logs | List connection logs |
+| [**ListLogs**](LogsApi.md#listlogs) | **GET** /v1/logs | List publishing logs (deprecated) |
+| [**ListPostsLogs**](LogsApi.md#listpostslogs) | **GET** /v1/posts/logs | List publishing logs |
 
 <a id="getlog"></a>
 # **GetLog**
 > GetLog200Response GetLog (string logId)
 
-Get a single log entry
+Get log entry
 
 Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
 
@@ -46,7 +46,7 @@ namespace Example
 
             try
             {
-                // Get a single log entry
+                // Get log entry
                 GetLog200Response result = apiInstance.GetLog(logId);
                 Debug.WriteLine(result);
             }
@@ -67,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get a single log entry
+    // Get log entry
     ApiResponse<GetLog200Response> response = apiInstance.GetLogWithHttpInfo(logId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -115,7 +115,7 @@ catch (ApiException e)
 # **GetPostLogs**
 > GetPostLogs200Response GetPostLogs (string postId, int? limit = null)
 
-Get logs for a specific post
+Get post logs
 
 Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
 
@@ -148,7 +148,7 @@ namespace Example
 
             try
             {
-                // Get logs for a specific post
+                // Get post logs
                 GetPostLogs200Response result = apiInstance.GetPostLogs(postId, limit);
                 Debug.WriteLine(result);
             }
@@ -169,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get logs for a specific post
+    // Get post logs
     ApiResponse<GetPostLogs200Response> response = apiInstance.GetPostLogsWithHttpInfo(postId, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -218,7 +218,7 @@ catch (ApiException e)
 # **ListConnectionLogs**
 > ListConnectionLogs200Response ListConnectionLogs (string? platform = null, string? eventType = null, string? status = null, int? days = null, int? limit = null, int? skip = null)
 
-Get connection logs
+List connection logs
 
 Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - `connect_success` - New account connected successfully - `connect_failed` - Connection attempt failed - `disconnect` - Account was disconnected - `reconnect_success` - Existing account reconnected - `reconnect_failed` - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
 
@@ -255,7 +255,7 @@ namespace Example
 
             try
             {
-                // Get connection logs
+                // List connection logs
                 ListConnectionLogs200Response result = apiInstance.ListConnectionLogs(platform, eventType, status, days, limit, skip);
                 Debug.WriteLine(result);
             }
@@ -276,7 +276,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get connection logs
+    // List connection logs
     ApiResponse<ListConnectionLogs200Response> response = apiInstance.ListConnectionLogsWithHttpInfo(platform, eventType, status, days, limit, skip);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -327,7 +327,7 @@ catch (ApiException e)
 # **ListLogs**
 > ListLogs200Response ListLogs (string? status = null, string? platform = null, string? action = null, int? days = null, int? limit = null, int? skip = null)
 
-Get publishing logs (deprecated)
+List publishing logs (deprecated)
 
 **Deprecated:** Use `/v1/posts/logs` instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
 
@@ -364,7 +364,7 @@ namespace Example
 
             try
             {
-                // Get publishing logs (deprecated)
+                // List publishing logs (deprecated)
                 ListLogs200Response result = apiInstance.ListLogs(status, platform, action, days, limit, skip);
                 Debug.WriteLine(result);
             }
@@ -385,7 +385,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get publishing logs (deprecated)
+    // List publishing logs (deprecated)
     ApiResponse<ListLogs200Response> response = apiInstance.ListLogsWithHttpInfo(status, platform, action, days, limit, skip);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -436,7 +436,7 @@ catch (ApiException e)
 # **ListPostsLogs**
 > ListLogs200Response ListPostsLogs (string? status = null, string? platform = null, string? action = null, int? days = null, int? limit = null, int? skip = null)
 
-Get publishing logs
+List publishing logs
 
 Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
 
@@ -473,7 +473,7 @@ namespace Example
 
             try
             {
-                // Get publishing logs
+                // List publishing logs
                 ListLogs200Response result = apiInstance.ListPostsLogs(status, platform, action, days, limit, skip);
                 Debug.WriteLine(result);
             }
@@ -494,7 +494,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get publishing logs
+    // List publishing logs
     ApiResponse<ListLogs200Response> response = apiInstance.ListPostsLogsWithHttpInfo(status, platform, action, days, limit, skip);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

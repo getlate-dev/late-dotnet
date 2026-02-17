@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a new profile
+        /// Create profile
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProfileRequest"></param>
@@ -37,7 +37,7 @@ namespace Late.Api
         ProfileCreateResponse CreateProfile(CreateProfileRequest createProfileRequest);
 
         /// <summary>
-        /// Create a new profile
+        /// Create profile
         /// </summary>
         /// <remarks>
         /// 
@@ -47,7 +47,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ProfileCreateResponse</returns>
         ApiResponse<ProfileCreateResponse> CreateProfileWithHttpInfo(CreateProfileRequest createProfileRequest);
         /// <summary>
-        /// Delete a profile (must have no connected accounts)
+        /// Delete profile
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -55,7 +55,7 @@ namespace Late.Api
         DeleteAccountGroup200Response DeleteProfile(string profileId);
 
         /// <summary>
-        /// Delete a profile (must have no connected accounts)
+        /// Delete profile
         /// </summary>
         /// <remarks>
         /// 
@@ -65,7 +65,7 @@ namespace Late.Api
         /// <returns>ApiResponse of DeleteAccountGroup200Response</returns>
         ApiResponse<DeleteAccountGroup200Response> DeleteProfileWithHttpInfo(string profileId);
         /// <summary>
-        /// Get a profile by id
+        /// Get profile
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -73,7 +73,7 @@ namespace Late.Api
         GetProfile200Response GetProfile(string profileId);
 
         /// <summary>
-        /// Get a profile by id
+        /// Get profile
         /// </summary>
         /// <remarks>
         /// 
@@ -83,7 +83,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetProfile200Response</returns>
         ApiResponse<GetProfile200Response> GetProfileWithHttpInfo(string profileId);
         /// <summary>
-        /// List profiles visible to the authenticated user
+        /// List profiles
         /// </summary>
         /// <remarks>
         /// Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
@@ -94,7 +94,7 @@ namespace Late.Api
         ProfilesListResponse ListProfiles(bool? includeOverLimit = default);
 
         /// <summary>
-        /// List profiles visible to the authenticated user
+        /// List profiles
         /// </summary>
         /// <remarks>
         /// Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
@@ -104,7 +104,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ProfilesListResponse</returns>
         ApiResponse<ProfilesListResponse> ListProfilesWithHttpInfo(bool? includeOverLimit = default);
         /// <summary>
-        /// Update a profile
+        /// Update profile
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -113,7 +113,7 @@ namespace Late.Api
         UpdateProfile200Response UpdateProfile(string profileId, UpdateProfileRequest updateProfileRequest);
 
         /// <summary>
-        /// Update a profile
+        /// Update profile
         /// </summary>
         /// <remarks>
         /// 
@@ -133,7 +133,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create a new profile
+        /// Create profile
         /// </summary>
         /// <remarks>
         /// 
@@ -145,7 +145,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ProfileCreateResponse> CreateProfileAsync(CreateProfileRequest createProfileRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a new profile
+        /// Create profile
         /// </summary>
         /// <remarks>
         /// 
@@ -156,7 +156,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ProfileCreateResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ProfileCreateResponse>> CreateProfileWithHttpInfoAsync(CreateProfileRequest createProfileRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a profile (must have no connected accounts)
+        /// Delete profile
         /// </summary>
         /// <remarks>
         /// 
@@ -168,7 +168,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteAccountGroup200Response> DeleteProfileAsync(string profileId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a profile (must have no connected accounts)
+        /// Delete profile
         /// </summary>
         /// <remarks>
         /// 
@@ -179,7 +179,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (DeleteAccountGroup200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteAccountGroup200Response>> DeleteProfileWithHttpInfoAsync(string profileId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a profile by id
+        /// Get profile
         /// </summary>
         /// <remarks>
         /// 
@@ -191,7 +191,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetProfile200Response> GetProfileAsync(string profileId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get a profile by id
+        /// Get profile
         /// </summary>
         /// <remarks>
         /// 
@@ -202,7 +202,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetProfile200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetProfile200Response>> GetProfileWithHttpInfoAsync(string profileId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List profiles visible to the authenticated user
+        /// List profiles
         /// </summary>
         /// <remarks>
         /// Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
@@ -214,7 +214,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ProfilesListResponse> ListProfilesAsync(bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List profiles visible to the authenticated user
+        /// List profiles
         /// </summary>
         /// <remarks>
         /// Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
@@ -225,7 +225,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ProfilesListResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ProfilesListResponse>> ListProfilesWithHttpInfoAsync(bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a profile
+        /// Update profile
         /// </summary>
         /// <remarks>
         /// 
@@ -238,7 +238,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateProfile200Response> UpdateProfileAsync(string profileId, UpdateProfileRequest updateProfileRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update a profile
+        /// Update profile
         /// </summary>
         /// <remarks>
         /// 
@@ -463,7 +463,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new profile 
+        /// Create profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProfileRequest"></param>
@@ -475,7 +475,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new profile 
+        /// Create profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProfileRequest"></param>
@@ -525,7 +525,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new profile 
+        /// Create profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProfileRequest"></param>
@@ -538,7 +538,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new profile 
+        /// Create profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProfileRequest"></param>
@@ -592,7 +592,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a profile (must have no connected accounts) 
+        /// Delete profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -604,7 +604,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a profile (must have no connected accounts) 
+        /// Delete profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -653,7 +653,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a profile (must have no connected accounts) 
+        /// Delete profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -666,7 +666,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a profile (must have no connected accounts) 
+        /// Delete profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -719,7 +719,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a profile by id 
+        /// Get profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -731,7 +731,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a profile by id 
+        /// Get profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -780,7 +780,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a profile by id 
+        /// Get profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -793,7 +793,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a profile by id 
+        /// Get profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -846,7 +846,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List profiles visible to the authenticated user Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// List profiles Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
@@ -858,7 +858,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List profiles visible to the authenticated user Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// List profiles Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
@@ -906,7 +906,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List profiles visible to the authenticated user Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// List profiles Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
@@ -919,7 +919,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List profiles visible to the authenticated user Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// List profiles Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
@@ -971,7 +971,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a profile 
+        /// Update profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -984,7 +984,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a profile 
+        /// Update profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1040,7 +1040,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a profile 
+        /// Update profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1054,7 +1054,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a profile 
+        /// Update profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>

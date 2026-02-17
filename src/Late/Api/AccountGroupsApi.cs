@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a new account group
+        /// Create group
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -37,7 +37,7 @@ namespace Late.Api
         CreateAccountGroup201Response CreateAccountGroup(CreateAccountGroupRequest createAccountGroupRequest);
 
         /// <summary>
-        /// Create a new account group
+        /// Create group
         /// </summary>
         /// <remarks>
         /// 
@@ -47,7 +47,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateAccountGroup201Response</returns>
         ApiResponse<CreateAccountGroup201Response> CreateAccountGroupWithHttpInfo(CreateAccountGroupRequest createAccountGroupRequest);
         /// <summary>
-        /// Delete an account group
+        /// Delete group
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -55,7 +55,7 @@ namespace Late.Api
         DeleteAccountGroup200Response DeleteAccountGroup(string groupId);
 
         /// <summary>
-        /// Delete an account group
+        /// Delete group
         /// </summary>
         /// <remarks>
         /// 
@@ -65,14 +65,14 @@ namespace Late.Api
         /// <returns>ApiResponse of DeleteAccountGroup200Response</returns>
         ApiResponse<DeleteAccountGroup200Response> DeleteAccountGroupWithHttpInfo(string groupId);
         /// <summary>
-        /// List account groups for the authenticated user
+        /// List groups
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListAccountGroups200Response</returns>
         ListAccountGroups200Response ListAccountGroups();
 
         /// <summary>
-        /// List account groups for the authenticated user
+        /// List groups
         /// </summary>
         /// <remarks>
         /// 
@@ -81,7 +81,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ListAccountGroups200Response</returns>
         ApiResponse<ListAccountGroups200Response> ListAccountGroupsWithHttpInfo();
         /// <summary>
-        /// Update an account group
+        /// Update group
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -90,7 +90,7 @@ namespace Late.Api
         UpdateAccountGroup200Response UpdateAccountGroup(string groupId, UpdateAccountGroupRequest updateAccountGroupRequest);
 
         /// <summary>
-        /// Update an account group
+        /// Update group
         /// </summary>
         /// <remarks>
         /// 
@@ -110,7 +110,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create a new account group
+        /// Create group
         /// </summary>
         /// <remarks>
         /// 
@@ -122,7 +122,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateAccountGroup201Response> CreateAccountGroupAsync(CreateAccountGroupRequest createAccountGroupRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a new account group
+        /// Create group
         /// </summary>
         /// <remarks>
         /// 
@@ -133,7 +133,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateAccountGroup201Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateAccountGroup201Response>> CreateAccountGroupWithHttpInfoAsync(CreateAccountGroupRequest createAccountGroupRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete an account group
+        /// Delete group
         /// </summary>
         /// <remarks>
         /// 
@@ -145,7 +145,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteAccountGroup200Response> DeleteAccountGroupAsync(string groupId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete an account group
+        /// Delete group
         /// </summary>
         /// <remarks>
         /// 
@@ -156,7 +156,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (DeleteAccountGroup200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteAccountGroup200Response>> DeleteAccountGroupWithHttpInfoAsync(string groupId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List account groups for the authenticated user
+        /// List groups
         /// </summary>
         /// <remarks>
         /// 
@@ -167,7 +167,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListAccountGroups200Response> ListAccountGroupsAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List account groups for the authenticated user
+        /// List groups
         /// </summary>
         /// <remarks>
         /// 
@@ -177,7 +177,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListAccountGroups200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListAccountGroups200Response>> ListAccountGroupsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update an account group
+        /// Update group
         /// </summary>
         /// <remarks>
         /// 
@@ -190,7 +190,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateAccountGroup200Response> UpdateAccountGroupAsync(string groupId, UpdateAccountGroupRequest updateAccountGroupRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update an account group
+        /// Update group
         /// </summary>
         /// <remarks>
         /// 
@@ -415,7 +415,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new account group 
+        /// Create group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -427,7 +427,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new account group 
+        /// Create group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -477,7 +477,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new account group 
+        /// Create group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -490,7 +490,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new account group 
+        /// Create group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -544,7 +544,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete an account group 
+        /// Delete group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -556,7 +556,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete an account group 
+        /// Delete group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -605,7 +605,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete an account group 
+        /// Delete group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -618,7 +618,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete an account group 
+        /// Delete group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -671,7 +671,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List account groups for the authenticated user 
+        /// List groups 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListAccountGroups200Response</returns>
@@ -682,7 +682,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List account groups for the authenticated user 
+        /// List groups 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListAccountGroups200Response</returns>
@@ -725,7 +725,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List account groups for the authenticated user 
+        /// List groups 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -737,7 +737,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List account groups for the authenticated user 
+        /// List groups 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -784,7 +784,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update an account group 
+        /// Update group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -797,7 +797,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update an account group 
+        /// Update group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -853,7 +853,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update an account group 
+        /// Update group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -867,7 +867,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update an account group 
+        /// Update group 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>

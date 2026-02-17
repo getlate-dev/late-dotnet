@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get Google Business Profile location attributes
+        /// Get attributes
         /// </summary>
         /// <remarks>
         /// Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
@@ -40,7 +40,7 @@ namespace Late.Api
         GetGoogleBusinessAttributes200Response GetGoogleBusinessAttributes(string accountId);
 
         /// <summary>
-        /// Get Google Business Profile location attributes
+        /// Get attributes
         /// </summary>
         /// <remarks>
         /// Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
@@ -50,7 +50,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetGoogleBusinessAttributes200Response</returns>
         ApiResponse<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesWithHttpInfo(string accountId);
         /// <summary>
-        /// Update Google Business Profile location attributes
+        /// Update attributes
         /// </summary>
         /// <remarks>
         /// Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
@@ -62,7 +62,7 @@ namespace Late.Api
         UpdateGoogleBusinessAttributes200Response UpdateGoogleBusinessAttributes(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest);
 
         /// <summary>
-        /// Update Google Business Profile location attributes
+        /// Update attributes
         /// </summary>
         /// <remarks>
         /// Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
@@ -82,7 +82,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get Google Business Profile location attributes
+        /// Get attributes
         /// </summary>
         /// <remarks>
         /// Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
@@ -94,7 +94,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Google Business Profile location attributes
+        /// Get attributes
         /// </summary>
         /// <remarks>
         /// Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
@@ -105,7 +105,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetGoogleBusinessAttributes200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessAttributes200Response>> GetGoogleBusinessAttributesWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update Google Business Profile location attributes
+        /// Update attributes
         /// </summary>
         /// <remarks>
         /// Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
@@ -118,7 +118,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update Google Business Profile location attributes
+        /// Update attributes
         /// </summary>
         /// <remarks>
         /// Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
@@ -343,7 +343,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile location attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -355,7 +355,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile location attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -404,7 +404,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile location attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -417,7 +417,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile location attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -470,7 +470,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update Google Business Profile location attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Update attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -483,7 +483,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update Google Business Profile location attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Update attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -539,7 +539,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update Google Business Profile location attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Update attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -553,7 +553,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update Google Business Profile location attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Update attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

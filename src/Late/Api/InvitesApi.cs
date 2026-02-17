@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a team member invite token
+        /// Create invite token
         /// </summary>
         /// <remarks>
         /// Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
@@ -40,7 +40,7 @@ namespace Late.Api
         CreateInviteToken201Response CreateInviteToken(CreateInviteTokenRequest createInviteTokenRequest);
 
         /// <summary>
-        /// Create a team member invite token
+        /// Create invite token
         /// </summary>
         /// <remarks>
         /// Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
@@ -59,7 +59,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create a team member invite token
+        /// Create invite token
         /// </summary>
         /// <remarks>
         /// Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
@@ -71,7 +71,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateInviteToken201Response> CreateInviteTokenAsync(CreateInviteTokenRequest createInviteTokenRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a team member invite token
+        /// Create invite token
         /// </summary>
         /// <remarks>
         /// Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
@@ -295,7 +295,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a team member invite token Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
+        /// Create invite token Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInviteTokenRequest"></param>
@@ -307,7 +307,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a team member invite token Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
+        /// Create invite token Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInviteTokenRequest"></param>
@@ -357,7 +357,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a team member invite token Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
+        /// Create invite token Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInviteTokenRequest"></param>
@@ -370,7 +370,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a team member invite token Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
+        /// Create invite token Generate a secure invite link to grant team members access to your profiles. Invites expire after 7 days and are single-use. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createInviteTokenRequest"></param>

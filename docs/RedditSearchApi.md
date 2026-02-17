@@ -4,14 +4,14 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetRedditFeed**](RedditSearchApi.md#getredditfeed) | **GET** /v1/reddit/feed | Fetch subreddit feed via a connected account |
-| [**SearchReddit**](RedditSearchApi.md#searchreddit) | **GET** /v1/reddit/search | Search Reddit posts via a connected account |
+| [**GetRedditFeed**](RedditSearchApi.md#getredditfeed) | **GET** /v1/reddit/feed | Get subreddit feed |
+| [**SearchReddit**](RedditSearchApi.md#searchreddit) | **GET** /v1/reddit/search | Search posts |
 
 <a id="getredditfeed"></a>
 # **GetRedditFeed**
 > GetRedditFeed200Response GetRedditFeed (string accountId, string? subreddit = null, string? sort = null, int? limit = null, string? after = null, string? t = null)
 
-Fetch subreddit feed via a connected account
+Get subreddit feed
 
 ### Example
 ```csharp
@@ -46,7 +46,7 @@ namespace Example
 
             try
             {
-                // Fetch subreddit feed via a connected account
+                // Get subreddit feed
                 GetRedditFeed200Response result = apiInstance.GetRedditFeed(accountId, subreddit, sort, limit, after, t);
                 Debug.WriteLine(result);
             }
@@ -67,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Fetch subreddit feed via a connected account
+    // Get subreddit feed
     ApiResponse<GetRedditFeed200Response> response = apiInstance.GetRedditFeedWithHttpInfo(accountId, subreddit, sort, limit, after, t);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -120,7 +120,7 @@ catch (ApiException e)
 # **SearchReddit**
 > SearchReddit200Response SearchReddit (string accountId, string q, string? subreddit = null, string? restrictSr = null, string? sort = null, int? limit = null, string? after = null)
 
-Search Reddit posts via a connected account
+Search posts
 
 ### Example
 ```csharp
@@ -156,7 +156,7 @@ namespace Example
 
             try
             {
-                // Search Reddit posts via a connected account
+                // Search posts
                 SearchReddit200Response result = apiInstance.SearchReddit(accountId, q, subreddit, restrictSr, sort, limit, after);
                 Debug.WriteLine(result);
             }
@@ -177,7 +177,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Search Reddit posts via a connected account
+    // Search posts
     ApiResponse<SearchReddit200Response> response = apiInstance.SearchRedditWithHttpInfo(accountId, q, subreddit, restrictSr, sort, limit, after);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

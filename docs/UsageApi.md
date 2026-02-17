@@ -4,13 +4,13 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetUsageStats**](UsageApi.md#getusagestats) | **GET** /v1/usage-stats | Get plan and usage stats for current account |
+| [**GetUsageStats**](UsageApi.md#getusagestats) | **GET** /v1/usage-stats | Get plan and usage stats |
 
 <a id="getusagestats"></a>
 # **GetUsageStats**
 > UsageStats GetUsageStats ()
 
-Get plan and usage stats for current account
+Get plan and usage stats
 
 ### Example
 ```csharp
@@ -39,7 +39,7 @@ namespace Example
 
             try
             {
-                // Get plan and usage stats for current account
+                // Get plan and usage stats
                 UsageStats result = apiInstance.GetUsageStats();
                 Debug.WriteLine(result);
             }
@@ -60,7 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get plan and usage stats for current account
+    // Get plan and usage stats
     ApiResponse<UsageStats> response = apiInstance.GetUsageStatsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

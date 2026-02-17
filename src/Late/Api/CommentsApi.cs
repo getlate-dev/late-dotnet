@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Delete a comment
+        /// Delete comment
         /// </summary>
         /// <remarks>
         /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
@@ -42,7 +42,7 @@ namespace Late.Api
         DeleteInboxComment200Response DeleteInboxComment(string postId, string accountId, string commentId);
 
         /// <summary>
-        /// Delete a comment
+        /// Delete comment
         /// </summary>
         /// <remarks>
         /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
@@ -54,7 +54,7 @@ namespace Late.Api
         /// <returns>ApiResponse of DeleteInboxComment200Response</returns>
         ApiResponse<DeleteInboxComment200Response> DeleteInboxCommentWithHttpInfo(string postId, string accountId, string commentId);
         /// <summary>
-        /// Get comments for a post
+        /// Get post comments
         /// </summary>
         /// <remarks>
         /// Fetch comments for a specific post. Requires accountId query parameter.
@@ -70,7 +70,7 @@ namespace Late.Api
         GetInboxPostComments200Response GetInboxPostComments(string postId, string accountId, string? subreddit = default, int? limit = default, string? cursor = default, string? commentId = default);
 
         /// <summary>
-        /// Get comments for a post
+        /// Get post comments
         /// </summary>
         /// <remarks>
         /// Fetch comments for a specific post. Requires accountId query parameter.
@@ -85,7 +85,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetInboxPostComments200Response</returns>
         ApiResponse<GetInboxPostComments200Response> GetInboxPostCommentsWithHttpInfo(string postId, string accountId, string? subreddit = default, int? limit = default, string? cursor = default, string? commentId = default);
         /// <summary>
-        /// Hide a comment
+        /// Hide comment
         /// </summary>
         /// <remarks>
         /// Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
@@ -98,7 +98,7 @@ namespace Late.Api
         HideInboxComment200Response HideInboxComment(string postId, string commentId, HideInboxCommentRequest hideInboxCommentRequest);
 
         /// <summary>
-        /// Hide a comment
+        /// Hide comment
         /// </summary>
         /// <remarks>
         /// Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
@@ -110,7 +110,7 @@ namespace Late.Api
         /// <returns>ApiResponse of HideInboxComment200Response</returns>
         ApiResponse<HideInboxComment200Response> HideInboxCommentWithHttpInfo(string postId, string commentId, HideInboxCommentRequest hideInboxCommentRequest);
         /// <summary>
-        /// Like a comment
+        /// Like comment
         /// </summary>
         /// <remarks>
         /// Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
@@ -123,7 +123,7 @@ namespace Late.Api
         LikeInboxComment200Response LikeInboxComment(string postId, string commentId, LikeInboxCommentRequest likeInboxCommentRequest);
 
         /// <summary>
-        /// Like a comment
+        /// Like comment
         /// </summary>
         /// <remarks>
         /// Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
@@ -135,7 +135,7 @@ namespace Late.Api
         /// <returns>ApiResponse of LikeInboxComment200Response</returns>
         ApiResponse<LikeInboxComment200Response> LikeInboxCommentWithHttpInfo(string postId, string commentId, LikeInboxCommentRequest likeInboxCommentRequest);
         /// <summary>
-        /// List posts with comments across all accounts
+        /// List commented posts
         /// </summary>
         /// <remarks>
         /// Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
@@ -154,7 +154,7 @@ namespace Late.Api
         ListInboxComments200Response ListInboxComments(string? profileId = default, string? platform = default, int? minComments = default, DateTime? since = default, string? sortBy = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default);
 
         /// <summary>
-        /// List posts with comments across all accounts
+        /// List commented posts
         /// </summary>
         /// <remarks>
         /// Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
@@ -172,7 +172,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ListInboxComments200Response</returns>
         ApiResponse<ListInboxComments200Response> ListInboxCommentsWithHttpInfo(string? profileId = default, string? platform = default, int? minComments = default, DateTime? since = default, string? sortBy = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default);
         /// <summary>
-        /// Reply to a post or comment
+        /// Reply to comment
         /// </summary>
         /// <remarks>
         /// Post a reply to a post or specific comment. Requires accountId in request body.
@@ -184,7 +184,7 @@ namespace Late.Api
         ReplyToInboxPost200Response ReplyToInboxPost(string postId, ReplyToInboxPostRequest replyToInboxPostRequest);
 
         /// <summary>
-        /// Reply to a post or comment
+        /// Reply to comment
         /// </summary>
         /// <remarks>
         /// Post a reply to a post or specific comment. Requires accountId in request body.
@@ -195,7 +195,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ReplyToInboxPost200Response</returns>
         ApiResponse<ReplyToInboxPost200Response> ReplyToInboxPostWithHttpInfo(string postId, ReplyToInboxPostRequest replyToInboxPostRequest);
         /// <summary>
-        /// Send private reply to comment author
+        /// Send private reply
         /// </summary>
         /// <remarks>
         /// Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
@@ -208,7 +208,7 @@ namespace Late.Api
         SendPrivateReplyToComment200Response SendPrivateReplyToComment(string postId, string commentId, SendPrivateReplyToCommentRequest sendPrivateReplyToCommentRequest);
 
         /// <summary>
-        /// Send private reply to comment author
+        /// Send private reply
         /// </summary>
         /// <remarks>
         /// Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
@@ -220,7 +220,7 @@ namespace Late.Api
         /// <returns>ApiResponse of SendPrivateReplyToComment200Response</returns>
         ApiResponse<SendPrivateReplyToComment200Response> SendPrivateReplyToCommentWithHttpInfo(string postId, string commentId, SendPrivateReplyToCommentRequest sendPrivateReplyToCommentRequest);
         /// <summary>
-        /// Unhide a comment
+        /// Unhide comment
         /// </summary>
         /// <remarks>
         /// Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
@@ -233,7 +233,7 @@ namespace Late.Api
         HideInboxComment200Response UnhideInboxComment(string postId, string commentId, string accountId);
 
         /// <summary>
-        /// Unhide a comment
+        /// Unhide comment
         /// </summary>
         /// <remarks>
         /// Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
@@ -245,7 +245,7 @@ namespace Late.Api
         /// <returns>ApiResponse of HideInboxComment200Response</returns>
         ApiResponse<HideInboxComment200Response> UnhideInboxCommentWithHttpInfo(string postId, string commentId, string accountId);
         /// <summary>
-        /// Unlike a comment
+        /// Unlike comment
         /// </summary>
         /// <remarks>
         /// Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
@@ -259,7 +259,7 @@ namespace Late.Api
         UnlikeInboxComment200Response UnlikeInboxComment(string postId, string commentId, string accountId, string? likeUri = default);
 
         /// <summary>
-        /// Unlike a comment
+        /// Unlike comment
         /// </summary>
         /// <remarks>
         /// Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
@@ -281,7 +281,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Delete a comment
+        /// Delete comment
         /// </summary>
         /// <remarks>
         /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
@@ -295,7 +295,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteInboxComment200Response> DeleteInboxCommentAsync(string postId, string accountId, string commentId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a comment
+        /// Delete comment
         /// </summary>
         /// <remarks>
         /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
@@ -308,7 +308,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (DeleteInboxComment200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteInboxComment200Response>> DeleteInboxCommentWithHttpInfoAsync(string postId, string accountId, string commentId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get comments for a post
+        /// Get post comments
         /// </summary>
         /// <remarks>
         /// Fetch comments for a specific post. Requires accountId query parameter.
@@ -325,7 +325,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetInboxPostComments200Response> GetInboxPostCommentsAsync(string postId, string accountId, string? subreddit = default, int? limit = default, string? cursor = default, string? commentId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get comments for a post
+        /// Get post comments
         /// </summary>
         /// <remarks>
         /// Fetch comments for a specific post. Requires accountId query parameter.
@@ -341,7 +341,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetInboxPostComments200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetInboxPostComments200Response>> GetInboxPostCommentsWithHttpInfoAsync(string postId, string accountId, string? subreddit = default, int? limit = default, string? cursor = default, string? commentId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Hide a comment
+        /// Hide comment
         /// </summary>
         /// <remarks>
         /// Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
@@ -355,7 +355,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<HideInboxComment200Response> HideInboxCommentAsync(string postId, string commentId, HideInboxCommentRequest hideInboxCommentRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Hide a comment
+        /// Hide comment
         /// </summary>
         /// <remarks>
         /// Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
@@ -368,7 +368,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (HideInboxComment200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<HideInboxComment200Response>> HideInboxCommentWithHttpInfoAsync(string postId, string commentId, HideInboxCommentRequest hideInboxCommentRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Like a comment
+        /// Like comment
         /// </summary>
         /// <remarks>
         /// Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
@@ -382,7 +382,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<LikeInboxComment200Response> LikeInboxCommentAsync(string postId, string commentId, LikeInboxCommentRequest likeInboxCommentRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Like a comment
+        /// Like comment
         /// </summary>
         /// <remarks>
         /// Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
@@ -395,7 +395,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (LikeInboxComment200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<LikeInboxComment200Response>> LikeInboxCommentWithHttpInfoAsync(string postId, string commentId, LikeInboxCommentRequest likeInboxCommentRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List posts with comments across all accounts
+        /// List commented posts
         /// </summary>
         /// <remarks>
         /// Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
@@ -415,7 +415,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListInboxComments200Response> ListInboxCommentsAsync(string? profileId = default, string? platform = default, int? minComments = default, DateTime? since = default, string? sortBy = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List posts with comments across all accounts
+        /// List commented posts
         /// </summary>
         /// <remarks>
         /// Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
@@ -434,7 +434,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListInboxComments200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListInboxComments200Response>> ListInboxCommentsWithHttpInfoAsync(string? profileId = default, string? platform = default, int? minComments = default, DateTime? since = default, string? sortBy = default, string? sortOrder = default, int? limit = default, string? cursor = default, string? accountId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Reply to a post or comment
+        /// Reply to comment
         /// </summary>
         /// <remarks>
         /// Post a reply to a post or specific comment. Requires accountId in request body.
@@ -447,7 +447,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ReplyToInboxPost200Response> ReplyToInboxPostAsync(string postId, ReplyToInboxPostRequest replyToInboxPostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Reply to a post or comment
+        /// Reply to comment
         /// </summary>
         /// <remarks>
         /// Post a reply to a post or specific comment. Requires accountId in request body.
@@ -459,7 +459,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ReplyToInboxPost200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ReplyToInboxPost200Response>> ReplyToInboxPostWithHttpInfoAsync(string postId, ReplyToInboxPostRequest replyToInboxPostRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Send private reply to comment author
+        /// Send private reply
         /// </summary>
         /// <remarks>
         /// Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
@@ -473,7 +473,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<SendPrivateReplyToComment200Response> SendPrivateReplyToCommentAsync(string postId, string commentId, SendPrivateReplyToCommentRequest sendPrivateReplyToCommentRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Send private reply to comment author
+        /// Send private reply
         /// </summary>
         /// <remarks>
         /// Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
@@ -486,7 +486,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (SendPrivateReplyToComment200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<SendPrivateReplyToComment200Response>> SendPrivateReplyToCommentWithHttpInfoAsync(string postId, string commentId, SendPrivateReplyToCommentRequest sendPrivateReplyToCommentRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Unhide a comment
+        /// Unhide comment
         /// </summary>
         /// <remarks>
         /// Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
@@ -500,7 +500,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<HideInboxComment200Response> UnhideInboxCommentAsync(string postId, string commentId, string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Unhide a comment
+        /// Unhide comment
         /// </summary>
         /// <remarks>
         /// Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
@@ -513,7 +513,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (HideInboxComment200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<HideInboxComment200Response>> UnhideInboxCommentWithHttpInfoAsync(string postId, string commentId, string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Unlike a comment
+        /// Unlike comment
         /// </summary>
         /// <remarks>
         /// Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
@@ -528,7 +528,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UnlikeInboxComment200Response> UnlikeInboxCommentAsync(string postId, string commentId, string accountId, string? likeUri = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Unlike a comment
+        /// Unlike comment
         /// </summary>
         /// <remarks>
         /// Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
@@ -755,7 +755,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL. </param>
@@ -769,7 +769,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL. </param>
@@ -830,7 +830,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL. </param>
@@ -845,7 +845,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL. </param>
@@ -910,7 +910,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get comments for a post Fetch comments for a specific post. Requires accountId query parameter.
+        /// Get post comments Fetch comments for a specific post. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID).  **LinkedIn:** For your own posts, the full URN stored in Late (e.g., &#x60;urn:li:share:7429218977714745345&#x60;) is used automatically. For third-party posts, pass either the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as &#x60;urn:li:activity:&#x60;). Note: LinkedIn post URLs use activity IDs (&#x60;linkedin.com/feed/update/urn:li:activity:XXXX&#x60;). </param>
@@ -927,7 +927,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get comments for a post Fetch comments for a specific post. Requires accountId query parameter.
+        /// Get post comments Fetch comments for a specific post. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID).  **LinkedIn:** For your own posts, the full URN stored in Late (e.g., &#x60;urn:li:share:7429218977714745345&#x60;) is used automatically. For third-party posts, pass either the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as &#x60;urn:li:activity:&#x60;). Note: LinkedIn post URLs use activity IDs (&#x60;linkedin.com/feed/update/urn:li:activity:XXXX&#x60;). </param>
@@ -1002,7 +1002,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get comments for a post Fetch comments for a specific post. Requires accountId query parameter.
+        /// Get post comments Fetch comments for a specific post. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID).  **LinkedIn:** For your own posts, the full URN stored in Late (e.g., &#x60;urn:li:share:7429218977714745345&#x60;) is used automatically. For third-party posts, pass either the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as &#x60;urn:li:activity:&#x60;). Note: LinkedIn post URLs use activity IDs (&#x60;linkedin.com/feed/update/urn:li:activity:XXXX&#x60;). </param>
@@ -1020,7 +1020,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get comments for a post Fetch comments for a specific post. Requires accountId query parameter.
+        /// Get post comments Fetch comments for a specific post. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID).  **LinkedIn:** For your own posts, the full URN stored in Late (e.g., &#x60;urn:li:share:7429218977714745345&#x60;) is used automatically. For third-party posts, pass either the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as &#x60;urn:li:activity:&#x60;). Note: LinkedIn post URLs use activity IDs (&#x60;linkedin.com/feed/update/urn:li:activity:XXXX&#x60;). </param>
@@ -1099,7 +1099,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Hide a comment Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
+        /// Hide comment Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1113,7 +1113,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Hide a comment Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
+        /// Hide comment Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1175,7 +1175,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Hide a comment Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
+        /// Hide comment Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1190,7 +1190,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Hide a comment Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
+        /// Hide comment Hide a comment on a post. Supported by Facebook, Instagram, and Threads. Hidden comments are only visible to the commenter and page admin. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1256,7 +1256,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Like a comment Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
+        /// Like comment Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1270,7 +1270,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Like a comment Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
+        /// Like comment Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1332,7 +1332,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Like a comment Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
+        /// Like comment Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1347,7 +1347,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Like a comment Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
+        /// Like comment Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;cid&#x60; (content identifier) is required in the request body. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1413,7 +1413,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List posts with comments across all accounts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
+        /// List commented posts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1433,7 +1433,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List posts with comments across all accounts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
+        /// List commented posts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1521,7 +1521,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List posts with comments across all accounts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
+        /// List commented posts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1542,7 +1542,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List posts with comments across all accounts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
+        /// List commented posts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1634,7 +1634,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Reply to a post or comment Post a reply to a post or specific comment. Requires accountId in request body.
+        /// Reply to comment Post a reply to a post or specific comment. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL. </param>
@@ -1647,7 +1647,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Reply to a post or comment Post a reply to a post or specific comment. Requires accountId in request body.
+        /// Reply to comment Post a reply to a post or specific comment. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL. </param>
@@ -1703,7 +1703,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Reply to a post or comment Post a reply to a post or specific comment. Requires accountId in request body.
+        /// Reply to comment Post a reply to a post or specific comment. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL. </param>
@@ -1717,7 +1717,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Reply to a post or comment Post a reply to a post or specific comment. Requires accountId in request body.
+        /// Reply to comment Post a reply to a post or specific comment. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL. </param>
@@ -1777,7 +1777,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send private reply to comment author Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
+        /// Send private reply Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -1791,7 +1791,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send private reply to comment author Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
+        /// Send private reply Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -1853,7 +1853,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send private reply to comment author Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
+        /// Send private reply Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -1868,7 +1868,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send private reply to comment author Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
+        /// Send private reply Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user&#39;s Inbox (if they follow you) or Message Requests (if they don&#39;t). Requires &#x60;instagram_business_manage_messages&#x60; permission. - Facebook: message opens a Messenger conversation with the commenter. Requires &#x60;pages_messaging&#x60; permission.  **Note:** Both permissions are already included in Late&#39;s OAuth flow. This does not create a conversation thread until the user replies back. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -1934,7 +1934,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unhide a comment Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
+        /// Unhide comment Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1948,7 +1948,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unhide a comment Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
+        /// Unhide comment Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -2009,7 +2009,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unhide a comment Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
+        /// Unhide comment Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -2024,7 +2024,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unhide a comment Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
+        /// Unhide comment Unhide a previously hidden comment. Supported by Facebook, Instagram, and Threads. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -2089,7 +2089,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unlike a comment Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
+        /// Unlike comment Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -2104,7 +2104,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unlike a comment Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
+        /// Unlike comment Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -2170,7 +2170,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unlike a comment Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
+        /// Unlike comment Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -2186,7 +2186,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unlike a comment Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
+        /// Unlike comment Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the &#x60;likeUri&#x60; query parameter is required. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>

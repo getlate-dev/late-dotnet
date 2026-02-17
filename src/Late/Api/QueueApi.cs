@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a new queue for a profile
+        /// Create schedule
         /// </summary>
         /// <remarks>
         /// Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
@@ -40,7 +40,7 @@ namespace Late.Api
         CreateQueueSlot201Response CreateQueueSlot(CreateQueueSlotRequest createQueueSlotRequest);
 
         /// <summary>
-        /// Create a new queue for a profile
+        /// Create schedule
         /// </summary>
         /// <remarks>
         /// Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
@@ -50,7 +50,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateQueueSlot201Response</returns>
         ApiResponse<CreateQueueSlot201Response> CreateQueueSlotWithHttpInfo(CreateQueueSlotRequest createQueueSlotRequest);
         /// <summary>
-        /// Delete a queue schedule
+        /// Delete schedule
         /// </summary>
         /// <remarks>
         /// Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
@@ -62,7 +62,7 @@ namespace Late.Api
         DeleteQueueSlot200Response DeleteQueueSlot(string profileId, string queueId);
 
         /// <summary>
-        /// Delete a queue schedule
+        /// Delete schedule
         /// </summary>
         /// <remarks>
         /// Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
@@ -73,7 +73,7 @@ namespace Late.Api
         /// <returns>ApiResponse of DeleteQueueSlot200Response</returns>
         ApiResponse<DeleteQueueSlot200Response> DeleteQueueSlotWithHttpInfo(string profileId, string queueId);
         /// <summary>
-        /// Preview the next available queue slot (informational only)
+        /// Get next available slot
         /// </summary>
         /// <remarks>
         /// Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
@@ -85,7 +85,7 @@ namespace Late.Api
         GetNextQueueSlot200Response GetNextQueueSlot(string profileId, string? queueId = default);
 
         /// <summary>
-        /// Preview the next available queue slot (informational only)
+        /// Get next available slot
         /// </summary>
         /// <remarks>
         /// Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
@@ -96,7 +96,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetNextQueueSlot200Response</returns>
         ApiResponse<GetNextQueueSlot200Response> GetNextQueueSlotWithHttpInfo(string profileId, string? queueId = default);
         /// <summary>
-        /// Get queue schedules for a profile
+        /// List schedules
         /// </summary>
         /// <remarks>
         /// Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
@@ -109,7 +109,7 @@ namespace Late.Api
         ListQueueSlots200Response ListQueueSlots(string profileId, string? queueId = default, string? all = default);
 
         /// <summary>
-        /// Get queue schedules for a profile
+        /// List schedules
         /// </summary>
         /// <remarks>
         /// Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
@@ -121,7 +121,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ListQueueSlots200Response</returns>
         ApiResponse<ListQueueSlots200Response> ListQueueSlotsWithHttpInfo(string profileId, string? queueId = default, string? all = default);
         /// <summary>
-        /// Preview upcoming queue slots for a profile
+        /// Preview upcoming slots
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -130,7 +130,7 @@ namespace Late.Api
         PreviewQueue200Response PreviewQueue(string profileId, int? count = default);
 
         /// <summary>
-        /// Preview upcoming queue slots for a profile
+        /// Preview upcoming slots
         /// </summary>
         /// <remarks>
         /// 
@@ -141,7 +141,7 @@ namespace Late.Api
         /// <returns>ApiResponse of PreviewQueue200Response</returns>
         ApiResponse<PreviewQueue200Response> PreviewQueueWithHttpInfo(string profileId, int? count = default);
         /// <summary>
-        /// Create or update a queue schedule
+        /// Update schedule
         /// </summary>
         /// <remarks>
         /// Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
@@ -152,7 +152,7 @@ namespace Late.Api
         UpdateQueueSlot200Response UpdateQueueSlot(UpdateQueueSlotRequest updateQueueSlotRequest);
 
         /// <summary>
-        /// Create or update a queue schedule
+        /// Update schedule
         /// </summary>
         /// <remarks>
         /// Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
@@ -171,7 +171,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create a new queue for a profile
+        /// Create schedule
         /// </summary>
         /// <remarks>
         /// Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
@@ -183,7 +183,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateQueueSlot201Response> CreateQueueSlotAsync(CreateQueueSlotRequest createQueueSlotRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a new queue for a profile
+        /// Create schedule
         /// </summary>
         /// <remarks>
         /// Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
@@ -194,7 +194,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateQueueSlot201Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateQueueSlot201Response>> CreateQueueSlotWithHttpInfoAsync(CreateQueueSlotRequest createQueueSlotRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a queue schedule
+        /// Delete schedule
         /// </summary>
         /// <remarks>
         /// Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
@@ -207,7 +207,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteQueueSlot200Response> DeleteQueueSlotAsync(string profileId, string queueId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a queue schedule
+        /// Delete schedule
         /// </summary>
         /// <remarks>
         /// Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
@@ -219,7 +219,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (DeleteQueueSlot200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteQueueSlot200Response>> DeleteQueueSlotWithHttpInfoAsync(string profileId, string queueId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Preview the next available queue slot (informational only)
+        /// Get next available slot
         /// </summary>
         /// <remarks>
         /// Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
@@ -232,7 +232,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetNextQueueSlot200Response> GetNextQueueSlotAsync(string profileId, string? queueId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Preview the next available queue slot (informational only)
+        /// Get next available slot
         /// </summary>
         /// <remarks>
         /// Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
@@ -244,7 +244,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetNextQueueSlot200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetNextQueueSlot200Response>> GetNextQueueSlotWithHttpInfoAsync(string profileId, string? queueId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get queue schedules for a profile
+        /// List schedules
         /// </summary>
         /// <remarks>
         /// Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
@@ -258,7 +258,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListQueueSlots200Response> ListQueueSlotsAsync(string profileId, string? queueId = default, string? all = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get queue schedules for a profile
+        /// List schedules
         /// </summary>
         /// <remarks>
         /// Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
@@ -271,7 +271,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListQueueSlots200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListQueueSlots200Response>> ListQueueSlotsWithHttpInfoAsync(string profileId, string? queueId = default, string? all = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Preview upcoming queue slots for a profile
+        /// Preview upcoming slots
         /// </summary>
         /// <remarks>
         /// 
@@ -284,7 +284,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<PreviewQueue200Response> PreviewQueueAsync(string profileId, int? count = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Preview upcoming queue slots for a profile
+        /// Preview upcoming slots
         /// </summary>
         /// <remarks>
         /// 
@@ -296,7 +296,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (PreviewQueue200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<PreviewQueue200Response>> PreviewQueueWithHttpInfoAsync(string profileId, int? count = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create or update a queue schedule
+        /// Update schedule
         /// </summary>
         /// <remarks>
         /// Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
@@ -308,7 +308,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateQueueSlot200Response> UpdateQueueSlotAsync(UpdateQueueSlotRequest updateQueueSlotRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create or update a queue schedule
+        /// Update schedule
         /// </summary>
         /// <remarks>
         /// Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
@@ -532,7 +532,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new queue for a profile Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
+        /// Create schedule Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createQueueSlotRequest"></param>
@@ -544,7 +544,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new queue for a profile Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
+        /// Create schedule Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createQueueSlotRequest"></param>
@@ -594,7 +594,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new queue for a profile Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
+        /// Create schedule Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createQueueSlotRequest"></param>
@@ -607,7 +607,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a new queue for a profile Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
+        /// Create schedule Create an additional queue for a profile. The first queue created becomes the default. Subsequent queues are non-default unless explicitly set. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createQueueSlotRequest"></param>
@@ -661,7 +661,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a queue schedule Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
+        /// Delete schedule Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -674,7 +674,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a queue schedule Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
+        /// Delete schedule Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -729,7 +729,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a queue schedule Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
+        /// Delete schedule Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -743,7 +743,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a queue schedule Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
+        /// Delete schedule Delete a queue from a profile. Requires queueId to specify which queue to delete. If deleting the default queue, another queue will be promoted to default. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -802,7 +802,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview the next available queue slot (informational only) Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Get next available slot Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -815,7 +815,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview the next available queue slot (informational only) Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Get next available slot Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -869,7 +869,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview the next available queue slot (informational only) Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Get next available slot Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -883,7 +883,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview the next available queue slot (informational only) Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Get next available slot Returns the next available queue slot for preview/informational purposes.  **Important: To schedule a post to the queue, do NOT use this endpoint&#39;s response with &#x60;scheduledFor&#x60;.** That creates a manual post, not a queue post.  Instead, use &#x60;POST /v1/posts&#x60; with &#x60;queuedFromProfile&#x60; (and optionally &#x60;queueId&#x60;). The system will automatically assign the next available slot with proper locking to prevent race conditions.  This endpoint is useful for: - Showing users when their next post will go out before they commit - Debugging/verifying queue configuration - Building UI previews  If no queueId is specified, uses the profile&#39;s default queue. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -941,7 +941,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get queue schedules for a profile Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
+        /// List schedules Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -955,7 +955,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get queue schedules for a profile Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
+        /// List schedules Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -1014,7 +1014,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get queue schedules for a profile Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
+        /// List schedules Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -1029,7 +1029,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get queue schedules for a profile Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
+        /// List schedules Retrieve queue schedules for a profile. Each profile can have multiple queues. - Without &#x60;all&#x3D;true&#x60;: Returns the default queue (or specific queue if queueId provided) - With &#x60;all&#x3D;true&#x60;: Returns all queues for the profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -1092,7 +1092,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview upcoming queue slots for a profile 
+        /// Preview upcoming slots 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1105,7 +1105,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview upcoming queue slots for a profile 
+        /// Preview upcoming slots 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1159,7 +1159,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview upcoming queue slots for a profile 
+        /// Preview upcoming slots 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1173,7 +1173,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview upcoming queue slots for a profile 
+        /// Preview upcoming slots 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1231,7 +1231,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create or update a queue schedule Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
+        /// Update schedule Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateQueueSlotRequest"></param>
@@ -1243,7 +1243,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create or update a queue schedule Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
+        /// Update schedule Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateQueueSlotRequest"></param>
@@ -1293,7 +1293,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create or update a queue schedule Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
+        /// Update schedule Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateQueueSlotRequest"></param>
@@ -1306,7 +1306,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create or update a queue schedule Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
+        /// Update schedule Create a new queue or update an existing one. - Without queueId: Creates or updates the default queue - With queueId: Updates the specific queue - With setAsDefault&#x3D;true: Makes this queue the default for the profile 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateQueueSlotRequest"></param>

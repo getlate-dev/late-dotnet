@@ -4,17 +4,17 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateProfile**](ProfilesApi.md#createprofile) | **POST** /v1/profiles | Create a new profile |
-| [**DeleteProfile**](ProfilesApi.md#deleteprofile) | **DELETE** /v1/profiles/{profileId} | Delete a profile (must have no connected accounts) |
-| [**GetProfile**](ProfilesApi.md#getprofile) | **GET** /v1/profiles/{profileId} | Get a profile by id |
-| [**ListProfiles**](ProfilesApi.md#listprofiles) | **GET** /v1/profiles | List profiles visible to the authenticated user |
-| [**UpdateProfile**](ProfilesApi.md#updateprofile) | **PUT** /v1/profiles/{profileId} | Update a profile |
+| [**CreateProfile**](ProfilesApi.md#createprofile) | **POST** /v1/profiles | Create profile |
+| [**DeleteProfile**](ProfilesApi.md#deleteprofile) | **DELETE** /v1/profiles/{profileId} | Delete profile |
+| [**GetProfile**](ProfilesApi.md#getprofile) | **GET** /v1/profiles/{profileId} | Get profile |
+| [**ListProfiles**](ProfilesApi.md#listprofiles) | **GET** /v1/profiles | List profiles |
+| [**UpdateProfile**](ProfilesApi.md#updateprofile) | **PUT** /v1/profiles/{profileId} | Update profile |
 
 <a id="createprofile"></a>
 # **CreateProfile**
 > ProfileCreateResponse CreateProfile (CreateProfileRequest createProfileRequest)
 
-Create a new profile
+Create profile
 
 ### Example
 ```csharp
@@ -44,7 +44,7 @@ namespace Example
 
             try
             {
-                // Create a new profile
+                // Create profile
                 ProfileCreateResponse result = apiInstance.CreateProfile(createProfileRequest);
                 Debug.WriteLine(result);
             }
@@ -65,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a new profile
+    // Create profile
     ApiResponse<ProfileCreateResponse> response = apiInstance.CreateProfileWithHttpInfo(createProfileRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -113,7 +113,7 @@ catch (ApiException e)
 # **DeleteProfile**
 > DeleteAccountGroup200Response DeleteProfile (string profileId)
 
-Delete a profile (must have no connected accounts)
+Delete profile
 
 ### Example
 ```csharp
@@ -143,7 +143,7 @@ namespace Example
 
             try
             {
-                // Delete a profile (must have no connected accounts)
+                // Delete profile
                 DeleteAccountGroup200Response result = apiInstance.DeleteProfile(profileId);
                 Debug.WriteLine(result);
             }
@@ -164,7 +164,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a profile (must have no connected accounts)
+    // Delete profile
     ApiResponse<DeleteAccountGroup200Response> response = apiInstance.DeleteProfileWithHttpInfo(profileId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -213,7 +213,7 @@ catch (ApiException e)
 # **GetProfile**
 > GetProfile200Response GetProfile (string profileId)
 
-Get a profile by id
+Get profile
 
 ### Example
 ```csharp
@@ -243,7 +243,7 @@ namespace Example
 
             try
             {
-                // Get a profile by id
+                // Get profile
                 GetProfile200Response result = apiInstance.GetProfile(profileId);
                 Debug.WriteLine(result);
             }
@@ -264,7 +264,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get a profile by id
+    // Get profile
     ApiResponse<GetProfile200Response> response = apiInstance.GetProfileWithHttpInfo(profileId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -311,7 +311,7 @@ catch (ApiException e)
 # **ListProfiles**
 > ProfilesListResponse ListProfiles (bool? includeOverLimit = null)
 
-List profiles visible to the authenticated user
+List profiles
 
 Returns profiles within the user's plan limit. Profiles are sorted by creation date (oldest first). Use `includeOverLimit=true` to include profiles that exceed the plan limit (for management/deletion purposes). 
 
@@ -343,7 +343,7 @@ namespace Example
 
             try
             {
-                // List profiles visible to the authenticated user
+                // List profiles
                 ProfilesListResponse result = apiInstance.ListProfiles(includeOverLimit);
                 Debug.WriteLine(result);
             }
@@ -364,7 +364,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List profiles visible to the authenticated user
+    // List profiles
     ApiResponse<ProfilesListResponse> response = apiInstance.ListProfilesWithHttpInfo(includeOverLimit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -410,7 +410,7 @@ catch (ApiException e)
 # **UpdateProfile**
 > UpdateProfile200Response UpdateProfile (string profileId, UpdateProfileRequest updateProfileRequest)
 
-Update a profile
+Update profile
 
 ### Example
 ```csharp
@@ -441,7 +441,7 @@ namespace Example
 
             try
             {
-                // Update a profile
+                // Update profile
                 UpdateProfile200Response result = apiInstance.UpdateProfile(profileId, updateProfileRequest);
                 Debug.WriteLine(result);
             }
@@ -462,7 +462,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a profile
+    // Update profile
     ApiResponse<UpdateProfile200Response> response = apiInstance.UpdateProfileWithHttpInfo(profileId, updateProfileRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

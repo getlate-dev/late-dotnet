@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a single log entry
+        /// Get log entry
         /// </summary>
         /// <remarks>
         /// Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
@@ -40,7 +40,7 @@ namespace Late.Api
         GetLog200Response GetLog(string logId);
 
         /// <summary>
-        /// Get a single log entry
+        /// Get log entry
         /// </summary>
         /// <remarks>
         /// Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
@@ -50,7 +50,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetLog200Response</returns>
         ApiResponse<GetLog200Response> GetLogWithHttpInfo(string logId);
         /// <summary>
-        /// Get logs for a specific post
+        /// Get post logs
         /// </summary>
         /// <remarks>
         /// Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
@@ -62,7 +62,7 @@ namespace Late.Api
         GetPostLogs200Response GetPostLogs(string postId, int? limit = default);
 
         /// <summary>
-        /// Get logs for a specific post
+        /// Get post logs
         /// </summary>
         /// <remarks>
         /// Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
@@ -73,7 +73,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetPostLogs200Response</returns>
         ApiResponse<GetPostLogs200Response> GetPostLogsWithHttpInfo(string postId, int? limit = default);
         /// <summary>
-        /// Get connection logs
+        /// List connection logs
         /// </summary>
         /// <remarks>
         /// Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
@@ -89,7 +89,7 @@ namespace Late.Api
         ListConnectionLogs200Response ListConnectionLogs(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default);
 
         /// <summary>
-        /// Get connection logs
+        /// List connection logs
         /// </summary>
         /// <remarks>
         /// Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
@@ -104,7 +104,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ListConnectionLogs200Response</returns>
         ApiResponse<ListConnectionLogs200Response> ListConnectionLogsWithHttpInfo(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default);
         /// <summary>
-        /// Get publishing logs (deprecated)
+        /// List publishing logs (deprecated)
         /// </summary>
         /// <remarks>
         /// **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
@@ -121,7 +121,7 @@ namespace Late.Api
         ListLogs200Response ListLogs(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default);
 
         /// <summary>
-        /// Get publishing logs (deprecated)
+        /// List publishing logs (deprecated)
         /// </summary>
         /// <remarks>
         /// **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
@@ -137,7 +137,7 @@ namespace Late.Api
         [Obsolete]
         ApiResponse<ListLogs200Response> ListLogsWithHttpInfo(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default);
         /// <summary>
-        /// Get publishing logs
+        /// List publishing logs
         /// </summary>
         /// <remarks>
         /// Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
@@ -153,7 +153,7 @@ namespace Late.Api
         ListLogs200Response ListPostsLogs(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default);
 
         /// <summary>
-        /// Get publishing logs
+        /// List publishing logs
         /// </summary>
         /// <remarks>
         /// Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
@@ -177,7 +177,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get a single log entry
+        /// Get log entry
         /// </summary>
         /// <remarks>
         /// Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
@@ -189,7 +189,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetLog200Response> GetLogAsync(string logId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get a single log entry
+        /// Get log entry
         /// </summary>
         /// <remarks>
         /// Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
@@ -200,7 +200,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetLog200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetLog200Response>> GetLogWithHttpInfoAsync(string logId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get logs for a specific post
+        /// Get post logs
         /// </summary>
         /// <remarks>
         /// Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
@@ -213,7 +213,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetPostLogs200Response> GetPostLogsAsync(string postId, int? limit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get logs for a specific post
+        /// Get post logs
         /// </summary>
         /// <remarks>
         /// Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
@@ -225,7 +225,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetPostLogs200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetPostLogs200Response>> GetPostLogsWithHttpInfoAsync(string postId, int? limit = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get connection logs
+        /// List connection logs
         /// </summary>
         /// <remarks>
         /// Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
@@ -242,7 +242,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListConnectionLogs200Response> ListConnectionLogsAsync(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get connection logs
+        /// List connection logs
         /// </summary>
         /// <remarks>
         /// Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
@@ -258,7 +258,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListConnectionLogs200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListConnectionLogs200Response>> ListConnectionLogsWithHttpInfoAsync(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get publishing logs (deprecated)
+        /// List publishing logs (deprecated)
         /// </summary>
         /// <remarks>
         /// **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
@@ -276,7 +276,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListLogs200Response> ListLogsAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get publishing logs (deprecated)
+        /// List publishing logs (deprecated)
         /// </summary>
         /// <remarks>
         /// **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
@@ -293,7 +293,7 @@ namespace Late.Api
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ListLogs200Response>> ListLogsWithHttpInfoAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get publishing logs
+        /// List publishing logs
         /// </summary>
         /// <remarks>
         /// Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
@@ -310,7 +310,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListLogs200Response> ListPostsLogsAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get publishing logs
+        /// List publishing logs
         /// </summary>
         /// <remarks>
         /// Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
@@ -539,7 +539,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a single log entry Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
+        /// Get log entry Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">The log entry ID</param>
@@ -551,7 +551,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a single log entry Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
+        /// Get log entry Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">The log entry ID</param>
@@ -600,7 +600,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a single log entry Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
+        /// Get log entry Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">The log entry ID</param>
@@ -613,7 +613,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a single log entry Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
+        /// Get log entry Retrieve detailed information about a specific log entry, including full request and response bodies for debugging. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="logId">The log entry ID</param>
@@ -666,7 +666,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get logs for a specific post Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
+        /// Get post logs Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post ID</param>
@@ -679,7 +679,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get logs for a specific post Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
+        /// Get post logs Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post ID</param>
@@ -733,7 +733,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get logs for a specific post Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
+        /// Get post logs Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post ID</param>
@@ -747,7 +747,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get logs for a specific post Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
+        /// Get post logs Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The post ID</param>
@@ -805,7 +805,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get connection logs Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List connection logs Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -822,7 +822,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get connection logs Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List connection logs Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -895,7 +895,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get connection logs Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List connection logs Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -913,7 +913,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get connection logs Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List connection logs Retrieve connection event logs showing account connection and disconnection history. Useful for debugging OAuth issues and tracking account lifecycle.  **Event Types:** - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -990,7 +990,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get publishing logs (deprecated) **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List publishing logs (deprecated) **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -1008,7 +1008,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get publishing logs (deprecated) **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List publishing logs (deprecated) **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -1082,7 +1082,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get publishing logs (deprecated) **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List publishing logs (deprecated) **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -1101,7 +1101,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get publishing logs (deprecated) **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List publishing logs (deprecated) **Deprecated:** Use &#x60;/v1/posts/logs&#x60; instead. This endpoint is maintained for backwards compatibility.  Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -1179,7 +1179,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get publishing logs Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List publishing logs Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -1196,7 +1196,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get publishing logs Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List publishing logs Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -1269,7 +1269,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get publishing logs Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List publishing logs Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -1287,7 +1287,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get publishing logs Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
+        /// List publishing logs Retrieve publishing logs for all posts. Logs show detailed information about each publishing attempt including API requests, responses, and timing data.  **Filtering:** - Filter by status (success, failed, pending, skipped) - Filter by platform (instagram, twitter, linkedin, etc.) - Filter by action (publish, retry, rate_limit_pause, etc.)  **Retention:** Logs are automatically deleted after 7 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>

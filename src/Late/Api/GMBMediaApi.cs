@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Upload a photo to Google Business Profile
+        /// Upload photo
         /// </summary>
         /// <remarks>
         /// Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
@@ -41,7 +41,7 @@ namespace Late.Api
         CreateGoogleBusinessMedia200Response CreateGoogleBusinessMedia(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest);
 
         /// <summary>
-        /// Upload a photo to Google Business Profile
+        /// Upload photo
         /// </summary>
         /// <remarks>
         /// Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
@@ -52,7 +52,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateGoogleBusinessMedia200Response</returns>
         ApiResponse<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaWithHttpInfo(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest);
         /// <summary>
-        /// Delete a photo from Google Business Profile
+        /// Delete photo
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -61,7 +61,7 @@ namespace Late.Api
         DeleteGoogleBusinessMedia200Response DeleteGoogleBusinessMedia(string accountId, string mediaId);
 
         /// <summary>
-        /// Delete a photo from Google Business Profile
+        /// Delete photo
         /// </summary>
         /// <remarks>
         /// 
@@ -72,7 +72,7 @@ namespace Late.Api
         /// <returns>ApiResponse of DeleteGoogleBusinessMedia200Response</returns>
         ApiResponse<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaWithHttpInfo(string accountId, string mediaId);
         /// <summary>
-        /// List Google Business Profile media (photos)
+        /// List media
         /// </summary>
         /// <remarks>
         /// Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
@@ -85,7 +85,7 @@ namespace Late.Api
         ListGoogleBusinessMedia200Response ListGoogleBusinessMedia(string accountId, int? pageSize = default, string? pageToken = default);
 
         /// <summary>
-        /// List Google Business Profile media (photos)
+        /// List media
         /// </summary>
         /// <remarks>
         /// Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
@@ -106,7 +106,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Upload a photo to Google Business Profile
+        /// Upload photo
         /// </summary>
         /// <remarks>
         /// Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
@@ -119,7 +119,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Upload a photo to Google Business Profile
+        /// Upload photo
         /// </summary>
         /// <remarks>
         /// Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
@@ -131,7 +131,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateGoogleBusinessMedia200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateGoogleBusinessMedia200Response>> CreateGoogleBusinessMediaWithHttpInfoAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a photo from Google Business Profile
+        /// Delete photo
         /// </summary>
         /// <remarks>
         /// 
@@ -144,7 +144,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaAsync(string accountId, string mediaId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a photo from Google Business Profile
+        /// Delete photo
         /// </summary>
         /// <remarks>
         /// 
@@ -156,7 +156,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (DeleteGoogleBusinessMedia200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<DeleteGoogleBusinessMedia200Response>> DeleteGoogleBusinessMediaWithHttpInfoAsync(string accountId, string mediaId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List Google Business Profile media (photos)
+        /// List media
         /// </summary>
         /// <remarks>
         /// Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
@@ -170,7 +170,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List Google Business Profile media (photos)
+        /// List media
         /// </summary>
         /// <remarks>
         /// Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
@@ -396,7 +396,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Upload a photo to Google Business Profile Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
+        /// Upload photo Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -409,7 +409,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Upload a photo to Google Business Profile Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
+        /// Upload photo Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -465,7 +465,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Upload a photo to Google Business Profile Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
+        /// Upload photo Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -479,7 +479,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Upload a photo to Google Business Profile Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
+        /// Upload photo Creates a media item (photo) for a location from a publicly accessible URL.  Categories determine where the photo appears: - &#x60;COVER&#x60; - Cover photo - &#x60;PROFILE&#x60; - Profile photo - &#x60;LOGO&#x60; - Business logo - &#x60;EXTERIOR&#x60; - Exterior shots - &#x60;INTERIOR&#x60; - Interior shots - &#x60;FOOD_AND_DRINK&#x60; - Food and drink photos - &#x60;MENU&#x60; - Menu photos - &#x60;PRODUCT&#x60; - Product photos - &#x60;TEAMS&#x60; - Team/staff photos - &#x60;ADDITIONAL&#x60; - Other photos 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -539,7 +539,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a photo from Google Business Profile 
+        /// Delete photo 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -552,7 +552,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a photo from Google Business Profile 
+        /// Delete photo 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -607,7 +607,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a photo from Google Business Profile 
+        /// Delete photo 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -621,7 +621,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a photo from Google Business Profile 
+        /// Delete photo 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -680,7 +680,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Google Business Profile media (photos) Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
+        /// List media Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -694,7 +694,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Google Business Profile media (photos) Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
+        /// List media Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -753,7 +753,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Google Business Profile media (photos) Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
+        /// List media Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -768,7 +768,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Google Business Profile media (photos) Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
+        /// List media Lists media items (photos) for a Google Business Profile location. Returns photo URLs, descriptions, categories, and metadata. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

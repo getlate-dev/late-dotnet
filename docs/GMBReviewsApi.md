@@ -4,13 +4,13 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetGoogleBusinessReviews**](GMBReviewsApi.md#getgooglebusinessreviews) | **GET** /v1/accounts/{accountId}/gmb-reviews | Get Google Business Profile reviews |
+| [**GetGoogleBusinessReviews**](GMBReviewsApi.md#getgooglebusinessreviews) | **GET** /v1/accounts/{accountId}/gmb-reviews | Get reviews |
 
 <a id="getgooglebusinessreviews"></a>
 # **GetGoogleBusinessReviews**
 > GetGoogleBusinessReviews200Response GetGoogleBusinessReviews (string accountId, int? pageSize = null, string? pageToken = null)
 
-Get Google Business Profile reviews
+Get reviews
 
 Fetches reviews for a connected Google Business Profile account.  Returns all reviews for the business location, including: - Reviewer information (name, profile photo) - Star rating (1-5) - Review comment/text - Business owner's reply (if any) - Review timestamps  Use pagination via `nextPageToken` to fetch all reviews for locations with many reviews. 
 
@@ -44,7 +44,7 @@ namespace Example
 
             try
             {
-                // Get Google Business Profile reviews
+                // Get reviews
                 GetGoogleBusinessReviews200Response result = apiInstance.GetGoogleBusinessReviews(accountId, pageSize, pageToken);
                 Debug.WriteLine(result);
             }
@@ -65,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Google Business Profile reviews
+    // Get reviews
     ApiResponse<GetGoogleBusinessReviews200Response> response = apiInstance.GetGoogleBusinessReviewsWithHttpInfo(accountId, pageSize, pageToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

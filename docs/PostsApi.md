@@ -4,20 +4,20 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BulkUploadPosts**](PostsApi.md#bulkuploadposts) | **POST** /v1/posts/bulk-upload | Validate and schedule multiple posts from CSV |
-| [**CreatePost**](PostsApi.md#createpost) | **POST** /v1/posts | Create a draft, scheduled, or immediate post |
-| [**DeletePost**](PostsApi.md#deletepost) | **DELETE** /v1/posts/{postId} | Delete a post |
-| [**GetPost**](PostsApi.md#getpost) | **GET** /v1/posts/{postId} | Get a single post |
-| [**ListPosts**](PostsApi.md#listposts) | **GET** /v1/posts | List posts visible to the authenticated user |
-| [**RetryPost**](PostsApi.md#retrypost) | **POST** /v1/posts/{postId}/retry | Retry publishing a failed or partial post |
-| [**UnpublishPost**](PostsApi.md#unpublishpost) | **POST** /v1/posts/{postId}/unpublish | Delete a published post from a social media platform |
-| [**UpdatePost**](PostsApi.md#updatepost) | **PUT** /v1/posts/{postId} | Update a post |
+| [**BulkUploadPosts**](PostsApi.md#bulkuploadposts) | **POST** /v1/posts/bulk-upload | Bulk upload from CSV |
+| [**CreatePost**](PostsApi.md#createpost) | **POST** /v1/posts | Create post |
+| [**DeletePost**](PostsApi.md#deletepost) | **DELETE** /v1/posts/{postId} | Delete post |
+| [**GetPost**](PostsApi.md#getpost) | **GET** /v1/posts/{postId} | Get post |
+| [**ListPosts**](PostsApi.md#listposts) | **GET** /v1/posts | List posts |
+| [**RetryPost**](PostsApi.md#retrypost) | **POST** /v1/posts/{postId}/retry | Retry failed post |
+| [**UnpublishPost**](PostsApi.md#unpublishpost) | **POST** /v1/posts/{postId}/unpublish | Unpublish post |
+| [**UpdatePost**](PostsApi.md#updatepost) | **PUT** /v1/posts/{postId} | Update post |
 
 <a id="bulkuploadposts"></a>
 # **BulkUploadPosts**
 > BulkUploadPosts200Response BulkUploadPosts (bool? dryRun = null, FileParameter? file = null)
 
-Validate and schedule multiple posts from CSV
+Bulk upload from CSV
 
 ### Example
 ```csharp
@@ -48,7 +48,7 @@ namespace Example
 
             try
             {
-                // Validate and schedule multiple posts from CSV
+                // Bulk upload from CSV
                 BulkUploadPosts200Response result = apiInstance.BulkUploadPosts(dryRun, file);
                 Debug.WriteLine(result);
             }
@@ -69,7 +69,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Validate and schedule multiple posts from CSV
+    // Bulk upload from CSV
     ApiResponse<BulkUploadPosts200Response> response = apiInstance.BulkUploadPostsWithHttpInfo(dryRun, file);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -119,9 +119,9 @@ catch (ApiException e)
 # **CreatePost**
 > PostCreateResponse CreatePost (CreatePostRequest createPostRequest)
 
-Create a draft, scheduled, or immediate post
+Create post
 
-**Getting Post URLs:** - For immediate posts (`publishNow: true`): The response includes `platformPostUrl` in each platform entry under `post.platforms[]`. - For scheduled posts: Fetch the post via `GET /v1/posts/{postId}` after the scheduled time; `platformPostUrl` will be populated once published.  **Content/Caption requirements:** - `content` (caption/description) is optional when:   - Media is attached (`mediaItems` or per-platform `customMedia`)   - All platforms have `customContent` set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require `content` - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as 'story'. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to 'story' in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky's blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to 'story', 'saved_story', or 'spotlight' in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: `pageId` - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: `organizationUrn` - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: `locationId` - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: `subreddit` - post to multiple subreddits from the same account 
+**Getting Post URLs:** - Immediate posts (`publishNow: true`): response includes `platformPostUrl` in `post.platforms[]`. - Scheduled posts: fetch via `GET /v1/posts/{postId}` after publish time for `platformPostUrl`.  **Content requirements:** - `content` is optional when media is attached, all platforms have `customContent`, or posting to YouTube only. - Text-only posts require `content`. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via `MediaItem.thumbnail` - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set `contentType: 'story'` - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, `boardId` required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set `contentType` in platformSpecificData 
 
 ### Example
 ```csharp
@@ -151,7 +151,7 @@ namespace Example
 
             try
             {
-                // Create a draft, scheduled, or immediate post
+                // Create post
                 PostCreateResponse result = apiInstance.CreatePost(createPostRequest);
                 Debug.WriteLine(result);
             }
@@ -172,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a draft, scheduled, or immediate post
+    // Create post
     ApiResponse<PostCreateResponse> response = apiInstance.CreatePostWithHttpInfo(createPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -222,9 +222,9 @@ catch (ApiException e)
 # **DeletePost**
 > PostDeleteResponse DeletePost (string postId)
 
-Delete a post
+Delete post
 
-Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
 
 ### Example
 ```csharp
@@ -254,7 +254,7 @@ namespace Example
 
             try
             {
-                // Delete a post
+                // Delete post
                 PostDeleteResponse result = apiInstance.DeletePost(postId);
                 Debug.WriteLine(result);
             }
@@ -275,7 +275,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a post
+    // Delete post
     ApiResponse<PostDeleteResponse> response = apiInstance.DeletePostWithHttpInfo(postId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -324,7 +324,7 @@ catch (ApiException e)
 # **GetPost**
 > PostGetResponse GetPost (string postId)
 
-Get a single post
+Get post
 
 Fetch a single post by ID. For published posts, this returns `platformPostUrl`  for each platform - useful for retrieving post URLs after scheduled posts publish. 
 
@@ -356,7 +356,7 @@ namespace Example
 
             try
             {
-                // Get a single post
+                // Get post
                 PostGetResponse result = apiInstance.GetPost(postId);
                 Debug.WriteLine(result);
             }
@@ -377,7 +377,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get a single post
+    // Get post
     ApiResponse<PostGetResponse> response = apiInstance.GetPostWithHttpInfo(postId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -425,7 +425,7 @@ catch (ApiException e)
 # **ListPosts**
 > PostsListResponse ListPosts (int? page = null, int? limit = null, string? status = null, string? platform = null, string? profileId = null, string? createdBy = null, DateOnly? dateFrom = null, DateOnly? dateTo = null, bool? includeHidden = null)
 
-List posts visible to the authenticated user
+List posts
 
 **Getting Post URLs:** For published posts, each platform entry includes `platformPostUrl` with the public URL. Use `status=published` filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
 
@@ -465,7 +465,7 @@ namespace Example
 
             try
             {
-                // List posts visible to the authenticated user
+                // List posts
                 PostsListResponse result = apiInstance.ListPosts(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden);
                 Debug.WriteLine(result);
             }
@@ -486,7 +486,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List posts visible to the authenticated user
+    // List posts
     ApiResponse<PostsListResponse> response = apiInstance.ListPostsWithHttpInfo(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -540,7 +540,7 @@ catch (ApiException e)
 # **RetryPost**
 > PostRetryResponse RetryPost (string postId)
 
-Retry publishing a failed or partial post
+Retry failed post
 
 ### Example
 ```csharp
@@ -570,7 +570,7 @@ namespace Example
 
             try
             {
-                // Retry publishing a failed or partial post
+                // Retry failed post
                 PostRetryResponse result = apiInstance.RetryPost(postId);
                 Debug.WriteLine(result);
             }
@@ -591,7 +591,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Retry publishing a failed or partial post
+    // Retry failed post
     ApiResponse<PostRetryResponse> response = apiInstance.RetryPostWithHttpInfo(postId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -643,9 +643,9 @@ catch (ApiException e)
 # **UnpublishPost**
 > UnpublishPost200Response UnpublishPost (string postId, UnpublishPostRequest unpublishPostRequest)
 
-Delete a published post from a social media platform
+Unpublish post
 
-Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \"cancelled\".  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \"cancelled\". This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
 
 ### Example
 ```csharp
@@ -676,7 +676,7 @@ namespace Example
 
             try
             {
-                // Delete a published post from a social media platform
+                // Unpublish post
                 UnpublishPost200Response result = apiInstance.UnpublishPost(postId, unpublishPostRequest);
                 Debug.WriteLine(result);
             }
@@ -697,7 +697,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a published post from a social media platform
+    // Unpublish post
     ApiResponse<UnpublishPost200Response> response = apiInstance.UnpublishPostWithHttpInfo(postId, unpublishPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -748,7 +748,7 @@ catch (ApiException e)
 # **UpdatePost**
 > PostUpdateResponse UpdatePost (string postId, UpdatePostRequest updatePostRequest)
 
-Update a post
+Update post
 
 Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
 
@@ -781,7 +781,7 @@ namespace Example
 
             try
             {
-                // Update a post
+                // Update post
                 PostUpdateResponse result = apiInstance.UpdatePost(postId, updatePostRequest);
                 Debug.WriteLine(result);
             }
@@ -802,7 +802,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a post
+    // Update post
     ApiResponse<PostUpdateResponse> response = apiInstance.UpdatePostWithHttpInfo(postId, updatePostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get user by id (self or invited)
+        /// Get user
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -37,7 +37,7 @@ namespace Late.Api
         GetUser200Response GetUser(string userId);
 
         /// <summary>
-        /// Get user by id (self or invited)
+        /// Get user
         /// </summary>
         /// <remarks>
         /// 
@@ -47,14 +47,14 @@ namespace Late.Api
         /// <returns>ApiResponse of GetUser200Response</returns>
         ApiResponse<GetUser200Response> GetUserWithHttpInfo(string userId);
         /// <summary>
-        /// List team users (root + invited)
+        /// List users
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListUsers200Response</returns>
         ListUsers200Response ListUsers();
 
         /// <summary>
-        /// List team users (root + invited)
+        /// List users
         /// </summary>
         /// <remarks>
         /// 
@@ -72,7 +72,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get user by id (self or invited)
+        /// Get user
         /// </summary>
         /// <remarks>
         /// 
@@ -84,7 +84,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetUser200Response> GetUserAsync(string userId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get user by id (self or invited)
+        /// Get user
         /// </summary>
         /// <remarks>
         /// 
@@ -95,7 +95,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetUser200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetUser200Response>> GetUserWithHttpInfoAsync(string userId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List team users (root + invited)
+        /// List users
         /// </summary>
         /// <remarks>
         /// 
@@ -106,7 +106,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListUsers200Response> ListUsersAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List team users (root + invited)
+        /// List users
         /// </summary>
         /// <remarks>
         /// 
@@ -329,7 +329,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get user by id (self or invited) 
+        /// Get user 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -341,7 +341,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get user by id (self or invited) 
+        /// Get user 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -390,7 +390,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get user by id (self or invited) 
+        /// Get user 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -403,7 +403,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get user by id (self or invited) 
+        /// Get user 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -456,7 +456,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List team users (root + invited) 
+        /// List users 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListUsers200Response</returns>
@@ -467,7 +467,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List team users (root + invited) 
+        /// List users 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListUsers200Response</returns>
@@ -510,7 +510,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List team users (root + invited) 
+        /// List users 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -522,7 +522,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List team users (root + invited) 
+        /// List users 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

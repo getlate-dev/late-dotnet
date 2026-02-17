@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Validate and schedule multiple posts from CSV
+        /// Bulk upload from CSV
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dryRun"> (optional, default to false)</param>
@@ -38,7 +38,7 @@ namespace Late.Api
         BulkUploadPosts200Response BulkUploadPosts(bool? dryRun = default, FileParameter? file = default);
 
         /// <summary>
-        /// Validate and schedule multiple posts from CSV
+        /// Bulk upload from CSV
         /// </summary>
         /// <remarks>
         /// 
@@ -49,10 +49,10 @@ namespace Late.Api
         /// <returns>ApiResponse of BulkUploadPosts200Response</returns>
         ApiResponse<BulkUploadPosts200Response> BulkUploadPostsWithHttpInfo(bool? dryRun = default, FileParameter? file = default);
         /// <summary>
-        /// Create a draft, scheduled, or immediate post
+        /// Create post
         /// </summary>
         /// <remarks>
-        /// **Getting Post URLs:** - For immediate posts (&#x60;publishNow: true&#x60;): The response includes &#x60;platformPostUrl&#x60; in each platform entry under &#x60;post.platforms[]&#x60;. - For scheduled posts: Fetch the post via &#x60;GET /v1/posts/{postId}&#x60; after the scheduled time; &#x60;platformPostUrl&#x60; will be populated once published.  **Content/Caption requirements:** - &#x60;content&#x60; (caption/description) is optional when:   - Media is attached (&#x60;mediaItems&#x60; or per-platform &#x60;customMedia&#x60;)   - All platforms have &#x60;customContent&#x60; set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require &#x60;content&#x60; - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as &#39;story&#39;. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to &#39;story&#39; in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky&#39;s blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to &#39;story&#39;, &#39;saved_story&#39;, or &#39;spotlight&#39; in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: &#x60;pageId&#x60; - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: &#x60;organizationUrn&#x60; - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: &#x60;locationId&#x60; - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: &#x60;subreddit&#x60; - post to multiple subreddits from the same account 
+        /// **Getting Post URLs:** - Immediate posts (&#x60;publishNow: true&#x60;): response includes &#x60;platformPostUrl&#x60; in &#x60;post.platforms[]&#x60;. - Scheduled posts: fetch via &#x60;GET /v1/posts/{postId}&#x60; after publish time for &#x60;platformPostUrl&#x60;.  **Content requirements:** - &#x60;content&#x60; is optional when media is attached, all platforms have &#x60;customContent&#x60;, or posting to YouTube only. - Text-only posts require &#x60;content&#x60;. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via &#x60;MediaItem.thumbnail&#x60; - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set &#x60;contentType: &#39;story&#39;&#x60; - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, &#x60;boardId&#x60; required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set &#x60;contentType&#x60; in platformSpecificData 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPostRequest"></param>
@@ -60,20 +60,20 @@ namespace Late.Api
         PostCreateResponse CreatePost(CreatePostRequest createPostRequest);
 
         /// <summary>
-        /// Create a draft, scheduled, or immediate post
+        /// Create post
         /// </summary>
         /// <remarks>
-        /// **Getting Post URLs:** - For immediate posts (&#x60;publishNow: true&#x60;): The response includes &#x60;platformPostUrl&#x60; in each platform entry under &#x60;post.platforms[]&#x60;. - For scheduled posts: Fetch the post via &#x60;GET /v1/posts/{postId}&#x60; after the scheduled time; &#x60;platformPostUrl&#x60; will be populated once published.  **Content/Caption requirements:** - &#x60;content&#x60; (caption/description) is optional when:   - Media is attached (&#x60;mediaItems&#x60; or per-platform &#x60;customMedia&#x60;)   - All platforms have &#x60;customContent&#x60; set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require &#x60;content&#x60; - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as &#39;story&#39;. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to &#39;story&#39; in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky&#39;s blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to &#39;story&#39;, &#39;saved_story&#39;, or &#39;spotlight&#39; in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: &#x60;pageId&#x60; - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: &#x60;organizationUrn&#x60; - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: &#x60;locationId&#x60; - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: &#x60;subreddit&#x60; - post to multiple subreddits from the same account 
+        /// **Getting Post URLs:** - Immediate posts (&#x60;publishNow: true&#x60;): response includes &#x60;platformPostUrl&#x60; in &#x60;post.platforms[]&#x60;. - Scheduled posts: fetch via &#x60;GET /v1/posts/{postId}&#x60; after publish time for &#x60;platformPostUrl&#x60;.  **Content requirements:** - &#x60;content&#x60; is optional when media is attached, all platforms have &#x60;customContent&#x60;, or posting to YouTube only. - Text-only posts require &#x60;content&#x60;. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via &#x60;MediaItem.thumbnail&#x60; - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set &#x60;contentType: &#39;story&#39;&#x60; - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, &#x60;boardId&#x60; required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set &#x60;contentType&#x60; in platformSpecificData 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPostRequest"></param>
         /// <returns>ApiResponse of PostCreateResponse</returns>
         ApiResponse<PostCreateResponse> CreatePostWithHttpInfo(CreatePostRequest createPostRequest);
         /// <summary>
-        /// Delete a post
+        /// Delete post
         /// </summary>
         /// <remarks>
-        /// Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+        /// Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -81,17 +81,17 @@ namespace Late.Api
         PostDeleteResponse DeletePost(string postId);
 
         /// <summary>
-        /// Delete a post
+        /// Delete post
         /// </summary>
         /// <remarks>
-        /// Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+        /// Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
         /// <returns>ApiResponse of PostDeleteResponse</returns>
         ApiResponse<PostDeleteResponse> DeletePostWithHttpInfo(string postId);
         /// <summary>
-        /// Get a single post
+        /// Get post
         /// </summary>
         /// <remarks>
         /// Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
@@ -102,7 +102,7 @@ namespace Late.Api
         PostGetResponse GetPost(string postId);
 
         /// <summary>
-        /// Get a single post
+        /// Get post
         /// </summary>
         /// <remarks>
         /// Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
@@ -112,7 +112,7 @@ namespace Late.Api
         /// <returns>ApiResponse of PostGetResponse</returns>
         ApiResponse<PostGetResponse> GetPostWithHttpInfo(string postId);
         /// <summary>
-        /// List posts visible to the authenticated user
+        /// List posts
         /// </summary>
         /// <remarks>
         /// **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
@@ -131,7 +131,7 @@ namespace Late.Api
         PostsListResponse ListPosts(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default);
 
         /// <summary>
-        /// List posts visible to the authenticated user
+        /// List posts
         /// </summary>
         /// <remarks>
         /// **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
@@ -149,7 +149,7 @@ namespace Late.Api
         /// <returns>ApiResponse of PostsListResponse</returns>
         ApiResponse<PostsListResponse> ListPostsWithHttpInfo(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default);
         /// <summary>
-        /// Retry publishing a failed or partial post
+        /// Retry failed post
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -157,7 +157,7 @@ namespace Late.Api
         PostRetryResponse RetryPost(string postId);
 
         /// <summary>
-        /// Retry publishing a failed or partial post
+        /// Retry failed post
         /// </summary>
         /// <remarks>
         /// 
@@ -167,10 +167,10 @@ namespace Late.Api
         /// <returns>ApiResponse of PostRetryResponse</returns>
         ApiResponse<PostRetryResponse> RetryPostWithHttpInfo(string postId);
         /// <summary>
-        /// Delete a published post from a social media platform
+        /// Unpublish post
         /// </summary>
         /// <remarks>
-        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \&quot;cancelled\&quot;. This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -179,10 +179,10 @@ namespace Late.Api
         UnpublishPost200Response UnpublishPost(string postId, UnpublishPostRequest unpublishPostRequest);
 
         /// <summary>
-        /// Delete a published post from a social media platform
+        /// Unpublish post
         /// </summary>
         /// <remarks>
-        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \&quot;cancelled\&quot;. This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -190,7 +190,7 @@ namespace Late.Api
         /// <returns>ApiResponse of UnpublishPost200Response</returns>
         ApiResponse<UnpublishPost200Response> UnpublishPostWithHttpInfo(string postId, UnpublishPostRequest unpublishPostRequest);
         /// <summary>
-        /// Update a post
+        /// Update post
         /// </summary>
         /// <remarks>
         /// Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
@@ -202,7 +202,7 @@ namespace Late.Api
         PostUpdateResponse UpdatePost(string postId, UpdatePostRequest updatePostRequest);
 
         /// <summary>
-        /// Update a post
+        /// Update post
         /// </summary>
         /// <remarks>
         /// Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
@@ -222,7 +222,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Validate and schedule multiple posts from CSV
+        /// Bulk upload from CSV
         /// </summary>
         /// <remarks>
         /// 
@@ -235,7 +235,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<BulkUploadPosts200Response> BulkUploadPostsAsync(bool? dryRun = default, FileParameter? file = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Validate and schedule multiple posts from CSV
+        /// Bulk upload from CSV
         /// </summary>
         /// <remarks>
         /// 
@@ -247,10 +247,10 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (BulkUploadPosts200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<BulkUploadPosts200Response>> BulkUploadPostsWithHttpInfoAsync(bool? dryRun = default, FileParameter? file = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a draft, scheduled, or immediate post
+        /// Create post
         /// </summary>
         /// <remarks>
-        /// **Getting Post URLs:** - For immediate posts (&#x60;publishNow: true&#x60;): The response includes &#x60;platformPostUrl&#x60; in each platform entry under &#x60;post.platforms[]&#x60;. - For scheduled posts: Fetch the post via &#x60;GET /v1/posts/{postId}&#x60; after the scheduled time; &#x60;platformPostUrl&#x60; will be populated once published.  **Content/Caption requirements:** - &#x60;content&#x60; (caption/description) is optional when:   - Media is attached (&#x60;mediaItems&#x60; or per-platform &#x60;customMedia&#x60;)   - All platforms have &#x60;customContent&#x60; set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require &#x60;content&#x60; - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as &#39;story&#39;. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to &#39;story&#39; in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky&#39;s blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to &#39;story&#39;, &#39;saved_story&#39;, or &#39;spotlight&#39; in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: &#x60;pageId&#x60; - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: &#x60;organizationUrn&#x60; - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: &#x60;locationId&#x60; - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: &#x60;subreddit&#x60; - post to multiple subreddits from the same account 
+        /// **Getting Post URLs:** - Immediate posts (&#x60;publishNow: true&#x60;): response includes &#x60;platformPostUrl&#x60; in &#x60;post.platforms[]&#x60;. - Scheduled posts: fetch via &#x60;GET /v1/posts/{postId}&#x60; after publish time for &#x60;platformPostUrl&#x60;.  **Content requirements:** - &#x60;content&#x60; is optional when media is attached, all platforms have &#x60;customContent&#x60;, or posting to YouTube only. - Text-only posts require &#x60;content&#x60;. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via &#x60;MediaItem.thumbnail&#x60; - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set &#x60;contentType: &#39;story&#39;&#x60; - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, &#x60;boardId&#x60; required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set &#x60;contentType&#x60; in platformSpecificData 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPostRequest"></param>
@@ -259,10 +259,10 @@ namespace Late.Api
         System.Threading.Tasks.Task<PostCreateResponse> CreatePostAsync(CreatePostRequest createPostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a draft, scheduled, or immediate post
+        /// Create post
         /// </summary>
         /// <remarks>
-        /// **Getting Post URLs:** - For immediate posts (&#x60;publishNow: true&#x60;): The response includes &#x60;platformPostUrl&#x60; in each platform entry under &#x60;post.platforms[]&#x60;. - For scheduled posts: Fetch the post via &#x60;GET /v1/posts/{postId}&#x60; after the scheduled time; &#x60;platformPostUrl&#x60; will be populated once published.  **Content/Caption requirements:** - &#x60;content&#x60; (caption/description) is optional when:   - Media is attached (&#x60;mediaItems&#x60; or per-platform &#x60;customMedia&#x60;)   - All platforms have &#x60;customContent&#x60; set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require &#x60;content&#x60; - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as &#39;story&#39;. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to &#39;story&#39; in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky&#39;s blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to &#39;story&#39;, &#39;saved_story&#39;, or &#39;spotlight&#39; in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: &#x60;pageId&#x60; - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: &#x60;organizationUrn&#x60; - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: &#x60;locationId&#x60; - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: &#x60;subreddit&#x60; - post to multiple subreddits from the same account 
+        /// **Getting Post URLs:** - Immediate posts (&#x60;publishNow: true&#x60;): response includes &#x60;platformPostUrl&#x60; in &#x60;post.platforms[]&#x60;. - Scheduled posts: fetch via &#x60;GET /v1/posts/{postId}&#x60; after publish time for &#x60;platformPostUrl&#x60;.  **Content requirements:** - &#x60;content&#x60; is optional when media is attached, all platforms have &#x60;customContent&#x60;, or posting to YouTube only. - Text-only posts require &#x60;content&#x60;. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via &#x60;MediaItem.thumbnail&#x60; - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set &#x60;contentType: &#39;story&#39;&#x60; - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, &#x60;boardId&#x60; required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set &#x60;contentType&#x60; in platformSpecificData 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPostRequest"></param>
@@ -270,10 +270,10 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (PostCreateResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PostCreateResponse>> CreatePostWithHttpInfoAsync(CreatePostRequest createPostRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a post
+        /// Delete post
         /// </summary>
         /// <remarks>
-        /// Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+        /// Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -282,10 +282,10 @@ namespace Late.Api
         System.Threading.Tasks.Task<PostDeleteResponse> DeletePostAsync(string postId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a post
+        /// Delete post
         /// </summary>
         /// <remarks>
-        /// Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+        /// Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -293,7 +293,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (PostDeleteResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PostDeleteResponse>> DeletePostWithHttpInfoAsync(string postId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get a single post
+        /// Get post
         /// </summary>
         /// <remarks>
         /// Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
@@ -305,7 +305,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<PostGetResponse> GetPostAsync(string postId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get a single post
+        /// Get post
         /// </summary>
         /// <remarks>
         /// Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
@@ -316,7 +316,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (PostGetResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PostGetResponse>> GetPostWithHttpInfoAsync(string postId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List posts visible to the authenticated user
+        /// List posts
         /// </summary>
         /// <remarks>
         /// **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
@@ -336,7 +336,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<PostsListResponse> ListPostsAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List posts visible to the authenticated user
+        /// List posts
         /// </summary>
         /// <remarks>
         /// **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
@@ -355,7 +355,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (PostsListResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PostsListResponse>> ListPostsWithHttpInfoAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Retry publishing a failed or partial post
+        /// Retry failed post
         /// </summary>
         /// <remarks>
         /// 
@@ -367,7 +367,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<PostRetryResponse> RetryPostAsync(string postId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Retry publishing a failed or partial post
+        /// Retry failed post
         /// </summary>
         /// <remarks>
         /// 
@@ -378,10 +378,10 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (PostRetryResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PostRetryResponse>> RetryPostWithHttpInfoAsync(string postId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a published post from a social media platform
+        /// Unpublish post
         /// </summary>
         /// <remarks>
-        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \&quot;cancelled\&quot;. This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -391,10 +391,10 @@ namespace Late.Api
         System.Threading.Tasks.Task<UnpublishPost200Response> UnpublishPostAsync(string postId, UnpublishPostRequest unpublishPostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a published post from a social media platform
+        /// Unpublish post
         /// </summary>
         /// <remarks>
-        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \&quot;cancelled\&quot;. This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -403,7 +403,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> UnpublishPostWithHttpInfoAsync(string postId, UnpublishPostRequest unpublishPostRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a post
+        /// Update post
         /// </summary>
         /// <remarks>
         /// Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
@@ -416,7 +416,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<PostUpdateResponse> UpdatePostAsync(string postId, UpdatePostRequest updatePostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update a post
+        /// Update post
         /// </summary>
         /// <remarks>
         /// Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
@@ -641,7 +641,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Validate and schedule multiple posts from CSV 
+        /// Bulk upload from CSV 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dryRun"> (optional, default to false)</param>
@@ -654,7 +654,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Validate and schedule multiple posts from CSV 
+        /// Bulk upload from CSV 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dryRun"> (optional, default to false)</param>
@@ -708,7 +708,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Validate and schedule multiple posts from CSV 
+        /// Bulk upload from CSV 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dryRun"> (optional, default to false)</param>
@@ -722,7 +722,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Validate and schedule multiple posts from CSV 
+        /// Bulk upload from CSV 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="dryRun"> (optional, default to false)</param>
@@ -780,7 +780,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a draft, scheduled, or immediate post **Getting Post URLs:** - For immediate posts (&#x60;publishNow: true&#x60;): The response includes &#x60;platformPostUrl&#x60; in each platform entry under &#x60;post.platforms[]&#x60;. - For scheduled posts: Fetch the post via &#x60;GET /v1/posts/{postId}&#x60; after the scheduled time; &#x60;platformPostUrl&#x60; will be populated once published.  **Content/Caption requirements:** - &#x60;content&#x60; (caption/description) is optional when:   - Media is attached (&#x60;mediaItems&#x60; or per-platform &#x60;customMedia&#x60;)   - All platforms have &#x60;customContent&#x60; set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require &#x60;content&#x60; - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as &#39;story&#39;. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to &#39;story&#39; in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky&#39;s blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to &#39;story&#39;, &#39;saved_story&#39;, or &#39;spotlight&#39; in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: &#x60;pageId&#x60; - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: &#x60;organizationUrn&#x60; - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: &#x60;locationId&#x60; - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: &#x60;subreddit&#x60; - post to multiple subreddits from the same account 
+        /// Create post **Getting Post URLs:** - Immediate posts (&#x60;publishNow: true&#x60;): response includes &#x60;platformPostUrl&#x60; in &#x60;post.platforms[]&#x60;. - Scheduled posts: fetch via &#x60;GET /v1/posts/{postId}&#x60; after publish time for &#x60;platformPostUrl&#x60;.  **Content requirements:** - &#x60;content&#x60; is optional when media is attached, all platforms have &#x60;customContent&#x60;, or posting to YouTube only. - Text-only posts require &#x60;content&#x60;. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via &#x60;MediaItem.thumbnail&#x60; - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set &#x60;contentType: &#39;story&#39;&#x60; - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, &#x60;boardId&#x60; required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set &#x60;contentType&#x60; in platformSpecificData 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPostRequest"></param>
@@ -792,7 +792,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a draft, scheduled, or immediate post **Getting Post URLs:** - For immediate posts (&#x60;publishNow: true&#x60;): The response includes &#x60;platformPostUrl&#x60; in each platform entry under &#x60;post.platforms[]&#x60;. - For scheduled posts: Fetch the post via &#x60;GET /v1/posts/{postId}&#x60; after the scheduled time; &#x60;platformPostUrl&#x60; will be populated once published.  **Content/Caption requirements:** - &#x60;content&#x60; (caption/description) is optional when:   - Media is attached (&#x60;mediaItems&#x60; or per-platform &#x60;customMedia&#x60;)   - All platforms have &#x60;customContent&#x60; set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require &#x60;content&#x60; - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as &#39;story&#39;. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to &#39;story&#39; in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky&#39;s blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to &#39;story&#39;, &#39;saved_story&#39;, or &#39;spotlight&#39; in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: &#x60;pageId&#x60; - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: &#x60;organizationUrn&#x60; - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: &#x60;locationId&#x60; - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: &#x60;subreddit&#x60; - post to multiple subreddits from the same account 
+        /// Create post **Getting Post URLs:** - Immediate posts (&#x60;publishNow: true&#x60;): response includes &#x60;platformPostUrl&#x60; in &#x60;post.platforms[]&#x60;. - Scheduled posts: fetch via &#x60;GET /v1/posts/{postId}&#x60; after publish time for &#x60;platformPostUrl&#x60;.  **Content requirements:** - &#x60;content&#x60; is optional when media is attached, all platforms have &#x60;customContent&#x60;, or posting to YouTube only. - Text-only posts require &#x60;content&#x60;. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via &#x60;MediaItem.thumbnail&#x60; - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set &#x60;contentType: &#39;story&#39;&#x60; - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, &#x60;boardId&#x60; required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set &#x60;contentType&#x60; in platformSpecificData 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPostRequest"></param>
@@ -842,7 +842,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a draft, scheduled, or immediate post **Getting Post URLs:** - For immediate posts (&#x60;publishNow: true&#x60;): The response includes &#x60;platformPostUrl&#x60; in each platform entry under &#x60;post.platforms[]&#x60;. - For scheduled posts: Fetch the post via &#x60;GET /v1/posts/{postId}&#x60; after the scheduled time; &#x60;platformPostUrl&#x60; will be populated once published.  **Content/Caption requirements:** - &#x60;content&#x60; (caption/description) is optional when:   - Media is attached (&#x60;mediaItems&#x60; or per-platform &#x60;customMedia&#x60;)   - All platforms have &#x60;customContent&#x60; set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require &#x60;content&#x60; - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as &#39;story&#39;. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to &#39;story&#39; in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky&#39;s blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to &#39;story&#39;, &#39;saved_story&#39;, or &#39;spotlight&#39; in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: &#x60;pageId&#x60; - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: &#x60;organizationUrn&#x60; - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: &#x60;locationId&#x60; - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: &#x60;subreddit&#x60; - post to multiple subreddits from the same account 
+        /// Create post **Getting Post URLs:** - Immediate posts (&#x60;publishNow: true&#x60;): response includes &#x60;platformPostUrl&#x60; in &#x60;post.platforms[]&#x60;. - Scheduled posts: fetch via &#x60;GET /v1/posts/{postId}&#x60; after publish time for &#x60;platformPostUrl&#x60;.  **Content requirements:** - &#x60;content&#x60; is optional when media is attached, all platforms have &#x60;customContent&#x60;, or posting to YouTube only. - Text-only posts require &#x60;content&#x60;. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via &#x60;MediaItem.thumbnail&#x60; - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set &#x60;contentType: &#39;story&#39;&#x60; - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, &#x60;boardId&#x60; required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set &#x60;contentType&#x60; in platformSpecificData 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPostRequest"></param>
@@ -855,7 +855,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a draft, scheduled, or immediate post **Getting Post URLs:** - For immediate posts (&#x60;publishNow: true&#x60;): The response includes &#x60;platformPostUrl&#x60; in each platform entry under &#x60;post.platforms[]&#x60;. - For scheduled posts: Fetch the post via &#x60;GET /v1/posts/{postId}&#x60; after the scheduled time; &#x60;platformPostUrl&#x60; will be populated once published.  **Content/Caption requirements:** - &#x60;content&#x60; (caption/description) is optional when:   - Media is attached (&#x60;mediaItems&#x60; or per-platform &#x60;customMedia&#x60;)   - All platforms have &#x60;customContent&#x60; set   - Posting only to YouTube (title is used instead) - Text-only posts (no media) require &#x60;content&#x60; - Stories do not use captions (content is ignored) - Reels, feed posts, and other media posts can have optional captions  Platform constraints: - YouTube requires a video in mediaItems; optional custom thumbnail via MediaItem.thumbnail. - Instagram and TikTok require media; do not mix videos and images for TikTok. - Instagram carousels support up to 10 items; Stories publish as &#39;story&#39;. - Threads carousels support up to 10 images (no videos in carousels); single posts support one image or video. - Facebook Stories require media (single image or video); set contentType to &#39;story&#39; in platformSpecificData. - LinkedIn multi-image supports up to 20 images; single PDF documents supported (max 100MB, ~300 pages, cannot mix with other media). - Pinterest supports single image via image_url or a single video per Pin; boardId is required. - Bluesky supports up to 4 images per post. Images may be automatically recompressed to ≤ ~1MB to satisfy Bluesky&#39;s blob limit. When no media is attached, a link preview may be generated for URLs in the text. - Snapchat requires media (single image or video); set contentType to &#39;story&#39;, &#39;saved_story&#39;, or &#39;spotlight&#39; in platformSpecificData. Stories are ephemeral (24h), Saved Stories are permanent, Spotlight is for video content.  **Multi-page/multi-location posting:** Some platforms allow posting to multiple pages, organizations, or locations from a single account connection. Use the same accountId multiple times with different targets in platformSpecificData: - Facebook: &#x60;pageId&#x60; - post to multiple Facebook Pages (list via GET /v1/accounts/{id}/facebook-page) - LinkedIn: &#x60;organizationUrn&#x60; - post to multiple organizations (list via GET /v1/accounts/{id}/linkedin-organizations) - Google Business: &#x60;locationId&#x60; - post to multiple locations (list via GET /v1/accounts/{id}/gmb-locations) - Reddit: &#x60;subreddit&#x60; - post to multiple subreddits from the same account 
+        /// Create post **Getting Post URLs:** - Immediate posts (&#x60;publishNow: true&#x60;): response includes &#x60;platformPostUrl&#x60; in &#x60;post.platforms[]&#x60;. - Scheduled posts: fetch via &#x60;GET /v1/posts/{postId}&#x60; after publish time for &#x60;platformPostUrl&#x60;.  **Content requirements:** - &#x60;content&#x60; is optional when media is attached, all platforms have &#x60;customContent&#x60;, or posting to YouTube only. - Text-only posts require &#x60;content&#x60;. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via &#x60;MediaItem.thumbnail&#x60; - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set &#x60;contentType: &#39;story&#39;&#x60; - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, &#x60;boardId&#x60; required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set &#x60;contentType&#x60; in platformSpecificData 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createPostRequest"></param>
@@ -909,7 +909,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a post Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+        /// Delete post Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -921,7 +921,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a post Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+        /// Delete post Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -970,7 +970,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a post Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+        /// Delete post Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -983,7 +983,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a post Delete a post. Published posts cannot be deleted.  When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
+        /// Delete post Delete a draft or scheduled post from Late. Only posts that have not been published can be deleted. To remove a published post from a social media platform, use the [Unpublish endpoint](#tag/Posts/operation/unpublishPost) instead. When deleting a scheduled or draft post that consumed upload quota, the quota will be automatically refunded. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1036,7 +1036,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a single post Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
+        /// Get post Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1048,7 +1048,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a single post Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
+        /// Get post Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1097,7 +1097,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a single post Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
+        /// Get post Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1110,7 +1110,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get a single post Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
+        /// Get post Fetch a single post by ID. For published posts, this returns &#x60;platformPostUrl&#x60;  for each platform - useful for retrieving post URLs after scheduled posts publish. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1163,7 +1163,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List posts visible to the authenticated user **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
+        /// List posts **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
@@ -1183,7 +1183,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List posts visible to the authenticated user **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
+        /// List posts **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
@@ -1271,7 +1271,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List posts visible to the authenticated user **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
+        /// List posts **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
@@ -1292,7 +1292,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List posts visible to the authenticated user **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
+        /// List posts **Getting Post URLs:** For published posts, each platform entry includes &#x60;platformPostUrl&#x60; with the public URL. Use &#x60;status&#x3D;published&#x60; filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
@@ -1384,7 +1384,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Retry publishing a failed or partial post 
+        /// Retry failed post 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1396,7 +1396,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Retry publishing a failed or partial post 
+        /// Retry failed post 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1445,7 +1445,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Retry publishing a failed or partial post 
+        /// Retry failed post 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1458,7 +1458,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Retry publishing a failed or partial post 
+        /// Retry failed post 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1511,7 +1511,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a published post from a social media platform Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// Unpublish post Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \&quot;cancelled\&quot;. This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1524,7 +1524,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a published post from a social media platform Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// Unpublish post Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \&quot;cancelled\&quot;. This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1580,7 +1580,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a published post from a social media platform Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// Unpublish post Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \&quot;cancelled\&quot;. This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1594,7 +1594,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a published post from a social media platform Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is set to \&quot;cancelled\&quot;.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+        /// Unpublish post Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \&quot;cancelled\&quot;. This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1654,7 +1654,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a post Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
+        /// Update post Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1667,7 +1667,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a post Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
+        /// Update post Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1723,7 +1723,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a post Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
+        /// Update post Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>
@@ -1737,7 +1737,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a post Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
+        /// Update post Update an existing post. Only draft, scheduled, failed, and partial posts can be edited. Published, publishing, and cancelled posts cannot be modified. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId"></param>

@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Fetch subreddit feed via a connected account
+        /// Get subreddit feed
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -42,7 +42,7 @@ namespace Late.Api
         GetRedditFeed200Response GetRedditFeed(string accountId, string? subreddit = default, string? sort = default, int? limit = default, string? after = default, string? t = default);
 
         /// <summary>
-        /// Fetch subreddit feed via a connected account
+        /// Get subreddit feed
         /// </summary>
         /// <remarks>
         /// 
@@ -57,7 +57,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetRedditFeed200Response</returns>
         ApiResponse<GetRedditFeed200Response> GetRedditFeedWithHttpInfo(string accountId, string? subreddit = default, string? sort = default, int? limit = default, string? after = default, string? t = default);
         /// <summary>
-        /// Search Reddit posts via a connected account
+        /// Search posts
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -71,7 +71,7 @@ namespace Late.Api
         SearchReddit200Response SearchReddit(string accountId, string q, string? subreddit = default, string? restrictSr = default, string? sort = default, int? limit = default, string? after = default);
 
         /// <summary>
-        /// Search Reddit posts via a connected account
+        /// Search posts
         /// </summary>
         /// <remarks>
         /// 
@@ -96,7 +96,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Fetch subreddit feed via a connected account
+        /// Get subreddit feed
         /// </summary>
         /// <remarks>
         /// 
@@ -113,7 +113,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetRedditFeed200Response> GetRedditFeedAsync(string accountId, string? subreddit = default, string? sort = default, int? limit = default, string? after = default, string? t = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Fetch subreddit feed via a connected account
+        /// Get subreddit feed
         /// </summary>
         /// <remarks>
         /// 
@@ -129,7 +129,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetRedditFeed200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetRedditFeed200Response>> GetRedditFeedWithHttpInfoAsync(string accountId, string? subreddit = default, string? sort = default, int? limit = default, string? after = default, string? t = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Search Reddit posts via a connected account
+        /// Search posts
         /// </summary>
         /// <remarks>
         /// 
@@ -147,7 +147,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<SearchReddit200Response> SearchRedditAsync(string accountId, string q, string? subreddit = default, string? restrictSr = default, string? sort = default, int? limit = default, string? after = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Search Reddit posts via a connected account
+        /// Search posts
         /// </summary>
         /// <remarks>
         /// 
@@ -377,7 +377,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Fetch subreddit feed via a connected account 
+        /// Get subreddit feed 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -394,7 +394,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Fetch subreddit feed via a connected account 
+        /// Get subreddit feed 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -468,7 +468,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Fetch subreddit feed via a connected account 
+        /// Get subreddit feed 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -486,7 +486,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Fetch subreddit feed via a connected account 
+        /// Get subreddit feed 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -564,7 +564,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Search Reddit posts via a connected account 
+        /// Search posts 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -582,7 +582,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Search Reddit posts via a connected account 
+        /// Search posts 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -662,7 +662,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Search Reddit posts via a connected account 
+        /// Search posts 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -681,7 +681,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Search Reddit posts via a connected account 
+        /// Search posts 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

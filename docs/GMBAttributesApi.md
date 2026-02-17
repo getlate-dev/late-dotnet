@@ -4,14 +4,14 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetGoogleBusinessAttributes**](GMBAttributesApi.md#getgooglebusinessattributes) | **GET** /v1/accounts/{accountId}/gmb-attributes | Get Google Business Profile location attributes |
-| [**UpdateGoogleBusinessAttributes**](GMBAttributesApi.md#updategooglebusinessattributes) | **PUT** /v1/accounts/{accountId}/gmb-attributes | Update Google Business Profile location attributes |
+| [**GetGoogleBusinessAttributes**](GMBAttributesApi.md#getgooglebusinessattributes) | **GET** /v1/accounts/{accountId}/gmb-attributes | Get attributes |
+| [**UpdateGoogleBusinessAttributes**](GMBAttributesApi.md#updategooglebusinessattributes) | **PUT** /v1/accounts/{accountId}/gmb-attributes | Update attributes |
 
 <a id="getgooglebusinessattributes"></a>
 # **GetGoogleBusinessAttributes**
 > GetGoogleBusinessAttributes200Response GetGoogleBusinessAttributes (string accountId)
 
-Get Google Business Profile location attributes
+Get attributes
 
 Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // Get Google Business Profile location attributes
+                // Get attributes
                 GetGoogleBusinessAttributes200Response result = apiInstance.GetGoogleBusinessAttributes(accountId);
                 Debug.WriteLine(result);
             }
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Google Business Profile location attributes
+    // Get attributes
     ApiResponse<GetGoogleBusinessAttributes200Response> response = apiInstance.GetGoogleBusinessAttributesWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -111,7 +111,7 @@ catch (ApiException e)
 # **UpdateGoogleBusinessAttributes**
 > UpdateGoogleBusinessAttributes200Response UpdateGoogleBusinessAttributes (string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest)
 
-Update Google Business Profile location attributes
+Update attributes
 
 Updates location attributes (amenities, services, etc.).  The `attributeMask` specifies which attributes to update (comma-separated). 
 
@@ -144,7 +144,7 @@ namespace Example
 
             try
             {
-                // Update Google Business Profile location attributes
+                // Update attributes
                 UpdateGoogleBusinessAttributes200Response result = apiInstance.UpdateGoogleBusinessAttributes(accountId, updateGoogleBusinessAttributesRequest);
                 Debug.WriteLine(result);
             }
@@ -165,7 +165,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update Google Business Profile location attributes
+    // Update attributes
     ApiResponse<UpdateGoogleBusinessAttributes200Response> response = apiInstance.UpdateGoogleBusinessAttributesWithHttpInfo(accountId, updateGoogleBusinessAttributesRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

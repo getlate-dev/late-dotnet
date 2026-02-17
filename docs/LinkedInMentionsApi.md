@@ -4,15 +4,15 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetLinkedInMentions**](LinkedInMentionsApi.md#getlinkedinmentions) | **GET** /v1/accounts/{accountId}/linkedin-mentions | Resolve a LinkedIn profile or company URL to a URN for @mentions |
+| [**GetLinkedInMentions**](LinkedInMentionsApi.md#getlinkedinmentions) | **GET** /v1/accounts/{accountId}/linkedin-mentions | Resolve LinkedIn mention |
 
 <a id="getlinkedinmentions"></a>
 # **GetLinkedInMentions**
 > GetLinkedInMentions200Response GetLinkedInMentions (string accountId, string url, string? displayName = null)
 
-Resolve a LinkedIn profile or company URL to a URN for @mentions
+Resolve LinkedIn mention
 
-Converts a LinkedIn profile URL (person) or company page URL (organization) to a URN that can be used to @mention them in posts.  **Supports both:** - **Person mentions:** `linkedin.com/in/username` or just `username` - **Organization mentions:** `linkedin.com/company/company-name` or `company/company-name`  **⚠️ Organization Admin Required for Person Mentions Only:** Person mentions require the connected LinkedIn account to have admin access to at least one LinkedIn Organization (Company Page). Organization mentions do NOT have this requirement - any LinkedIn account can tag companies.  **IMPORTANT - Display Name Requirement:** For **person mentions** to be clickable, the display name must **exactly match** what appears on their LinkedIn profile. - Organization mentions automatically retrieve the company name from LinkedIn API - Person mentions require the exact name, so provide the `displayName` parameter  **Mention Format:** Use the returned `mentionFormat` value directly in your post content: ``` Great insights from @[Miquel Palet](urn:li:person:4qj5ox-agD) on this topic! Excited to partner with @[Microsoft](urn:li:organization:1035)! ``` 
+Converts a LinkedIn profile or company URL to a URN for @mentions in posts. Supports person mentions (`linkedin.com/in/username` or just `username`) and organization mentions (`linkedin.com/company/name` or `company/name`).  Person mentions require the connected account to have admin access to at least one LinkedIn Organization. Organization mentions work with any account.  For person mentions to be clickable, provide the `displayName` parameter matching the exact name on their LinkedIn profile. Organization names are fetched automatically.  Use the returned `mentionFormat` value directly in your post content. 
 
 ### Example
 ```csharp
@@ -44,7 +44,7 @@ namespace Example
 
             try
             {
-                // Resolve a LinkedIn profile or company URL to a URN for @mentions
+                // Resolve LinkedIn mention
                 GetLinkedInMentions200Response result = apiInstance.GetLinkedInMentions(accountId, url, displayName);
                 Debug.WriteLine(result);
             }
@@ -65,7 +65,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Resolve a LinkedIn profile or company URL to a URN for @mentions
+    // Resolve LinkedIn mention
     ApiResponse<GetLinkedInMentions200Response> response = apiInstance.GetLinkedInMentionsWithHttpInfo(accountId, url, displayName);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -4,18 +4,18 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DeleteAccount**](AccountsApi.md#deleteaccount) | **DELETE** /v1/accounts/{accountId} | Disconnect a social account |
-| [**GetAccountHealth**](AccountsApi.md#getaccounthealth) | **GET** /v1/accounts/{accountId}/health | Check health of a specific account |
-| [**GetAllAccountsHealth**](AccountsApi.md#getallaccountshealth) | **GET** /v1/accounts/health | Check health of all connected accounts |
-| [**GetFollowerStats**](AccountsApi.md#getfollowerstats) | **GET** /v1/accounts/follower-stats | Get follower stats and growth metrics |
-| [**ListAccounts**](AccountsApi.md#listaccounts) | **GET** /v1/accounts | List connected social accounts |
-| [**UpdateAccount**](AccountsApi.md#updateaccount) | **PUT** /v1/accounts/{accountId} | Update a social account |
+| [**DeleteAccount**](AccountsApi.md#deleteaccount) | **DELETE** /v1/accounts/{accountId} | Disconnect account |
+| [**GetAccountHealth**](AccountsApi.md#getaccounthealth) | **GET** /v1/accounts/{accountId}/health | Check account health |
+| [**GetAllAccountsHealth**](AccountsApi.md#getallaccountshealth) | **GET** /v1/accounts/health | Check accounts health |
+| [**GetFollowerStats**](AccountsApi.md#getfollowerstats) | **GET** /v1/accounts/follower-stats | Get follower stats |
+| [**ListAccounts**](AccountsApi.md#listaccounts) | **GET** /v1/accounts | List accounts |
+| [**UpdateAccount**](AccountsApi.md#updateaccount) | **PUT** /v1/accounts/{accountId} | Update account |
 
 <a id="deleteaccount"></a>
 # **DeleteAccount**
 > DeleteAccountGroup200Response DeleteAccount (string accountId)
 
-Disconnect a social account
+Disconnect account
 
 ### Example
 ```csharp
@@ -45,7 +45,7 @@ namespace Example
 
             try
             {
-                // Disconnect a social account
+                // Disconnect account
                 DeleteAccountGroup200Response result = apiInstance.DeleteAccount(accountId);
                 Debug.WriteLine(result);
             }
@@ -66,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Disconnect a social account
+    // Disconnect account
     ApiResponse<DeleteAccountGroup200Response> response = apiInstance.DeleteAccountWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -113,7 +113,7 @@ catch (ApiException e)
 # **GetAccountHealth**
 > GetAccountHealth200Response GetAccountHealth (string accountId)
 
-Check health of a specific account
+Check account health
 
 Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
 
@@ -145,7 +145,7 @@ namespace Example
 
             try
             {
-                // Check health of a specific account
+                // Check account health
                 GetAccountHealth200Response result = apiInstance.GetAccountHealth(accountId);
                 Debug.WriteLine(result);
             }
@@ -166,7 +166,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Check health of a specific account
+    // Check account health
     ApiResponse<GetAccountHealth200Response> response = apiInstance.GetAccountHealthWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -213,7 +213,7 @@ catch (ApiException e)
 # **GetAllAccountsHealth**
 > GetAllAccountsHealth200Response GetAllAccountsHealth (string? profileId = null, string? platform = null, string? status = null)
 
-Check health of all connected accounts
+Check accounts health
 
 Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
 
@@ -247,7 +247,7 @@ namespace Example
 
             try
             {
-                // Check health of all connected accounts
+                // Check accounts health
                 GetAllAccountsHealth200Response result = apiInstance.GetAllAccountsHealth(profileId, platform, status);
                 Debug.WriteLine(result);
             }
@@ -268,7 +268,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Check health of all connected accounts
+    // Check accounts health
     ApiResponse<GetAllAccountsHealth200Response> response = apiInstance.GetAllAccountsHealthWithHttpInfo(profileId, platform, status);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -316,7 +316,7 @@ catch (ApiException e)
 # **GetFollowerStats**
 > GetFollowerStats200Response GetFollowerStats (string? accountIds = null, string? profileId = null, DateOnly? fromDate = null, DateOnly? toDate = null, string? granularity = null)
 
-Get follower stats and growth metrics
+Get follower stats
 
 Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
 
@@ -352,7 +352,7 @@ namespace Example
 
             try
             {
-                // Get follower stats and growth metrics
+                // Get follower stats
                 GetFollowerStats200Response result = apiInstance.GetFollowerStats(accountIds, profileId, fromDate, toDate, granularity);
                 Debug.WriteLine(result);
             }
@@ -373,7 +373,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get follower stats and growth metrics
+    // Get follower stats
     ApiResponse<GetFollowerStats200Response> response = apiInstance.GetFollowerStatsWithHttpInfo(accountIds, profileId, fromDate, toDate, granularity);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -424,7 +424,7 @@ catch (ApiException e)
 # **ListAccounts**
 > ListAccounts200Response ListAccounts (string? profileId = null, bool? includeOverLimit = null)
 
-List connected social accounts
+List accounts
 
 Returns list of connected social accounts. By default, only returns accounts from profiles within the user's plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
 
@@ -457,7 +457,7 @@ namespace Example
 
             try
             {
-                // List connected social accounts
+                // List accounts
                 ListAccounts200Response result = apiInstance.ListAccounts(profileId, includeOverLimit);
                 Debug.WriteLine(result);
             }
@@ -478,7 +478,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List connected social accounts
+    // List accounts
     ApiResponse<ListAccounts200Response> response = apiInstance.ListAccountsWithHttpInfo(profileId, includeOverLimit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -525,7 +525,7 @@ catch (ApiException e)
 # **UpdateAccount**
 > UpdateAccount200Response UpdateAccount (string accountId, UpdateAccountRequest updateAccountRequest)
 
-Update a social account
+Update account
 
 ### Example
 ```csharp
@@ -556,7 +556,7 @@ namespace Example
 
             try
             {
-                // Update a social account
+                // Update account
                 UpdateAccount200Response result = apiInstance.UpdateAccount(accountId, updateAccountRequest);
                 Debug.WriteLine(result);
             }
@@ -577,7 +577,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a social account
+    // Update account
     ApiResponse<UpdateAccount200Response> response = apiInstance.UpdateAccountWithHttpInfo(accountId, updateAccountRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -4,16 +4,16 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateAccountGroup**](AccountGroupsApi.md#createaccountgroup) | **POST** /v1/account-groups | Create a new account group |
-| [**DeleteAccountGroup**](AccountGroupsApi.md#deleteaccountgroup) | **DELETE** /v1/account-groups/{groupId} | Delete an account group |
-| [**ListAccountGroups**](AccountGroupsApi.md#listaccountgroups) | **GET** /v1/account-groups | List account groups for the authenticated user |
-| [**UpdateAccountGroup**](AccountGroupsApi.md#updateaccountgroup) | **PUT** /v1/account-groups/{groupId} | Update an account group |
+| [**CreateAccountGroup**](AccountGroupsApi.md#createaccountgroup) | **POST** /v1/account-groups | Create group |
+| [**DeleteAccountGroup**](AccountGroupsApi.md#deleteaccountgroup) | **DELETE** /v1/account-groups/{groupId} | Delete group |
+| [**ListAccountGroups**](AccountGroupsApi.md#listaccountgroups) | **GET** /v1/account-groups | List groups |
+| [**UpdateAccountGroup**](AccountGroupsApi.md#updateaccountgroup) | **PUT** /v1/account-groups/{groupId} | Update group |
 
 <a id="createaccountgroup"></a>
 # **CreateAccountGroup**
 > CreateAccountGroup201Response CreateAccountGroup (CreateAccountGroupRequest createAccountGroupRequest)
 
-Create a new account group
+Create group
 
 ### Example
 ```csharp
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // Create a new account group
+                // Create group
                 CreateAccountGroup201Response result = apiInstance.CreateAccountGroup(createAccountGroupRequest);
                 Debug.WriteLine(result);
             }
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a new account group
+    // Create group
     ApiResponse<CreateAccountGroup201Response> response = apiInstance.CreateAccountGroupWithHttpInfo(createAccountGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -112,7 +112,7 @@ catch (ApiException e)
 # **DeleteAccountGroup**
 > DeleteAccountGroup200Response DeleteAccountGroup (string groupId)
 
-Delete an account group
+Delete group
 
 ### Example
 ```csharp
@@ -142,7 +142,7 @@ namespace Example
 
             try
             {
-                // Delete an account group
+                // Delete group
                 DeleteAccountGroup200Response result = apiInstance.DeleteAccountGroup(groupId);
                 Debug.WriteLine(result);
             }
@@ -163,7 +163,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete an account group
+    // Delete group
     ApiResponse<DeleteAccountGroup200Response> response = apiInstance.DeleteAccountGroupWithHttpInfo(groupId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -210,7 +210,7 @@ catch (ApiException e)
 # **ListAccountGroups**
 > ListAccountGroups200Response ListAccountGroups ()
 
-List account groups for the authenticated user
+List groups
 
 ### Example
 ```csharp
@@ -239,7 +239,7 @@ namespace Example
 
             try
             {
-                // List account groups for the authenticated user
+                // List groups
                 ListAccountGroups200Response result = apiInstance.ListAccountGroups();
                 Debug.WriteLine(result);
             }
@@ -260,7 +260,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List account groups for the authenticated user
+    // List groups
     ApiResponse<ListAccountGroups200Response> response = apiInstance.ListAccountGroupsWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -302,7 +302,7 @@ This endpoint does not need any parameter.
 # **UpdateAccountGroup**
 > UpdateAccountGroup200Response UpdateAccountGroup (string groupId, UpdateAccountGroupRequest updateAccountGroupRequest)
 
-Update an account group
+Update group
 
 ### Example
 ```csharp
@@ -333,7 +333,7 @@ namespace Example
 
             try
             {
-                // Update an account group
+                // Update group
                 UpdateAccountGroup200Response result = apiInstance.UpdateAccountGroup(groupId, updateAccountGroupRequest);
                 Debug.WriteLine(result);
             }
@@ -354,7 +354,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update an account group
+    // Update group
     ApiResponse<UpdateAccountGroup200Response> response = apiInstance.UpdateAccountGroupWithHttpInfo(groupId, updateAccountGroupRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
