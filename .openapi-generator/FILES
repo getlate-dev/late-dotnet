@@ -421,8 +421,6 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
-src/Late.Test/Model/ListPostsLogs200ResponsePaginationTests.cs
-src/Late.Test/Model/ListPostsLogs200ResponseTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs

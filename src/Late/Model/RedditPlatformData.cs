@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Posts are either link (with URL/media) or self (text-only). If media is provided, the first item URL is used as the link; use forceSelf to override. Subreddit defaults to the account&#39;s configured one. Images over 20 MB are auto-compressed. Some subreddits require a flair; if missing, the first available flair is used as fallback.
+    /// Posts are either link (with URL/media) or self (text-only). Use forceSelf to override. Subreddit defaults to the account&#39;s configured one. Some subreddits require a flair.
     /// </summary>
     [DataContract(Name = "RedditPlatformData")]
     public partial class RedditPlatformData : IValidatableObject
@@ -36,11 +36,11 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RedditPlatformData" /> class.
         /// </summary>
-        /// <param name="subreddit">Target subreddit name (without \&quot;r/\&quot; prefix). Overrides the default subreddit configured on the account connection. Use GET /api/v1/accounts/{id}/reddit-subreddits to list available subreddits. .</param>
+        /// <param name="subreddit">Target subreddit name (without \&quot;r/\&quot; prefix). Overrides the default. Use GET /v1/accounts/{id}/reddit-subreddits to list options..</param>
         /// <param name="title">Post title. Defaults to the first line of content, truncated to 300 characters..</param>
         /// <param name="url">URL for link posts. If provided (and forceSelf is not true), creates a link post instead of a text post..</param>
         /// <param name="forceSelf">When true, creates a text/self post even when a URL or media is provided..</param>
-        /// <param name="flairId">Flair ID for the post. Required by some subreddits. Use GET /api/v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list available flairs. .</param>
+        /// <param name="flairId">Flair ID for the post. Required by some subreddits. Use GET /v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list flairs..</param>
         public RedditPlatformData(string subreddit = default, string title = default, string url = default, bool forceSelf = default, string flairId = default)
         {
             this.Subreddit = subreddit;
@@ -51,9 +51,9 @@ namespace Late.Model
         }
 
         /// <summary>
-        /// Target subreddit name (without \&quot;r/\&quot; prefix). Overrides the default subreddit configured on the account connection. Use GET /api/v1/accounts/{id}/reddit-subreddits to list available subreddits. 
+        /// Target subreddit name (without \&quot;r/\&quot; prefix). Overrides the default. Use GET /v1/accounts/{id}/reddit-subreddits to list options.
         /// </summary>
-        /// <value>Target subreddit name (without \&quot;r/\&quot; prefix). Overrides the default subreddit configured on the account connection. Use GET /api/v1/accounts/{id}/reddit-subreddits to list available subreddits. </value>
+        /// <value>Target subreddit name (without \&quot;r/\&quot; prefix). Overrides the default. Use GET /v1/accounts/{id}/reddit-subreddits to list options.</value>
         /*
         <example>socialmedia</example>
         */
@@ -82,9 +82,9 @@ namespace Late.Model
         public bool ForceSelf { get; set; }
 
         /// <summary>
-        /// Flair ID for the post. Required by some subreddits. Use GET /api/v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list available flairs. 
+        /// Flair ID for the post. Required by some subreddits. Use GET /v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list flairs.
         /// </summary>
-        /// <value>Flair ID for the post. Required by some subreddits. Use GET /api/v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list available flairs. </value>
+        /// <value>Flair ID for the post. Required by some subreddits. Use GET /v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list flairs.</value>
         /*
         <example>a1b2c3d4-e5f6-7890-abcd-ef1234567890</example>
         */

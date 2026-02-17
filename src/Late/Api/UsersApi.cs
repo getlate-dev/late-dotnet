@@ -31,6 +31,9 @@ namespace Late.Api
         /// <summary>
         /// Get user
         /// </summary>
+        /// <remarks>
+        /// Returns a single user&#39;s details by ID, including name, email, and role.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
         /// <returns>GetUser200Response</returns>
@@ -40,7 +43,7 @@ namespace Late.Api
         /// Get user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a single user&#39;s details by ID, including name, email, and role.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -49,6 +52,9 @@ namespace Late.Api
         /// <summary>
         /// List users
         /// </summary>
+        /// <remarks>
+        /// Returns all users in the workspace including roles and profile access. Also returns the currentUserId of the caller.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListUsers200Response</returns>
         ListUsers200Response ListUsers();
@@ -57,7 +63,7 @@ namespace Late.Api
         /// List users
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all users in the workspace including roles and profile access. Also returns the currentUserId of the caller.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListUsers200Response</returns>
@@ -75,7 +81,7 @@ namespace Late.Api
         /// Get user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a single user&#39;s details by ID, including name, email, and role.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -87,7 +93,7 @@ namespace Late.Api
         /// Get user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns a single user&#39;s details by ID, including name, email, and role.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -98,7 +104,7 @@ namespace Late.Api
         /// List users
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all users in the workspace including roles and profile access. Also returns the currentUserId of the caller.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -109,7 +115,7 @@ namespace Late.Api
         /// List users
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all users in the workspace including roles and profile access. Also returns the currentUserId of the caller.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -329,7 +335,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get user 
+        /// Get user Returns a single user&#39;s details by ID, including name, email, and role.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -341,7 +347,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get user 
+        /// Get user Returns a single user&#39;s details by ID, including name, email, and role.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -390,7 +396,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get user 
+        /// Get user Returns a single user&#39;s details by ID, including name, email, and role.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -403,7 +409,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get user 
+        /// Get user Returns a single user&#39;s details by ID, including name, email, and role.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -456,7 +462,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List users 
+        /// List users Returns all users in the workspace including roles and profile access. Also returns the currentUserId of the caller.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListUsers200Response</returns>
@@ -467,7 +473,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List users 
+        /// List users Returns all users in the workspace including roles and profile access. Also returns the currentUserId of the caller.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListUsers200Response</returns>
@@ -510,7 +516,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List users 
+        /// List users Returns all users in the workspace including roles and profile access. Also returns the currentUserId of the caller.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -522,7 +528,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List users 
+        /// List users Returns all users in the workspace including roles and profile access. Also returns the currentUserId of the caller.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

@@ -32,7 +32,7 @@ namespace Late.Api
         /// Get reviews
         /// </summary>
         /// <remarks>
-        /// Fetches reviews for a connected Google Business Profile account. Returns all reviews including reviewer info, star rating, comment text, owner reply, and timestamps. Use pagination via nextPageToken for locations with many reviews. 
+        /// Returns reviews for a GBP account including ratings, comments, and owner replies. Use nextPageToken for pagination.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -45,7 +45,7 @@ namespace Late.Api
         /// Get reviews
         /// </summary>
         /// <remarks>
-        /// Fetches reviews for a connected Google Business Profile account. Returns all reviews including reviewer info, star rating, comment text, owner reply, and timestamps. Use pagination via nextPageToken for locations with many reviews. 
+        /// Returns reviews for a GBP account including ratings, comments, and owner replies. Use nextPageToken for pagination.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -66,7 +66,7 @@ namespace Late.Api
         /// Get reviews
         /// </summary>
         /// <remarks>
-        /// Fetches reviews for a connected Google Business Profile account. Returns all reviews including reviewer info, star rating, comment text, owner reply, and timestamps. Use pagination via nextPageToken for locations with many reviews. 
+        /// Returns reviews for a GBP account including ratings, comments, and owner replies. Use nextPageToken for pagination.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -80,7 +80,7 @@ namespace Late.Api
         /// Get reviews
         /// </summary>
         /// <remarks>
-        /// Fetches reviews for a connected Google Business Profile account. Returns all reviews including reviewer info, star rating, comment text, owner reply, and timestamps. Use pagination via nextPageToken for locations with many reviews. 
+        /// Returns reviews for a GBP account including ratings, comments, and owner replies. Use nextPageToken for pagination.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -303,7 +303,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get reviews Fetches reviews for a connected Google Business Profile account. Returns all reviews including reviewer info, star rating, comment text, owner reply, and timestamps. Use pagination via nextPageToken for locations with many reviews. 
+        /// Get reviews Returns reviews for a GBP account including ratings, comments, and owner replies. Use nextPageToken for pagination.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -317,7 +317,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get reviews Fetches reviews for a connected Google Business Profile account. Returns all reviews including reviewer info, star rating, comment text, owner reply, and timestamps. Use pagination via nextPageToken for locations with many reviews. 
+        /// Get reviews Returns reviews for a GBP account including ratings, comments, and owner replies. Use nextPageToken for pagination.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -376,7 +376,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get reviews Fetches reviews for a connected Google Business Profile account. Returns all reviews including reviewer info, star rating, comment text, owner reply, and timestamps. Use pagination via nextPageToken for locations with many reviews. 
+        /// Get reviews Returns reviews for a GBP account including ratings, comments, and owner replies. Use nextPageToken for pagination.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -391,7 +391,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get reviews Fetches reviews for a connected Google Business Profile account. Returns all reviews including reviewer info, star rating, comment text, owner reply, and timestamps. Use pagination via nextPageToken for locations with many reviews. 
+        /// Get reviews Returns reviews for a GBP account including ratings, comments, and owner replies. Use nextPageToken for pagination.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>

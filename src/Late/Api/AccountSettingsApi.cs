@@ -31,6 +31,9 @@ namespace Late.Api
         /// <summary>
         /// Delete IG ice breakers
         /// </summary>
+        /// <remarks>
+        /// Removes the ice breaker questions from an Instagram account&#39;s Messenger experience.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <returns></returns>
@@ -40,7 +43,7 @@ namespace Late.Api
         /// Delete IG ice breakers
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the ice breaker questions from an Instagram account&#39;s Messenger experience.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -49,6 +52,9 @@ namespace Late.Api
         /// <summary>
         /// Delete FB persistent menu
         /// </summary>
+        /// <remarks>
+        /// Removes the persistent menu from Facebook Messenger conversations for this account.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <returns></returns>
@@ -58,7 +64,7 @@ namespace Late.Api
         /// Delete FB persistent menu
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the persistent menu from Facebook Messenger conversations for this account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -67,6 +73,9 @@ namespace Late.Api
         /// <summary>
         /// Delete TG bot commands
         /// </summary>
+        /// <remarks>
+        /// Clears all bot commands configured for a Telegram bot account.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <returns></returns>
@@ -76,7 +85,7 @@ namespace Late.Api
         /// Delete TG bot commands
         /// </summary>
         /// <remarks>
-        /// 
+        /// Clears all bot commands configured for a Telegram bot account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -227,7 +236,7 @@ namespace Late.Api
         /// Delete IG ice breakers
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the ice breaker questions from an Instagram account&#39;s Messenger experience.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -239,7 +248,7 @@ namespace Late.Api
         /// Delete IG ice breakers
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the ice breaker questions from an Instagram account&#39;s Messenger experience.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -250,7 +259,7 @@ namespace Late.Api
         /// Delete FB persistent menu
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the persistent menu from Facebook Messenger conversations for this account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -262,7 +271,7 @@ namespace Late.Api
         /// Delete FB persistent menu
         /// </summary>
         /// <remarks>
-        /// 
+        /// Removes the persistent menu from Facebook Messenger conversations for this account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -273,7 +282,7 @@ namespace Late.Api
         /// Delete TG bot commands
         /// </summary>
         /// <remarks>
-        /// 
+        /// Clears all bot commands configured for a Telegram bot account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -285,7 +294,7 @@ namespace Late.Api
         /// Delete TG bot commands
         /// </summary>
         /// <remarks>
-        /// 
+        /// Clears all bot commands configured for a Telegram bot account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -650,7 +659,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete IG ice breakers 
+        /// Delete IG ice breakers Removes the ice breaker questions from an Instagram account&#39;s Messenger experience.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -661,7 +670,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete IG ice breakers 
+        /// Delete IG ice breakers Removes the ice breaker questions from an Instagram account&#39;s Messenger experience.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -710,7 +719,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete IG ice breakers 
+        /// Delete IG ice breakers Removes the ice breaker questions from an Instagram account&#39;s Messenger experience.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -722,7 +731,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete IG ice breakers 
+        /// Delete IG ice breakers Removes the ice breaker questions from an Instagram account&#39;s Messenger experience.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -775,7 +784,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete FB persistent menu 
+        /// Delete FB persistent menu Removes the persistent menu from Facebook Messenger conversations for this account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -786,7 +795,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete FB persistent menu 
+        /// Delete FB persistent menu Removes the persistent menu from Facebook Messenger conversations for this account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -835,7 +844,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete FB persistent menu 
+        /// Delete FB persistent menu Removes the persistent menu from Facebook Messenger conversations for this account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -847,7 +856,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete FB persistent menu 
+        /// Delete FB persistent menu Removes the persistent menu from Facebook Messenger conversations for this account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -900,7 +909,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete TG bot commands 
+        /// Delete TG bot commands Clears all bot commands configured for a Telegram bot account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -911,7 +920,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete TG bot commands 
+        /// Delete TG bot commands Clears all bot commands configured for a Telegram bot account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -960,7 +969,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete TG bot commands 
+        /// Delete TG bot commands Clears all bot commands configured for a Telegram bot account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -972,7 +981,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete TG bot commands 
+        /// Delete TG bot commands Clears all bot commands configured for a Telegram bot account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

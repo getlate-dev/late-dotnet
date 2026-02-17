@@ -31,6 +31,9 @@ namespace Late.Api
         /// <summary>
         /// Get subreddit feed
         /// </summary>
+        /// <remarks>
+        /// Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="subreddit"> (optional)</param>
@@ -45,7 +48,7 @@ namespace Late.Api
         /// Get subreddit feed
         /// </summary>
         /// <remarks>
-        /// 
+        /// Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -59,6 +62,9 @@ namespace Late.Api
         /// <summary>
         /// Search posts
         /// </summary>
+        /// <remarks>
+        /// Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="q"></param>
@@ -74,7 +80,7 @@ namespace Late.Api
         /// Search posts
         /// </summary>
         /// <remarks>
-        /// 
+        /// Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -99,7 +105,7 @@ namespace Late.Api
         /// Get subreddit feed
         /// </summary>
         /// <remarks>
-        /// 
+        /// Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -116,7 +122,7 @@ namespace Late.Api
         /// Get subreddit feed
         /// </summary>
         /// <remarks>
-        /// 
+        /// Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -132,7 +138,7 @@ namespace Late.Api
         /// Search posts
         /// </summary>
         /// <remarks>
-        /// 
+        /// Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -150,7 +156,7 @@ namespace Late.Api
         /// Search posts
         /// </summary>
         /// <remarks>
-        /// 
+        /// Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -377,7 +383,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get subreddit feed 
+        /// Get subreddit feed Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -394,7 +400,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get subreddit feed 
+        /// Get subreddit feed Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -468,7 +474,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get subreddit feed 
+        /// Get subreddit feed Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -486,7 +492,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get subreddit feed 
+        /// Get subreddit feed Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -564,7 +570,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Search posts 
+        /// Search posts Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -582,7 +588,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Search posts 
+        /// Search posts Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -662,7 +668,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Search posts 
+        /// Search posts Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -681,7 +687,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Search posts 
+        /// Search posts Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

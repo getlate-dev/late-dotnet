@@ -31,6 +31,9 @@ namespace Late.Api
         /// <summary>
         /// Create group
         /// </summary>
+        /// <remarks>
+        /// Creates a new account group with a name and a list of social account IDs.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
         /// <returns>CreateAccountGroup201Response</returns>
@@ -40,7 +43,7 @@ namespace Late.Api
         /// Create group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new account group with a name and a list of social account IDs.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -49,6 +52,9 @@ namespace Late.Api
         /// <summary>
         /// Delete group
         /// </summary>
+        /// <remarks>
+        /// Permanently deletes an account group. The accounts themselves are not affected.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
         /// <returns>DeleteAccountGroup200Response</returns>
@@ -58,7 +64,7 @@ namespace Late.Api
         /// Delete group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently deletes an account group. The accounts themselves are not affected.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -67,6 +73,9 @@ namespace Late.Api
         /// <summary>
         /// List groups
         /// </summary>
+        /// <remarks>
+        /// Returns all account groups for the authenticated user, including group names and associated account IDs.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListAccountGroups200Response</returns>
         ListAccountGroups200Response ListAccountGroups();
@@ -75,7 +84,7 @@ namespace Late.Api
         /// List groups
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all account groups for the authenticated user, including group names and associated account IDs.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListAccountGroups200Response</returns>
@@ -83,6 +92,9 @@ namespace Late.Api
         /// <summary>
         /// Update group
         /// </summary>
+        /// <remarks>
+        /// Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
         /// <param name="updateAccountGroupRequest"></param>
@@ -93,7 +105,7 @@ namespace Late.Api
         /// Update group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -113,7 +125,7 @@ namespace Late.Api
         /// Create group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new account group with a name and a list of social account IDs.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -125,7 +137,7 @@ namespace Late.Api
         /// Create group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new account group with a name and a list of social account IDs.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -136,7 +148,7 @@ namespace Late.Api
         /// Delete group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently deletes an account group. The accounts themselves are not affected.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -148,7 +160,7 @@ namespace Late.Api
         /// Delete group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently deletes an account group. The accounts themselves are not affected.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -159,7 +171,7 @@ namespace Late.Api
         /// List groups
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all account groups for the authenticated user, including group names and associated account IDs.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -170,7 +182,7 @@ namespace Late.Api
         /// List groups
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all account groups for the authenticated user, including group names and associated account IDs.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -180,7 +192,7 @@ namespace Late.Api
         /// Update group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -193,7 +205,7 @@ namespace Late.Api
         /// Update group
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -415,7 +427,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create group 
+        /// Create group Creates a new account group with a name and a list of social account IDs.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -427,7 +439,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create group 
+        /// Create group Creates a new account group with a name and a list of social account IDs.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -477,7 +489,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create group 
+        /// Create group Creates a new account group with a name and a list of social account IDs.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -490,7 +502,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create group 
+        /// Create group Creates a new account group with a name and a list of social account IDs.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAccountGroupRequest"></param>
@@ -544,7 +556,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete group 
+        /// Delete group Permanently deletes an account group. The accounts themselves are not affected.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -556,7 +568,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete group 
+        /// Delete group Permanently deletes an account group. The accounts themselves are not affected.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -605,7 +617,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete group 
+        /// Delete group Permanently deletes an account group. The accounts themselves are not affected.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -618,7 +630,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete group 
+        /// Delete group Permanently deletes an account group. The accounts themselves are not affected.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -671,7 +683,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List groups 
+        /// List groups Returns all account groups for the authenticated user, including group names and associated account IDs.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListAccountGroups200Response</returns>
@@ -682,7 +694,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List groups 
+        /// List groups Returns all account groups for the authenticated user, including group names and associated account IDs.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListAccountGroups200Response</returns>
@@ -725,7 +737,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List groups 
+        /// List groups Returns all account groups for the authenticated user, including group names and associated account IDs.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -737,7 +749,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List groups 
+        /// List groups Returns all account groups for the authenticated user, including group names and associated account IDs.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -784,7 +796,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update group 
+        /// Update group Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -797,7 +809,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update group 
+        /// Update group Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -853,7 +865,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update group 
+        /// Update group Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>
@@ -867,7 +879,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update group 
+        /// Update group Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="groupId"></param>

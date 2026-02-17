@@ -13,7 +13,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 Get location details
 
-Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
 
 ### Example
 ```csharp
@@ -40,7 +40,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new GMBLocationDetailsApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | The Late account ID (from /v1/accounts)
-            var readMask = "readMask_example";  // string? | Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional) 
+            var readMask = "readMask_example";  // string? | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional) 
 
             try
             {
@@ -84,7 +84,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **accountId** | **string** | The Late account ID (from /v1/accounts) |  |
-| **readMask** | **string?** | Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  | [optional]  |
+| **readMask** | **string?** | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. | [optional]  |
 
 ### Return type
 
@@ -116,7 +116,7 @@ catch (ApiException e)
 
 Update location details
 
-Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
 
 ### Example
 ```csharp

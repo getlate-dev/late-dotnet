@@ -54,6 +54,9 @@ namespace Late.Api
         /// <summary>
         /// Delete photo
         /// </summary>
+        /// <remarks>
+        /// Deletes a photo or media item from a GBP location.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
@@ -64,7 +67,7 @@ namespace Late.Api
         /// Delete photo
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a photo or media item from a GBP location.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -134,7 +137,7 @@ namespace Late.Api
         /// Delete photo
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a photo or media item from a GBP location.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -147,7 +150,7 @@ namespace Late.Api
         /// Delete photo
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a photo or media item from a GBP location.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -539,7 +542,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete photo 
+        /// Delete photo Deletes a photo or media item from a GBP location.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -552,7 +555,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete photo 
+        /// Delete photo Deletes a photo or media item from a GBP location.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -607,7 +610,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete photo 
+        /// Delete photo Deletes a photo or media item from a GBP location.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -621,7 +624,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete photo 
+        /// Delete photo Deletes a photo or media item from a GBP location.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

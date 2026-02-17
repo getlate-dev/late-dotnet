@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Cannot mix videos and images. Up to 10 images for feed posts. Stories require single image or video (no captions, ephemeral 24h). Use pageId for multi-page posting.
+    /// Up to 10 images for feed posts, cannot mix videos and images. Stories require single image or video (ephemeral 24h, no captions). Use pageId for multi-page posting.
     /// </summary>
     [DataContract(Name = "FacebookPlatformData")]
     public partial class FacebookPlatformData : IValidatableObject
@@ -59,7 +59,7 @@ namespace Late.Model
         /// </summary>
         /// <param name="contentType">Set to &#39;story&#39; to publish as a Facebook Page Story (24-hour ephemeral content). Requires media..</param>
         /// <param name="firstComment">Optional first comment to post immediately after publishing (feed posts only, not stories).</param>
-        /// <param name="pageId">Target Facebook Page ID for multi-page posting. If omitted, uses the selected/default page on the connection. Use GET /api/v1/accounts/{id}/facebook-page to list available pages. .</param>
+        /// <param name="pageId">Target Facebook Page ID for multi-page posting. If omitted, uses the default page. Use GET /v1/accounts/{id}/facebook-page to list pages..</param>
         public FacebookPlatformData(ContentTypeEnum? contentType = default, string firstComment = default, string pageId = default)
         {
             this.ContentType = contentType;
@@ -75,9 +75,9 @@ namespace Late.Model
         public string FirstComment { get; set; }
 
         /// <summary>
-        /// Target Facebook Page ID for multi-page posting. If omitted, uses the selected/default page on the connection. Use GET /api/v1/accounts/{id}/facebook-page to list available pages. 
+        /// Target Facebook Page ID for multi-page posting. If omitted, uses the default page. Use GET /v1/accounts/{id}/facebook-page to list pages.
         /// </summary>
-        /// <value>Target Facebook Page ID for multi-page posting. If omitted, uses the selected/default page on the connection. Use GET /api/v1/accounts/{id}/facebook-page to list available pages. </value>
+        /// <value>Target Facebook Page ID for multi-page posting. If omitted, uses the default page. Use GET /v1/accounts/{id}/facebook-page to list pages.</value>
         [DataMember(Name = "pageId", EmitDefaultValue = false)]
         public string PageId { get; set; }
 

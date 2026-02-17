@@ -17,6 +17,8 @@ All URIs are relative to *https://getlate.dev/api*
 
 Disconnect account
 
+Disconnects and removes a connected social account.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -115,7 +117,7 @@ catch (ApiException e)
 
 Check account health
 
-Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+Returns detailed health info for a specific account including token status, permissions, and recommendations.
 
 ### Example
 ```csharp
@@ -215,7 +217,7 @@ catch (ApiException e)
 
 Check accounts health
 
-Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
 
 ### Example
 ```csharp
@@ -426,7 +428,7 @@ catch (ApiException e)
 
 List accounts
 
-Returns list of connected social accounts. By default, only returns accounts from profiles within the user's plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
 
 ### Example
 ```csharp
@@ -453,7 +455,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AccountsApi(httpClient, config, httpClientHandler);
             var profileId = "profileId_example";  // string? | Filter accounts by profile ID (optional) 
-            var includeOverLimit = false;  // bool? | When true, includes accounts from profiles that exceed the user's plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional)  (default to false)
+            var includeOverLimit = false;  // bool? | When true, includes accounts from over-limit profiles. (optional)  (default to false)
 
             try
             {
@@ -497,7 +499,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **profileId** | **string?** | Filter accounts by profile ID | [optional]  |
-| **includeOverLimit** | **bool?** | When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  | [optional] [default to false] |
+| **includeOverLimit** | **bool?** | When true, includes accounts from over-limit profiles. | [optional] [default to false] |
 
 ### Return type
 
@@ -526,6 +528,8 @@ catch (ApiException e)
 > UpdateAccount200Response UpdateAccount (string accountId, UpdateAccountRequest updateAccountRequest)
 
 Update account
+
+Updates a connected social account's display name or username override.
 
 ### Example
 ```csharp

@@ -439,7 +439,7 @@ catch (ApiException e)
 
 Send message
 
-Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
 
 ### Example
 ```csharp

@@ -13,6 +13,8 @@ All URIs are relative to *https://getlate.dev/api*
 
 Get subreddit feed
 
+Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-based pagination.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -121,6 +123,8 @@ catch (ApiException e)
 > SearchReddit200Response SearchReddit (string accountId, string q, string? subreddit = null, string? restrictSr = null, string? sort = null, int? limit = null, string? after = null)
 
 Search posts
+
+Search Reddit posts using a connected account. Optionally scope to a specific subreddit.
 
 ### Example
 ```csharp

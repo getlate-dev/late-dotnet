@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Daily breakdown of each metric. Each metric contains an array of date/count pairs. Note: &#39;reach&#39; (MEMBERS_REACHED) is not available with DAILY aggregation per LinkedIn API limitations. 
+    /// Daily breakdown of each metric as date/count pairs. Reach not available with DAILY aggregation.
     /// </summary>
     [DataContract(Name = "LinkedInAggregateAnalyticsDailyResponse_analytics")]
     public partial class LinkedInAggregateAnalyticsDailyResponseAnalytics : IValidatableObject

@@ -32,7 +32,7 @@ namespace Late.Api
         /// Get food menus
         /// </summary>
         /// <remarks>
-        /// Fetches food menus for a connected Google Business Profile location. Returns the full menu structure including sections, items with pricing, dietary info, allergens, and variants. Only available for locations with food menu support (restaurants, cafes, etc.). 
+        /// Returns food menus for a GBP location including sections, items, pricing, and dietary info. Only for locations with food menu support.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -43,7 +43,7 @@ namespace Late.Api
         /// Get food menus
         /// </summary>
         /// <remarks>
-        /// Fetches food menus for a connected Google Business Profile location. Returns the full menu structure including sections, items with pricing, dietary info, allergens, and variants. Only available for locations with food menu support (restaurants, cafes, etc.). 
+        /// Returns food menus for a GBP location including sections, items, pricing, and dietary info. Only for locations with food menu support.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -53,7 +53,7 @@ namespace Late.Api
         /// Update food menus
         /// </summary>
         /// <remarks>
-        /// Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use updateMask for partial updates (e.g. \&quot;menus\&quot; to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
+        /// Updates food menus for a GBP location. Send the full menus array. Use updateMask for partial updates.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -65,7 +65,7 @@ namespace Late.Api
         /// Update food menus
         /// </summary>
         /// <remarks>
-        /// Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use updateMask for partial updates (e.g. \&quot;menus\&quot; to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
+        /// Updates food menus for a GBP location. Send the full menus array. Use updateMask for partial updates.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -85,7 +85,7 @@ namespace Late.Api
         /// Get food menus
         /// </summary>
         /// <remarks>
-        /// Fetches food menus for a connected Google Business Profile location. Returns the full menu structure including sections, items with pricing, dietary info, allergens, and variants. Only available for locations with food menu support (restaurants, cafes, etc.). 
+        /// Returns food menus for a GBP location including sections, items, pricing, and dietary info. Only for locations with food menu support.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -97,7 +97,7 @@ namespace Late.Api
         /// Get food menus
         /// </summary>
         /// <remarks>
-        /// Fetches food menus for a connected Google Business Profile location. Returns the full menu structure including sections, items with pricing, dietary info, allergens, and variants. Only available for locations with food menu support (restaurants, cafes, etc.). 
+        /// Returns food menus for a GBP location including sections, items, pricing, and dietary info. Only for locations with food menu support.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -108,7 +108,7 @@ namespace Late.Api
         /// Update food menus
         /// </summary>
         /// <remarks>
-        /// Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use updateMask for partial updates (e.g. \&quot;menus\&quot; to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
+        /// Updates food menus for a GBP location. Send the full menus array. Use updateMask for partial updates.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -121,7 +121,7 @@ namespace Late.Api
         /// Update food menus
         /// </summary>
         /// <remarks>
-        /// Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use updateMask for partial updates (e.g. \&quot;menus\&quot; to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
+        /// Updates food menus for a GBP location. Send the full menus array. Use updateMask for partial updates.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -343,7 +343,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get food menus Fetches food menus for a connected Google Business Profile location. Returns the full menu structure including sections, items with pricing, dietary info, allergens, and variants. Only available for locations with food menu support (restaurants, cafes, etc.). 
+        /// Get food menus Returns food menus for a GBP location including sections, items, pricing, and dietary info. Only for locations with food menu support.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -355,7 +355,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get food menus Fetches food menus for a connected Google Business Profile location. Returns the full menu structure including sections, items with pricing, dietary info, allergens, and variants. Only available for locations with food menu support (restaurants, cafes, etc.). 
+        /// Get food menus Returns food menus for a GBP location including sections, items, pricing, and dietary info. Only for locations with food menu support.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -404,7 +404,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get food menus Fetches food menus for a connected Google Business Profile location. Returns the full menu structure including sections, items with pricing, dietary info, allergens, and variants. Only available for locations with food menu support (restaurants, cafes, etc.). 
+        /// Get food menus Returns food menus for a GBP location including sections, items, pricing, and dietary info. Only for locations with food menu support.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -417,7 +417,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get food menus Fetches food menus for a connected Google Business Profile location. Returns the full menu structure including sections, items with pricing, dietary info, allergens, and variants. Only available for locations with food menu support (restaurants, cafes, etc.). 
+        /// Get food menus Returns food menus for a GBP location including sections, items, pricing, and dietary info. Only for locations with food menu support.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -470,7 +470,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update food menus Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use updateMask for partial updates (e.g. \&quot;menus\&quot; to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
+        /// Update food menus Updates food menus for a GBP location. Send the full menus array. Use updateMask for partial updates.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -483,7 +483,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update food menus Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use updateMask for partial updates (e.g. \&quot;menus\&quot; to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
+        /// Update food menus Updates food menus for a GBP location. Send the full menus array. Use updateMask for partial updates.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -539,7 +539,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update food menus Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use updateMask for partial updates (e.g. \&quot;menus\&quot; to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
+        /// Update food menus Updates food menus for a GBP location. Send the full menus array. Use updateMask for partial updates.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -553,7 +553,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update food menus Updates the food menus for a connected Google Business Profile location.  Send the full menus array. Use updateMask for partial updates (e.g. \&quot;menus\&quot; to only update the menus field).  Each menu can contain sections, and each section can contain items with pricing, dietary restrictions, allergens, and more. 
+        /// Update food menus Updates food menus for a GBP location. Send the full menus array. Use updateMask for partial updates.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>

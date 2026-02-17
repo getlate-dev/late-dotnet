@@ -12,6 +12,8 @@ All URIs are relative to *https://getlate.dev/api*
 
 Get plan and usage stats
 
+Returns the current plan name, billing period, plan limits, and usage counts.
+
 ### Example
 ```csharp
 using System.Collections.Generic;

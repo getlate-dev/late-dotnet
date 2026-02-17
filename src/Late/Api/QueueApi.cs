@@ -76,7 +76,7 @@ namespace Late.Api
         /// Get next available slot
         /// </summary>
         /// <remarks>
-        /// Returns the next available queue slot for preview/informational purposes. Do NOT use this response with scheduledFor to schedule a post, as that creates a manual post, not a queue post. Instead, use POST /v1/posts with queuedFromProfile (and optionally queueId). Useful for showing users when their next post will go out, debugging queue configuration, or building UI previews.  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Returns the next available queue slot for preview purposes. To create a queue post, use POST /v1/posts with queuedFromProfile instead of scheduledFor.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -88,7 +88,7 @@ namespace Late.Api
         /// Get next available slot
         /// </summary>
         /// <remarks>
-        /// Returns the next available queue slot for preview/informational purposes. Do NOT use this response with scheduledFor to schedule a post, as that creates a manual post, not a queue post. Instead, use POST /v1/posts with queuedFromProfile (and optionally queueId). Useful for showing users when their next post will go out, debugging queue configuration, or building UI previews.  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Returns the next available queue slot for preview purposes. To create a queue post, use POST /v1/posts with queuedFromProfile instead of scheduledFor.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -99,7 +99,7 @@ namespace Late.Api
         /// List schedules
         /// </summary>
         /// <remarks>
-        /// Retrieve queue schedules for a profile. Each profile can have multiple queues. Without all&#x3D;true, returns the default queue (or specific queue if queueId provided). With all&#x3D;true, returns all queues for the profile. 
+        /// Returns queue schedules for a profile. Use all&#x3D;true for all queues, or queueId for a specific one. Defaults to the default queue.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -112,7 +112,7 @@ namespace Late.Api
         /// List schedules
         /// </summary>
         /// <remarks>
-        /// Retrieve queue schedules for a profile. Each profile can have multiple queues. Without all&#x3D;true, returns the default queue (or specific queue if queueId provided). With all&#x3D;true, returns all queues for the profile. 
+        /// Returns queue schedules for a profile. Use all&#x3D;true for all queues, or queueId for a specific one. Defaults to the default queue.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -123,6 +123,9 @@ namespace Late.Api
         /// <summary>
         /// Preview upcoming slots
         /// </summary>
+        /// <remarks>
+        /// Returns the next N upcoming queue slot times for a profile as ISO datetime strings.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
         /// <param name="count"> (optional, default to 20)</param>
@@ -133,7 +136,7 @@ namespace Late.Api
         /// Preview upcoming slots
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the next N upcoming queue slot times for a profile as ISO datetime strings.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -222,7 +225,7 @@ namespace Late.Api
         /// Get next available slot
         /// </summary>
         /// <remarks>
-        /// Returns the next available queue slot for preview/informational purposes. Do NOT use this response with scheduledFor to schedule a post, as that creates a manual post, not a queue post. Instead, use POST /v1/posts with queuedFromProfile (and optionally queueId). Useful for showing users when their next post will go out, debugging queue configuration, or building UI previews.  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Returns the next available queue slot for preview purposes. To create a queue post, use POST /v1/posts with queuedFromProfile instead of scheduledFor.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -235,7 +238,7 @@ namespace Late.Api
         /// Get next available slot
         /// </summary>
         /// <remarks>
-        /// Returns the next available queue slot for preview/informational purposes. Do NOT use this response with scheduledFor to schedule a post, as that creates a manual post, not a queue post. Instead, use POST /v1/posts with queuedFromProfile (and optionally queueId). Useful for showing users when their next post will go out, debugging queue configuration, or building UI previews.  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Returns the next available queue slot for preview purposes. To create a queue post, use POST /v1/posts with queuedFromProfile instead of scheduledFor.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -247,7 +250,7 @@ namespace Late.Api
         /// List schedules
         /// </summary>
         /// <remarks>
-        /// Retrieve queue schedules for a profile. Each profile can have multiple queues. Without all&#x3D;true, returns the default queue (or specific queue if queueId provided). With all&#x3D;true, returns all queues for the profile. 
+        /// Returns queue schedules for a profile. Use all&#x3D;true for all queues, or queueId for a specific one. Defaults to the default queue.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -261,7 +264,7 @@ namespace Late.Api
         /// List schedules
         /// </summary>
         /// <remarks>
-        /// Retrieve queue schedules for a profile. Each profile can have multiple queues. Without all&#x3D;true, returns the default queue (or specific queue if queueId provided). With all&#x3D;true, returns all queues for the profile. 
+        /// Returns queue schedules for a profile. Use all&#x3D;true for all queues, or queueId for a specific one. Defaults to the default queue.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -274,7 +277,7 @@ namespace Late.Api
         /// Preview upcoming slots
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the next N upcoming queue slot times for a profile as ISO datetime strings.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -287,7 +290,7 @@ namespace Late.Api
         /// Preview upcoming slots
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the next N upcoming queue slot times for a profile as ISO datetime strings.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -802,7 +805,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get next available slot Returns the next available queue slot for preview/informational purposes. Do NOT use this response with scheduledFor to schedule a post, as that creates a manual post, not a queue post. Instead, use POST /v1/posts with queuedFromProfile (and optionally queueId). Useful for showing users when their next post will go out, debugging queue configuration, or building UI previews.  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Get next available slot Returns the next available queue slot for preview purposes. To create a queue post, use POST /v1/posts with queuedFromProfile instead of scheduledFor.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -815,7 +818,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get next available slot Returns the next available queue slot for preview/informational purposes. Do NOT use this response with scheduledFor to schedule a post, as that creates a manual post, not a queue post. Instead, use POST /v1/posts with queuedFromProfile (and optionally queueId). Useful for showing users when their next post will go out, debugging queue configuration, or building UI previews.  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Get next available slot Returns the next available queue slot for preview purposes. To create a queue post, use POST /v1/posts with queuedFromProfile instead of scheduledFor.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -869,7 +872,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get next available slot Returns the next available queue slot for preview/informational purposes. Do NOT use this response with scheduledFor to schedule a post, as that creates a manual post, not a queue post. Instead, use POST /v1/posts with queuedFromProfile (and optionally queueId). Useful for showing users when their next post will go out, debugging queue configuration, or building UI previews.  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Get next available slot Returns the next available queue slot for preview purposes. To create a queue post, use POST /v1/posts with queuedFromProfile instead of scheduledFor.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -883,7 +886,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get next available slot Returns the next available queue slot for preview/informational purposes. Do NOT use this response with scheduledFor to schedule a post, as that creates a manual post, not a queue post. Instead, use POST /v1/posts with queuedFromProfile (and optionally queueId). Useful for showing users when their next post will go out, debugging queue configuration, or building UI previews.  If no queueId is specified, uses the profile&#39;s default queue. 
+        /// Get next available slot Returns the next available queue slot for preview purposes. To create a queue post, use POST /v1/posts with queuedFromProfile instead of scheduledFor.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -941,7 +944,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List schedules Retrieve queue schedules for a profile. Each profile can have multiple queues. Without all&#x3D;true, returns the default queue (or specific queue if queueId provided). With all&#x3D;true, returns all queues for the profile. 
+        /// List schedules Returns queue schedules for a profile. Use all&#x3D;true for all queues, or queueId for a specific one. Defaults to the default queue.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -955,7 +958,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List schedules Retrieve queue schedules for a profile. Each profile can have multiple queues. Without all&#x3D;true, returns the default queue (or specific queue if queueId provided). With all&#x3D;true, returns all queues for the profile. 
+        /// List schedules Returns queue schedules for a profile. Use all&#x3D;true for all queues, or queueId for a specific one. Defaults to the default queue.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -1014,7 +1017,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List schedules Retrieve queue schedules for a profile. Each profile can have multiple queues. Without all&#x3D;true, returns the default queue (or specific queue if queueId provided). With all&#x3D;true, returns all queues for the profile. 
+        /// List schedules Returns queue schedules for a profile. Use all&#x3D;true for all queues, or queueId for a specific one. Defaults to the default queue.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -1029,7 +1032,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List schedules Retrieve queue schedules for a profile. Each profile can have multiple queues. Without all&#x3D;true, returns the default queue (or specific queue if queueId provided). With all&#x3D;true, returns all queues for the profile. 
+        /// List schedules Returns queue schedules for a profile. Use all&#x3D;true for all queues, or queueId for a specific one. Defaults to the default queue.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID to get queues for</param>
@@ -1092,7 +1095,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview upcoming slots 
+        /// Preview upcoming slots Returns the next N upcoming queue slot times for a profile as ISO datetime strings.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1105,7 +1108,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview upcoming slots 
+        /// Preview upcoming slots Returns the next N upcoming queue slot times for a profile as ISO datetime strings.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1159,7 +1162,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview upcoming slots 
+        /// Preview upcoming slots Returns the next N upcoming queue slot times for a profile as ISO datetime strings.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
@@ -1173,7 +1176,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Preview upcoming slots 
+        /// Preview upcoming slots Returns the next N upcoming queue slot times for a profile as ISO datetime strings.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>

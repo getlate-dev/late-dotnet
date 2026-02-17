@@ -43,7 +43,7 @@ namespace Late.Model
         /// </summary>
         /// <param name="identifier">Your Bluesky handle (e.g. user.bsky.social) or email address (required).</param>
         /// <param name="appPassword">App password generated from Bluesky Settings &gt; App Passwords (required).</param>
-        /// <param name="state">Required state parameter formatted as {userId}-{profileId}. userId is your Late user ID (from GET /v1/users, currentUserId field), profileId is the profile to connect the account to (from GET /v1/profiles).  (required).</param>
+        /// <param name="state">Required state formatted as {userId}-{profileId}. Get userId from GET /v1/users and profileId from GET /v1/profiles. (required).</param>
         /// <param name="redirectUri">Optional URL to redirect to after successful connection.</param>
         public ConnectBlueskyCredentialsRequest(string identifier = default, string appPassword = default, string state = default, string redirectUri = default)
         {
@@ -83,9 +83,9 @@ namespace Late.Model
         public string AppPassword { get; set; }
 
         /// <summary>
-        /// Required state parameter formatted as {userId}-{profileId}. userId is your Late user ID (from GET /v1/users, currentUserId field), profileId is the profile to connect the account to (from GET /v1/profiles). 
+        /// Required state formatted as {userId}-{profileId}. Get userId from GET /v1/users and profileId from GET /v1/profiles.
         /// </summary>
-        /// <value>Required state parameter formatted as {userId}-{profileId}. userId is your Late user ID (from GET /v1/users, currentUserId field), profileId is the profile to connect the account to (from GET /v1/profiles). </value>
+        /// <value>Required state formatted as {userId}-{profileId}. Get userId from GET /v1/users and profileId from GET /v1/profiles.</value>
         /*
         <example>6507a1b2c3d4e5f6a7b8c9d0-6507a1b2c3d4e5f6a7b8c9d1</example>
         */

@@ -136,7 +136,7 @@ namespace Late.Api
         /// Send message
         /// </summary>
         /// <remarks>
-        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -148,7 +148,7 @@ namespace Late.Api
         /// Send message
         /// </summary>
         /// <remarks>
-        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -303,7 +303,7 @@ namespace Late.Api
         /// Send message
         /// </summary>
         /// <remarks>
-        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -316,7 +316,7 @@ namespace Late.Api
         /// Send message
         /// </summary>
         /// <remarks>
-        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+        /// Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1199,7 +1199,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1212,7 +1212,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1269,7 +1269,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1283,7 +1283,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, carousels, and message tags. Attachments: Telegram (images, videos, docs up to 50MB), Facebook (images, videos, audio, files), Instagram (images, videos, audio via URL), Twitter/X (images, videos). Not supported on Bluesky/Reddit. Interactive messages (quick replies, buttons, templates, reply markup) vary by platform. Unsupported fields are silently ignored. 
+        /// Send message Send a message in a conversation. Supports text, attachments, quick replies, buttons, and message tags. Attachment and interactive message support varies by platform.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>

@@ -241,7 +241,7 @@ catch (ApiException e)
 
 Get OAuth connect URL
 
-Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless=true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token=TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless=true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
 
 ### Example
 ```csharp
@@ -269,7 +269,7 @@ namespace Example
             var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
             var platform = "facebook";  // string | Social media platform to connect
             var profileId = "profileId_example";  // string | Your Late profile ID (get from /v1/profiles)
-            var redirectUrl = "redirectUrl_example";  // string? | Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected={platform}&profileId=X&username=Y. Headless mode: pass headless=true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional) 
+            var redirectUrl = "redirectUrl_example";  // string? | Your custom redirect URL after connection completes. Standard mode appends ?connected={platform}&profileId=X&username=Y. Headless mode appends OAuth data params. (optional) 
 
             try
             {
@@ -314,7 +314,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string** | Social media platform to connect |  |
 | **profileId** | **string** | Your Late profile ID (get from /v1/profiles) |  |
-| **redirectUrl** | **string?** | Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  | [optional]  |
+| **redirectUrl** | **string?** | Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. | [optional]  |
 
 ### Return type
 
@@ -547,6 +547,8 @@ catch (ApiException e)
 
 List LinkedIn orgs
 
+Returns LinkedIn organizations (company pages) the connected account has admin access to.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -645,7 +647,7 @@ catch (ApiException e)
 
 Get pending OAuth data
 
-Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
 
 ### Example
 ```csharp
@@ -745,6 +747,8 @@ catch (ApiException e)
 
 List Pinterest boards
 
+Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -843,6 +847,8 @@ catch (ApiException e)
 > GetRedditFlairs200Response GetRedditFlairs (string accountId, string subreddit)
 
 List subreddit flairs
+
+Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
 
 ### Example
 ```csharp
@@ -945,6 +951,8 @@ catch (ApiException e)
 
 List Reddit subreddits
 
+Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -1044,7 +1052,7 @@ catch (ApiException e)
 
 Generate Telegram code
 
-Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code={CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
 
 ### Example
 ```csharp
@@ -1147,6 +1155,8 @@ catch (ApiException e)
 
 Complete OAuth callback
 
+Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -1245,7 +1255,7 @@ void (empty response body)
 
 Connect Telegram directly
 
-Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
 
 ### Example
 ```csharp
@@ -1455,7 +1465,7 @@ catch (ApiException e)
 
 List GBP locations
 
-For headless/whitelabel flows. After Google Business OAuth with headless=true, you'll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
 
 ### Example
 ```csharp
@@ -1562,7 +1572,7 @@ catch (ApiException e)
 
 List LinkedIn orgs
 
-Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
 
 ### Example
 ```csharp
@@ -1664,7 +1674,7 @@ catch (ApiException e)
 
 List Pinterest boards
 
-Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless=true, you'll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
 
 ### Example
 ```csharp
@@ -1770,7 +1780,7 @@ catch (ApiException e)
 
 List Snapchat profiles
 
-For headless/whitelabel flows. After Snapchat OAuth with headless=true, you'll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
 
 ### Example
 ```csharp
@@ -1876,7 +1886,7 @@ catch (ApiException e)
 
 Select Facebook page
 
-Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user's selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+Complete the headless flow by saving the user's selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
 
 ### Example
 ```csharp
@@ -1983,7 +1993,7 @@ catch (ApiException e)
 
 Select GBP location
 
-Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user's selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+Complete the headless flow by saving the user's selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
 
 ### Example
 ```csharp
@@ -2090,7 +2100,7 @@ catch (ApiException e)
 
 Select LinkedIn org
 
-Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \"personal\" for a personal profile (omit selectedOrganization), or \"organization\" to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+Complete the LinkedIn connection flow. Set accountType to \"personal\" or \"organization\" to connect as a company page. Use X-Connect-Token if connecting via API key.
 
 ### Example
 ```csharp
@@ -2293,7 +2303,7 @@ catch (ApiException e)
 
 Select Snapchat profile
 
-Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless=true, you'll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform=snapchat, and step=select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
 
 ### Example
 ```csharp
@@ -2397,6 +2407,8 @@ catch (ApiException e)
 
 Update Facebook page
 
+Switch which Facebook Page is active for a connected account.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -2497,6 +2509,8 @@ catch (ApiException e)
 > UpdateGmbLocation200Response UpdateGmbLocation (string accountId, UpdateGmbLocationRequest updateGmbLocationRequest)
 
 Update GBP location
+
+Switch which GBP location is active for a connected account.
 
 ### Example
 ```csharp
@@ -2599,6 +2613,8 @@ catch (ApiException e)
 
 Switch LinkedIn account type
 
+Switch a LinkedIn account between personal profile and organization (company page) posting.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -2700,6 +2716,8 @@ catch (ApiException e)
 
 Set default Pinterest board
 
+Sets the default board used when publishing pins for this account.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -2800,6 +2818,8 @@ catch (ApiException e)
 > UpdateRedditSubreddits200Response UpdateRedditSubreddits (string accountId, UpdateRedditSubredditsRequest updateRedditSubredditsRequest)
 
 Set default subreddit
+
+Sets the default subreddit used when publishing posts for this Reddit account.
 
 ### Example
 ```csharp

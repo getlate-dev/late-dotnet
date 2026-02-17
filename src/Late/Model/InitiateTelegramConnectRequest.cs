@@ -41,7 +41,7 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InitiateTelegramConnectRequest" /> class.
         /// </summary>
-        /// <param name="chatId">The Telegram chat ID. Can be: - Numeric ID (e.g., \&quot;-1001234567890\&quot;) - Username with @ prefix (e.g., \&quot;@mychannel\&quot;)  (required).</param>
+        /// <param name="chatId">The Telegram chat ID. Numeric ID (e.g. \&quot;-1001234567890\&quot;) or username with @ prefix (e.g. \&quot;@mychannel\&quot;). (required).</param>
         /// <param name="profileId">The profile ID to connect the account to (required).</param>
         public InitiateTelegramConnectRequest(string chatId = default, string profileId = default)
         {
@@ -60,9 +60,9 @@ namespace Late.Model
         }
 
         /// <summary>
-        /// The Telegram chat ID. Can be: - Numeric ID (e.g., \&quot;-1001234567890\&quot;) - Username with @ prefix (e.g., \&quot;@mychannel\&quot;) 
+        /// The Telegram chat ID. Numeric ID (e.g. \&quot;-1001234567890\&quot;) or username with @ prefix (e.g. \&quot;@mychannel\&quot;).
         /// </summary>
-        /// <value>The Telegram chat ID. Can be: - Numeric ID (e.g., \&quot;-1001234567890\&quot;) - Username with @ prefix (e.g., \&quot;@mychannel\&quot;) </value>
+        /// <value>The Telegram chat ID. Numeric ID (e.g. \&quot;-1001234567890\&quot;) or username with @ prefix (e.g. \&quot;@mychannel\&quot;).</value>
         [DataMember(Name = "chatId", IsRequired = true, EmitDefaultValue = true)]
         public string ChatId { get; set; }
 

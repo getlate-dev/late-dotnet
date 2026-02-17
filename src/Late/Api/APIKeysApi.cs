@@ -31,6 +31,9 @@ namespace Late.Api
         /// <summary>
         /// Create key
         /// </summary>
+        /// <remarks>
+        /// Creates a new API key with an optional expiry. The full key value is only returned once in the response.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
         /// <returns>CreateApiKey201Response</returns>
@@ -40,7 +43,7 @@ namespace Late.Api
         /// Create key
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new API key with an optional expiry. The full key value is only returned once in the response.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -49,6 +52,9 @@ namespace Late.Api
         /// <summary>
         /// Delete key
         /// </summary>
+        /// <remarks>
+        /// Permanently revokes and deletes an API key.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
         /// <returns>DeleteAccountGroup200Response</returns>
@@ -58,7 +64,7 @@ namespace Late.Api
         /// Delete key
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently revokes and deletes an API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -67,6 +73,9 @@ namespace Late.Api
         /// <summary>
         /// List keys
         /// </summary>
+        /// <remarks>
+        /// Returns all API keys for the authenticated user. Keys are returned with a preview only, not the full key value.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListApiKeys200Response</returns>
         ListApiKeys200Response ListApiKeys();
@@ -75,7 +84,7 @@ namespace Late.Api
         /// List keys
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all API keys for the authenticated user. Keys are returned with a preview only, not the full key value.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListApiKeys200Response</returns>
@@ -93,7 +102,7 @@ namespace Late.Api
         /// Create key
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new API key with an optional expiry. The full key value is only returned once in the response.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -105,7 +114,7 @@ namespace Late.Api
         /// Create key
         /// </summary>
         /// <remarks>
-        /// 
+        /// Creates a new API key with an optional expiry. The full key value is only returned once in the response.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -116,7 +125,7 @@ namespace Late.Api
         /// Delete key
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently revokes and deletes an API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -128,7 +137,7 @@ namespace Late.Api
         /// Delete key
         /// </summary>
         /// <remarks>
-        /// 
+        /// Permanently revokes and deletes an API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -139,7 +148,7 @@ namespace Late.Api
         /// List keys
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all API keys for the authenticated user. Keys are returned with a preview only, not the full key value.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -150,7 +159,7 @@ namespace Late.Api
         /// List keys
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns all API keys for the authenticated user. Keys are returned with a preview only, not the full key value.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -370,7 +379,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create key 
+        /// Create key Creates a new API key with an optional expiry. The full key value is only returned once in the response.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -382,7 +391,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create key 
+        /// Create key Creates a new API key with an optional expiry. The full key value is only returned once in the response.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -432,7 +441,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create key 
+        /// Create key Creates a new API key with an optional expiry. The full key value is only returned once in the response.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -445,7 +454,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create key 
+        /// Create key Creates a new API key with an optional expiry. The full key value is only returned once in the response.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createApiKeyRequest"></param>
@@ -499,7 +508,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete key 
+        /// Delete key Permanently revokes and deletes an API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -511,7 +520,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete key 
+        /// Delete key Permanently revokes and deletes an API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -560,7 +569,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete key 
+        /// Delete key Permanently revokes and deletes an API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -573,7 +582,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete key 
+        /// Delete key Permanently revokes and deletes an API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="keyId"></param>
@@ -626,7 +635,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List keys 
+        /// List keys Returns all API keys for the authenticated user. Keys are returned with a preview only, not the full key value.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ListApiKeys200Response</returns>
@@ -637,7 +646,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List keys 
+        /// List keys Returns all API keys for the authenticated user. Keys are returned with a preview only, not the full key value.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ListApiKeys200Response</returns>
@@ -680,7 +689,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List keys 
+        /// List keys Returns all API keys for the authenticated user. Keys are returned with a preview only, not the full key value.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -692,7 +701,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List keys 
+        /// List keys Returns all API keys for the authenticated user. Keys are returned with a preview only, not the full key value.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

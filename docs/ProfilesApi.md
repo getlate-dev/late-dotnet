@@ -16,6 +16,8 @@ All URIs are relative to *https://getlate.dev/api*
 
 Create profile
 
+Creates a new profile with a name, optional description, and color.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -114,6 +116,8 @@ catch (ApiException e)
 > DeleteAccountGroup200Response DeleteProfile (string profileId)
 
 Delete profile
+
+Permanently deletes a profile by ID.
 
 ### Example
 ```csharp
@@ -215,6 +219,8 @@ catch (ApiException e)
 
 Get profile
 
+Returns a single profile by ID, including its name, color, and default status.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -313,7 +319,7 @@ catch (ApiException e)
 
 List profiles
 
-Returns profiles within the user's plan limit, sorted by creation date (oldest first). Use includeOverLimit=true to include profiles that exceed the plan limit (for management/deletion purposes). 
+Returns profiles sorted by creation date. Use includeOverLimit=true to include profiles that exceed the plan limit.
 
 ### Example
 ```csharp
@@ -339,7 +345,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProfilesApi(httpClient, config, httpClientHandler);
-            var includeOverLimit = false;  // bool? | When true, includes profiles that exceed the user's plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional)  (default to false)
+            var includeOverLimit = false;  // bool? | When true, includes over-limit profiles (marked with isOverLimit: true). (optional)  (default to false)
 
             try
             {
@@ -382,7 +388,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **includeOverLimit** | **bool?** | When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  | [optional] [default to false] |
+| **includeOverLimit** | **bool?** | When true, includes over-limit profiles (marked with isOverLimit: true). | [optional] [default to false] |
 
 ### Return type
 
@@ -411,6 +417,8 @@ catch (ApiException e)
 > UpdateProfile200Response UpdateProfile (string profileId, UpdateProfileRequest updateProfileRequest)
 
 Update profile
+
+Updates a profile's name, description, color, or default status.
 
 ### Example
 ```csharp

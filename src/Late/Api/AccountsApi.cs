@@ -31,6 +31,9 @@ namespace Late.Api
         /// <summary>
         /// Disconnect account
         /// </summary>
+        /// <remarks>
+        /// Disconnects and removes a connected social account.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <returns>DeleteAccountGroup200Response</returns>
@@ -40,7 +43,7 @@ namespace Late.Api
         /// Disconnect account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Disconnects and removes a connected social account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -50,7 +53,7 @@ namespace Late.Api
         /// Check account health
         /// </summary>
         /// <remarks>
-        /// Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+        /// Returns detailed health info for a specific account including token status, permissions, and recommendations.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The account ID to check</param>
@@ -61,7 +64,7 @@ namespace Late.Api
         /// Check account health
         /// </summary>
         /// <remarks>
-        /// Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+        /// Returns detailed health info for a specific account including token status, permissions, and recommendations.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The account ID to check</param>
@@ -71,7 +74,7 @@ namespace Late.Api
         /// Check accounts health
         /// </summary>
         /// <remarks>
-        /// Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+        /// Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -84,7 +87,7 @@ namespace Late.Api
         /// Check accounts health
         /// </summary>
         /// <remarks>
-        /// Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+        /// Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -125,11 +128,11 @@ namespace Late.Api
         /// List accounts
         /// </summary>
         /// <remarks>
-        /// Returns list of connected social accounts. By default, only returns accounts from profiles within the user&#39;s plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+        /// Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
-        /// <param name="includeOverLimit">When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <returns>ListAccounts200Response</returns>
         ListAccounts200Response ListAccounts(string? profileId = default, bool? includeOverLimit = default);
 
@@ -137,16 +140,19 @@ namespace Late.Api
         /// List accounts
         /// </summary>
         /// <remarks>
-        /// Returns list of connected social accounts. By default, only returns accounts from profiles within the user&#39;s plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+        /// Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
-        /// <param name="includeOverLimit">When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <returns>ApiResponse of ListAccounts200Response</returns>
         ApiResponse<ListAccounts200Response> ListAccountsWithHttpInfo(string? profileId = default, bool? includeOverLimit = default);
         /// <summary>
         /// Update account
         /// </summary>
+        /// <remarks>
+        /// Updates a connected social account&#39;s display name or username override.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateAccountRequest"></param>
@@ -157,7 +163,7 @@ namespace Late.Api
         /// Update account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates a connected social account&#39;s display name or username override.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -177,7 +183,7 @@ namespace Late.Api
         /// Disconnect account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Disconnects and removes a connected social account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -189,7 +195,7 @@ namespace Late.Api
         /// Disconnect account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Disconnects and removes a connected social account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -200,7 +206,7 @@ namespace Late.Api
         /// Check account health
         /// </summary>
         /// <remarks>
-        /// Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+        /// Returns detailed health info for a specific account including token status, permissions, and recommendations.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The account ID to check</param>
@@ -212,7 +218,7 @@ namespace Late.Api
         /// Check account health
         /// </summary>
         /// <remarks>
-        /// Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+        /// Returns detailed health info for a specific account including token status, permissions, and recommendations.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The account ID to check</param>
@@ -223,7 +229,7 @@ namespace Late.Api
         /// Check accounts health
         /// </summary>
         /// <remarks>
-        /// Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+        /// Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -237,7 +243,7 @@ namespace Late.Api
         /// Check accounts health
         /// </summary>
         /// <remarks>
-        /// Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+        /// Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -281,11 +287,11 @@ namespace Late.Api
         /// List accounts
         /// </summary>
         /// <remarks>
-        /// Returns list of connected social accounts. By default, only returns accounts from profiles within the user&#39;s plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+        /// Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
-        /// <param name="includeOverLimit">When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAccounts200Response</returns>
         System.Threading.Tasks.Task<ListAccounts200Response> ListAccountsAsync(string? profileId = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
@@ -294,11 +300,11 @@ namespace Late.Api
         /// List accounts
         /// </summary>
         /// <remarks>
-        /// Returns list of connected social accounts. By default, only returns accounts from profiles within the user&#39;s plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+        /// Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
-        /// <param name="includeOverLimit">When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAccounts200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListAccounts200Response>> ListAccountsWithHttpInfoAsync(string? profileId = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
@@ -306,7 +312,7 @@ namespace Late.Api
         /// Update account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates a connected social account&#39;s display name or username override.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -319,7 +325,7 @@ namespace Late.Api
         /// Update account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Updates a connected social account&#39;s display name or username override.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -541,7 +547,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Disconnect account 
+        /// Disconnect account Disconnects and removes a connected social account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -553,7 +559,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Disconnect account 
+        /// Disconnect account Disconnects and removes a connected social account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -602,7 +608,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Disconnect account 
+        /// Disconnect account Disconnects and removes a connected social account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -615,7 +621,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Disconnect account 
+        /// Disconnect account Disconnects and removes a connected social account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -668,7 +674,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check account health Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+        /// Check account health Returns detailed health info for a specific account including token status, permissions, and recommendations.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The account ID to check</param>
@@ -680,7 +686,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check account health Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+        /// Check account health Returns detailed health info for a specific account including token status, permissions, and recommendations.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The account ID to check</param>
@@ -729,7 +735,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check account health Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+        /// Check account health Returns detailed health info for a specific account including token status, permissions, and recommendations.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The account ID to check</param>
@@ -742,7 +748,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check account health Returns detailed health information for a specific social account, including token status, granted permissions, missing permissions, and actionable recommendations. 
+        /// Check account health Returns detailed health info for a specific account including token status, permissions, and recommendations.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The account ID to check</param>
@@ -795,7 +801,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check accounts health Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+        /// Check accounts health Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -809,7 +815,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check accounts health Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+        /// Check accounts health Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -867,7 +873,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check accounts health Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+        /// Check accounts health Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -882,7 +888,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check accounts health Returns the health status of all connected social accounts, including token validity, permissions status, and any issues that need attention. Useful for monitoring account connections and identifying accounts that need reconnection. 
+        /// Check accounts health Returns health status of all connected accounts including token validity, permissions, and issues needing attention.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1117,11 +1123,11 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List accounts Returns list of connected social accounts. By default, only returns accounts from profiles within the user&#39;s plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+        /// List accounts Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
-        /// <param name="includeOverLimit">When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <returns>ListAccounts200Response</returns>
         public ListAccounts200Response ListAccounts(string? profileId = default, bool? includeOverLimit = default)
         {
@@ -1130,11 +1136,11 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List accounts Returns list of connected social accounts. By default, only returns accounts from profiles within the user&#39;s plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+        /// List accounts Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
-        /// <param name="includeOverLimit">When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <returns>ApiResponse of ListAccounts200Response</returns>
         public Late.Client.ApiResponse<ListAccounts200Response> ListAccountsWithHttpInfo(string? profileId = default, bool? includeOverLimit = default)
         {
@@ -1183,11 +1189,11 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List accounts Returns list of connected social accounts. By default, only returns accounts from profiles within the user&#39;s plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+        /// List accounts Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
-        /// <param name="includeOverLimit">When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAccounts200Response</returns>
         public async System.Threading.Tasks.Task<ListAccounts200Response> ListAccountsAsync(string? profileId = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default)
@@ -1197,11 +1203,11 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List accounts Returns list of connected social accounts. By default, only returns accounts from profiles within the user&#39;s plan limit. Follower count data (followersCount, followersLastUpdated) is only included if user has analytics add-on. 
+        /// List accounts Returns connected social accounts. Only includes accounts within the plan limit by default. Follower data requires analytics add-on.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
-        /// <param name="includeOverLimit">When true, includes accounts from profiles that exceed the user&#39;s plan limit. Useful for disconnecting accounts from over-limit profiles so they can be deleted.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAccounts200Response)</returns>
         public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListAccounts200Response>> ListAccountsWithHttpInfoAsync(string? profileId = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default)
@@ -1254,7 +1260,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update account 
+        /// Update account Updates a connected social account&#39;s display name or username override.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1267,7 +1273,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update account 
+        /// Update account Updates a connected social account&#39;s display name or username override.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1323,7 +1329,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update account 
+        /// Update account Updates a connected social account&#39;s display name or username override.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1337,7 +1343,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update account 
+        /// Update account Updates a connected social account&#39;s display name or username override.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

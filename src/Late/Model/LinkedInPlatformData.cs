@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Up to 20 images, no multi-video. Single PDF supported (max 100MB, ~300 pages, cannot mix with other media). Link previews auto-generated when no media attached (disable with disableLinkPreview). Use organizationUrn for multi-org posting.
+    /// Up to 20 images, no multi-video. Single PDF supported (max 100MB). Link previews auto-generated when no media attached. Use organizationUrn for multi-org posting.
     /// </summary>
     [DataContract(Name = "LinkedInPlatformData")]
     public partial class LinkedInPlatformData : IValidatableObject
@@ -36,7 +36,7 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkedInPlatformData" /> class.
         /// </summary>
-        /// <param name="organizationUrn">Target LinkedIn Organization URN for multi-organization posting. Format: \&quot;urn:li:organization:123456789\&quot; If omitted, uses the selected/default organization on the connection. Use GET /api/v1/accounts/{id}/linkedin-organizations to list available organizations. .</param>
+        /// <param name="organizationUrn">Target LinkedIn Organization URN (e.g. \&quot;urn:li:organization:123456789\&quot;). If omitted, uses the default org. Use GET /v1/accounts/{id}/linkedin-organizations to list orgs..</param>
         /// <param name="firstComment">Optional first comment to add after the post is created.</param>
         /// <param name="disableLinkPreview">Set to true to disable automatic link previews for URLs in the post content (default is false).</param>
         public LinkedInPlatformData(string organizationUrn = default, string firstComment = default, bool disableLinkPreview = default)
@@ -47,9 +47,9 @@ namespace Late.Model
         }
 
         /// <summary>
-        /// Target LinkedIn Organization URN for multi-organization posting. Format: \&quot;urn:li:organization:123456789\&quot; If omitted, uses the selected/default organization on the connection. Use GET /api/v1/accounts/{id}/linkedin-organizations to list available organizations. 
+        /// Target LinkedIn Organization URN (e.g. \&quot;urn:li:organization:123456789\&quot;). If omitted, uses the default org. Use GET /v1/accounts/{id}/linkedin-organizations to list orgs.
         /// </summary>
-        /// <value>Target LinkedIn Organization URN for multi-organization posting. Format: \&quot;urn:li:organization:123456789\&quot; If omitted, uses the selected/default organization on the connection. Use GET /api/v1/accounts/{id}/linkedin-organizations to list available organizations. </value>
+        /// <value>Target LinkedIn Organization URN (e.g. \&quot;urn:li:organization:123456789\&quot;). If omitted, uses the default org. Use GET /v1/accounts/{id}/linkedin-organizations to list orgs.</value>
         [DataMember(Name = "organizationUrn", EmitDefaultValue = false)]
         public string OrganizationUrn { get; set; }
 

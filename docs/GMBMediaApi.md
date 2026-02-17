@@ -116,6 +116,8 @@ catch (ApiException e)
 
 Delete photo
 
+Deletes a photo or media item from a GBP location.
+
 ### Example
 ```csharp
 using System.Collections.Generic;

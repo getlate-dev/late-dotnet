@@ -32,11 +32,11 @@ namespace Late.Api
         /// Get location details
         /// </summary>
         /// <remarks>
-        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+        /// Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
-        /// <param name="readMask">Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional)</param>
         /// <returns>GetGoogleBusinessLocationDetails200Response</returns>
         GetGoogleBusinessLocationDetails200Response GetGoogleBusinessLocationDetails(string accountId, string? readMask = default);
 
@@ -44,18 +44,18 @@ namespace Late.Api
         /// Get location details
         /// </summary>
         /// <remarks>
-        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+        /// Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
-        /// <param name="readMask">Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessLocationDetails200Response</returns>
         ApiResponse<GetGoogleBusinessLocationDetails200Response> GetGoogleBusinessLocationDetailsWithHttpInfo(string accountId, string? readMask = default);
         /// <summary>
         /// Update location details
         /// </summary>
         /// <remarks>
-        /// Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+        /// Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -67,7 +67,7 @@ namespace Late.Api
         /// Update location details
         /// </summary>
         /// <remarks>
-        /// Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+        /// Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -87,11 +87,11 @@ namespace Late.Api
         /// Get location details
         /// </summary>
         /// <remarks>
-        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+        /// Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
-        /// <param name="readMask">Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessLocationDetails200Response</returns>
         System.Threading.Tasks.Task<GetGoogleBusinessLocationDetails200Response> GetGoogleBusinessLocationDetailsAsync(string accountId, string? readMask = default, System.Threading.CancellationToken cancellationToken = default);
@@ -100,11 +100,11 @@ namespace Late.Api
         /// Get location details
         /// </summary>
         /// <remarks>
-        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+        /// Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
-        /// <param name="readMask">Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessLocationDetails200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessLocationDetails200Response>> GetGoogleBusinessLocationDetailsWithHttpInfoAsync(string accountId, string? readMask = default, System.Threading.CancellationToken cancellationToken = default);
@@ -112,7 +112,7 @@ namespace Late.Api
         /// Update location details
         /// </summary>
         /// <remarks>
-        /// Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+        /// Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -125,7 +125,7 @@ namespace Late.Api
         /// Update location details
         /// </summary>
         /// <remarks>
-        /// Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+        /// Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -347,11 +347,11 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+        /// Get location details Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
-        /// <param name="readMask">Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional)</param>
         /// <returns>GetGoogleBusinessLocationDetails200Response</returns>
         public GetGoogleBusinessLocationDetails200Response GetGoogleBusinessLocationDetails(string accountId, string? readMask = default)
         {
@@ -360,11 +360,11 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+        /// Get location details Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
-        /// <param name="readMask">Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessLocationDetails200Response</returns>
         public Late.Client.ApiResponse<GetGoogleBusinessLocationDetails200Response> GetGoogleBusinessLocationDetailsWithHttpInfo(string accountId, string? readMask = default)
         {
@@ -414,11 +414,11 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+        /// Get location details Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
-        /// <param name="readMask">Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessLocationDetails200Response</returns>
         public async System.Threading.Tasks.Task<GetGoogleBusinessLocationDetails200Response> GetGoogleBusinessLocationDetailsAsync(string accountId, string? readMask = default, System.Threading.CancellationToken cancellationToken = default)
@@ -428,11 +428,11 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
+        /// Get location details Returns detailed GBP location info (hours, description, phone, website, categories). Use readMask to request specific fields.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
-        /// <param name="readMask">Comma-separated fields to return. Defaults to common fields. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours  (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessLocationDetails200Response)</returns>
         public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetGoogleBusinessLocationDetails200Response>> GetGoogleBusinessLocationDetailsWithHttpInfoAsync(string accountId, string? readMask = default, System.Threading.CancellationToken cancellationToken = default)
@@ -486,7 +486,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+        /// Update location details Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -499,7 +499,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+        /// Update location details Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -555,7 +555,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+        /// Update location details Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -569,7 +569,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
+        /// Update location details Updates GBP location details (hours, description, phone, website). The updateMask field is required and specifies which fields to update.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>

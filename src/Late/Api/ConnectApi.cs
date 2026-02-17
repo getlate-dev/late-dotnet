@@ -74,12 +74,12 @@ namespace Late.Api
         /// Get OAuth connect URL
         /// </summary>
         /// <remarks>
-        /// Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless&#x3D;true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token&#x3D;TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+        /// Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless&#x3D;true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
-        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional)</param>
+        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
         /// <returns>GetConnectUrl200Response</returns>
         GetConnectUrl200Response GetConnectUrl(string platform, string profileId, string? redirectUrl = default);
 
@@ -87,12 +87,12 @@ namespace Late.Api
         /// Get OAuth connect URL
         /// </summary>
         /// <remarks>
-        /// Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless&#x3D;true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token&#x3D;TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+        /// Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless&#x3D;true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
-        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional)</param>
+        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
         /// <returns>ApiResponse of GetConnectUrl200Response</returns>
         ApiResponse<GetConnectUrl200Response> GetConnectUrlWithHttpInfo(string platform, string profileId, string? redirectUrl = default);
         /// <summary>
@@ -140,6 +140,9 @@ namespace Late.Api
         /// <summary>
         /// List LinkedIn orgs
         /// </summary>
+        /// <remarks>
+        /// Returns LinkedIn organizations (company pages) the connected account has admin access to.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <returns>GetLinkedInOrganizations200Response</returns>
@@ -149,7 +152,7 @@ namespace Late.Api
         /// List LinkedIn orgs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns LinkedIn organizations (company pages) the connected account has admin access to.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -159,7 +162,7 @@ namespace Late.Api
         /// Get pending OAuth data
         /// </summary>
         /// <remarks>
-        /// Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -170,7 +173,7 @@ namespace Late.Api
         /// Get pending OAuth data
         /// </summary>
         /// <remarks>
-        /// Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -179,6 +182,9 @@ namespace Late.Api
         /// <summary>
         /// List Pinterest boards
         /// </summary>
+        /// <remarks>
+        /// Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <returns>GetPinterestBoards200Response</returns>
@@ -188,7 +194,7 @@ namespace Late.Api
         /// List Pinterest boards
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -197,6 +203,9 @@ namespace Late.Api
         /// <summary>
         /// List subreddit flairs
         /// </summary>
+        /// <remarks>
+        /// Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="subreddit">Subreddit name (without \&quot;r/\&quot; prefix) to fetch flairs for</param>
@@ -207,7 +216,7 @@ namespace Late.Api
         /// List subreddit flairs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -217,6 +226,9 @@ namespace Late.Api
         /// <summary>
         /// List Reddit subreddits
         /// </summary>
+        /// <remarks>
+        /// Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <returns>GetRedditSubreddits200Response</returns>
@@ -226,7 +238,7 @@ namespace Late.Api
         /// List Reddit subreddits
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -236,7 +248,7 @@ namespace Late.Api
         /// Generate Telegram code
         /// </summary>
         /// <remarks>
-        /// Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code&#x3D;{CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+        /// Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">The profile ID to connect the Telegram account to</param>
@@ -247,7 +259,7 @@ namespace Late.Api
         /// Generate Telegram code
         /// </summary>
         /// <remarks>
-        /// Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code&#x3D;{CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+        /// Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">The profile ID to connect the Telegram account to</param>
@@ -256,6 +268,9 @@ namespace Late.Api
         /// <summary>
         /// Complete OAuth callback
         /// </summary>
+        /// <remarks>
+        /// Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform"></param>
         /// <param name="handleOAuthCallbackRequest"></param>
@@ -266,7 +281,7 @@ namespace Late.Api
         /// Complete OAuth callback
         /// </summary>
         /// <remarks>
-        /// 
+        /// Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform"></param>
@@ -277,7 +292,7 @@ namespace Late.Api
         /// Connect Telegram directly
         /// </summary>
         /// <remarks>
-        /// Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+        /// Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="initiateTelegramConnectRequest"></param>
@@ -288,7 +303,7 @@ namespace Late.Api
         /// Connect Telegram directly
         /// </summary>
         /// <remarks>
-        /// Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+        /// Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="initiateTelegramConnectRequest"></param>
@@ -321,7 +336,7 @@ namespace Late.Api
         /// List GBP locations
         /// </summary>
         /// <remarks>
-        /// For headless/whitelabel flows. After Google Business OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID from your connection flow</param>
@@ -333,7 +348,7 @@ namespace Late.Api
         /// List GBP locations
         /// </summary>
         /// <remarks>
-        /// For headless/whitelabel flows. After Google Business OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID from your connection flow</param>
@@ -344,7 +359,7 @@ namespace Late.Api
         /// List LinkedIn orgs
         /// </summary>
         /// <remarks>
-        /// Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+        /// Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tempToken">The temporary LinkedIn access token from the OAuth redirect</param>
@@ -356,7 +371,7 @@ namespace Late.Api
         /// List LinkedIn orgs
         /// </summary>
         /// <remarks>
-        /// Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+        /// Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tempToken">The temporary LinkedIn access token from the OAuth redirect</param>
@@ -367,7 +382,7 @@ namespace Late.Api
         /// List Pinterest boards
         /// </summary>
         /// <remarks>
-        /// Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -380,7 +395,7 @@ namespace Late.Api
         /// List Pinterest boards
         /// </summary>
         /// <remarks>
-        /// Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -392,7 +407,7 @@ namespace Late.Api
         /// List Snapchat profiles
         /// </summary>
         /// <remarks>
-        /// For headless/whitelabel flows. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -405,7 +420,7 @@ namespace Late.Api
         /// List Snapchat profiles
         /// </summary>
         /// <remarks>
-        /// For headless/whitelabel flows. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -417,7 +432,7 @@ namespace Late.Api
         /// Select Facebook page
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user&#39;s selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the headless flow by saving the user&#39;s selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectFacebookPageRequest"></param>
@@ -428,7 +443,7 @@ namespace Late.Api
         /// Select Facebook page
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user&#39;s selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the headless flow by saving the user&#39;s selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectFacebookPageRequest"></param>
@@ -438,7 +453,7 @@ namespace Late.Api
         /// Select GBP location
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user&#39;s selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -449,7 +464,7 @@ namespace Late.Api
         /// Select GBP location
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user&#39;s selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -459,7 +474,7 @@ namespace Late.Api
         /// Select LinkedIn org
         /// </summary>
         /// <remarks>
-        /// Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \&quot;personal\&quot; for a personal profile (omit selectedOrganization), or \&quot;organization\&quot; to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the LinkedIn connection flow. Set accountType to \&quot;personal\&quot; or \&quot;organization\&quot; to connect as a company page. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectLinkedInOrganizationRequest"></param>
@@ -470,7 +485,7 @@ namespace Late.Api
         /// Select LinkedIn org
         /// </summary>
         /// <remarks>
-        /// Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \&quot;personal\&quot; for a personal profile (omit selectedOrganization), or \&quot;organization\&quot; to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the LinkedIn connection flow. Set accountType to \&quot;personal\&quot; or \&quot;organization\&quot; to connect as a company page. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectLinkedInOrganizationRequest"></param>
@@ -501,7 +516,7 @@ namespace Late.Api
         /// Select Snapchat profile
         /// </summary>
         /// <remarks>
-        /// Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform&#x3D;snapchat, and step&#x3D;select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectSnapchatProfileRequest"></param>
@@ -513,7 +528,7 @@ namespace Late.Api
         /// Select Snapchat profile
         /// </summary>
         /// <remarks>
-        /// Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform&#x3D;snapchat, and step&#x3D;select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectSnapchatProfileRequest"></param>
@@ -523,6 +538,9 @@ namespace Late.Api
         /// <summary>
         /// Update Facebook page
         /// </summary>
+        /// <remarks>
+        /// Switch which Facebook Page is active for a connected account.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateFacebookPageRequest"></param>
@@ -533,7 +551,7 @@ namespace Late.Api
         /// Update Facebook page
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch which Facebook Page is active for a connected account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -543,6 +561,9 @@ namespace Late.Api
         /// <summary>
         /// Update GBP location
         /// </summary>
+        /// <remarks>
+        /// Switch which GBP location is active for a connected account.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGmbLocationRequest"></param>
@@ -553,7 +574,7 @@ namespace Late.Api
         /// Update GBP location
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch which GBP location is active for a connected account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -563,6 +584,9 @@ namespace Late.Api
         /// <summary>
         /// Switch LinkedIn account type
         /// </summary>
+        /// <remarks>
+        /// Switch a LinkedIn account between personal profile and organization (company page) posting.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateLinkedInOrganizationRequest"></param>
@@ -573,7 +597,7 @@ namespace Late.Api
         /// Switch LinkedIn account type
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch a LinkedIn account between personal profile and organization (company page) posting.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -583,6 +607,9 @@ namespace Late.Api
         /// <summary>
         /// Set default Pinterest board
         /// </summary>
+        /// <remarks>
+        /// Sets the default board used when publishing pins for this account.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updatePinterestBoardsRequest"></param>
@@ -593,7 +620,7 @@ namespace Late.Api
         /// Set default Pinterest board
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sets the default board used when publishing pins for this account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -603,6 +630,9 @@ namespace Late.Api
         /// <summary>
         /// Set default subreddit
         /// </summary>
+        /// <remarks>
+        /// Sets the default subreddit used when publishing posts for this Reddit account.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateRedditSubredditsRequest"></param>
@@ -613,7 +643,7 @@ namespace Late.Api
         /// Set default subreddit
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sets the default subreddit used when publishing posts for this Reddit account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -679,12 +709,12 @@ namespace Late.Api
         /// Get OAuth connect URL
         /// </summary>
         /// <remarks>
-        /// Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless&#x3D;true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token&#x3D;TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+        /// Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless&#x3D;true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
-        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional)</param>
+        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetConnectUrl200Response</returns>
         System.Threading.Tasks.Task<GetConnectUrl200Response> GetConnectUrlAsync(string platform, string profileId, string? redirectUrl = default, System.Threading.CancellationToken cancellationToken = default);
@@ -693,12 +723,12 @@ namespace Late.Api
         /// Get OAuth connect URL
         /// </summary>
         /// <remarks>
-        /// Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless&#x3D;true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token&#x3D;TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+        /// Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless&#x3D;true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
-        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional)</param>
+        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetConnectUrl200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetConnectUrl200Response>> GetConnectUrlWithHttpInfoAsync(string platform, string profileId, string? redirectUrl = default, System.Threading.CancellationToken cancellationToken = default);
@@ -752,7 +782,7 @@ namespace Late.Api
         /// List LinkedIn orgs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns LinkedIn organizations (company pages) the connected account has admin access to.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -764,7 +794,7 @@ namespace Late.Api
         /// List LinkedIn orgs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns LinkedIn organizations (company pages) the connected account has admin access to.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -775,7 +805,7 @@ namespace Late.Api
         /// Get pending OAuth data
         /// </summary>
         /// <remarks>
-        /// Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -787,7 +817,7 @@ namespace Late.Api
         /// Get pending OAuth data
         /// </summary>
         /// <remarks>
-        /// Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -798,7 +828,7 @@ namespace Late.Api
         /// List Pinterest boards
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -810,7 +840,7 @@ namespace Late.Api
         /// List Pinterest boards
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -821,7 +851,7 @@ namespace Late.Api
         /// List subreddit flairs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -834,7 +864,7 @@ namespace Late.Api
         /// List subreddit flairs
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -846,7 +876,7 @@ namespace Late.Api
         /// List Reddit subreddits
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -858,7 +888,7 @@ namespace Late.Api
         /// List Reddit subreddits
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -869,7 +899,7 @@ namespace Late.Api
         /// Generate Telegram code
         /// </summary>
         /// <remarks>
-        /// Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code&#x3D;{CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+        /// Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">The profile ID to connect the Telegram account to</param>
@@ -881,7 +911,7 @@ namespace Late.Api
         /// Generate Telegram code
         /// </summary>
         /// <remarks>
-        /// Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code&#x3D;{CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+        /// Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">The profile ID to connect the Telegram account to</param>
@@ -892,7 +922,7 @@ namespace Late.Api
         /// Complete OAuth callback
         /// </summary>
         /// <remarks>
-        /// 
+        /// Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform"></param>
@@ -905,7 +935,7 @@ namespace Late.Api
         /// Complete OAuth callback
         /// </summary>
         /// <remarks>
-        /// 
+        /// Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform"></param>
@@ -917,7 +947,7 @@ namespace Late.Api
         /// Connect Telegram directly
         /// </summary>
         /// <remarks>
-        /// Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+        /// Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="initiateTelegramConnectRequest"></param>
@@ -929,7 +959,7 @@ namespace Late.Api
         /// Connect Telegram directly
         /// </summary>
         /// <remarks>
-        /// Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+        /// Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="initiateTelegramConnectRequest"></param>
@@ -965,7 +995,7 @@ namespace Late.Api
         /// List GBP locations
         /// </summary>
         /// <remarks>
-        /// For headless/whitelabel flows. After Google Business OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID from your connection flow</param>
@@ -978,7 +1008,7 @@ namespace Late.Api
         /// List GBP locations
         /// </summary>
         /// <remarks>
-        /// For headless/whitelabel flows. After Google Business OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID from your connection flow</param>
@@ -990,7 +1020,7 @@ namespace Late.Api
         /// List LinkedIn orgs
         /// </summary>
         /// <remarks>
-        /// Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+        /// Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tempToken">The temporary LinkedIn access token from the OAuth redirect</param>
@@ -1003,7 +1033,7 @@ namespace Late.Api
         /// List LinkedIn orgs
         /// </summary>
         /// <remarks>
-        /// Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+        /// Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tempToken">The temporary LinkedIn access token from the OAuth redirect</param>
@@ -1015,7 +1045,7 @@ namespace Late.Api
         /// List Pinterest boards
         /// </summary>
         /// <remarks>
-        /// Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -1029,7 +1059,7 @@ namespace Late.Api
         /// List Pinterest boards
         /// </summary>
         /// <remarks>
-        /// Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -1042,7 +1072,7 @@ namespace Late.Api
         /// List Snapchat profiles
         /// </summary>
         /// <remarks>
-        /// For headless/whitelabel flows. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -1056,7 +1086,7 @@ namespace Late.Api
         /// List Snapchat profiles
         /// </summary>
         /// <remarks>
-        /// For headless/whitelabel flows. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -1069,7 +1099,7 @@ namespace Late.Api
         /// Select Facebook page
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user&#39;s selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the headless flow by saving the user&#39;s selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectFacebookPageRequest"></param>
@@ -1081,7 +1111,7 @@ namespace Late.Api
         /// Select Facebook page
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user&#39;s selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the headless flow by saving the user&#39;s selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectFacebookPageRequest"></param>
@@ -1092,7 +1122,7 @@ namespace Late.Api
         /// Select GBP location
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user&#39;s selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -1104,7 +1134,7 @@ namespace Late.Api
         /// Select GBP location
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user&#39;s selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -1115,7 +1145,7 @@ namespace Late.Api
         /// Select LinkedIn org
         /// </summary>
         /// <remarks>
-        /// Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \&quot;personal\&quot; for a personal profile (omit selectedOrganization), or \&quot;organization\&quot; to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the LinkedIn connection flow. Set accountType to \&quot;personal\&quot; or \&quot;organization\&quot; to connect as a company page. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectLinkedInOrganizationRequest"></param>
@@ -1127,7 +1157,7 @@ namespace Late.Api
         /// Select LinkedIn org
         /// </summary>
         /// <remarks>
-        /// Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \&quot;personal\&quot; for a personal profile (omit selectedOrganization), or \&quot;organization\&quot; to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the LinkedIn connection flow. Set accountType to \&quot;personal\&quot; or \&quot;organization\&quot; to connect as a company page. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectLinkedInOrganizationRequest"></param>
@@ -1161,7 +1191,7 @@ namespace Late.Api
         /// Select Snapchat profile
         /// </summary>
         /// <remarks>
-        /// Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform&#x3D;snapchat, and step&#x3D;select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectSnapchatProfileRequest"></param>
@@ -1174,7 +1204,7 @@ namespace Late.Api
         /// Select Snapchat profile
         /// </summary>
         /// <remarks>
-        /// Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform&#x3D;snapchat, and step&#x3D;select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectSnapchatProfileRequest"></param>
@@ -1186,7 +1216,7 @@ namespace Late.Api
         /// Update Facebook page
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch which Facebook Page is active for a connected account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1199,7 +1229,7 @@ namespace Late.Api
         /// Update Facebook page
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch which Facebook Page is active for a connected account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1211,7 +1241,7 @@ namespace Late.Api
         /// Update GBP location
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch which GBP location is active for a connected account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1224,7 +1254,7 @@ namespace Late.Api
         /// Update GBP location
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch which GBP location is active for a connected account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1236,7 +1266,7 @@ namespace Late.Api
         /// Switch LinkedIn account type
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch a LinkedIn account between personal profile and organization (company page) posting.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1249,7 +1279,7 @@ namespace Late.Api
         /// Switch LinkedIn account type
         /// </summary>
         /// <remarks>
-        /// 
+        /// Switch a LinkedIn account between personal profile and organization (company page) posting.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1261,7 +1291,7 @@ namespace Late.Api
         /// Set default Pinterest board
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sets the default board used when publishing pins for this account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1274,7 +1304,7 @@ namespace Late.Api
         /// Set default Pinterest board
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sets the default board used when publishing pins for this account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1286,7 +1316,7 @@ namespace Late.Api
         /// Set default subreddit
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sets the default subreddit used when publishing posts for this Reddit account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1299,7 +1329,7 @@ namespace Late.Api
         /// Set default subreddit
         /// </summary>
         /// <remarks>
-        /// 
+        /// Sets the default subreddit used when publishing posts for this Reddit account.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1777,12 +1807,12 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get OAuth connect URL Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless&#x3D;true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token&#x3D;TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+        /// Get OAuth connect URL Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless&#x3D;true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
-        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional)</param>
+        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
         /// <returns>GetConnectUrl200Response</returns>
         public GetConnectUrl200Response GetConnectUrl(string platform, string profileId, string? redirectUrl = default)
         {
@@ -1791,12 +1821,12 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get OAuth connect URL Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless&#x3D;true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token&#x3D;TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+        /// Get OAuth connect URL Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless&#x3D;true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
-        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional)</param>
+        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
         /// <returns>ApiResponse of GetConnectUrl200Response</returns>
         public Late.Client.ApiResponse<GetConnectUrl200Response> GetConnectUrlWithHttpInfo(string platform, string profileId, string? redirectUrl = default)
         {
@@ -1851,12 +1881,12 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get OAuth connect URL Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless&#x3D;true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token&#x3D;TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+        /// Get OAuth connect URL Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless&#x3D;true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
-        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional)</param>
+        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetConnectUrl200Response</returns>
         public async System.Threading.Tasks.Task<GetConnectUrl200Response> GetConnectUrlAsync(string platform, string profileId, string? redirectUrl = default, System.Threading.CancellationToken cancellationToken = default)
@@ -1866,12 +1896,12 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get OAuth connect URL Initiate an OAuth connection flow for any supported platform. Standard flow: call this endpoint, redirect user to the returned authUrl, Late hosts the selection UI, then redirects to your redirect_url. Headless mode (Facebook, LinkedIn, Pinterest, Google Business, Snapchat): add headless&#x3D;true to this endpoint. After OAuth, the user is redirected to your redirect_url with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). Use the platform-specific selection endpoints to fetch options and save the selection. LinkedIn uses pendingDataToken instead of tempToken; call GET /v1/connect/pending-data?token&#x3D;TOKEN to retrieve OAuth data (one-time use, expires in 10 minutes). 
+        /// Get OAuth connect URL Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless&#x3D;true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
-        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode: Late redirects here with ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode: pass headless&#x3D;true on this endpoint. User is redirected to your URL with OAuth data (profileId, tempToken, userProfile, connect_token, platform, step). See endpoint description for details.  (optional)</param>
+        /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetConnectUrl200Response)</returns>
         public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetConnectUrl200Response>> GetConnectUrlWithHttpInfoAsync(string platform, string profileId, string? redirectUrl = default, System.Threading.CancellationToken cancellationToken = default)
@@ -2184,7 +2214,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List LinkedIn orgs 
+        /// List LinkedIn orgs Returns LinkedIn organizations (company pages) the connected account has admin access to.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2196,7 +2226,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List LinkedIn orgs 
+        /// List LinkedIn orgs Returns LinkedIn organizations (company pages) the connected account has admin access to.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2245,7 +2275,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List LinkedIn orgs 
+        /// List LinkedIn orgs Returns LinkedIn organizations (company pages) the connected account has admin access to.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2258,7 +2288,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List LinkedIn orgs 
+        /// List LinkedIn orgs Returns LinkedIn organizations (company pages) the connected account has admin access to.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2311,7 +2341,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get pending OAuth data Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -2323,7 +2353,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get pending OAuth data Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -2372,7 +2402,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get pending OAuth data Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -2385,7 +2415,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get pending OAuth data Fetch pending OAuth data for headless mode. Platforms like LinkedIn store OAuth selection data (organizations, pages, etc.) server-side to prevent URI_TOO_LONG errors. After OAuth redirect, use the pendingDataToken from the URL to fetch the stored data. This endpoint is one-time use (data is deleted after fetch) and expires after 10 minutes. No authentication required, just the token. 
+        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -2438,7 +2468,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Pinterest boards 
+        /// List Pinterest boards Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2450,7 +2480,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Pinterest boards 
+        /// List Pinterest boards Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2499,7 +2529,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Pinterest boards 
+        /// List Pinterest boards Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2512,7 +2542,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Pinterest boards 
+        /// List Pinterest boards Returns the boards available for a connected Pinterest account. Use this to get a board ID when creating a Pinterest post.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2565,7 +2595,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List subreddit flairs 
+        /// List subreddit flairs Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2578,7 +2608,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List subreddit flairs 
+        /// List subreddit flairs Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2633,7 +2663,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List subreddit flairs 
+        /// List subreddit flairs Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2647,7 +2677,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List subreddit flairs 
+        /// List subreddit flairs Returns available post flairs for a subreddit. Some subreddits require a flair when posting.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2706,7 +2736,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Reddit subreddits 
+        /// List Reddit subreddits Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2718,7 +2748,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Reddit subreddits 
+        /// List Reddit subreddits Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2767,7 +2797,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Reddit subreddits 
+        /// List Reddit subreddits Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2780,7 +2810,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Reddit subreddits 
+        /// List Reddit subreddits Returns the subreddits the connected Reddit account can post to. Use this to get a subreddit name when creating a Reddit post.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -2833,7 +2863,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Generate Telegram code Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code&#x3D;{CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+        /// Generate Telegram code Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">The profile ID to connect the Telegram account to</param>
@@ -2845,7 +2875,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Generate Telegram code Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code&#x3D;{CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+        /// Generate Telegram code Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">The profile ID to connect the Telegram account to</param>
@@ -2894,7 +2924,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Generate Telegram code Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code&#x3D;{CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+        /// Generate Telegram code Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">The profile ID to connect the Telegram account to</param>
@@ -2907,7 +2937,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Generate Telegram code Generate a unique access code for connecting a Telegram channel or group. Flow: get an access code (valid 15 minutes), add the bot as admin in your channel/group, open a private chat with the bot, send the code + @yourchannel (e.g. LATE-ABC123 @mychannel), then poll PATCH /v1/connect/telegram?code&#x3D;{CODE} to check connection status. For private channels without a public username, forward any message from the channel to the bot along with the access code. 
+        /// Generate Telegram code Generate an access code (valid 15 minutes) for connecting a Telegram channel or group. Add the bot as admin, then send the code + @yourchannel to the bot. Poll PATCH /v1/connect/telegram to check status.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">The profile ID to connect the Telegram account to</param>
@@ -2960,7 +2990,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Complete OAuth callback 
+        /// Complete OAuth callback Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform"></param>
@@ -2972,7 +3002,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Complete OAuth callback 
+        /// Complete OAuth callback Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform"></param>
@@ -3028,7 +3058,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Complete OAuth callback 
+        /// Complete OAuth callback Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform"></param>
@@ -3041,7 +3071,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Complete OAuth callback 
+        /// Complete OAuth callback Exchange the OAuth authorization code for tokens and connect the account to the specified profile.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform"></param>
@@ -3101,7 +3131,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Connect Telegram directly Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+        /// Connect Telegram directly Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="initiateTelegramConnectRequest"></param>
@@ -3113,7 +3143,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Connect Telegram directly Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+        /// Connect Telegram directly Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="initiateTelegramConnectRequest"></param>
@@ -3163,7 +3193,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Connect Telegram directly Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+        /// Connect Telegram directly Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="initiateTelegramConnectRequest"></param>
@@ -3176,7 +3206,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Connect Telegram directly Connect a Telegram channel/group directly using the chat ID.  This is an alternative to the access code flow for power users who know their Telegram chat ID. The bot must already be added as an administrator in the channel/group. 
+        /// Connect Telegram directly Connect a Telegram channel/group directly using the chat ID. Alternative to the access code flow. The bot must already be an admin in the channel/group.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="initiateTelegramConnectRequest"></param>
@@ -3381,7 +3411,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List GBP locations For headless/whitelabel flows. After Google Business OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID from your connection flow</param>
@@ -3394,7 +3424,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List GBP locations For headless/whitelabel flows. After Google Business OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID from your connection flow</param>
@@ -3454,7 +3484,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List GBP locations For headless/whitelabel flows. After Google Business OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID from your connection flow</param>
@@ -3468,7 +3498,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List GBP locations For headless/whitelabel flows. After Google Business OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of locations the user can manage, then build your own UI to let them select one. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Profile ID from your connection flow</param>
@@ -3532,7 +3562,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List LinkedIn orgs Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+        /// List LinkedIn orgs Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tempToken">The temporary LinkedIn access token from the OAuth redirect</param>
@@ -3545,7 +3575,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List LinkedIn orgs Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+        /// List LinkedIn orgs Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tempToken">The temporary LinkedIn access token from the OAuth redirect</param>
@@ -3600,7 +3630,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List LinkedIn orgs Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+        /// List LinkedIn orgs Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tempToken">The temporary LinkedIn access token from the OAuth redirect</param>
@@ -3614,7 +3644,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List LinkedIn orgs Fetch full organization details for custom UI. After LinkedIn OAuth in headless mode, the redirect URL only contains id, urn, and name fields. Use this endpoint to fetch full details including logos, vanity names, websites, and more. No authentication required, just the tempToken from the OAuth redirect. 
+        /// List LinkedIn orgs Fetch full LinkedIn organization details (logos, vanity names, websites) for custom UI. No authentication required, just the tempToken from OAuth.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="tempToken">The temporary LinkedIn access token from the OAuth redirect</param>
@@ -3673,7 +3703,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Pinterest boards Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// List Pinterest boards For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -3687,7 +3717,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Pinterest boards Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// List Pinterest boards For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -3748,7 +3778,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Pinterest boards Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// List Pinterest boards For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -3763,7 +3793,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Pinterest boards Retrieve Pinterest boards for headless selection UI. After Pinterest OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken and userProfile params. Call this endpoint to retrieve the list of boards the user can post to, then build your UI and call POST /v1/connect/pinterest/select-board to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// List Pinterest boards For headless flows. Returns Pinterest boards the user can post to. Use X-Connect-Token from the redirect URL.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -3828,7 +3858,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Snapchat profiles For headless/whitelabel flows. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// List Snapchat profiles For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -3842,7 +3872,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Snapchat profiles For headless/whitelabel flows. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// List Snapchat profiles For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -3903,7 +3933,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Snapchat profiles For headless/whitelabel flows. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// List Snapchat profiles For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -3918,7 +3948,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List Snapchat profiles For headless/whitelabel flows. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected to your redirect_url with tempToken, userProfile, and publicProfiles params. Call this endpoint to retrieve the list of Snapchat Public Profiles the user can post to, then build your UI and call POST /v1/connect/snapchat/select-profile to save the selection. Use X-Connect-Token header with the connect_token from the redirect URL. 
+        /// List Snapchat profiles For headless flows. Returns Snapchat Public Profiles the user can post to. Use X-Connect-Token from the redirect URL.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xConnectToken">Short-lived connect token from the OAuth redirect</param>
@@ -3983,7 +4013,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select Facebook page Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user&#39;s selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select Facebook page Complete the headless flow by saving the user&#39;s selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectFacebookPageRequest"></param>
@@ -3995,7 +4025,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select Facebook page Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user&#39;s selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select Facebook page Complete the headless flow by saving the user&#39;s selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectFacebookPageRequest"></param>
@@ -4050,7 +4080,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select Facebook page Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user&#39;s selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select Facebook page Complete the headless flow by saving the user&#39;s selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectFacebookPageRequest"></param>
@@ -4063,7 +4093,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select Facebook page Complete the headless flow. After displaying your custom UI with the list of pages from the GET endpoint, call this endpoint to finalize the connection with the user&#39;s selected page. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select Facebook page Complete the headless flow by saving the user&#39;s selected Facebook page. Pass the userProfile from the OAuth redirect and use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectFacebookPageRequest"></param>
@@ -4122,7 +4152,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select GBP location Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user&#39;s selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select GBP location Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -4134,7 +4164,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select GBP location Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user&#39;s selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select GBP location Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -4189,7 +4219,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select GBP location Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user&#39;s selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select GBP location Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -4202,7 +4232,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select GBP location Complete the headless flow. After displaying your custom UI with the list of locations from the GET /v1/connect/googlebusiness/locations endpoint, call this endpoint to finalize the connection with the user&#39;s selected location. The userProfile should be the decoded JSON object from the userProfile query param in the OAuth callback redirect URL. It contains important token information including the refresh token. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select GBP location Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -4261,7 +4291,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select LinkedIn org Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \&quot;personal\&quot; for a personal profile (omit selectedOrganization), or \&quot;organization\&quot; to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select LinkedIn org Complete the LinkedIn connection flow. Set accountType to \&quot;personal\&quot; or \&quot;organization\&quot; to connect as a company page. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectLinkedInOrganizationRequest"></param>
@@ -4273,7 +4303,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select LinkedIn org Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \&quot;personal\&quot; for a personal profile (omit selectedOrganization), or \&quot;organization\&quot; to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select LinkedIn org Complete the LinkedIn connection flow. Set accountType to \&quot;personal\&quot; or \&quot;organization\&quot; to connect as a company page. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectLinkedInOrganizationRequest"></param>
@@ -4323,7 +4353,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select LinkedIn org Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \&quot;personal\&quot; for a personal profile (omit selectedOrganization), or \&quot;organization\&quot; to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select LinkedIn org Complete the LinkedIn connection flow. Set accountType to \&quot;personal\&quot; or \&quot;organization\&quot; to connect as a company page. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectLinkedInOrganizationRequest"></param>
@@ -4336,7 +4366,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select LinkedIn org Complete the LinkedIn connection flow. After OAuth, the user is redirected with organizations in the URL params (if they have org admin access). Use this data to build your UI, then call this endpoint to save the selection. Set accountType to \&quot;personal\&quot; for a personal profile (omit selectedOrganization), or \&quot;organization\&quot; to connect as a company page. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select LinkedIn org Complete the LinkedIn connection flow. Set accountType to \&quot;personal\&quot; or \&quot;organization\&quot; to connect as a company page. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectLinkedInOrganizationRequest"></param>
@@ -4519,7 +4549,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select Snapchat profile Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform&#x3D;snapchat, and step&#x3D;select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select Snapchat profile Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectSnapchatProfileRequest"></param>
@@ -4532,7 +4562,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select Snapchat profile Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform&#x3D;snapchat, and step&#x3D;select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select Snapchat profile Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectSnapchatProfileRequest"></param>
@@ -4587,7 +4617,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select Snapchat profile Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform&#x3D;snapchat, and step&#x3D;select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select Snapchat profile Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectSnapchatProfileRequest"></param>
@@ -4601,7 +4631,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select Snapchat profile Complete the Snapchat connection flow. Save the selected Public Profile and complete the account connection. Snapchat requires a Public Profile to publish Stories, Saved Stories, and Spotlight content. After Snapchat OAuth with headless&#x3D;true, you&#39;ll be redirected with tempToken, userProfile, publicProfiles, connect_token, platform&#x3D;snapchat, and step&#x3D;select_public_profile in the URL. Parse publicProfiles to build your custom selector UI, then call this endpoint with the selected profile. Use the X-Connect-Token header if you initiated the connection via API key. 
+        /// Select Snapchat profile Complete the Snapchat connection flow by saving the selected Public Profile. Snapchat requires a Public Profile to publish content. Use X-Connect-Token if connecting via API key.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectSnapchatProfileRequest"></param>
@@ -4660,7 +4690,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update Facebook page 
+        /// Update Facebook page Switch which Facebook Page is active for a connected account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4673,7 +4703,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update Facebook page 
+        /// Update Facebook page Switch which Facebook Page is active for a connected account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4729,7 +4759,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update Facebook page 
+        /// Update Facebook page Switch which Facebook Page is active for a connected account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4743,7 +4773,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update Facebook page 
+        /// Update Facebook page Switch which Facebook Page is active for a connected account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4803,7 +4833,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update GBP location 
+        /// Update GBP location Switch which GBP location is active for a connected account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4816,7 +4846,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update GBP location 
+        /// Update GBP location Switch which GBP location is active for a connected account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4872,7 +4902,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update GBP location 
+        /// Update GBP location Switch which GBP location is active for a connected account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4886,7 +4916,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update GBP location 
+        /// Update GBP location Switch which GBP location is active for a connected account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4946,7 +4976,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Switch LinkedIn account type 
+        /// Switch LinkedIn account type Switch a LinkedIn account between personal profile and organization (company page) posting.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -4959,7 +4989,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Switch LinkedIn account type 
+        /// Switch LinkedIn account type Switch a LinkedIn account between personal profile and organization (company page) posting.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5015,7 +5045,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Switch LinkedIn account type 
+        /// Switch LinkedIn account type Switch a LinkedIn account between personal profile and organization (company page) posting.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5029,7 +5059,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Switch LinkedIn account type 
+        /// Switch LinkedIn account type Switch a LinkedIn account between personal profile and organization (company page) posting.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5089,7 +5119,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set default Pinterest board 
+        /// Set default Pinterest board Sets the default board used when publishing pins for this account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5102,7 +5132,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set default Pinterest board 
+        /// Set default Pinterest board Sets the default board used when publishing pins for this account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5158,7 +5188,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set default Pinterest board 
+        /// Set default Pinterest board Sets the default board used when publishing pins for this account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5172,7 +5202,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set default Pinterest board 
+        /// Set default Pinterest board Sets the default board used when publishing pins for this account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5232,7 +5262,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set default subreddit 
+        /// Set default subreddit Sets the default subreddit used when publishing posts for this Reddit account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5245,7 +5275,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set default subreddit 
+        /// Set default subreddit Sets the default subreddit used when publishing posts for this Reddit account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5301,7 +5331,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set default subreddit 
+        /// Set default subreddit Sets the default subreddit used when publishing posts for this Reddit account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -5315,7 +5345,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set default subreddit 
+        /// Set default subreddit Sets the default subreddit used when publishing posts for this Reddit account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

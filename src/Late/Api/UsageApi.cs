@@ -31,6 +31,9 @@ namespace Late.Api
         /// <summary>
         /// Get plan and usage stats
         /// </summary>
+        /// <remarks>
+        /// Returns the current plan name, billing period, plan limits, and usage counts.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>UsageStats</returns>
         UsageStats GetUsageStats();
@@ -39,7 +42,7 @@ namespace Late.Api
         /// Get plan and usage stats
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the current plan name, billing period, plan limits, and usage counts.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of UsageStats</returns>
@@ -57,7 +60,7 @@ namespace Late.Api
         /// Get plan and usage stats
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the current plan name, billing period, plan limits, and usage counts.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -68,7 +71,7 @@ namespace Late.Api
         /// Get plan and usage stats
         /// </summary>
         /// <remarks>
-        /// 
+        /// Returns the current plan name, billing period, plan limits, and usage counts.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -288,7 +291,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get plan and usage stats 
+        /// Get plan and usage stats Returns the current plan name, billing period, plan limits, and usage counts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>UsageStats</returns>
@@ -299,7 +302,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get plan and usage stats 
+        /// Get plan and usage stats Returns the current plan name, billing period, plan limits, and usage counts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of UsageStats</returns>
@@ -342,7 +345,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get plan and usage stats 
+        /// Get plan and usage stats Returns the current plan name, billing period, plan limits, and usage counts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -354,7 +357,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get plan and usage stats 
+        /// Get plan and usage stats Returns the current plan name, billing period, plan limits, and usage counts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>

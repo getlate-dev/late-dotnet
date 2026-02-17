@@ -116,6 +116,8 @@ catch (ApiException e)
 
 Delete action link
 
+Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
+
 ### Example
 ```csharp
 using System.Collections.Generic;

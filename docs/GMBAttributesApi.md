@@ -13,7 +13,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 Get attributes
 
-Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
+Returns GBP location attributes (amenities, services, accessibility, payment types). Available attributes vary by business category.
 
 ### Example
 ```csharp

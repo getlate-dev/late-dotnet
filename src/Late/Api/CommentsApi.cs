@@ -35,7 +35,7 @@ namespace Late.Api
         /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="commentId"></param>
         /// <returns>DeleteInboxComment200Response</returns>
@@ -48,7 +48,7 @@ namespace Late.Api
         /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="commentId"></param>
         /// <returns>ApiResponse of DeleteInboxComment200Response</returns>
@@ -60,7 +60,7 @@ namespace Late.Api
         /// Fetch comments for a specific post. Requires accountId query parameter.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="subreddit">(Reddit only) Subreddit name (optional)</param>
         /// <param name="limit">Maximum number of comments to return (optional, default to 25)</param>
@@ -76,7 +76,7 @@ namespace Late.Api
         /// Fetch comments for a specific post. Requires accountId query parameter.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="subreddit">(Reddit only) Subreddit name (optional)</param>
         /// <param name="limit">Maximum number of comments to return (optional, default to 25)</param>
@@ -138,7 +138,7 @@ namespace Late.Api
         /// List commented posts
         /// </summary>
         /// <remarks>
-        /// Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
+        /// Returns posts with comment counts from all connected accounts. Aggregates data across multiple accounts.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -157,7 +157,7 @@ namespace Late.Api
         /// List commented posts
         /// </summary>
         /// <remarks>
-        /// Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
+        /// Returns posts with comment counts from all connected accounts. Aggregates data across multiple accounts.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -178,7 +178,7 @@ namespace Late.Api
         /// Post a reply to a post or specific comment. Requires accountId in request body.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="replyToInboxPostRequest"></param>
         /// <returns>ReplyToInboxPost200Response</returns>
         ReplyToInboxPost200Response ReplyToInboxPost(string postId, ReplyToInboxPostRequest replyToInboxPostRequest);
@@ -190,7 +190,7 @@ namespace Late.Api
         /// Post a reply to a post or specific comment. Requires accountId in request body.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="replyToInboxPostRequest"></param>
         /// <returns>ApiResponse of ReplyToInboxPost200Response</returns>
         ApiResponse<ReplyToInboxPost200Response> ReplyToInboxPostWithHttpInfo(string postId, ReplyToInboxPostRequest replyToInboxPostRequest);
@@ -198,7 +198,7 @@ namespace Late.Api
         /// Send private reply
         /// </summary>
         /// <remarks>
-        /// Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late&#39;s OAuth flow. 
+        /// Send a private message to the author of a comment. Supported on Instagram and Facebook only. One reply per comment, must be sent within 7 days, text only.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -211,7 +211,7 @@ namespace Late.Api
         /// Send private reply
         /// </summary>
         /// <remarks>
-        /// Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late&#39;s OAuth flow. 
+        /// Send a private message to the author of a comment. Supported on Instagram and Facebook only. One reply per comment, must be sent within 7 days, text only.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -287,7 +287,7 @@ namespace Late.Api
         /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="commentId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -301,7 +301,7 @@ namespace Late.Api
         /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="commentId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -314,7 +314,7 @@ namespace Late.Api
         /// Fetch comments for a specific post. Requires accountId query parameter.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="subreddit">(Reddit only) Subreddit name (optional)</param>
         /// <param name="limit">Maximum number of comments to return (optional, default to 25)</param>
@@ -331,7 +331,7 @@ namespace Late.Api
         /// Fetch comments for a specific post. Requires accountId query parameter.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="subreddit">(Reddit only) Subreddit name (optional)</param>
         /// <param name="limit">Maximum number of comments to return (optional, default to 25)</param>
@@ -398,7 +398,7 @@ namespace Late.Api
         /// List commented posts
         /// </summary>
         /// <remarks>
-        /// Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
+        /// Returns posts with comment counts from all connected accounts. Aggregates data across multiple accounts.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -418,7 +418,7 @@ namespace Late.Api
         /// List commented posts
         /// </summary>
         /// <remarks>
-        /// Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
+        /// Returns posts with comment counts from all connected accounts. Aggregates data across multiple accounts.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -440,7 +440,7 @@ namespace Late.Api
         /// Post a reply to a post or specific comment. Requires accountId in request body.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="replyToInboxPostRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReplyToInboxPost200Response</returns>
@@ -453,7 +453,7 @@ namespace Late.Api
         /// Post a reply to a post or specific comment. Requires accountId in request body.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="replyToInboxPostRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReplyToInboxPost200Response)</returns>
@@ -462,7 +462,7 @@ namespace Late.Api
         /// Send private reply
         /// </summary>
         /// <remarks>
-        /// Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late&#39;s OAuth flow. 
+        /// Send a private message to the author of a comment. Supported on Instagram and Facebook only. One reply per comment, must be sent within 7 days, text only.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -476,7 +476,7 @@ namespace Late.Api
         /// Send private reply
         /// </summary>
         /// <remarks>
-        /// Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late&#39;s OAuth flow. 
+        /// Send a private message to the author of a comment. Supported on Instagram and Facebook only. One reply per comment, must be sent within 7 days, text only.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -758,7 +758,7 @@ namespace Late.Api
         /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="commentId"></param>
         /// <returns>DeleteInboxComment200Response</returns>
@@ -772,7 +772,7 @@ namespace Late.Api
         /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="commentId"></param>
         /// <returns>ApiResponse of DeleteInboxComment200Response</returns>
@@ -833,7 +833,7 @@ namespace Late.Api
         /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="commentId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -848,7 +848,7 @@ namespace Late.Api
         /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="commentId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -913,7 +913,7 @@ namespace Late.Api
         /// Get post comments Fetch comments for a specific post. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="subreddit">(Reddit only) Subreddit name (optional)</param>
         /// <param name="limit">Maximum number of comments to return (optional, default to 25)</param>
@@ -930,7 +930,7 @@ namespace Late.Api
         /// Get post comments Fetch comments for a specific post. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="subreddit">(Reddit only) Subreddit name (optional)</param>
         /// <param name="limit">Maximum number of comments to return (optional, default to 25)</param>
@@ -1005,7 +1005,7 @@ namespace Late.Api
         /// Get post comments Fetch comments for a specific post. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="subreddit">(Reddit only) Subreddit name (optional)</param>
         /// <param name="limit">Maximum number of comments to return (optional, default to 25)</param>
@@ -1023,7 +1023,7 @@ namespace Late.Api
         /// Get post comments Fetch comments for a specific post. Requires accountId query parameter.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="accountId"></param>
         /// <param name="subreddit">(Reddit only) Subreddit name (optional)</param>
         /// <param name="limit">Maximum number of comments to return (optional, default to 25)</param>
@@ -1413,7 +1413,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List commented posts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
+        /// List commented posts Returns posts with comment counts from all connected accounts. Aggregates data across multiple accounts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1433,7 +1433,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List commented posts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
+        /// List commented posts Returns posts with comment counts from all connected accounts. Aggregates data across multiple accounts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1521,7 +1521,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List commented posts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
+        /// List commented posts Returns posts with comment counts from all connected accounts. Aggregates data across multiple accounts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1542,7 +1542,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List commented posts Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
+        /// List commented posts Returns posts with comment counts from all connected accounts. Aggregates data across multiple accounts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1637,7 +1637,7 @@ namespace Late.Api
         /// Reply to comment Post a reply to a post or specific comment. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="replyToInboxPostRequest"></param>
         /// <returns>ReplyToInboxPost200Response</returns>
         public ReplyToInboxPost200Response ReplyToInboxPost(string postId, ReplyToInboxPostRequest replyToInboxPostRequest)
@@ -1650,7 +1650,7 @@ namespace Late.Api
         /// Reply to comment Post a reply to a post or specific comment. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="replyToInboxPostRequest"></param>
         /// <returns>ApiResponse of ReplyToInboxPost200Response</returns>
         public Late.Client.ApiResponse<ReplyToInboxPost200Response> ReplyToInboxPostWithHttpInfo(string postId, ReplyToInboxPostRequest replyToInboxPostRequest)
@@ -1706,7 +1706,7 @@ namespace Late.Api
         /// Reply to comment Post a reply to a post or specific comment. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="replyToInboxPostRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ReplyToInboxPost200Response</returns>
@@ -1720,7 +1720,7 @@ namespace Late.Api
         /// Reply to comment Post a reply to a post or specific comment. Requires accountId in request body.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. </param>
+        /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
         /// <param name="replyToInboxPostRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ReplyToInboxPost200Response)</returns>
@@ -1777,7 +1777,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send private reply Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late&#39;s OAuth flow. 
+        /// Send private reply Send a private message to the author of a comment. Supported on Instagram and Facebook only. One reply per comment, must be sent within 7 days, text only.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -1791,7 +1791,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send private reply Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late&#39;s OAuth flow. 
+        /// Send private reply Send a private message to the author of a comment. Supported on Instagram and Facebook only. One reply per comment, must be sent within 7 days, text only.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -1853,7 +1853,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send private reply Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late&#39;s OAuth flow. 
+        /// Send private reply Send a private message to the author of a comment. Supported on Instagram and Facebook only. One reply per comment, must be sent within 7 days, text only.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>
@@ -1868,7 +1868,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send private reply Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late&#39;s OAuth flow. 
+        /// Send private reply Send a private message to the author of a comment. Supported on Instagram and Facebook only. One reply per comment, must be sent within 7 days, text only.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">The media/post ID (Instagram media ID or Facebook post ID)</param>

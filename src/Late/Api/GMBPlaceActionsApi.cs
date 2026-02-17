@@ -54,6 +54,9 @@ namespace Late.Api
         /// <summary>
         /// Delete action link
         /// </summary>
+        /// <remarks>
+        /// Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
+        /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
@@ -64,7 +67,7 @@ namespace Late.Api
         /// Delete action link
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -134,7 +137,7 @@ namespace Late.Api
         /// Delete action link
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -147,7 +150,7 @@ namespace Late.Api
         /// Delete action link
         /// </summary>
         /// <remarks>
-        /// 
+        /// Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -539,7 +542,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete action link 
+        /// Delete action link Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -552,7 +555,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete action link 
+        /// Delete action link Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -607,7 +610,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete action link 
+        /// Delete action link Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -621,7 +624,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete action link 
+        /// Delete action link Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

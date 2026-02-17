@@ -15,6 +15,8 @@ All URIs are relative to *https://getlate.dev/api*
 
 Create group
 
+Creates a new account group with a name and a list of social account IDs.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -114,6 +116,8 @@ catch (ApiException e)
 
 Delete group
 
+Permanently deletes an account group. The accounts themselves are not affected.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -212,6 +216,8 @@ catch (ApiException e)
 
 List groups
 
+Returns all account groups for the authenticated user, including group names and associated account IDs.
+
 ### Example
 ```csharp
 using System.Collections.Generic;
@@ -303,6 +309,8 @@ This endpoint does not need any parameter.
 > UpdateAccountGroup200Response UpdateAccountGroup (string groupId, UpdateAccountGroupRequest updateAccountGroupRequest)
 
 Update group
+
+Updates the name or account list of an existing group. You can rename the group, change its accounts, or both.
 
 ### Example
 ```csharp
