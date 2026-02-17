@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Delete Instagram ice breakers
+        /// Delete IG ice breakers
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -37,7 +37,7 @@ namespace Late.Api
         void DeleteInstagramIceBreakers(string accountId);
 
         /// <summary>
-        /// Delete Instagram ice breakers
+        /// Delete IG ice breakers
         /// </summary>
         /// <remarks>
         /// 
@@ -47,7 +47,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteInstagramIceBreakersWithHttpInfo(string accountId);
         /// <summary>
-        /// Delete Facebook persistent menu
+        /// Delete FB persistent menu
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -55,7 +55,7 @@ namespace Late.Api
         void DeleteMessengerMenu(string accountId);
 
         /// <summary>
-        /// Delete Facebook persistent menu
+        /// Delete FB persistent menu
         /// </summary>
         /// <remarks>
         /// 
@@ -65,7 +65,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteMessengerMenuWithHttpInfo(string accountId);
         /// <summary>
-        /// Delete Telegram bot commands
+        /// Delete TG bot commands
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -73,7 +73,7 @@ namespace Late.Api
         void DeleteTelegramCommands(string accountId);
 
         /// <summary>
-        /// Delete Telegram bot commands
+        /// Delete TG bot commands
         /// </summary>
         /// <remarks>
         /// 
@@ -83,7 +83,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteTelegramCommandsWithHttpInfo(string accountId);
         /// <summary>
-        /// Get Instagram ice breakers
+        /// Get IG ice breakers
         /// </summary>
         /// <remarks>
         /// Get the ice breaker configuration for an Instagram account.
@@ -94,7 +94,7 @@ namespace Late.Api
         GetMessengerMenu200Response GetInstagramIceBreakers(string accountId);
 
         /// <summary>
-        /// Get Instagram ice breakers
+        /// Get IG ice breakers
         /// </summary>
         /// <remarks>
         /// Get the ice breaker configuration for an Instagram account.
@@ -104,7 +104,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetMessengerMenu200Response</returns>
         ApiResponse<GetMessengerMenu200Response> GetInstagramIceBreakersWithHttpInfo(string accountId);
         /// <summary>
-        /// Get Facebook persistent menu
+        /// Get FB persistent menu
         /// </summary>
         /// <remarks>
         /// Get the persistent menu configuration for a Facebook Messenger account.
@@ -115,7 +115,7 @@ namespace Late.Api
         GetMessengerMenu200Response GetMessengerMenu(string accountId);
 
         /// <summary>
-        /// Get Facebook persistent menu
+        /// Get FB persistent menu
         /// </summary>
         /// <remarks>
         /// Get the persistent menu configuration for a Facebook Messenger account.
@@ -125,7 +125,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetMessengerMenu200Response</returns>
         ApiResponse<GetMessengerMenu200Response> GetMessengerMenuWithHttpInfo(string accountId);
         /// <summary>
-        /// Get Telegram bot commands
+        /// Get TG bot commands
         /// </summary>
         /// <remarks>
         /// Get the bot commands configuration for a Telegram account.
@@ -136,7 +136,7 @@ namespace Late.Api
         GetTelegramCommands200Response GetTelegramCommands(string accountId);
 
         /// <summary>
-        /// Get Telegram bot commands
+        /// Get TG bot commands
         /// </summary>
         /// <remarks>
         /// Get the bot commands configuration for a Telegram account.
@@ -146,7 +146,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetTelegramCommands200Response</returns>
         ApiResponse<GetTelegramCommands200Response> GetTelegramCommandsWithHttpInfo(string accountId);
         /// <summary>
-        /// Set Instagram ice breakers
+        /// Set IG ice breakers
         /// </summary>
         /// <remarks>
         /// Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
@@ -158,7 +158,7 @@ namespace Late.Api
         void SetInstagramIceBreakers(string accountId, SetInstagramIceBreakersRequest setInstagramIceBreakersRequest);
 
         /// <summary>
-        /// Set Instagram ice breakers
+        /// Set IG ice breakers
         /// </summary>
         /// <remarks>
         /// Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
@@ -169,7 +169,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> SetInstagramIceBreakersWithHttpInfo(string accountId, SetInstagramIceBreakersRequest setInstagramIceBreakersRequest);
         /// <summary>
-        /// Set Facebook persistent menu
+        /// Set FB persistent menu
         /// </summary>
         /// <remarks>
         /// Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
@@ -181,7 +181,7 @@ namespace Late.Api
         void SetMessengerMenu(string accountId, SetMessengerMenuRequest setMessengerMenuRequest);
 
         /// <summary>
-        /// Set Facebook persistent menu
+        /// Set FB persistent menu
         /// </summary>
         /// <remarks>
         /// Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
@@ -192,7 +192,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> SetMessengerMenuWithHttpInfo(string accountId, SetMessengerMenuRequest setMessengerMenuRequest);
         /// <summary>
-        /// Set Telegram bot commands
+        /// Set TG bot commands
         /// </summary>
         /// <remarks>
         /// Set bot commands for a Telegram account.
@@ -204,7 +204,7 @@ namespace Late.Api
         void SetTelegramCommands(string accountId, SetTelegramCommandsRequest setTelegramCommandsRequest);
 
         /// <summary>
-        /// Set Telegram bot commands
+        /// Set TG bot commands
         /// </summary>
         /// <remarks>
         /// Set bot commands for a Telegram account.
@@ -224,7 +224,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Delete Instagram ice breakers
+        /// Delete IG ice breakers
         /// </summary>
         /// <remarks>
         /// 
@@ -236,7 +236,7 @@ namespace Late.Api
         System.Threading.Tasks.Task DeleteInstagramIceBreakersAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete Instagram ice breakers
+        /// Delete IG ice breakers
         /// </summary>
         /// <remarks>
         /// 
@@ -247,7 +247,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteInstagramIceBreakersWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete Facebook persistent menu
+        /// Delete FB persistent menu
         /// </summary>
         /// <remarks>
         /// 
@@ -259,7 +259,7 @@ namespace Late.Api
         System.Threading.Tasks.Task DeleteMessengerMenuAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete Facebook persistent menu
+        /// Delete FB persistent menu
         /// </summary>
         /// <remarks>
         /// 
@@ -270,7 +270,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteMessengerMenuWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete Telegram bot commands
+        /// Delete TG bot commands
         /// </summary>
         /// <remarks>
         /// 
@@ -282,7 +282,7 @@ namespace Late.Api
         System.Threading.Tasks.Task DeleteTelegramCommandsAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete Telegram bot commands
+        /// Delete TG bot commands
         /// </summary>
         /// <remarks>
         /// 
@@ -293,7 +293,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteTelegramCommandsWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Instagram ice breakers
+        /// Get IG ice breakers
         /// </summary>
         /// <remarks>
         /// Get the ice breaker configuration for an Instagram account.
@@ -305,7 +305,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetMessengerMenu200Response> GetInstagramIceBreakersAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Instagram ice breakers
+        /// Get IG ice breakers
         /// </summary>
         /// <remarks>
         /// Get the ice breaker configuration for an Instagram account.
@@ -316,7 +316,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetMessengerMenu200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetMessengerMenu200Response>> GetInstagramIceBreakersWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Facebook persistent menu
+        /// Get FB persistent menu
         /// </summary>
         /// <remarks>
         /// Get the persistent menu configuration for a Facebook Messenger account.
@@ -328,7 +328,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetMessengerMenu200Response> GetMessengerMenuAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Facebook persistent menu
+        /// Get FB persistent menu
         /// </summary>
         /// <remarks>
         /// Get the persistent menu configuration for a Facebook Messenger account.
@@ -339,7 +339,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetMessengerMenu200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetMessengerMenu200Response>> GetMessengerMenuWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Telegram bot commands
+        /// Get TG bot commands
         /// </summary>
         /// <remarks>
         /// Get the bot commands configuration for a Telegram account.
@@ -351,7 +351,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetTelegramCommands200Response> GetTelegramCommandsAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Telegram bot commands
+        /// Get TG bot commands
         /// </summary>
         /// <remarks>
         /// Get the bot commands configuration for a Telegram account.
@@ -362,7 +362,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetTelegramCommands200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetTelegramCommands200Response>> GetTelegramCommandsWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Set Instagram ice breakers
+        /// Set IG ice breakers
         /// </summary>
         /// <remarks>
         /// Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
@@ -375,7 +375,7 @@ namespace Late.Api
         System.Threading.Tasks.Task SetInstagramIceBreakersAsync(string accountId, SetInstagramIceBreakersRequest setInstagramIceBreakersRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Set Instagram ice breakers
+        /// Set IG ice breakers
         /// </summary>
         /// <remarks>
         /// Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
@@ -387,7 +387,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> SetInstagramIceBreakersWithHttpInfoAsync(string accountId, SetInstagramIceBreakersRequest setInstagramIceBreakersRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Set Facebook persistent menu
+        /// Set FB persistent menu
         /// </summary>
         /// <remarks>
         /// Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
@@ -400,7 +400,7 @@ namespace Late.Api
         System.Threading.Tasks.Task SetMessengerMenuAsync(string accountId, SetMessengerMenuRequest setMessengerMenuRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Set Facebook persistent menu
+        /// Set FB persistent menu
         /// </summary>
         /// <remarks>
         /// Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
@@ -412,7 +412,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> SetMessengerMenuWithHttpInfoAsync(string accountId, SetMessengerMenuRequest setMessengerMenuRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Set Telegram bot commands
+        /// Set TG bot commands
         /// </summary>
         /// <remarks>
         /// Set bot commands for a Telegram account.
@@ -425,7 +425,7 @@ namespace Late.Api
         System.Threading.Tasks.Task SetTelegramCommandsAsync(string accountId, SetTelegramCommandsRequest setTelegramCommandsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Set Telegram bot commands
+        /// Set TG bot commands
         /// </summary>
         /// <remarks>
         /// Set bot commands for a Telegram account.
@@ -650,7 +650,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Instagram ice breakers 
+        /// Delete IG ice breakers 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -661,7 +661,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Instagram ice breakers 
+        /// Delete IG ice breakers 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -710,7 +710,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Instagram ice breakers 
+        /// Delete IG ice breakers 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -722,7 +722,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Instagram ice breakers 
+        /// Delete IG ice breakers 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -775,7 +775,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Facebook persistent menu 
+        /// Delete FB persistent menu 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -786,7 +786,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Facebook persistent menu 
+        /// Delete FB persistent menu 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -835,7 +835,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Facebook persistent menu 
+        /// Delete FB persistent menu 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -847,7 +847,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Facebook persistent menu 
+        /// Delete FB persistent menu 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -900,7 +900,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Telegram bot commands 
+        /// Delete TG bot commands 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -911,7 +911,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Telegram bot commands 
+        /// Delete TG bot commands 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -960,7 +960,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Telegram bot commands 
+        /// Delete TG bot commands 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -972,7 +972,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete Telegram bot commands 
+        /// Delete TG bot commands 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1025,7 +1025,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram ice breakers Get the ice breaker configuration for an Instagram account.
+        /// Get IG ice breakers Get the ice breaker configuration for an Instagram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1037,7 +1037,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram ice breakers Get the ice breaker configuration for an Instagram account.
+        /// Get IG ice breakers Get the ice breaker configuration for an Instagram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1086,7 +1086,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram ice breakers Get the ice breaker configuration for an Instagram account.
+        /// Get IG ice breakers Get the ice breaker configuration for an Instagram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1099,7 +1099,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram ice breakers Get the ice breaker configuration for an Instagram account.
+        /// Get IG ice breakers Get the ice breaker configuration for an Instagram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1152,7 +1152,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Facebook persistent menu Get the persistent menu configuration for a Facebook Messenger account.
+        /// Get FB persistent menu Get the persistent menu configuration for a Facebook Messenger account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1164,7 +1164,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Facebook persistent menu Get the persistent menu configuration for a Facebook Messenger account.
+        /// Get FB persistent menu Get the persistent menu configuration for a Facebook Messenger account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1213,7 +1213,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Facebook persistent menu Get the persistent menu configuration for a Facebook Messenger account.
+        /// Get FB persistent menu Get the persistent menu configuration for a Facebook Messenger account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1226,7 +1226,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Facebook persistent menu Get the persistent menu configuration for a Facebook Messenger account.
+        /// Get FB persistent menu Get the persistent menu configuration for a Facebook Messenger account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1279,7 +1279,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Telegram bot commands Get the bot commands configuration for a Telegram account.
+        /// Get TG bot commands Get the bot commands configuration for a Telegram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1291,7 +1291,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Telegram bot commands Get the bot commands configuration for a Telegram account.
+        /// Get TG bot commands Get the bot commands configuration for a Telegram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1340,7 +1340,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Telegram bot commands Get the bot commands configuration for a Telegram account.
+        /// Get TG bot commands Get the bot commands configuration for a Telegram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1353,7 +1353,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Telegram bot commands Get the bot commands configuration for a Telegram account.
+        /// Get TG bot commands Get the bot commands configuration for a Telegram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1406,7 +1406,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Instagram ice breakers Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
+        /// Set IG ice breakers Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1418,7 +1418,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Instagram ice breakers Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
+        /// Set IG ice breakers Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1474,7 +1474,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Instagram ice breakers Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
+        /// Set IG ice breakers Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1487,7 +1487,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Instagram ice breakers Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
+        /// Set IG ice breakers Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1547,7 +1547,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Facebook persistent menu Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
+        /// Set FB persistent menu Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1559,7 +1559,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Facebook persistent menu Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
+        /// Set FB persistent menu Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1615,7 +1615,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Facebook persistent menu Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
+        /// Set FB persistent menu Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1628,7 +1628,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Facebook persistent menu Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
+        /// Set FB persistent menu Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1688,7 +1688,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Telegram bot commands Set bot commands for a Telegram account.
+        /// Set TG bot commands Set bot commands for a Telegram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1700,7 +1700,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Telegram bot commands Set bot commands for a Telegram account.
+        /// Set TG bot commands Set bot commands for a Telegram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1756,7 +1756,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Telegram bot commands Set bot commands for a Telegram account.
+        /// Set TG bot commands Set bot commands for a Telegram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -1769,7 +1769,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set Telegram bot commands Set bot commands for a Telegram account.
+        /// Set TG bot commands Set bot commands for a Telegram account.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

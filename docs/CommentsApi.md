@@ -46,7 +46,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., `urn:li:activity:7422459067685855232`) or the raw numeric activity ID from the URL. 
+            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. 
             var accountId = "accountId_example";  // string | 
             var commentId = "commentId_example";  // string | 
 
@@ -91,7 +91,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** | The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL.  |  |
+| **postId** | **string** | The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL.  |  |
 | **accountId** | **string** |  |  |
 | **commentId** | **string** |  |  |
 
@@ -150,7 +150,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID).  **LinkedIn:** For your own posts, the full URN stored in Late (e.g., `urn:li:share:7429218977714745345`) is used automatically. For third-party posts, pass either the full activity URN (e.g., `urn:li:activity:7422459067685855232`) or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as `urn:li:activity:`). Note: LinkedIn post URLs use activity IDs (`linkedin.com/feed/update/urn:li:activity:XXXX`). 
+            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:). 
             var accountId = "accountId_example";  // string | 
             var subreddit = "subreddit_example";  // string? | (Reddit only) Subreddit name (optional) 
             var limit = 25;  // int? | Maximum number of comments to return (optional)  (default to 25)
@@ -198,7 +198,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** | The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID).  **LinkedIn:** For your own posts, the full URN stored in Late (e.g., &#x60;urn:li:share:7429218977714745345&#x60;) is used automatically. For third-party posts, pass either the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as &#x60;urn:li:activity:&#x60;). Note: LinkedIn post URLs use activity IDs (&#x60;linkedin.com/feed/update/urn:li:activity:XXXX&#x60;).  |  |
+| **postId** | **string** | The post identifier. Accepts a Late post ID (MongoDB ObjectId) which is automatically resolved to the platform-specific post ID, or a platform-specific post ID directly (e.g. tweet ID, Facebook Graph ID, YouTube video ID). LinkedIn: for your own posts, the full URN stored in Late is used automatically. For third-party posts, pass the full activity URN or the raw numeric activity ID from the LinkedIn URL (automatically wrapped as urn:li:activity:).  |  |
 | **accountId** | **string** |  |  |
 | **subreddit** | **string?** | (Reddit only) Subreddit name | [optional]  |
 | **limit** | **int?** | Maximum number of comments to return | [optional] [default to 25] |
@@ -339,7 +339,7 @@ catch (ApiException e)
 
 Like comment
 
-Like or upvote a comment on a post.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the `cid` (content identifier) is required in the request body. 
+Like or upvote a comment on a post. Supported platforms: Facebook, Twitter/X, Bluesky, Reddit. For Bluesky, the cid (content identifier) is required in the request body. 
 
 ### Example
 ```csharp
@@ -444,7 +444,7 @@ catch (ApiException e)
 
 List commented posts
 
-Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  **Supported platforms:** Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only) 
+Fetch posts with their comment counts from all connected accounts. Aggregates data from multiple accounts in a single API call.  Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Threads, YouTube, LinkedIn, Reddit, TikTok (write-only). 
 
 ### Example
 ```csharp
@@ -586,7 +586,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., `urn:li:activity:7422459067685855232`) or the raw numeric activity ID from the URL. 
+            var postId = "postId_example";  // string | The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL. 
             var replyToInboxPostRequest = new ReplyToInboxPostRequest(); // ReplyToInboxPostRequest | 
 
             try
@@ -630,7 +630,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** | The post identifier. Accepts a Late post ID or a platform-specific post ID.  **LinkedIn:** For third-party posts, pass the full activity URN (e.g., &#x60;urn:li:activity:7422459067685855232&#x60;) or the raw numeric activity ID from the URL.  |  |
+| **postId** | **string** | The post identifier. Accepts a Late post ID or a platform-specific post ID.  LinkedIn: for third-party posts, pass the full activity URN (e.g. urn:li:activity:7422459067685855232) or the raw numeric activity ID from the URL.  |  |
 | **replyToInboxPostRequest** | [**ReplyToInboxPostRequest**](ReplyToInboxPostRequest.md) |  |  |
 
 ### Return type
@@ -662,7 +662,7 @@ catch (ApiException e)
 
 Send private reply
 
-Send a private direct message to the author of a comment on your post. This is useful for handling customer inquiries or sensitive matters privately.  **Supported platforms:** Instagram, Facebook  **Limitations:** - Only ONE private reply per comment (platform API restriction) - Must be sent within 7 days of the comment being posted - Only works for comments on posts owned by the connected account - Text only (no media attachments) - Instagram: message goes to the user's Inbox (if they follow you) or Message Requests (if they don't). Requires `instagram_business_manage_messages` permission. - Facebook: message opens a Messenger conversation with the commenter. Requires `pages_messaging` permission.  **Note:** Both permissions are already included in Late's OAuth flow. This does not create a conversation thread until the user replies back. 
+Send a private direct message to the author of a comment on your post. Supported platforms: Instagram, Facebook. Only one private reply per comment (platform restriction), must be sent within 7 days, only for comments on your own posts, text only. Instagram messages go to Inbox or Message Requests; Facebook opens a Messenger conversation. Both permissions are already included in Late's OAuth flow. 
 
 ### Example
 ```csharp
@@ -873,7 +873,7 @@ catch (ApiException e)
 
 Unlike comment
 
-Remove a like from a comment.  **Supported platforms:** Facebook, Twitter/X, Bluesky, Reddit  For Bluesky, the `likeUri` query parameter is required. 
+Remove a like from a comment. Supported platforms: Facebook, Twitter/X, Bluesky, Reddit. For Bluesky, the likeUri query parameter is required. 
 
 ### Example
 ```csharp

@@ -28,15 +28,15 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Snapchat requires a Public Profile. Media is required for all content types (single item only, auto-encrypted before upload).  **Content types:** Story (ephemeral 24h, no caption), Saved Story (permanent, title max 45 chars), Spotlight (video, description max 160 chars).  **Media limits:** Images max 20 MB (JPEG/PNG), videos max 500 MB (MP4, 5-60s, min 540x960px, 9:16 recommended). 
+    /// Requires a Public Profile. Media required for all content types (single item only, auto-encrypted). Content types: story (ephemeral 24h, no caption), saved_story (permanent, title max 45 chars), spotlight (video, description max 160 chars). Images max 20 MB (JPEG/PNG), videos max 500 MB (MP4, 5-60s, min 540x960px). 
     /// </summary>
     [DataContract(Name = "SnapchatPlatformData")]
     public partial class SnapchatPlatformData : IValidatableObject
     {
         /// <summary>
-        /// Type of Snapchat content to publish: - &#x60;story&#x60; - Ephemeral snap visible for 24 hours (default) - &#x60;saved_story&#x60; - Permanent story saved to Public Profile - &#x60;spotlight&#x60; - Video posted to Spotlight (Snapchat&#39;s TikTok-like feed) 
+        /// Content type: story (ephemeral 24h, default), saved_story (permanent on Public Profile), spotlight (video feed)
         /// </summary>
-        /// <value>Type of Snapchat content to publish: - &#x60;story&#x60; - Ephemeral snap visible for 24 hours (default) - &#x60;saved_story&#x60; - Permanent story saved to Public Profile - &#x60;spotlight&#x60; - Video posted to Spotlight (Snapchat&#39;s TikTok-like feed) </value>
+        /// <value>Content type: story (ephemeral 24h, default), saved_story (permanent on Public Profile), spotlight (video feed)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ContentTypeEnum
         {
@@ -61,15 +61,15 @@ namespace Late.Model
 
 
         /// <summary>
-        /// Type of Snapchat content to publish: - &#x60;story&#x60; - Ephemeral snap visible for 24 hours (default) - &#x60;saved_story&#x60; - Permanent story saved to Public Profile - &#x60;spotlight&#x60; - Video posted to Spotlight (Snapchat&#39;s TikTok-like feed) 
+        /// Content type: story (ephemeral 24h, default), saved_story (permanent on Public Profile), spotlight (video feed)
         /// </summary>
-        /// <value>Type of Snapchat content to publish: - &#x60;story&#x60; - Ephemeral snap visible for 24 hours (default) - &#x60;saved_story&#x60; - Permanent story saved to Public Profile - &#x60;spotlight&#x60; - Video posted to Spotlight (Snapchat&#39;s TikTok-like feed) </value>
+        /// <value>Content type: story (ephemeral 24h, default), saved_story (permanent on Public Profile), spotlight (video feed)</value>
         [DataMember(Name = "contentType", EmitDefaultValue = false)]
         public ContentTypeEnum? ContentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SnapchatPlatformData" /> class.
         /// </summary>
-        /// <param name="contentType">Type of Snapchat content to publish: - &#x60;story&#x60; - Ephemeral snap visible for 24 hours (default) - &#x60;saved_story&#x60; - Permanent story saved to Public Profile - &#x60;spotlight&#x60; - Video posted to Spotlight (Snapchat&#39;s TikTok-like feed)  (default to ContentTypeEnum.Story).</param>
+        /// <param name="contentType">Content type: story (ephemeral 24h, default), saved_story (permanent on Public Profile), spotlight (video feed) (default to ContentTypeEnum.Story).</param>
         public SnapchatPlatformData(ContentTypeEnum? contentType = ContentTypeEnum.Story)
         {
             this.ContentType = contentType;

@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// TikTok platform-specific settings for video/photo posting.  **Constraints:** - Photo carousels support up to 35 images. - **Title length limits**:   - Videos: up to 2200 chars (full content used as title)   - Photos: content is automatically truncated to 90 chars for title (hashtags/URLs stripped). Use &#39;description&#39; field for longer text (up to 4000 chars). - privacyLevel must be chosen from creator_info.privacy_level_options (no defaulting). - allowDuet and allowStitch required for videos; allowComment for all. - contentPreviewConfirmed and expressConsentGiven must be true before posting.  **Note:** Both camelCase and snake_case field names are accepted for backwards compatibility. The nested &#x60;tiktokSettings&#x60; object format is also still supported but deprecated. 
+    /// Photo carousels up to 35 images. Video titles up to 2200 chars; photo titles auto-truncated to 90 chars (use description field for longer text up to 4000 chars). privacyLevel must match creator_info options. allowDuet/allowStitch required for videos. contentPreviewConfirmed and expressConsentGiven must be true. Both camelCase and snake_case accepted.
     /// </summary>
     [DataContract(Name = "TikTokPlatformData")]
     public partial class TikTokPlatformData : IValidatableObject
@@ -96,7 +96,7 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TikTokPlatformData" /> class.
         /// </summary>
-        /// <param name="draft">When true, Late sends the post to the TikTok Creator Inbox as a draft instead of publishing it immediately. When omitted or false, TikTok uses direct posting (live publish) as usual. .</param>
+        /// <param name="draft">When true, sends the post to the TikTok Creator Inbox as a draft instead of publishing immediately..</param>
         /// <param name="privacyLevel">One of the values returned by the TikTok creator info API for the account.</param>
         /// <param name="allowComment">Allow comments on the post.</param>
         /// <param name="allowDuet">Allow duets (required for video posts).</param>
@@ -111,7 +111,7 @@ namespace Late.Model
         /// <param name="photoCoverIndex">Optional for photo carousels. Index of image to use as cover, 0-based (defaults to 0/first image)..</param>
         /// <param name="autoAddMusic">When true, TikTok may add recommended music (photos only).</param>
         /// <param name="videoMadeWithAi">Set true to disclose AI-generated content.</param>
-        /// <param name="description">Optional long-form description for photo posts (max 4000 chars). Recommended for photo posts when content exceeds 90 characters, as photo titles are automatically truncated to 90 chars (after stripping hashtags/URLs). .</param>
+        /// <param name="description">Optional long-form description for photo posts (max 4000 chars). Recommended when content exceeds 90 chars, as photo titles are auto-truncated..</param>
         public TikTokPlatformData(bool draft = default, string privacyLevel = default, bool allowComment = default, bool allowDuet = default, bool allowStitch = default, CommercialContentTypeEnum? commercialContentType = default, bool brandPartnerPromote = default, bool isBrandOrganicPost = default, bool contentPreviewConfirmed = default, bool expressConsentGiven = default, MediaTypeEnum? mediaType = default, int videoCoverTimestampMs = default, int photoCoverIndex = default, bool autoAddMusic = default, bool videoMadeWithAi = default, string description = default)
         {
             this.Draft = draft;
@@ -133,9 +133,9 @@ namespace Late.Model
         }
 
         /// <summary>
-        /// When true, Late sends the post to the TikTok Creator Inbox as a draft instead of publishing it immediately. When omitted or false, TikTok uses direct posting (live publish) as usual. 
+        /// When true, sends the post to the TikTok Creator Inbox as a draft instead of publishing immediately.
         /// </summary>
-        /// <value>When true, Late sends the post to the TikTok Creator Inbox as a draft instead of publishing it immediately. When omitted or false, TikTok uses direct posting (live publish) as usual. </value>
+        /// <value>When true, sends the post to the TikTok Creator Inbox as a draft instead of publishing immediately.</value>
         [DataMember(Name = "draft", EmitDefaultValue = true)]
         public bool Draft { get; set; }
 
@@ -224,9 +224,9 @@ namespace Late.Model
         public bool VideoMadeWithAi { get; set; }
 
         /// <summary>
-        /// Optional long-form description for photo posts (max 4000 chars). Recommended for photo posts when content exceeds 90 characters, as photo titles are automatically truncated to 90 chars (after stripping hashtags/URLs). 
+        /// Optional long-form description for photo posts (max 4000 chars). Recommended when content exceeds 90 chars, as photo titles are auto-truncated.
         /// </summary>
-        /// <value>Optional long-form description for photo posts (max 4000 chars). Recommended for photo posts when content exceeds 90 characters, as photo titles are automatically truncated to 90 chars (after stripping hashtags/URLs). </value>
+        /// <value>Optional long-form description for photo posts (max 4000 chars). Recommended when content exceeds 90 chars, as photo titles are auto-truncated.</value>
         [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 

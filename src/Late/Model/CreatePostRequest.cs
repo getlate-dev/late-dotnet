@@ -37,20 +37,20 @@ namespace Late.Model
         /// Initializes a new instance of the <see cref="CreatePostRequest" /> class.
         /// </summary>
         /// <param name="title">title.</param>
-        /// <param name="content">Post caption/text content. Optional when media is attached (images, videos, etc.). Required for text-only posts. Can also be omitted if all platforms have customContent set. .</param>
+        /// <param name="content">Post caption/text. Optional when media is attached or all platforms have customContent. Required for text-only posts..</param>
         /// <param name="mediaItems">mediaItems.</param>
         /// <param name="platforms">platforms.</param>
         /// <param name="scheduledFor">scheduledFor.</param>
         /// <param name="publishNow">publishNow (default to false).</param>
         /// <param name="isDraft">isDraft (default to false).</param>
         /// <param name="timezone">timezone (default to &quot;UTC&quot;).</param>
-        /// <param name="tags">Tags/keywords for the post. YouTube-specific constraints: - No count limit; duplicates are automatically removed - Each tag must be ≤ 100 characters - Combined total across all tags ≤ 500 characters (YouTube&#39;s limit) .</param>
+        /// <param name="tags">Tags/keywords. YouTube constraints: each tag max 100 chars, combined max 500 chars, duplicates auto-removed..</param>
         /// <param name="hashtags">hashtags.</param>
         /// <param name="mentions">mentions.</param>
         /// <param name="crosspostingEnabled">crosspostingEnabled (default to true).</param>
         /// <param name="metadata">metadata.</param>
-        /// <param name="tiktokSettings">Root-level TikTok settings applied to all TikTok platforms in the request. This is a convenience shorthand. Settings here are merged into each TikTok platform&#39;s platformSpecificData, with platform-specific settings taking precedence. .</param>
-        /// <param name="queuedFromProfile">Profile ID to schedule via queue.  When provided (without &#x60;scheduledFor&#x60;), the post will be automatically assigned to the next available slot from the profile&#39;s queue. The system uses distributed locking to prevent race conditions when multiple posts are scheduled concurrently. Do not call &#x60;/v1/queue/next-slot&#x60; and then use that time in &#x60;scheduledFor&#x60;. That bypasses the queue system and can cause duplicate slot assignments. .</param>
+        /// <param name="tiktokSettings">Root-level TikTok settings applied to all TikTok platforms. Merged into each platform&#39;s platformSpecificData, with platform-specific settings taking precedence..</param>
+        /// <param name="queuedFromProfile">Profile ID to schedule via queue. When provided without scheduledFor, the post is auto-assigned to the next available slot. Do not call /v1/queue/next-slot and use that time in scheduledFor, as that bypasses queue locking..</param>
         /// <param name="queueId">Specific queue ID to use when scheduling via queue. Only used when queuedFromProfile is also provided. If omitted, uses the profile&#39;s default queue. .</param>
         public CreatePostRequest(string title = default, string content = default, List<CreatePostRequestMediaItemsInner> mediaItems = default, List<CreatePostRequestPlatformsInner> platforms = default, DateTime scheduledFor = default, bool publishNow = false, bool isDraft = false, string timezone = @"UTC", List<string> tags = default, List<string> hashtags = default, List<string> mentions = default, bool crosspostingEnabled = true, Dictionary<string, Object> metadata = default, TikTokPlatformData tiktokSettings = default, string queuedFromProfile = default, string queueId = default)
         {
@@ -80,9 +80,9 @@ namespace Late.Model
         public string Title { get; set; }
 
         /// <summary>
-        /// Post caption/text content. Optional when media is attached (images, videos, etc.). Required for text-only posts. Can also be omitted if all platforms have customContent set. 
+        /// Post caption/text. Optional when media is attached or all platforms have customContent. Required for text-only posts.
         /// </summary>
-        /// <value>Post caption/text content. Optional when media is attached (images, videos, etc.). Required for text-only posts. Can also be omitted if all platforms have customContent set. </value>
+        /// <value>Post caption/text. Optional when media is attached or all platforms have customContent. Required for text-only posts.</value>
         [DataMember(Name = "content", EmitDefaultValue = false)]
         public string Content { get; set; }
 
@@ -123,9 +123,9 @@ namespace Late.Model
         public string Timezone { get; set; }
 
         /// <summary>
-        /// Tags/keywords for the post. YouTube-specific constraints: - No count limit; duplicates are automatically removed - Each tag must be ≤ 100 characters - Combined total across all tags ≤ 500 characters (YouTube&#39;s limit) 
+        /// Tags/keywords. YouTube constraints: each tag max 100 chars, combined max 500 chars, duplicates auto-removed.
         /// </summary>
-        /// <value>Tags/keywords for the post. YouTube-specific constraints: - No count limit; duplicates are automatically removed - Each tag must be ≤ 100 characters - Combined total across all tags ≤ 500 characters (YouTube&#39;s limit) </value>
+        /// <value>Tags/keywords. YouTube constraints: each tag max 100 chars, combined max 500 chars, duplicates auto-removed.</value>
         [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 
@@ -154,16 +154,16 @@ namespace Late.Model
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
-        /// Root-level TikTok settings applied to all TikTok platforms in the request. This is a convenience shorthand. Settings here are merged into each TikTok platform&#39;s platformSpecificData, with platform-specific settings taking precedence. 
+        /// Root-level TikTok settings applied to all TikTok platforms. Merged into each platform&#39;s platformSpecificData, with platform-specific settings taking precedence.
         /// </summary>
-        /// <value>Root-level TikTok settings applied to all TikTok platforms in the request. This is a convenience shorthand. Settings here are merged into each TikTok platform&#39;s platformSpecificData, with platform-specific settings taking precedence. </value>
+        /// <value>Root-level TikTok settings applied to all TikTok platforms. Merged into each platform&#39;s platformSpecificData, with platform-specific settings taking precedence.</value>
         [DataMember(Name = "tiktokSettings", EmitDefaultValue = false)]
         public TikTokPlatformData TiktokSettings { get; set; }
 
         /// <summary>
-        /// Profile ID to schedule via queue.  When provided (without &#x60;scheduledFor&#x60;), the post will be automatically assigned to the next available slot from the profile&#39;s queue. The system uses distributed locking to prevent race conditions when multiple posts are scheduled concurrently. Do not call &#x60;/v1/queue/next-slot&#x60; and then use that time in &#x60;scheduledFor&#x60;. That bypasses the queue system and can cause duplicate slot assignments. 
+        /// Profile ID to schedule via queue. When provided without scheduledFor, the post is auto-assigned to the next available slot. Do not call /v1/queue/next-slot and use that time in scheduledFor, as that bypasses queue locking.
         /// </summary>
-        /// <value>Profile ID to schedule via queue.  When provided (without &#x60;scheduledFor&#x60;), the post will be automatically assigned to the next available slot from the profile&#39;s queue. The system uses distributed locking to prevent race conditions when multiple posts are scheduled concurrently. Do not call &#x60;/v1/queue/next-slot&#x60; and then use that time in &#x60;scheduledFor&#x60;. That bypasses the queue system and can cause duplicate slot assignments. </value>
+        /// <value>Profile ID to schedule via queue. When provided without scheduledFor, the post is auto-assigned to the next available slot. Do not call /v1/queue/next-slot and use that time in scheduledFor, as that bypasses queue locking.</value>
         [DataMember(Name = "queuedFromProfile", EmitDefaultValue = false)]
         public string QueuedFromProfile { get; set; }
 

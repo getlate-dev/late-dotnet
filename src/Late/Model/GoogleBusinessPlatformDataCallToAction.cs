@@ -34,9 +34,9 @@ namespace Late.Model
     public partial class GoogleBusinessPlatformDataCallToAction : IValidatableObject
     {
         /// <summary>
-        /// Button action type: - LEARN_MORE: Link to more information - BOOK: Booking/reservation link - ORDER: Online ordering link - SHOP: E-commerce/shopping link - SIGN_UP: Registration/signup link - CALL: Phone call action 
+        /// Button action type: LEARN_MORE, BOOK, ORDER, SHOP, SIGN_UP, CALL
         /// </summary>
-        /// <value>Button action type: - LEARN_MORE: Link to more information - BOOK: Booking/reservation link - ORDER: Online ordering link - SHOP: E-commerce/shopping link - SIGN_UP: Registration/signup link - CALL: Phone call action </value>
+        /// <value>Button action type: LEARN_MORE, BOOK, ORDER, SHOP, SIGN_UP, CALL</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum TypeEnum
         {
@@ -79,9 +79,9 @@ namespace Late.Model
 
 
         /// <summary>
-        /// Button action type: - LEARN_MORE: Link to more information - BOOK: Booking/reservation link - ORDER: Online ordering link - SHOP: E-commerce/shopping link - SIGN_UP: Registration/signup link - CALL: Phone call action 
+        /// Button action type: LEARN_MORE, BOOK, ORDER, SHOP, SIGN_UP, CALL
         /// </summary>
-        /// <value>Button action type: - LEARN_MORE: Link to more information - BOOK: Booking/reservation link - ORDER: Online ordering link - SHOP: E-commerce/shopping link - SIGN_UP: Registration/signup link - CALL: Phone call action </value>
+        /// <value>Button action type: LEARN_MORE, BOOK, ORDER, SHOP, SIGN_UP, CALL</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public TypeEnum Type { get; set; }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GoogleBusinessPlatformDataCallToAction" /> class.
         /// </summary>
-        /// <param name="type">Button action type: - LEARN_MORE: Link to more information - BOOK: Booking/reservation link - ORDER: Online ordering link - SHOP: E-commerce/shopping link - SIGN_UP: Registration/signup link - CALL: Phone call action  (required).</param>
+        /// <param name="type">Button action type: LEARN_MORE, BOOK, ORDER, SHOP, SIGN_UP, CALL (required).</param>
         /// <param name="url">Destination URL for the CTA button (required when callToAction is provided) (required).</param>
         public GoogleBusinessPlatformDataCallToAction(TypeEnum type = default, string url = default)
         {

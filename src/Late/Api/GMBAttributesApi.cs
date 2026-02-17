@@ -32,7 +32,7 @@ namespace Late.Api
         /// Get attributes
         /// </summary>
         /// <remarks>
-        /// Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -43,7 +43,7 @@ namespace Late.Api
         /// Get attributes
         /// </summary>
         /// <remarks>
-        /// Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -53,7 +53,7 @@ namespace Late.Api
         /// Update attributes
         /// </summary>
         /// <remarks>
-        /// Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Updates location attributes (amenities, services, etc.).  The attributeMask specifies which attributes to update (comma-separated). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -65,7 +65,7 @@ namespace Late.Api
         /// Update attributes
         /// </summary>
         /// <remarks>
-        /// Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Updates location attributes (amenities, services, etc.).  The attributeMask specifies which attributes to update (comma-separated). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -85,7 +85,7 @@ namespace Late.Api
         /// Get attributes
         /// </summary>
         /// <remarks>
-        /// Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -97,7 +97,7 @@ namespace Late.Api
         /// Get attributes
         /// </summary>
         /// <remarks>
-        /// Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -108,7 +108,7 @@ namespace Late.Api
         /// Update attributes
         /// </summary>
         /// <remarks>
-        /// Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Updates location attributes (amenities, services, etc.).  The attributeMask specifies which attributes to update (comma-separated). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -121,7 +121,7 @@ namespace Late.Api
         /// Update attributes
         /// </summary>
         /// <remarks>
-        /// Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Updates location attributes (amenities, services, etc.).  The attributeMask specifies which attributes to update (comma-separated). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -343,7 +343,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -355,7 +355,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -404,7 +404,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -417,7 +417,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features.  Common attributes for restaurants include: - Dining options: has_dine_in, has_takeout, has_delivery - Amenities: has_outdoor_seating, has_wifi, has_parking - Accessibility: has_wheelchair_accessible_entrance - Payments: pay_credit_card_types_accepted  Available attributes vary by business category. 
+        /// Get attributes Fetches location attributes such as amenities, services, and accessibility features. Common attributes include dining options (has_dine_in, has_takeout, has_delivery), amenities (has_outdoor_seating, has_wifi), accessibility, and payment types. Available attributes vary by business category. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -470,7 +470,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Update attributes Updates location attributes (amenities, services, etc.).  The attributeMask specifies which attributes to update (comma-separated). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -483,7 +483,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Update attributes Updates location attributes (amenities, services, etc.).  The attributeMask specifies which attributes to update (comma-separated). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -539,7 +539,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Update attributes Updates location attributes (amenities, services, etc.).  The attributeMask specifies which attributes to update (comma-separated). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
@@ -553,7 +553,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update attributes Updates location attributes (amenities, services, etc.).  The &#x60;attributeMask&#x60; specifies which attributes to update (comma-separated). 
+        /// Update attributes Updates location attributes (amenities, services, etc.).  The attributeMask specifies which attributes to update (comma-separated). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>

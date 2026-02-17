@@ -29,10 +29,10 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Check Instagram hashtag bans
+        /// Check IG hashtag bans
         /// </summary>
         /// <remarks>
-        /// Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkInstagramHashtagsRequest"></param>
@@ -40,10 +40,10 @@ namespace Late.Api
         CheckInstagramHashtags200Response CheckInstagramHashtags(CheckInstagramHashtagsRequest checkInstagramHashtagsRequest);
 
         /// <summary>
-        /// Check Instagram hashtag bans
+        /// Check IG hashtag bans
         /// </summary>
         /// <remarks>
-        /// Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkInstagramHashtagsRequest"></param>
@@ -53,7 +53,7 @@ namespace Late.Api
         /// Download Bluesky media
         /// </summary>
         /// <remarks>
-        /// Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Bluesky post URL</param>
@@ -64,7 +64,7 @@ namespace Late.Api
         /// Download Bluesky media
         /// </summary>
         /// <remarks>
-        /// Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Bluesky post URL</param>
@@ -74,7 +74,7 @@ namespace Late.Api
         /// Download Facebook video
         /// </summary>
         /// <remarks>
-        /// Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Facebook video or reel URL</param>
@@ -85,7 +85,7 @@ namespace Late.Api
         /// Download Facebook video
         /// </summary>
         /// <remarks>
-        /// Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Facebook video or reel URL</param>
@@ -95,7 +95,7 @@ namespace Late.Api
         /// Download Instagram media
         /// </summary>
         /// <remarks>
-        /// Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Instagram reel or post URL</param>
@@ -106,7 +106,7 @@ namespace Late.Api
         /// Download Instagram media
         /// </summary>
         /// <remarks>
-        /// Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Instagram reel or post URL</param>
@@ -116,7 +116,7 @@ namespace Late.Api
         /// Download LinkedIn video
         /// </summary>
         /// <remarks>
-        /// Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">LinkedIn post URL</param>
@@ -127,7 +127,7 @@ namespace Late.Api
         /// Download LinkedIn video
         /// </summary>
         /// <remarks>
-        /// Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">LinkedIn post URL</param>
@@ -137,7 +137,7 @@ namespace Late.Api
         /// Download TikTok video
         /// </summary>
         /// <remarks>
-        /// Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">TikTok video URL or ID</param>
@@ -150,7 +150,7 @@ namespace Late.Api
         /// Download TikTok video
         /// </summary>
         /// <remarks>
-        /// Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">TikTok video URL or ID</param>
@@ -162,7 +162,7 @@ namespace Late.Api
         /// Download Twitter/X media
         /// </summary>
         /// <remarks>
-        /// Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Twitter/X post URL</param>
@@ -175,7 +175,7 @@ namespace Late.Api
         /// Download Twitter/X media
         /// </summary>
         /// <remarks>
-        /// Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Twitter/X post URL</param>
@@ -187,7 +187,7 @@ namespace Late.Api
         /// Download YouTube video
         /// </summary>
         /// <remarks>
-        /// Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -202,7 +202,7 @@ namespace Late.Api
         /// Download YouTube video
         /// </summary>
         /// <remarks>
-        /// Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -216,7 +216,7 @@ namespace Late.Api
         /// Get YouTube transcript
         /// </summary>
         /// <remarks>
-        /// Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -228,7 +228,7 @@ namespace Late.Api
         /// Get YouTube transcript
         /// </summary>
         /// <remarks>
-        /// Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -245,10 +245,10 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Check Instagram hashtag bans
+        /// Check IG hashtag bans
         /// </summary>
         /// <remarks>
-        /// Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkInstagramHashtagsRequest"></param>
@@ -257,10 +257,10 @@ namespace Late.Api
         System.Threading.Tasks.Task<CheckInstagramHashtags200Response> CheckInstagramHashtagsAsync(CheckInstagramHashtagsRequest checkInstagramHashtagsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Check Instagram hashtag bans
+        /// Check IG hashtag bans
         /// </summary>
         /// <remarks>
-        /// Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkInstagramHashtagsRequest"></param>
@@ -271,7 +271,7 @@ namespace Late.Api
         /// Download Bluesky media
         /// </summary>
         /// <remarks>
-        /// Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Bluesky post URL</param>
@@ -283,7 +283,7 @@ namespace Late.Api
         /// Download Bluesky media
         /// </summary>
         /// <remarks>
-        /// Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Bluesky post URL</param>
@@ -294,7 +294,7 @@ namespace Late.Api
         /// Download Facebook video
         /// </summary>
         /// <remarks>
-        /// Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Facebook video or reel URL</param>
@@ -306,7 +306,7 @@ namespace Late.Api
         /// Download Facebook video
         /// </summary>
         /// <remarks>
-        /// Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Facebook video or reel URL</param>
@@ -317,7 +317,7 @@ namespace Late.Api
         /// Download Instagram media
         /// </summary>
         /// <remarks>
-        /// Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Instagram reel or post URL</param>
@@ -329,7 +329,7 @@ namespace Late.Api
         /// Download Instagram media
         /// </summary>
         /// <remarks>
-        /// Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Instagram reel or post URL</param>
@@ -340,7 +340,7 @@ namespace Late.Api
         /// Download LinkedIn video
         /// </summary>
         /// <remarks>
-        /// Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">LinkedIn post URL</param>
@@ -352,7 +352,7 @@ namespace Late.Api
         /// Download LinkedIn video
         /// </summary>
         /// <remarks>
-        /// Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">LinkedIn post URL</param>
@@ -363,7 +363,7 @@ namespace Late.Api
         /// Download TikTok video
         /// </summary>
         /// <remarks>
-        /// Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">TikTok video URL or ID</param>
@@ -377,7 +377,7 @@ namespace Late.Api
         /// Download TikTok video
         /// </summary>
         /// <remarks>
-        /// Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">TikTok video URL or ID</param>
@@ -390,7 +390,7 @@ namespace Late.Api
         /// Download Twitter/X media
         /// </summary>
         /// <remarks>
-        /// Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Twitter/X post URL</param>
@@ -404,7 +404,7 @@ namespace Late.Api
         /// Download Twitter/X media
         /// </summary>
         /// <remarks>
-        /// Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Twitter/X post URL</param>
@@ -417,7 +417,7 @@ namespace Late.Api
         /// Download YouTube video
         /// </summary>
         /// <remarks>
-        /// Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -433,7 +433,7 @@ namespace Late.Api
         /// Download YouTube video
         /// </summary>
         /// <remarks>
-        /// Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -448,7 +448,7 @@ namespace Late.Api
         /// Get YouTube transcript
         /// </summary>
         /// <remarks>
-        /// Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -461,7 +461,7 @@ namespace Late.Api
         /// Get YouTube transcript
         /// </summary>
         /// <remarks>
-        /// Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -683,7 +683,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check Instagram hashtag bans Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Check IG hashtag bans Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkInstagramHashtagsRequest"></param>
@@ -695,7 +695,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check Instagram hashtag bans Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Check IG hashtag bans Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkInstagramHashtagsRequest"></param>
@@ -745,7 +745,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check Instagram hashtag bans Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Check IG hashtag bans Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkInstagramHashtagsRequest"></param>
@@ -758,7 +758,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Check Instagram hashtag bans Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Check IG hashtag bans Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="checkInstagramHashtagsRequest"></param>
@@ -812,7 +812,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Bluesky media Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Bluesky media Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Bluesky post URL</param>
@@ -824,7 +824,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Bluesky media Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Bluesky media Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Bluesky post URL</param>
@@ -873,7 +873,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Bluesky media Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Bluesky media Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Bluesky post URL</param>
@@ -886,7 +886,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Bluesky media Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Bluesky media Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Bluesky post URL</param>
@@ -939,7 +939,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Facebook video Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Facebook video Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Facebook video or reel URL</param>
@@ -951,7 +951,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Facebook video Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Facebook video Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Facebook video or reel URL</param>
@@ -1000,7 +1000,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Facebook video Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Facebook video Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Facebook video or reel URL</param>
@@ -1013,7 +1013,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Facebook video Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Facebook video Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Facebook video or reel URL</param>
@@ -1066,7 +1066,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Instagram media Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Instagram media Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Instagram reel or post URL</param>
@@ -1078,7 +1078,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Instagram media Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Instagram media Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Instagram reel or post URL</param>
@@ -1127,7 +1127,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Instagram media Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Instagram media Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Instagram reel or post URL</param>
@@ -1140,7 +1140,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Instagram media Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Instagram media Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Instagram reel or post URL</param>
@@ -1193,7 +1193,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download LinkedIn video Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download LinkedIn video Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">LinkedIn post URL</param>
@@ -1205,7 +1205,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download LinkedIn video Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download LinkedIn video Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">LinkedIn post URL</param>
@@ -1254,7 +1254,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download LinkedIn video Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download LinkedIn video Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">LinkedIn post URL</param>
@@ -1267,7 +1267,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download LinkedIn video Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download LinkedIn video Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">LinkedIn post URL</param>
@@ -1320,7 +1320,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download TikTok video Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download TikTok video Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">TikTok video URL or ID</param>
@@ -1334,7 +1334,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download TikTok video Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download TikTok video Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">TikTok video URL or ID</param>
@@ -1393,7 +1393,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download TikTok video Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download TikTok video Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">TikTok video URL or ID</param>
@@ -1408,7 +1408,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download TikTok video Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download TikTok video Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">TikTok video URL or ID</param>
@@ -1471,7 +1471,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Twitter/X media Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Twitter/X media Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Twitter/X post URL</param>
@@ -1485,7 +1485,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Twitter/X media Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Twitter/X media Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Twitter/X post URL</param>
@@ -1544,7 +1544,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Twitter/X media Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Twitter/X media Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Twitter/X post URL</param>
@@ -1559,7 +1559,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download Twitter/X media Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download Twitter/X media Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">Twitter/X post URL</param>
@@ -1622,7 +1622,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download YouTube video Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download YouTube video Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -1638,7 +1638,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download YouTube video Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download YouTube video Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -1707,7 +1707,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download YouTube video Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download YouTube video Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -1724,7 +1724,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Download YouTube video Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Download YouTube video Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -1797,7 +1797,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get YouTube transcript Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Get YouTube transcript Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -1810,7 +1810,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get YouTube transcript Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Get YouTube transcript Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -1864,7 +1864,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get YouTube transcript Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Get YouTube transcript Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>
@@ -1878,7 +1878,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get YouTube transcript Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+        /// Get YouTube transcript Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="url">YouTube video URL or video ID</param>

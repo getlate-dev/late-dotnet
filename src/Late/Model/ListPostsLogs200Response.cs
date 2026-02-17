@@ -28,26 +28,33 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Bluesky post settings. Supports text posts with up to 4 images or a single video. threadItems creates a reply chain (Bluesky thread). Images exceeding 1MB are automatically compressed. Alt text supported via mediaItem properties. 
+    /// ListPostsLogs200Response
     /// </summary>
-    [DataContract(Name = "BlueskyPlatformData")]
-    public partial class BlueskyPlatformData : IValidatableObject
+    [DataContract(Name = "listPostsLogs_200_response")]
+    public partial class ListPostsLogs200Response : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="BlueskyPlatformData" /> class.
+        /// Initializes a new instance of the <see cref="ListPostsLogs200Response" /> class.
         /// </summary>
-        /// <param name="threadItems">Sequence of posts in a Bluesky thread (root then replies in order)..</param>
-        public BlueskyPlatformData(List<TwitterPlatformDataThreadItemsInner> threadItems = default)
+        /// <param name="logs">logs.</param>
+        /// <param name="pagination">pagination.</param>
+        public ListPostsLogs200Response(List<PostLog> logs = default, ListPostsLogs200ResponsePagination pagination = default)
         {
-            this.ThreadItems = threadItems;
+            this.Logs = logs;
+            this.Pagination = pagination;
         }
 
         /// <summary>
-        /// Sequence of posts in a Bluesky thread (root then replies in order).
+        /// Gets or Sets Logs
         /// </summary>
-        /// <value>Sequence of posts in a Bluesky thread (root then replies in order).</value>
-        [DataMember(Name = "threadItems", EmitDefaultValue = false)]
-        public List<TwitterPlatformDataThreadItemsInner> ThreadItems { get; set; }
+        [DataMember(Name = "logs", EmitDefaultValue = false)]
+        public List<PostLog> Logs { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pagination
+        /// </summary>
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
+        public ListPostsLogs200ResponsePagination Pagination { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -56,8 +63,9 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class BlueskyPlatformData {\n");
-            sb.Append("  ThreadItems: ").Append(ThreadItems).Append("\n");
+            sb.Append("class ListPostsLogs200Response {\n");
+            sb.Append("  Logs: ").Append(Logs).Append("\n");
+            sb.Append("  Pagination: ").Append(Pagination).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

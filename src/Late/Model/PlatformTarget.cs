@@ -34,9 +34,9 @@ namespace Late.Model
     public partial class PlatformTarget : IValidatableObject
     {
         /// <summary>
-        /// Error category for programmatic handling: - auth_expired: Token expired or revoked, account needs reconnection - user_content: Content doesn&#39;t meet platform requirements (too long, wrong format, etc.) - user_abuse: Rate limits, spam detection, excessive posting - account_issue: Account configuration problems (missing board, inactive account) - platform_rejected: Platform rules violated (banned, suspended, policy violation) - platform_error: Platform-side issues (5xx errors, maintenance) - system_error: Late infrastructure issues (timeouts, network errors) - unknown: Unclassified error 
+        /// Error category for programmatic handling: auth_expired (token expired/revoked), user_content (wrong format/too long), user_abuse (rate limits/spam), account_issue (config problems), platform_rejected (policy violation), platform_error (5xx/maintenance), system_error (Late infra), unknown
         /// </summary>
-        /// <value>Error category for programmatic handling: - auth_expired: Token expired or revoked, account needs reconnection - user_content: Content doesn&#39;t meet platform requirements (too long, wrong format, etc.) - user_abuse: Rate limits, spam detection, excessive posting - account_issue: Account configuration problems (missing board, inactive account) - platform_rejected: Platform rules violated (banned, suspended, policy violation) - platform_error: Platform-side issues (5xx errors, maintenance) - system_error: Late infrastructure issues (timeouts, network errors) - unknown: Unclassified error </value>
+        /// <value>Error category for programmatic handling: auth_expired (token expired/revoked), user_content (wrong format/too long), user_abuse (rate limits/spam), account_issue (config problems), platform_rejected (policy violation), platform_error (5xx/maintenance), system_error (Late infra), unknown</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ErrorCategoryEnum
         {
@@ -91,15 +91,15 @@ namespace Late.Model
 
 
         /// <summary>
-        /// Error category for programmatic handling: - auth_expired: Token expired or revoked, account needs reconnection - user_content: Content doesn&#39;t meet platform requirements (too long, wrong format, etc.) - user_abuse: Rate limits, spam detection, excessive posting - account_issue: Account configuration problems (missing board, inactive account) - platform_rejected: Platform rules violated (banned, suspended, policy violation) - platform_error: Platform-side issues (5xx errors, maintenance) - system_error: Late infrastructure issues (timeouts, network errors) - unknown: Unclassified error 
+        /// Error category for programmatic handling: auth_expired (token expired/revoked), user_content (wrong format/too long), user_abuse (rate limits/spam), account_issue (config problems), platform_rejected (policy violation), platform_error (5xx/maintenance), system_error (Late infra), unknown
         /// </summary>
-        /// <value>Error category for programmatic handling: - auth_expired: Token expired or revoked, account needs reconnection - user_content: Content doesn&#39;t meet platform requirements (too long, wrong format, etc.) - user_abuse: Rate limits, spam detection, excessive posting - account_issue: Account configuration problems (missing board, inactive account) - platform_rejected: Platform rules violated (banned, suspended, policy violation) - platform_error: Platform-side issues (5xx errors, maintenance) - system_error: Late infrastructure issues (timeouts, network errors) - unknown: Unclassified error </value>
+        /// <value>Error category for programmatic handling: auth_expired (token expired/revoked), user_content (wrong format/too long), user_abuse (rate limits/spam), account_issue (config problems), platform_rejected (policy violation), platform_error (5xx/maintenance), system_error (Late infra), unknown</value>
         [DataMember(Name = "errorCategory", EmitDefaultValue = false)]
         public ErrorCategoryEnum? ErrorCategory { get; set; }
         /// <summary>
-        /// Who/what caused the error: - user: User action required (fix content, reconnect account) - platform: Platform-side issue (outage, API change) - system: Late system issue (rare) 
+        /// Who caused the error: user (fix content/reconnect), platform (outage/API change), system (Late issue, rare)
         /// </summary>
-        /// <value>Who/what caused the error: - user: User action required (fix content, reconnect account) - platform: Platform-side issue (outage, API change) - system: Late system issue (rare) </value>
+        /// <value>Who caused the error: user (fix content/reconnect), platform (outage/API change), system (Late issue, rare)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ErrorSourceEnum
         {
@@ -124,9 +124,9 @@ namespace Late.Model
 
 
         /// <summary>
-        /// Who/what caused the error: - user: User action required (fix content, reconnect account) - platform: Platform-side issue (outage, API change) - system: Late system issue (rare) 
+        /// Who caused the error: user (fix content/reconnect), platform (outage/API change), system (Late issue, rare)
         /// </summary>
-        /// <value>Who/what caused the error: - user: User action required (fix content, reconnect account) - platform: Platform-side issue (outage, API change) - system: Late system issue (rare) </value>
+        /// <value>Who caused the error: user (fix content/reconnect), platform (outage/API change), system (Late issue, rare)</value>
         [DataMember(Name = "errorSource", EmitDefaultValue = false)]
         public ErrorSourceEnum? ErrorSource { get; set; }
         /// <summary>
@@ -142,9 +142,9 @@ namespace Late.Model
         /// <param name="platformPostId">The native post ID on the platform (populated after successful publish).</param>
         /// <param name="platformPostUrl">Public URL of the published post on the platform. Populated after successful publish. For immediate posts (publishNow&#x3D;true),  this is included in the response. For scheduled posts, fetch the post  via GET /v1/posts/{postId} after the scheduled time. .</param>
         /// <param name="publishedAt">Timestamp when the post was published to this platform.</param>
-        /// <param name="errorMessage">Human-readable error message when status is &#39;failed&#39;. Contains platform-specific error details explaining why the publish failed. Examples: - \&quot;Instagram access token has expired. Please reconnect your account.\&quot; - \&quot;Post text exceeds the 500 character limit for Threads.\&quot; - \&quot;You do not have enough karma to post in this subreddit.\&quot; - \&quot;Video is too long for Reels. Facebook Reels must be 90 seconds or less.\&quot; .</param>
-        /// <param name="errorCategory">Error category for programmatic handling: - auth_expired: Token expired or revoked, account needs reconnection - user_content: Content doesn&#39;t meet platform requirements (too long, wrong format, etc.) - user_abuse: Rate limits, spam detection, excessive posting - account_issue: Account configuration problems (missing board, inactive account) - platform_rejected: Platform rules violated (banned, suspended, policy violation) - platform_error: Platform-side issues (5xx errors, maintenance) - system_error: Late infrastructure issues (timeouts, network errors) - unknown: Unclassified error .</param>
-        /// <param name="errorSource">Who/what caused the error: - user: User action required (fix content, reconnect account) - platform: Platform-side issue (outage, API change) - system: Late system issue (rare) .</param>
+        /// <param name="errorMessage">Human-readable error message when status is failed. Contains platform-specific error details explaining why the publish failed..</param>
+        /// <param name="errorCategory">Error category for programmatic handling: auth_expired (token expired/revoked), user_content (wrong format/too long), user_abuse (rate limits/spam), account_issue (config problems), platform_rejected (policy violation), platform_error (5xx/maintenance), system_error (Late infra), unknown.</param>
+        /// <param name="errorSource">Who caused the error: user (fix content/reconnect), platform (outage/API change), system (Late issue, rare).</param>
         public PlatformTarget(string platform = default, PlatformTargetAccountId accountId = default, string customContent = default, List<MediaItem> customMedia = default, DateTime scheduledFor = default, PlatformTargetPlatformSpecificData platformSpecificData = default, string status = default, string platformPostId = default, string platformPostUrl = default, DateTime publishedAt = default, string errorMessage = default, ErrorCategoryEnum? errorCategory = default, ErrorSourceEnum? errorSource = default)
         {
             this.Platform = platform;
@@ -242,9 +242,9 @@ namespace Late.Model
         public DateTime PublishedAt { get; set; }
 
         /// <summary>
-        /// Human-readable error message when status is &#39;failed&#39;. Contains platform-specific error details explaining why the publish failed. Examples: - \&quot;Instagram access token has expired. Please reconnect your account.\&quot; - \&quot;Post text exceeds the 500 character limit for Threads.\&quot; - \&quot;You do not have enough karma to post in this subreddit.\&quot; - \&quot;Video is too long for Reels. Facebook Reels must be 90 seconds or less.\&quot; 
+        /// Human-readable error message when status is failed. Contains platform-specific error details explaining why the publish failed.
         /// </summary>
-        /// <value>Human-readable error message when status is &#39;failed&#39;. Contains platform-specific error details explaining why the publish failed. Examples: - \&quot;Instagram access token has expired. Please reconnect your account.\&quot; - \&quot;Post text exceeds the 500 character limit for Threads.\&quot; - \&quot;You do not have enough karma to post in this subreddit.\&quot; - \&quot;Video is too long for Reels. Facebook Reels must be 90 seconds or less.\&quot; </value>
+        /// <value>Human-readable error message when status is failed. Contains platform-specific error details explaining why the publish failed.</value>
         [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
         public string ErrorMessage { get; set; }
 

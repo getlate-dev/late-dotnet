@@ -38,7 +38,7 @@ namespace Late.Model
         /// </summary>
         /// <param name="logs">logs.</param>
         /// <param name="pagination">pagination.</param>
-        public ListConnectionLogs200Response(List<ConnectionLog> logs = default, ListLogs200ResponsePagination pagination = default)
+        public ListConnectionLogs200Response(List<ConnectionLog> logs = default, ListPostsLogs200ResponsePagination pagination = default)
         {
             this.Logs = logs;
             this.Pagination = pagination;
@@ -54,7 +54,7 @@ namespace Late.Model
         /// Gets or Sets Pagination
         /// </summary>
         [DataMember(Name = "pagination", EmitDefaultValue = false)]
-        public ListLogs200ResponsePagination Pagination { get; set; }
+        public ListPostsLogs200ResponsePagination Pagination { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

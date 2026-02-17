@@ -125,7 +125,7 @@ namespace Late.Model
         /// <param name="scheduledFor">scheduledFor.</param>
         /// <param name="timezone">timezone.</param>
         /// <param name="status">status.</param>
-        /// <param name="tags">YouTube tag constraints when targeting YouTube: - No count cap; duplicates removed. - Each tag must be ≤ 100 chars. - Combined characters across all tags ≤ 500. .</param>
+        /// <param name="tags">YouTube constraints: each tag max 100 chars, combined max 500 chars, duplicates removed..</param>
         /// <param name="hashtags">hashtags.</param>
         /// <param name="mentions">mentions.</param>
         /// <param name="visibility">visibility.</param>
@@ -206,9 +206,9 @@ namespace Late.Model
         public string Timezone { get; set; }
 
         /// <summary>
-        /// YouTube tag constraints when targeting YouTube: - No count cap; duplicates removed. - Each tag must be ≤ 100 chars. - Combined characters across all tags ≤ 500. 
+        /// YouTube constraints: each tag max 100 chars, combined max 500 chars, duplicates removed.
         /// </summary>
-        /// <value>YouTube tag constraints when targeting YouTube: - No count cap; duplicates removed. - Each tag must be ≤ 100 chars. - Combined characters across all tags ≤ 500. </value>
+        /// <value>YouTube constraints: each tag max 100 chars, combined max 500 chars, duplicates removed.</value>
         [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 

@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Decoded user profile object from the OAuth callback. **Important:** This contains  the refresh token needed for token refresh. Always include this field. 
+    /// Decoded user profile object from the OAuth callback. Contains the refresh token needed for token refresh. Always include this field. 
     /// </summary>
     [DataContract(Name = "selectGoogleBusinessLocation_request_userProfile")]
     public partial class SelectGoogleBusinessLocationRequestUserProfile : IValidatableObject

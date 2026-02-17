@@ -111,7 +111,7 @@ catch (ApiException e)
 | **207** | Partial success |  -  |
 | **400** | Invalid CSV or validation errors |  -  |
 | **401** | Unauthorized |  -  |
-| **429** | Rate limit exceeded. Can be triggered by: - **API rate limit**: Requests per minute exceeded - **Account cooldown**: One or more accounts are temporarily rate-limited  |  -  |
+| **429** | Rate limit exceeded. Possible causes: API rate limit (requests per minute) or account cooldown (one or more accounts temporarily rate-limited).  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -121,7 +121,7 @@ catch (ApiException e)
 
 Create post
 
-**Getting Post URLs:** - Immediate posts (`publishNow: true`): response includes `platformPostUrl` in `post.platforms[]`. - Scheduled posts: fetch via `GET /v1/posts/{postId}` after publish time for `platformPostUrl`.  **Content requirements:** - `content` is optional when media is attached, all platforms have `customContent`, or posting to YouTube only. - Text-only posts require `content`. Stories ignore captions.  **Platform constraints:** - YouTube: video required, optional thumbnail via `MediaItem.thumbnail` - Instagram/TikTok: media required; TikTok cannot mix videos and images - Instagram carousels: up to 10 items; Threads carousels: up to 10 images only - Facebook Stories: single image or video, set `contentType: 'story'` - LinkedIn: up to 20 images or a single PDF (max 100MB) - Pinterest: single image or video, `boardId` required - Bluesky: up to 4 images, auto-recompressed to ~1MB - Snapchat: single image or video, set `contentType` in platformSpecificData 
+Immediate posts (publishNow: true) include platformPostUrl in the response. Scheduled posts: fetch via GET /v1/posts/{postId} after publish time. content is optional when media is attached, all platforms have customContent, or posting to YouTube only. Text-only posts require content. Stories ignore captions. Platform constraints: YouTube requires video. Instagram/TikTok require media (TikTok cannot mix videos and images). Instagram carousels up to 10 items, Threads up to 10 images. Facebook Stories need single image/video with contentType story. LinkedIn up to 20 images or single PDF. Pinterest single image/video with boardId. Bluesky up to 4 images. Snapchat single image/video. 
 
 ### Example
 ```csharp
@@ -214,7 +214,7 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **409** | Duplicate content detected |  -  |
-| **429** | Rate limit exceeded. Can be triggered by: - **API rate limit**: Requests per minute exceeded (Free: 60, Build: 120, Accelerate: 600, Unlimited: 1,200) - **Velocity limit**: 15 posts per hour per account exceeded - **Account cooldown**: Account temporarily rate-limited due to repeated errors (escalating: 10min, 20min, 40min, up to 24h) - **Daily post limit**: Platform daily limits exceeded (X: 20, Pinterest: 25, Instagram/Facebook: 100, Threads: 250, others: 50)  |  * Retry-After - Seconds until the rate limit resets (for API rate limits) <br>  * X-RateLimit-Limit - The rate limit ceiling <br>  * X-RateLimit-Remaining - Requests remaining in current window <br>  |
+| **429** | Rate limit exceeded. Possible causes: API rate limit (requests per minute), velocity limit (15 posts/hour per account), account cooldown (escalating from 10min to 24h due to repeated errors), or daily platform post limits.  |  * Retry-After - Seconds until the rate limit resets (for API rate limits) <br>  * X-RateLimit-Limit - The rate limit ceiling <br>  * X-RateLimit-Remaining - Requests remaining in current window <br>  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -326,7 +326,7 @@ catch (ApiException e)
 
 Get post
 
-Fetch a single post by ID. For published posts, this returns `platformPostUrl`  for each platform - useful for retrieving post URLs after scheduled posts publish. 
+Fetch a single post by ID. For published posts, this returns platformPostUrl for each platform. 
 
 ### Example
 ```csharp
@@ -427,7 +427,7 @@ catch (ApiException e)
 
 List posts
 
-**Getting Post URLs:** For published posts, each platform entry includes `platformPostUrl` with the public URL. Use `status=published` filter to fetch only published posts with their URLs.  Notes and constraints by platform when interpreting the response: - YouTube: posts always include at least one video in mediaItems. - Instagram/TikTok: posts always include media; drafts may omit media until finalized in client. - TikTok: mediaItems will not mix photos and videos in the same post. 
+For published posts, each platform entry includes platformPostUrl with the public URL. Use status=published to fetch only published posts with their URLs.  Platform notes: YouTube posts always include at least one video. Instagram/TikTok posts always include media (drafts may omit media). TikTok does not mix photos and videos in the same post. 
 
 ### Example
 ```csharp
@@ -635,7 +635,7 @@ catch (ApiException e)
 | **403** | Forbidden |  -  |
 | **404** | Resource not found |  -  |
 | **409** | Post is currently publishing |  -  |
-| **429** | Rate limit exceeded. Can be triggered by: - **API rate limit**: Requests per minute exceeded - **Velocity limit**: 15 posts per hour per account exceeded - **Account cooldown**: Account temporarily rate-limited due to repeated errors  |  -  |
+| **429** | Rate limit exceeded. Possible causes: API rate limit (requests per minute), velocity limit (15 posts/hour per account), or account cooldown (temporarily rate-limited due to repeated errors).  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -645,7 +645,7 @@ catch (ApiException e)
 
 Unpublish post
 
-Permanently deletes a published post from the specified social media platform. The post record in Late is kept but its platform status is updated to \"cancelled\". This does not delete the post from Late, only from the platform.  **Supported platforms:** Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram.  **Not supported:** - **Instagram:** No deletion API available. Posts must be deleted manually. - **TikTok:** No deletion API available. Posts must be deleted manually. - **Snapchat:** No deletion API available. Posts must be deleted manually.  **Platform notes:** - **Threaded posts (Twitter, Threads, Bluesky):** If the post was published as a thread, all items in the thread are deleted (not just the first one). Posts published before this feature was added will only have the first item deleted. - **Telegram:** Messages older than 48 hours may fail to delete (Telegram Bot API limitation). - **YouTube:** This permanently deletes the video from YouTube. 
+Deletes a published post from the specified platform. The post record in Late is kept but its platform status is updated to cancelled. Supported: Threads, Facebook, Twitter/X, LinkedIn, YouTube, Pinterest, Reddit, Bluesky, Google Business, Telegram. Not supported: Instagram, TikTok, Snapchat (must be deleted manually). Threaded posts (Twitter, Threads, Bluesky) delete all items in the thread. Telegram messages older than 48h may fail to delete. YouTube deletion is permanent. 
 
 ### Example
 ```csharp
@@ -736,7 +736,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Post deleted from platform |  -  |
-| **400** | Invalid request. Possible reasons: - Platform not recognized or not supported for deletion - Post does not have the specified platform - Post is not in \&quot;published\&quot; status on that platform - No platform post ID found (post may not have been published correctly) - No access token (account needs to be reconnected)  |  -  |
+| **400** | Invalid request: platform not supported for deletion, post not on that platform, not published, no platform post ID, or no access token. |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Resource not found |  -  |

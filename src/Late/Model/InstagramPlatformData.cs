@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Constraints: - Feed posts require images with aspect ratio between 0.8 (4:5 portrait) and 1.91 (1.91:1 landscape). - Images outside this range (e.g., 9:16 Stories/TikTok format) must use contentType &#39;story&#39;. - Validation happens at post creation; invalid images are rejected immediately with helpful error messages. - Carousels support up to 10 media items. - Stories require media; no captions are published with Stories. - User tags: coordinates range from 0.0 to 1.0 representing position from top-left corner. For carousels, use &#x60;mediaIndex&#x60; to tag specific slides. Tagged users receive notifications.  **Automatic Compression (similar to Bluesky):** - All images (story, post, carousel, thumbnails) exceeding 8 MB are automatically compressed using quality reduction and resizing. - Story videos exceeding 100 MB are automatically compressed. - Reel videos exceeding 300 MB are automatically compressed. - Compression uses Sharp (images) and FFmpeg (videos) to maintain quality while meeting size limits. - Original files are preserved; compressed versions are uploaded to blob storage automatically. 
+    /// Feed posts require aspect ratio 0.8-1.91; images outside this range must use contentType story. Carousels up to 10 items. Stories require media, no captions. User tag coordinates 0.0-1.0 from top-left. Images over 8 MB and videos over 100 MB (stories) or 300 MB (reels) are auto-compressed.
     /// </summary>
     [DataContract(Name = "InstagramPlatformData")]
     public partial class InstagramPlatformData : IValidatableObject
@@ -62,9 +62,9 @@ namespace Late.Model
         /// <param name="collaborators">Up to 3 Instagram usernames to invite as collaborators (feed/Reels only).</param>
         /// <param name="firstComment">Optional first comment to add after the post is created (not applied to Stories).</param>
         /// <param name="trialParams">trialParams.</param>
-        /// <param name="userTags">Tag Instagram users in photos by username and position coordinates. Not supported for stories or videos. For carousel posts, use the optional &#x60;mediaIndex&#x60; field to specify which slide each tag applies to. Tags without &#x60;mediaIndex&#x60; default to the first image (index 0) for backwards compatibility. Tags targeting video items are silently skipped (Instagram only supports tagging on images). .</param>
-        /// <param name="audioName">Custom name for the original audio in Reels. Replaces the default \&quot;Original Audio\&quot; label. Only applies to Reels (video posts). Can only be set once - either during creation or later from the Instagram audio page in the app. .</param>
-        /// <param name="thumbOffset">Millisecond offset from the start of the video to use as the Reel thumbnail. Only applies to Reels (video posts). If a custom thumbnail URL (instagramThumbnail in mediaItems) is provided, it takes priority and this offset is ignored. Defaults to 0 (first frame). .</param>
+        /// <param name="userTags">Tag Instagram users in photos by username and position. Not supported for stories or videos. For carousels, use mediaIndex to target specific slides (defaults to 0). Tags on video items are silently skipped..</param>
+        /// <param name="audioName">Custom name for original audio in Reels. Replaces the default \&quot;Original Audio\&quot; label. Can only be set once..</param>
+        /// <param name="thumbOffset">Millisecond offset from video start for the Reel thumbnail. Ignored if a custom thumbnail URL is provided. Defaults to 0..</param>
         public InstagramPlatformData(ContentTypeEnum? contentType = default, bool shareToFeed = true, List<string> collaborators = default, string firstComment = default, InstagramPlatformDataTrialParams trialParams = default, List<InstagramPlatformDataUserTagsInner> userTags = default, string audioName = default, int thumbOffset = default)
         {
             this.ContentType = contentType;
@@ -105,16 +105,16 @@ namespace Late.Model
         public InstagramPlatformDataTrialParams TrialParams { get; set; }
 
         /// <summary>
-        /// Tag Instagram users in photos by username and position coordinates. Not supported for stories or videos. For carousel posts, use the optional &#x60;mediaIndex&#x60; field to specify which slide each tag applies to. Tags without &#x60;mediaIndex&#x60; default to the first image (index 0) for backwards compatibility. Tags targeting video items are silently skipped (Instagram only supports tagging on images). 
+        /// Tag Instagram users in photos by username and position. Not supported for stories or videos. For carousels, use mediaIndex to target specific slides (defaults to 0). Tags on video items are silently skipped.
         /// </summary>
-        /// <value>Tag Instagram users in photos by username and position coordinates. Not supported for stories or videos. For carousel posts, use the optional &#x60;mediaIndex&#x60; field to specify which slide each tag applies to. Tags without &#x60;mediaIndex&#x60; default to the first image (index 0) for backwards compatibility. Tags targeting video items are silently skipped (Instagram only supports tagging on images). </value>
+        /// <value>Tag Instagram users in photos by username and position. Not supported for stories or videos. For carousels, use mediaIndex to target specific slides (defaults to 0). Tags on video items are silently skipped.</value>
         [DataMember(Name = "userTags", EmitDefaultValue = false)]
         public List<InstagramPlatformDataUserTagsInner> UserTags { get; set; }
 
         /// <summary>
-        /// Custom name for the original audio in Reels. Replaces the default \&quot;Original Audio\&quot; label. Only applies to Reels (video posts). Can only be set once - either during creation or later from the Instagram audio page in the app. 
+        /// Custom name for original audio in Reels. Replaces the default \&quot;Original Audio\&quot; label. Can only be set once.
         /// </summary>
-        /// <value>Custom name for the original audio in Reels. Replaces the default \&quot;Original Audio\&quot; label. Only applies to Reels (video posts). Can only be set once - either during creation or later from the Instagram audio page in the app. </value>
+        /// <value>Custom name for original audio in Reels. Replaces the default \&quot;Original Audio\&quot; label. Can only be set once.</value>
         /*
         <example>My Podcast Intro</example>
         */
@@ -122,9 +122,9 @@ namespace Late.Model
         public string AudioName { get; set; }
 
         /// <summary>
-        /// Millisecond offset from the start of the video to use as the Reel thumbnail. Only applies to Reels (video posts). If a custom thumbnail URL (instagramThumbnail in mediaItems) is provided, it takes priority and this offset is ignored. Defaults to 0 (first frame). 
+        /// Millisecond offset from video start for the Reel thumbnail. Ignored if a custom thumbnail URL is provided. Defaults to 0.
         /// </summary>
-        /// <value>Millisecond offset from the start of the video to use as the Reel thumbnail. Only applies to Reels (video posts). If a custom thumbnail URL (instagramThumbnail in mediaItems) is provided, it takes priority and this offset is ignored. Defaults to 0 (first frame). </value>
+        /// <value>Millisecond offset from video start for the Reel thumbnail. Ignored if a custom thumbnail URL is provided. Defaults to 0.</value>
         /*
         <example>5000</example>
         */

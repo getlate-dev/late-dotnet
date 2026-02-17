@@ -17,7 +17,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 Create webhook
 
-Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
 
 ### Example
 ```csharp
@@ -416,7 +416,7 @@ This endpoint does not need any parameter.
 
 Send test webhook
 
-Send a test webhook to verify your endpoint is configured correctly. The test payload includes `event: \"webhook.test\"` to distinguish it from real events. 
+Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \"webhook.test\" to distinguish it from real events. 
 
 ### Example
 ```csharp
@@ -517,7 +517,7 @@ catch (ApiException e)
 
 Update webhook
 
-Update an existing webhook configuration. All fields except `_id` are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
 
 ### Example
 ```csharp

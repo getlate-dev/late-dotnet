@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Media referenced in posts. URLs must be publicly reachable over HTTPS by the destination platforms. When using third-party storage, ensure signed links remain valid until upload completes.  **Uploading Media:** Use &#x60;POST /v1/media/presign&#x60; to get a presigned URL, then upload your file directly to cloud storage. Supports files up to 5GB. See the &#x60;/v1/media/presign&#x60; endpoint documentation for details.  **Automatic Media Compression:** Late automatically compresses images and videos that exceed platform limits. Compression happens server-side during publishing. Videos larger than 200 MB may not be compressed due to server timeout constraints. 
+    /// Media referenced in posts. URLs must be publicly reachable over HTTPS. When using third-party storage, ensure signed links remain valid until upload completes. Use POST /v1/media/presign to get a presigned URL for direct cloud storage upload (up to 5GB). Late automatically compresses images and videos that exceed platform limits server-side during publishing. Videos larger than 200 MB may not be compressed due to timeout constraints. 
     /// </summary>
     [DataContract(Name = "MediaItem")]
     public partial class MediaItem : IValidatableObject

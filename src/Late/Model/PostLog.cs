@@ -125,9 +125,9 @@ namespace Late.Model
         [DataMember(Name = "platform", EmitDefaultValue = false)]
         public PlatformEnum? Platform { get; set; }
         /// <summary>
-        /// Type of action logged: - &#x60;publish&#x60; - Initial publish attempt - &#x60;retry&#x60; - Retry after failure - &#x60;media_upload&#x60; - Media upload step - &#x60;rate_limit_pause&#x60; - Account paused due to rate limits - &#x60;token_refresh&#x60; - Token was refreshed - &#x60;cancelled&#x60; - Post was cancelled 
+        /// Type of action logged: publish (initial attempt), retry (after failure), media_upload, rate_limit_pause, token_refresh, cancelled
         /// </summary>
-        /// <value>Type of action logged: - &#x60;publish&#x60; - Initial publish attempt - &#x60;retry&#x60; - Retry after failure - &#x60;media_upload&#x60; - Media upload step - &#x60;rate_limit_pause&#x60; - Account paused due to rate limits - &#x60;token_refresh&#x60; - Token was refreshed - &#x60;cancelled&#x60; - Post was cancelled </value>
+        /// <value>Type of action logged: publish (initial attempt), retry (after failure), media_upload, rate_limit_pause, token_refresh, cancelled</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ActionEnum
         {
@@ -170,9 +170,9 @@ namespace Late.Model
 
 
         /// <summary>
-        /// Type of action logged: - &#x60;publish&#x60; - Initial publish attempt - &#x60;retry&#x60; - Retry after failure - &#x60;media_upload&#x60; - Media upload step - &#x60;rate_limit_pause&#x60; - Account paused due to rate limits - &#x60;token_refresh&#x60; - Token was refreshed - &#x60;cancelled&#x60; - Post was cancelled 
+        /// Type of action logged: publish (initial attempt), retry (after failure), media_upload, rate_limit_pause, token_refresh, cancelled
         /// </summary>
-        /// <value>Type of action logged: - &#x60;publish&#x60; - Initial publish attempt - &#x60;retry&#x60; - Retry after failure - &#x60;media_upload&#x60; - Media upload step - &#x60;rate_limit_pause&#x60; - Account paused due to rate limits - &#x60;token_refresh&#x60; - Token was refreshed - &#x60;cancelled&#x60; - Post was cancelled </value>
+        /// <value>Type of action logged: publish (initial attempt), retry (after failure), media_upload, rate_limit_pause, token_refresh, cancelled</value>
         [DataMember(Name = "action", EmitDefaultValue = false)]
         public ActionEnum? Action { get; set; }
         /// <summary>
@@ -222,7 +222,7 @@ namespace Late.Model
         /// <param name="platform">platform.</param>
         /// <param name="accountId">accountId.</param>
         /// <param name="accountUsername">accountUsername.</param>
-        /// <param name="action">Type of action logged: - &#x60;publish&#x60; - Initial publish attempt - &#x60;retry&#x60; - Retry after failure - &#x60;media_upload&#x60; - Media upload step - &#x60;rate_limit_pause&#x60; - Account paused due to rate limits - &#x60;token_refresh&#x60; - Token was refreshed - &#x60;cancelled&#x60; - Post was cancelled .</param>
+        /// <param name="action">Type of action logged: publish (initial attempt), retry (after failure), media_upload, rate_limit_pause, token_refresh, cancelled.</param>
         /// <param name="status">status.</param>
         /// <param name="statusCode">HTTP status code from platform API.</param>
         /// <param name="endpoint">Platform API endpoint called.</param>

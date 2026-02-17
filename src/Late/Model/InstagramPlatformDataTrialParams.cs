@@ -28,15 +28,15 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Trial Reels configuration. Trial reels are only shared to non-followers initially. They can later be \&quot;graduated\&quot; (converted to regular reels visible to followers) either manually in the Instagram app or automatically based on performance. Only applies to Reels (video posts). 
+    /// Trial Reels configuration. Trial reels are shared to non-followers first and can later be graduated to regular reels manually or automatically based on performance. Only applies to Reels.
     /// </summary>
     [DataContract(Name = "InstagramPlatformData_trialParams")]
     public partial class InstagramPlatformDataTrialParams : IValidatableObject
     {
         /// <summary>
-        /// The graduation strategy specifies when a trial reel becomes a regular reel: - MANUAL: The trial reel can only be manually graduated from the native Instagram app. - SS_PERFORMANCE: The trial reel will be automatically graduated if it performs well with non-followers. 
+        /// MANUAL (graduate from Instagram app) or SS_PERFORMANCE (auto-graduate if performs well with non-followers)
         /// </summary>
-        /// <value>The graduation strategy specifies when a trial reel becomes a regular reel: - MANUAL: The trial reel can only be manually graduated from the native Instagram app. - SS_PERFORMANCE: The trial reel will be automatically graduated if it performs well with non-followers. </value>
+        /// <value>MANUAL (graduate from Instagram app) or SS_PERFORMANCE (auto-graduate if performs well with non-followers)</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum GraduationStrategyEnum
         {
@@ -55,15 +55,15 @@ namespace Late.Model
 
 
         /// <summary>
-        /// The graduation strategy specifies when a trial reel becomes a regular reel: - MANUAL: The trial reel can only be manually graduated from the native Instagram app. - SS_PERFORMANCE: The trial reel will be automatically graduated if it performs well with non-followers. 
+        /// MANUAL (graduate from Instagram app) or SS_PERFORMANCE (auto-graduate if performs well with non-followers)
         /// </summary>
-        /// <value>The graduation strategy specifies when a trial reel becomes a regular reel: - MANUAL: The trial reel can only be manually graduated from the native Instagram app. - SS_PERFORMANCE: The trial reel will be automatically graduated if it performs well with non-followers. </value>
+        /// <value>MANUAL (graduate from Instagram app) or SS_PERFORMANCE (auto-graduate if performs well with non-followers)</value>
         [DataMember(Name = "graduationStrategy", EmitDefaultValue = false)]
         public GraduationStrategyEnum? GraduationStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="InstagramPlatformDataTrialParams" /> class.
         /// </summary>
-        /// <param name="graduationStrategy">The graduation strategy specifies when a trial reel becomes a regular reel: - MANUAL: The trial reel can only be manually graduated from the native Instagram app. - SS_PERFORMANCE: The trial reel will be automatically graduated if it performs well with non-followers. .</param>
+        /// <param name="graduationStrategy">MANUAL (graduate from Instagram app) or SS_PERFORMANCE (auto-graduate if performs well with non-followers).</param>
         public InstagramPlatformDataTrialParams(GraduationStrategyEnum? graduationStrategy = default)
         {
             this.GraduationStrategy = graduationStrategy;

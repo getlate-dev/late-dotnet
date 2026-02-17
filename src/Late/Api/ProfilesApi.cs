@@ -86,10 +86,10 @@ namespace Late.Api
         /// List profiles
         /// </summary>
         /// <remarks>
-        /// Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// Returns profiles within the user&#39;s plan limit, sorted by creation date (oldest first). Use includeOverLimit&#x3D;true to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
         /// <returns>ProfilesListResponse</returns>
         ProfilesListResponse ListProfiles(bool? includeOverLimit = default);
 
@@ -97,10 +97,10 @@ namespace Late.Api
         /// List profiles
         /// </summary>
         /// <remarks>
-        /// Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// Returns profiles within the user&#39;s plan limit, sorted by creation date (oldest first). Use includeOverLimit&#x3D;true to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
         /// <returns>ApiResponse of ProfilesListResponse</returns>
         ApiResponse<ProfilesListResponse> ListProfilesWithHttpInfo(bool? includeOverLimit = default);
         /// <summary>
@@ -205,10 +205,10 @@ namespace Late.Api
         /// List profiles
         /// </summary>
         /// <remarks>
-        /// Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// Returns profiles within the user&#39;s plan limit, sorted by creation date (oldest first). Use includeOverLimit&#x3D;true to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProfilesListResponse</returns>
         System.Threading.Tasks.Task<ProfilesListResponse> ListProfilesAsync(bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
@@ -217,10 +217,10 @@ namespace Late.Api
         /// List profiles
         /// </summary>
         /// <remarks>
-        /// Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// Returns profiles within the user&#39;s plan limit, sorted by creation date (oldest first). Use includeOverLimit&#x3D;true to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProfilesListResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<ProfilesListResponse>> ListProfilesWithHttpInfoAsync(bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
@@ -846,10 +846,10 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List profiles Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// List profiles Returns profiles within the user&#39;s plan limit, sorted by creation date (oldest first). Use includeOverLimit&#x3D;true to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
         /// <returns>ProfilesListResponse</returns>
         public ProfilesListResponse ListProfiles(bool? includeOverLimit = default)
         {
@@ -858,10 +858,10 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List profiles Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// List profiles Returns profiles within the user&#39;s plan limit, sorted by creation date (oldest first). Use includeOverLimit&#x3D;true to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
         /// <returns>ApiResponse of ProfilesListResponse</returns>
         public Late.Client.ApiResponse<ProfilesListResponse> ListProfilesWithHttpInfo(bool? includeOverLimit = default)
         {
@@ -906,10 +906,10 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List profiles Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// List profiles Returns profiles within the user&#39;s plan limit, sorted by creation date (oldest first). Use includeOverLimit&#x3D;true to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ProfilesListResponse</returns>
         public async System.Threading.Tasks.Task<ProfilesListResponse> ListProfilesAsync(bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default)
@@ -919,10 +919,10 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List profiles Returns profiles within the user&#39;s plan limit. Profiles are sorted by creation date (oldest first). Use &#x60;includeOverLimit&#x3D;true&#x60; to include profiles that exceed the plan limit (for management/deletion purposes). 
+        /// List profiles Returns profiles within the user&#39;s plan limit, sorted by creation date (oldest first). Use includeOverLimit&#x3D;true to include profiles that exceed the plan limit (for management/deletion purposes). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
+        /// <param name="includeOverLimit">When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ProfilesListResponse)</returns>
         public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ProfilesListResponse>> ListProfilesWithHttpInfoAsync(bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default)

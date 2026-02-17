@@ -4,7 +4,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CheckInstagramHashtags**](ToolsApi.md#checkinstagramhashtags) | **POST** /v1/tools/instagram/hashtag-checker | Check Instagram hashtag bans |
+| [**CheckInstagramHashtags**](ToolsApi.md#checkinstagramhashtags) | **POST** /v1/tools/instagram/hashtag-checker | Check IG hashtag bans |
 | [**DownloadBlueskyMedia**](ToolsApi.md#downloadblueskymedia) | **GET** /v1/tools/bluesky/download | Download Bluesky media |
 | [**DownloadFacebookVideo**](ToolsApi.md#downloadfacebookvideo) | **GET** /v1/tools/facebook/download | Download Facebook video |
 | [**DownloadInstagramMedia**](ToolsApi.md#downloadinstagrammedia) | **GET** /v1/tools/instagram/download | Download Instagram media |
@@ -18,9 +18,9 @@ All URIs are relative to *https://getlate.dev/api*
 # **CheckInstagramHashtags**
 > CheckInstagramHashtags200Response CheckInstagramHashtags (CheckInstagramHashtagsRequest checkInstagramHashtagsRequest)
 
-Check Instagram hashtag bans
+Check IG hashtag bans
 
-Check if Instagram hashtags are banned, restricted, or safe to use.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Check if Instagram hashtags are banned, restricted, or safe to use.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp
@@ -50,7 +50,7 @@ namespace Example
 
             try
             {
-                // Check Instagram hashtag bans
+                // Check IG hashtag bans
                 CheckInstagramHashtags200Response result = apiInstance.CheckInstagramHashtags(checkInstagramHashtagsRequest);
                 Debug.WriteLine(result);
             }
@@ -71,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Check Instagram hashtag bans
+    // Check IG hashtag bans
     ApiResponse<CheckInstagramHashtags200Response> response = apiInstance.CheckInstagramHashtagsWithHttpInfo(checkInstagramHashtagsRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -118,7 +118,7 @@ catch (ApiException e)
 
 Download Bluesky media
 
-Download videos from Bluesky posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Download videos from Bluesky posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp
@@ -216,7 +216,7 @@ catch (ApiException e)
 
 Download Facebook video
 
-Download videos and reels from Facebook.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Download videos and reels from Facebook.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp
@@ -314,7 +314,7 @@ catch (ApiException e)
 
 Download Instagram media
 
-Download Instagram reels, posts, or photos.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Download Instagram reels, posts, or photos.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp
@@ -412,7 +412,7 @@ catch (ApiException e)
 
 Download LinkedIn video
 
-Download videos from LinkedIn posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Download videos from LinkedIn posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp
@@ -510,7 +510,7 @@ catch (ApiException e)
 
 Download TikTok video
 
-Download TikTok videos with or without watermark.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Download TikTok videos with or without watermark.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp
@@ -612,7 +612,7 @@ catch (ApiException e)
 
 Download Twitter/X media
 
-Download videos from Twitter/X posts.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Download videos from Twitter/X posts.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp
@@ -714,7 +714,7 @@ catch (ApiException e)
 
 Download YouTube video
 
-Download YouTube videos or audio. Returns available formats or direct download URL.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Download YouTube videos or audio. Returns available formats or direct download URL.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp
@@ -823,7 +823,7 @@ catch (ApiException e)
 
 Get YouTube transcript
 
-Extract transcript/captions from a YouTube video.  **Rate Limits:** Build (50/day), Accelerate (500/day), Unlimited (unlimited) 
+Extract transcript/captions from a YouTube video.  Rate limits: Build (50/day), Accelerate (500/day), Unlimited (unlimited). 
 
 ### Example
 ```csharp

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **ProfileId** | **string** |  | [optional] 
 **AccountId** | **string** | The social account ID (present on successful connections and disconnects) | [optional] 
 **Platform** | **string** |  | [optional] 
-**EventType** | **string** | Type of connection event: - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected successfully - &#x60;reconnect_failed&#x60; - Reconnection attempt failed  | [optional] 
+**EventType** | **string** | Type of connection event: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed | [optional] 
 **ConnectionMethod** | **string** | How the connection was initiated | [optional] 
 **Error** | [**ConnectionLogError**](ConnectionLogError.md) |  | [optional] 
 **Success** | [**ConnectionLogSuccess**](ConnectionLogSuccess.md) |  | [optional] 

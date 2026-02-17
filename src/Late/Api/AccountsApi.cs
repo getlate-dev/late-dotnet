@@ -96,7 +96,7 @@ namespace Late.Api
         /// Get follower stats
         /// </summary>
         /// <remarks>
-        /// Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+        /// Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountIds">Comma-separated list of account IDs (optional, defaults to all user&#39;s accounts) (optional)</param>
@@ -111,7 +111,7 @@ namespace Late.Api
         /// Get follower stats
         /// </summary>
         /// <remarks>
-        /// Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+        /// Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountIds">Comma-separated list of account IDs (optional, defaults to all user&#39;s accounts) (optional)</param>
@@ -250,7 +250,7 @@ namespace Late.Api
         /// Get follower stats
         /// </summary>
         /// <remarks>
-        /// Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+        /// Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountIds">Comma-separated list of account IDs (optional, defaults to all user&#39;s accounts) (optional)</param>
@@ -266,7 +266,7 @@ namespace Late.Api
         /// Get follower stats
         /// </summary>
         /// <remarks>
-        /// Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+        /// Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountIds">Comma-separated list of account IDs (optional, defaults to all user&#39;s accounts) (optional)</param>
@@ -944,7 +944,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get follower stats Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+        /// Get follower stats Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountIds">Comma-separated list of account IDs (optional, defaults to all user&#39;s accounts) (optional)</param>
@@ -960,7 +960,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get follower stats Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+        /// Get follower stats Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountIds">Comma-separated list of account IDs (optional, defaults to all user&#39;s accounts) (optional)</param>
@@ -1028,7 +1028,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get follower stats Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+        /// Get follower stats Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountIds">Comma-separated list of account IDs (optional, defaults to all user&#39;s accounts) (optional)</param>
@@ -1045,7 +1045,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get follower stats Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+        /// Get follower stats Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountIds">Comma-separated list of account IDs (optional, defaults to all user&#39;s accounts) (optional)</param>

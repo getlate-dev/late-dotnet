@@ -313,7 +313,7 @@ catch (ApiException e)
 
 List profiles
 
-Returns profiles within the user's plan limit. Profiles are sorted by creation date (oldest first). Use `includeOverLimit=true` to include profiles that exceed the plan limit (for management/deletion purposes). 
+Returns profiles within the user's plan limit, sorted by creation date (oldest first). Use includeOverLimit=true to include profiles that exceed the plan limit (for management/deletion purposes). 
 
 ### Example
 ```csharp
@@ -339,7 +339,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ProfilesApi(httpClient, config, httpClientHandler);
-            var includeOverLimit = false;  // bool? | When true, includes profiles that exceed the user's plan limit. Over-limit profiles will have `isOverLimit: true` in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional)  (default to false)
+            var includeOverLimit = false;  // bool? | When true, includes profiles that exceed the user's plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  (optional)  (default to false)
 
             try
             {
@@ -382,7 +382,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **includeOverLimit** | **bool?** | When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have &#x60;isOverLimit: true&#x60; in the response. Useful for managing/deleting profiles after a plan downgrade.  | [optional] [default to false] |
+| **includeOverLimit** | **bool?** | When true, includes profiles that exceed the user&#39;s plan limit. Over-limit profiles will have isOverLimit: true in the response. Useful for managing/deleting profiles after a plan downgrade.  | [optional] [default to false] |
 
 ### Return type
 

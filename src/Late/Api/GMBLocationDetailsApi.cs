@@ -32,7 +32,7 @@ namespace Late.Api
         /// Get location details
         /// </summary>
         /// <remarks>
-        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the &#x60;readMask&#x60; query parameter to request specific fields. 
+        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -44,7 +44,7 @@ namespace Late.Api
         /// Get location details
         /// </summary>
         /// <remarks>
-        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the &#x60;readMask&#x60; query parameter to request specific fields. 
+        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -55,7 +55,7 @@ namespace Late.Api
         /// Update location details
         /// </summary>
         /// <remarks>
-        /// Updates location details such as opening hours, special hours, business description, phone, and website.  The &#x60;updateMask&#x60; field is required and specifies which fields to update.  Common update masks: - &#x60;regularHours&#x60; - Update opening hours - &#x60;specialHours&#x60; - Update holiday/special hours - &#x60;profile.description&#x60; - Update business description - &#x60;websiteUri&#x60; - Update website URL - &#x60;phoneNumbers&#x60; - Update phone numbers - &#x60;regularHours,specialHours&#x60; - Update both at once 
+        /// Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -67,7 +67,7 @@ namespace Late.Api
         /// Update location details
         /// </summary>
         /// <remarks>
-        /// Updates location details such as opening hours, special hours, business description, phone, and website.  The &#x60;updateMask&#x60; field is required and specifies which fields to update.  Common update masks: - &#x60;regularHours&#x60; - Update opening hours - &#x60;specialHours&#x60; - Update holiday/special hours - &#x60;profile.description&#x60; - Update business description - &#x60;websiteUri&#x60; - Update website URL - &#x60;phoneNumbers&#x60; - Update phone numbers - &#x60;regularHours,specialHours&#x60; - Update both at once 
+        /// Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -87,7 +87,7 @@ namespace Late.Api
         /// Get location details
         /// </summary>
         /// <remarks>
-        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the &#x60;readMask&#x60; query parameter to request specific fields. 
+        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -100,7 +100,7 @@ namespace Late.Api
         /// Get location details
         /// </summary>
         /// <remarks>
-        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the &#x60;readMask&#x60; query parameter to request specific fields. 
+        /// Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -112,7 +112,7 @@ namespace Late.Api
         /// Update location details
         /// </summary>
         /// <remarks>
-        /// Updates location details such as opening hours, special hours, business description, phone, and website.  The &#x60;updateMask&#x60; field is required and specifies which fields to update.  Common update masks: - &#x60;regularHours&#x60; - Update opening hours - &#x60;specialHours&#x60; - Update holiday/special hours - &#x60;profile.description&#x60; - Update business description - &#x60;websiteUri&#x60; - Update website URL - &#x60;phoneNumbers&#x60; - Update phone numbers - &#x60;regularHours,specialHours&#x60; - Update both at once 
+        /// Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -125,7 +125,7 @@ namespace Late.Api
         /// Update location details
         /// </summary>
         /// <remarks>
-        /// Updates location details such as opening hours, special hours, business description, phone, and website.  The &#x60;updateMask&#x60; field is required and specifies which fields to update.  Common update masks: - &#x60;regularHours&#x60; - Update opening hours - &#x60;specialHours&#x60; - Update holiday/special hours - &#x60;profile.description&#x60; - Update business description - &#x60;websiteUri&#x60; - Update website URL - &#x60;phoneNumbers&#x60; - Update phone numbers - &#x60;regularHours,specialHours&#x60; - Update both at once 
+        /// Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -347,7 +347,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the &#x60;readMask&#x60; query parameter to request specific fields. 
+        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -360,7 +360,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the &#x60;readMask&#x60; query parameter to request specific fields. 
+        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -414,7 +414,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the &#x60;readMask&#x60; query parameter to request specific fields. 
+        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -428,7 +428,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the &#x60;readMask&#x60; query parameter to request specific fields. 
+        /// Get location details Fetches detailed location information including opening hours, special hours, business description, phone numbers, website, categories, and more.  Use the readMask query parameter to request specific fields. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -486,7 +486,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website.  The &#x60;updateMask&#x60; field is required and specifies which fields to update.  Common update masks: - &#x60;regularHours&#x60; - Update opening hours - &#x60;specialHours&#x60; - Update holiday/special hours - &#x60;profile.description&#x60; - Update business description - &#x60;websiteUri&#x60; - Update website URL - &#x60;phoneNumbers&#x60; - Update phone numbers - &#x60;regularHours,specialHours&#x60; - Update both at once 
+        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -499,7 +499,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website.  The &#x60;updateMask&#x60; field is required and specifies which fields to update.  Common update masks: - &#x60;regularHours&#x60; - Update opening hours - &#x60;specialHours&#x60; - Update holiday/special hours - &#x60;profile.description&#x60; - Update business description - &#x60;websiteUri&#x60; - Update website URL - &#x60;phoneNumbers&#x60; - Update phone numbers - &#x60;regularHours,specialHours&#x60; - Update both at once 
+        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -555,7 +555,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website.  The &#x60;updateMask&#x60; field is required and specifies which fields to update.  Common update masks: - &#x60;regularHours&#x60; - Update opening hours - &#x60;specialHours&#x60; - Update holiday/special hours - &#x60;profile.description&#x60; - Update business description - &#x60;websiteUri&#x60; - Update website URL - &#x60;phoneNumbers&#x60; - Update phone numbers - &#x60;regularHours,specialHours&#x60; - Update both at once 
+        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
@@ -569,7 +569,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website.  The &#x60;updateMask&#x60; field is required and specifies which fields to update.  Common update masks: - &#x60;regularHours&#x60; - Update opening hours - &#x60;specialHours&#x60; - Update holiday/special hours - &#x60;profile.description&#x60; - Update business description - &#x60;websiteUri&#x60; - Update website URL - &#x60;phoneNumbers&#x60; - Update phone numbers - &#x60;regularHours,specialHours&#x60; - Update both at once 
+        /// Update location details Updates location details such as opening hours, special hours, business description, phone, and website. The updateMask field is required and specifies which fields to update. Common masks: regularHours, specialHours, profile.description, websiteUri, phoneNumbers. Combine with commas (e.g. regularHours,specialHours). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>

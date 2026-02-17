@@ -16,7 +16,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 Get post analytics
 
-Returns analytics for posts. With `postId`, returns a single post's analytics. Without it, returns a paginated list with overview stats.  **Post ID types:** This endpoint returns External Post IDs by default. The `postId` parameter accepts both Late Post IDs (from `POST /v1/posts`) and External Post IDs. Late Post IDs are automatically resolved to External Post analytics. Use `latePostId` in responses to link analytics back to your original Late post, or `platformPostUrl` as a stable identifier.  **List response:** Use `isExternal` to identify post origin. `isExternal: true` means synced from platform, `isExternal: false` means queried by Late post ID.  For follower stats, use `/v1/accounts/follower-stats` instead.  **Platform notes:** - LinkedIn personal accounts: per-post analytics only for posts published through Late (API restriction). - Telegram: analytics not available (Bot API limitation).  **Data freshness:** Cached and refreshed at most once per hour. Stale caches trigger a background refresh. 
+Returns analytics for posts. With postId, returns a single post. Without it, returns a paginated list with overview stats. This endpoint returns External Post IDs by default. The postId parameter accepts both Late Post IDs and External Post IDs, auto-resolving Late IDs to External Post analytics. Use latePostId in responses to link back to your original post, or platformPostUrl as a stable identifier. isExternal indicates post origin (true = synced from platform). For follower stats, use /v1/accounts/follower-stats. LinkedIn personal accounts: per-post analytics only for Late-published posts. Telegram: not available. Data is cached and refreshed at most once per hour. 
 
 ### Example
 ```csharp
@@ -42,10 +42,10 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string? | Returns analytics for a single post. Accepts both Late Post IDs (from `POST /v1/posts`)  and External Post IDs (from this endpoint's list response). The API automatically  resolves Late Post IDs to their corresponding External Post analytics.  (optional) 
+            var postId = "postId_example";  // string? | Returns analytics for a single post. Accepts both Late Post IDs and External Post IDs. Late IDs are auto-resolved to External Post analytics. (optional) 
             var platform = "platform_example";  // string? | Filter by platform (default \"all\") (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID (default \"all\") (optional) 
-            var source = "all";  // string? | Filter by post source: - `late` - Only posts scheduled/published via Late API - `external` - Only posts synced from the platform (not posted via Late) - `all` - All posts (default)  (optional)  (default to all)
+            var source = "all";  // string? | Filter by post source: late (posted via Late API), external (synced from platform), all (default) (optional)  (default to all)
             var fromDate = DateOnly.Parse("2013-10-20");  // DateOnly? | Inclusive lower bound (optional) 
             var toDate = DateOnly.Parse("2013-10-20");  // DateOnly? | Inclusive upper bound (optional) 
             var limit = 50;  // int? | Page size (default 50) (optional)  (default to 50)
@@ -94,10 +94,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string?** | Returns analytics for a single post. Accepts both Late Post IDs (from &#x60;POST /v1/posts&#x60;)  and External Post IDs (from this endpoint&#39;s list response). The API automatically  resolves Late Post IDs to their corresponding External Post analytics.  | [optional]  |
+| **postId** | **string?** | Returns analytics for a single post. Accepts both Late Post IDs and External Post IDs. Late IDs are auto-resolved to External Post analytics. | [optional]  |
 | **platform** | **string?** | Filter by platform (default \&quot;all\&quot;) | [optional]  |
 | **profileId** | **string?** | Filter by profile ID (default \&quot;all\&quot;) | [optional]  |
-| **source** | **string?** | Filter by post source: - &#x60;late&#x60; - Only posts scheduled/published via Late API - &#x60;external&#x60; - Only posts synced from the platform (not posted via Late) - &#x60;all&#x60; - All posts (default)  | [optional] [default to all] |
+| **source** | **string?** | Filter by post source: late (posted via Late API), external (synced from platform), all (default) | [optional] [default to all] |
 | **fromDate** | **DateOnly?** | Inclusive lower bound | [optional]  |
 | **toDate** | **DateOnly?** | Inclusive upper bound | [optional]  |
 | **limit** | **int?** | Page size (default 50) | [optional] [default to 50] |
@@ -136,7 +136,7 @@ catch (ApiException e)
 
 Get follower stats
 
-Returns follower count history and growth metrics for connected social accounts. **Requires analytics add-on subscription.**  **Data Freshness:** Follower counts are automatically refreshed once per day. 
+Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
 
 ### Example
 ```csharp
@@ -244,7 +244,7 @@ catch (ApiException e)
 
 Get LinkedIn aggregate stats
 
-Returns aggregate analytics across all posts for a LinkedIn personal account. Organization accounts should use `/v1/analytics` instead.  **Required scope:** `r_member_postAnalytics`. Missing scope returns 403 with reconnect instructions.  **Aggregation:** `TOTAL` (default, lifetime totals) or `DAILY` (time series). Use `startDate`/`endDate` to filter by date range. Note: `MEMBERS_REACHED` is not available with `DAILY` aggregation. 
+Returns aggregate analytics across all posts for a LinkedIn personal account. Org accounts should use /v1/analytics instead. Required scope: r_member_postAnalytics (missing scope returns 403). Aggregation: TOTAL (default, lifetime totals) or DAILY (time series). Use startDate/endDate to filter. MEMBERS_REACHED is not available with DAILY aggregation. 
 
 ### Example
 ```csharp
@@ -271,7 +271,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | The ID of the LinkedIn personal account
-            var aggregation = "TOTAL";  // string? | Type of aggregation for the analytics data. - `TOTAL` (default): Returns single totals for each metric - `DAILY`: Returns daily breakdown of metrics  Note: `MEMBERS_REACHED` metric is not available with `DAILY` aggregation.  (optional)  (default to TOTAL)
+            var aggregation = "TOTAL";  // string? | Type of aggregation: TOTAL (default, returns single totals) or DAILY (returns daily breakdown). Note: MEMBERS_REACHED is not available with DAILY aggregation.  (optional)  (default to TOTAL)
             var startDate = 2024-01-01;  // DateOnly? | Start date for analytics data in YYYY-MM-DD format. If provided without endDate, endDate defaults to today. If omitted entirely, returns lifetime analytics.  (optional) 
             var endDate = 2024-01-31;  // DateOnly? | End date for analytics data in YYYY-MM-DD format (exclusive). If provided without startDate, startDate defaults to 30 days before endDate.  (optional) 
             var metrics = IMPRESSION,REACTION,COMMENT;  // string? | Comma-separated list of metrics to fetch. If omitted, fetches all available metrics. Valid values: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE  (optional) 
@@ -318,7 +318,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **accountId** | **string** | The ID of the LinkedIn personal account |  |
-| **aggregation** | **string?** | Type of aggregation for the analytics data. - &#x60;TOTAL&#x60; (default): Returns single totals for each metric - &#x60;DAILY&#x60;: Returns daily breakdown of metrics  Note: &#x60;MEMBERS_REACHED&#x60; metric is not available with &#x60;DAILY&#x60; aggregation.  | [optional] [default to TOTAL] |
+| **aggregation** | **string?** | Type of aggregation: TOTAL (default, returns single totals) or DAILY (returns daily breakdown). Note: MEMBERS_REACHED is not available with DAILY aggregation.  | [optional] [default to TOTAL] |
 | **startDate** | **DateOnly?** | Start date for analytics data in YYYY-MM-DD format. If provided without endDate, endDate defaults to today. If omitted entirely, returns lifetime analytics.  | [optional]  |
 | **endDate** | **DateOnly?** | End date for analytics data in YYYY-MM-DD format (exclusive). If provided without startDate, startDate defaults to 30 days before endDate.  | [optional]  |
 | **metrics** | **string?** | Comma-separated list of metrics to fetch. If omitted, fetches all available metrics. Valid values: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE  | [optional]  |
@@ -355,7 +355,7 @@ catch (ApiException e)
 
 Get LinkedIn post stats
 
-Returns analytics for a specific LinkedIn post using its URN. Works for both personal and organization accounts.  This is useful for fetching analytics of posts that weren't published through Late, as long as you have the post URN.  **For Personal Accounts:** - Uses `memberCreatorPostAnalytics` API + `memberCreatorVideoAnalytics` for video posts - Requires `r_member_postAnalytics` scope - Available metrics: impressions, reach, likes, comments, shares, video views (video posts only) - **Clicks are NOT available** for personal accounts  **For Organization Accounts:** - Uses `organizationalEntityShareStatistics` API + `videoAnalytics` for video posts - Requires `r_organization_social` scope - Available metrics: impressions, reach, clicks, likes, comments, shares, video views (video posts only), engagement rate 
+Returns analytics for a specific LinkedIn post using its URN. Works for both personal and organization accounts. Useful for fetching analytics of posts not published through Late. Personal accounts require r_member_postAnalytics scope and return impressions, reach, likes, comments, shares, and video views (clicks not available). Organization accounts require r_organization_social scope and additionally return clicks and engagement rate. 
 
 ### Example
 ```csharp
@@ -460,7 +460,7 @@ catch (ApiException e)
 
 Get YouTube daily views
 
-Returns historical daily view counts for a specific YouTube video. Uses YouTube Analytics API v2 to fetch daily breakdowns including views, watch time, and subscriber changes.  **Required Scope:** This endpoint requires the `yt-analytics.readonly` OAuth scope. Existing YouTube accounts may need to re-authorize to grant this permission. If the scope is missing, the response will include a `reauthorizeUrl`.  **Data Latency:** YouTube Analytics data has a 2-3 day delay. The `endDate` is automatically capped to 3 days ago.  **Date Range:** Maximum 90 days of historical data available. Defaults to last 30 days. 
+Returns historical daily view counts for a specific YouTube video. Uses YouTube Analytics API v2 to fetch daily breakdowns including views, watch time, and subscriber changes.  Requires the yt-analytics.readonly OAuth scope. Existing YouTube accounts may need to re-authorize. If the scope is missing, the response includes a reauthorizeUrl. Data has a 2-3 day delay; endDate is automatically capped to 3 days ago. Maximum 90 days of historical data. Defaults to last 30 days. 
 
 ### Example
 ```csharp

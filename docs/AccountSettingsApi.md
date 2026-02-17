@@ -4,21 +4,21 @@ All URIs are relative to *https://getlate.dev/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**DeleteInstagramIceBreakers**](AccountSettingsApi.md#deleteinstagramicebreakers) | **DELETE** /v1/accounts/{accountId}/instagram-ice-breakers | Delete Instagram ice breakers |
-| [**DeleteMessengerMenu**](AccountSettingsApi.md#deletemessengermenu) | **DELETE** /v1/accounts/{accountId}/messenger-menu | Delete Facebook persistent menu |
-| [**DeleteTelegramCommands**](AccountSettingsApi.md#deletetelegramcommands) | **DELETE** /v1/accounts/{accountId}/telegram-commands | Delete Telegram bot commands |
-| [**GetInstagramIceBreakers**](AccountSettingsApi.md#getinstagramicebreakers) | **GET** /v1/accounts/{accountId}/instagram-ice-breakers | Get Instagram ice breakers |
-| [**GetMessengerMenu**](AccountSettingsApi.md#getmessengermenu) | **GET** /v1/accounts/{accountId}/messenger-menu | Get Facebook persistent menu |
-| [**GetTelegramCommands**](AccountSettingsApi.md#gettelegramcommands) | **GET** /v1/accounts/{accountId}/telegram-commands | Get Telegram bot commands |
-| [**SetInstagramIceBreakers**](AccountSettingsApi.md#setinstagramicebreakers) | **PUT** /v1/accounts/{accountId}/instagram-ice-breakers | Set Instagram ice breakers |
-| [**SetMessengerMenu**](AccountSettingsApi.md#setmessengermenu) | **PUT** /v1/accounts/{accountId}/messenger-menu | Set Facebook persistent menu |
-| [**SetTelegramCommands**](AccountSettingsApi.md#settelegramcommands) | **PUT** /v1/accounts/{accountId}/telegram-commands | Set Telegram bot commands |
+| [**DeleteInstagramIceBreakers**](AccountSettingsApi.md#deleteinstagramicebreakers) | **DELETE** /v1/accounts/{accountId}/instagram-ice-breakers | Delete IG ice breakers |
+| [**DeleteMessengerMenu**](AccountSettingsApi.md#deletemessengermenu) | **DELETE** /v1/accounts/{accountId}/messenger-menu | Delete FB persistent menu |
+| [**DeleteTelegramCommands**](AccountSettingsApi.md#deletetelegramcommands) | **DELETE** /v1/accounts/{accountId}/telegram-commands | Delete TG bot commands |
+| [**GetInstagramIceBreakers**](AccountSettingsApi.md#getinstagramicebreakers) | **GET** /v1/accounts/{accountId}/instagram-ice-breakers | Get IG ice breakers |
+| [**GetMessengerMenu**](AccountSettingsApi.md#getmessengermenu) | **GET** /v1/accounts/{accountId}/messenger-menu | Get FB persistent menu |
+| [**GetTelegramCommands**](AccountSettingsApi.md#gettelegramcommands) | **GET** /v1/accounts/{accountId}/telegram-commands | Get TG bot commands |
+| [**SetInstagramIceBreakers**](AccountSettingsApi.md#setinstagramicebreakers) | **PUT** /v1/accounts/{accountId}/instagram-ice-breakers | Set IG ice breakers |
+| [**SetMessengerMenu**](AccountSettingsApi.md#setmessengermenu) | **PUT** /v1/accounts/{accountId}/messenger-menu | Set FB persistent menu |
+| [**SetTelegramCommands**](AccountSettingsApi.md#settelegramcommands) | **PUT** /v1/accounts/{accountId}/telegram-commands | Set TG bot commands |
 
 <a id="deleteinstagramicebreakers"></a>
 # **DeleteInstagramIceBreakers**
 > void DeleteInstagramIceBreakers (string accountId)
 
-Delete Instagram ice breakers
+Delete IG ice breakers
 
 ### Example
 ```csharp
@@ -48,7 +48,7 @@ namespace Example
 
             try
             {
-                // Delete Instagram ice breakers
+                // Delete IG ice breakers
                 apiInstance.DeleteInstagramIceBreakers(accountId);
             }
             catch (ApiException  e)
@@ -68,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete Instagram ice breakers
+    // Delete IG ice breakers
     apiInstance.DeleteInstagramIceBreakersWithHttpInfo(accountId);
 }
 catch (ApiException e)
@@ -111,7 +111,7 @@ void (empty response body)
 # **DeleteMessengerMenu**
 > void DeleteMessengerMenu (string accountId)
 
-Delete Facebook persistent menu
+Delete FB persistent menu
 
 ### Example
 ```csharp
@@ -141,7 +141,7 @@ namespace Example
 
             try
             {
-                // Delete Facebook persistent menu
+                // Delete FB persistent menu
                 apiInstance.DeleteMessengerMenu(accountId);
             }
             catch (ApiException  e)
@@ -161,7 +161,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete Facebook persistent menu
+    // Delete FB persistent menu
     apiInstance.DeleteMessengerMenuWithHttpInfo(accountId);
 }
 catch (ApiException e)
@@ -204,7 +204,7 @@ void (empty response body)
 # **DeleteTelegramCommands**
 > void DeleteTelegramCommands (string accountId)
 
-Delete Telegram bot commands
+Delete TG bot commands
 
 ### Example
 ```csharp
@@ -234,7 +234,7 @@ namespace Example
 
             try
             {
-                // Delete Telegram bot commands
+                // Delete TG bot commands
                 apiInstance.DeleteTelegramCommands(accountId);
             }
             catch (ApiException  e)
@@ -254,7 +254,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete Telegram bot commands
+    // Delete TG bot commands
     apiInstance.DeleteTelegramCommandsWithHttpInfo(accountId);
 }
 catch (ApiException e)
@@ -297,7 +297,7 @@ void (empty response body)
 # **GetInstagramIceBreakers**
 > GetMessengerMenu200Response GetInstagramIceBreakers (string accountId)
 
-Get Instagram ice breakers
+Get IG ice breakers
 
 Get the ice breaker configuration for an Instagram account.
 
@@ -329,7 +329,7 @@ namespace Example
 
             try
             {
-                // Get Instagram ice breakers
+                // Get IG ice breakers
                 GetMessengerMenu200Response result = apiInstance.GetInstagramIceBreakers(accountId);
                 Debug.WriteLine(result);
             }
@@ -350,7 +350,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Instagram ice breakers
+    // Get IG ice breakers
     ApiResponse<GetMessengerMenu200Response> response = apiInstance.GetInstagramIceBreakersWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -397,7 +397,7 @@ catch (ApiException e)
 # **GetMessengerMenu**
 > GetMessengerMenu200Response GetMessengerMenu (string accountId)
 
-Get Facebook persistent menu
+Get FB persistent menu
 
 Get the persistent menu configuration for a Facebook Messenger account.
 
@@ -429,7 +429,7 @@ namespace Example
 
             try
             {
-                // Get Facebook persistent menu
+                // Get FB persistent menu
                 GetMessengerMenu200Response result = apiInstance.GetMessengerMenu(accountId);
                 Debug.WriteLine(result);
             }
@@ -450,7 +450,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Facebook persistent menu
+    // Get FB persistent menu
     ApiResponse<GetMessengerMenu200Response> response = apiInstance.GetMessengerMenuWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -497,7 +497,7 @@ catch (ApiException e)
 # **GetTelegramCommands**
 > GetTelegramCommands200Response GetTelegramCommands (string accountId)
 
-Get Telegram bot commands
+Get TG bot commands
 
 Get the bot commands configuration for a Telegram account.
 
@@ -529,7 +529,7 @@ namespace Example
 
             try
             {
-                // Get Telegram bot commands
+                // Get TG bot commands
                 GetTelegramCommands200Response result = apiInstance.GetTelegramCommands(accountId);
                 Debug.WriteLine(result);
             }
@@ -550,7 +550,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Telegram bot commands
+    // Get TG bot commands
     ApiResponse<GetTelegramCommands200Response> response = apiInstance.GetTelegramCommandsWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -597,7 +597,7 @@ catch (ApiException e)
 # **SetInstagramIceBreakers**
 > void SetInstagramIceBreakers (string accountId, SetInstagramIceBreakersRequest setInstagramIceBreakersRequest)
 
-Set Instagram ice breakers
+Set IG ice breakers
 
 Set ice breakers for an Instagram account. Max 4 ice breakers, question max 80 chars.
 
@@ -630,7 +630,7 @@ namespace Example
 
             try
             {
-                // Set Instagram ice breakers
+                // Set IG ice breakers
                 apiInstance.SetInstagramIceBreakers(accountId, setInstagramIceBreakersRequest);
             }
             catch (ApiException  e)
@@ -650,7 +650,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Set Instagram ice breakers
+    // Set IG ice breakers
     apiInstance.SetInstagramIceBreakersWithHttpInfo(accountId, setInstagramIceBreakersRequest);
 }
 catch (ApiException e)
@@ -695,7 +695,7 @@ void (empty response body)
 # **SetMessengerMenu**
 > void SetMessengerMenu (string accountId, SetMessengerMenuRequest setMessengerMenuRequest)
 
-Set Facebook persistent menu
+Set FB persistent menu
 
 Set the persistent menu for a Facebook Messenger account. Max 3 top-level items, max 5 nested items.
 
@@ -728,7 +728,7 @@ namespace Example
 
             try
             {
-                // Set Facebook persistent menu
+                // Set FB persistent menu
                 apiInstance.SetMessengerMenu(accountId, setMessengerMenuRequest);
             }
             catch (ApiException  e)
@@ -748,7 +748,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Set Facebook persistent menu
+    // Set FB persistent menu
     apiInstance.SetMessengerMenuWithHttpInfo(accountId, setMessengerMenuRequest);
 }
 catch (ApiException e)
@@ -793,7 +793,7 @@ void (empty response body)
 # **SetTelegramCommands**
 > void SetTelegramCommands (string accountId, SetTelegramCommandsRequest setTelegramCommandsRequest)
 
-Set Telegram bot commands
+Set TG bot commands
 
 Set bot commands for a Telegram account.
 
@@ -826,7 +826,7 @@ namespace Example
 
             try
             {
-                // Set Telegram bot commands
+                // Set TG bot commands
                 apiInstance.SetTelegramCommands(accountId, setTelegramCommandsRequest);
             }
             catch (ApiException  e)
@@ -846,7 +846,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Set Telegram bot commands
+    // Set TG bot commands
     apiInstance.SetTelegramCommandsWithHttpInfo(accountId, setTelegramCommandsRequest);
 }
 catch (ApiException e)

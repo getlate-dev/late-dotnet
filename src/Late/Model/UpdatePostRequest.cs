@@ -38,7 +38,7 @@ namespace Late.Model
         /// </summary>
         /// <param name="content">content.</param>
         /// <param name="scheduledFor">scheduledFor.</param>
-        /// <param name="tiktokSettings">Root-level TikTok settings applied to all TikTok platforms in the request. This is a convenience shorthand. Settings here are merged into each TikTok platform&#39;s platformSpecificData, with platform-specific settings taking precedence. .</param>
+        /// <param name="tiktokSettings">Root-level TikTok settings applied to all TikTok platforms. Merged into each platform&#39;s platformSpecificData, with platform-specific settings taking precedence..</param>
         public UpdatePostRequest(string content = default, DateTime scheduledFor = default, TikTokPlatformData tiktokSettings = default)
         {
             this.Content = content;
@@ -60,9 +60,9 @@ namespace Late.Model
         public DateTime ScheduledFor { get; set; }
 
         /// <summary>
-        /// Root-level TikTok settings applied to all TikTok platforms in the request. This is a convenience shorthand. Settings here are merged into each TikTok platform&#39;s platformSpecificData, with platform-specific settings taking precedence. 
+        /// Root-level TikTok settings applied to all TikTok platforms. Merged into each platform&#39;s platformSpecificData, with platform-specific settings taking precedence.
         /// </summary>
-        /// <value>Root-level TikTok settings applied to all TikTok platforms in the request. This is a convenience shorthand. Settings here are merged into each TikTok platform&#39;s platformSpecificData, with platform-specific settings taking precedence. </value>
+        /// <value>Root-level TikTok settings applied to all TikTok platforms. Merged into each platform&#39;s platformSpecificData, with platform-specific settings taking precedence.</value>
         [DataMember(Name = "tiktokSettings", EmitDefaultValue = false)]
         public TikTokPlatformData TiktokSettings { get; set; }
 

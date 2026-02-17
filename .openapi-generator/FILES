@@ -149,7 +149,6 @@ docs/GetLinkedInPostAnalytics200Response.md
 docs/GetLinkedInPostAnalytics200ResponseAnalytics.md
 docs/GetLinkedInPostAnalytics400Response.md
 docs/GetLinkedInPostAnalytics403Response.md
-docs/GetLog200Response.md
 docs/GetMediaPresignedUrl200Response.md
 docs/GetMediaPresignedUrlRequest.md
 docs/GetMessengerMenu200Response.md
@@ -232,10 +231,10 @@ docs/ListInboxReviews200ResponseDataInnerReviewer.md
 docs/ListInboxReviews200ResponseSummary.md
 docs/ListLinkedInOrganizations200Response.md
 docs/ListLinkedInOrganizations200ResponseOrganizationsInner.md
-docs/ListLogs200Response.md
-docs/ListLogs200ResponsePagination.md
 docs/ListPinterestBoardsForSelection200Response.md
 docs/ListPinterestBoardsForSelection200ResponseBoardsInner.md
+docs/ListPostsLogs200Response.md
+docs/ListPostsLogs200ResponsePagination.md
 docs/ListQueueSlots200Response.md
 docs/ListQueueSlots200ResponseOneOf.md
 docs/ListQueueSlots200ResponseOneOf1.md
@@ -263,9 +262,6 @@ docs/PostCreateResponse.md
 docs/PostDeleteResponse.md
 docs/PostGetResponse.md
 docs/PostLog.md
-docs/PostLogDetail.md
-docs/PostLogDetailAllOfAccountId.md
-docs/PostLogDetailAllOfPostId.md
 docs/PostLogPostId.md
 docs/PostLogPostIdOneOf.md
 docs/PostLogRequest.md
@@ -346,7 +342,6 @@ docs/TelegramPlatformData.md
 docs/TestWebhookRequest.md
 docs/ThreadsPlatformData.md
 docs/TikTokPlatformData.md
-docs/TikTokSettings.md
 docs/ToolsApi.md
 docs/TranscriptResponse.md
 docs/TranscriptSegment.md
@@ -426,6 +421,8 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/ListPostsLogs200ResponsePaginationTests.cs
+src/Late.Test/Model/ListPostsLogs200ResponseTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -605,7 +602,6 @@ src/Late/Model/GetLinkedInPostAnalytics200Response.cs
 src/Late/Model/GetLinkedInPostAnalytics200ResponseAnalytics.cs
 src/Late/Model/GetLinkedInPostAnalytics400Response.cs
 src/Late/Model/GetLinkedInPostAnalytics403Response.cs
-src/Late/Model/GetLog200Response.cs
 src/Late/Model/GetMediaPresignedUrl200Response.cs
 src/Late/Model/GetMediaPresignedUrlRequest.cs
 src/Late/Model/GetMessengerMenu200Response.cs
@@ -686,10 +682,10 @@ src/Late/Model/ListInboxReviews200ResponseDataInnerReviewer.cs
 src/Late/Model/ListInboxReviews200ResponseSummary.cs
 src/Late/Model/ListLinkedInOrganizations200Response.cs
 src/Late/Model/ListLinkedInOrganizations200ResponseOrganizationsInner.cs
-src/Late/Model/ListLogs200Response.cs
-src/Late/Model/ListLogs200ResponsePagination.cs
 src/Late/Model/ListPinterestBoardsForSelection200Response.cs
 src/Late/Model/ListPinterestBoardsForSelection200ResponseBoardsInner.cs
+src/Late/Model/ListPostsLogs200Response.cs
+src/Late/Model/ListPostsLogs200ResponsePagination.cs
 src/Late/Model/ListQueueSlots200Response.cs
 src/Late/Model/ListQueueSlots200ResponseOneOf.cs
 src/Late/Model/ListQueueSlots200ResponseOneOf1.cs
@@ -714,9 +710,6 @@ src/Late/Model/PostCreateResponse.cs
 src/Late/Model/PostDeleteResponse.cs
 src/Late/Model/PostGetResponse.cs
 src/Late/Model/PostLog.cs
-src/Late/Model/PostLogDetail.cs
-src/Late/Model/PostLogDetailAllOfAccountId.cs
-src/Late/Model/PostLogDetailAllOfPostId.cs
 src/Late/Model/PostLogPostId.cs
 src/Late/Model/PostLogPostIdOneOf.cs
 src/Late/Model/PostLogRequest.cs
@@ -792,7 +785,6 @@ src/Late/Model/TelegramPlatformData.cs
 src/Late/Model/TestWebhookRequest.cs
 src/Late/Model/ThreadsPlatformData.cs
 src/Late/Model/TikTokPlatformData.cs
-src/Late/Model/TikTokSettings.cs
 src/Late/Model/TranscriptResponse.cs
 src/Late/Model/TranscriptSegment.cs
 src/Late/Model/TwitterPlatformData.cs

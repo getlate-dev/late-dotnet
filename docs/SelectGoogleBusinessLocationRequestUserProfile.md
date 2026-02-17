@@ -1,5 +1,5 @@
 # Late.Model.SelectGoogleBusinessLocationRequestUserProfile
-Decoded user profile object from the OAuth callback. **Important:** This contains  the refresh token needed for token refresh. Always include this field. 
+Decoded user profile object from the OAuth callback. Contains the refresh token needed for token refresh. Always include this field. 
 
 ## Properties
 

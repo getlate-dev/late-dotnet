@@ -125,9 +125,9 @@ namespace Late.Model
         [DataMember(Name = "platform", EmitDefaultValue = false)]
         public PlatformEnum? Platform { get; set; }
         /// <summary>
-        /// Type of connection event: - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected successfully - &#x60;reconnect_failed&#x60; - Reconnection attempt failed 
+        /// Type of connection event: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed
         /// </summary>
-        /// <value>Type of connection event: - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected successfully - &#x60;reconnect_failed&#x60; - Reconnection attempt failed </value>
+        /// <value>Type of connection event: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum EventTypeEnum
         {
@@ -164,9 +164,9 @@ namespace Late.Model
 
 
         /// <summary>
-        /// Type of connection event: - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected successfully - &#x60;reconnect_failed&#x60; - Reconnection attempt failed 
+        /// Type of connection event: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed
         /// </summary>
-        /// <value>Type of connection event: - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected successfully - &#x60;reconnect_failed&#x60; - Reconnection attempt failed </value>
+        /// <value>Type of connection event: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed</value>
         [DataMember(Name = "eventType", EmitDefaultValue = false)]
         public EventTypeEnum? EventType { get; set; }
         /// <summary>
@@ -210,7 +210,7 @@ namespace Late.Model
         /// <param name="profileId">profileId.</param>
         /// <param name="accountId">The social account ID (present on successful connections and disconnects).</param>
         /// <param name="platform">platform.</param>
-        /// <param name="eventType">Type of connection event: - &#x60;connect_success&#x60; - New account connected successfully - &#x60;connect_failed&#x60; - Connection attempt failed - &#x60;disconnect&#x60; - Account was disconnected - &#x60;reconnect_success&#x60; - Existing account reconnected successfully - &#x60;reconnect_failed&#x60; - Reconnection attempt failed .</param>
+        /// <param name="eventType">Type of connection event: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed.</param>
         /// <param name="connectionMethod">How the connection was initiated.</param>
         /// <param name="error">error.</param>
         /// <param name="success">success.</param>

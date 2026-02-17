@@ -42,7 +42,7 @@ namespace Late.Model
         /// <param name="description">description.</param>
         /// <param name="color">color.</param>
         /// <param name="isDefault">isDefault.</param>
-        /// <param name="isOverLimit">Only present when &#x60;includeOverLimit&#x3D;true&#x60; is used. Indicates if this profile exceeds the user&#39;s plan limit. Over-limit profiles cannot be used for posting but can be managed (disconnected accounts, deleted). .</param>
+        /// <param name="isOverLimit">Only present when includeOverLimit&#x3D;true is used. Indicates if this profile exceeds the user&#39;s plan limit. Over-limit profiles cannot be used for posting but can be managed (disconnected accounts, deleted). .</param>
         /// <param name="createdAt">createdAt.</param>
         public Profile(string id = default, string userId = default, string name = default, string description = default, string color = default, bool isDefault = default, bool isOverLimit = default, DateTime createdAt = default)
         {
@@ -93,9 +93,9 @@ namespace Late.Model
         public bool IsDefault { get; set; }
 
         /// <summary>
-        /// Only present when &#x60;includeOverLimit&#x3D;true&#x60; is used. Indicates if this profile exceeds the user&#39;s plan limit. Over-limit profiles cannot be used for posting but can be managed (disconnected accounts, deleted). 
+        /// Only present when includeOverLimit&#x3D;true is used. Indicates if this profile exceeds the user&#39;s plan limit. Over-limit profiles cannot be used for posting but can be managed (disconnected accounts, deleted). 
         /// </summary>
-        /// <value>Only present when &#x60;includeOverLimit&#x3D;true&#x60; is used. Indicates if this profile exceeds the user&#39;s plan limit. Over-limit profiles cannot be used for posting but can be managed (disconnected accounts, deleted). </value>
+        /// <value>Only present when includeOverLimit&#x3D;true is used. Indicates if this profile exceeds the user&#39;s plan limit. Over-limit profiles cannot be used for posting but can be managed (disconnected accounts, deleted). </value>
         [DataMember(Name = "isOverLimit", EmitDefaultValue = true)]
         public bool IsOverLimit { get; set; }
 

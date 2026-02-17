@@ -32,7 +32,7 @@ namespace Late.Api
         /// Create webhook
         /// </summary>
         /// <remarks>
-        /// Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -43,7 +43,7 @@ namespace Late.Api
         /// Create webhook
         /// </summary>
         /// <remarks>
-        /// Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -120,7 +120,7 @@ namespace Late.Api
         /// Send test webhook
         /// </summary>
         /// <remarks>
-        /// Send a test webhook to verify your endpoint is configured correctly. The test payload includes &#x60;event: \&quot;webhook.test\&quot;&#x60; to distinguish it from real events. 
+        /// Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \&quot;webhook.test\&quot; to distinguish it from real events. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
@@ -131,7 +131,7 @@ namespace Late.Api
         /// Send test webhook
         /// </summary>
         /// <remarks>
-        /// Send a test webhook to verify your endpoint is configured correctly. The test payload includes &#x60;event: \&quot;webhook.test\&quot;&#x60; to distinguish it from real events. 
+        /// Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \&quot;webhook.test\&quot; to distinguish it from real events. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
@@ -141,7 +141,7 @@ namespace Late.Api
         /// Update webhook
         /// </summary>
         /// <remarks>
-        /// Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -152,7 +152,7 @@ namespace Late.Api
         /// Update webhook
         /// </summary>
         /// <remarks>
-        /// Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -171,7 +171,7 @@ namespace Late.Api
         /// Create webhook
         /// </summary>
         /// <remarks>
-        /// Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -183,7 +183,7 @@ namespace Late.Api
         /// Create webhook
         /// </summary>
         /// <remarks>
-        /// Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -267,7 +267,7 @@ namespace Late.Api
         /// Send test webhook
         /// </summary>
         /// <remarks>
-        /// Send a test webhook to verify your endpoint is configured correctly. The test payload includes &#x60;event: \&quot;webhook.test\&quot;&#x60; to distinguish it from real events. 
+        /// Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \&quot;webhook.test\&quot; to distinguish it from real events. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
@@ -279,7 +279,7 @@ namespace Late.Api
         /// Send test webhook
         /// </summary>
         /// <remarks>
-        /// Send a test webhook to verify your endpoint is configured correctly. The test payload includes &#x60;event: \&quot;webhook.test\&quot;&#x60; to distinguish it from real events. 
+        /// Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \&quot;webhook.test\&quot; to distinguish it from real events. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
@@ -290,7 +290,7 @@ namespace Late.Api
         /// Update webhook
         /// </summary>
         /// <remarks>
-        /// Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -302,7 +302,7 @@ namespace Late.Api
         /// Update webhook
         /// </summary>
         /// <remarks>
-        /// Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -523,7 +523,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -535,7 +535,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -585,7 +585,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -598,7 +598,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Create webhook Create a new webhook configuration. Maximum 10 webhooks per user.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWebhookSettingsRequest"></param>
@@ -1053,7 +1053,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send test webhook Send a test webhook to verify your endpoint is configured correctly. The test payload includes &#x60;event: \&quot;webhook.test\&quot;&#x60; to distinguish it from real events. 
+        /// Send test webhook Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \&quot;webhook.test\&quot; to distinguish it from real events. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
@@ -1065,7 +1065,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send test webhook Send a test webhook to verify your endpoint is configured correctly. The test payload includes &#x60;event: \&quot;webhook.test\&quot;&#x60; to distinguish it from real events. 
+        /// Send test webhook Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \&quot;webhook.test\&quot; to distinguish it from real events. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
@@ -1115,7 +1115,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send test webhook Send a test webhook to verify your endpoint is configured correctly. The test payload includes &#x60;event: \&quot;webhook.test\&quot;&#x60; to distinguish it from real events. 
+        /// Send test webhook Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \&quot;webhook.test\&quot; to distinguish it from real events. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
@@ -1128,7 +1128,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Send test webhook Send a test webhook to verify your endpoint is configured correctly. The test payload includes &#x60;event: \&quot;webhook.test\&quot;&#x60; to distinguish it from real events. 
+        /// Send test webhook Send a test webhook to verify your endpoint is configured correctly. The test payload includes event: \&quot;webhook.test\&quot; to distinguish it from real events. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testWebhookRequest"></param>
@@ -1182,7 +1182,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update webhook Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -1194,7 +1194,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update webhook Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -1244,7 +1244,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update webhook Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
@@ -1257,7 +1257,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update webhook Update an existing webhook configuration. All fields except &#x60;_id&#x60; are optional - only provided fields will be updated.  **Note:** Webhooks are automatically disabled after 10 consecutive delivery failures. 
+        /// Update webhook Update an existing webhook configuration. All fields except _id are optional; only provided fields will be updated.  Webhooks are automatically disabled after 10 consecutive delivery failures. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateWebhookSettingsRequest"></param>
