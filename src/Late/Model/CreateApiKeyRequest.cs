@@ -34,6 +34,60 @@ namespace Late.Model
     public partial class CreateApiKeyRequest : IValidatableObject
     {
         /// <summary>
+        /// &#39;full&#39; grants access to all profiles (default), &#39;profiles&#39; restricts to specific profiles
+        /// </summary>
+        /// <value>&#39;full&#39; grants access to all profiles (default), &#39;profiles&#39; restricts to specific profiles</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ScopeEnum
+        {
+            /// <summary>
+            /// Enum Full for value: full
+            /// </summary>
+            [EnumMember(Value = "full")]
+            Full = 1,
+
+            /// <summary>
+            /// Enum Profiles for value: profiles
+            /// </summary>
+            [EnumMember(Value = "profiles")]
+            Profiles = 2
+        }
+
+
+        /// <summary>
+        /// &#39;full&#39; grants access to all profiles (default), &#39;profiles&#39; restricts to specific profiles
+        /// </summary>
+        /// <value>&#39;full&#39; grants access to all profiles (default), &#39;profiles&#39; restricts to specific profiles</value>
+        [DataMember(Name = "scope", EmitDefaultValue = false)]
+        public ScopeEnum? Scope { get; set; }
+        /// <summary>
+        /// &#39;read-write&#39; allows all operations (default), &#39;read&#39; restricts to GET requests only
+        /// </summary>
+        /// <value>&#39;read-write&#39; allows all operations (default), &#39;read&#39; restricts to GET requests only</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PermissionEnum
+        {
+            /// <summary>
+            /// Enum ReadWrite for value: read-write
+            /// </summary>
+            [EnumMember(Value = "read-write")]
+            ReadWrite = 1,
+
+            /// <summary>
+            /// Enum Read for value: read
+            /// </summary>
+            [EnumMember(Value = "read")]
+            Read = 2
+        }
+
+
+        /// <summary>
+        /// &#39;read-write&#39; allows all operations (default), &#39;read&#39; restricts to GET requests only
+        /// </summary>
+        /// <value>&#39;read-write&#39; allows all operations (default), &#39;read&#39; restricts to GET requests only</value>
+        [DataMember(Name = "permission", EmitDefaultValue = false)]
+        public PermissionEnum? Permission { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateApiKeyRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -43,7 +97,10 @@ namespace Late.Model
         /// </summary>
         /// <param name="name">name (required).</param>
         /// <param name="expiresIn">Days until expiry.</param>
-        public CreateApiKeyRequest(string name = default, int expiresIn = default)
+        /// <param name="scope">&#39;full&#39; grants access to all profiles (default), &#39;profiles&#39; restricts to specific profiles (default to ScopeEnum.Full).</param>
+        /// <param name="profileIds">Profile IDs this key can access. Required when scope is &#39;profiles&#39;..</param>
+        /// <param name="permission">&#39;read-write&#39; allows all operations (default), &#39;read&#39; restricts to GET requests only (default to PermissionEnum.ReadWrite).</param>
+        public CreateApiKeyRequest(string name = default, int expiresIn = default, ScopeEnum? scope = ScopeEnum.Full, List<string> profileIds = default, PermissionEnum? permission = PermissionEnum.ReadWrite)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -52,6 +109,9 @@ namespace Late.Model
             }
             this.Name = name;
             this.ExpiresIn = expiresIn;
+            this.Scope = scope;
+            this.ProfileIds = profileIds;
+            this.Permission = permission;
         }
 
         /// <summary>
@@ -68,6 +128,13 @@ namespace Late.Model
         public int ExpiresIn { get; set; }
 
         /// <summary>
+        /// Profile IDs this key can access. Required when scope is &#39;profiles&#39;.
+        /// </summary>
+        /// <value>Profile IDs this key can access. Required when scope is &#39;profiles&#39;.</value>
+        [DataMember(Name = "profileIds", EmitDefaultValue = false)]
+        public List<string> ProfileIds { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -77,6 +144,9 @@ namespace Late.Model
             sb.Append("class CreateApiKeyRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ExpiresIn: ").Append(ExpiresIn).Append("\n");
+            sb.Append("  Scope: ").Append(Scope).Append("\n");
+            sb.Append("  ProfileIds: ").Append(ProfileIds).Append("\n");
+            sb.Append("  Permission: ").Append(Permission).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

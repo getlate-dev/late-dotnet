@@ -289,6 +289,7 @@ Class | Method | HTTP request | Description
  - [Model.AnalyticsOverview](docs/AnalyticsOverview.md)
  - [Model.AnalyticsSinglePostResponse](docs/AnalyticsSinglePostResponse.md)
  - [Model.ApiKey](docs/ApiKey.md)
+ - [Model.ApiKeyProfileIdsInner](docs/ApiKeyProfileIdsInner.md)
  - [Model.BlueskyPlatformData](docs/BlueskyPlatformData.md)
  - [Model.BulkUploadPosts200Response](docs/BulkUploadPosts200Response.md)
  - [Model.BulkUploadPosts200ResponseErrorsInner](docs/BulkUploadPosts200ResponseErrorsInner.md)

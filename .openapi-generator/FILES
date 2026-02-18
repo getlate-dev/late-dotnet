@@ -16,6 +16,7 @@ docs/AnalyticsListResponsePostsInner.md
 docs/AnalyticsOverview.md
 docs/AnalyticsSinglePostResponse.md
 docs/ApiKey.md
+docs/ApiKeyProfileIdsInner.md
 docs/BlueskyPlatformData.md
 docs/BulkUploadPosts200Response.md
 docs/BulkUploadPosts200ResponseErrorsInner.md
@@ -421,6 +422,7 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/ApiKeyProfileIdsInnerTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -475,6 +477,7 @@ src/Late/Model/AnalyticsListResponsePostsInner.cs
 src/Late/Model/AnalyticsOverview.cs
 src/Late/Model/AnalyticsSinglePostResponse.cs
 src/Late/Model/ApiKey.cs
+src/Late/Model/ApiKeyProfileIdsInner.cs
 src/Late/Model/BlueskyPlatformData.cs
 src/Late/Model/BulkUploadPosts200Response.cs
 src/Late/Model/BulkUploadPosts200ResponseErrorsInner.cs
