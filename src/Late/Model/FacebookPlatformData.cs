@@ -28,15 +28,15 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Up to 10 images for feed posts, cannot mix videos and images. Stories require single image or video (ephemeral 24h, no captions). Use pageId for multi-page posting.
+    /// Feed posts support up to 10 images (no mixed video+image). Stories require single media (24h, no captions). Reels require single vertical video (9:16, 3-60s).
     /// </summary>
     [DataContract(Name = "FacebookPlatformData")]
     public partial class FacebookPlatformData : IValidatableObject
     {
         /// <summary>
-        /// Set to &#39;story&#39; to publish as a Facebook Page Story (24-hour ephemeral content). Requires media.
+        /// Set to &#39;story&#39; for Page Stories (24h ephemeral) or &#39;reel&#39; for Reels (short vertical video). Defaults to feed post if omitted.
         /// </summary>
-        /// <value>Set to &#39;story&#39; to publish as a Facebook Page Story (24-hour ephemeral content). Requires media.</value>
+        /// <value>Set to &#39;story&#39; for Page Stories (24h ephemeral) or &#39;reel&#39; for Reels (short vertical video). Defaults to feed post if omitted.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum ContentTypeEnum
         {
@@ -44,33 +44,48 @@ namespace Late.Model
             /// Enum Story for value: story
             /// </summary>
             [EnumMember(Value = "story")]
-            Story = 1
+            Story = 1,
+
+            /// <summary>
+            /// Enum Reel for value: reel
+            /// </summary>
+            [EnumMember(Value = "reel")]
+            Reel = 2
         }
 
 
         /// <summary>
-        /// Set to &#39;story&#39; to publish as a Facebook Page Story (24-hour ephemeral content). Requires media.
+        /// Set to &#39;story&#39; for Page Stories (24h ephemeral) or &#39;reel&#39; for Reels (short vertical video). Defaults to feed post if omitted.
         /// </summary>
-        /// <value>Set to &#39;story&#39; to publish as a Facebook Page Story (24-hour ephemeral content). Requires media.</value>
+        /// <value>Set to &#39;story&#39; for Page Stories (24h ephemeral) or &#39;reel&#39; for Reels (short vertical video). Defaults to feed post if omitted.</value>
         [DataMember(Name = "contentType", EmitDefaultValue = false)]
         public ContentTypeEnum? ContentType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="FacebookPlatformData" /> class.
         /// </summary>
-        /// <param name="contentType">Set to &#39;story&#39; to publish as a Facebook Page Story (24-hour ephemeral content). Requires media..</param>
-        /// <param name="firstComment">Optional first comment to post immediately after publishing (feed posts only, not stories).</param>
+        /// <param name="contentType">Set to &#39;story&#39; for Page Stories (24h ephemeral) or &#39;reel&#39; for Reels (short vertical video). Defaults to feed post if omitted..</param>
+        /// <param name="title">Reel title (only for contentType&#x3D;reel). Separate from the caption/content field..</param>
+        /// <param name="firstComment">Optional first comment to post immediately after publishing (feed posts only, not stories or reels).</param>
         /// <param name="pageId">Target Facebook Page ID for multi-page posting. If omitted, uses the default page. Use GET /v1/accounts/{id}/facebook-page to list pages..</param>
-        public FacebookPlatformData(ContentTypeEnum? contentType = default, string firstComment = default, string pageId = default)
+        public FacebookPlatformData(ContentTypeEnum? contentType = default, string title = default, string firstComment = default, string pageId = default)
         {
             this.ContentType = contentType;
+            this.Title = title;
             this.FirstComment = firstComment;
             this.PageId = pageId;
         }
 
         /// <summary>
-        /// Optional first comment to post immediately after publishing (feed posts only, not stories)
+        /// Reel title (only for contentType&#x3D;reel). Separate from the caption/content field.
         /// </summary>
-        /// <value>Optional first comment to post immediately after publishing (feed posts only, not stories)</value>
+        /// <value>Reel title (only for contentType&#x3D;reel). Separate from the caption/content field.</value>
+        [DataMember(Name = "title", EmitDefaultValue = false)]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// Optional first comment to post immediately after publishing (feed posts only, not stories or reels)
+        /// </summary>
+        /// <value>Optional first comment to post immediately after publishing (feed posts only, not stories or reels)</value>
         [DataMember(Name = "firstComment", EmitDefaultValue = false)]
         public string FirstComment { get; set; }
 
@@ -90,6 +105,7 @@ namespace Late.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class FacebookPlatformData {\n");
             sb.Append("  ContentType: ").Append(ContentType).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  FirstComment: ").Append(FirstComment).Append("\n");
             sb.Append("  PageId: ").Append(PageId).Append("\n");
             sb.Append("}\n");

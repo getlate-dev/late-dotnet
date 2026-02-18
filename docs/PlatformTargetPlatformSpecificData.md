@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ThreadItems** | [**List&lt;TwitterPlatformDataThreadItemsInner&gt;**](TwitterPlatformDataThreadItemsInner.md) | Sequence of posts in a Bluesky thread (root then replies in order). | [optional] 
 **ContentType** | **string** | Content type: story (ephemeral 24h, default), saved_story (permanent on Public Profile), spotlight (video feed) | [optional] [default to ContentTypeEnum.Story]
+**Title** | **string** | Post title. Defaults to the first line of content, truncated to 300 characters. | [optional] 
 **FirstComment** | **string** | Optional first comment to post immediately after video upload. Up to 10,000 characters (YouTube&#39;s comment limit). | [optional] 
 **PageId** | **string** | Target Facebook Page ID for multi-page posting. If omitted, uses the default page. Use GET /v1/accounts/{id}/facebook-page to list pages. | [optional] 
 **ShareToFeed** | **bool** | For Reels only. When true (default), the Reel appears on both the Reels tab and your main profile feed. Set to false to post to the Reels tab only. | [optional] [default to true]
@@ -17,7 +18,6 @@ Name | Type | Description | Notes
 **ThumbOffset** | **int** | Millisecond offset from video start for the Reel thumbnail. Ignored if a custom thumbnail URL is provided. Defaults to 0. | [optional] 
 **OrganizationUrn** | **string** | Target LinkedIn Organization URN (e.g. \&quot;urn:li:organization:123456789\&quot;). If omitted, uses the default org. Use GET /v1/accounts/{id}/linkedin-organizations to list orgs. | [optional] 
 **DisableLinkPreview** | **bool** | Set to true to disable automatic link previews for URLs in the post content (default is false) | [optional] 
-**Title** | **string** | Post title. Defaults to the first line of content, truncated to 300 characters. | [optional] 
 **BoardId** | **string** | Target Pinterest board ID. If omitted, the first available board is used. | [optional] 
 **Link** | **string** | Destination link (pin URL) | [optional] 
 **CoverImageUrl** | **string** | Optional cover image for video pins | [optional] 
