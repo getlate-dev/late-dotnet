@@ -36,15 +36,24 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkedInPlatformData" /> class.
         /// </summary>
+        /// <param name="documentTitle">Title displayed on LinkedIn document (PDF/carousel) posts. Required by LinkedIn for document posts. If omitted, falls back to the media item title, then the filename..</param>
         /// <param name="organizationUrn">Target LinkedIn Organization URN (e.g. \&quot;urn:li:organization:123456789\&quot;). If omitted, uses the default org. Use GET /v1/accounts/{id}/linkedin-organizations to list orgs..</param>
         /// <param name="firstComment">Optional first comment to add after the post is created.</param>
         /// <param name="disableLinkPreview">Set to true to disable automatic link previews for URLs in the post content (default is false).</param>
-        public LinkedInPlatformData(string organizationUrn = default, string firstComment = default, bool disableLinkPreview = default)
+        public LinkedInPlatformData(string documentTitle = default, string organizationUrn = default, string firstComment = default, bool disableLinkPreview = default)
         {
+            this.DocumentTitle = documentTitle;
             this.OrganizationUrn = organizationUrn;
             this.FirstComment = firstComment;
             this.DisableLinkPreview = disableLinkPreview;
         }
+
+        /// <summary>
+        /// Title displayed on LinkedIn document (PDF/carousel) posts. Required by LinkedIn for document posts. If omitted, falls back to the media item title, then the filename.
+        /// </summary>
+        /// <value>Title displayed on LinkedIn document (PDF/carousel) posts. Required by LinkedIn for document posts. If omitted, falls back to the media item title, then the filename.</value>
+        [DataMember(Name = "documentTitle", EmitDefaultValue = false)]
+        public string DocumentTitle { get; set; }
 
         /// <summary>
         /// Target LinkedIn Organization URN (e.g. \&quot;urn:li:organization:123456789\&quot;). If omitted, uses the default org. Use GET /v1/accounts/{id}/linkedin-organizations to list orgs.
@@ -75,6 +84,7 @@ namespace Late.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class LinkedInPlatformData {\n");
+            sb.Append("  DocumentTitle: ").Append(DocumentTitle).Append("\n");
             sb.Append("  OrganizationUrn: ").Append(OrganizationUrn).Append("\n");
             sb.Append("  FirstComment: ").Append(FirstComment).Append("\n");
             sb.Append("  DisableLinkPreview: ").Append(DisableLinkPreview).Append("\n");

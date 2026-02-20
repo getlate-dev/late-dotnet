@@ -75,16 +75,18 @@ namespace Late.Model
         /// </summary>
         /// <param name="type">type.</param>
         /// <param name="url">url.</param>
+        /// <param name="title">Optional title for the media item. Used as the document title for LinkedIn PDF/carousel posts. If omitted, falls back to the post title, then the filename..</param>
         /// <param name="filename">filename.</param>
         /// <param name="size">Optional file size in bytes.</param>
         /// <param name="mimeType">Optional MIME type (e.g. image/jpeg, video/mp4).</param>
         /// <param name="thumbnail">Optional thumbnail image URL for videos.</param>
         /// <param name="instagramThumbnail">Optional custom cover image URL for Instagram Reels.</param>
         /// <param name="tiktokProcessed">Internal flag indicating the image was resized for TikTok.</param>
-        public MediaItem(TypeEnum? type = default, string url = default, string filename = default, int size = default, string mimeType = default, string thumbnail = default, string instagramThumbnail = default, bool tiktokProcessed = default)
+        public MediaItem(TypeEnum? type = default, string url = default, string title = default, string filename = default, int size = default, string mimeType = default, string thumbnail = default, string instagramThumbnail = default, bool tiktokProcessed = default)
         {
             this.Type = type;
             this.Url = url;
+            this.Title = title;
             this.Filename = filename;
             this.Size = size;
             this.MimeType = mimeType;
@@ -98,6 +100,13 @@ namespace Late.Model
         /// </summary>
         [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
+
+        /// <summary>
+        /// Optional title for the media item. Used as the document title for LinkedIn PDF/carousel posts. If omitted, falls back to the post title, then the filename.
+        /// </summary>
+        /// <value>Optional title for the media item. Used as the document title for LinkedIn PDF/carousel posts. If omitted, falls back to the post title, then the filename.</value>
+        [DataMember(Name = "title", EmitDefaultValue = false)]
+        public string Title { get; set; }
 
         /// <summary>
         /// Gets or Sets Filename
@@ -150,6 +159,7 @@ namespace Late.Model
             sb.Append("class MediaItem {\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Url: ").Append(Url).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Filename: ").Append(Filename).Append("\n");
             sb.Append("  Size: ").Append(Size).Append("\n");
             sb.Append("  MimeType: ").Append(MimeType).Append("\n");
