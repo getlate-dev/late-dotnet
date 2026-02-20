@@ -32,7 +32,7 @@ namespace Late.Api
         /// Delete comment
         /// </summary>
         /// <remarks>
-        /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, and LinkedIn. Requires accountId and commentId query parameters. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
@@ -45,7 +45,7 @@ namespace Late.Api
         /// Delete comment
         /// </summary>
         /// <remarks>
-        /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, and LinkedIn. Requires accountId and commentId query parameters. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
@@ -284,7 +284,7 @@ namespace Late.Api
         /// Delete comment
         /// </summary>
         /// <remarks>
-        /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, and LinkedIn. Requires accountId and commentId query parameters. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
@@ -298,7 +298,7 @@ namespace Late.Api
         /// Delete comment
         /// </summary>
         /// <remarks>
-        /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, and LinkedIn. Requires accountId and commentId query parameters. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
@@ -755,7 +755,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, and LinkedIn. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
@@ -769,7 +769,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, and LinkedIn. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
@@ -830,7 +830,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, and LinkedIn. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
@@ -845,7 +845,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, LinkedIn, and TikTok. Requires accountId and commentId query parameters. 
+        /// Delete comment Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, YouTube, and LinkedIn. Requires accountId and commentId query parameters. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="postId">Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.</param>
