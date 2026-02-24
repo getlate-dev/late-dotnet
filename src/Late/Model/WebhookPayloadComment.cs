@@ -28,10 +28,10 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Webhook payload for message received events (DMs from Instagram, Facebook, Telegram, Bluesky, Reddit)
+    /// Webhook payload for comment received events (Instagram, Facebook, Twitter/X, YouTube, LinkedIn, Bluesky, Reddit)
     /// </summary>
-    [DataContract(Name = "WebhookPayloadMessage")]
-    public partial class WebhookPayloadMessage : IValidatableObject
+    [DataContract(Name = "WebhookPayloadComment")]
+    public partial class WebhookPayloadComment : IValidatableObject
     {
         /// <summary>
         /// Defines Event
@@ -40,10 +40,10 @@ namespace Late.Model
         public enum EventEnum
         {
             /// <summary>
-            /// Enum MessageReceived for value: message.received
+            /// Enum CommentReceived for value: comment.received
             /// </summary>
-            [EnumMember(Value = "message.received")]
-            MessageReceived = 1
+            [EnumMember(Value = "comment.received")]
+            CommentReceived = 1
         }
 
 
@@ -53,47 +53,39 @@ namespace Late.Model
         [DataMember(Name = "event", EmitDefaultValue = false)]
         public EventEnum? Event { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebhookPayloadMessage" /> class.
+        /// Initializes a new instance of the <see cref="WebhookPayloadComment" /> class.
         /// </summary>
         /// <param name="varEvent">varEvent.</param>
-        /// <param name="message">message.</param>
-        /// <param name="conversation">conversation.</param>
+        /// <param name="comment">comment.</param>
+        /// <param name="post">post.</param>
         /// <param name="account">account.</param>
-        /// <param name="metadata">metadata.</param>
         /// <param name="timestamp">timestamp.</param>
-        public WebhookPayloadMessage(EventEnum? varEvent = default, WebhookPayloadMessageMessage message = default, WebhookPayloadMessageConversation conversation = default, WebhookPayloadMessageAccount account = default, WebhookPayloadMessageMetadata metadata = default, DateTime timestamp = default)
+        public WebhookPayloadComment(EventEnum? varEvent = default, WebhookPayloadCommentComment comment = default, WebhookPayloadCommentPost post = default, WebhookPayloadCommentAccount account = default, DateTime timestamp = default)
         {
             this.Event = varEvent;
-            this.Message = message;
-            this.Conversation = conversation;
+            this.Comment = comment;
+            this.Post = post;
             this.Account = account;
-            this.Metadata = metadata;
             this.Timestamp = timestamp;
         }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or Sets Comment
         /// </summary>
-        [DataMember(Name = "message", EmitDefaultValue = false)]
-        public WebhookPayloadMessageMessage Message { get; set; }
+        [DataMember(Name = "comment", EmitDefaultValue = false)]
+        public WebhookPayloadCommentComment Comment { get; set; }
 
         /// <summary>
-        /// Gets or Sets Conversation
+        /// Gets or Sets Post
         /// </summary>
-        [DataMember(Name = "conversation", EmitDefaultValue = false)]
-        public WebhookPayloadMessageConversation Conversation { get; set; }
+        [DataMember(Name = "post", EmitDefaultValue = false)]
+        public WebhookPayloadCommentPost Post { get; set; }
 
         /// <summary>
         /// Gets or Sets Account
         /// </summary>
         [DataMember(Name = "account", EmitDefaultValue = false)]
-        public WebhookPayloadMessageAccount Account { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Metadata
-        /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
-        public WebhookPayloadMessageMetadata Metadata { get; set; }
+        public WebhookPayloadCommentAccount Account { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
@@ -108,12 +100,11 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WebhookPayloadMessage {\n");
+            sb.Append("class WebhookPayloadComment {\n");
             sb.Append("  Event: ").Append(Event).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Conversation: ").Append(Conversation).Append("\n");
+            sb.Append("  Comment: ").Append(Comment).Append("\n");
+            sb.Append("  Post: ").Append(Post).Append("\n");
             sb.Append("  Account: ").Append(Account).Append("\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

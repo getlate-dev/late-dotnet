@@ -1,5 +1,5 @@
 # Late.Model.WebhookPayloadMessage
-Webhook payload for message received events (DMs from Instagram, Telegram)
+Webhook payload for message received events (DMs from Instagram, Facebook, Telegram, Bluesky, Reddit)
 
 ## Properties
 

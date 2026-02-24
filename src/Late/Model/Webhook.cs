@@ -79,7 +79,13 @@ namespace Late.Model
             /// Enum MessageReceived for value: message.received
             /// </summary>
             [EnumMember(Value = "message.received")]
-            MessageReceived = 7
+            MessageReceived = 7,
+
+            /// <summary>
+            /// Enum CommentReceived for value: comment.received
+            /// </summary>
+            [EnumMember(Value = "comment.received")]
+            CommentReceived = 8
         }
 
         /// <summary>

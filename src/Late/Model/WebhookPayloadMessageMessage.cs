@@ -55,7 +55,19 @@ namespace Late.Model
             /// Enum Telegram for value: telegram
             /// </summary>
             [EnumMember(Value = "telegram")]
-            Telegram = 3
+            Telegram = 3,
+
+            /// <summary>
+            /// Enum Bluesky for value: bluesky
+            /// </summary>
+            [EnumMember(Value = "bluesky")]
+            Bluesky = 4,
+
+            /// <summary>
+            /// Enum Reddit for value: reddit
+            /// </summary>
+            [EnumMember(Value = "reddit")]
+            Reddit = 5
         }
 
 

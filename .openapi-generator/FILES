@@ -401,6 +401,11 @@ docs/WebhookPayloadAccountConnected.md
 docs/WebhookPayloadAccountConnectedAccount.md
 docs/WebhookPayloadAccountDisconnected.md
 docs/WebhookPayloadAccountDisconnectedAccount.md
+docs/WebhookPayloadComment.md
+docs/WebhookPayloadCommentAccount.md
+docs/WebhookPayloadCommentComment.md
+docs/WebhookPayloadCommentCommentAuthor.md
+docs/WebhookPayloadCommentPost.md
 docs/WebhookPayloadMessage.md
 docs/WebhookPayloadMessageAccount.md
 docs/WebhookPayloadMessageConversation.md
@@ -422,6 +427,11 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/WebhookPayloadCommentAccountTests.cs
+src/Late.Test/Model/WebhookPayloadCommentCommentAuthorTests.cs
+src/Late.Test/Model/WebhookPayloadCommentCommentTests.cs
+src/Late.Test/Model/WebhookPayloadCommentPostTests.cs
+src/Late.Test/Model/WebhookPayloadCommentTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -840,6 +850,11 @@ src/Late/Model/WebhookPayloadAccountConnected.cs
 src/Late/Model/WebhookPayloadAccountConnectedAccount.cs
 src/Late/Model/WebhookPayloadAccountDisconnected.cs
 src/Late/Model/WebhookPayloadAccountDisconnectedAccount.cs
+src/Late/Model/WebhookPayloadComment.cs
+src/Late/Model/WebhookPayloadCommentAccount.cs
+src/Late/Model/WebhookPayloadCommentComment.cs
+src/Late/Model/WebhookPayloadCommentCommentAuthor.cs
+src/Late/Model/WebhookPayloadCommentPost.cs
 src/Late/Model/WebhookPayloadMessage.cs
 src/Late/Model/WebhookPayloadMessageAccount.cs
 src/Late/Model/WebhookPayloadMessageConversation.cs
