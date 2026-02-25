@@ -5,6 +5,7 @@ Platform-specific overrides and options.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ReplySettings** | **string** | Controls who can reply to the tweet. \&quot;following\&quot; allows only people you follow, \&quot;mentionedUsers\&quot; allows only mentioned users, \&quot;subscribers\&quot; allows only subscribers. Omit for default (everyone can reply). For threads, applies to the first tweet only. | [optional] 
 **ThreadItems** | [**List&lt;TwitterPlatformDataThreadItemsInner&gt;**](TwitterPlatformDataThreadItemsInner.md) | Sequence of posts in a Bluesky thread (root then replies in order). | [optional] 
 **ContentType** | **string** | Content type: story (ephemeral 24h, default), saved_story (permanent on Public Profile), spotlight (video feed) | [optional] [default to ContentTypeEnum.Story]
 **Title** | **string** | Post title. Defaults to the first line of content, truncated to 300 characters. | [optional] 

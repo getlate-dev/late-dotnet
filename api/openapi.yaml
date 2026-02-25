@@ -8946,6 +8946,7 @@ components:
     PlatformTarget:
       example:
         platformSpecificData:
+          replySettings: following
           threadItems:
           - mediaItems:
             - thumbnail: https://openapi-generator.tech
@@ -9105,6 +9106,7 @@ components:
         content: content
         platforms:
         - platformSpecificData:
+            replySettings: following
             threadItems:
             - mediaItems:
               - thumbnail: https://openapi-generator.tech
@@ -9177,6 +9179,7 @@ components:
           status: pending
           platformPostId: "1234567890123456789"
         - platformSpecificData:
+            replySettings: following
             threadItems:
             - mediaItems:
               - thumbnail: https://openapi-generator.tech
@@ -9349,6 +9352,7 @@ components:
           type: string
     TwitterPlatformData:
       example:
+        replySettings: following
         threadItems:
         - mediaItems:
           - thumbnail: https://openapi-generator.tech
@@ -9391,6 +9395,16 @@ components:
             url: https://openapi-generator.tech
           content: content
       properties:
+        replySettings:
+          description: "Controls who can reply to the tweet. \"following\" allows\
+            \ only people you follow, \"mentionedUsers\" allows only mentioned users,\
+            \ \"subscribers\" allows only subscribers. Omit for default (everyone\
+            \ can reply). For threads, applies to the first tweet only."
+          enum:
+          - following
+          - mentionedUsers
+          - subscribers
+          type: string
         threadItems:
           description: Sequence of tweets in a thread. First item is the root tweet.
           items:
@@ -10271,6 +10285,7 @@ components:
           content: content
           platforms:
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -10343,6 +10358,7 @@ components:
             status: pending
             platformPostId: "1234567890123456789"
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -10458,6 +10474,7 @@ components:
           content: content
           platforms:
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -10530,6 +10547,7 @@ components:
             status: pending
             platformPostId: "1234567890123456789"
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -10655,6 +10673,7 @@ components:
           content: content
           platforms:
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -10727,6 +10746,7 @@ components:
             status: pending
             platformPostId: "1234567890123456789"
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -10848,6 +10868,7 @@ components:
           content: content
           platforms:
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -10920,6 +10941,7 @@ components:
             status: pending
             platformPostId: "1234567890123456789"
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -11044,6 +11066,7 @@ components:
           content: content
           platforms:
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -11116,6 +11139,7 @@ components:
             status: pending
             platformPostId: "1234567890123456789"
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -11246,6 +11270,7 @@ components:
           content: content
           platforms:
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -11318,6 +11343,7 @@ components:
             status: pending
             platformPostId: "1234567890123456789"
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -12418,6 +12444,7 @@ components:
           content: content
           platforms:
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -12490,6 +12517,7 @@ components:
             status: pending
             platformPostId: "1234567890123456789"
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -12605,6 +12633,7 @@ components:
           content: content
           platforms:
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech
@@ -12677,6 +12706,7 @@ components:
             status: pending
             platformPostId: "1234567890123456789"
           - platformSpecificData:
+              replySettings: following
               threadItems:
               - mediaItems:
                 - thumbnail: https://openapi-generator.tech

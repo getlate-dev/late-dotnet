@@ -34,11 +34,46 @@ namespace Late.Model
     public partial class TwitterPlatformData : IValidatableObject
     {
         /// <summary>
+        /// Controls who can reply to the tweet. \&quot;following\&quot; allows only people you follow, \&quot;mentionedUsers\&quot; allows only mentioned users, \&quot;subscribers\&quot; allows only subscribers. Omit for default (everyone can reply). For threads, applies to the first tweet only.
+        /// </summary>
+        /// <value>Controls who can reply to the tweet. \&quot;following\&quot; allows only people you follow, \&quot;mentionedUsers\&quot; allows only mentioned users, \&quot;subscribers\&quot; allows only subscribers. Omit for default (everyone can reply). For threads, applies to the first tweet only.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ReplySettingsEnum
+        {
+            /// <summary>
+            /// Enum Following for value: following
+            /// </summary>
+            [EnumMember(Value = "following")]
+            Following = 1,
+
+            /// <summary>
+            /// Enum MentionedUsers for value: mentionedUsers
+            /// </summary>
+            [EnumMember(Value = "mentionedUsers")]
+            MentionedUsers = 2,
+
+            /// <summary>
+            /// Enum Subscribers for value: subscribers
+            /// </summary>
+            [EnumMember(Value = "subscribers")]
+            Subscribers = 3
+        }
+
+
+        /// <summary>
+        /// Controls who can reply to the tweet. \&quot;following\&quot; allows only people you follow, \&quot;mentionedUsers\&quot; allows only mentioned users, \&quot;subscribers\&quot; allows only subscribers. Omit for default (everyone can reply). For threads, applies to the first tweet only.
+        /// </summary>
+        /// <value>Controls who can reply to the tweet. \&quot;following\&quot; allows only people you follow, \&quot;mentionedUsers\&quot; allows only mentioned users, \&quot;subscribers\&quot; allows only subscribers. Omit for default (everyone can reply). For threads, applies to the first tweet only.</value>
+        [DataMember(Name = "replySettings", EmitDefaultValue = false)]
+        public ReplySettingsEnum? ReplySettings { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="TwitterPlatformData" /> class.
         /// </summary>
+        /// <param name="replySettings">Controls who can reply to the tweet. \&quot;following\&quot; allows only people you follow, \&quot;mentionedUsers\&quot; allows only mentioned users, \&quot;subscribers\&quot; allows only subscribers. Omit for default (everyone can reply). For threads, applies to the first tweet only..</param>
         /// <param name="threadItems">Sequence of tweets in a thread. First item is the root tweet..</param>
-        public TwitterPlatformData(List<TwitterPlatformDataThreadItemsInner> threadItems = default)
+        public TwitterPlatformData(ReplySettingsEnum? replySettings = default, List<TwitterPlatformDataThreadItemsInner> threadItems = default)
         {
+            this.ReplySettings = replySettings;
             this.ThreadItems = threadItems;
         }
 
@@ -57,6 +92,7 @@ namespace Late.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class TwitterPlatformData {\n");
+            sb.Append("  ReplySettings: ").Append(ReplySettings).Append("\n");
             sb.Append("  ThreadItems: ").Append(ThreadItems).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
