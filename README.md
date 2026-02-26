@@ -168,9 +168,13 @@ Class | Method | HTTP request | Description
 *AccountsApi* | [**ListAccounts**](docs/AccountsApi.md#listaccounts) | **GET** /v1/accounts | List accounts
 *AccountsApi* | [**UpdateAccount**](docs/AccountsApi.md#updateaccount) | **PUT** /v1/accounts/{accountId} | Update account
 *AnalyticsApi* | [**GetAnalytics**](docs/AnalyticsApi.md#getanalytics) | **GET** /v1/analytics | Get post analytics
+*AnalyticsApi* | [**GetBestTimeToPost**](docs/AnalyticsApi.md#getbesttimetopost) | **GET** /v1/analytics/best-time | Get best times to post
+*AnalyticsApi* | [**GetContentDecay**](docs/AnalyticsApi.md#getcontentdecay) | **GET** /v1/analytics/content-decay | Get content performance decay
+*AnalyticsApi* | [**GetDailyMetrics**](docs/AnalyticsApi.md#getdailymetrics) | **GET** /v1/analytics/daily-metrics | Get daily aggregated metrics
 *AnalyticsApi* | [**GetFollowerStats**](docs/AnalyticsApi.md#getfollowerstats) | **GET** /v1/accounts/follower-stats | Get follower stats
 *AnalyticsApi* | [**GetLinkedInAggregateAnalytics**](docs/AnalyticsApi.md#getlinkedinaggregateanalytics) | **GET** /v1/accounts/{accountId}/linkedin-aggregate-analytics | Get LinkedIn aggregate stats
 *AnalyticsApi* | [**GetLinkedInPostAnalytics**](docs/AnalyticsApi.md#getlinkedinpostanalytics) | **GET** /v1/accounts/{accountId}/linkedin-post-analytics | Get LinkedIn post stats
+*AnalyticsApi* | [**GetPostingFrequency**](docs/AnalyticsApi.md#getpostingfrequency) | **GET** /v1/analytics/posting-frequency | Get posting frequency vs engagement
 *AnalyticsApi* | [**GetYouTubeDailyViews**](docs/AnalyticsApi.md#getyoutubedailyviews) | **GET** /v1/analytics/youtube/daily-views | Get YouTube daily views
 *CommentsApi* | [**DeleteInboxComment**](docs/CommentsApi.md#deleteinboxcomment) | **DELETE** /v1/inbox/comments/{postId} | Delete comment
 *CommentsApi* | [**GetInboxPostComments**](docs/CommentsApi.md#getinboxpostcomments) | **GET** /v1/inbox/comments/{postId} | Get post comments
@@ -369,7 +373,16 @@ Class | Method | HTTP request | Description
  - [Model.GetAllAccountsHealth200ResponseSummary](docs/GetAllAccountsHealth200ResponseSummary.md)
  - [Model.GetAnalytics200Response](docs/GetAnalytics200Response.md)
  - [Model.GetAnalytics402Response](docs/GetAnalytics402Response.md)
+ - [Model.GetBestTimeToPost200Response](docs/GetBestTimeToPost200Response.md)
+ - [Model.GetBestTimeToPost200ResponseSlotsInner](docs/GetBestTimeToPost200ResponseSlotsInner.md)
+ - [Model.GetBestTimeToPost403Response](docs/GetBestTimeToPost403Response.md)
  - [Model.GetConnectUrl200Response](docs/GetConnectUrl200Response.md)
+ - [Model.GetContentDecay200Response](docs/GetContentDecay200Response.md)
+ - [Model.GetContentDecay200ResponseBucketsInner](docs/GetContentDecay200ResponseBucketsInner.md)
+ - [Model.GetDailyMetrics200Response](docs/GetDailyMetrics200Response.md)
+ - [Model.GetDailyMetrics200ResponseDailyDataInner](docs/GetDailyMetrics200ResponseDailyDataInner.md)
+ - [Model.GetDailyMetrics200ResponseDailyDataInnerMetrics](docs/GetDailyMetrics200ResponseDailyDataInnerMetrics.md)
+ - [Model.GetDailyMetrics200ResponsePlatformBreakdownInner](docs/GetDailyMetrics200ResponsePlatformBreakdownInner.md)
  - [Model.GetFacebookPages200Response](docs/GetFacebookPages200Response.md)
  - [Model.GetFacebookPages200ResponsePagesInner](docs/GetFacebookPages200ResponsePagesInner.md)
  - [Model.GetFollowerStats200Response](docs/GetFollowerStats200Response.md)
@@ -424,6 +437,8 @@ Class | Method | HTTP request | Description
  - [Model.GetPinterestBoards200Response](docs/GetPinterestBoards200Response.md)
  - [Model.GetPinterestBoards200ResponseBoardsInner](docs/GetPinterestBoards200ResponseBoardsInner.md)
  - [Model.GetPostLogs200Response](docs/GetPostLogs200Response.md)
+ - [Model.GetPostingFrequency200Response](docs/GetPostingFrequency200Response.md)
+ - [Model.GetPostingFrequency200ResponseFrequencyInner](docs/GetPostingFrequency200ResponseFrequencyInner.md)
  - [Model.GetProfile200Response](docs/GetProfile200Response.md)
  - [Model.GetRedditFeed200Response](docs/GetRedditFeed200Response.md)
  - [Model.GetRedditFlairs200Response](docs/GetRedditFlairs200Response.md)

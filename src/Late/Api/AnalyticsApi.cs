@@ -68,6 +68,79 @@ namespace Late.Api
         /// <returns>ApiResponse of GetAnalytics200Response</returns>
         ApiResponse<GetAnalytics200Response> GetAnalyticsWithHttpInfo(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default);
         /// <summary>
+        /// Get best times to post
+        /// </summary>
+        /// <remarks>
+        /// Returns the best times to post based on historical engagement data. Groups all published posts by day of week and hour (UTC), calculating average engagement per slot. Use this to auto-schedule posts at optimal times. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>GetBestTimeToPost200Response</returns>
+        GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default);
+
+        /// <summary>
+        /// Get best times to post
+        /// </summary>
+        /// <remarks>
+        /// Returns the best times to post based on historical engagement data. Groups all published posts by day of week and hour (UTC), calculating average engagement per slot. Use this to auto-schedule posts at optimal times. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>ApiResponse of GetBestTimeToPost200Response</returns>
+        ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default);
+        /// <summary>
+        /// Get content performance decay
+        /// </summary>
+        /// <remarks>
+        /// Returns how engagement accumulates over time after a post is published. Each bucket shows what percentage of the post&#39;s total engagement had been reached by that time window. Useful for understanding content lifespan (e.g. \&quot;posts reach 78% of total engagement within 24 hours\&quot;). Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>GetContentDecay200Response</returns>
+        GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default);
+
+        /// <summary>
+        /// Get content performance decay
+        /// </summary>
+        /// <remarks>
+        /// Returns how engagement accumulates over time after a post is published. Each bucket shows what percentage of the post&#39;s total engagement had been reached by that time window. Useful for understanding content lifespan (e.g. \&quot;posts reach 78% of total engagement within 24 hours\&quot;). Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>ApiResponse of GetContentDecay200Response</returns>
+        ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default);
+        /// <summary>
+        /// Get daily aggregated metrics
+        /// </summary>
+        /// <remarks>
+        /// Returns daily aggregated analytics metrics and a per-platform breakdown. Each day includes post count, platform distribution, and summed metrics (impressions, reach, likes, comments, shares, saves, clicks, views). Defaults to the last 180 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
+        /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <returns>GetDailyMetrics200Response</returns>
+        GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default);
+
+        /// <summary>
+        /// Get daily aggregated metrics
+        /// </summary>
+        /// <remarks>
+        /// Returns daily aggregated analytics metrics and a per-platform breakdown. Each day includes post count, platform distribution, and summed metrics (impressions, reach, likes, comments, shares, saves, clicks, views). Defaults to the last 180 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
+        /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <returns>ApiResponse of GetDailyMetrics200Response</returns>
+        ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default);
+        /// <summary>
         /// Get follower stats
         /// </summary>
         /// <remarks>
@@ -149,6 +222,29 @@ namespace Late.Api
         /// <returns>ApiResponse of GetLinkedInPostAnalytics200Response</returns>
         ApiResponse<GetLinkedInPostAnalytics200Response> GetLinkedInPostAnalyticsWithHttpInfo(string accountId, string urn);
         /// <summary>
+        /// Get posting frequency vs engagement
+        /// </summary>
+        /// <remarks>
+        /// Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>GetPostingFrequency200Response</returns>
+        GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default);
+
+        /// <summary>
+        /// Get posting frequency vs engagement
+        /// </summary>
+        /// <remarks>
+        /// Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>ApiResponse of GetPostingFrequency200Response</returns>
+        ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default);
+        /// <summary>
         /// Get YouTube daily views
         /// </summary>
         /// <remarks>
@@ -225,6 +321,85 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetAnalytics200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetAnalytics200Response>> GetAnalyticsWithHttpInfoAsync(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get best times to post
+        /// </summary>
+        /// <remarks>
+        /// Returns the best times to post based on historical engagement data. Groups all published posts by day of week and hour (UTC), calculating average engagement per slot. Use this to auto-schedule posts at optimal times. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetBestTimeToPost200Response</returns>
+        System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get best times to post
+        /// </summary>
+        /// <remarks>
+        /// Returns the best times to post based on historical engagement data. Groups all published posts by day of week and hour (UTC), calculating average engagement per slot. Use this to auto-schedule posts at optimal times. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetBestTimeToPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get content performance decay
+        /// </summary>
+        /// <remarks>
+        /// Returns how engagement accumulates over time after a post is published. Each bucket shows what percentage of the post&#39;s total engagement had been reached by that time window. Useful for understanding content lifespan (e.g. \&quot;posts reach 78% of total engagement within 24 hours\&quot;). Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetContentDecay200Response</returns>
+        System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get content performance decay
+        /// </summary>
+        /// <remarks>
+        /// Returns how engagement accumulates over time after a post is published. Each bucket shows what percentage of the post&#39;s total engagement had been reached by that time window. Useful for understanding content lifespan (e.g. \&quot;posts reach 78% of total engagement within 24 hours\&quot;). Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetContentDecay200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get daily aggregated metrics
+        /// </summary>
+        /// <remarks>
+        /// Returns daily aggregated analytics metrics and a per-platform breakdown. Each day includes post count, platform distribution, and summed metrics (impressions, reach, likes, comments, shares, saves, clicks, views). Defaults to the last 180 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
+        /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetDailyMetrics200Response</returns>
+        System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get daily aggregated metrics
+        /// </summary>
+        /// <remarks>
+        /// Returns daily aggregated analytics metrics and a per-platform breakdown. Each day includes post count, platform distribution, and summed metrics (impressions, reach, likes, comments, shares, saves, clicks, views). Defaults to the last 180 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
+        /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetDailyMetrics200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get follower stats
         /// </summary>
@@ -312,6 +487,31 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetLinkedInPostAnalytics200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetLinkedInPostAnalytics200Response>> GetLinkedInPostAnalyticsWithHttpInfoAsync(string accountId, string urn, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get posting frequency vs engagement
+        /// </summary>
+        /// <remarks>
+        /// Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetPostingFrequency200Response</returns>
+        System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get posting frequency vs engagement
+        /// </summary>
+        /// <remarks>
+        /// Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetPostingFrequency200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get YouTube daily views
         /// </summary>
@@ -781,6 +981,441 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAnalytics", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get best times to post Returns the best times to post based on historical engagement data. Groups all published posts by day of week and hour (UTC), calculating average engagement per slot. Use this to auto-schedule posts at optimal times. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>GetBestTimeToPost200Response</returns>
+        public GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default)
+        {
+            Late.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = GetBestTimeToPostWithHttpInfo(platform, profileId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get best times to post Returns the best times to post based on historical engagement data. Groups all published posts by day of week and hour (UTC), calculating average engagement per slot. Use this to auto-schedule posts at optimal times. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>ApiResponse of GetBestTimeToPost200Response</returns>
+        public Late.Client.ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default)
+        {
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetBestTimeToPost200Response>("/v1/analytics/best-time", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetBestTimeToPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get best times to post Returns the best times to post based on historical engagement data. Groups all published posts by day of week and hour (UTC), calculating average engagement per slot. Use this to auto-schedule posts at optimal times. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetBestTimeToPost200Response</returns>
+        public async System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = await GetBestTimeToPostWithHttpInfoAsync(platform, profileId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get best times to post Returns the best times to post based on historical engagement data. Groups all published posts by day of week and hour (UTC), calculating average engagement per slot. Use this to auto-schedule posts at optimal times. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetBestTimeToPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetBestTimeToPost200Response>("/v1/analytics/best-time", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetBestTimeToPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get content performance decay Returns how engagement accumulates over time after a post is published. Each bucket shows what percentage of the post&#39;s total engagement had been reached by that time window. Useful for understanding content lifespan (e.g. \&quot;posts reach 78% of total engagement within 24 hours\&quot;). Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>GetContentDecay200Response</returns>
+        public GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default)
+        {
+            Late.Client.ApiResponse<GetContentDecay200Response> localVarResponse = GetContentDecayWithHttpInfo(platform, profileId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get content performance decay Returns how engagement accumulates over time after a post is published. Each bucket shows what percentage of the post&#39;s total engagement had been reached by that time window. Useful for understanding content lifespan (e.g. \&quot;posts reach 78% of total engagement within 24 hours\&quot;). Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>ApiResponse of GetContentDecay200Response</returns>
+        public Late.Client.ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default)
+        {
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetContentDecay200Response>("/v1/analytics/content-decay", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetContentDecay", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get content performance decay Returns how engagement accumulates over time after a post is published. Each bucket shows what percentage of the post&#39;s total engagement had been reached by that time window. Useful for understanding content lifespan (e.g. \&quot;posts reach 78% of total engagement within 24 hours\&quot;). Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetContentDecay200Response</returns>
+        public async System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<GetContentDecay200Response> localVarResponse = await GetContentDecayWithHttpInfoAsync(platform, profileId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get content performance decay Returns how engagement accumulates over time after a post is published. Each bucket shows what percentage of the post&#39;s total engagement had been reached by that time window. Useful for understanding content lifespan (e.g. \&quot;posts reach 78% of total engagement within 24 hours\&quot;). Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetContentDecay200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetContentDecay200Response>("/v1/analytics/content-decay", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetContentDecay", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get daily aggregated metrics Returns daily aggregated analytics metrics and a per-platform breakdown. Each day includes post count, platform distribution, and summed metrics (impressions, reach, likes, comments, shares, saves, clicks, views). Defaults to the last 180 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
+        /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <returns>GetDailyMetrics200Response</returns>
+        public GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default)
+        {
+            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = GetDailyMetricsWithHttpInfo(platform, profileId, fromDate, toDate);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get daily aggregated metrics Returns daily aggregated analytics metrics and a per-platform breakdown. Each day includes post count, platform distribution, and summed metrics (impressions, reach, likes, comments, shares, saves, clicks, views). Defaults to the last 180 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
+        /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <returns>ApiResponse of GetDailyMetrics200Response</returns>
+        public Late.Client.ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default)
+        {
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (fromDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "fromDate", fromDate));
+            }
+            if (toDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "toDate", toDate));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetDailyMetrics200Response>("/v1/analytics/daily-metrics", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDailyMetrics", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get daily aggregated metrics Returns daily aggregated analytics metrics and a per-platform breakdown. Each day includes post count, platform distribution, and summed metrics (impressions, reach, likes, comments, shares, saves, clicks, views). Defaults to the last 180 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
+        /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetDailyMetrics200Response</returns>
+        public async System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = await GetDailyMetricsWithHttpInfoAsync(platform, profileId, fromDate, toDate, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get daily aggregated metrics Returns daily aggregated analytics metrics and a per-platform breakdown. Each day includes post count, platform distribution, and summed metrics (impressions, reach, likes, comments, shares, saves, clicks, views). Defaults to the last 180 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
+        /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetDailyMetrics200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (fromDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "fromDate", fromDate));
+            }
+            if (toDate != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "toDate", toDate));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetDailyMetrics200Response>("/v1/analytics/daily-metrics", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDailyMetrics", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1270,6 +1905,143 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetLinkedInPostAnalytics", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get posting frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>GetPostingFrequency200Response</returns>
+        public GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default)
+        {
+            Late.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = GetPostingFrequencyWithHttpInfo(platform, profileId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get posting frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <returns>ApiResponse of GetPostingFrequency200Response</returns>
+        public Late.Client.ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default)
+        {
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetPostingFrequency200Response>("/v1/analytics/posting-frequency", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetPostingFrequency", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get posting frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetPostingFrequency200Response</returns>
+        public async System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = await GetPostingFrequencyWithHttpInfoAsync(platform, profileId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get posting frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
+        /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetPostingFrequency200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetPostingFrequency200Response>("/v1/analytics/posting-frequency", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetPostingFrequency", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
