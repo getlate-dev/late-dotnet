@@ -34,35 +34,23 @@ namespace Late.Model
     public partial class ValidatePost200ResponseOneOf1 : IValidatableObject
     {
         /// <summary>
-        /// Defines Valid
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ValidEnum
-        {
-            /// <summary>
-            /// Enum False for value: false
-            /// </summary>
-            False = false
-        }
-
-
-        /// <summary>
-        /// Gets or Sets Valid
-        /// </summary>
-        [DataMember(Name = "valid", EmitDefaultValue = true)]
-        public ValidEnum? Valid { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="ValidatePost200ResponseOneOf1" /> class.
         /// </summary>
         /// <param name="valid">valid.</param>
         /// <param name="errors">errors.</param>
         /// <param name="warnings">warnings.</param>
-        public ValidatePost200ResponseOneOf1(ValidEnum? valid = default, List<ValidatePost200ResponseOneOf1ErrorsInner> errors = default, List<ValidatePost200ResponseOneOfWarningsInner> warnings = default)
+        public ValidatePost200ResponseOneOf1(bool valid = default, List<ValidatePost200ResponseOneOf1ErrorsInner> errors = default, List<ValidatePost200ResponseOneOfWarningsInner> warnings = default)
         {
             this.Valid = valid;
             this.Errors = errors;
             this.Warnings = warnings;
         }
+
+        /// <summary>
+        /// Gets or Sets Valid
+        /// </summary>
+        [DataMember(Name = "valid", EmitDefaultValue = true)]
+        public bool Valid { get; set; }
 
         /// <summary>
         /// Gets or Sets Errors

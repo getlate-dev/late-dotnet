@@ -12556,8 +12556,6 @@ components:
         message: No validation issues found.
       properties:
         valid:
-          enum:
-          - true
           type: boolean
         message:
           example: No validation issues found.
@@ -12576,8 +12574,6 @@ components:
       description: Invalid post
       properties:
         valid:
-          enum:
-          - false
           type: boolean
         errors:
           items:
@@ -12725,8 +12721,6 @@ components:
           type: public
       properties:
         exists:
-          enum:
-          - true
           type: boolean
         subreddit:
           $ref: "#/components/schemas/validateSubreddit_200_response_oneOf_subreddit"
@@ -12734,8 +12728,6 @@ components:
       description: Subreddit not found
       properties:
         exists:
-          enum:
-          - false
           type: boolean
         error:
           type: string

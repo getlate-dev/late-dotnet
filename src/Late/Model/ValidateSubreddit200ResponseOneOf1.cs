@@ -34,33 +34,21 @@ namespace Late.Model
     public partial class ValidateSubreddit200ResponseOneOf1 : IValidatableObject
     {
         /// <summary>
-        /// Defines Exists
+        /// Initializes a new instance of the <see cref="ValidateSubreddit200ResponseOneOf1" /> class.
         /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ExistsEnum
+        /// <param name="exists">exists.</param>
+        /// <param name="error">error.</param>
+        public ValidateSubreddit200ResponseOneOf1(bool exists = default, string error = default)
         {
-            /// <summary>
-            /// Enum False for value: false
-            /// </summary>
-            False = false
+            this.Exists = exists;
+            this.Error = error;
         }
-
 
         /// <summary>
         /// Gets or Sets Exists
         /// </summary>
         [DataMember(Name = "exists", EmitDefaultValue = true)]
-        public ExistsEnum? Exists { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ValidateSubreddit200ResponseOneOf1" /> class.
-        /// </summary>
-        /// <param name="exists">exists.</param>
-        /// <param name="error">error.</param>
-        public ValidateSubreddit200ResponseOneOf1(ExistsEnum? exists = default, string error = default)
-        {
-            this.Exists = exists;
-            this.Error = error;
-        }
+        public bool Exists { get; set; }
 
         /// <summary>
         /// Gets or Sets Error
