@@ -44,11 +44,10 @@ namespace Late.Model
         /// <param name="accountId">accountId (required).</param>
         /// <param name="message">message (required).</param>
         /// <param name="commentId">Reply to specific comment (optional).</param>
-        /// <param name="subreddit">(Reddit only) Subreddit name for replies.</param>
         /// <param name="parentCid">(Bluesky only) Parent content identifier.</param>
         /// <param name="rootUri">(Bluesky only) Root post URI.</param>
         /// <param name="rootCid">(Bluesky only) Root post CID.</param>
-        public ReplyToInboxPostRequest(string accountId = default, string message = default, string commentId = default, string subreddit = default, string parentCid = default, string rootUri = default, string rootCid = default)
+        public ReplyToInboxPostRequest(string accountId = default, string message = default, string commentId = default, string parentCid = default, string rootUri = default, string rootCid = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -63,7 +62,6 @@ namespace Late.Model
             }
             this.Message = message;
             this.CommentId = commentId;
-            this.Subreddit = subreddit;
             this.ParentCid = parentCid;
             this.RootUri = rootUri;
             this.RootCid = rootCid;
@@ -87,13 +85,6 @@ namespace Late.Model
         /// <value>Reply to specific comment (optional)</value>
         [DataMember(Name = "commentId", EmitDefaultValue = false)]
         public string CommentId { get; set; }
-
-        /// <summary>
-        /// (Reddit only) Subreddit name for replies
-        /// </summary>
-        /// <value>(Reddit only) Subreddit name for replies</value>
-        [DataMember(Name = "subreddit", EmitDefaultValue = false)]
-        public string Subreddit { get; set; }
 
         /// <summary>
         /// (Bluesky only) Parent content identifier
@@ -127,7 +118,6 @@ namespace Late.Model
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  CommentId: ").Append(CommentId).Append("\n");
-            sb.Append("  Subreddit: ").Append(Subreddit).Append("\n");
             sb.Append("  ParentCid: ").Append(ParentCid).Append("\n");
             sb.Append("  RootUri: ").Append(RootUri).Append("\n");
             sb.Append("  RootCid: ").Append(RootCid).Append("\n");
