@@ -222,7 +222,7 @@ catch (ApiException e)
 
 <a id="listpostslogs"></a>
 # **ListPostsLogs**
-> ListPostsLogs200Response ListPostsLogs (string? status = null, string? platform = null, string? action = null, int? days = null, int? limit = null, int? skip = null)
+> ListPostsLogs200Response ListPostsLogs (string? status = null, string? platform = null, string? action = null, int? days = null, int? limit = null, int? skip = null, string? search = null)
 
 List publishing logs
 
@@ -258,11 +258,12 @@ namespace Example
             var days = 7;  // int? | Number of days to look back (max 7) (optional)  (default to 7)
             var limit = 50;  // int? | Maximum number of logs to return (max 100) (optional)  (default to 50)
             var skip = 0;  // int? | Number of logs to skip (for pagination) (optional)  (default to 0)
+            var search = "search_example";  // string? | Search through log entries by text content. (optional) 
 
             try
             {
                 // List publishing logs
-                ListPostsLogs200Response result = apiInstance.ListPostsLogs(status, platform, action, days, limit, skip);
+                ListPostsLogs200Response result = apiInstance.ListPostsLogs(status, platform, action, days, limit, skip, search);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -283,7 +284,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List publishing logs
-    ApiResponse<ListPostsLogs200Response> response = apiInstance.ListPostsLogsWithHttpInfo(status, platform, action, days, limit, skip);
+    ApiResponse<ListPostsLogs200Response> response = apiInstance.ListPostsLogsWithHttpInfo(status, platform, action, days, limit, skip, search);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -306,6 +307,7 @@ catch (ApiException e)
 | **days** | **int?** | Number of days to look back (max 7) | [optional] [default to 7] |
 | **limit** | **int?** | Maximum number of logs to return (max 100) | [optional] [default to 50] |
 | **skip** | **int?** | Number of logs to skip (for pagination) | [optional] [default to 0] |
+| **search** | **string?** | Search through log entries by text content. | [optional]  |
 
 ### Return type
 

@@ -996,6 +996,20 @@ paths:
           format: date-time
           type: string
         style: form
+      - description: "Filter by post origin. \"late\" for posts published via Late,\
+          \ \"external\" for posts imported from platforms."
+        explode: true
+        in: query
+        name: source
+        required: false
+        schema:
+          default: all
+          enum:
+          - all
+          - late
+          - external
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -1068,6 +1082,20 @@ paths:
         schema:
           type: string
         style: form
+      - description: "Filter by post origin. \"late\" for posts published via Late,\
+          \ \"external\" for posts imported from platforms."
+        explode: true
+        in: query
+        name: source
+        required: false
+        schema:
+          default: all
+          enum:
+          - all
+          - late
+          - external
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -1126,6 +1154,20 @@ paths:
         name: profileId
         required: false
         schema:
+          type: string
+        style: form
+      - description: "Filter by post origin. \"late\" for posts published via Late,\
+          \ \"external\" for posts imported from platforms."
+        explode: true
+        in: query
+        name: source
+        required: false
+        schema:
+          default: all
+          enum:
+          - all
+          - late
+          - external
           type: string
         style: form
       responses:
@@ -1202,6 +1244,20 @@ paths:
         name: profileId
         required: false
         schema:
+          type: string
+        style: form
+      - description: "Filter by post origin. \"late\" for posts published via Late,\
+          \ \"external\" for posts imported from platforms."
+        explode: true
+        in: query
+        name: source
+        required: false
+        schema:
+          default: all
+          enum:
+          - all
+          - late
+          - external
           type: string
         style: form
       responses:
@@ -1722,6 +1778,30 @@ paths:
         schema:
           default: false
           type: boolean
+        style: form
+      - description: Search posts by text content.
+        explode: true
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Sort order for results.
+        explode: true
+        in: query
+        name: sortBy
+        required: false
+        schema:
+          default: scheduled-desc
+          enum:
+          - scheduled-desc
+          - scheduled-asc
+          - created-desc
+          - created-asc
+          - status
+          - platform
+          type: string
         style: form
       responses:
         "200":
@@ -2653,6 +2733,15 @@ paths:
         schema:
           type: string
         style: form
+      - description: "Filter accounts by platform (e.g. \"instagram\", \"twitter\"\
+          )."
+        explode: true
+        in: query
+        name: platform
+        required: false
+        schema:
+          type: string
+        style: form
       - description: "When true, includes accounts from over-limit profiles."
         explode: true
         in: query
@@ -3195,6 +3284,17 @@ paths:
         schema:
           format: uri
           type: string
+        style: form
+      - description: "When true, the user is redirected to your redirect_url with\
+          \ raw OAuth data (code, state) instead of Late's default account selection\
+          \ UI. Use this to build a custom connect experience."
+        explode: true
+        in: query
+        name: headless
+        required: false
+        schema:
+          default: false
+          type: boolean
         style: form
       responses:
         "200":
@@ -6084,6 +6184,14 @@ paths:
         schema:
           type: string
         style: form
+      - description: Filter by specific queue ID. Omit to use the default queue.
+        explode: true
+        in: query
+        name: queueId
+        required: false
+        schema:
+          type: string
+        style: form
       - explode: true
         in: query
         name: count
@@ -6522,6 +6630,14 @@ paths:
           default: 0
           minimum: 0
           type: integer
+        style: form
+      - description: Search through log entries by text content.
+        explode: true
+        in: query
+        name: search
+        required: false
+        schema:
+          type: string
         style: form
       responses:
         "200":

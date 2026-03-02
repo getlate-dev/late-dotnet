@@ -130,8 +130,10 @@ namespace Late.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="includeHidden"> (optional, default to false)</param>
+        /// <param name="search">Search posts by text content. (optional)</param>
+        /// <param name="sortBy">Sort order for results. (optional, default to scheduled-desc)</param>
         /// <returns>PostsListResponse</returns>
-        PostsListResponse ListPosts(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default);
+        PostsListResponse ListPosts(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, string? search = default, string? sortBy = default);
 
         /// <summary>
         /// List posts
@@ -149,8 +151,10 @@ namespace Late.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="includeHidden"> (optional, default to false)</param>
+        /// <param name="search">Search posts by text content. (optional)</param>
+        /// <param name="sortBy">Sort order for results. (optional, default to scheduled-desc)</param>
         /// <returns>ApiResponse of PostsListResponse</returns>
-        ApiResponse<PostsListResponse> ListPostsWithHttpInfo(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default);
+        ApiResponse<PostsListResponse> ListPostsWithHttpInfo(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, string? search = default, string? sortBy = default);
         /// <summary>
         /// Retry failed post
         /// </summary>
@@ -337,9 +341,11 @@ namespace Late.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="includeHidden"> (optional, default to false)</param>
+        /// <param name="search">Search posts by text content. (optional)</param>
+        /// <param name="sortBy">Sort order for results. (optional, default to scheduled-desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostsListResponse</returns>
-        System.Threading.Tasks.Task<PostsListResponse> ListPostsAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<PostsListResponse> ListPostsAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, string? search = default, string? sortBy = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List posts
@@ -357,9 +363,11 @@ namespace Late.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="includeHidden"> (optional, default to false)</param>
+        /// <param name="search">Search posts by text content. (optional)</param>
+        /// <param name="sortBy">Sort order for results. (optional, default to scheduled-desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostsListResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PostsListResponse>> ListPostsWithHttpInfoAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<PostsListResponse>> ListPostsWithHttpInfoAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, string? search = default, string? sortBy = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Retry failed post
         /// </summary>
@@ -1181,10 +1189,12 @@ namespace Late.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="includeHidden"> (optional, default to false)</param>
+        /// <param name="search">Search posts by text content. (optional)</param>
+        /// <param name="sortBy">Sort order for results. (optional, default to scheduled-desc)</param>
         /// <returns>PostsListResponse</returns>
-        public PostsListResponse ListPosts(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default)
+        public PostsListResponse ListPosts(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, string? search = default, string? sortBy = default)
         {
-            Late.Client.ApiResponse<PostsListResponse> localVarResponse = ListPostsWithHttpInfo(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden);
+            Late.Client.ApiResponse<PostsListResponse> localVarResponse = ListPostsWithHttpInfo(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden, search, sortBy);
             return localVarResponse.Data;
         }
 
@@ -1201,8 +1211,10 @@ namespace Late.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="includeHidden"> (optional, default to false)</param>
+        /// <param name="search">Search posts by text content. (optional)</param>
+        /// <param name="sortBy">Sort order for results. (optional, default to scheduled-desc)</param>
         /// <returns>ApiResponse of PostsListResponse</returns>
-        public Late.Client.ApiResponse<PostsListResponse> ListPostsWithHttpInfo(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default)
+        public Late.Client.ApiResponse<PostsListResponse> ListPostsWithHttpInfo(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, string? search = default, string? sortBy = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1255,6 +1267,14 @@ namespace Late.Api
             if (includeHidden != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "includeHidden", includeHidden));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "search", search));
+            }
+            if (sortBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "sortBy", sortBy));
             }
 
             // authentication (bearerAuth) required
@@ -1289,11 +1309,13 @@ namespace Late.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="includeHidden"> (optional, default to false)</param>
+        /// <param name="search">Search posts by text content. (optional)</param>
+        /// <param name="sortBy">Sort order for results. (optional, default to scheduled-desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PostsListResponse</returns>
-        public async System.Threading.Tasks.Task<PostsListResponse> ListPostsAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<PostsListResponse> ListPostsAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, string? search = default, string? sortBy = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<PostsListResponse> localVarResponse = await ListPostsWithHttpInfoAsync(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<PostsListResponse> localVarResponse = await ListPostsWithHttpInfoAsync(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden, search, sortBy, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1310,9 +1332,11 @@ namespace Late.Api
         /// <param name="dateFrom"> (optional)</param>
         /// <param name="dateTo"> (optional)</param>
         /// <param name="includeHidden"> (optional, default to false)</param>
+        /// <param name="search">Search posts by text content. (optional)</param>
+        /// <param name="sortBy">Sort order for results. (optional, default to scheduled-desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostsListResponse)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<PostsListResponse>> ListPostsWithHttpInfoAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<PostsListResponse>> ListPostsWithHttpInfoAsync(int? page = default, int? limit = default, string? status = default, string? platform = default, string? profileId = default, string? createdBy = default, DateOnly? dateFrom = default, DateOnly? dateTo = default, bool? includeHidden = default, string? search = default, string? sortBy = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1367,6 +1391,14 @@ namespace Late.Api
             if (includeHidden != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "includeHidden", includeHidden));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "search", search));
+            }
+            if (sortBy != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "sortBy", sortBy));
             }
 
             // authentication (bearerAuth) required

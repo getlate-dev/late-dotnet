@@ -80,8 +80,9 @@ namespace Late.Api
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
         /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
+        /// <param name="headless">When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. (optional, default to false)</param>
         /// <returns>GetConnectUrl200Response</returns>
-        GetConnectUrl200Response GetConnectUrl(string platform, string profileId, string? redirectUrl = default);
+        GetConnectUrl200Response GetConnectUrl(string platform, string profileId, string? redirectUrl = default, bool? headless = default);
 
         /// <summary>
         /// Get OAuth connect URL
@@ -93,8 +94,9 @@ namespace Late.Api
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
         /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
+        /// <param name="headless">When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. (optional, default to false)</param>
         /// <returns>ApiResponse of GetConnectUrl200Response</returns>
-        ApiResponse<GetConnectUrl200Response> GetConnectUrlWithHttpInfo(string platform, string profileId, string? redirectUrl = default);
+        ApiResponse<GetConnectUrl200Response> GetConnectUrlWithHttpInfo(string platform, string profileId, string? redirectUrl = default, bool? headless = default);
         /// <summary>
         /// List Facebook pages
         /// </summary>
@@ -715,9 +717,10 @@ namespace Late.Api
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
         /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
+        /// <param name="headless">When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetConnectUrl200Response</returns>
-        System.Threading.Tasks.Task<GetConnectUrl200Response> GetConnectUrlAsync(string platform, string profileId, string? redirectUrl = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetConnectUrl200Response> GetConnectUrlAsync(string platform, string profileId, string? redirectUrl = default, bool? headless = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get OAuth connect URL
@@ -729,9 +732,10 @@ namespace Late.Api
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
         /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
+        /// <param name="headless">When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetConnectUrl200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetConnectUrl200Response>> GetConnectUrlWithHttpInfoAsync(string platform, string profileId, string? redirectUrl = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetConnectUrl200Response>> GetConnectUrlWithHttpInfoAsync(string platform, string profileId, string? redirectUrl = default, bool? headless = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List Facebook pages
         /// </summary>
@@ -1813,10 +1817,11 @@ namespace Late.Api
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
         /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
+        /// <param name="headless">When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. (optional, default to false)</param>
         /// <returns>GetConnectUrl200Response</returns>
-        public GetConnectUrl200Response GetConnectUrl(string platform, string profileId, string? redirectUrl = default)
+        public GetConnectUrl200Response GetConnectUrl(string platform, string profileId, string? redirectUrl = default, bool? headless = default)
         {
-            Late.Client.ApiResponse<GetConnectUrl200Response> localVarResponse = GetConnectUrlWithHttpInfo(platform, profileId, redirectUrl);
+            Late.Client.ApiResponse<GetConnectUrl200Response> localVarResponse = GetConnectUrlWithHttpInfo(platform, profileId, redirectUrl, headless);
             return localVarResponse.Data;
         }
 
@@ -1827,8 +1832,9 @@ namespace Late.Api
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
         /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
+        /// <param name="headless">When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. (optional, default to false)</param>
         /// <returns>ApiResponse of GetConnectUrl200Response</returns>
-        public Late.Client.ApiResponse<GetConnectUrl200Response> GetConnectUrlWithHttpInfo(string platform, string profileId, string? redirectUrl = default)
+        public Late.Client.ApiResponse<GetConnectUrl200Response> GetConnectUrlWithHttpInfo(string platform, string profileId, string? redirectUrl = default, bool? headless = default)
         {
             // verify the required parameter 'platform' is set
             if (platform == null)
@@ -1859,6 +1865,10 @@ namespace Late.Api
             if (redirectUrl != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "redirect_url", redirectUrl));
+            }
+            if (headless != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "headless", headless));
             }
 
             // authentication (bearerAuth) required
@@ -1887,11 +1897,12 @@ namespace Late.Api
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
         /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
+        /// <param name="headless">When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetConnectUrl200Response</returns>
-        public async System.Threading.Tasks.Task<GetConnectUrl200Response> GetConnectUrlAsync(string platform, string profileId, string? redirectUrl = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetConnectUrl200Response> GetConnectUrlAsync(string platform, string profileId, string? redirectUrl = default, bool? headless = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetConnectUrl200Response> localVarResponse = await GetConnectUrlWithHttpInfoAsync(platform, profileId, redirectUrl, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetConnectUrl200Response> localVarResponse = await GetConnectUrlWithHttpInfoAsync(platform, profileId, redirectUrl, headless, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1902,9 +1913,10 @@ namespace Late.Api
         /// <param name="platform">Social media platform to connect</param>
         /// <param name="profileId">Your Late profile ID (get from /v1/profiles)</param>
         /// <param name="redirectUrl">Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. (optional)</param>
+        /// <param name="headless">When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetConnectUrl200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetConnectUrl200Response>> GetConnectUrlWithHttpInfoAsync(string platform, string profileId, string? redirectUrl = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetConnectUrl200Response>> GetConnectUrlWithHttpInfoAsync(string platform, string profileId, string? redirectUrl = default, bool? headless = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'platform' is set
             if (platform == null)
@@ -1937,6 +1949,10 @@ namespace Late.Api
             if (redirectUrl != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "redirect_url", redirectUrl));
+            }
+            if (headless != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "headless", headless));
             }
 
             // authentication (bearerAuth) required

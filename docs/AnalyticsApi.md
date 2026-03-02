@@ -136,7 +136,7 @@ catch (ApiException e)
 
 <a id="getbesttimetopost"></a>
 # **GetBestTimeToPost**
-> GetBestTimeToPost200Response GetBestTimeToPost (string? platform = null, string? profileId = null)
+> GetBestTimeToPost200Response GetBestTimeToPost (string? platform = null, string? profileId = null, string? source = null)
 
 Get best times to post
 
@@ -168,11 +168,12 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
+            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Late, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
                 // Get best times to post
-                GetBestTimeToPost200Response result = apiInstance.GetBestTimeToPost(platform, profileId);
+                GetBestTimeToPost200Response result = apiInstance.GetBestTimeToPost(platform, profileId, source);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -193,7 +194,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get best times to post
-    ApiResponse<GetBestTimeToPost200Response> response = apiInstance.GetBestTimeToPostWithHttpInfo(platform, profileId);
+    ApiResponse<GetBestTimeToPost200Response> response = apiInstance.GetBestTimeToPostWithHttpInfo(platform, profileId, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -212,6 +213,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
+| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
 
@@ -238,7 +240,7 @@ catch (ApiException e)
 
 <a id="getcontentdecay"></a>
 # **GetContentDecay**
-> GetContentDecay200Response GetContentDecay (string? platform = null, string? profileId = null)
+> GetContentDecay200Response GetContentDecay (string? platform = null, string? profileId = null, string? source = null)
 
 Get content performance decay
 
@@ -270,11 +272,12 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
+            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Late, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
                 // Get content performance decay
-                GetContentDecay200Response result = apiInstance.GetContentDecay(platform, profileId);
+                GetContentDecay200Response result = apiInstance.GetContentDecay(platform, profileId, source);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -295,7 +298,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get content performance decay
-    ApiResponse<GetContentDecay200Response> response = apiInstance.GetContentDecayWithHttpInfo(platform, profileId);
+    ApiResponse<GetContentDecay200Response> response = apiInstance.GetContentDecayWithHttpInfo(platform, profileId, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -314,6 +317,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
+| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
 
@@ -340,7 +344,7 @@ catch (ApiException e)
 
 <a id="getdailymetrics"></a>
 # **GetDailyMetrics**
-> GetDailyMetrics200Response GetDailyMetrics (string? platform = null, string? profileId = null, DateTime? fromDate = null, DateTime? toDate = null)
+> GetDailyMetrics200Response GetDailyMetrics (string? platform = null, string? profileId = null, DateTime? fromDate = null, DateTime? toDate = null, string? source = null)
 
 Get daily aggregated metrics
 
@@ -374,11 +378,12 @@ namespace Example
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
             var fromDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional) 
             var toDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Inclusive end date (ISO 8601). Defaults to now. (optional) 
+            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Late, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
                 // Get daily aggregated metrics
-                GetDailyMetrics200Response result = apiInstance.GetDailyMetrics(platform, profileId, fromDate, toDate);
+                GetDailyMetrics200Response result = apiInstance.GetDailyMetrics(platform, profileId, fromDate, toDate, source);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -399,7 +404,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get daily aggregated metrics
-    ApiResponse<GetDailyMetrics200Response> response = apiInstance.GetDailyMetricsWithHttpInfo(platform, profileId, fromDate, toDate);
+    ApiResponse<GetDailyMetrics200Response> response = apiInstance.GetDailyMetricsWithHttpInfo(platform, profileId, fromDate, toDate, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -420,6 +425,7 @@ catch (ApiException e)
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
 | **fromDate** | **DateTime?** | Inclusive start date (ISO 8601). Defaults to 180 days ago. | [optional]  |
 | **toDate** | **DateTime?** | Inclusive end date (ISO 8601). Defaults to now. | [optional]  |
+| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
 
@@ -770,7 +776,7 @@ catch (ApiException e)
 
 <a id="getpostingfrequency"></a>
 # **GetPostingFrequency**
-> GetPostingFrequency200Response GetPostingFrequency (string? platform = null, string? profileId = null)
+> GetPostingFrequency200Response GetPostingFrequency (string? platform = null, string? profileId = null, string? source = null)
 
 Get posting frequency vs engagement
 
@@ -802,11 +808,12 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
+            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Late, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
                 // Get posting frequency vs engagement
-                GetPostingFrequency200Response result = apiInstance.GetPostingFrequency(platform, profileId);
+                GetPostingFrequency200Response result = apiInstance.GetPostingFrequency(platform, profileId, source);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -827,7 +834,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get posting frequency vs engagement
-    ApiResponse<GetPostingFrequency200Response> response = apiInstance.GetPostingFrequencyWithHttpInfo(platform, profileId);
+    ApiResponse<GetPostingFrequency200Response> response = apiInstance.GetPostingFrequencyWithHttpInfo(platform, profileId, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -846,6 +853,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
+| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
 

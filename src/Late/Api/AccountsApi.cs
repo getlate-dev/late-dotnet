@@ -132,9 +132,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
+        /// <param name="platform">Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). (optional)</param>
         /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <returns>ListAccounts200Response</returns>
-        ListAccounts200Response ListAccounts(string? profileId = default, bool? includeOverLimit = default);
+        ListAccounts200Response ListAccounts(string? profileId = default, string? platform = default, bool? includeOverLimit = default);
 
         /// <summary>
         /// List accounts
@@ -144,9 +145,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
+        /// <param name="platform">Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). (optional)</param>
         /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <returns>ApiResponse of ListAccounts200Response</returns>
-        ApiResponse<ListAccounts200Response> ListAccountsWithHttpInfo(string? profileId = default, bool? includeOverLimit = default);
+        ApiResponse<ListAccounts200Response> ListAccountsWithHttpInfo(string? profileId = default, string? platform = default, bool? includeOverLimit = default);
         /// <summary>
         /// Update account
         /// </summary>
@@ -291,10 +293,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
+        /// <param name="platform">Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). (optional)</param>
         /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAccounts200Response</returns>
-        System.Threading.Tasks.Task<ListAccounts200Response> ListAccountsAsync(string? profileId = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ListAccounts200Response> ListAccountsAsync(string? profileId = default, string? platform = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List accounts
@@ -304,10 +307,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
+        /// <param name="platform">Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). (optional)</param>
         /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAccounts200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListAccounts200Response>> ListAccountsWithHttpInfoAsync(string? profileId = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ListAccounts200Response>> ListAccountsWithHttpInfoAsync(string? profileId = default, string? platform = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update account
         /// </summary>
@@ -1127,11 +1131,12 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
+        /// <param name="platform">Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). (optional)</param>
         /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <returns>ListAccounts200Response</returns>
-        public ListAccounts200Response ListAccounts(string? profileId = default, bool? includeOverLimit = default)
+        public ListAccounts200Response ListAccounts(string? profileId = default, string? platform = default, bool? includeOverLimit = default)
         {
-            Late.Client.ApiResponse<ListAccounts200Response> localVarResponse = ListAccountsWithHttpInfo(profileId, includeOverLimit);
+            Late.Client.ApiResponse<ListAccounts200Response> localVarResponse = ListAccountsWithHttpInfo(profileId, platform, includeOverLimit);
             return localVarResponse.Data;
         }
 
@@ -1140,9 +1145,10 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
+        /// <param name="platform">Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). (optional)</param>
         /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <returns>ApiResponse of ListAccounts200Response</returns>
-        public Late.Client.ApiResponse<ListAccounts200Response> ListAccountsWithHttpInfo(string? profileId = default, bool? includeOverLimit = default)
+        public Late.Client.ApiResponse<ListAccounts200Response> ListAccountsWithHttpInfo(string? profileId = default, string? platform = default, bool? includeOverLimit = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1163,6 +1169,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
             }
             if (includeOverLimit != null)
             {
@@ -1193,12 +1203,13 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
+        /// <param name="platform">Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). (optional)</param>
         /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAccounts200Response</returns>
-        public async System.Threading.Tasks.Task<ListAccounts200Response> ListAccountsAsync(string? profileId = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ListAccounts200Response> ListAccountsAsync(string? profileId = default, string? platform = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<ListAccounts200Response> localVarResponse = await ListAccountsWithHttpInfoAsync(profileId, includeOverLimit, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListAccounts200Response> localVarResponse = await ListAccountsWithHttpInfoAsync(profileId, platform, includeOverLimit, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1207,10 +1218,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter accounts by profile ID (optional)</param>
+        /// <param name="platform">Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). (optional)</param>
         /// <param name="includeOverLimit">When true, includes accounts from over-limit profiles. (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAccounts200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListAccounts200Response>> ListAccountsWithHttpInfoAsync(string? profileId = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListAccounts200Response>> ListAccountsWithHttpInfoAsync(string? profileId = default, string? platform = default, bool? includeOverLimit = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1233,6 +1245,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
             }
             if (includeOverLimit != null)
             {

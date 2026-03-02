@@ -237,7 +237,7 @@ catch (ApiException e)
 
 <a id="getconnecturl"></a>
 # **GetConnectUrl**
-> GetConnectUrl200Response GetConnectUrl (string platform, string profileId, string? redirectUrl = null)
+> GetConnectUrl200Response GetConnectUrl (string platform, string profileId, string? redirectUrl = null, bool? headless = null)
 
 Get OAuth connect URL
 
@@ -270,11 +270,12 @@ namespace Example
             var platform = "facebook";  // string | Social media platform to connect
             var profileId = "profileId_example";  // string | Your Late profile ID (get from /v1/profiles)
             var redirectUrl = "redirectUrl_example";  // string? | Your custom redirect URL after connection completes. Standard mode appends ?connected={platform}&profileId=X&username=Y. Headless mode appends OAuth data params. (optional) 
+            var headless = false;  // bool? | When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late's default account selection UI. Use this to build a custom connect experience. (optional)  (default to false)
 
             try
             {
                 // Get OAuth connect URL
-                GetConnectUrl200Response result = apiInstance.GetConnectUrl(platform, profileId, redirectUrl);
+                GetConnectUrl200Response result = apiInstance.GetConnectUrl(platform, profileId, redirectUrl, headless);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -295,7 +296,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get OAuth connect URL
-    ApiResponse<GetConnectUrl200Response> response = apiInstance.GetConnectUrlWithHttpInfo(platform, profileId, redirectUrl);
+    ApiResponse<GetConnectUrl200Response> response = apiInstance.GetConnectUrlWithHttpInfo(platform, profileId, redirectUrl, headless);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -315,6 +316,7 @@ catch (ApiException e)
 | **platform** | **string** | Social media platform to connect |  |
 | **profileId** | **string** | Your Late profile ID (get from /v1/profiles) |  |
 | **redirectUrl** | **string?** | Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. | [optional]  |
+| **headless** | **bool?** | When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. | [optional] [default to false] |
 
 ### Return type
 

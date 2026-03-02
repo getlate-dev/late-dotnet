@@ -425,7 +425,7 @@ catch (ApiException e)
 
 <a id="listposts"></a>
 # **ListPosts**
-> PostsListResponse ListPosts (int? page = null, int? limit = null, string? status = null, string? platform = null, string? profileId = null, string? createdBy = null, DateOnly? dateFrom = null, DateOnly? dateTo = null, bool? includeHidden = null)
+> PostsListResponse ListPosts (int? page = null, int? limit = null, string? status = null, string? platform = null, string? profileId = null, string? createdBy = null, DateOnly? dateFrom = null, DateOnly? dateTo = null, bool? includeHidden = null, string? search = null, string? sortBy = null)
 
 List posts
 
@@ -464,11 +464,13 @@ namespace Example
             var dateFrom = DateOnly.Parse("2013-10-20");  // DateOnly? |  (optional) 
             var dateTo = DateOnly.Parse("2013-10-20");  // DateOnly? |  (optional) 
             var includeHidden = false;  // bool? |  (optional)  (default to false)
+            var search = "search_example";  // string? | Search posts by text content. (optional) 
+            var sortBy = "scheduled-desc";  // string? | Sort order for results. (optional)  (default to scheduled-desc)
 
             try
             {
                 // List posts
-                PostsListResponse result = apiInstance.ListPosts(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden);
+                PostsListResponse result = apiInstance.ListPosts(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden, search, sortBy);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -489,7 +491,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List posts
-    ApiResponse<PostsListResponse> response = apiInstance.ListPostsWithHttpInfo(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden);
+    ApiResponse<PostsListResponse> response = apiInstance.ListPostsWithHttpInfo(page, limit, status, platform, profileId, createdBy, dateFrom, dateTo, includeHidden, search, sortBy);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -515,6 +517,8 @@ catch (ApiException e)
 | **dateFrom** | **DateOnly?** |  | [optional]  |
 | **dateTo** | **DateOnly?** |  | [optional]  |
 | **includeHidden** | **bool?** |  | [optional] [default to false] |
+| **search** | **string?** | Search posts by text content. | [optional]  |
+| **sortBy** | **string?** | Sort order for results. | [optional] [default to scheduled-desc] |
 
 ### Return type
 

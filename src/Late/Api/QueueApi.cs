@@ -128,9 +128,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
+        /// <param name="queueId">Filter by specific queue ID. Omit to use the default queue. (optional)</param>
         /// <param name="count"> (optional, default to 20)</param>
         /// <returns>PreviewQueue200Response</returns>
-        PreviewQueue200Response PreviewQueue(string profileId, int? count = default);
+        PreviewQueue200Response PreviewQueue(string profileId, string? queueId = default, int? count = default);
 
         /// <summary>
         /// Preview upcoming slots
@@ -140,9 +141,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
+        /// <param name="queueId">Filter by specific queue ID. Omit to use the default queue. (optional)</param>
         /// <param name="count"> (optional, default to 20)</param>
         /// <returns>ApiResponse of PreviewQueue200Response</returns>
-        ApiResponse<PreviewQueue200Response> PreviewQueueWithHttpInfo(string profileId, int? count = default);
+        ApiResponse<PreviewQueue200Response> PreviewQueueWithHttpInfo(string profileId, string? queueId = default, int? count = default);
         /// <summary>
         /// Update schedule
         /// </summary>
@@ -281,10 +283,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
+        /// <param name="queueId">Filter by specific queue ID. Omit to use the default queue. (optional)</param>
         /// <param name="count"> (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PreviewQueue200Response</returns>
-        System.Threading.Tasks.Task<PreviewQueue200Response> PreviewQueueAsync(string profileId, int? count = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<PreviewQueue200Response> PreviewQueueAsync(string profileId, string? queueId = default, int? count = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Preview upcoming slots
@@ -294,10 +297,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
+        /// <param name="queueId">Filter by specific queue ID. Omit to use the default queue. (optional)</param>
         /// <param name="count"> (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PreviewQueue200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PreviewQueue200Response>> PreviewQueueWithHttpInfoAsync(string profileId, int? count = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<PreviewQueue200Response>> PreviewQueueWithHttpInfoAsync(string profileId, string? queueId = default, int? count = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update schedule
         /// </summary>
@@ -1099,11 +1103,12 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
+        /// <param name="queueId">Filter by specific queue ID. Omit to use the default queue. (optional)</param>
         /// <param name="count"> (optional, default to 20)</param>
         /// <returns>PreviewQueue200Response</returns>
-        public PreviewQueue200Response PreviewQueue(string profileId, int? count = default)
+        public PreviewQueue200Response PreviewQueue(string profileId, string? queueId = default, int? count = default)
         {
-            Late.Client.ApiResponse<PreviewQueue200Response> localVarResponse = PreviewQueueWithHttpInfo(profileId, count);
+            Late.Client.ApiResponse<PreviewQueue200Response> localVarResponse = PreviewQueueWithHttpInfo(profileId, queueId, count);
             return localVarResponse.Data;
         }
 
@@ -1112,9 +1117,10 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
+        /// <param name="queueId">Filter by specific queue ID. Omit to use the default queue. (optional)</param>
         /// <param name="count"> (optional, default to 20)</param>
         /// <returns>ApiResponse of PreviewQueue200Response</returns>
-        public Late.Client.ApiResponse<PreviewQueue200Response> PreviewQueueWithHttpInfo(string profileId, int? count = default)
+        public Late.Client.ApiResponse<PreviewQueue200Response> PreviewQueueWithHttpInfo(string profileId, string? queueId = default, int? count = default)
         {
             // verify the required parameter 'profileId' is set
             if (profileId == null)
@@ -1137,6 +1143,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (queueId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "queueId", queueId));
+            }
             if (count != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "count", count));
@@ -1166,12 +1176,13 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
+        /// <param name="queueId">Filter by specific queue ID. Omit to use the default queue. (optional)</param>
         /// <param name="count"> (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of PreviewQueue200Response</returns>
-        public async System.Threading.Tasks.Task<PreviewQueue200Response> PreviewQueueAsync(string profileId, int? count = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<PreviewQueue200Response> PreviewQueueAsync(string profileId, string? queueId = default, int? count = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<PreviewQueue200Response> localVarResponse = await PreviewQueueWithHttpInfoAsync(profileId, count, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<PreviewQueue200Response> localVarResponse = await PreviewQueueWithHttpInfoAsync(profileId, queueId, count, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1180,10 +1191,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId"></param>
+        /// <param name="queueId">Filter by specific queue ID. Omit to use the default queue. (optional)</param>
         /// <param name="count"> (optional, default to 20)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PreviewQueue200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<PreviewQueue200Response>> PreviewQueueWithHttpInfoAsync(string profileId, int? count = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<PreviewQueue200Response>> PreviewQueueWithHttpInfoAsync(string profileId, string? queueId = default, int? count = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'profileId' is set
             if (profileId == null)
@@ -1208,6 +1220,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (queueId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "queueId", queueId));
+            }
             if (count != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "count", count));

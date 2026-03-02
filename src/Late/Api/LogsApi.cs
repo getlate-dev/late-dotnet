@@ -95,8 +95,9 @@ namespace Late.Api
         /// <param name="days">Number of days to look back (max 7) (optional, default to 7)</param>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <returns>ListPostsLogs200Response</returns>
-        ListPostsLogs200Response ListPostsLogs(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default);
+        ListPostsLogs200Response ListPostsLogs(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default);
 
         /// <summary>
         /// List publishing logs
@@ -111,8 +112,9 @@ namespace Late.Api
         /// <param name="days">Number of days to look back (max 7) (optional, default to 7)</param>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <returns>ApiResponse of ListPostsLogs200Response</returns>
-        ApiResponse<ListPostsLogs200Response> ListPostsLogsWithHttpInfo(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default);
+        ApiResponse<ListPostsLogs200Response> ListPostsLogsWithHttpInfo(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default);
         #endregion Synchronous Operations
     }
 
@@ -193,9 +195,10 @@ namespace Late.Api
         /// <param name="days">Number of days to look back (max 7) (optional, default to 7)</param>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListPostsLogs200Response</returns>
-        System.Threading.Tasks.Task<ListPostsLogs200Response> ListPostsLogsAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ListPostsLogs200Response> ListPostsLogsAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List publishing logs
@@ -210,9 +213,10 @@ namespace Late.Api
         /// <param name="days">Number of days to look back (max 7) (optional, default to 7)</param>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListPostsLogs200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListPostsLogs200Response>> ListPostsLogsWithHttpInfoAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ListPostsLogs200Response>> ListPostsLogsWithHttpInfoAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -760,10 +764,11 @@ namespace Late.Api
         /// <param name="days">Number of days to look back (max 7) (optional, default to 7)</param>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <returns>ListPostsLogs200Response</returns>
-        public ListPostsLogs200Response ListPostsLogs(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default)
+        public ListPostsLogs200Response ListPostsLogs(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default)
         {
-            Late.Client.ApiResponse<ListPostsLogs200Response> localVarResponse = ListPostsLogsWithHttpInfo(status, platform, action, days, limit, skip);
+            Late.Client.ApiResponse<ListPostsLogs200Response> localVarResponse = ListPostsLogsWithHttpInfo(status, platform, action, days, limit, skip, search);
             return localVarResponse.Data;
         }
 
@@ -777,8 +782,9 @@ namespace Late.Api
         /// <param name="days">Number of days to look back (max 7) (optional, default to 7)</param>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <returns>ApiResponse of ListPostsLogs200Response</returns>
-        public Late.Client.ApiResponse<ListPostsLogs200Response> ListPostsLogsWithHttpInfo(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default)
+        public Late.Client.ApiResponse<ListPostsLogs200Response> ListPostsLogsWithHttpInfo(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -819,6 +825,10 @@ namespace Late.Api
             if (skip != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "skip", skip));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "search", search));
             }
 
             // authentication (bearerAuth) required
@@ -850,11 +860,12 @@ namespace Late.Api
         /// <param name="days">Number of days to look back (max 7) (optional, default to 7)</param>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListPostsLogs200Response</returns>
-        public async System.Threading.Tasks.Task<ListPostsLogs200Response> ListPostsLogsAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ListPostsLogs200Response> ListPostsLogsAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<ListPostsLogs200Response> localVarResponse = await ListPostsLogsWithHttpInfoAsync(status, platform, action, days, limit, skip, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListPostsLogs200Response> localVarResponse = await ListPostsLogsWithHttpInfoAsync(status, platform, action, days, limit, skip, search, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -868,9 +879,10 @@ namespace Late.Api
         /// <param name="days">Number of days to look back (max 7) (optional, default to 7)</param>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListPostsLogs200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListPostsLogs200Response>> ListPostsLogsWithHttpInfoAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListPostsLogs200Response>> ListPostsLogsWithHttpInfoAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -913,6 +925,10 @@ namespace Late.Api
             if (skip != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "skip", skip));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "search", search));
             }
 
             // authentication (bearerAuth) required

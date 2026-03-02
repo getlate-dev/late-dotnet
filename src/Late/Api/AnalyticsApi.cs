@@ -76,8 +76,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetBestTimeToPost200Response</returns>
-        GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default);
+        GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default, string? source = default);
 
         /// <summary>
         /// Get best times to post
@@ -88,8 +89,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetBestTimeToPost200Response</returns>
-        ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default);
+        ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default, string? source = default);
         /// <summary>
         /// Get content performance decay
         /// </summary>
@@ -99,8 +101,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetContentDecay200Response</returns>
-        GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default);
+        GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default, string? source = default);
 
         /// <summary>
         /// Get content performance decay
@@ -111,8 +114,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetContentDecay200Response</returns>
-        ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default);
+        ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default, string? source = default);
         /// <summary>
         /// Get daily aggregated metrics
         /// </summary>
@@ -124,8 +128,9 @@ namespace Late.Api
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetDailyMetrics200Response</returns>
-        GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default);
+        GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default);
 
         /// <summary>
         /// Get daily aggregated metrics
@@ -138,8 +143,9 @@ namespace Late.Api
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetDailyMetrics200Response</returns>
-        ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default);
+        ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default);
         /// <summary>
         /// Get follower stats
         /// </summary>
@@ -230,8 +236,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetPostingFrequency200Response</returns>
-        GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default);
+        GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default, string? source = default);
 
         /// <summary>
         /// Get posting frequency vs engagement
@@ -242,8 +249,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetPostingFrequency200Response</returns>
-        ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default);
+        ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default, string? source = default);
         /// <summary>
         /// Get YouTube daily views
         /// </summary>
@@ -330,9 +338,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBestTimeToPost200Response</returns>
-        System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get best times to post
@@ -343,9 +352,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBestTimeToPost200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get content performance decay
         /// </summary>
@@ -355,9 +365,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetContentDecay200Response</returns>
-        System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get content performance decay
@@ -368,9 +379,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetContentDecay200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get daily aggregated metrics
         /// </summary>
@@ -382,9 +394,10 @@ namespace Late.Api
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetDailyMetrics200Response</returns>
-        System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get daily aggregated metrics
@@ -397,9 +410,10 @@ namespace Late.Api
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetDailyMetrics200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get follower stats
         /// </summary>
@@ -496,9 +510,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPostingFrequency200Response</returns>
-        System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get posting frequency vs engagement
@@ -509,9 +524,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPostingFrequency200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get YouTube daily views
         /// </summary>
@@ -993,10 +1009,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetBestTimeToPost200Response</returns>
-        public GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default)
+        public GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default, string? source = default)
         {
-            Late.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = GetBestTimeToPostWithHttpInfo(platform, profileId);
+            Late.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = GetBestTimeToPostWithHttpInfo(platform, profileId, source);
             return localVarResponse.Data;
         }
 
@@ -1006,8 +1023,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetBestTimeToPost200Response</returns>
-        public Late.Client.ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default)
+        public Late.Client.ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default, string? source = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1032,6 +1050,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
             }
 
             // authentication (bearerAuth) required
@@ -1059,11 +1081,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBestTimeToPost200Response</returns>
-        public async System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = await GetBestTimeToPostWithHttpInfoAsync(platform, profileId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = await GetBestTimeToPostWithHttpInfoAsync(platform, profileId, source, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1073,9 +1096,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBestTimeToPost200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1102,6 +1126,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
             }
 
             // authentication (bearerAuth) required
@@ -1130,10 +1158,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetContentDecay200Response</returns>
-        public GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default)
+        public GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default, string? source = default)
         {
-            Late.Client.ApiResponse<GetContentDecay200Response> localVarResponse = GetContentDecayWithHttpInfo(platform, profileId);
+            Late.Client.ApiResponse<GetContentDecay200Response> localVarResponse = GetContentDecayWithHttpInfo(platform, profileId, source);
             return localVarResponse.Data;
         }
 
@@ -1143,8 +1172,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetContentDecay200Response</returns>
-        public Late.Client.ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default)
+        public Late.Client.ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default, string? source = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1169,6 +1199,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
             }
 
             // authentication (bearerAuth) required
@@ -1196,11 +1230,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetContentDecay200Response</returns>
-        public async System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetContentDecay200Response> localVarResponse = await GetContentDecayWithHttpInfoAsync(platform, profileId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetContentDecay200Response> localVarResponse = await GetContentDecayWithHttpInfoAsync(platform, profileId, source, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1210,9 +1245,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetContentDecay200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1239,6 +1275,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
             }
 
             // authentication (bearerAuth) required
@@ -1269,10 +1309,11 @@ namespace Late.Api
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetDailyMetrics200Response</returns>
-        public GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default)
+        public GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default)
         {
-            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = GetDailyMetricsWithHttpInfo(platform, profileId, fromDate, toDate);
+            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = GetDailyMetricsWithHttpInfo(platform, profileId, fromDate, toDate, source);
             return localVarResponse.Data;
         }
 
@@ -1284,8 +1325,9 @@ namespace Late.Api
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetDailyMetrics200Response</returns>
-        public Late.Client.ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default)
+        public Late.Client.ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1318,6 +1360,10 @@ namespace Late.Api
             if (toDate != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "toDate", toDate));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
             }
 
             // authentication (bearerAuth) required
@@ -1347,11 +1393,12 @@ namespace Late.Api
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetDailyMetrics200Response</returns>
-        public async System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = await GetDailyMetricsWithHttpInfoAsync(platform, profileId, fromDate, toDate, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = await GetDailyMetricsWithHttpInfoAsync(platform, profileId, fromDate, toDate, source, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1363,9 +1410,10 @@ namespace Late.Api
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetDailyMetrics200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1400,6 +1448,10 @@ namespace Late.Api
             if (toDate != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "toDate", toDate));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
             }
 
             // authentication (bearerAuth) required
@@ -1917,10 +1969,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetPostingFrequency200Response</returns>
-        public GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default)
+        public GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default, string? source = default)
         {
-            Late.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = GetPostingFrequencyWithHttpInfo(platform, profileId);
+            Late.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = GetPostingFrequencyWithHttpInfo(platform, profileId, source);
             return localVarResponse.Data;
         }
 
@@ -1930,8 +1983,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetPostingFrequency200Response</returns>
-        public Late.Client.ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default)
+        public Late.Client.ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default, string? source = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1956,6 +2010,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
             }
 
             // authentication (bearerAuth) required
@@ -1983,11 +2041,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPostingFrequency200Response</returns>
-        public async System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = await GetPostingFrequencyWithHttpInfoAsync(platform, profileId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = await GetPostingFrequencyWithHttpInfoAsync(platform, profileId, source, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1997,9 +2056,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPostingFrequency200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -2026,6 +2086,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
             }
 
             // authentication (bearerAuth) required

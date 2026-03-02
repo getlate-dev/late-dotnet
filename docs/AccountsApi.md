@@ -424,7 +424,7 @@ catch (ApiException e)
 
 <a id="listaccounts"></a>
 # **ListAccounts**
-> ListAccounts200Response ListAccounts (string? profileId = null, bool? includeOverLimit = null)
+> ListAccounts200Response ListAccounts (string? profileId = null, string? platform = null, bool? includeOverLimit = null)
 
 List accounts
 
@@ -455,12 +455,13 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AccountsApi(httpClient, config, httpClientHandler);
             var profileId = "profileId_example";  // string? | Filter accounts by profile ID (optional) 
+            var platform = "platform_example";  // string? | Filter accounts by platform (e.g. \"instagram\", \"twitter\"). (optional) 
             var includeOverLimit = false;  // bool? | When true, includes accounts from over-limit profiles. (optional)  (default to false)
 
             try
             {
                 // List accounts
-                ListAccounts200Response result = apiInstance.ListAccounts(profileId, includeOverLimit);
+                ListAccounts200Response result = apiInstance.ListAccounts(profileId, platform, includeOverLimit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -481,7 +482,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List accounts
-    ApiResponse<ListAccounts200Response> response = apiInstance.ListAccountsWithHttpInfo(profileId, includeOverLimit);
+    ApiResponse<ListAccounts200Response> response = apiInstance.ListAccountsWithHttpInfo(profileId, platform, includeOverLimit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -499,6 +500,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **profileId** | **string?** | Filter accounts by profile ID | [optional]  |
+| **platform** | **string?** | Filter accounts by platform (e.g. \&quot;instagram\&quot;, \&quot;twitter\&quot;). | [optional]  |
 | **includeOverLimit** | **bool?** | When true, includes accounts from over-limit profiles. | [optional] [default to false] |
 
 ### Return type

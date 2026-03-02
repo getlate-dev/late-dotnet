@@ -424,7 +424,7 @@ catch (ApiException e)
 
 <a id="previewqueue"></a>
 # **PreviewQueue**
-> PreviewQueue200Response PreviewQueue (string profileId, int? count = null)
+> PreviewQueue200Response PreviewQueue (string profileId, string? queueId = null, int? count = null)
 
 Preview upcoming slots
 
@@ -455,12 +455,13 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new QueueApi(httpClient, config, httpClientHandler);
             var profileId = "profileId_example";  // string | 
+            var queueId = "queueId_example";  // string? | Filter by specific queue ID. Omit to use the default queue. (optional) 
             var count = 20;  // int? |  (optional)  (default to 20)
 
             try
             {
                 // Preview upcoming slots
-                PreviewQueue200Response result = apiInstance.PreviewQueue(profileId, count);
+                PreviewQueue200Response result = apiInstance.PreviewQueue(profileId, queueId, count);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -481,7 +482,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Preview upcoming slots
-    ApiResponse<PreviewQueue200Response> response = apiInstance.PreviewQueueWithHttpInfo(profileId, count);
+    ApiResponse<PreviewQueue200Response> response = apiInstance.PreviewQueueWithHttpInfo(profileId, queueId, count);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -499,6 +500,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **profileId** | **string** |  |  |
+| **queueId** | **string?** | Filter by specific queue ID. Omit to use the default queue. | [optional]  |
 | **count** | **int?** |  | [optional] [default to 20] |
 
 ### Return type
