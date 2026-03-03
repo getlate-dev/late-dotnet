@@ -113,6 +113,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Comment deleted |  -  |
+| **400** | Platform rejected the operation (e.g., comment already deleted, insufficient permissions on the video) |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Inbox addon required |  -  |
 
