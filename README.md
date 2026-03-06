@@ -570,6 +570,8 @@ Class | Method | HTTP request | Description
  - [Model.QueueSlot](docs/QueueSlot.md)
  - [Model.QueueSlotsResponse](docs/QueueSlotsResponse.md)
  - [Model.QueueUpdateResponse](docs/QueueUpdateResponse.md)
+ - [Model.RecyclingConfig](docs/RecyclingConfig.md)
+ - [Model.RecyclingState](docs/RecyclingState.md)
  - [Model.RedditPlatformData](docs/RedditPlatformData.md)
  - [Model.ReplyToInboxPost200Response](docs/ReplyToInboxPost200Response.md)
  - [Model.ReplyToInboxPost200ResponseData](docs/ReplyToInboxPost200ResponseData.md)

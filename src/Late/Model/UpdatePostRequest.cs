@@ -39,11 +39,13 @@ namespace Late.Model
         /// <param name="content">content.</param>
         /// <param name="scheduledFor">scheduledFor.</param>
         /// <param name="tiktokSettings">Root-level TikTok settings applied to all TikTok platforms. Merged into each platform&#39;s platformSpecificData, with platform-specific settings taking precedence..</param>
-        public UpdatePostRequest(string content = default, DateTime scheduledFor = default, TikTokPlatformData tiktokSettings = default)
+        /// <param name="recycling">recycling.</param>
+        public UpdatePostRequest(string content = default, DateTime scheduledFor = default, TikTokPlatformData tiktokSettings = default, RecyclingConfig recycling = default)
         {
             this.Content = content;
             this.ScheduledFor = scheduledFor;
             this.TiktokSettings = tiktokSettings;
+            this.Recycling = recycling;
             this.AdditionalProperties = new Dictionary<string, object>();
         }
 
@@ -67,6 +69,12 @@ namespace Late.Model
         public TikTokPlatformData TiktokSettings { get; set; }
 
         /// <summary>
+        /// Gets or Sets Recycling
+        /// </summary>
+        [DataMember(Name = "recycling", EmitDefaultValue = false)]
+        public RecyclingConfig Recycling { get; set; }
+
+        /// <summary>
         /// Gets or Sets additional properties
         /// </summary>
         [JsonExtensionData]
@@ -83,6 +91,7 @@ namespace Late.Model
             sb.Append("  Content: ").Append(Content).Append("\n");
             sb.Append("  ScheduledFor: ").Append(ScheduledFor).Append("\n");
             sb.Append("  TiktokSettings: ").Append(TiktokSettings).Append("\n");
+            sb.Append("  Recycling: ").Append(Recycling).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

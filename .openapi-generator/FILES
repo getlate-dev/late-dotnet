@@ -304,6 +304,8 @@ docs/QueueSchedule.md
 docs/QueueSlot.md
 docs/QueueSlotsResponse.md
 docs/QueueUpdateResponse.md
+docs/RecyclingConfig.md
+docs/RecyclingState.md
 docs/RedditPlatformData.md
 docs/RedditSearchApi.md
 docs/ReplyToInboxPost200Response.md
@@ -463,6 +465,8 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/RecyclingConfigTests.cs
+src/Late.Test/Model/RecyclingStateTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -790,6 +794,8 @@ src/Late/Model/QueueSchedule.cs
 src/Late/Model/QueueSlot.cs
 src/Late/Model/QueueSlotsResponse.cs
 src/Late/Model/QueueUpdateResponse.cs
+src/Late/Model/RecyclingConfig.cs
+src/Late/Model/RecyclingState.cs
 src/Late/Model/RedditPlatformData.cs
 src/Late/Model/ReplyToInboxPost200Response.cs
 src/Late/Model/ReplyToInboxPost200ResponseData.cs

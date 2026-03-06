@@ -64,34 +64,40 @@ namespace Late.Model
             PostPartial = 4,
 
             /// <summary>
+            /// Enum PostRecycled for value: post.recycled
+            /// </summary>
+            [EnumMember(Value = "post.recycled")]
+            PostRecycled = 5,
+
+            /// <summary>
             /// Enum AccountConnected for value: account.connected
             /// </summary>
             [EnumMember(Value = "account.connected")]
-            AccountConnected = 5,
+            AccountConnected = 6,
 
             /// <summary>
             /// Enum AccountDisconnected for value: account.disconnected
             /// </summary>
             [EnumMember(Value = "account.disconnected")]
-            AccountDisconnected = 6,
+            AccountDisconnected = 7,
 
             /// <summary>
             /// Enum MessageReceived for value: message.received
             /// </summary>
             [EnumMember(Value = "message.received")]
-            MessageReceived = 7,
+            MessageReceived = 8,
 
             /// <summary>
             /// Enum CommentReceived for value: comment.received
             /// </summary>
             [EnumMember(Value = "comment.received")]
-            CommentReceived = 8,
+            CommentReceived = 9,
 
             /// <summary>
             /// Enum WebhookTest for value: webhook.test
             /// </summary>
             [EnumMember(Value = "webhook.test")]
-            WebhookTest = 9
+            WebhookTest = 10
         }
 
 

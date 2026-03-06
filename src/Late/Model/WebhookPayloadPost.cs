@@ -61,7 +61,13 @@ namespace Late.Model
             /// Enum PostPartial for value: post.partial
             /// </summary>
             [EnumMember(Value = "post.partial")]
-            PostPartial = 4
+            PostPartial = 4,
+
+            /// <summary>
+            /// Enum PostRecycled for value: post.recycled
+            /// </summary>
+            [EnumMember(Value = "post.recycled")]
+            PostRecycled = 5
         }
 
 

@@ -130,11 +130,13 @@ namespace Late.Model
         /// <param name="mentions">mentions.</param>
         /// <param name="visibility">visibility.</param>
         /// <param name="metadata">metadata.</param>
+        /// <param name="recycling">recycling.</param>
+        /// <param name="recycledFromPostId">ID of the original post if this post was created via recycling.</param>
         /// <param name="queuedFromProfile">Profile ID if the post was scheduled via the queue.</param>
         /// <param name="queueId">Queue ID if the post was scheduled via a specific queue.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public Post(string id = default, PostUserId userId = default, string title = default, string content = default, List<MediaItem> mediaItems = default, List<PlatformTarget> platforms = default, DateTime scheduledFor = default, string timezone = default, StatusEnum? status = default, List<string> tags = default, List<string> hashtags = default, List<string> mentions = default, VisibilityEnum? visibility = default, Dictionary<string, Object> metadata = default, string queuedFromProfile = default, string queueId = default, DateTime createdAt = default, DateTime updatedAt = default)
+        public Post(string id = default, PostUserId userId = default, string title = default, string content = default, List<MediaItem> mediaItems = default, List<PlatformTarget> platforms = default, DateTime scheduledFor = default, string timezone = default, StatusEnum? status = default, List<string> tags = default, List<string> hashtags = default, List<string> mentions = default, VisibilityEnum? visibility = default, Dictionary<string, Object> metadata = default, RecyclingState recycling = default, string recycledFromPostId = default, string queuedFromProfile = default, string queueId = default, DateTime createdAt = default, DateTime updatedAt = default)
         {
             this.Id = id;
             this.UserId = userId;
@@ -150,6 +152,8 @@ namespace Late.Model
             this.Mentions = mentions;
             this.Visibility = visibility;
             this.Metadata = metadata;
+            this.Recycling = recycling;
+            this.RecycledFromPostId = recycledFromPostId;
             this.QueuedFromProfile = queuedFromProfile;
             this.QueueId = queueId;
             this.CreatedAt = createdAt;
@@ -231,6 +235,19 @@ namespace Late.Model
         public Dictionary<string, Object> Metadata { get; set; }
 
         /// <summary>
+        /// Gets or Sets Recycling
+        /// </summary>
+        [DataMember(Name = "recycling", EmitDefaultValue = false)]
+        public RecyclingState Recycling { get; set; }
+
+        /// <summary>
+        /// ID of the original post if this post was created via recycling
+        /// </summary>
+        /// <value>ID of the original post if this post was created via recycling</value>
+        [DataMember(Name = "recycledFromPostId", EmitDefaultValue = false)]
+        public string RecycledFromPostId { get; set; }
+
+        /// <summary>
         /// Profile ID if the post was scheduled via the queue
         /// </summary>
         /// <value>Profile ID if the post was scheduled via the queue</value>
@@ -278,6 +295,8 @@ namespace Late.Model
             sb.Append("  Mentions: ").Append(Mentions).Append("\n");
             sb.Append("  Visibility: ").Append(Visibility).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+            sb.Append("  Recycling: ").Append(Recycling).Append("\n");
+            sb.Append("  RecycledFromPostId: ").Append(RecycledFromPostId).Append("\n");
             sb.Append("  QueuedFromProfile: ").Append(QueuedFromProfile).Append("\n");
             sb.Append("  QueueId: ").Append(QueueId).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
