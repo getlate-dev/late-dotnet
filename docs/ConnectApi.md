@@ -269,7 +269,7 @@ namespace Example
             var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
             var platform = "facebook";  // string | Social media platform to connect
             var profileId = "profileId_example";  // string | Your Late profile ID (get from /v1/profiles)
-            var redirectUrl = "redirectUrl_example";  // string? | Your custom redirect URL after connection completes. Standard mode appends ?connected={platform}&profileId=X&username=Y. Headless mode appends OAuth data params. (optional) 
+            var redirectUrl = "redirectUrl_example";  // string? | Your custom redirect URL after connection completes. Standard mode appends ?connected={platform}&profileId=X&accountId=Y&username=Z. Headless mode appends OAuth data params for platforms requiring selection (e.g. LinkedIn orgs, Facebook pages). If no selection is needed, the account is created directly and the redirect includes accountId. (optional) 
             var headless = false;  // bool? | When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late's default account selection UI. Use this to build a custom connect experience. (optional)  (default to false)
 
             try
@@ -315,7 +315,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string** | Social media platform to connect |  |
 | **profileId** | **string** | Your Late profile ID (get from /v1/profiles) |  |
-| **redirectUrl** | **string?** | Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;username&#x3D;Y. Headless mode appends OAuth data params. | [optional]  |
+| **redirectUrl** | **string?** | Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;accountId&#x3D;Y&amp;username&#x3D;Z. Headless mode appends OAuth data params for platforms requiring selection (e.g. LinkedIn orgs, Facebook pages). If no selection is needed, the account is created directly and the redirect includes accountId. | [optional]  |
 | **headless** | **bool?** | When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. | [optional] [default to false] |
 
 ### Return type
