@@ -49,6 +49,39 @@ jobs:
             --git-user-id=getlate-dev \
             --git-repo-id=late-dotnet
 
+      - name: Patch README install instructions
+        run: |
+          python3 -c "
+          import re, textwrap
+          with open('README.md', 'r') as f:
+              content = f.read()
+          install_section = textwrap.dedent('''## Installation
+
+          Install via NuGet:
+
+          \`\`\`bash
+          dotnet add package Late
+          \`\`\`
+
+          Or via the Package Manager Console:
+
+          \`\`\`
+          Install-Package Late
+          \`\`\`
+
+          Then add the namespaces to your project:
+
+          \`\`\`csharp
+          using Late.Api;
+          using Late.Client;
+          using Late.Model;
+          \`\`\`''')
+          # Remove frameworks-supported, dependencies, and old installation sections
+          content = re.sub(r'<a id=\"frameworks-supported\">.*?(?=<a id=\"packaging\">)', '<a id=\"installation\">\n' + install_section + '\n\n', content, flags=re.DOTALL)
+          with open('README.md', 'w') as f:
+              f.write(content)
+          "
+
       - name: Build
         run: dotnet build -c Release
 
