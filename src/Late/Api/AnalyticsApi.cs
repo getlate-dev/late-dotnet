@@ -228,7 +228,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetLinkedInPostAnalytics200Response</returns>
         ApiResponse<GetLinkedInPostAnalytics200Response> GetLinkedInPostAnalyticsWithHttpInfo(string accountId, string urn);
         /// <summary>
-        /// Get LinkedIn post reactions (who reacted)
+        /// Get LinkedIn post reactions
         /// </summary>
         /// <remarks>
         /// Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
@@ -242,7 +242,7 @@ namespace Late.Api
         GetLinkedInPostReactions200Response GetLinkedInPostReactions(string accountId, string urn, int? limit = default, string? cursor = default);
 
         /// <summary>
-        /// Get LinkedIn post reactions (who reacted)
+        /// Get LinkedIn post reactions
         /// </summary>
         /// <remarks>
         /// Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
@@ -554,7 +554,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetLinkedInPostAnalytics200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetLinkedInPostAnalytics200Response>> GetLinkedInPostAnalyticsWithHttpInfoAsync(string accountId, string urn, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get LinkedIn post reactions (who reacted)
+        /// Get LinkedIn post reactions
         /// </summary>
         /// <remarks>
         /// Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
@@ -569,7 +569,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetLinkedInPostReactions200Response> GetLinkedInPostReactionsAsync(string accountId, string urn, int? limit = default, string? cursor = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get LinkedIn post reactions (who reacted)
+        /// Get LinkedIn post reactions
         /// </summary>
         /// <remarks>
         /// Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
@@ -2072,7 +2072,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get LinkedIn post reactions (who reacted) Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
+        /// Get LinkedIn post reactions Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn organization account</param>
@@ -2087,7 +2087,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get LinkedIn post reactions (who reacted) Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
+        /// Get LinkedIn post reactions Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn organization account</param>
@@ -2152,7 +2152,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get LinkedIn post reactions (who reacted) Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
+        /// Get LinkedIn post reactions Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn organization account</param>
@@ -2168,7 +2168,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get LinkedIn post reactions (who reacted) Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
+        /// Get LinkedIn post reactions Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn organization account</param>

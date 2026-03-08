@@ -11,7 +11,7 @@ All URIs are relative to *https://getlate.dev/api*
 | [**GetFollowerStats**](AnalyticsApi.md#getfollowerstats) | **GET** /v1/accounts/follower-stats | Get follower stats |
 | [**GetLinkedInAggregateAnalytics**](AnalyticsApi.md#getlinkedinaggregateanalytics) | **GET** /v1/accounts/{accountId}/linkedin-aggregate-analytics | Get LinkedIn aggregate stats |
 | [**GetLinkedInPostAnalytics**](AnalyticsApi.md#getlinkedinpostanalytics) | **GET** /v1/accounts/{accountId}/linkedin-post-analytics | Get LinkedIn post stats |
-| [**GetLinkedInPostReactions**](AnalyticsApi.md#getlinkedinpostreactions) | **GET** /v1/accounts/{accountId}/linkedin-post-reactions | Get LinkedIn post reactions (who reacted) |
+| [**GetLinkedInPostReactions**](AnalyticsApi.md#getlinkedinpostreactions) | **GET** /v1/accounts/{accountId}/linkedin-post-reactions | Get LinkedIn post reactions |
 | [**GetPostTimeline**](AnalyticsApi.md#getposttimeline) | **GET** /v1/analytics/post-timeline | Get post analytics timeline |
 | [**GetPostingFrequency**](AnalyticsApi.md#getpostingfrequency) | **GET** /v1/analytics/posting-frequency | Get posting frequency vs engagement |
 | [**GetYouTubeDailyViews**](AnalyticsApi.md#getyoutubedailyviews) | **GET** /v1/analytics/youtube/daily-views | Get YouTube daily views |
@@ -780,7 +780,7 @@ catch (ApiException e)
 # **GetLinkedInPostReactions**
 > GetLinkedInPostReactions200Response GetLinkedInPostReactions (string accountId, string urn, int? limit = null, string? cursor = null)
 
-Get LinkedIn post reactions (who reacted)
+Get LinkedIn post reactions
 
 Returns individual reactions for a specific LinkedIn post, including reactor profiles (name, headline/job title, profile picture, profile URL, reaction type). Only works for **organization/company page** accounts. LinkedIn restricts reaction data for personal profiles (r_member_social_feed is a closed permission). 
 
@@ -815,7 +815,7 @@ namespace Example
 
             try
             {
-                // Get LinkedIn post reactions (who reacted)
+                // Get LinkedIn post reactions
                 GetLinkedInPostReactions200Response result = apiInstance.GetLinkedInPostReactions(accountId, urn, limit, cursor);
                 Debug.WriteLine(result);
             }
@@ -836,7 +836,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get LinkedIn post reactions (who reacted)
+    // Get LinkedIn post reactions
     ApiResponse<GetLinkedInPostReactions200Response> response = apiInstance.GetLinkedInPostReactionsWithHttpInfo(accountId, urn, limit, cursor);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
