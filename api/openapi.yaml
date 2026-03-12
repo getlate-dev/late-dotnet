@@ -3713,6 +3713,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to query. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Number of reviews to fetch per page (max 50)
         explode: true
         in: query
@@ -3827,6 +3836,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to query. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -3910,6 +3928,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to target. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       requestBody:
         content:
           application/json:
@@ -3989,6 +4016,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to query. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       - description: "Comma-separated fields to return. Available: name, title, phoneNumbers,\
           \ categories, storefrontAddress, websiteUri, regularHours, specialHours,\
           \ serviceArea, profile, openInfo, metadata, moreHours."
@@ -4063,6 +4099,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to target. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       requestBody:
         content:
           application/json:
@@ -4132,6 +4177,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to target. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       - description: The media item ID to delete
         explode: true
         in: query
@@ -4177,6 +4231,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to query. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Number of items to return (max 100)
         explode: true
         in: query
@@ -4233,6 +4296,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to target. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       requestBody:
         content:
           application/json:
@@ -4280,6 +4352,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to query. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content:
@@ -4340,6 +4421,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to target. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       requestBody:
         content:
           application/json:
@@ -4395,6 +4485,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to target. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       - description: The resource name of the place action link (e.g. locations/123/placeActionLinks/456)
         explode: true
         in: query
@@ -4441,6 +4540,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to query. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       - explode: true
         in: query
         name: pageSize
@@ -4504,6 +4612,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: "Override which location to target. If omitted, uses the account's\
+          \ selected location. Use GET /gmb-locations to list valid IDs."
+        explode: true
+        in: query
+        name: locationId
+        required: false
+        schema:
+          type: string
+        style: form
       requestBody:
         content:
           application/json:

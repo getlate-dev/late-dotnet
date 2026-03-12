@@ -9,7 +9,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 <a id="getgooglebusinessfoodmenus"></a>
 # **GetGoogleBusinessFoodMenus**
-> GetGoogleBusinessFoodMenus200Response GetGoogleBusinessFoodMenus (string accountId)
+> GetGoogleBusinessFoodMenus200Response GetGoogleBusinessFoodMenus (string accountId, string? locationId = null)
 
 Get food menus
 
@@ -40,11 +40,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new GMBFoodMenusApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | The Late account ID (from /v1/accounts)
+            var locationId = "locationId_example";  // string? | Override which location to query. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
 
             try
             {
                 // Get food menus
-                GetGoogleBusinessFoodMenus200Response result = apiInstance.GetGoogleBusinessFoodMenus(accountId);
+                GetGoogleBusinessFoodMenus200Response result = apiInstance.GetGoogleBusinessFoodMenus(accountId, locationId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get food menus
-    ApiResponse<GetGoogleBusinessFoodMenus200Response> response = apiInstance.GetGoogleBusinessFoodMenusWithHttpInfo(accountId);
+    ApiResponse<GetGoogleBusinessFoodMenus200Response> response = apiInstance.GetGoogleBusinessFoodMenusWithHttpInfo(accountId, locationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -83,6 +84,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **accountId** | **string** | The Late account ID (from /v1/accounts) |  |
+| **locationId** | **string?** | Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 
 ### Return type
 
@@ -112,7 +114,7 @@ catch (ApiException e)
 
 <a id="updategooglebusinessfoodmenus"></a>
 # **UpdateGoogleBusinessFoodMenus**
-> UpdateGoogleBusinessFoodMenus200Response UpdateGoogleBusinessFoodMenus (string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest)
+> UpdateGoogleBusinessFoodMenus200Response UpdateGoogleBusinessFoodMenus (string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = null)
 
 Update food menus
 
@@ -144,11 +146,12 @@ namespace Example
             var apiInstance = new GMBFoodMenusApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | The Late account ID (from /v1/accounts)
             var updateGoogleBusinessFoodMenusRequest = new UpdateGoogleBusinessFoodMenusRequest(); // UpdateGoogleBusinessFoodMenusRequest | 
+            var locationId = "locationId_example";  // string? | Override which location to target. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
 
             try
             {
                 // Update food menus
-                UpdateGoogleBusinessFoodMenus200Response result = apiInstance.UpdateGoogleBusinessFoodMenus(accountId, updateGoogleBusinessFoodMenusRequest);
+                UpdateGoogleBusinessFoodMenus200Response result = apiInstance.UpdateGoogleBusinessFoodMenus(accountId, updateGoogleBusinessFoodMenusRequest, locationId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -169,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update food menus
-    ApiResponse<UpdateGoogleBusinessFoodMenus200Response> response = apiInstance.UpdateGoogleBusinessFoodMenusWithHttpInfo(accountId, updateGoogleBusinessFoodMenusRequest);
+    ApiResponse<UpdateGoogleBusinessFoodMenus200Response> response = apiInstance.UpdateGoogleBusinessFoodMenusWithHttpInfo(accountId, updateGoogleBusinessFoodMenusRequest, locationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -188,6 +191,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **accountId** | **string** | The Late account ID (from /v1/accounts) |  |
 | **updateGoogleBusinessFoodMenusRequest** | [**UpdateGoogleBusinessFoodMenusRequest**](UpdateGoogleBusinessFoodMenusRequest.md) |  |  |
+| **locationId** | **string?** | Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 
 ### Return type
 

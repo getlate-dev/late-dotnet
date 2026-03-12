@@ -37,8 +37,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessMediaRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>CreateGoogleBusinessMedia200Response</returns>
-        CreateGoogleBusinessMedia200Response CreateGoogleBusinessMedia(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest);
+        CreateGoogleBusinessMedia200Response CreateGoogleBusinessMedia(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = default);
 
         /// <summary>
         /// Upload photo
@@ -49,8 +50,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessMediaRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of CreateGoogleBusinessMedia200Response</returns>
-        ApiResponse<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaWithHttpInfo(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest);
+        ApiResponse<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaWithHttpInfo(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = default);
         /// <summary>
         /// Delete photo
         /// </summary>
@@ -60,8 +62,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>DeleteGoogleBusinessMedia200Response</returns>
-        DeleteGoogleBusinessMedia200Response DeleteGoogleBusinessMedia(string accountId, string mediaId);
+        DeleteGoogleBusinessMedia200Response DeleteGoogleBusinessMedia(string accountId, string mediaId, string? locationId = default);
 
         /// <summary>
         /// Delete photo
@@ -72,8 +75,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of DeleteGoogleBusinessMedia200Response</returns>
-        ApiResponse<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaWithHttpInfo(string accountId, string mediaId);
+        ApiResponse<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaWithHttpInfo(string accountId, string mediaId, string? locationId = default);
         /// <summary>
         /// List media
         /// </summary>
@@ -82,10 +86,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of items to return (max 100) (optional, default to 100)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <returns>ListGoogleBusinessMedia200Response</returns>
-        ListGoogleBusinessMedia200Response ListGoogleBusinessMedia(string accountId, int? pageSize = default, string? pageToken = default);
+        ListGoogleBusinessMedia200Response ListGoogleBusinessMedia(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default);
 
         /// <summary>
         /// List media
@@ -95,10 +100,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of items to return (max 100) (optional, default to 100)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <returns>ApiResponse of ListGoogleBusinessMedia200Response</returns>
-        ApiResponse<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaWithHttpInfo(string accountId, int? pageSize = default, string? pageToken = default);
+        ApiResponse<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaWithHttpInfo(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default);
         #endregion Synchronous Operations
     }
 
@@ -117,9 +123,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessMediaRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateGoogleBusinessMedia200Response</returns>
-        System.Threading.Tasks.Task<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Upload photo
@@ -130,9 +137,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessMediaRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateGoogleBusinessMedia200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateGoogleBusinessMedia200Response>> CreateGoogleBusinessMediaWithHttpInfoAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<CreateGoogleBusinessMedia200Response>> CreateGoogleBusinessMediaWithHttpInfoAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete photo
         /// </summary>
@@ -142,9 +150,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteGoogleBusinessMedia200Response</returns>
-        System.Threading.Tasks.Task<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaAsync(string accountId, string mediaId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaAsync(string accountId, string mediaId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete photo
@@ -155,9 +164,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteGoogleBusinessMedia200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteGoogleBusinessMedia200Response>> DeleteGoogleBusinessMediaWithHttpInfoAsync(string accountId, string mediaId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<DeleteGoogleBusinessMedia200Response>> DeleteGoogleBusinessMediaWithHttpInfoAsync(string accountId, string mediaId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List media
         /// </summary>
@@ -166,11 +176,12 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of items to return (max 100) (optional, default to 100)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListGoogleBusinessMedia200Response</returns>
-        System.Threading.Tasks.Task<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List media
@@ -180,11 +191,12 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of items to return (max 100) (optional, default to 100)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListGoogleBusinessMedia200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListGoogleBusinessMedia200Response>> ListGoogleBusinessMediaWithHttpInfoAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ListGoogleBusinessMedia200Response>> ListGoogleBusinessMediaWithHttpInfoAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -404,10 +416,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessMediaRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>CreateGoogleBusinessMedia200Response</returns>
-        public CreateGoogleBusinessMedia200Response CreateGoogleBusinessMedia(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest)
+        public CreateGoogleBusinessMedia200Response CreateGoogleBusinessMedia(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = default)
         {
-            Late.Client.ApiResponse<CreateGoogleBusinessMedia200Response> localVarResponse = CreateGoogleBusinessMediaWithHttpInfo(accountId, createGoogleBusinessMediaRequest);
+            Late.Client.ApiResponse<CreateGoogleBusinessMedia200Response> localVarResponse = CreateGoogleBusinessMediaWithHttpInfo(accountId, createGoogleBusinessMediaRequest, locationId);
             return localVarResponse.Data;
         }
 
@@ -417,8 +430,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessMediaRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of CreateGoogleBusinessMedia200Response</returns>
-        public Late.Client.ApiResponse<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaWithHttpInfo(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest)
+        public Late.Client.ApiResponse<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaWithHttpInfo(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -446,6 +460,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.Data = createGoogleBusinessMediaRequest;
 
             // authentication (bearerAuth) required
@@ -473,11 +491,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessMediaRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateGoogleBusinessMedia200Response</returns>
-        public async System.Threading.Tasks.Task<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<CreateGoogleBusinessMedia200Response> CreateGoogleBusinessMediaAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<CreateGoogleBusinessMedia200Response> localVarResponse = await CreateGoogleBusinessMediaWithHttpInfoAsync(accountId, createGoogleBusinessMediaRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<CreateGoogleBusinessMedia200Response> localVarResponse = await CreateGoogleBusinessMediaWithHttpInfoAsync(accountId, createGoogleBusinessMediaRequest, locationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -487,9 +506,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessMediaRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateGoogleBusinessMedia200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateGoogleBusinessMedia200Response>> CreateGoogleBusinessMediaWithHttpInfoAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateGoogleBusinessMedia200Response>> CreateGoogleBusinessMediaWithHttpInfoAsync(string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -519,6 +539,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.Data = createGoogleBusinessMediaRequest;
 
             // authentication (bearerAuth) required
@@ -547,10 +571,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>DeleteGoogleBusinessMedia200Response</returns>
-        public DeleteGoogleBusinessMedia200Response DeleteGoogleBusinessMedia(string accountId, string mediaId)
+        public DeleteGoogleBusinessMedia200Response DeleteGoogleBusinessMedia(string accountId, string mediaId, string? locationId = default)
         {
-            Late.Client.ApiResponse<DeleteGoogleBusinessMedia200Response> localVarResponse = DeleteGoogleBusinessMediaWithHttpInfo(accountId, mediaId);
+            Late.Client.ApiResponse<DeleteGoogleBusinessMedia200Response> localVarResponse = DeleteGoogleBusinessMediaWithHttpInfo(accountId, mediaId, locationId);
             return localVarResponse.Data;
         }
 
@@ -560,8 +585,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of DeleteGoogleBusinessMedia200Response</returns>
-        public Late.Client.ApiResponse<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaWithHttpInfo(string accountId, string mediaId)
+        public Late.Client.ApiResponse<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaWithHttpInfo(string accountId, string mediaId, string? locationId = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -588,6 +614,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "mediaId", mediaId));
 
             // authentication (bearerAuth) required
@@ -615,11 +645,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteGoogleBusinessMedia200Response</returns>
-        public async System.Threading.Tasks.Task<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaAsync(string accountId, string mediaId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<DeleteGoogleBusinessMedia200Response> DeleteGoogleBusinessMediaAsync(string accountId, string mediaId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<DeleteGoogleBusinessMedia200Response> localVarResponse = await DeleteGoogleBusinessMediaWithHttpInfoAsync(accountId, mediaId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<DeleteGoogleBusinessMedia200Response> localVarResponse = await DeleteGoogleBusinessMediaWithHttpInfoAsync(accountId, mediaId, locationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -629,9 +660,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="mediaId">The media item ID to delete</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteGoogleBusinessMedia200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<DeleteGoogleBusinessMedia200Response>> DeleteGoogleBusinessMediaWithHttpInfoAsync(string accountId, string mediaId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<DeleteGoogleBusinessMedia200Response>> DeleteGoogleBusinessMediaWithHttpInfoAsync(string accountId, string mediaId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -660,6 +692,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "mediaId", mediaId));
 
             // authentication (bearerAuth) required
@@ -687,12 +723,13 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of items to return (max 100) (optional, default to 100)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <returns>ListGoogleBusinessMedia200Response</returns>
-        public ListGoogleBusinessMedia200Response ListGoogleBusinessMedia(string accountId, int? pageSize = default, string? pageToken = default)
+        public ListGoogleBusinessMedia200Response ListGoogleBusinessMedia(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default)
         {
-            Late.Client.ApiResponse<ListGoogleBusinessMedia200Response> localVarResponse = ListGoogleBusinessMediaWithHttpInfo(accountId, pageSize, pageToken);
+            Late.Client.ApiResponse<ListGoogleBusinessMedia200Response> localVarResponse = ListGoogleBusinessMediaWithHttpInfo(accountId, locationId, pageSize, pageToken);
             return localVarResponse.Data;
         }
 
@@ -701,10 +738,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of items to return (max 100) (optional, default to 100)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <returns>ApiResponse of ListGoogleBusinessMedia200Response</returns>
-        public Late.Client.ApiResponse<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaWithHttpInfo(string accountId, int? pageSize = default, string? pageToken = default)
+        public Late.Client.ApiResponse<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaWithHttpInfo(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -727,6 +765,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             if (pageSize != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
@@ -760,13 +802,14 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of items to return (max 100) (optional, default to 100)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListGoogleBusinessMedia200Response</returns>
-        public async System.Threading.Tasks.Task<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ListGoogleBusinessMedia200Response> ListGoogleBusinessMediaAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<ListGoogleBusinessMedia200Response> localVarResponse = await ListGoogleBusinessMediaWithHttpInfoAsync(accountId, pageSize, pageToken, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListGoogleBusinessMedia200Response> localVarResponse = await ListGoogleBusinessMediaWithHttpInfoAsync(accountId, locationId, pageSize, pageToken, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -775,11 +818,12 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of items to return (max 100) (optional, default to 100)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListGoogleBusinessMedia200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListGoogleBusinessMedia200Response>> ListGoogleBusinessMediaWithHttpInfoAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListGoogleBusinessMedia200Response>> ListGoogleBusinessMediaWithHttpInfoAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -804,6 +848,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             if (pageSize != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));

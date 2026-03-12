@@ -36,8 +36,9 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>GetGoogleBusinessAttributes200Response</returns>
-        GetGoogleBusinessAttributes200Response GetGoogleBusinessAttributes(string accountId);
+        GetGoogleBusinessAttributes200Response GetGoogleBusinessAttributes(string accountId, string? locationId = default);
 
         /// <summary>
         /// Get attributes
@@ -47,8 +48,9 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessAttributes200Response</returns>
-        ApiResponse<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesWithHttpInfo(string accountId);
+        ApiResponse<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesWithHttpInfo(string accountId, string? locationId = default);
         /// <summary>
         /// Update attributes
         /// </summary>
@@ -58,8 +60,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGoogleBusinessAttributesRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>UpdateGoogleBusinessAttributes200Response</returns>
-        UpdateGoogleBusinessAttributes200Response UpdateGoogleBusinessAttributes(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest);
+        UpdateGoogleBusinessAttributes200Response UpdateGoogleBusinessAttributes(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = default);
 
         /// <summary>
         /// Update attributes
@@ -70,8 +73,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGoogleBusinessAttributesRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of UpdateGoogleBusinessAttributes200Response</returns>
-        ApiResponse<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesWithHttpInfo(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest);
+        ApiResponse<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesWithHttpInfo(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = default);
         #endregion Synchronous Operations
     }
 
@@ -89,9 +93,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessAttributes200Response</returns>
-        System.Threading.Tasks.Task<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesAsync(string accountId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get attributes
@@ -101,9 +106,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessAttributes200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessAttributes200Response>> GetGoogleBusinessAttributesWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessAttributes200Response>> GetGoogleBusinessAttributesWithHttpInfoAsync(string accountId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update attributes
         /// </summary>
@@ -113,9 +119,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGoogleBusinessAttributesRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateGoogleBusinessAttributes200Response</returns>
-        System.Threading.Tasks.Task<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update attributes
@@ -126,9 +133,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGoogleBusinessAttributesRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateGoogleBusinessAttributes200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateGoogleBusinessAttributes200Response>> UpdateGoogleBusinessAttributesWithHttpInfoAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<UpdateGoogleBusinessAttributes200Response>> UpdateGoogleBusinessAttributesWithHttpInfoAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -347,10 +355,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>GetGoogleBusinessAttributes200Response</returns>
-        public GetGoogleBusinessAttributes200Response GetGoogleBusinessAttributes(string accountId)
+        public GetGoogleBusinessAttributes200Response GetGoogleBusinessAttributes(string accountId, string? locationId = default)
         {
-            Late.Client.ApiResponse<GetGoogleBusinessAttributes200Response> localVarResponse = GetGoogleBusinessAttributesWithHttpInfo(accountId);
+            Late.Client.ApiResponse<GetGoogleBusinessAttributes200Response> localVarResponse = GetGoogleBusinessAttributesWithHttpInfo(accountId, locationId);
             return localVarResponse.Data;
         }
 
@@ -359,8 +368,9 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessAttributes200Response</returns>
-        public Late.Client.ApiResponse<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesWithHttpInfo(string accountId)
+        public Late.Client.ApiResponse<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesWithHttpInfo(string accountId, string? locationId = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -383,6 +393,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required
@@ -408,11 +422,12 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessAttributes200Response</returns>
-        public async System.Threading.Tasks.Task<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetGoogleBusinessAttributes200Response> GetGoogleBusinessAttributesAsync(string accountId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetGoogleBusinessAttributes200Response> localVarResponse = await GetGoogleBusinessAttributesWithHttpInfoAsync(accountId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetGoogleBusinessAttributes200Response> localVarResponse = await GetGoogleBusinessAttributesWithHttpInfoAsync(accountId, locationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -421,9 +436,10 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessAttributes200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetGoogleBusinessAttributes200Response>> GetGoogleBusinessAttributesWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetGoogleBusinessAttributes200Response>> GetGoogleBusinessAttributesWithHttpInfoAsync(string accountId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -448,6 +464,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required
@@ -475,10 +495,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGoogleBusinessAttributesRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>UpdateGoogleBusinessAttributes200Response</returns>
-        public UpdateGoogleBusinessAttributes200Response UpdateGoogleBusinessAttributes(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest)
+        public UpdateGoogleBusinessAttributes200Response UpdateGoogleBusinessAttributes(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = default)
         {
-            Late.Client.ApiResponse<UpdateGoogleBusinessAttributes200Response> localVarResponse = UpdateGoogleBusinessAttributesWithHttpInfo(accountId, updateGoogleBusinessAttributesRequest);
+            Late.Client.ApiResponse<UpdateGoogleBusinessAttributes200Response> localVarResponse = UpdateGoogleBusinessAttributesWithHttpInfo(accountId, updateGoogleBusinessAttributesRequest, locationId);
             return localVarResponse.Data;
         }
 
@@ -488,8 +509,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGoogleBusinessAttributesRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of UpdateGoogleBusinessAttributes200Response</returns>
-        public Late.Client.ApiResponse<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesWithHttpInfo(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest)
+        public Late.Client.ApiResponse<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesWithHttpInfo(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -517,6 +539,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.Data = updateGoogleBusinessAttributesRequest;
 
             // authentication (bearerAuth) required
@@ -544,11 +570,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGoogleBusinessAttributesRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateGoogleBusinessAttributes200Response</returns>
-        public async System.Threading.Tasks.Task<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<UpdateGoogleBusinessAttributes200Response> UpdateGoogleBusinessAttributesAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<UpdateGoogleBusinessAttributes200Response> localVarResponse = await UpdateGoogleBusinessAttributesWithHttpInfoAsync(accountId, updateGoogleBusinessAttributesRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<UpdateGoogleBusinessAttributes200Response> localVarResponse = await UpdateGoogleBusinessAttributesWithHttpInfoAsync(accountId, updateGoogleBusinessAttributesRequest, locationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -558,9 +585,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="updateGoogleBusinessAttributesRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateGoogleBusinessAttributes200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateGoogleBusinessAttributes200Response>> UpdateGoogleBusinessAttributesWithHttpInfoAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateGoogleBusinessAttributes200Response>> UpdateGoogleBusinessAttributesWithHttpInfoAsync(string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -590,6 +618,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.Data = updateGoogleBusinessAttributesRequest;
 
             // authentication (bearerAuth) required

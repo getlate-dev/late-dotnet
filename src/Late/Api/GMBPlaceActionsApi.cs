@@ -37,8 +37,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessPlaceActionRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>CreateGoogleBusinessPlaceAction200Response</returns>
-        CreateGoogleBusinessPlaceAction200Response CreateGoogleBusinessPlaceAction(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest);
+        CreateGoogleBusinessPlaceAction200Response CreateGoogleBusinessPlaceAction(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, string? locationId = default);
 
         /// <summary>
         /// Create action link
@@ -49,8 +50,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessPlaceActionRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of CreateGoogleBusinessPlaceAction200Response</returns>
-        ApiResponse<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionWithHttpInfo(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest);
+        ApiResponse<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionWithHttpInfo(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, string? locationId = default);
         /// <summary>
         /// Delete action link
         /// </summary>
@@ -60,8 +62,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>DeleteGoogleBusinessPlaceAction200Response</returns>
-        DeleteGoogleBusinessPlaceAction200Response DeleteGoogleBusinessPlaceAction(string accountId, string name);
+        DeleteGoogleBusinessPlaceAction200Response DeleteGoogleBusinessPlaceAction(string accountId, string name, string? locationId = default);
 
         /// <summary>
         /// Delete action link
@@ -72,8 +75,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of DeleteGoogleBusinessPlaceAction200Response</returns>
-        ApiResponse<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionWithHttpInfo(string accountId, string name);
+        ApiResponse<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionWithHttpInfo(string accountId, string name, string? locationId = default);
         /// <summary>
         /// List action links
         /// </summary>
@@ -82,10 +86,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="pageToken"> (optional)</param>
         /// <returns>ListGoogleBusinessPlaceActions200Response</returns>
-        ListGoogleBusinessPlaceActions200Response ListGoogleBusinessPlaceActions(string accountId, int? pageSize = default, string? pageToken = default);
+        ListGoogleBusinessPlaceActions200Response ListGoogleBusinessPlaceActions(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default);
 
         /// <summary>
         /// List action links
@@ -95,10 +100,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="pageToken"> (optional)</param>
         /// <returns>ApiResponse of ListGoogleBusinessPlaceActions200Response</returns>
-        ApiResponse<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsWithHttpInfo(string accountId, int? pageSize = default, string? pageToken = default);
+        ApiResponse<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsWithHttpInfo(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default);
         #endregion Synchronous Operations
     }
 
@@ -117,9 +123,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessPlaceActionRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateGoogleBusinessPlaceAction200Response</returns>
-        System.Threading.Tasks.Task<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create action link
@@ -130,9 +137,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessPlaceActionRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateGoogleBusinessPlaceAction200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreateGoogleBusinessPlaceAction200Response>> CreateGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<CreateGoogleBusinessPlaceAction200Response>> CreateGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete action link
         /// </summary>
@@ -142,9 +150,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteGoogleBusinessPlaceAction200Response</returns>
-        System.Threading.Tasks.Task<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionAsync(string accountId, string name, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionAsync(string accountId, string name, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete action link
@@ -155,9 +164,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteGoogleBusinessPlaceAction200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DeleteGoogleBusinessPlaceAction200Response>> DeleteGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, string name, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<DeleteGoogleBusinessPlaceAction200Response>> DeleteGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, string name, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List action links
         /// </summary>
@@ -166,11 +176,12 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="pageToken"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListGoogleBusinessPlaceActions200Response</returns>
-        System.Threading.Tasks.Task<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List action links
@@ -180,11 +191,12 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="pageToken"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListGoogleBusinessPlaceActions200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListGoogleBusinessPlaceActions200Response>> ListGoogleBusinessPlaceActionsWithHttpInfoAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ListGoogleBusinessPlaceActions200Response>> ListGoogleBusinessPlaceActionsWithHttpInfoAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -404,10 +416,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessPlaceActionRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>CreateGoogleBusinessPlaceAction200Response</returns>
-        public CreateGoogleBusinessPlaceAction200Response CreateGoogleBusinessPlaceAction(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest)
+        public CreateGoogleBusinessPlaceAction200Response CreateGoogleBusinessPlaceAction(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, string? locationId = default)
         {
-            Late.Client.ApiResponse<CreateGoogleBusinessPlaceAction200Response> localVarResponse = CreateGoogleBusinessPlaceActionWithHttpInfo(accountId, createGoogleBusinessPlaceActionRequest);
+            Late.Client.ApiResponse<CreateGoogleBusinessPlaceAction200Response> localVarResponse = CreateGoogleBusinessPlaceActionWithHttpInfo(accountId, createGoogleBusinessPlaceActionRequest, locationId);
             return localVarResponse.Data;
         }
 
@@ -417,8 +430,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessPlaceActionRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of CreateGoogleBusinessPlaceAction200Response</returns>
-        public Late.Client.ApiResponse<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionWithHttpInfo(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest)
+        public Late.Client.ApiResponse<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionWithHttpInfo(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, string? locationId = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -446,6 +460,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.Data = createGoogleBusinessPlaceActionRequest;
 
             // authentication (bearerAuth) required
@@ -473,11 +491,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessPlaceActionRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of CreateGoogleBusinessPlaceAction200Response</returns>
-        public async System.Threading.Tasks.Task<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<CreateGoogleBusinessPlaceAction200Response> CreateGoogleBusinessPlaceActionAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<CreateGoogleBusinessPlaceAction200Response> localVarResponse = await CreateGoogleBusinessPlaceActionWithHttpInfoAsync(accountId, createGoogleBusinessPlaceActionRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<CreateGoogleBusinessPlaceAction200Response> localVarResponse = await CreateGoogleBusinessPlaceActionWithHttpInfoAsync(accountId, createGoogleBusinessPlaceActionRequest, locationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -487,9 +506,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="createGoogleBusinessPlaceActionRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CreateGoogleBusinessPlaceAction200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateGoogleBusinessPlaceAction200Response>> CreateGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateGoogleBusinessPlaceAction200Response>> CreateGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, CreateGoogleBusinessPlaceActionRequest createGoogleBusinessPlaceActionRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -519,6 +539,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.Data = createGoogleBusinessPlaceActionRequest;
 
             // authentication (bearerAuth) required
@@ -547,10 +571,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>DeleteGoogleBusinessPlaceAction200Response</returns>
-        public DeleteGoogleBusinessPlaceAction200Response DeleteGoogleBusinessPlaceAction(string accountId, string name)
+        public DeleteGoogleBusinessPlaceAction200Response DeleteGoogleBusinessPlaceAction(string accountId, string name, string? locationId = default)
         {
-            Late.Client.ApiResponse<DeleteGoogleBusinessPlaceAction200Response> localVarResponse = DeleteGoogleBusinessPlaceActionWithHttpInfo(accountId, name);
+            Late.Client.ApiResponse<DeleteGoogleBusinessPlaceAction200Response> localVarResponse = DeleteGoogleBusinessPlaceActionWithHttpInfo(accountId, name, locationId);
             return localVarResponse.Data;
         }
 
@@ -560,8 +585,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of DeleteGoogleBusinessPlaceAction200Response</returns>
-        public Late.Client.ApiResponse<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionWithHttpInfo(string accountId, string name)
+        public Late.Client.ApiResponse<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionWithHttpInfo(string accountId, string name, string? locationId = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -588,6 +614,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "name", name));
 
             // authentication (bearerAuth) required
@@ -615,11 +645,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of DeleteGoogleBusinessPlaceAction200Response</returns>
-        public async System.Threading.Tasks.Task<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionAsync(string accountId, string name, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<DeleteGoogleBusinessPlaceAction200Response> DeleteGoogleBusinessPlaceActionAsync(string accountId, string name, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<DeleteGoogleBusinessPlaceAction200Response> localVarResponse = await DeleteGoogleBusinessPlaceActionWithHttpInfoAsync(accountId, name, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<DeleteGoogleBusinessPlaceAction200Response> localVarResponse = await DeleteGoogleBusinessPlaceActionWithHttpInfoAsync(accountId, name, locationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -629,9 +660,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
         /// <param name="name">The resource name of the place action link (e.g. locations/123/placeActionLinks/456)</param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (DeleteGoogleBusinessPlaceAction200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<DeleteGoogleBusinessPlaceAction200Response>> DeleteGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, string name, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<DeleteGoogleBusinessPlaceAction200Response>> DeleteGoogleBusinessPlaceActionWithHttpInfoAsync(string accountId, string name, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -660,6 +692,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "name", name));
 
             // authentication (bearerAuth) required
@@ -687,12 +723,13 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="pageToken"> (optional)</param>
         /// <returns>ListGoogleBusinessPlaceActions200Response</returns>
-        public ListGoogleBusinessPlaceActions200Response ListGoogleBusinessPlaceActions(string accountId, int? pageSize = default, string? pageToken = default)
+        public ListGoogleBusinessPlaceActions200Response ListGoogleBusinessPlaceActions(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default)
         {
-            Late.Client.ApiResponse<ListGoogleBusinessPlaceActions200Response> localVarResponse = ListGoogleBusinessPlaceActionsWithHttpInfo(accountId, pageSize, pageToken);
+            Late.Client.ApiResponse<ListGoogleBusinessPlaceActions200Response> localVarResponse = ListGoogleBusinessPlaceActionsWithHttpInfo(accountId, locationId, pageSize, pageToken);
             return localVarResponse.Data;
         }
 
@@ -701,10 +738,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="pageToken"> (optional)</param>
         /// <returns>ApiResponse of ListGoogleBusinessPlaceActions200Response</returns>
-        public Late.Client.ApiResponse<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsWithHttpInfo(string accountId, int? pageSize = default, string? pageToken = default)
+        public Late.Client.ApiResponse<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsWithHttpInfo(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -727,6 +765,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             if (pageSize != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
@@ -760,13 +802,14 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="pageToken"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListGoogleBusinessPlaceActions200Response</returns>
-        public async System.Threading.Tasks.Task<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ListGoogleBusinessPlaceActions200Response> ListGoogleBusinessPlaceActionsAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<ListGoogleBusinessPlaceActions200Response> localVarResponse = await ListGoogleBusinessPlaceActionsWithHttpInfoAsync(accountId, pageSize, pageToken, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListGoogleBusinessPlaceActions200Response> localVarResponse = await ListGoogleBusinessPlaceActionsWithHttpInfoAsync(accountId, locationId, pageSize, pageToken, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -775,11 +818,12 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId"></param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize"> (optional, default to 100)</param>
         /// <param name="pageToken"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListGoogleBusinessPlaceActions200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListGoogleBusinessPlaceActions200Response>> ListGoogleBusinessPlaceActionsWithHttpInfoAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListGoogleBusinessPlaceActions200Response>> ListGoogleBusinessPlaceActionsWithHttpInfoAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -804,6 +848,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             if (pageSize != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));

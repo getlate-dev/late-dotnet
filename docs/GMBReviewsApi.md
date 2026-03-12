@@ -8,7 +8,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 <a id="getgooglebusinessreviews"></a>
 # **GetGoogleBusinessReviews**
-> GetGoogleBusinessReviews200Response GetGoogleBusinessReviews (string accountId, int? pageSize = null, string? pageToken = null)
+> GetGoogleBusinessReviews200Response GetGoogleBusinessReviews (string accountId, string? locationId = null, int? pageSize = null, string? pageToken = null)
 
 Get reviews
 
@@ -39,13 +39,14 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new GMBReviewsApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | The Late account ID (from /v1/accounts)
+            var locationId = "locationId_example";  // string? | Override which location to query. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
             var pageSize = 50;  // int? | Number of reviews to fetch per page (max 50) (optional)  (default to 50)
             var pageToken = "pageToken_example";  // string? | Pagination token from previous response (optional) 
 
             try
             {
                 // Get reviews
-                GetGoogleBusinessReviews200Response result = apiInstance.GetGoogleBusinessReviews(accountId, pageSize, pageToken);
+                GetGoogleBusinessReviews200Response result = apiInstance.GetGoogleBusinessReviews(accountId, locationId, pageSize, pageToken);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get reviews
-    ApiResponse<GetGoogleBusinessReviews200Response> response = apiInstance.GetGoogleBusinessReviewsWithHttpInfo(accountId, pageSize, pageToken);
+    ApiResponse<GetGoogleBusinessReviews200Response> response = apiInstance.GetGoogleBusinessReviewsWithHttpInfo(accountId, locationId, pageSize, pageToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **accountId** | **string** | The Late account ID (from /v1/accounts) |  |
+| **locationId** | **string?** | Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 | **pageSize** | **int?** | Number of reviews to fetch per page (max 50) | [optional] [default to 50] |
 | **pageToken** | **string?** | Pagination token from previous response | [optional]  |
 

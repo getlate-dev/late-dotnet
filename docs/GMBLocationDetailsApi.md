@@ -9,7 +9,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 <a id="getgooglebusinesslocationdetails"></a>
 # **GetGoogleBusinessLocationDetails**
-> GetGoogleBusinessLocationDetails200Response GetGoogleBusinessLocationDetails (string accountId, string? readMask = null)
+> GetGoogleBusinessLocationDetails200Response GetGoogleBusinessLocationDetails (string accountId, string? locationId = null, string? readMask = null)
 
 Get location details
 
@@ -40,12 +40,13 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new GMBLocationDetailsApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | The Late account ID (from /v1/accounts)
+            var locationId = "locationId_example";  // string? | Override which location to query. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
             var readMask = "readMask_example";  // string? | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. (optional) 
 
             try
             {
                 // Get location details
-                GetGoogleBusinessLocationDetails200Response result = apiInstance.GetGoogleBusinessLocationDetails(accountId, readMask);
+                GetGoogleBusinessLocationDetails200Response result = apiInstance.GetGoogleBusinessLocationDetails(accountId, locationId, readMask);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get location details
-    ApiResponse<GetGoogleBusinessLocationDetails200Response> response = apiInstance.GetGoogleBusinessLocationDetailsWithHttpInfo(accountId, readMask);
+    ApiResponse<GetGoogleBusinessLocationDetails200Response> response = apiInstance.GetGoogleBusinessLocationDetailsWithHttpInfo(accountId, locationId, readMask);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -84,6 +85,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **accountId** | **string** | The Late account ID (from /v1/accounts) |  |
+| **locationId** | **string?** | Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 | **readMask** | **string?** | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, profile, openInfo, metadata, moreHours. | [optional]  |
 
 ### Return type
@@ -112,7 +114,7 @@ catch (ApiException e)
 
 <a id="updategooglebusinesslocationdetails"></a>
 # **UpdateGoogleBusinessLocationDetails**
-> UpdateGoogleBusinessLocationDetails200Response UpdateGoogleBusinessLocationDetails (string accountId, UpdateGoogleBusinessLocationDetailsRequest updateGoogleBusinessLocationDetailsRequest)
+> UpdateGoogleBusinessLocationDetails200Response UpdateGoogleBusinessLocationDetails (string accountId, UpdateGoogleBusinessLocationDetailsRequest updateGoogleBusinessLocationDetailsRequest, string? locationId = null)
 
 Update location details
 
@@ -144,11 +146,12 @@ namespace Example
             var apiInstance = new GMBLocationDetailsApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | The Late account ID (from /v1/accounts)
             var updateGoogleBusinessLocationDetailsRequest = new UpdateGoogleBusinessLocationDetailsRequest(); // UpdateGoogleBusinessLocationDetailsRequest | 
+            var locationId = "locationId_example";  // string? | Override which location to target. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
 
             try
             {
                 // Update location details
-                UpdateGoogleBusinessLocationDetails200Response result = apiInstance.UpdateGoogleBusinessLocationDetails(accountId, updateGoogleBusinessLocationDetailsRequest);
+                UpdateGoogleBusinessLocationDetails200Response result = apiInstance.UpdateGoogleBusinessLocationDetails(accountId, updateGoogleBusinessLocationDetailsRequest, locationId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -169,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update location details
-    ApiResponse<UpdateGoogleBusinessLocationDetails200Response> response = apiInstance.UpdateGoogleBusinessLocationDetailsWithHttpInfo(accountId, updateGoogleBusinessLocationDetailsRequest);
+    ApiResponse<UpdateGoogleBusinessLocationDetails200Response> response = apiInstance.UpdateGoogleBusinessLocationDetailsWithHttpInfo(accountId, updateGoogleBusinessLocationDetailsRequest, locationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -188,6 +191,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **accountId** | **string** | The Late account ID (from /v1/accounts) |  |
 | **updateGoogleBusinessLocationDetailsRequest** | [**UpdateGoogleBusinessLocationDetailsRequest**](UpdateGoogleBusinessLocationDetailsRequest.md) |  |  |
+| **locationId** | **string?** | Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 
 ### Return type
 

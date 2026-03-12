@@ -10,7 +10,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 <a id="creategooglebusinessmedia"></a>
 # **CreateGoogleBusinessMedia**
-> CreateGoogleBusinessMedia200Response CreateGoogleBusinessMedia (string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest)
+> CreateGoogleBusinessMedia200Response CreateGoogleBusinessMedia (string accountId, CreateGoogleBusinessMediaRequest createGoogleBusinessMediaRequest, string? locationId = null)
 
 Upload photo
 
@@ -42,11 +42,12 @@ namespace Example
             var apiInstance = new GMBMediaApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | 
             var createGoogleBusinessMediaRequest = new CreateGoogleBusinessMediaRequest(); // CreateGoogleBusinessMediaRequest | 
+            var locationId = "locationId_example";  // string? | Override which location to target. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
 
             try
             {
                 // Upload photo
-                CreateGoogleBusinessMedia200Response result = apiInstance.CreateGoogleBusinessMedia(accountId, createGoogleBusinessMediaRequest);
+                CreateGoogleBusinessMedia200Response result = apiInstance.CreateGoogleBusinessMedia(accountId, createGoogleBusinessMediaRequest, locationId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Upload photo
-    ApiResponse<CreateGoogleBusinessMedia200Response> response = apiInstance.CreateGoogleBusinessMediaWithHttpInfo(accountId, createGoogleBusinessMediaRequest);
+    ApiResponse<CreateGoogleBusinessMedia200Response> response = apiInstance.CreateGoogleBusinessMediaWithHttpInfo(accountId, createGoogleBusinessMediaRequest, locationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -86,6 +87,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **accountId** | **string** |  |  |
 | **createGoogleBusinessMediaRequest** | [**CreateGoogleBusinessMediaRequest**](CreateGoogleBusinessMediaRequest.md) |  |  |
+| **locationId** | **string?** | Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 
 ### Return type
 
@@ -112,7 +114,7 @@ catch (ApiException e)
 
 <a id="deletegooglebusinessmedia"></a>
 # **DeleteGoogleBusinessMedia**
-> DeleteGoogleBusinessMedia200Response DeleteGoogleBusinessMedia (string accountId, string mediaId)
+> DeleteGoogleBusinessMedia200Response DeleteGoogleBusinessMedia (string accountId, string mediaId, string? locationId = null)
 
 Delete photo
 
@@ -144,11 +146,12 @@ namespace Example
             var apiInstance = new GMBMediaApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | 
             var mediaId = "mediaId_example";  // string | The media item ID to delete
+            var locationId = "locationId_example";  // string? | Override which location to target. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
 
             try
             {
                 // Delete photo
-                DeleteGoogleBusinessMedia200Response result = apiInstance.DeleteGoogleBusinessMedia(accountId, mediaId);
+                DeleteGoogleBusinessMedia200Response result = apiInstance.DeleteGoogleBusinessMedia(accountId, mediaId, locationId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -169,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete photo
-    ApiResponse<DeleteGoogleBusinessMedia200Response> response = apiInstance.DeleteGoogleBusinessMediaWithHttpInfo(accountId, mediaId);
+    ApiResponse<DeleteGoogleBusinessMedia200Response> response = apiInstance.DeleteGoogleBusinessMediaWithHttpInfo(accountId, mediaId, locationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -188,6 +191,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **accountId** | **string** |  |  |
 | **mediaId** | **string** | The media item ID to delete |  |
+| **locationId** | **string?** | Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 
 ### Return type
 
@@ -214,7 +218,7 @@ catch (ApiException e)
 
 <a id="listgooglebusinessmedia"></a>
 # **ListGoogleBusinessMedia**
-> ListGoogleBusinessMedia200Response ListGoogleBusinessMedia (string accountId, int? pageSize = null, string? pageToken = null)
+> ListGoogleBusinessMedia200Response ListGoogleBusinessMedia (string accountId, string? locationId = null, int? pageSize = null, string? pageToken = null)
 
 List media
 
@@ -245,13 +249,14 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new GMBMediaApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | 
+            var locationId = "locationId_example";  // string? | Override which location to query. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
             var pageSize = 100;  // int? | Number of items to return (max 100) (optional)  (default to 100)
             var pageToken = "pageToken_example";  // string? | Pagination token from previous response (optional) 
 
             try
             {
                 // List media
-                ListGoogleBusinessMedia200Response result = apiInstance.ListGoogleBusinessMedia(accountId, pageSize, pageToken);
+                ListGoogleBusinessMedia200Response result = apiInstance.ListGoogleBusinessMedia(accountId, locationId, pageSize, pageToken);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -272,7 +277,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List media
-    ApiResponse<ListGoogleBusinessMedia200Response> response = apiInstance.ListGoogleBusinessMediaWithHttpInfo(accountId, pageSize, pageToken);
+    ApiResponse<ListGoogleBusinessMedia200Response> response = apiInstance.ListGoogleBusinessMediaWithHttpInfo(accountId, locationId, pageSize, pageToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -290,6 +295,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **accountId** | **string** |  |  |
+| **locationId** | **string?** | Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 | **pageSize** | **int?** | Number of items to return (max 100) | [optional] [default to 100] |
 | **pageToken** | **string?** | Pagination token from previous response | [optional]  |
 

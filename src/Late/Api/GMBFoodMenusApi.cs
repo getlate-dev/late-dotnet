@@ -36,8 +36,9 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>GetGoogleBusinessFoodMenus200Response</returns>
-        GetGoogleBusinessFoodMenus200Response GetGoogleBusinessFoodMenus(string accountId);
+        GetGoogleBusinessFoodMenus200Response GetGoogleBusinessFoodMenus(string accountId, string? locationId = default);
 
         /// <summary>
         /// Get food menus
@@ -47,8 +48,9 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessFoodMenus200Response</returns>
-        ApiResponse<GetGoogleBusinessFoodMenus200Response> GetGoogleBusinessFoodMenusWithHttpInfo(string accountId);
+        ApiResponse<GetGoogleBusinessFoodMenus200Response> GetGoogleBusinessFoodMenusWithHttpInfo(string accountId, string? locationId = default);
         /// <summary>
         /// Update food menus
         /// </summary>
@@ -58,8 +60,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
         /// <param name="updateGoogleBusinessFoodMenusRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>UpdateGoogleBusinessFoodMenus200Response</returns>
-        UpdateGoogleBusinessFoodMenus200Response UpdateGoogleBusinessFoodMenus(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest);
+        UpdateGoogleBusinessFoodMenus200Response UpdateGoogleBusinessFoodMenus(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = default);
 
         /// <summary>
         /// Update food menus
@@ -70,8 +73,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
         /// <param name="updateGoogleBusinessFoodMenusRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of UpdateGoogleBusinessFoodMenus200Response</returns>
-        ApiResponse<UpdateGoogleBusinessFoodMenus200Response> UpdateGoogleBusinessFoodMenusWithHttpInfo(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest);
+        ApiResponse<UpdateGoogleBusinessFoodMenus200Response> UpdateGoogleBusinessFoodMenusWithHttpInfo(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = default);
         #endregion Synchronous Operations
     }
 
@@ -89,9 +93,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessFoodMenus200Response</returns>
-        System.Threading.Tasks.Task<GetGoogleBusinessFoodMenus200Response> GetGoogleBusinessFoodMenusAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetGoogleBusinessFoodMenus200Response> GetGoogleBusinessFoodMenusAsync(string accountId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get food menus
@@ -101,9 +106,10 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessFoodMenus200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessFoodMenus200Response>> GetGoogleBusinessFoodMenusWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessFoodMenus200Response>> GetGoogleBusinessFoodMenusWithHttpInfoAsync(string accountId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update food menus
         /// </summary>
@@ -113,9 +119,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
         /// <param name="updateGoogleBusinessFoodMenusRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateGoogleBusinessFoodMenus200Response</returns>
-        System.Threading.Tasks.Task<UpdateGoogleBusinessFoodMenus200Response> UpdateGoogleBusinessFoodMenusAsync(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<UpdateGoogleBusinessFoodMenus200Response> UpdateGoogleBusinessFoodMenusAsync(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update food menus
@@ -126,9 +133,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
         /// <param name="updateGoogleBusinessFoodMenusRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateGoogleBusinessFoodMenus200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UpdateGoogleBusinessFoodMenus200Response>> UpdateGoogleBusinessFoodMenusWithHttpInfoAsync(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<UpdateGoogleBusinessFoodMenus200Response>> UpdateGoogleBusinessFoodMenusWithHttpInfoAsync(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -347,10 +355,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>GetGoogleBusinessFoodMenus200Response</returns>
-        public GetGoogleBusinessFoodMenus200Response GetGoogleBusinessFoodMenus(string accountId)
+        public GetGoogleBusinessFoodMenus200Response GetGoogleBusinessFoodMenus(string accountId, string? locationId = default)
         {
-            Late.Client.ApiResponse<GetGoogleBusinessFoodMenus200Response> localVarResponse = GetGoogleBusinessFoodMenusWithHttpInfo(accountId);
+            Late.Client.ApiResponse<GetGoogleBusinessFoodMenus200Response> localVarResponse = GetGoogleBusinessFoodMenusWithHttpInfo(accountId, locationId);
             return localVarResponse.Data;
         }
 
@@ -359,8 +368,9 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessFoodMenus200Response</returns>
-        public Late.Client.ApiResponse<GetGoogleBusinessFoodMenus200Response> GetGoogleBusinessFoodMenusWithHttpInfo(string accountId)
+        public Late.Client.ApiResponse<GetGoogleBusinessFoodMenus200Response> GetGoogleBusinessFoodMenusWithHttpInfo(string accountId, string? locationId = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -383,6 +393,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required
@@ -408,11 +422,12 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessFoodMenus200Response</returns>
-        public async System.Threading.Tasks.Task<GetGoogleBusinessFoodMenus200Response> GetGoogleBusinessFoodMenusAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetGoogleBusinessFoodMenus200Response> GetGoogleBusinessFoodMenusAsync(string accountId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetGoogleBusinessFoodMenus200Response> localVarResponse = await GetGoogleBusinessFoodMenusWithHttpInfoAsync(accountId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetGoogleBusinessFoodMenus200Response> localVarResponse = await GetGoogleBusinessFoodMenusWithHttpInfoAsync(accountId, locationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -421,9 +436,10 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessFoodMenus200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetGoogleBusinessFoodMenus200Response>> GetGoogleBusinessFoodMenusWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetGoogleBusinessFoodMenus200Response>> GetGoogleBusinessFoodMenusWithHttpInfoAsync(string accountId, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -448,6 +464,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required
@@ -475,10 +495,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
         /// <param name="updateGoogleBusinessFoodMenusRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>UpdateGoogleBusinessFoodMenus200Response</returns>
-        public UpdateGoogleBusinessFoodMenus200Response UpdateGoogleBusinessFoodMenus(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest)
+        public UpdateGoogleBusinessFoodMenus200Response UpdateGoogleBusinessFoodMenus(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = default)
         {
-            Late.Client.ApiResponse<UpdateGoogleBusinessFoodMenus200Response> localVarResponse = UpdateGoogleBusinessFoodMenusWithHttpInfo(accountId, updateGoogleBusinessFoodMenusRequest);
+            Late.Client.ApiResponse<UpdateGoogleBusinessFoodMenus200Response> localVarResponse = UpdateGoogleBusinessFoodMenusWithHttpInfo(accountId, updateGoogleBusinessFoodMenusRequest, locationId);
             return localVarResponse.Data;
         }
 
@@ -488,8 +509,9 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
         /// <param name="updateGoogleBusinessFoodMenusRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <returns>ApiResponse of UpdateGoogleBusinessFoodMenus200Response</returns>
-        public Late.Client.ApiResponse<UpdateGoogleBusinessFoodMenus200Response> UpdateGoogleBusinessFoodMenusWithHttpInfo(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest)
+        public Late.Client.ApiResponse<UpdateGoogleBusinessFoodMenus200Response> UpdateGoogleBusinessFoodMenusWithHttpInfo(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -517,6 +539,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.Data = updateGoogleBusinessFoodMenusRequest;
 
             // authentication (bearerAuth) required
@@ -544,11 +570,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
         /// <param name="updateGoogleBusinessFoodMenusRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UpdateGoogleBusinessFoodMenus200Response</returns>
-        public async System.Threading.Tasks.Task<UpdateGoogleBusinessFoodMenus200Response> UpdateGoogleBusinessFoodMenusAsync(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<UpdateGoogleBusinessFoodMenus200Response> UpdateGoogleBusinessFoodMenusAsync(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<UpdateGoogleBusinessFoodMenus200Response> localVarResponse = await UpdateGoogleBusinessFoodMenusWithHttpInfoAsync(accountId, updateGoogleBusinessFoodMenusRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<UpdateGoogleBusinessFoodMenus200Response> localVarResponse = await UpdateGoogleBusinessFoodMenusWithHttpInfoAsync(accountId, updateGoogleBusinessFoodMenusRequest, locationId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -558,9 +585,10 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
         /// <param name="updateGoogleBusinessFoodMenusRequest"></param>
+        /// <param name="locationId">Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateGoogleBusinessFoodMenus200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateGoogleBusinessFoodMenus200Response>> UpdateGoogleBusinessFoodMenusWithHttpInfoAsync(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateGoogleBusinessFoodMenus200Response>> UpdateGoogleBusinessFoodMenusWithHttpInfoAsync(string accountId, UpdateGoogleBusinessFoodMenusRequest updateGoogleBusinessFoodMenusRequest, string? locationId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -590,6 +618,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             localVarRequestOptions.Data = updateGoogleBusinessFoodMenusRequest;
 
             // authentication (bearerAuth) required

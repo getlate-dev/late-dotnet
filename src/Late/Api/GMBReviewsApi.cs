@@ -36,10 +36,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of reviews to fetch per page (max 50) (optional, default to 50)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <returns>GetGoogleBusinessReviews200Response</returns>
-        GetGoogleBusinessReviews200Response GetGoogleBusinessReviews(string accountId, int? pageSize = default, string? pageToken = default);
+        GetGoogleBusinessReviews200Response GetGoogleBusinessReviews(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default);
 
         /// <summary>
         /// Get reviews
@@ -49,10 +50,11 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of reviews to fetch per page (max 50) (optional, default to 50)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessReviews200Response</returns>
-        ApiResponse<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsWithHttpInfo(string accountId, int? pageSize = default, string? pageToken = default);
+        ApiResponse<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsWithHttpInfo(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default);
         #endregion Synchronous Operations
     }
 
@@ -70,11 +72,12 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of reviews to fetch per page (max 50) (optional, default to 50)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessReviews200Response</returns>
-        System.Threading.Tasks.Task<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get reviews
@@ -84,11 +87,12 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of reviews to fetch per page (max 50) (optional, default to 50)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessReviews200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessReviews200Response>> GetGoogleBusinessReviewsWithHttpInfoAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessReviews200Response>> GetGoogleBusinessReviewsWithHttpInfoAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -307,12 +311,13 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of reviews to fetch per page (max 50) (optional, default to 50)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <returns>GetGoogleBusinessReviews200Response</returns>
-        public GetGoogleBusinessReviews200Response GetGoogleBusinessReviews(string accountId, int? pageSize = default, string? pageToken = default)
+        public GetGoogleBusinessReviews200Response GetGoogleBusinessReviews(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default)
         {
-            Late.Client.ApiResponse<GetGoogleBusinessReviews200Response> localVarResponse = GetGoogleBusinessReviewsWithHttpInfo(accountId, pageSize, pageToken);
+            Late.Client.ApiResponse<GetGoogleBusinessReviews200Response> localVarResponse = GetGoogleBusinessReviewsWithHttpInfo(accountId, locationId, pageSize, pageToken);
             return localVarResponse.Data;
         }
 
@@ -321,10 +326,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of reviews to fetch per page (max 50) (optional, default to 50)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessReviews200Response</returns>
-        public Late.Client.ApiResponse<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsWithHttpInfo(string accountId, int? pageSize = default, string? pageToken = default)
+        public Late.Client.ApiResponse<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsWithHttpInfo(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -347,6 +353,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             if (pageSize != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));
@@ -380,13 +390,14 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of reviews to fetch per page (max 50) (optional, default to 50)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessReviews200Response</returns>
-        public async System.Threading.Tasks.Task<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetGoogleBusinessReviews200Response> GetGoogleBusinessReviewsAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetGoogleBusinessReviews200Response> localVarResponse = await GetGoogleBusinessReviewsWithHttpInfoAsync(accountId, pageSize, pageToken, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetGoogleBusinessReviews200Response> localVarResponse = await GetGoogleBusinessReviewsWithHttpInfoAsync(accountId, locationId, pageSize, pageToken, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -395,11 +406,12 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Late account ID (from /v1/accounts)</param>
+        /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
         /// <param name="pageSize">Number of reviews to fetch per page (max 50) (optional, default to 50)</param>
         /// <param name="pageToken">Pagination token from previous response (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessReviews200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetGoogleBusinessReviews200Response>> GetGoogleBusinessReviewsWithHttpInfoAsync(string accountId, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetGoogleBusinessReviews200Response>> GetGoogleBusinessReviewsWithHttpInfoAsync(string accountId, string? locationId = default, int? pageSize = default, string? pageToken = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'accountId' is set
             if (accountId == null)
@@ -424,6 +436,10 @@ namespace Late.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("accountId", Late.Client.ClientUtils.ParameterToString(accountId)); // path parameter
+            if (locationId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "locationId", locationId));
+            }
             if (pageSize != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "pageSize", pageSize));

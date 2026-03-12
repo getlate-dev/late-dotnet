@@ -9,7 +9,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 <a id="getgooglebusinessattributes"></a>
 # **GetGoogleBusinessAttributes**
-> GetGoogleBusinessAttributes200Response GetGoogleBusinessAttributes (string accountId)
+> GetGoogleBusinessAttributes200Response GetGoogleBusinessAttributes (string accountId, string? locationId = null)
 
 Get attributes
 
@@ -40,11 +40,12 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new GMBAttributesApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | 
+            var locationId = "locationId_example";  // string? | Override which location to query. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
 
             try
             {
                 // Get attributes
-                GetGoogleBusinessAttributes200Response result = apiInstance.GetGoogleBusinessAttributes(accountId);
+                GetGoogleBusinessAttributes200Response result = apiInstance.GetGoogleBusinessAttributes(accountId, locationId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get attributes
-    ApiResponse<GetGoogleBusinessAttributes200Response> response = apiInstance.GetGoogleBusinessAttributesWithHttpInfo(accountId);
+    ApiResponse<GetGoogleBusinessAttributes200Response> response = apiInstance.GetGoogleBusinessAttributesWithHttpInfo(accountId, locationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -83,6 +84,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **accountId** | **string** |  |  |
+| **locationId** | **string?** | Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 
 ### Return type
 
@@ -109,7 +111,7 @@ catch (ApiException e)
 
 <a id="updategooglebusinessattributes"></a>
 # **UpdateGoogleBusinessAttributes**
-> UpdateGoogleBusinessAttributes200Response UpdateGoogleBusinessAttributes (string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest)
+> UpdateGoogleBusinessAttributes200Response UpdateGoogleBusinessAttributes (string accountId, UpdateGoogleBusinessAttributesRequest updateGoogleBusinessAttributesRequest, string? locationId = null)
 
 Update attributes
 
@@ -141,11 +143,12 @@ namespace Example
             var apiInstance = new GMBAttributesApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | 
             var updateGoogleBusinessAttributesRequest = new UpdateGoogleBusinessAttributesRequest(); // UpdateGoogleBusinessAttributesRequest | 
+            var locationId = "locationId_example";  // string? | Override which location to target. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
 
             try
             {
                 // Update attributes
-                UpdateGoogleBusinessAttributes200Response result = apiInstance.UpdateGoogleBusinessAttributes(accountId, updateGoogleBusinessAttributesRequest);
+                UpdateGoogleBusinessAttributes200Response result = apiInstance.UpdateGoogleBusinessAttributes(accountId, updateGoogleBusinessAttributesRequest, locationId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -166,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update attributes
-    ApiResponse<UpdateGoogleBusinessAttributes200Response> response = apiInstance.UpdateGoogleBusinessAttributesWithHttpInfo(accountId, updateGoogleBusinessAttributesRequest);
+    ApiResponse<UpdateGoogleBusinessAttributes200Response> response = apiInstance.UpdateGoogleBusinessAttributesWithHttpInfo(accountId, updateGoogleBusinessAttributesRequest, locationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -185,6 +188,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **accountId** | **string** |  |  |
 | **updateGoogleBusinessAttributesRequest** | [**UpdateGoogleBusinessAttributesRequest**](UpdateGoogleBusinessAttributesRequest.md) |  |  |
+| **locationId** | **string?** | Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 
 ### Return type
 
