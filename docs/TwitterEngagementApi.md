@@ -17,7 +17,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 Bookmark a tweet
 
-Bookmark a tweet by ID. Requires X API Basic tier ($200/mo) or higher. Requires the bookmark.write OAuth scope. Rate limit: 50 requests per 15-min window. 
+Bookmark a tweet by ID. Requires the bookmark.write OAuth scope. Rate limit: 50 requests per 15-min window. 
 
 ### Example
 ```csharp
@@ -118,7 +118,7 @@ catch (ApiException e)
 
 Follow a user
 
-Follow a user on X/Twitter. Requires X API Basic tier ($200/mo) or higher. Requires the follows.write OAuth scope. For protected accounts, a follow request is sent instead (pending_follow will be true). 
+Follow a user on X/Twitter. Requires the follows.write OAuth scope. For protected accounts, a follow request is sent instead (pending_follow will be true). 
 
 ### Example
 ```csharp
@@ -322,7 +322,7 @@ catch (ApiException e)
 
 Retweet a post
 
-Retweet (repost) a tweet by ID. Requires X API Basic tier ($200/mo) or higher. Rate limit: 50 requests per 15-min window. Shares the 300/3hr creation limit with tweet creation. 
+Retweet (repost) a tweet by ID. Rate limit: 50 requests per 15-min window. Shares the 300/3hr creation limit with tweet creation. 
 
 ### Example
 ```csharp

@@ -589,17 +589,7 @@ docs/YouTubePlatformData.md
 docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
-src/Late.Test/Api/TwitterEngagementApiTests.cs
 src/Late.Test/Late.Test.csproj
-src/Late.Test/Model/BookmarkPost200ResponseTests.cs
-src/Late.Test/Model/BookmarkPostRequestTests.cs
-src/Late.Test/Model/FollowUser200ResponseTests.cs
-src/Late.Test/Model/FollowUserRequestTests.cs
-src/Late.Test/Model/RemoveBookmark200ResponseTests.cs
-src/Late.Test/Model/RetweetPost200ResponseTests.cs
-src/Late.Test/Model/RetweetPostRequestTests.cs
-src/Late.Test/Model/UndoRetweet200ResponseTests.cs
-src/Late.Test/Model/UnfollowUser200ResponseTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
