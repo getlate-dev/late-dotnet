@@ -55,7 +55,7 @@ namespace Late.Model
         /// </summary>
         /// <value>The access code to send to the Telegram bot</value>
         /*
-        <example>LATE-ABC123</example>
+        <example>ZRN-ABC123</example>
         */
         [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }

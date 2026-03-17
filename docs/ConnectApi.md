@@ -66,7 +66,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
-            var code = LATE-ABC123;  // string | The access code to check status for
+            var code = ZRN-ABC123;  // string | The access code to check status for
 
             try
             {
