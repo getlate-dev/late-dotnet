@@ -35,7 +35,7 @@ jobs:
 
       - name: Fetch latest OpenAPI spec
         run: |
-          curl -f -o openapi.yaml https://getlate.dev/openapi.yaml
+          curl -f -o openapi.yaml https://zernio.com/openapi.yaml
           echo "Fetched OpenAPI spec"
 
       - name: Generate SDK
@@ -138,6 +138,16 @@ jobs:
         run: dotnet nuget push ./nupkg/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
         continue-on-error: true
 
+      - name: Publish as Zernio to NuGet
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          sed -i 's/<PackageId>Late<\/PackageId>/<PackageId>Zernio<\/PackageId>/' src/Late/Late.csproj
+          sed -i 's/<AssemblyName>Late<\/AssemblyName>/<AssemblyName>Zernio<\/AssemblyName>/' src/Late/Late.csproj
+          dotnet build src/Late/Late.csproj -c Release
+          dotnet pack src/Late/Late.csproj -c Release --no-build -o ./nupkg-zernio
+          dotnet nuget push ./nupkg-zernio/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+        continue-on-error: true
+
       - name: Create GitHub Release
         if: steps.changes.outputs.has_changes == 'true'
         uses: softprops/action-gh-release@v1
@@ -150,6 +160,12 @@ jobs:
 
             ```bash
             dotnet add package Late --version ${{ steps.version.outputs.nuget_version }}
+            ```
+
+            Or use the new package name:
+
+            ```bash
+            dotnet add package Zernio --version ${{ steps.version.outputs.nuget_version }}
             ```
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
