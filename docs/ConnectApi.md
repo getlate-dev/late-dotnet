@@ -1,6 +1,6 @@
 # Late.Api.ConnectApi
 
-All URIs are relative to *https://getlate.dev/api*
+All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -58,7 +58,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -159,7 +159,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -260,7 +260,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -343,7 +343,7 @@ catch (ApiException e)
 
 Get OAuth connect URL
 
-Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Late hosts the selection UI, then redirects to your redirect_url. Headless mode (headless=true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
+Initiate an OAuth connection flow. Returns an authUrl to redirect the user to. Standard flow: Zernio hosts the selection UI, then redirects to your redirect_url. Headless mode (headless=true): user is redirected to your redirect_url with OAuth data for custom UI. Use the platform-specific selection endpoints to complete. 
 
 ### Example
 ```csharp
@@ -361,7 +361,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -370,9 +370,9 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
             var platform = "facebook";  // string | Social media platform to connect
-            var profileId = "profileId_example";  // string | Your Late profile ID (get from /v1/profiles)
+            var profileId = "profileId_example";  // string | Your Zernio profile ID (get from /v1/profiles)
             var redirectUrl = "redirectUrl_example";  // string? | Your custom redirect URL after connection completes. Standard mode appends ?connected={platform}&profileId=X&accountId=Y&username=Z. Headless mode appends OAuth data params for platforms requiring selection (e.g. LinkedIn orgs, Facebook pages). If no selection is needed, the account is created directly and the redirect includes accountId. (optional) 
-            var headless = false;  // bool? | When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late's default account selection UI. Use this to build a custom connect experience. (optional)  (default to false)
+            var headless = false;  // bool? | When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Zernio's default account selection UI. Use this to build a custom connect experience. (optional)  (default to false)
 
             try
             {
@@ -416,9 +416,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **platform** | **string** | Social media platform to connect |  |
-| **profileId** | **string** | Your Late profile ID (get from /v1/profiles) |  |
+| **profileId** | **string** | Your Zernio profile ID (get from /v1/profiles) |  |
 | **redirectUrl** | **string?** | Your custom redirect URL after connection completes. Standard mode appends ?connected&#x3D;{platform}&amp;profileId&#x3D;X&amp;accountId&#x3D;Y&amp;username&#x3D;Z. Headless mode appends OAuth data params for platforms requiring selection (e.g. LinkedIn orgs, Facebook pages). If no selection is needed, the account is created directly and the redirect includes accountId. | [optional]  |
-| **headless** | **bool?** | When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Late&#39;s default account selection UI. Use this to build a custom connect experience. | [optional] [default to false] |
+| **headless** | **bool?** | When true, the user is redirected to your redirect_url with raw OAuth data (code, state) instead of Zernio&#39;s default account selection UI. Use this to build a custom connect experience. | [optional] [default to false] |
 
 ### Return type
 
@@ -469,7 +469,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -569,7 +569,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -669,7 +669,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -769,7 +769,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -869,7 +869,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -970,7 +970,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1073,7 +1073,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1174,7 +1174,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1277,7 +1277,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1377,7 +1377,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1480,7 +1480,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure API key authorization: connectToken
             config.AddApiKey("X-Connect-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1587,7 +1587,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure API key authorization: connectToken
             config.AddApiKey("X-Connect-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -1694,7 +1694,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1796,7 +1796,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1805,7 +1805,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
             var xConnectToken = "xConnectToken_example";  // string | Short-lived connect token from the OAuth redirect
-            var profileId = "profileId_example";  // string | Your Late profile ID
+            var profileId = "profileId_example";  // string | Your Zernio profile ID
             var tempToken = "tempToken_example";  // string | Temporary Pinterest access token from the OAuth callback redirect
 
             try
@@ -1850,7 +1850,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xConnectToken** | **string** | Short-lived connect token from the OAuth redirect |  |
-| **profileId** | **string** | Your Late profile ID |  |
+| **profileId** | **string** | Your Zernio profile ID |  |
 | **tempToken** | **string** | Temporary Pinterest access token from the OAuth callback redirect |  |
 
 ### Return type
@@ -1902,7 +1902,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1911,7 +1911,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
             var xConnectToken = "xConnectToken_example";  // string | Short-lived connect token from the OAuth redirect
-            var profileId = "profileId_example";  // string | Your Late profile ID
+            var profileId = "profileId_example";  // string | Your Zernio profile ID
             var tempToken = "tempToken_example";  // string | Temporary Snapchat access token from the OAuth callback redirect
 
             try
@@ -1956,7 +1956,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **xConnectToken** | **string** | Short-lived connect token from the OAuth redirect |  |
-| **profileId** | **string** | Your Late profile ID |  |
+| **profileId** | **string** | Your Zernio profile ID |  |
 | **tempToken** | **string** | Temporary Snapchat access token from the OAuth callback redirect |  |
 
 ### Return type
@@ -2008,7 +2008,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure API key authorization: connectToken
             config.AddApiKey("X-Connect-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2115,7 +2115,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure API key authorization: connectToken
             config.AddApiKey("X-Connect-Token", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
@@ -2222,7 +2222,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -2323,7 +2323,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -2425,7 +2425,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -2529,7 +2529,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -2632,7 +2632,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -2735,7 +2735,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -2838,7 +2838,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -2941,7 +2941,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 

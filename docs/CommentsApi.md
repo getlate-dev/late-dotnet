@@ -1,6 +1,6 @@
 # Late.Api.CommentsApi
 
-All URIs are relative to *https://getlate.dev/api*
+All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -38,7 +38,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -46,7 +46,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.
+            var postId = "postId_example";  // string | Zernio post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.
             var accountId = "accountId_example";  // string | 
             var commentId = "commentId_example";  // string | 
 
@@ -91,7 +91,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** | Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID. |  |
+| **postId** | **string** | Zernio post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID. |  |
 | **accountId** | **string** |  |  |
 | **commentId** | **string** |  |  |
 
@@ -143,7 +143,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -151,7 +151,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.
+            var postId = "postId_example";  // string | Zernio post ID or platform-specific post ID. Zernio IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID.
             var accountId = "accountId_example";  // string | 
             var subreddit = "subreddit_example";  // string? | (Reddit only) Subreddit name (optional) 
             var limit = 25;  // int? | Maximum number of comments to return (optional)  (default to 25)
@@ -199,7 +199,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** | Late post ID or platform-specific post ID. Late IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID. |  |
+| **postId** | **string** | Zernio post ID or platform-specific post ID. Zernio IDs are auto-resolved. LinkedIn third-party posts accept full activity URN or numeric ID. |  |
 | **accountId** | **string** |  |  |
 | **subreddit** | **string?** | (Reddit only) Subreddit name | [optional]  |
 | **limit** | **int?** | Maximum number of comments to return | [optional] [default to 25] |
@@ -253,7 +253,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -358,7 +358,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -463,7 +463,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -579,7 +579,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -587,7 +587,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.
+            var postId = "postId_example";  // string | Zernio post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID.
             var replyToInboxPostRequest = new ReplyToInboxPostRequest(); // ReplyToInboxPostRequest | 
 
             try
@@ -631,7 +631,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** | Late post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID. |  |
+| **postId** | **string** | Zernio post ID or platform-specific post ID. LinkedIn third-party posts accept full activity URN or numeric ID. |  |
 | **replyToInboxPostRequest** | [**ReplyToInboxPostRequest**](ReplyToInboxPostRequest.md) |  |  |
 
 ### Return type
@@ -681,7 +681,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -787,7 +787,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -892,7 +892,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 

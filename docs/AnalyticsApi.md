@@ -1,6 +1,6 @@
 # Late.Api.AnalyticsApi
 
-All URIs are relative to *https://getlate.dev/api*
+All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -22,7 +22,7 @@ All URIs are relative to *https://getlate.dev/api*
 
 Get post analytics
 
-Returns analytics for posts. With postId, returns a single post. Without it, returns a paginated list with overview stats. Accepts both Late Post IDs and External Post IDs (auto-resolved). fromDate defaults to 90 days ago if omitted, max range 366 days. Single post lookups may return 202 (sync pending) or 424 (all platforms failed). For follower stats, use /v1/accounts/follower-stats. 
+Returns analytics for posts. With postId, returns a single post. Without it, returns a paginated list with overview stats. Accepts both Zernio Post IDs and External Post IDs (auto-resolved). fromDate defaults to 90 days ago if omitted, max range 366 days. Single post lookups may return 202 (sync pending) or 424 (all platforms failed). For follower stats, use /v1/accounts/follower-stats. 
 
 ### Example
 ```csharp
@@ -40,7 +40,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -48,10 +48,10 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string? | Returns analytics for a single post. Accepts both Late Post IDs and External Post IDs. Late IDs are auto-resolved to External Post analytics. (optional) 
+            var postId = "postId_example";  // string? | Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional) 
             var platform = "platform_example";  // string? | Filter by platform (default \"all\") (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID (default \"all\") (optional) 
-            var source = "all";  // string? | Filter by post source: late (posted via Late API), external (synced from platform), all (default) (optional)  (default to all)
+            var source = "all";  // string? | Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional)  (default to all)
             var fromDate = DateOnly.Parse("2013-10-20");  // DateOnly? | Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional) 
             var toDate = DateOnly.Parse("2013-10-20");  // DateOnly? | Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional) 
             var limit = 50;  // int? | Page size (default 50) (optional)  (default to 50)
@@ -100,10 +100,10 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string?** | Returns analytics for a single post. Accepts both Late Post IDs and External Post IDs. Late IDs are auto-resolved to External Post analytics. | [optional]  |
+| **postId** | **string?** | Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. | [optional]  |
 | **platform** | **string?** | Filter by platform (default \&quot;all\&quot;) | [optional]  |
 | **profileId** | **string?** | Filter by profile ID (default \&quot;all\&quot;) | [optional]  |
-| **source** | **string?** | Filter by post source: late (posted via Late API), external (synced from platform), all (default) | [optional] [default to all] |
+| **source** | **string?** | Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) | [optional] [default to all] |
 | **fromDate** | **DateOnly?** | Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. | [optional]  |
 | **toDate** | **DateOnly?** | Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. | [optional]  |
 | **limit** | **int?** | Page size (default 50) | [optional] [default to 50] |
@@ -163,7 +163,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -173,7 +173,7 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
-            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Late, \"external\" for posts imported from platforms. (optional)  (default to all)
+            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Zernio, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
@@ -218,7 +218,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
-| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
+| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
 
@@ -267,7 +267,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -277,7 +277,7 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
-            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Late, \"external\" for posts imported from platforms. (optional)  (default to all)
+            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Zernio, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
@@ -322,7 +322,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
-| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
+| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
 
@@ -371,7 +371,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -383,7 +383,7 @@ namespace Example
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
             var fromDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional) 
             var toDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Inclusive end date (ISO 8601). Defaults to now. (optional) 
-            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Late, \"external\" for posts imported from platforms. (optional)  (default to all)
+            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Zernio, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
@@ -430,7 +430,7 @@ catch (ApiException e)
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
 | **fromDate** | **DateTime?** | Inclusive start date (ISO 8601). Defaults to 180 days ago. | [optional]  |
 | **toDate** | **DateTime?** | Inclusive end date (ISO 8601). Defaults to now. | [optional]  |
-| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
+| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
 
@@ -479,7 +479,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -587,7 +587,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -698,7 +698,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -803,7 +803,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -894,7 +894,7 @@ catch (ApiException e)
 
 Get post analytics timeline
 
-Returns a daily timeline of analytics metrics for a specific post, showing how impressions, likes, and other metrics evolved day-by-day since publishing. Each row represents one day of data per platform. For multi-platform Late posts, returns separate rows for each platform. Requires the Analytics add-on. 
+Returns a daily timeline of analytics metrics for a specific post, showing how impressions, likes, and other metrics evolved day-by-day since publishing. Each row represents one day of data per platform. For multi-platform Zernio posts, returns separate rows for each platform. Requires the Analytics add-on. 
 
 ### Example
 ```csharp
@@ -912,7 +912,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -920,7 +920,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
-            var postId = "postId_example";  // string | The post to fetch timeline for. Accepts an ExternalPost ID, a platformPostId, or a Late Post ID. 
+            var postId = "postId_example";  // string | The post to fetch timeline for. Accepts an ExternalPost ID, a platformPostId, or a Zernio Post ID. 
             var fromDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Start of date range (ISO 8601). Defaults to 90 days ago. (optional) 
             var toDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | End of date range (ISO 8601). Defaults to now. (optional) 
 
@@ -965,7 +965,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **postId** | **string** | The post to fetch timeline for. Accepts an ExternalPost ID, a platformPostId, or a Late Post ID.  |  |
+| **postId** | **string** | The post to fetch timeline for. Accepts an ExternalPost ID, a platformPostId, or a Zernio Post ID.  |  |
 | **fromDate** | **DateTime?** | Start of date range (ISO 8601). Defaults to 90 days ago. | [optional]  |
 | **toDate** | **DateTime?** | End of date range (ISO 8601). Defaults to now. | [optional]  |
 
@@ -1019,7 +1019,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1029,7 +1029,7 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
-            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Late, \"external\" for posts imported from platforms. (optional)  (default to all)
+            var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Zernio, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
@@ -1074,7 +1074,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
-| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Late, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
+| **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
 
@@ -1123,7 +1123,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -1132,7 +1132,7 @@ namespace Example
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var videoId = "videoId_example";  // string | The YouTube video ID (e.g., \"dQw4w9WgXcQ\")
-            var accountId = "accountId_example";  // string | The Late account ID for the YouTube account
+            var accountId = "accountId_example";  // string | The Zernio account ID for the YouTube account
             var startDate = DateOnly.Parse("2013-10-20");  // DateOnly? | Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional) 
             var endDate = DateOnly.Parse("2013-10-20");  // DateOnly? | End date (YYYY-MM-DD). Defaults to 3 days ago (YouTube data latency). (optional) 
 
@@ -1178,7 +1178,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **videoId** | **string** | The YouTube video ID (e.g., \&quot;dQw4w9WgXcQ\&quot;) |  |
-| **accountId** | **string** | The Late account ID for the YouTube account |  |
+| **accountId** | **string** | The Zernio account ID for the YouTube account |  |
 | **startDate** | **DateOnly?** | Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional]  |
 | **endDate** | **DateOnly?** | End date (YYYY-MM-DD). Defaults to 3 days ago (YouTube data latency). | [optional]  |
 

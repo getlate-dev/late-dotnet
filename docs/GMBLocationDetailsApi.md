@@ -1,6 +1,6 @@
 # Late.Api.GMBLocationDetailsApi
 
-All URIs are relative to *https://getlate.dev/api*
+All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -31,7 +31,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -39,7 +39,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new GMBLocationDetailsApi(httpClient, config, httpClientHandler);
-            var accountId = "accountId_example";  // string | The Late account ID (from /v1/accounts)
+            var accountId = "accountId_example";  // string | The Zernio account ID (from /v1/accounts)
             var locationId = "locationId_example";  // string? | Override which location to query. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
             var readMask = "readMask_example";  // string? | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional) 
 
@@ -84,7 +84,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | The Late account ID (from /v1/accounts) |  |
+| **accountId** | **string** | The Zernio account ID (from /v1/accounts) |  |
 | **locationId** | **string?** | Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 | **readMask** | **string?** | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. | [optional]  |
 
@@ -136,7 +136,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -144,7 +144,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new GMBLocationDetailsApi(httpClient, config, httpClientHandler);
-            var accountId = "accountId_example";  // string | The Late account ID (from /v1/accounts)
+            var accountId = "accountId_example";  // string | The Zernio account ID (from /v1/accounts)
             var updateGoogleBusinessLocationDetailsRequest = new UpdateGoogleBusinessLocationDetailsRequest(); // UpdateGoogleBusinessLocationDetailsRequest | 
             var locationId = "locationId_example";  // string? | Override which location to target. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
 
@@ -189,7 +189,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **accountId** | **string** | The Late account ID (from /v1/accounts) |  |
+| **accountId** | **string** | The Zernio account ID (from /v1/accounts) |  |
 | **updateGoogleBusinessLocationDetailsRequest** | [**UpdateGoogleBusinessLocationDetailsRequest**](UpdateGoogleBusinessLocationDetailsRequest.md) |  |  |
 | **locationId** | **string?** | Override which location to target. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
 

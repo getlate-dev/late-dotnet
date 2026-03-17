@@ -1,6 +1,6 @@
 # Late.Api.PostsApi
 
-All URIs are relative to *https://getlate.dev/api*
+All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
@@ -37,7 +37,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -141,7 +141,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -226,7 +226,7 @@ catch (ApiException e)
 
 Delete post
 
-Delete a draft or scheduled post from Late. Published posts cannot be deleted; use the Unpublish endpoint instead. Upload quota is automatically refunded.
+Delete a draft or scheduled post from Zernio. Published posts cannot be deleted; use the Unpublish endpoint instead. Upload quota is automatically refunded.
 
 ### Example
 ```csharp
@@ -244,7 +244,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -346,7 +346,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -447,7 +447,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -566,7 +566,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -653,7 +653,7 @@ catch (ApiException e)
 
 Unpublish post
 
-Deletes a published post from the specified platform. The post record in Late is kept but its status is updated to cancelled. Not supported on Instagram, TikTok, or Snapchat. Threaded posts delete all items. YouTube deletion is permanent. 
+Deletes a published post from the specified platform. The post record in Zernio is kept but its status is updated to cancelled. Not supported on Instagram, TikTok, or Snapchat. Threaded posts delete all items. YouTube deletion is permanent. 
 
 ### Example
 ```csharp
@@ -671,7 +671,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
@@ -776,7 +776,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://getlate.dev/api";
+            config.BasePath = "https://zernio.com/api";
             // Configure Bearer token for authorization: bearerAuth
             config.AccessToken = "YOUR_BEARER_TOKEN";
 
