@@ -108,7 +108,7 @@ namespace Late.Model
         /// <param name="expressConsentGiven">User has given express consent for posting.</param>
         /// <param name="mediaType">Optional override. Defaults based on provided media items..</param>
         /// <param name="videoCoverTimestampMs">Optional for video posts. Timestamp in milliseconds to select which frame to use as thumbnail (defaults to 1000ms/1 second). Ignored when videoCoverImageUrl is provided..</param>
-        /// <param name="videoCoverImageUrl">Optional for video posts. URL of a custom thumbnail image (JPG, PNG, or WebP, max 20MB). The image is prepended as a 1-second still frame to the video and used as the cover. Overrides videoCoverTimestampMs when provided..</param>
+        /// <param name="videoCoverImageUrl">Optional for video posts. URL of a custom thumbnail image (JPG, PNG, or WebP, max 20MB). The image is stitched as a single frame at the start of the video and used as the cover. Overrides videoCoverTimestampMs when provided..</param>
         /// <param name="photoCoverIndex">Optional for photo carousels. Index of image to use as cover, 0-based (defaults to 0/first image)..</param>
         /// <param name="autoAddMusic">When true, TikTok may add recommended music (photos only).</param>
         /// <param name="videoMadeWithAi">Set true to disclose AI-generated content.</param>
@@ -205,9 +205,9 @@ namespace Late.Model
         public int VideoCoverTimestampMs { get; set; }
 
         /// <summary>
-        /// Optional for video posts. URL of a custom thumbnail image (JPG, PNG, or WebP, max 20MB). The image is prepended as a 1-second still frame to the video and used as the cover. Overrides videoCoverTimestampMs when provided.
+        /// Optional for video posts. URL of a custom thumbnail image (JPG, PNG, or WebP, max 20MB). The image is stitched as a single frame at the start of the video and used as the cover. Overrides videoCoverTimestampMs when provided.
         /// </summary>
-        /// <value>Optional for video posts. URL of a custom thumbnail image (JPG, PNG, or WebP, max 20MB). The image is prepended as a 1-second still frame to the video and used as the cover. Overrides videoCoverTimestampMs when provided.</value>
+        /// <value>Optional for video posts. URL of a custom thumbnail image (JPG, PNG, or WebP, max 20MB). The image is stitched as a single frame at the start of the video and used as the cover. Overrides videoCoverTimestampMs when provided.</value>
         [DataMember(Name = "videoCoverImageUrl", EmitDefaultValue = false)]
         public string VideoCoverImageUrl { get; set; }
 
