@@ -9,6 +9,8 @@ All URIs are relative to *https://zernio.com/api*
 | [**GetContentDecay**](AnalyticsApi.md#getcontentdecay) | **GET** /v1/analytics/content-decay | Get content performance decay |
 | [**GetDailyMetrics**](AnalyticsApi.md#getdailymetrics) | **GET** /v1/analytics/daily-metrics | Get daily aggregated metrics |
 | [**GetFollowerStats**](AnalyticsApi.md#getfollowerstats) | **GET** /v1/accounts/follower-stats | Get follower stats |
+| [**GetInstagramAccountInsights**](AnalyticsApi.md#getinstagramaccountinsights) | **GET** /v1/analytics/instagram/account-insights | Get Instagram account-level insights |
+| [**GetInstagramDemographics**](AnalyticsApi.md#getinstagramdemographics) | **GET** /v1/analytics/instagram/demographics | Get Instagram audience demographics |
 | [**GetLinkedInAggregateAnalytics**](AnalyticsApi.md#getlinkedinaggregateanalytics) | **GET** /v1/accounts/{accountId}/linkedin-aggregate-analytics | Get LinkedIn aggregate stats |
 | [**GetLinkedInPostAnalytics**](AnalyticsApi.md#getlinkedinpostanalytics) | **GET** /v1/accounts/{accountId}/linkedin-post-analytics | Get LinkedIn post stats |
 | [**GetLinkedInPostReactions**](AnalyticsApi.md#getlinkedinpostreactions) | **GET** /v1/accounts/{accountId}/linkedin-post-reactions | Get LinkedIn post reactions |
@@ -560,6 +562,228 @@ catch (ApiException e)
 | **200** | Follower stats |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Analytics add-on required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getinstagramaccountinsights"></a>
+# **GetInstagramAccountInsights**
+> InstagramAccountInsightsResponse GetInstagramAccountInsights (string accountId, string? metrics = null, DateOnly? since = null, DateOnly? until = null, string? metricType = null, string? breakdown = null)
+
+Get Instagram account-level insights
+
+Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account's performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class GetInstagramAccountInsightsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
+            var accountId = "accountId_example";  // string | The Zernio SocialAccount ID for the Instagram account
+            var metrics = "metrics_example";  // string? | Comma-separated list of metrics. Defaults to \"reach,views,accounts_engaged,total_interactions\". Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \"reach\" supports metricType=time_series. All other metrics are total_value only.  (optional) 
+            var since = DateOnly.Parse("2013-10-20");  // DateOnly? | Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional) 
+            var until = DateOnly.Parse("2013-10-20");  // DateOnly? | End date (YYYY-MM-DD). Defaults to today. (optional) 
+            var metricType = "time_series";  // string? | \"total_value\" (default) returns aggregated totals and supports breakdowns. \"time_series\" returns daily values but only works with the \"reach\" metric.  (optional)  (default to total_value)
+            var breakdown = "breakdown_example";  // string? | Breakdown dimension (only valid with metricType=total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional) 
+
+            try
+            {
+                // Get Instagram account-level insights
+                InstagramAccountInsightsResponse result = apiInstance.GetInstagramAccountInsights(accountId, metrics, since, until, metricType, breakdown);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AnalyticsApi.GetInstagramAccountInsights: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetInstagramAccountInsightsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get Instagram account-level insights
+    ApiResponse<InstagramAccountInsightsResponse> response = apiInstance.GetInstagramAccountInsightsWithHttpInfo(accountId, metrics, since, until, metricType, breakdown);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AnalyticsApi.GetInstagramAccountInsightsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **accountId** | **string** | The Zernio SocialAccount ID for the Instagram account |  |
+| **metrics** | **string?** | Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  | [optional]  |
+| **since** | **DateOnly?** | Start date (YYYY-MM-DD). Defaults to 30 days ago. | [optional]  |
+| **until** | **DateOnly?** | End date (YYYY-MM-DD). Defaults to today. | [optional]  |
+| **metricType** | **string?** | \&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  | [optional] [default to total_value] |
+| **breakdown** | **string?** | Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  | [optional]  |
+
+### Return type
+
+[**InstagramAccountInsightsResponse**](InstagramAccountInsightsResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Account insights data |  -  |
+| **400** | Bad request (invalid parameters) |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Analytics add-on required |  -  |
+| **403** | Access denied to this account |  -  |
+| **404** | Account not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="getinstagramdemographics"></a>
+# **GetInstagramDemographics**
+> InstagramDemographicsResponse GetInstagramDemographics (string accountId, string? metric = null, string? breakdown = null, string? timeframe = null)
+
+Get Instagram audience demographics
+
+Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class GetInstagramDemographicsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
+            var accountId = "accountId_example";  // string | The Zernio SocialAccount ID for the Instagram account
+            var metric = "follower_demographics";  // string? | \"follower_demographics\" for follower audience data, or \"engaged_audience_demographics\" for engaged viewers.  (optional)  (default to follower_demographics)
+            var breakdown = "breakdown_example";  // string? | Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional) 
+            var timeframe = "this_week";  // string? | Time period for demographic data. Defaults to \"this_month\".  (optional)  (default to this_month)
+
+            try
+            {
+                // Get Instagram audience demographics
+                InstagramDemographicsResponse result = apiInstance.GetInstagramDemographics(accountId, metric, breakdown, timeframe);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AnalyticsApi.GetInstagramDemographics: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetInstagramDemographicsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get Instagram audience demographics
+    ApiResponse<InstagramDemographicsResponse> response = apiInstance.GetInstagramDemographicsWithHttpInfo(accountId, metric, breakdown, timeframe);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AnalyticsApi.GetInstagramDemographicsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **accountId** | **string** | The Zernio SocialAccount ID for the Instagram account |  |
+| **metric** | **string?** | \&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  | [optional] [default to follower_demographics] |
+| **breakdown** | **string?** | Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  | [optional]  |
+| **timeframe** | **string?** | Time period for demographic data. Defaults to \&quot;this_month\&quot;.  | [optional] [default to this_month] |
+
+### Return type
+
+[**InstagramDemographicsResponse**](InstagramDemographicsResponse.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Demographic insights data |  -  |
+| **400** | Bad request (invalid parameters) |  -  |
+| **401** | Unauthorized |  -  |
+| **402** | Analytics add-on required |  -  |
+| **403** | Access denied to this account |  -  |
+| **404** | Account not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

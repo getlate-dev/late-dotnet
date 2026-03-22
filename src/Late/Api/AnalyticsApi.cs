@@ -176,6 +176,64 @@ namespace Late.Api
         /// <returns>ApiResponse of GetFollowerStats200Response</returns>
         ApiResponse<GetFollowerStats200Response> GetFollowerStatsWithHttpInfo(string? accountIds = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, string? granularity = default);
         /// <summary>
+        /// Get Instagram account-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
+        /// <param name="breakdown">Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        InstagramAccountInsightsResponse GetInstagramAccountInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default);
+
+        /// <summary>
+        /// Get Instagram account-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
+        /// <param name="breakdown">Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        ApiResponse<InstagramAccountInsightsResponse> GetInstagramAccountInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default);
+        /// <summary>
+        /// Get Instagram audience demographics
+        /// </summary>
+        /// <remarks>
+        /// Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metric">\&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  (optional, default to follower_demographics)</param>
+        /// <param name="breakdown">Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional)</param>
+        /// <param name="timeframe">Time period for demographic data. Defaults to \&quot;this_month\&quot;.  (optional, default to this_month)</param>
+        /// <returns>InstagramDemographicsResponse</returns>
+        InstagramDemographicsResponse GetInstagramDemographics(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default);
+
+        /// <summary>
+        /// Get Instagram audience demographics
+        /// </summary>
+        /// <remarks>
+        /// Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metric">\&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  (optional, default to follower_demographics)</param>
+        /// <param name="breakdown">Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional)</param>
+        /// <param name="timeframe">Time period for demographic data. Defaults to \&quot;this_month\&quot;.  (optional, default to this_month)</param>
+        /// <returns>ApiResponse of InstagramDemographicsResponse</returns>
+        ApiResponse<InstagramDemographicsResponse> GetInstagramDemographicsWithHttpInfo(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default);
+        /// <summary>
         /// Get LinkedIn aggregate stats
         /// </summary>
         /// <remarks>
@@ -497,6 +555,68 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetFollowerStats200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetFollowerStats200Response>> GetFollowerStatsWithHttpInfoAsync(string? accountIds = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, string? granularity = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Instagram account-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
+        /// <param name="breakdown">Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetInstagramAccountInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Instagram account-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
+        /// <param name="breakdown">Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InstagramAccountInsightsResponse>> GetInstagramAccountInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get Instagram audience demographics
+        /// </summary>
+        /// <remarks>
+        /// Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metric">\&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  (optional, default to follower_demographics)</param>
+        /// <param name="breakdown">Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional)</param>
+        /// <param name="timeframe">Time period for demographic data. Defaults to \&quot;this_month\&quot;.  (optional, default to this_month)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramDemographicsResponse</returns>
+        System.Threading.Tasks.Task<InstagramDemographicsResponse> GetInstagramDemographicsAsync(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Instagram audience demographics
+        /// </summary>
+        /// <remarks>
+        /// Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metric">\&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  (optional, default to follower_demographics)</param>
+        /// <param name="breakdown">Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional)</param>
+        /// <param name="timeframe">Time period for demographic data. Defaults to \&quot;this_month\&quot;.  (optional, default to this_month)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramDemographicsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InstagramDemographicsResponse>> GetInstagramDemographicsWithHttpInfoAsync(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get LinkedIn aggregate stats
         /// </summary>
@@ -1749,6 +1869,356 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetFollowerStats", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Instagram account-level insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
+        /// <param name="breakdown">Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        public InstagramAccountInsightsResponse GetInstagramAccountInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default)
+        {
+            Late.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = GetInstagramAccountInsightsWithHttpInfo(accountId, metrics, since, until, metricType, breakdown);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Instagram account-level insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
+        /// <param name="breakdown">Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        public Late.Client.ApiResponse<InstagramAccountInsightsResponse> GetInstagramAccountInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetInstagramAccountInsights");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+            if (breakdown != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "breakdown", breakdown));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InstagramAccountInsightsResponse>("/v1/analytics/instagram/account-insights", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetInstagramAccountInsights", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Instagram account-level insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
+        /// <param name="breakdown">Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        public async System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetInstagramAccountInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = await GetInstagramAccountInsightsWithHttpInfoAsync(accountId, metrics, since, until, metricType, breakdown, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Instagram account-level insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
+        /// <param name="breakdown">Breakdown dimension (only valid with metricType&#x3D;total_value). Valid values depend on the metric: media_product_type, follow_type, follower_type, contact_button_type.  (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<InstagramAccountInsightsResponse>> GetInstagramAccountInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetInstagramAccountInsights");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+            if (breakdown != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "breakdown", breakdown));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InstagramAccountInsightsResponse>("/v1/analytics/instagram/account-insights", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetInstagramAccountInsights", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Instagram audience demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metric">\&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  (optional, default to follower_demographics)</param>
+        /// <param name="breakdown">Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional)</param>
+        /// <param name="timeframe">Time period for demographic data. Defaults to \&quot;this_month\&quot;.  (optional, default to this_month)</param>
+        /// <returns>InstagramDemographicsResponse</returns>
+        public InstagramDemographicsResponse GetInstagramDemographics(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default)
+        {
+            Late.Client.ApiResponse<InstagramDemographicsResponse> localVarResponse = GetInstagramDemographicsWithHttpInfo(accountId, metric, breakdown, timeframe);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Instagram audience demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metric">\&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  (optional, default to follower_demographics)</param>
+        /// <param name="breakdown">Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional)</param>
+        /// <param name="timeframe">Time period for demographic data. Defaults to \&quot;this_month\&quot;.  (optional, default to this_month)</param>
+        /// <returns>ApiResponse of InstagramDemographicsResponse</returns>
+        public Late.Client.ApiResponse<InstagramDemographicsResponse> GetInstagramDemographicsWithHttpInfo(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetInstagramDemographics");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metric != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "metric", metric));
+            }
+            if (breakdown != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "breakdown", breakdown));
+            }
+            if (timeframe != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "timeframe", timeframe));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InstagramDemographicsResponse>("/v1/analytics/instagram/demographics", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetInstagramDemographics", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Instagram audience demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metric">\&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  (optional, default to follower_demographics)</param>
+        /// <param name="breakdown">Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional)</param>
+        /// <param name="timeframe">Time period for demographic data. Defaults to \&quot;this_month\&quot;.  (optional, default to this_month)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramDemographicsResponse</returns>
+        public async System.Threading.Tasks.Task<InstagramDemographicsResponse> GetInstagramDemographicsAsync(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<InstagramDemographicsResponse> localVarResponse = await GetInstagramDemographicsWithHttpInfoAsync(accountId, metric, breakdown, timeframe, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Instagram audience demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
+        /// <param name="metric">\&quot;follower_demographics\&quot; for follower audience data, or \&quot;engaged_audience_demographics\&quot; for engaged viewers.  (optional, default to follower_demographics)</param>
+        /// <param name="breakdown">Comma-separated list of demographic dimensions: age, city, country, gender. Defaults to all four if omitted.  (optional)</param>
+        /// <param name="timeframe">Time period for demographic data. Defaults to \&quot;this_month\&quot;.  (optional, default to this_month)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramDemographicsResponse)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<InstagramDemographicsResponse>> GetInstagramDemographicsWithHttpInfoAsync(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetInstagramDemographics");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metric != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "metric", metric));
+            }
+            if (breakdown != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "breakdown", breakdown));
+            }
+            if (timeframe != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "timeframe", timeframe));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InstagramDemographicsResponse>("/v1/analytics/instagram/demographics", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetInstagramDemographics", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
