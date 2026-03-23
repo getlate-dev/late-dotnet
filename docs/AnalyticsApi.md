@@ -20,7 +20,7 @@ All URIs are relative to *https://zernio.com/api*
 
 <a id="getanalytics"></a>
 # **GetAnalytics**
-> GetAnalytics200Response GetAnalytics (string? postId = null, string? platform = null, string? profileId = null, string? source = null, DateOnly? fromDate = null, DateOnly? toDate = null, int? limit = null, int? page = null, string? sortBy = null, string? order = null)
+> GetAnalytics200Response GetAnalytics (string? postId = null, string? platform = null, string? profileId = null, string? accountId = null, string? source = null, DateOnly? fromDate = null, DateOnly? toDate = null, int? limit = null, int? page = null, string? sortBy = null, string? order = null)
 
 Get post analytics
 
@@ -53,6 +53,7 @@ namespace Example
             var postId = "postId_example";  // string? | Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional) 
             var platform = "platform_example";  // string? | Filter by platform (default \"all\") (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID (default \"all\") (optional) 
+            var accountId = "accountId_example";  // string? | Filter by social account ID (optional) 
             var source = "all";  // string? | Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional)  (default to all)
             var fromDate = DateOnly.Parse("2013-10-20");  // DateOnly? | Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional) 
             var toDate = DateOnly.Parse("2013-10-20");  // DateOnly? | Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional) 
@@ -64,7 +65,7 @@ namespace Example
             try
             {
                 // Get post analytics
-                GetAnalytics200Response result = apiInstance.GetAnalytics(postId, platform, profileId, source, fromDate, toDate, limit, page, sortBy, order);
+                GetAnalytics200Response result = apiInstance.GetAnalytics(postId, platform, profileId, accountId, source, fromDate, toDate, limit, page, sortBy, order);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -85,7 +86,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get post analytics
-    ApiResponse<GetAnalytics200Response> response = apiInstance.GetAnalyticsWithHttpInfo(postId, platform, profileId, source, fromDate, toDate, limit, page, sortBy, order);
+    ApiResponse<GetAnalytics200Response> response = apiInstance.GetAnalyticsWithHttpInfo(postId, platform, profileId, accountId, source, fromDate, toDate, limit, page, sortBy, order);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -105,6 +106,7 @@ catch (ApiException e)
 | **postId** | **string?** | Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. | [optional]  |
 | **platform** | **string?** | Filter by platform (default \&quot;all\&quot;) | [optional]  |
 | **profileId** | **string?** | Filter by profile ID (default \&quot;all\&quot;) | [optional]  |
+| **accountId** | **string?** | Filter by social account ID | [optional]  |
 | **source** | **string?** | Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) | [optional] [default to all] |
 | **fromDate** | **DateOnly?** | Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. | [optional]  |
 | **toDate** | **DateOnly?** | Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. | [optional]  |
@@ -351,7 +353,7 @@ catch (ApiException e)
 
 <a id="getdailymetrics"></a>
 # **GetDailyMetrics**
-> GetDailyMetrics200Response GetDailyMetrics (string? platform = null, string? profileId = null, DateTime? fromDate = null, DateTime? toDate = null, string? source = null)
+> GetDailyMetrics200Response GetDailyMetrics (string? platform = null, string? profileId = null, string? accountId = null, DateTime? fromDate = null, DateTime? toDate = null, string? source = null)
 
 Get daily aggregated metrics
 
@@ -383,6 +385,7 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
+            var accountId = "accountId_example";  // string? | Filter by social account ID (optional) 
             var fromDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional) 
             var toDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime? | Inclusive end date (ISO 8601). Defaults to now. (optional) 
             var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Zernio, \"external\" for posts imported from platforms. (optional)  (default to all)
@@ -390,7 +393,7 @@ namespace Example
             try
             {
                 // Get daily aggregated metrics
-                GetDailyMetrics200Response result = apiInstance.GetDailyMetrics(platform, profileId, fromDate, toDate, source);
+                GetDailyMetrics200Response result = apiInstance.GetDailyMetrics(platform, profileId, accountId, fromDate, toDate, source);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -411,7 +414,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get daily aggregated metrics
-    ApiResponse<GetDailyMetrics200Response> response = apiInstance.GetDailyMetricsWithHttpInfo(platform, profileId, fromDate, toDate, source);
+    ApiResponse<GetDailyMetrics200Response> response = apiInstance.GetDailyMetricsWithHttpInfo(platform, profileId, accountId, fromDate, toDate, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -430,6 +433,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
+| **accountId** | **string?** | Filter by social account ID | [optional]  |
 | **fromDate** | **DateTime?** | Inclusive start date (ISO 8601). Defaults to 180 days ago. | [optional]  |
 | **toDate** | **DateTime?** | Inclusive end date (ISO 8601). Defaults to now. | [optional]  |
 | **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |

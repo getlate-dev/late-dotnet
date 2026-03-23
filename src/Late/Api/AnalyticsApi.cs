@@ -38,6 +38,7 @@ namespace Late.Api
         /// <param name="postId">Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional)</param>
         /// <param name="platform">Filter by platform (default \&quot;all\&quot;) (optional)</param>
         /// <param name="profileId">Filter by profile ID (default \&quot;all\&quot;) (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="source">Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional, default to all)</param>
         /// <param name="fromDate">Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional)</param>
         /// <param name="toDate">Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional)</param>
@@ -46,7 +47,7 @@ namespace Late.Api
         /// <param name="sortBy">Sort by date, engagement, or a specific metric (optional, default to date)</param>
         /// <param name="order">Sort order (optional, default to desc)</param>
         /// <returns>GetAnalytics200Response</returns>
-        GetAnalytics200Response GetAnalytics(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default);
+        GetAnalytics200Response GetAnalytics(string? postId = default, string? platform = default, string? profileId = default, string? accountId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default);
 
         /// <summary>
         /// Get post analytics
@@ -58,6 +59,7 @@ namespace Late.Api
         /// <param name="postId">Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional)</param>
         /// <param name="platform">Filter by platform (default \&quot;all\&quot;) (optional)</param>
         /// <param name="profileId">Filter by profile ID (default \&quot;all\&quot;) (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="source">Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional, default to all)</param>
         /// <param name="fromDate">Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional)</param>
         /// <param name="toDate">Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional)</param>
@@ -66,7 +68,7 @@ namespace Late.Api
         /// <param name="sortBy">Sort by date, engagement, or a specific metric (optional, default to date)</param>
         /// <param name="order">Sort order (optional, default to desc)</param>
         /// <returns>ApiResponse of GetAnalytics200Response</returns>
-        ApiResponse<GetAnalytics200Response> GetAnalyticsWithHttpInfo(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default);
+        ApiResponse<GetAnalytics200Response> GetAnalyticsWithHttpInfo(string? postId = default, string? platform = default, string? profileId = default, string? accountId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default);
         /// <summary>
         /// Get best times to post
         /// </summary>
@@ -126,11 +128,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetDailyMetrics200Response</returns>
-        GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default);
+        GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default);
 
         /// <summary>
         /// Get daily aggregated metrics
@@ -141,11 +144,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetDailyMetrics200Response</returns>
-        ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default);
+        ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default);
         /// <summary>
         /// Get follower stats
         /// </summary>
@@ -408,6 +412,7 @@ namespace Late.Api
         /// <param name="postId">Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional)</param>
         /// <param name="platform">Filter by platform (default \&quot;all\&quot;) (optional)</param>
         /// <param name="profileId">Filter by profile ID (default \&quot;all\&quot;) (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="source">Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional, default to all)</param>
         /// <param name="fromDate">Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional)</param>
         /// <param name="toDate">Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional)</param>
@@ -417,7 +422,7 @@ namespace Late.Api
         /// <param name="order">Sort order (optional, default to desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetAnalytics200Response</returns>
-        System.Threading.Tasks.Task<GetAnalytics200Response> GetAnalyticsAsync(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetAnalytics200Response> GetAnalyticsAsync(string? postId = default, string? platform = default, string? profileId = default, string? accountId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get post analytics
@@ -429,6 +434,7 @@ namespace Late.Api
         /// <param name="postId">Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional)</param>
         /// <param name="platform">Filter by platform (default \&quot;all\&quot;) (optional)</param>
         /// <param name="profileId">Filter by profile ID (default \&quot;all\&quot;) (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="source">Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional, default to all)</param>
         /// <param name="fromDate">Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional)</param>
         /// <param name="toDate">Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional)</param>
@@ -438,7 +444,7 @@ namespace Late.Api
         /// <param name="order">Sort order (optional, default to desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetAnalytics200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAnalytics200Response>> GetAnalyticsWithHttpInfoAsync(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetAnalytics200Response>> GetAnalyticsWithHttpInfoAsync(string? postId = default, string? platform = default, string? profileId = default, string? accountId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get best times to post
         /// </summary>
@@ -502,12 +508,13 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetDailyMetrics200Response</returns>
-        System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get daily aggregated metrics
@@ -518,12 +525,13 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetDailyMetrics200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get follower stats
         /// </summary>
@@ -1005,6 +1013,7 @@ namespace Late.Api
         /// <param name="postId">Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional)</param>
         /// <param name="platform">Filter by platform (default \&quot;all\&quot;) (optional)</param>
         /// <param name="profileId">Filter by profile ID (default \&quot;all\&quot;) (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="source">Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional, default to all)</param>
         /// <param name="fromDate">Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional)</param>
         /// <param name="toDate">Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional)</param>
@@ -1013,9 +1022,9 @@ namespace Late.Api
         /// <param name="sortBy">Sort by date, engagement, or a specific metric (optional, default to date)</param>
         /// <param name="order">Sort order (optional, default to desc)</param>
         /// <returns>GetAnalytics200Response</returns>
-        public GetAnalytics200Response GetAnalytics(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default)
+        public GetAnalytics200Response GetAnalytics(string? postId = default, string? platform = default, string? profileId = default, string? accountId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default)
         {
-            Late.Client.ApiResponse<GetAnalytics200Response> localVarResponse = GetAnalyticsWithHttpInfo(postId, platform, profileId, source, fromDate, toDate, limit, page, sortBy, order);
+            Late.Client.ApiResponse<GetAnalytics200Response> localVarResponse = GetAnalyticsWithHttpInfo(postId, platform, profileId, accountId, source, fromDate, toDate, limit, page, sortBy, order);
             return localVarResponse.Data;
         }
 
@@ -1026,6 +1035,7 @@ namespace Late.Api
         /// <param name="postId">Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional)</param>
         /// <param name="platform">Filter by platform (default \&quot;all\&quot;) (optional)</param>
         /// <param name="profileId">Filter by profile ID (default \&quot;all\&quot;) (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="source">Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional, default to all)</param>
         /// <param name="fromDate">Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional)</param>
         /// <param name="toDate">Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional)</param>
@@ -1034,7 +1044,7 @@ namespace Late.Api
         /// <param name="sortBy">Sort by date, engagement, or a specific metric (optional, default to date)</param>
         /// <param name="order">Sort order (optional, default to desc)</param>
         /// <returns>ApiResponse of GetAnalytics200Response</returns>
-        public Late.Client.ApiResponse<GetAnalytics200Response> GetAnalyticsWithHttpInfo(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default)
+        public Late.Client.ApiResponse<GetAnalytics200Response> GetAnalyticsWithHttpInfo(string? postId = default, string? platform = default, string? profileId = default, string? accountId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1063,6 +1073,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (source != null)
             {
@@ -1119,6 +1133,7 @@ namespace Late.Api
         /// <param name="postId">Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional)</param>
         /// <param name="platform">Filter by platform (default \&quot;all\&quot;) (optional)</param>
         /// <param name="profileId">Filter by profile ID (default \&quot;all\&quot;) (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="source">Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional, default to all)</param>
         /// <param name="fromDate">Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional)</param>
         /// <param name="toDate">Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional)</param>
@@ -1128,9 +1143,9 @@ namespace Late.Api
         /// <param name="order">Sort order (optional, default to desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetAnalytics200Response</returns>
-        public async System.Threading.Tasks.Task<GetAnalytics200Response> GetAnalyticsAsync(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetAnalytics200Response> GetAnalyticsAsync(string? postId = default, string? platform = default, string? profileId = default, string? accountId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetAnalytics200Response> localVarResponse = await GetAnalyticsWithHttpInfoAsync(postId, platform, profileId, source, fromDate, toDate, limit, page, sortBy, order, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetAnalytics200Response> localVarResponse = await GetAnalyticsWithHttpInfoAsync(postId, platform, profileId, accountId, source, fromDate, toDate, limit, page, sortBy, order, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1141,6 +1156,7 @@ namespace Late.Api
         /// <param name="postId">Returns analytics for a single post. Accepts both Zernio Post IDs and External Post IDs. Zernio IDs are auto-resolved to External Post analytics. (optional)</param>
         /// <param name="platform">Filter by platform (default \&quot;all\&quot;) (optional)</param>
         /// <param name="profileId">Filter by profile ID (default \&quot;all\&quot;) (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="source">Filter by post source: late (posted via Zernio API), external (synced from platform), all (default) (optional, default to all)</param>
         /// <param name="fromDate">Inclusive lower bound (YYYY-MM-DD). Defaults to 90 days ago if omitted. Max range is 366 days. (optional)</param>
         /// <param name="toDate">Inclusive upper bound (YYYY-MM-DD). Defaults to today if omitted. (optional)</param>
@@ -1150,7 +1166,7 @@ namespace Late.Api
         /// <param name="order">Sort order (optional, default to desc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetAnalytics200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetAnalytics200Response>> GetAnalyticsWithHttpInfoAsync(string? postId = default, string? platform = default, string? profileId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetAnalytics200Response>> GetAnalyticsWithHttpInfoAsync(string? postId = default, string? platform = default, string? profileId = default, string? accountId = default, string? source = default, DateOnly? fromDate = default, DateOnly? toDate = default, int? limit = default, int? page = default, string? sortBy = default, string? order = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1181,6 +1197,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (source != null)
             {
@@ -1535,13 +1555,14 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetDailyMetrics200Response</returns>
-        public GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default)
+        public GetDailyMetrics200Response GetDailyMetrics(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default)
         {
-            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = GetDailyMetricsWithHttpInfo(platform, profileId, fromDate, toDate, source);
+            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = GetDailyMetricsWithHttpInfo(platform, profileId, accountId, fromDate, toDate, source);
             return localVarResponse.Data;
         }
 
@@ -1551,11 +1572,12 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetDailyMetrics200Response</returns>
-        public Late.Client.ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default)
+        public Late.Client.ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1580,6 +1602,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (fromDate != null)
             {
@@ -1619,14 +1645,15 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetDailyMetrics200Response</returns>
-        public async System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetDailyMetrics200Response> GetDailyMetricsAsync(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = await GetDailyMetricsWithHttpInfoAsync(platform, profileId, fromDate, toDate, source, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetDailyMetrics200Response> localVarResponse = await GetDailyMetricsWithHttpInfoAsync(platform, profileId, accountId, fromDate, toDate, source, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1636,12 +1663,13 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID (optional)</param>
         /// <param name="fromDate">Inclusive start date (ISO 8601). Defaults to 180 days ago. (optional)</param>
         /// <param name="toDate">Inclusive end date (ISO 8601). Defaults to now. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetDailyMetrics200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1668,6 +1696,10 @@ namespace Late.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (fromDate != null)
             {
