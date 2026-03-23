@@ -45,7 +45,7 @@ namespace Late.Model
         /// <param name="delayMinutes">delayMinutes (required).</param>
         /// <param name="message">message.</param>
         /// <param name="template">template.</param>
-        public CreateSequenceRequestStepsInner(int order = default, int delayMinutes = default, CreateSequenceRequestStepsInnerMessage message = default, GetWhatsAppBroadcasts200ResponseBroadcastsInnerTemplate template = default)
+        public CreateSequenceRequestStepsInner(int order = default, int delayMinutes = default, CreateSequenceRequestStepsInnerMessage message = default, CreateSequenceRequestStepsInnerTemplate template = default)
         {
             this.Order = order;
             this.DelayMinutes = delayMinutes;
@@ -75,7 +75,7 @@ namespace Late.Model
         /// Gets or Sets Template
         /// </summary>
         [DataMember(Name = "template", EmitDefaultValue = false)]
-        public GetWhatsAppBroadcasts200ResponseBroadcastsInnerTemplate Template { get; set; }
+        public CreateSequenceRequestStepsInnerTemplate Template { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

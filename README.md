@@ -449,6 +449,8 @@ Class | Method | HTTP request | Description
  - [Model.CreateSequenceRequest](docs/CreateSequenceRequest.md)
  - [Model.CreateSequenceRequestStepsInner](docs/CreateSequenceRequestStepsInner.md)
  - [Model.CreateSequenceRequestStepsInnerMessage](docs/CreateSequenceRequestStepsInnerMessage.md)
+ - [Model.CreateSequenceRequestStepsInnerTemplate](docs/CreateSequenceRequestStepsInnerTemplate.md)
+ - [Model.CreateSequenceRequestStepsInnerTemplateVariableMappingValue](docs/CreateSequenceRequestStepsInnerTemplateVariableMappingValue.md)
  - [Model.CreateWebhookSettingsRequest](docs/CreateWebhookSettingsRequest.md)
  - [Model.CreateWhatsAppBroadcast200Response](docs/CreateWhatsAppBroadcast200Response.md)
  - [Model.CreateWhatsAppBroadcast200ResponseBroadcast](docs/CreateWhatsAppBroadcast200ResponseBroadcast.md)

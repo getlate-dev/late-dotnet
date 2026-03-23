@@ -91,6 +91,8 @@ docs/CreateQueueSlotRequest.md
 docs/CreateSequenceRequest.md
 docs/CreateSequenceRequestStepsInner.md
 docs/CreateSequenceRequestStepsInnerMessage.md
+docs/CreateSequenceRequestStepsInnerTemplate.md
+docs/CreateSequenceRequestStepsInnerTemplateVariableMappingValue.md
 docs/CreateWebhookSettingsRequest.md
 docs/CreateWhatsAppBroadcast200Response.md
 docs/CreateWhatsAppBroadcast200ResponseBroadcast.md
@@ -633,6 +635,8 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/CreateSequenceRequestStepsInnerTemplateTests.cs
+src/Late.Test/Model/CreateSequenceRequestStepsInnerTemplateVariableMappingValueTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -766,6 +770,8 @@ src/Late/Model/CreateQueueSlotRequest.cs
 src/Late/Model/CreateSequenceRequest.cs
 src/Late/Model/CreateSequenceRequestStepsInner.cs
 src/Late/Model/CreateSequenceRequestStepsInnerMessage.cs
+src/Late/Model/CreateSequenceRequestStepsInnerTemplate.cs
+src/Late/Model/CreateSequenceRequestStepsInnerTemplateVariableMappingValue.cs
 src/Late/Model/CreateWebhookSettingsRequest.cs
 src/Late/Model/CreateWhatsAppBroadcast200Response.cs
 src/Late/Model/CreateWhatsAppBroadcast200ResponseBroadcast.cs
