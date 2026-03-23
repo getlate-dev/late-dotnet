@@ -119,9 +119,9 @@ namespace Late.Api
         /// List all comment-to-DM automations for a profile. Returns automations with their stats.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID</param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <returns>ListCommentAutomations200Response</returns>
-        ListCommentAutomations200Response ListCommentAutomations(string profileId);
+        ListCommentAutomations200Response ListCommentAutomations(string? profileId = default);
 
         /// <summary>
         /// List comment-to-DM automations
@@ -130,9 +130,9 @@ namespace Late.Api
         /// List all comment-to-DM automations for a profile. Returns automations with their stats.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID</param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <returns>ApiResponse of ListCommentAutomations200Response</returns>
-        ApiResponse<ListCommentAutomations200Response> ListCommentAutomationsWithHttpInfo(string profileId);
+        ApiResponse<ListCommentAutomations200Response> ListCommentAutomationsWithHttpInfo(string? profileId = default);
         /// <summary>
         /// Update automation settings
         /// </summary>
@@ -267,10 +267,10 @@ namespace Late.Api
         /// List all comment-to-DM automations for a profile. Returns automations with their stats.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID</param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListCommentAutomations200Response</returns>
-        System.Threading.Tasks.Task<ListCommentAutomations200Response> ListCommentAutomationsAsync(string profileId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ListCommentAutomations200Response> ListCommentAutomationsAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List comment-to-DM automations
@@ -279,10 +279,10 @@ namespace Late.Api
         /// List all comment-to-DM automations for a profile. Returns automations with their stats.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID</param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListCommentAutomations200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListCommentAutomations200Response>> ListCommentAutomationsWithHttpInfoAsync(string profileId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ListCommentAutomations200Response>> ListCommentAutomationsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update automation settings
         /// </summary>
@@ -1063,9 +1063,9 @@ namespace Late.Api
         /// List comment-to-DM automations List all comment-to-DM automations for a profile. Returns automations with their stats.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID</param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <returns>ListCommentAutomations200Response</returns>
-        public ListCommentAutomations200Response ListCommentAutomations(string profileId)
+        public ListCommentAutomations200Response ListCommentAutomations(string? profileId = default)
         {
             Late.Client.ApiResponse<ListCommentAutomations200Response> localVarResponse = ListCommentAutomationsWithHttpInfo(profileId);
             return localVarResponse.Data;
@@ -1075,14 +1075,10 @@ namespace Late.Api
         /// List comment-to-DM automations List all comment-to-DM automations for a profile. Returns automations with their stats.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID</param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <returns>ApiResponse of ListCommentAutomations200Response</returns>
-        public Late.Client.ApiResponse<ListCommentAutomations200Response> ListCommentAutomationsWithHttpInfo(string profileId)
+        public Late.Client.ApiResponse<ListCommentAutomations200Response> ListCommentAutomationsWithHttpInfo(string? profileId = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling CommentAutomationsApi->ListCommentAutomations");
-
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1099,7 +1095,10 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required
@@ -1124,10 +1123,10 @@ namespace Late.Api
         /// List comment-to-DM automations List all comment-to-DM automations for a profile. Returns automations with their stats.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID</param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListCommentAutomations200Response</returns>
-        public async System.Threading.Tasks.Task<ListCommentAutomations200Response> ListCommentAutomationsAsync(string profileId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ListCommentAutomations200Response> ListCommentAutomationsAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             Late.Client.ApiResponse<ListCommentAutomations200Response> localVarResponse = await ListCommentAutomationsWithHttpInfoAsync(profileId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1137,15 +1136,11 @@ namespace Late.Api
         /// List comment-to-DM automations List all comment-to-DM automations for a profile. Returns automations with their stats.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID</param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListCommentAutomations200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListCommentAutomations200Response>> ListCommentAutomationsWithHttpInfoAsync(string profileId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListCommentAutomations200Response>> ListCommentAutomationsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling CommentAutomationsApi->ListCommentAutomations");
-
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1164,7 +1159,10 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required

@@ -88,9 +88,9 @@ namespace Late.Api
         /// List custom field definitions
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <returns></returns>
-        void ListCustomFields(string profileId);
+        void ListCustomFields(string? profileId = default);
 
         /// <summary>
         /// List custom field definitions
@@ -99,9 +99,9 @@ namespace Late.Api
         /// 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListCustomFieldsWithHttpInfo(string profileId);
+        ApiResponse<Object> ListCustomFieldsWithHttpInfo(string? profileId = default);
         /// <summary>
         /// Set a custom field value
         /// </summary>
@@ -231,10 +231,10 @@ namespace Late.Api
         /// 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListCustomFieldsAsync(string profileId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task ListCustomFieldsAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List custom field definitions
@@ -243,10 +243,10 @@ namespace Late.Api
         /// 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListCustomFieldsWithHttpInfoAsync(string profileId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ListCustomFieldsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set a custom field value
         /// </summary>
@@ -907,9 +907,9 @@ namespace Late.Api
         /// List custom field definitions 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <returns></returns>
-        public void ListCustomFields(string profileId)
+        public void ListCustomFields(string? profileId = default)
         {
             ListCustomFieldsWithHttpInfo(profileId);
         }
@@ -918,14 +918,10 @@ namespace Late.Api
         /// List custom field definitions 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ListCustomFieldsWithHttpInfo(string profileId)
+        public Late.Client.ApiResponse<Object> ListCustomFieldsWithHttpInfo(string? profileId = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling CustomFieldsApi->ListCustomFields");
-
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -942,7 +938,10 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required
@@ -967,10 +966,10 @@ namespace Late.Api
         /// List custom field definitions 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListCustomFieldsAsync(string profileId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task ListCustomFieldsAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await ListCustomFieldsWithHttpInfoAsync(profileId, cancellationToken).ConfigureAwait(false);
         }
@@ -979,15 +978,11 @@ namespace Late.Api
         /// List custom field definitions 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListCustomFieldsWithHttpInfoAsync(string profileId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListCustomFieldsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling CustomFieldsApi->ListCustomFields");
-
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1006,7 +1001,10 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required

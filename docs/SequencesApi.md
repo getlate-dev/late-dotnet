@@ -589,7 +589,7 @@ void (empty response body)
 
 <a id="listsequences"></a>
 # **ListSequences**
-> void ListSequences (string profileId, string? status = null, int? limit = null, int? skip = null)
+> void ListSequences (string? profileId = null, string? status = null, int? limit = null, int? skip = null)
 
 List sequences
 
@@ -617,7 +617,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new SequencesApi(httpClient, config, httpClientHandler);
-            var profileId = "profileId_example";  // string | 
+            var profileId = "profileId_example";  // string? | Filter by profile. Omit to list across all profiles (optional) 
             var status = "draft";  // string? |  (optional) 
             var limit = 50;  // int? |  (optional)  (default to 50)
             var skip = 0;  // int? |  (optional)  (default to 0)
@@ -659,7 +659,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **profileId** | **string** |  |  |
+| **profileId** | **string?** | Filter by profile. Omit to list across all profiles | [optional]  |
 | **status** | **string?** |  | [optional]  |
 | **limit** | **int?** |  | [optional] [default to 50] |
 | **skip** | **int?** |  | [optional] [default to 0] |

@@ -148,13 +148,13 @@ namespace Late.Api
         /// List broadcasts
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns></returns>
-        void ListBroadcasts(string profileId, string? status = default, string? platform = default, int? limit = default, int? skip = default);
+        void ListBroadcasts(string? profileId = default, string? status = default, string? platform = default, int? limit = default, int? skip = default);
 
         /// <summary>
         /// List broadcasts
@@ -163,13 +163,13 @@ namespace Late.Api
         /// 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListBroadcastsWithHttpInfo(string profileId, string? status = default, string? platform = default, int? limit = default, int? skip = default);
+        ApiResponse<Object> ListBroadcastsWithHttpInfo(string? profileId = default, string? status = default, string? platform = default, int? limit = default, int? skip = default);
         /// <summary>
         /// Schedule broadcast for later
         /// </summary>
@@ -388,14 +388,14 @@ namespace Late.Api
         /// 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListBroadcastsAsync(string profileId, string? status = default, string? platform = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task ListBroadcastsAsync(string? profileId = default, string? status = default, string? platform = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List broadcasts
@@ -404,14 +404,14 @@ namespace Late.Api
         /// 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListBroadcastsWithHttpInfoAsync(string profileId, string? status = default, string? platform = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ListBroadcastsWithHttpInfoAsync(string? profileId = default, string? status = default, string? platform = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Schedule broadcast for later
         /// </summary>
@@ -1504,13 +1504,13 @@ namespace Late.Api
         /// List broadcasts 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns></returns>
-        public void ListBroadcasts(string profileId, string? status = default, string? platform = default, int? limit = default, int? skip = default)
+        public void ListBroadcasts(string? profileId = default, string? status = default, string? platform = default, int? limit = default, int? skip = default)
         {
             ListBroadcastsWithHttpInfo(profileId, status, platform, limit, skip);
         }
@@ -1519,18 +1519,14 @@ namespace Late.Api
         /// List broadcasts 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ListBroadcastsWithHttpInfo(string profileId, string? status = default, string? platform = default, int? limit = default, int? skip = default)
+        public Late.Client.ApiResponse<Object> ListBroadcastsWithHttpInfo(string? profileId = default, string? status = default, string? platform = default, int? limit = default, int? skip = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling BroadcastsApi->ListBroadcasts");
-
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1547,7 +1543,10 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
             if (status != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "status", status));
@@ -1588,14 +1587,14 @@ namespace Late.Api
         /// List broadcasts 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListBroadcastsAsync(string profileId, string? status = default, string? platform = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task ListBroadcastsAsync(string? profileId = default, string? status = default, string? platform = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await ListBroadcastsWithHttpInfoAsync(profileId, status, platform, limit, skip, cancellationToken).ConfigureAwait(false);
         }
@@ -1604,19 +1603,15 @@ namespace Late.Api
         /// List broadcasts 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListBroadcastsWithHttpInfoAsync(string profileId, string? status = default, string? platform = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListBroadcastsWithHttpInfoAsync(string? profileId = default, string? status = default, string? platform = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling BroadcastsApi->ListBroadcasts");
-
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1635,7 +1630,10 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
             if (status != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "status", status));

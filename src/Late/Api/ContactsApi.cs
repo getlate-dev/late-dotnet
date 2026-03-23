@@ -131,7 +131,7 @@ namespace Late.Api
         /// List and search contacts for a profile. Supports filtering by tags, platform, subscription status, and full-text search.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="search"> (optional)</param>
         /// <param name="tag"> (optional)</param>
         /// <param name="platform"> (optional)</param>
@@ -139,7 +139,7 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns></returns>
-        void ListContacts(string profileId, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
+        void ListContacts(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
 
         /// <summary>
         /// List contacts
@@ -148,7 +148,7 @@ namespace Late.Api
         /// List and search contacts for a profile. Supports filtering by tags, platform, subscription status, and full-text search.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="search"> (optional)</param>
         /// <param name="tag"> (optional)</param>
         /// <param name="platform"> (optional)</param>
@@ -156,7 +156,7 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListContactsWithHttpInfo(string profileId, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
+        ApiResponse<Object> ListContactsWithHttpInfo(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
         /// <summary>
         /// Update a contact
         /// </summary>
@@ -308,7 +308,7 @@ namespace Late.Api
         /// List and search contacts for a profile. Supports filtering by tags, platform, subscription status, and full-text search.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="search"> (optional)</param>
         /// <param name="tag"> (optional)</param>
         /// <param name="platform"> (optional)</param>
@@ -317,7 +317,7 @@ namespace Late.Api
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListContactsAsync(string profileId, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task ListContactsAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List contacts
@@ -326,7 +326,7 @@ namespace Late.Api
         /// List and search contacts for a profile. Supports filtering by tags, platform, subscription status, and full-text search.
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="search"> (optional)</param>
         /// <param name="tag"> (optional)</param>
         /// <param name="platform"> (optional)</param>
@@ -335,7 +335,7 @@ namespace Late.Api
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListContactsWithHttpInfoAsync(string profileId, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ListContactsWithHttpInfoAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a contact
         /// </summary>
@@ -1207,7 +1207,7 @@ namespace Late.Api
         /// List contacts List and search contacts for a profile. Supports filtering by tags, platform, subscription status, and full-text search.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="search"> (optional)</param>
         /// <param name="tag"> (optional)</param>
         /// <param name="platform"> (optional)</param>
@@ -1215,7 +1215,7 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns></returns>
-        public void ListContacts(string profileId, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default)
+        public void ListContacts(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default)
         {
             ListContactsWithHttpInfo(profileId, search, tag, platform, isSubscribed, limit, skip);
         }
@@ -1224,7 +1224,7 @@ namespace Late.Api
         /// List contacts List and search contacts for a profile. Supports filtering by tags, platform, subscription status, and full-text search.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="search"> (optional)</param>
         /// <param name="tag"> (optional)</param>
         /// <param name="platform"> (optional)</param>
@@ -1232,12 +1232,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ListContactsWithHttpInfo(string profileId, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default)
+        public Late.Client.ApiResponse<Object> ListContactsWithHttpInfo(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling ContactsApi->ListContacts");
-
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -1254,7 +1250,10 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
             if (search != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "search", search));
@@ -1303,7 +1302,7 @@ namespace Late.Api
         /// List contacts List and search contacts for a profile. Supports filtering by tags, platform, subscription status, and full-text search.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="search"> (optional)</param>
         /// <param name="tag"> (optional)</param>
         /// <param name="platform"> (optional)</param>
@@ -1312,7 +1311,7 @@ namespace Late.Api
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListContactsAsync(string profileId, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task ListContactsAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await ListContactsWithHttpInfoAsync(profileId, search, tag, platform, isSubscribed, limit, skip, cancellationToken).ConfigureAwait(false);
         }
@@ -1321,7 +1320,7 @@ namespace Late.Api
         /// List contacts List and search contacts for a profile. Supports filtering by tags, platform, subscription status, and full-text search.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId"></param>
+        /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="search"> (optional)</param>
         /// <param name="tag"> (optional)</param>
         /// <param name="platform"> (optional)</param>
@@ -1330,12 +1329,8 @@ namespace Late.Api
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListContactsWithHttpInfoAsync(string profileId, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListContactsWithHttpInfoAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling ContactsApi->ListContacts");
-
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1354,7 +1349,10 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
             if (search != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "search", search));

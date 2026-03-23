@@ -10819,10 +10819,11 @@ paths:
         \ tags, platform, subscription status, and full-text search."
       operationId: listContacts
       parameters:
-      - explode: true
+      - description: Filter by profile. Omit to list across all profiles
+        explode: true
         in: query
         name: profileId
-        required: true
+        required: false
         schema:
           type: string
         style: form
@@ -11080,10 +11081,11 @@ paths:
     get:
       operationId: listCustomFields
       parameters:
-      - explode: true
+      - description: Filter by profile. Omit to list across all profiles
+        explode: true
         in: query
         name: profileId
-        required: true
+        required: false
         schema:
           type: string
         style: form
@@ -11163,10 +11165,11 @@ paths:
     get:
       operationId: listBroadcasts
       parameters:
-      - explode: true
+      - description: Filter by profile. Omit to list across all profiles
+        explode: true
         in: query
         name: profileId
-        required: true
+        required: false
         schema:
           type: string
         style: form
@@ -11447,10 +11450,11 @@ paths:
     get:
       operationId: listSequences
       parameters:
-      - explode: true
+      - description: Filter by profile. Omit to list across all profiles
+        explode: true
         in: query
         name: profileId
-        required: true
+        required: false
         schema:
           type: string
         style: form
@@ -11722,11 +11726,11 @@ paths:
         with their stats.
       operationId: listCommentAutomations
       parameters:
-      - description: Profile ID
+      - description: Filter by profile. Omit to list across all profiles
         explode: true
         in: query
         name: profileId
-        required: true
+        required: false
         schema:
           type: string
         style: form

@@ -487,7 +487,7 @@ void (empty response body)
 
 <a id="listcontacts"></a>
 # **ListContacts**
-> void ListContacts (string profileId, string? search = null, string? tag = null, string? platform = null, string? isSubscribed = null, int? limit = null, int? skip = null)
+> void ListContacts (string? profileId = null, string? search = null, string? tag = null, string? platform = null, string? isSubscribed = null, int? limit = null, int? skip = null)
 
 List contacts
 
@@ -517,7 +517,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ContactsApi(httpClient, config, httpClientHandler);
-            var profileId = "profileId_example";  // string | 
+            var profileId = "profileId_example";  // string? | Filter by profile. Omit to list across all profiles (optional) 
             var search = "search_example";  // string? |  (optional) 
             var tag = "tag_example";  // string? |  (optional) 
             var platform = "instagram";  // string? |  (optional) 
@@ -562,7 +562,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **profileId** | **string** |  |  |
+| **profileId** | **string?** | Filter by profile. Omit to list across all profiles | [optional]  |
 | **search** | **string?** |  | [optional]  |
 | **tag** | **string?** |  | [optional]  |
 | **platform** | **string?** |  | [optional]  |

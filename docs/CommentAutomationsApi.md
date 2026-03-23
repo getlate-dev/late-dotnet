@@ -400,7 +400,7 @@ void (empty response body)
 
 <a id="listcommentautomations"></a>
 # **ListCommentAutomations**
-> ListCommentAutomations200Response ListCommentAutomations (string profileId)
+> ListCommentAutomations200Response ListCommentAutomations (string? profileId = null)
 
 List comment-to-DM automations
 
@@ -430,7 +430,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CommentAutomationsApi(httpClient, config, httpClientHandler);
-            var profileId = "profileId_example";  // string | Profile ID
+            var profileId = "profileId_example";  // string? | Filter by profile. Omit to list across all profiles (optional) 
 
             try
             {
@@ -473,7 +473,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **profileId** | **string** | Profile ID |  |
+| **profileId** | **string?** | Filter by profile. Omit to list across all profiles | [optional]  |
 
 ### Return type
 

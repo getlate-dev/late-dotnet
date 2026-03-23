@@ -589,7 +589,7 @@ void (empty response body)
 
 <a id="listbroadcasts"></a>
 # **ListBroadcasts**
-> void ListBroadcasts (string profileId, string? status = null, string? platform = null, int? limit = null, int? skip = null)
+> void ListBroadcasts (string? profileId = null, string? status = null, string? platform = null, int? limit = null, int? skip = null)
 
 List broadcasts
 
@@ -617,7 +617,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new BroadcastsApi(httpClient, config, httpClientHandler);
-            var profileId = "profileId_example";  // string | 
+            var profileId = "profileId_example";  // string? | Filter by profile. Omit to list across all profiles (optional) 
             var status = "draft";  // string? |  (optional) 
             var platform = "platform_example";  // string? |  (optional) 
             var limit = 50;  // int? |  (optional)  (default to 50)
@@ -660,7 +660,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **profileId** | **string** |  |  |
+| **profileId** | **string?** | Filter by profile. Omit to list across all profiles | [optional]  |
 | **status** | **string?** |  | [optional]  |
 | **platform** | **string?** |  | [optional]  |
 | **limit** | **int?** |  | [optional] [default to 50] |

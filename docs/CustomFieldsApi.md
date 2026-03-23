@@ -297,7 +297,7 @@ void (empty response body)
 
 <a id="listcustomfields"></a>
 # **ListCustomFields**
-> void ListCustomFields (string profileId)
+> void ListCustomFields (string? profileId = null)
 
 List custom field definitions
 
@@ -325,7 +325,7 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new CustomFieldsApi(httpClient, config, httpClientHandler);
-            var profileId = "profileId_example";  // string | 
+            var profileId = "profileId_example";  // string? | Filter by profile. Omit to list across all profiles (optional) 
 
             try
             {
@@ -364,7 +364,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **profileId** | **string** |  |  |
+| **profileId** | **string?** | Filter by profile. Omit to list across all profiles | [optional]  |
 
 ### Return type
 
