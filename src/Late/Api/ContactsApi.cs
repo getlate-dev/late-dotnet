@@ -36,8 +36,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bulkCreateContactsRequest"></param>
-        /// <returns></returns>
-        void BulkCreateContacts(BulkCreateContactsRequest bulkCreateContactsRequest);
+        /// <returns>BulkCreateContacts200Response</returns>
+        BulkCreateContacts200Response BulkCreateContacts(BulkCreateContactsRequest bulkCreateContactsRequest);
 
         /// <summary>
         /// Bulk create contacts
@@ -47,8 +47,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bulkCreateContactsRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> BulkCreateContactsWithHttpInfo(BulkCreateContactsRequest bulkCreateContactsRequest);
+        /// <returns>ApiResponse of BulkCreateContacts200Response</returns>
+        ApiResponse<BulkCreateContacts200Response> BulkCreateContactsWithHttpInfo(BulkCreateContactsRequest bulkCreateContactsRequest);
         /// <summary>
         /// Create a contact
         /// </summary>
@@ -57,8 +57,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
-        /// <returns></returns>
-        void CreateContact(CreateContactRequest createContactRequest);
+        /// <returns>CreateContact200Response</returns>
+        CreateContact200Response CreateContact(CreateContactRequest createContactRequest);
 
         /// <summary>
         /// Create a contact
@@ -68,8 +68,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateContactWithHttpInfo(CreateContactRequest createContactRequest);
+        /// <returns>ApiResponse of CreateContact200Response</returns>
+        ApiResponse<CreateContact200Response> CreateContactWithHttpInfo(CreateContactRequest createContactRequest);
         /// <summary>
         /// Delete a contact
         /// </summary>
@@ -93,8 +93,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
-        /// <returns></returns>
-        void GetContact(string contactId);
+        /// <returns>GetContact200Response</returns>
+        GetContact200Response GetContact(string contactId);
 
         /// <summary>
         /// Get contact with channels
@@ -104,15 +104,15 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetContactWithHttpInfo(string contactId);
+        /// <returns>ApiResponse of GetContact200Response</returns>
+        ApiResponse<GetContact200Response> GetContactWithHttpInfo(string contactId);
         /// <summary>
         /// List channels for a contact
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
-        /// <returns></returns>
-        void GetContactChannels(string contactId);
+        /// <returns>GetContactChannels200Response</returns>
+        GetContactChannels200Response GetContactChannels(string contactId);
 
         /// <summary>
         /// List channels for a contact
@@ -122,8 +122,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetContactChannelsWithHttpInfo(string contactId);
+        /// <returns>ApiResponse of GetContactChannels200Response</returns>
+        ApiResponse<GetContactChannels200Response> GetContactChannelsWithHttpInfo(string contactId);
         /// <summary>
         /// List contacts
         /// </summary>
@@ -138,8 +138,8 @@ namespace Late.Api
         /// <param name="isSubscribed"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns></returns>
-        void ListContacts(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
+        /// <returns>ListContacts200Response</returns>
+        ListContacts200Response ListContacts(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
 
         /// <summary>
         /// List contacts
@@ -155,16 +155,16 @@ namespace Late.Api
         /// <param name="isSubscribed"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListContactsWithHttpInfo(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
+        /// <returns>ApiResponse of ListContacts200Response</returns>
+        ApiResponse<ListContacts200Response> ListContactsWithHttpInfo(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
         /// <summary>
         /// Update a contact
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="updateContactRequest"> (optional)</param>
-        /// <returns></returns>
-        void UpdateContact(string contactId, UpdateContactRequest? updateContactRequest = default);
+        /// <returns>UpdateContact200Response</returns>
+        UpdateContact200Response UpdateContact(string contactId, UpdateContactRequest? updateContactRequest = default);
 
         /// <summary>
         /// Update a contact
@@ -175,8 +175,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="updateContactRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateContactWithHttpInfo(string contactId, UpdateContactRequest? updateContactRequest = default);
+        /// <returns>ApiResponse of UpdateContact200Response</returns>
+        ApiResponse<UpdateContact200Response> UpdateContactWithHttpInfo(string contactId, UpdateContactRequest? updateContactRequest = default);
         #endregion Synchronous Operations
     }
 
@@ -195,8 +195,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bulkCreateContactsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task BulkCreateContactsAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of BulkCreateContacts200Response</returns>
+        System.Threading.Tasks.Task<BulkCreateContacts200Response> BulkCreateContactsAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Bulk create contacts
@@ -207,8 +207,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bulkCreateContactsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> BulkCreateContactsWithHttpInfoAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (BulkCreateContacts200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BulkCreateContacts200Response>> BulkCreateContactsWithHttpInfoAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a contact
         /// </summary>
@@ -218,8 +218,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateContactAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of CreateContact200Response</returns>
+        System.Threading.Tasks.Task<CreateContact200Response> CreateContactAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a contact
@@ -230,8 +230,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateContactWithHttpInfoAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (CreateContact200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateContact200Response>> CreateContactWithHttpInfoAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete a contact
         /// </summary>
@@ -264,8 +264,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetContactAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of GetContact200Response</returns>
+        System.Threading.Tasks.Task<GetContact200Response> GetContactAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get contact with channels
@@ -276,8 +276,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetContactWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (GetContact200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetContact200Response>> GetContactWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List channels for a contact
         /// </summary>
@@ -287,8 +287,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetContactChannelsAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of GetContactChannels200Response</returns>
+        System.Threading.Tasks.Task<GetContactChannels200Response> GetContactChannelsAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List channels for a contact
@@ -299,8 +299,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetContactChannelsWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (GetContactChannels200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetContactChannels200Response>> GetContactChannelsWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List contacts
         /// </summary>
@@ -316,8 +316,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListContactsAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ListContacts200Response</returns>
+        System.Threading.Tasks.Task<ListContacts200Response> ListContactsAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List contacts
@@ -334,8 +334,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListContactsWithHttpInfoAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ListContacts200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListContacts200Response>> ListContactsWithHttpInfoAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update a contact
         /// </summary>
@@ -346,8 +346,8 @@ namespace Late.Api
         /// <param name="contactId"></param>
         /// <param name="updateContactRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateContactAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of UpdateContact200Response</returns>
+        System.Threading.Tasks.Task<UpdateContact200Response> UpdateContactAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a contact
@@ -359,8 +359,8 @@ namespace Late.Api
         /// <param name="contactId"></param>
         /// <param name="updateContactRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateContactWithHttpInfoAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (UpdateContact200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateContact200Response>> UpdateContactWithHttpInfoAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -579,10 +579,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bulkCreateContactsRequest"></param>
-        /// <returns></returns>
-        public void BulkCreateContacts(BulkCreateContactsRequest bulkCreateContactsRequest)
+        /// <returns>BulkCreateContacts200Response</returns>
+        public BulkCreateContacts200Response BulkCreateContacts(BulkCreateContactsRequest bulkCreateContactsRequest)
         {
-            BulkCreateContactsWithHttpInfo(bulkCreateContactsRequest);
+            Late.Client.ApiResponse<BulkCreateContacts200Response> localVarResponse = BulkCreateContactsWithHttpInfo(bulkCreateContactsRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -590,8 +591,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bulkCreateContactsRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> BulkCreateContactsWithHttpInfo(BulkCreateContactsRequest bulkCreateContactsRequest)
+        /// <returns>ApiResponse of BulkCreateContacts200Response</returns>
+        public Late.Client.ApiResponse<BulkCreateContacts200Response> BulkCreateContactsWithHttpInfo(BulkCreateContactsRequest bulkCreateContactsRequest)
         {
             // verify the required parameter 'bulkCreateContactsRequest' is set
             if (bulkCreateContactsRequest == null)
@@ -624,7 +625,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/contacts/bulk", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<BulkCreateContacts200Response>("/v1/contacts/bulk", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -641,10 +642,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bulkCreateContactsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task BulkCreateContactsAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of BulkCreateContacts200Response</returns>
+        public async System.Threading.Tasks.Task<BulkCreateContacts200Response> BulkCreateContactsAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await BulkCreateContactsWithHttpInfoAsync(bulkCreateContactsRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<BulkCreateContacts200Response> localVarResponse = await BulkCreateContactsWithHttpInfoAsync(bulkCreateContactsRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -653,8 +655,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="bulkCreateContactsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> BulkCreateContactsWithHttpInfoAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (BulkCreateContacts200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<BulkCreateContacts200Response>> BulkCreateContactsWithHttpInfoAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'bulkCreateContactsRequest' is set
             if (bulkCreateContactsRequest == null)
@@ -690,7 +692,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/contacts/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<BulkCreateContacts200Response>("/v1/contacts/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -706,10 +708,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
-        /// <returns></returns>
-        public void CreateContact(CreateContactRequest createContactRequest)
+        /// <returns>CreateContact200Response</returns>
+        public CreateContact200Response CreateContact(CreateContactRequest createContactRequest)
         {
-            CreateContactWithHttpInfo(createContactRequest);
+            Late.Client.ApiResponse<CreateContact200Response> localVarResponse = CreateContactWithHttpInfo(createContactRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -717,8 +720,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> CreateContactWithHttpInfo(CreateContactRequest createContactRequest)
+        /// <returns>ApiResponse of CreateContact200Response</returns>
+        public Late.Client.ApiResponse<CreateContact200Response> CreateContactWithHttpInfo(CreateContactRequest createContactRequest)
         {
             // verify the required parameter 'createContactRequest' is set
             if (createContactRequest == null)
@@ -751,7 +754,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/contacts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CreateContact200Response>("/v1/contacts", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -768,10 +771,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateContactAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of CreateContact200Response</returns>
+        public async System.Threading.Tasks.Task<CreateContact200Response> CreateContactAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await CreateContactWithHttpInfoAsync(createContactRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<CreateContact200Response> localVarResponse = await CreateContactWithHttpInfoAsync(createContactRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -780,8 +784,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> CreateContactWithHttpInfoAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (CreateContact200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateContact200Response>> CreateContactWithHttpInfoAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'createContactRequest' is set
             if (createContactRequest == null)
@@ -817,7 +821,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/contacts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateContact200Response>("/v1/contacts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -958,10 +962,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
-        /// <returns></returns>
-        public void GetContact(string contactId)
+        /// <returns>GetContact200Response</returns>
+        public GetContact200Response GetContact(string contactId)
         {
-            GetContactWithHttpInfo(contactId);
+            Late.Client.ApiResponse<GetContact200Response> localVarResponse = GetContactWithHttpInfo(contactId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -969,8 +974,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> GetContactWithHttpInfo(string contactId)
+        /// <returns>ApiResponse of GetContact200Response</returns>
+        public Late.Client.ApiResponse<GetContact200Response> GetContactWithHttpInfo(string contactId)
         {
             // verify the required parameter 'contactId' is set
             if (contactId == null)
@@ -1002,7 +1007,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/contacts/{contactId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetContact200Response>("/v1/contacts/{contactId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1019,10 +1024,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetContactAsync(string contactId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of GetContact200Response</returns>
+        public async System.Threading.Tasks.Task<GetContact200Response> GetContactAsync(string contactId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetContactWithHttpInfoAsync(contactId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetContact200Response> localVarResponse = await GetContactWithHttpInfoAsync(contactId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1031,8 +1037,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> GetContactWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (GetContact200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetContact200Response>> GetContactWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'contactId' is set
             if (contactId == null)
@@ -1067,7 +1073,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/contacts/{contactId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetContact200Response>("/v1/contacts/{contactId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1083,10 +1089,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
-        /// <returns></returns>
-        public void GetContactChannels(string contactId)
+        /// <returns>GetContactChannels200Response</returns>
+        public GetContactChannels200Response GetContactChannels(string contactId)
         {
-            GetContactChannelsWithHttpInfo(contactId);
+            Late.Client.ApiResponse<GetContactChannels200Response> localVarResponse = GetContactChannelsWithHttpInfo(contactId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1094,8 +1101,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> GetContactChannelsWithHttpInfo(string contactId)
+        /// <returns>ApiResponse of GetContactChannels200Response</returns>
+        public Late.Client.ApiResponse<GetContactChannels200Response> GetContactChannelsWithHttpInfo(string contactId)
         {
             // verify the required parameter 'contactId' is set
             if (contactId == null)
@@ -1127,7 +1134,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/contacts/{contactId}/channels", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetContactChannels200Response>("/v1/contacts/{contactId}/channels", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1144,10 +1151,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetContactChannelsAsync(string contactId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of GetContactChannels200Response</returns>
+        public async System.Threading.Tasks.Task<GetContactChannels200Response> GetContactChannelsAsync(string contactId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetContactChannelsWithHttpInfoAsync(contactId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetContactChannels200Response> localVarResponse = await GetContactChannelsWithHttpInfoAsync(contactId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1156,8 +1164,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> GetContactChannelsWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (GetContactChannels200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetContactChannels200Response>> GetContactChannelsWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'contactId' is set
             if (contactId == null)
@@ -1192,7 +1200,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/contacts/{contactId}/channels", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetContactChannels200Response>("/v1/contacts/{contactId}/channels", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1214,10 +1222,11 @@ namespace Late.Api
         /// <param name="isSubscribed"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns></returns>
-        public void ListContacts(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default)
+        /// <returns>ListContacts200Response</returns>
+        public ListContacts200Response ListContacts(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default)
         {
-            ListContactsWithHttpInfo(profileId, search, tag, platform, isSubscribed, limit, skip);
+            Late.Client.ApiResponse<ListContacts200Response> localVarResponse = ListContactsWithHttpInfo(profileId, search, tag, platform, isSubscribed, limit, skip);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1231,8 +1240,8 @@ namespace Late.Api
         /// <param name="isSubscribed"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ListContactsWithHttpInfo(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default)
+        /// <returns>ApiResponse of ListContacts200Response</returns>
+        public Late.Client.ApiResponse<ListContacts200Response> ListContactsWithHttpInfo(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -1287,7 +1296,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/contacts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListContacts200Response>("/v1/contacts", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1310,10 +1319,11 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListContactsAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ListContacts200Response</returns>
+        public async System.Threading.Tasks.Task<ListContacts200Response> ListContactsAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ListContactsWithHttpInfoAsync(profileId, search, tag, platform, isSubscribed, limit, skip, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListContacts200Response> localVarResponse = await ListContactsWithHttpInfoAsync(profileId, search, tag, platform, isSubscribed, limit, skip, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1328,8 +1338,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListContactsWithHttpInfoAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ListContacts200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListContacts200Response>> ListContactsWithHttpInfoAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1387,7 +1397,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/contacts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListContacts200Response>("/v1/contacts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1404,10 +1414,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="updateContactRequest"> (optional)</param>
-        /// <returns></returns>
-        public void UpdateContact(string contactId, UpdateContactRequest? updateContactRequest = default)
+        /// <returns>UpdateContact200Response</returns>
+        public UpdateContact200Response UpdateContact(string contactId, UpdateContactRequest? updateContactRequest = default)
         {
-            UpdateContactWithHttpInfo(contactId, updateContactRequest);
+            Late.Client.ApiResponse<UpdateContact200Response> localVarResponse = UpdateContactWithHttpInfo(contactId, updateContactRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1416,8 +1427,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
         /// <param name="updateContactRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> UpdateContactWithHttpInfo(string contactId, UpdateContactRequest? updateContactRequest = default)
+        /// <returns>ApiResponse of UpdateContact200Response</returns>
+        public Late.Client.ApiResponse<UpdateContact200Response> UpdateContactWithHttpInfo(string contactId, UpdateContactRequest? updateContactRequest = default)
         {
             // verify the required parameter 'contactId' is set
             if (contactId == null)
@@ -1451,7 +1462,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<Object>("/v1/contacts/{contactId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<UpdateContact200Response>("/v1/contacts/{contactId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1469,10 +1480,11 @@ namespace Late.Api
         /// <param name="contactId"></param>
         /// <param name="updateContactRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateContactAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of UpdateContact200Response</returns>
+        public async System.Threading.Tasks.Task<UpdateContact200Response> UpdateContactAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await UpdateContactWithHttpInfoAsync(contactId, updateContactRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<UpdateContact200Response> localVarResponse = await UpdateContactWithHttpInfoAsync(contactId, updateContactRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1482,8 +1494,8 @@ namespace Late.Api
         /// <param name="contactId"></param>
         /// <param name="updateContactRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> UpdateContactWithHttpInfoAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (UpdateContact200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateContact200Response>> UpdateContactWithHttpInfoAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'contactId' is set
             if (contactId == null)
@@ -1520,7 +1532,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/v1/contacts/{contactId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateContact200Response>("/v1/contacts/{contactId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

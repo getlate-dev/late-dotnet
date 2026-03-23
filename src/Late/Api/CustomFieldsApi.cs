@@ -53,8 +53,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
-        /// <returns></returns>
-        void CreateCustomField(CreateCustomFieldRequest createCustomFieldRequest);
+        /// <returns>CreateCustomField200Response</returns>
+        CreateCustomField200Response CreateCustomField(CreateCustomFieldRequest createCustomFieldRequest);
 
         /// <summary>
         /// Create a custom field definition
@@ -64,8 +64,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateCustomFieldWithHttpInfo(CreateCustomFieldRequest createCustomFieldRequest);
+        /// <returns>ApiResponse of CreateCustomField200Response</returns>
+        ApiResponse<CreateCustomField200Response> CreateCustomFieldWithHttpInfo(CreateCustomFieldRequest createCustomFieldRequest);
         /// <summary>
         /// Delete a custom field definition
         /// </summary>
@@ -89,8 +89,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
-        /// <returns></returns>
-        void ListCustomFields(string? profileId = default);
+        /// <returns>ListCustomFields200Response</returns>
+        ListCustomFields200Response ListCustomFields(string? profileId = default);
 
         /// <summary>
         /// List custom field definitions
@@ -100,8 +100,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListCustomFieldsWithHttpInfo(string? profileId = default);
+        /// <returns>ApiResponse of ListCustomFields200Response</returns>
+        ApiResponse<ListCustomFields200Response> ListCustomFieldsWithHttpInfo(string? profileId = default);
         /// <summary>
         /// Set a custom field value
         /// </summary>
@@ -130,8 +130,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
         /// <param name="updateCustomFieldRequest"> (optional)</param>
-        /// <returns></returns>
-        void UpdateCustomField(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default);
+        /// <returns>UpdateCustomField200Response</returns>
+        UpdateCustomField200Response UpdateCustomField(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default);
 
         /// <summary>
         /// Update a custom field definition
@@ -142,8 +142,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
         /// <param name="updateCustomFieldRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateCustomFieldWithHttpInfo(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default);
+        /// <returns>ApiResponse of UpdateCustomField200Response</returns>
+        ApiResponse<UpdateCustomField200Response> UpdateCustomFieldWithHttpInfo(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default);
         #endregion Synchronous Operations
     }
 
@@ -187,8 +187,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateCustomFieldAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of CreateCustomField200Response</returns>
+        System.Threading.Tasks.Task<CreateCustomField200Response> CreateCustomFieldAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a custom field definition
@@ -199,8 +199,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateCustomFieldWithHttpInfoAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (CreateCustomField200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateCustomField200Response>> CreateCustomFieldWithHttpInfoAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete a custom field definition
         /// </summary>
@@ -233,8 +233,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListCustomFieldsAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ListCustomFields200Response</returns>
+        System.Threading.Tasks.Task<ListCustomFields200Response> ListCustomFieldsAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List custom field definitions
@@ -245,8 +245,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListCustomFieldsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ListCustomFields200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListCustomFields200Response>> ListCustomFieldsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set a custom field value
         /// </summary>
@@ -284,8 +284,8 @@ namespace Late.Api
         /// <param name="fieldId"></param>
         /// <param name="updateCustomFieldRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateCustomFieldAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of UpdateCustomField200Response</returns>
+        System.Threading.Tasks.Task<UpdateCustomField200Response> UpdateCustomFieldAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a custom field definition
@@ -297,8 +297,8 @@ namespace Late.Api
         /// <param name="fieldId"></param>
         /// <param name="updateCustomFieldRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateCustomFieldWithHttpInfoAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (UpdateCustomField200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateCustomField200Response>> UpdateCustomFieldWithHttpInfoAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -656,10 +656,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
-        /// <returns></returns>
-        public void CreateCustomField(CreateCustomFieldRequest createCustomFieldRequest)
+        /// <returns>CreateCustomField200Response</returns>
+        public CreateCustomField200Response CreateCustomField(CreateCustomFieldRequest createCustomFieldRequest)
         {
-            CreateCustomFieldWithHttpInfo(createCustomFieldRequest);
+            Late.Client.ApiResponse<CreateCustomField200Response> localVarResponse = CreateCustomFieldWithHttpInfo(createCustomFieldRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -667,8 +668,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> CreateCustomFieldWithHttpInfo(CreateCustomFieldRequest createCustomFieldRequest)
+        /// <returns>ApiResponse of CreateCustomField200Response</returns>
+        public Late.Client.ApiResponse<CreateCustomField200Response> CreateCustomFieldWithHttpInfo(CreateCustomFieldRequest createCustomFieldRequest)
         {
             // verify the required parameter 'createCustomFieldRequest' is set
             if (createCustomFieldRequest == null)
@@ -701,7 +702,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/custom-fields", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CreateCustomField200Response>("/v1/custom-fields", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -718,10 +719,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateCustomFieldAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of CreateCustomField200Response</returns>
+        public async System.Threading.Tasks.Task<CreateCustomField200Response> CreateCustomFieldAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await CreateCustomFieldWithHttpInfoAsync(createCustomFieldRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<CreateCustomField200Response> localVarResponse = await CreateCustomFieldWithHttpInfoAsync(createCustomFieldRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -730,8 +732,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> CreateCustomFieldWithHttpInfoAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (CreateCustomField200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateCustomField200Response>> CreateCustomFieldWithHttpInfoAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'createCustomFieldRequest' is set
             if (createCustomFieldRequest == null)
@@ -767,7 +769,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/custom-fields", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateCustomField200Response>("/v1/custom-fields", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -908,10 +910,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
-        /// <returns></returns>
-        public void ListCustomFields(string? profileId = default)
+        /// <returns>ListCustomFields200Response</returns>
+        public ListCustomFields200Response ListCustomFields(string? profileId = default)
         {
-            ListCustomFieldsWithHttpInfo(profileId);
+            Late.Client.ApiResponse<ListCustomFields200Response> localVarResponse = ListCustomFieldsWithHttpInfo(profileId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -919,8 +922,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ListCustomFieldsWithHttpInfo(string? profileId = default)
+        /// <returns>ApiResponse of ListCustomFields200Response</returns>
+        public Late.Client.ApiResponse<ListCustomFields200Response> ListCustomFieldsWithHttpInfo(string? profileId = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -951,7 +954,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/custom-fields", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListCustomFields200Response>("/v1/custom-fields", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -968,10 +971,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListCustomFieldsAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ListCustomFields200Response</returns>
+        public async System.Threading.Tasks.Task<ListCustomFields200Response> ListCustomFieldsAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ListCustomFieldsWithHttpInfoAsync(profileId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListCustomFields200Response> localVarResponse = await ListCustomFieldsWithHttpInfoAsync(profileId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -980,8 +984,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile. Omit to list across all profiles (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListCustomFieldsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ListCustomFields200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListCustomFields200Response>> ListCustomFieldsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -1015,7 +1019,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/custom-fields", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListCustomFields200Response>("/v1/custom-fields", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1187,10 +1191,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
         /// <param name="updateCustomFieldRequest"> (optional)</param>
-        /// <returns></returns>
-        public void UpdateCustomField(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default)
+        /// <returns>UpdateCustomField200Response</returns>
+        public UpdateCustomField200Response UpdateCustomField(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default)
         {
-            UpdateCustomFieldWithHttpInfo(fieldId, updateCustomFieldRequest);
+            Late.Client.ApiResponse<UpdateCustomField200Response> localVarResponse = UpdateCustomFieldWithHttpInfo(fieldId, updateCustomFieldRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1199,8 +1204,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
         /// <param name="updateCustomFieldRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> UpdateCustomFieldWithHttpInfo(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default)
+        /// <returns>ApiResponse of UpdateCustomField200Response</returns>
+        public Late.Client.ApiResponse<UpdateCustomField200Response> UpdateCustomFieldWithHttpInfo(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default)
         {
             // verify the required parameter 'fieldId' is set
             if (fieldId == null)
@@ -1234,7 +1239,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<Object>("/v1/custom-fields/{fieldId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<UpdateCustomField200Response>("/v1/custom-fields/{fieldId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1252,10 +1257,11 @@ namespace Late.Api
         /// <param name="fieldId"></param>
         /// <param name="updateCustomFieldRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateCustomFieldAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of UpdateCustomField200Response</returns>
+        public async System.Threading.Tasks.Task<UpdateCustomField200Response> UpdateCustomFieldAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await UpdateCustomFieldWithHttpInfoAsync(fieldId, updateCustomFieldRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<UpdateCustomField200Response> localVarResponse = await UpdateCustomFieldWithHttpInfoAsync(fieldId, updateCustomFieldRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1265,8 +1271,8 @@ namespace Late.Api
         /// <param name="fieldId"></param>
         /// <param name="updateCustomFieldRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> UpdateCustomFieldWithHttpInfoAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (UpdateCustomField200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateCustomField200Response>> UpdateCustomFieldWithHttpInfoAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'fieldId' is set
             if (fieldId == null)
@@ -1303,7 +1309,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/v1/custom-fields/{fieldId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateCustomField200Response>("/v1/custom-fields/{fieldId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

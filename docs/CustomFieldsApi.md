@@ -109,7 +109,7 @@ void (empty response body)
 
 <a id="createcustomfield"></a>
 # **CreateCustomField**
-> void CreateCustomField (CreateCustomFieldRequest createCustomFieldRequest)
+> CreateCustomField200Response CreateCustomField (CreateCustomFieldRequest createCustomFieldRequest)
 
 Create a custom field definition
 
@@ -142,7 +142,8 @@ namespace Example
             try
             {
                 // Create a custom field definition
-                apiInstance.CreateCustomField(createCustomFieldRequest);
+                CreateCustomField200Response result = apiInstance.CreateCustomField(createCustomFieldRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -162,7 +163,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a custom field definition
-    apiInstance.CreateCustomFieldWithHttpInfo(createCustomFieldRequest);
+    ApiResponse<CreateCustomField200Response> response = apiInstance.CreateCustomFieldWithHttpInfo(createCustomFieldRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -180,7 +184,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**CreateCustomField200Response**](CreateCustomField200Response.md)
 
 ### Authorization
 
@@ -297,7 +301,7 @@ void (empty response body)
 
 <a id="listcustomfields"></a>
 # **ListCustomFields**
-> void ListCustomFields (string? profileId = null)
+> ListCustomFields200Response ListCustomFields (string? profileId = null)
 
 List custom field definitions
 
@@ -330,7 +334,8 @@ namespace Example
             try
             {
                 // List custom field definitions
-                apiInstance.ListCustomFields(profileId);
+                ListCustomFields200Response result = apiInstance.ListCustomFields(profileId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -350,7 +355,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List custom field definitions
-    apiInstance.ListCustomFieldsWithHttpInfo(profileId);
+    ApiResponse<ListCustomFields200Response> response = apiInstance.ListCustomFieldsWithHttpInfo(profileId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -368,7 +376,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**ListCustomFields200Response**](ListCustomFields200Response.md)
 
 ### Authorization
 
@@ -488,7 +496,7 @@ void (empty response body)
 
 <a id="updatecustomfield"></a>
 # **UpdateCustomField**
-> void UpdateCustomField (string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = null)
+> UpdateCustomField200Response UpdateCustomField (string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = null)
 
 Update a custom field definition
 
@@ -522,7 +530,8 @@ namespace Example
             try
             {
                 // Update a custom field definition
-                apiInstance.UpdateCustomField(fieldId, updateCustomFieldRequest);
+                UpdateCustomField200Response result = apiInstance.UpdateCustomField(fieldId, updateCustomFieldRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -542,7 +551,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a custom field definition
-    apiInstance.UpdateCustomFieldWithHttpInfo(fieldId, updateCustomFieldRequest);
+    ApiResponse<UpdateCustomField200Response> response = apiInstance.UpdateCustomFieldWithHttpInfo(fieldId, updateCustomFieldRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -561,7 +573,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**UpdateCustomField200Response**](UpdateCustomField200Response.md)
 
 ### Authorization
 

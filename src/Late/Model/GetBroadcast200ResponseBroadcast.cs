@@ -104,7 +104,7 @@ namespace Late.Model
         /// <param name="failedCount">failedCount.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public GetBroadcast200ResponseBroadcast(string id = default, string name = default, string description = default, string platform = default, string accountId = default, GetBroadcast200ResponseBroadcastMessage message = default, GetWhatsAppBroadcasts200ResponseBroadcastsInnerTemplate template = default, GetBroadcast200ResponseBroadcastSegmentFilters segmentFilters = default, StatusEnum? status = default, DateTime scheduledAt = default, DateTime startedAt = default, DateTime completedAt = default, int recipientCount = default, int sentCount = default, int deliveredCount = default, int readCount = default, int failedCount = default, DateTime createdAt = default, DateTime updatedAt = default)
+        public GetBroadcast200ResponseBroadcast(string id = default, string name = default, string description = default, string platform = default, string accountId = default, GetBroadcast200ResponseBroadcastMessage message = default, GetWhatsAppBroadcasts200ResponseBroadcastsInnerTemplate template = default, ListContacts200ResponseFilters segmentFilters = default, StatusEnum? status = default, DateTime scheduledAt = default, DateTime startedAt = default, DateTime completedAt = default, int recipientCount = default, int sentCount = default, int deliveredCount = default, int readCount = default, int failedCount = default, DateTime createdAt = default, DateTime updatedAt = default)
         {
             this.Id = id;
             this.Name = name;
@@ -173,7 +173,7 @@ namespace Late.Model
         /// Gets or Sets SegmentFilters
         /// </summary>
         [DataMember(Name = "segmentFilters", EmitDefaultValue = false)]
-        public GetBroadcast200ResponseBroadcastSegmentFilters SegmentFilters { get; set; }
+        public ListContacts200ResponseFilters SegmentFilters { get; set; }
 
         /// <summary>
         /// Gets or Sets ScheduledAt

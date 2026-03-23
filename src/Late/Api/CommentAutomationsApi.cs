@@ -36,8 +36,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
-        /// <returns></returns>
-        void CreateCommentAutomation(CreateCommentAutomationRequest createCommentAutomationRequest);
+        /// <returns>CreateCommentAutomation200Response</returns>
+        CreateCommentAutomation200Response CreateCommentAutomation(CreateCommentAutomationRequest createCommentAutomationRequest);
 
         /// <summary>
         /// Create a comment-to-DM automation
@@ -47,8 +47,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CreateCommentAutomationWithHttpInfo(CreateCommentAutomationRequest createCommentAutomationRequest);
+        /// <returns>ApiResponse of CreateCommentAutomation200Response</returns>
+        ApiResponse<CreateCommentAutomation200Response> CreateCommentAutomationWithHttpInfo(CreateCommentAutomationRequest createCommentAutomationRequest);
         /// <summary>
         /// Delete automation and all logs
         /// </summary>
@@ -72,8 +72,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
-        /// <returns></returns>
-        void GetCommentAutomation(string automationId);
+        /// <returns>GetCommentAutomation200Response</returns>
+        GetCommentAutomation200Response GetCommentAutomation(string automationId);
 
         /// <summary>
         /// Get automation details with recent logs
@@ -83,8 +83,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetCommentAutomationWithHttpInfo(string automationId);
+        /// <returns>ApiResponse of GetCommentAutomation200Response</returns>
+        ApiResponse<GetCommentAutomation200Response> GetCommentAutomationWithHttpInfo(string automationId);
         /// <summary>
         /// List trigger logs for an automation
         /// </summary>
@@ -96,8 +96,8 @@ namespace Late.Api
         /// <param name="status">Filter by result status (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns></returns>
-        void ListCommentAutomationLogs(string automationId, string? status = default, int? limit = default, int? skip = default);
+        /// <returns>ListCommentAutomationLogs200Response</returns>
+        ListCommentAutomationLogs200Response ListCommentAutomationLogs(string automationId, string? status = default, int? limit = default, int? skip = default);
 
         /// <summary>
         /// List trigger logs for an automation
@@ -110,8 +110,8 @@ namespace Late.Api
         /// <param name="status">Filter by result status (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListCommentAutomationLogsWithHttpInfo(string automationId, string? status = default, int? limit = default, int? skip = default);
+        /// <returns>ApiResponse of ListCommentAutomationLogs200Response</returns>
+        ApiResponse<ListCommentAutomationLogs200Response> ListCommentAutomationLogsWithHttpInfo(string automationId, string? status = default, int? limit = default, int? skip = default);
         /// <summary>
         /// List comment-to-DM automations
         /// </summary>
@@ -139,8 +139,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
         /// <param name="updateCommentAutomationRequest"> (optional)</param>
-        /// <returns></returns>
-        void UpdateCommentAutomation(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default);
+        /// <returns>UpdateCommentAutomation200Response</returns>
+        UpdateCommentAutomation200Response UpdateCommentAutomation(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default);
 
         /// <summary>
         /// Update automation settings
@@ -151,8 +151,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
         /// <param name="updateCommentAutomationRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateCommentAutomationWithHttpInfo(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default);
+        /// <returns>ApiResponse of UpdateCommentAutomation200Response</returns>
+        ApiResponse<UpdateCommentAutomation200Response> UpdateCommentAutomationWithHttpInfo(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default);
         #endregion Synchronous Operations
     }
 
@@ -171,8 +171,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CreateCommentAutomationAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of CreateCommentAutomation200Response</returns>
+        System.Threading.Tasks.Task<CreateCommentAutomation200Response> CreateCommentAutomationAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a comment-to-DM automation
@@ -183,8 +183,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CreateCommentAutomationWithHttpInfoAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (CreateCommentAutomation200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateCommentAutomation200Response>> CreateCommentAutomationWithHttpInfoAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete automation and all logs
         /// </summary>
@@ -217,8 +217,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetCommentAutomationAsync(string automationId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of GetCommentAutomation200Response</returns>
+        System.Threading.Tasks.Task<GetCommentAutomation200Response> GetCommentAutomationAsync(string automationId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get automation details with recent logs
@@ -229,8 +229,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetCommentAutomationWithHttpInfoAsync(string automationId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (GetCommentAutomation200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetCommentAutomation200Response>> GetCommentAutomationWithHttpInfoAsync(string automationId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List trigger logs for an automation
         /// </summary>
@@ -243,8 +243,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListCommentAutomationLogsAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ListCommentAutomationLogs200Response</returns>
+        System.Threading.Tasks.Task<ListCommentAutomationLogs200Response> ListCommentAutomationLogsAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List trigger logs for an automation
@@ -258,8 +258,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListCommentAutomationLogsWithHttpInfoAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ListCommentAutomationLogs200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListCommentAutomationLogs200Response>> ListCommentAutomationLogsWithHttpInfoAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List comment-to-DM automations
         /// </summary>
@@ -293,8 +293,8 @@ namespace Late.Api
         /// <param name="automationId"></param>
         /// <param name="updateCommentAutomationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateCommentAutomationAsync(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of UpdateCommentAutomation200Response</returns>
+        System.Threading.Tasks.Task<UpdateCommentAutomation200Response> UpdateCommentAutomationAsync(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update automation settings
@@ -306,8 +306,8 @@ namespace Late.Api
         /// <param name="automationId"></param>
         /// <param name="updateCommentAutomationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateCommentAutomationWithHttpInfoAsync(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (UpdateCommentAutomation200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateCommentAutomation200Response>> UpdateCommentAutomationWithHttpInfoAsync(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -526,10 +526,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
-        /// <returns></returns>
-        public void CreateCommentAutomation(CreateCommentAutomationRequest createCommentAutomationRequest)
+        /// <returns>CreateCommentAutomation200Response</returns>
+        public CreateCommentAutomation200Response CreateCommentAutomation(CreateCommentAutomationRequest createCommentAutomationRequest)
         {
-            CreateCommentAutomationWithHttpInfo(createCommentAutomationRequest);
+            Late.Client.ApiResponse<CreateCommentAutomation200Response> localVarResponse = CreateCommentAutomationWithHttpInfo(createCommentAutomationRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -537,8 +538,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> CreateCommentAutomationWithHttpInfo(CreateCommentAutomationRequest createCommentAutomationRequest)
+        /// <returns>ApiResponse of CreateCommentAutomation200Response</returns>
+        public Late.Client.ApiResponse<CreateCommentAutomation200Response> CreateCommentAutomationWithHttpInfo(CreateCommentAutomationRequest createCommentAutomationRequest)
         {
             // verify the required parameter 'createCommentAutomationRequest' is set
             if (createCommentAutomationRequest == null)
@@ -571,7 +572,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/comment-automations", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CreateCommentAutomation200Response>("/v1/comment-automations", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -588,10 +589,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CreateCommentAutomationAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of CreateCommentAutomation200Response</returns>
+        public async System.Threading.Tasks.Task<CreateCommentAutomation200Response> CreateCommentAutomationAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await CreateCommentAutomationWithHttpInfoAsync(createCommentAutomationRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<CreateCommentAutomation200Response> localVarResponse = await CreateCommentAutomationWithHttpInfoAsync(createCommentAutomationRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -600,8 +602,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> CreateCommentAutomationWithHttpInfoAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (CreateCommentAutomation200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateCommentAutomation200Response>> CreateCommentAutomationWithHttpInfoAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'createCommentAutomationRequest' is set
             if (createCommentAutomationRequest == null)
@@ -637,7 +639,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/comment-automations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateCommentAutomation200Response>("/v1/comment-automations", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -778,10 +780,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
-        /// <returns></returns>
-        public void GetCommentAutomation(string automationId)
+        /// <returns>GetCommentAutomation200Response</returns>
+        public GetCommentAutomation200Response GetCommentAutomation(string automationId)
         {
-            GetCommentAutomationWithHttpInfo(automationId);
+            Late.Client.ApiResponse<GetCommentAutomation200Response> localVarResponse = GetCommentAutomationWithHttpInfo(automationId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -789,8 +792,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> GetCommentAutomationWithHttpInfo(string automationId)
+        /// <returns>ApiResponse of GetCommentAutomation200Response</returns>
+        public Late.Client.ApiResponse<GetCommentAutomation200Response> GetCommentAutomationWithHttpInfo(string automationId)
         {
             // verify the required parameter 'automationId' is set
             if (automationId == null)
@@ -822,7 +825,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/comment-automations/{automationId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetCommentAutomation200Response>("/v1/comment-automations/{automationId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -839,10 +842,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetCommentAutomationAsync(string automationId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of GetCommentAutomation200Response</returns>
+        public async System.Threading.Tasks.Task<GetCommentAutomation200Response> GetCommentAutomationAsync(string automationId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetCommentAutomationWithHttpInfoAsync(automationId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetCommentAutomation200Response> localVarResponse = await GetCommentAutomationWithHttpInfoAsync(automationId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -851,8 +855,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> GetCommentAutomationWithHttpInfoAsync(string automationId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (GetCommentAutomation200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetCommentAutomation200Response>> GetCommentAutomationWithHttpInfoAsync(string automationId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'automationId' is set
             if (automationId == null)
@@ -887,7 +891,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/comment-automations/{automationId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetCommentAutomation200Response>("/v1/comment-automations/{automationId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -906,10 +910,11 @@ namespace Late.Api
         /// <param name="status">Filter by result status (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns></returns>
-        public void ListCommentAutomationLogs(string automationId, string? status = default, int? limit = default, int? skip = default)
+        /// <returns>ListCommentAutomationLogs200Response</returns>
+        public ListCommentAutomationLogs200Response ListCommentAutomationLogs(string automationId, string? status = default, int? limit = default, int? skip = default)
         {
-            ListCommentAutomationLogsWithHttpInfo(automationId, status, limit, skip);
+            Late.Client.ApiResponse<ListCommentAutomationLogs200Response> localVarResponse = ListCommentAutomationLogsWithHttpInfo(automationId, status, limit, skip);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -920,8 +925,8 @@ namespace Late.Api
         /// <param name="status">Filter by result status (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ListCommentAutomationLogsWithHttpInfo(string automationId, string? status = default, int? limit = default, int? skip = default)
+        /// <returns>ApiResponse of ListCommentAutomationLogs200Response</returns>
+        public Late.Client.ApiResponse<ListCommentAutomationLogs200Response> ListCommentAutomationLogsWithHttpInfo(string automationId, string? status = default, int? limit = default, int? skip = default)
         {
             // verify the required parameter 'automationId' is set
             if (automationId == null)
@@ -965,7 +970,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/comment-automations/{automationId}/logs", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListCommentAutomationLogs200Response>("/v1/comment-automations/{automationId}/logs", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -985,10 +990,11 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListCommentAutomationLogsAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ListCommentAutomationLogs200Response</returns>
+        public async System.Threading.Tasks.Task<ListCommentAutomationLogs200Response> ListCommentAutomationLogsAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ListCommentAutomationLogsWithHttpInfoAsync(automationId, status, limit, skip, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListCommentAutomationLogs200Response> localVarResponse = await ListCommentAutomationLogsWithHttpInfoAsync(automationId, status, limit, skip, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1000,8 +1006,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListCommentAutomationLogsWithHttpInfoAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ListCommentAutomationLogs200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListCommentAutomationLogs200Response>> ListCommentAutomationLogsWithHttpInfoAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'automationId' is set
             if (automationId == null)
@@ -1048,7 +1054,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/comment-automations/{automationId}/logs", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListCommentAutomationLogs200Response>("/v1/comment-automations/{automationId}/logs", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1190,10 +1196,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
         /// <param name="updateCommentAutomationRequest"> (optional)</param>
-        /// <returns></returns>
-        public void UpdateCommentAutomation(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default)
+        /// <returns>UpdateCommentAutomation200Response</returns>
+        public UpdateCommentAutomation200Response UpdateCommentAutomation(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default)
         {
-            UpdateCommentAutomationWithHttpInfo(automationId, updateCommentAutomationRequest);
+            Late.Client.ApiResponse<UpdateCommentAutomation200Response> localVarResponse = UpdateCommentAutomationWithHttpInfo(automationId, updateCommentAutomationRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1202,8 +1209,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
         /// <param name="updateCommentAutomationRequest"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> UpdateCommentAutomationWithHttpInfo(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default)
+        /// <returns>ApiResponse of UpdateCommentAutomation200Response</returns>
+        public Late.Client.ApiResponse<UpdateCommentAutomation200Response> UpdateCommentAutomationWithHttpInfo(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default)
         {
             // verify the required parameter 'automationId' is set
             if (automationId == null)
@@ -1237,7 +1244,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<Object>("/v1/comment-automations/{automationId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<UpdateCommentAutomation200Response>("/v1/comment-automations/{automationId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1255,10 +1262,11 @@ namespace Late.Api
         /// <param name="automationId"></param>
         /// <param name="updateCommentAutomationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateCommentAutomationAsync(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of UpdateCommentAutomation200Response</returns>
+        public async System.Threading.Tasks.Task<UpdateCommentAutomation200Response> UpdateCommentAutomationAsync(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await UpdateCommentAutomationWithHttpInfoAsync(automationId, updateCommentAutomationRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<UpdateCommentAutomation200Response> localVarResponse = await UpdateCommentAutomationWithHttpInfoAsync(automationId, updateCommentAutomationRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1268,8 +1276,8 @@ namespace Late.Api
         /// <param name="automationId"></param>
         /// <param name="updateCommentAutomationRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> UpdateCommentAutomationWithHttpInfoAsync(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (UpdateCommentAutomation200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateCommentAutomation200Response>> UpdateCommentAutomationWithHttpInfoAsync(string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'automationId' is set
             if (automationId == null)
@@ -1306,7 +1314,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/v1/comment-automations/{automationId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateCommentAutomation200Response>("/v1/comment-automations/{automationId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -13,7 +13,7 @@ All URIs are relative to *https://zernio.com/api*
 
 <a id="createcommentautomation"></a>
 # **CreateCommentAutomation**
-> void CreateCommentAutomation (CreateCommentAutomationRequest createCommentAutomationRequest)
+> CreateCommentAutomation200Response CreateCommentAutomation (CreateCommentAutomationRequest createCommentAutomationRequest)
 
 Create a comment-to-DM automation
 
@@ -48,7 +48,8 @@ namespace Example
             try
             {
                 // Create a comment-to-DM automation
-                apiInstance.CreateCommentAutomation(createCommentAutomationRequest);
+                CreateCommentAutomation200Response result = apiInstance.CreateCommentAutomation(createCommentAutomationRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -68,7 +69,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a comment-to-DM automation
-    apiInstance.CreateCommentAutomationWithHttpInfo(createCommentAutomationRequest);
+    ApiResponse<CreateCommentAutomation200Response> response = apiInstance.CreateCommentAutomationWithHttpInfo(createCommentAutomationRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -86,7 +90,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**CreateCommentAutomation200Response**](CreateCommentAutomation200Response.md)
 
 ### Authorization
 
@@ -204,7 +208,7 @@ void (empty response body)
 
 <a id="getcommentautomation"></a>
 # **GetCommentAutomation**
-> void GetCommentAutomation (string automationId)
+> GetCommentAutomation200Response GetCommentAutomation (string automationId)
 
 Get automation details with recent logs
 
@@ -237,7 +241,8 @@ namespace Example
             try
             {
                 // Get automation details with recent logs
-                apiInstance.GetCommentAutomation(automationId);
+                GetCommentAutomation200Response result = apiInstance.GetCommentAutomation(automationId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -257,7 +262,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get automation details with recent logs
-    apiInstance.GetCommentAutomationWithHttpInfo(automationId);
+    ApiResponse<GetCommentAutomation200Response> response = apiInstance.GetCommentAutomationWithHttpInfo(automationId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -275,7 +283,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**GetCommentAutomation200Response**](GetCommentAutomation200Response.md)
 
 ### Authorization
 
@@ -298,7 +306,7 @@ void (empty response body)
 
 <a id="listcommentautomationlogs"></a>
 # **ListCommentAutomationLogs**
-> void ListCommentAutomationLogs (string automationId, string? status = null, int? limit = null, int? skip = null)
+> ListCommentAutomationLogs200Response ListCommentAutomationLogs (string automationId, string? status = null, int? limit = null, int? skip = null)
 
 List trigger logs for an automation
 
@@ -336,7 +344,8 @@ namespace Example
             try
             {
                 // List trigger logs for an automation
-                apiInstance.ListCommentAutomationLogs(automationId, status, limit, skip);
+                ListCommentAutomationLogs200Response result = apiInstance.ListCommentAutomationLogs(automationId, status, limit, skip);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -356,7 +365,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List trigger logs for an automation
-    apiInstance.ListCommentAutomationLogsWithHttpInfo(automationId, status, limit, skip);
+    ApiResponse<ListCommentAutomationLogs200Response> response = apiInstance.ListCommentAutomationLogsWithHttpInfo(automationId, status, limit, skip);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -377,7 +389,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**ListCommentAutomationLogs200Response**](ListCommentAutomationLogs200Response.md)
 
 ### Authorization
 
@@ -499,7 +511,7 @@ catch (ApiException e)
 
 <a id="updatecommentautomation"></a>
 # **UpdateCommentAutomation**
-> void UpdateCommentAutomation (string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = null)
+> UpdateCommentAutomation200Response UpdateCommentAutomation (string automationId, UpdateCommentAutomationRequest? updateCommentAutomationRequest = null)
 
 Update automation settings
 
@@ -533,7 +545,8 @@ namespace Example
             try
             {
                 // Update automation settings
-                apiInstance.UpdateCommentAutomation(automationId, updateCommentAutomationRequest);
+                UpdateCommentAutomation200Response result = apiInstance.UpdateCommentAutomation(automationId, updateCommentAutomationRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -553,7 +566,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update automation settings
-    apiInstance.UpdateCommentAutomationWithHttpInfo(automationId, updateCommentAutomationRequest);
+    ApiResponse<UpdateCommentAutomation200Response> response = apiInstance.UpdateCommentAutomationWithHttpInfo(automationId, updateCommentAutomationRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -572,7 +588,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**UpdateCommentAutomation200Response**](UpdateCommentAutomation200Response.md)
 
 ### Authorization
 

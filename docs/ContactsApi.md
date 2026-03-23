@@ -14,7 +14,7 @@ All URIs are relative to *https://zernio.com/api*
 
 <a id="bulkcreatecontacts"></a>
 # **BulkCreateContacts**
-> void BulkCreateContacts (BulkCreateContactsRequest bulkCreateContactsRequest)
+> BulkCreateContacts200Response BulkCreateContacts (BulkCreateContactsRequest bulkCreateContactsRequest)
 
 Bulk create contacts
 
@@ -49,7 +49,8 @@ namespace Example
             try
             {
                 // Bulk create contacts
-                apiInstance.BulkCreateContacts(bulkCreateContactsRequest);
+                BulkCreateContacts200Response result = apiInstance.BulkCreateContacts(bulkCreateContactsRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -69,7 +70,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Bulk create contacts
-    apiInstance.BulkCreateContactsWithHttpInfo(bulkCreateContactsRequest);
+    ApiResponse<BulkCreateContacts200Response> response = apiInstance.BulkCreateContactsWithHttpInfo(bulkCreateContactsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -87,7 +91,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**BulkCreateContacts200Response**](BulkCreateContacts200Response.md)
 
 ### Authorization
 
@@ -109,7 +113,7 @@ void (empty response body)
 
 <a id="createcontact"></a>
 # **CreateContact**
-> void CreateContact (CreateContactRequest createContactRequest)
+> CreateContact200Response CreateContact (CreateContactRequest createContactRequest)
 
 Create a contact
 
@@ -144,7 +148,8 @@ namespace Example
             try
             {
                 // Create a contact
-                apiInstance.CreateContact(createContactRequest);
+                CreateContact200Response result = apiInstance.CreateContact(createContactRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -164,7 +169,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create a contact
-    apiInstance.CreateContactWithHttpInfo(createContactRequest);
+    ApiResponse<CreateContact200Response> response = apiInstance.CreateContactWithHttpInfo(createContactRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -182,7 +190,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**CreateContact200Response**](CreateContact200Response.md)
 
 ### Authorization
 
@@ -299,7 +307,7 @@ void (empty response body)
 
 <a id="getcontact"></a>
 # **GetContact**
-> void GetContact (string contactId)
+> GetContact200Response GetContact (string contactId)
 
 Get contact with channels
 
@@ -332,7 +340,8 @@ namespace Example
             try
             {
                 // Get contact with channels
-                apiInstance.GetContact(contactId);
+                GetContact200Response result = apiInstance.GetContact(contactId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -352,7 +361,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get contact with channels
-    apiInstance.GetContactWithHttpInfo(contactId);
+    ApiResponse<GetContact200Response> response = apiInstance.GetContactWithHttpInfo(contactId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -370,7 +382,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**GetContact200Response**](GetContact200Response.md)
 
 ### Authorization
 
@@ -393,7 +405,7 @@ void (empty response body)
 
 <a id="getcontactchannels"></a>
 # **GetContactChannels**
-> void GetContactChannels (string contactId)
+> GetContactChannels200Response GetContactChannels (string contactId)
 
 List channels for a contact
 
@@ -426,7 +438,8 @@ namespace Example
             try
             {
                 // List channels for a contact
-                apiInstance.GetContactChannels(contactId);
+                GetContactChannels200Response result = apiInstance.GetContactChannels(contactId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -446,7 +459,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List channels for a contact
-    apiInstance.GetContactChannelsWithHttpInfo(contactId);
+    ApiResponse<GetContactChannels200Response> response = apiInstance.GetContactChannelsWithHttpInfo(contactId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -464,7 +480,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**GetContactChannels200Response**](GetContactChannels200Response.md)
 
 ### Authorization
 
@@ -487,7 +503,7 @@ void (empty response body)
 
 <a id="listcontacts"></a>
 # **ListContacts**
-> void ListContacts (string? profileId = null, string? search = null, string? tag = null, string? platform = null, string? isSubscribed = null, int? limit = null, int? skip = null)
+> ListContacts200Response ListContacts (string? profileId = null, string? search = null, string? tag = null, string? platform = null, string? isSubscribed = null, int? limit = null, int? skip = null)
 
 List contacts
 
@@ -528,7 +544,8 @@ namespace Example
             try
             {
                 // List contacts
-                apiInstance.ListContacts(profileId, search, tag, platform, isSubscribed, limit, skip);
+                ListContacts200Response result = apiInstance.ListContacts(profileId, search, tag, platform, isSubscribed, limit, skip);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -548,7 +565,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List contacts
-    apiInstance.ListContactsWithHttpInfo(profileId, search, tag, platform, isSubscribed, limit, skip);
+    ApiResponse<ListContacts200Response> response = apiInstance.ListContactsWithHttpInfo(profileId, search, tag, platform, isSubscribed, limit, skip);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -572,7 +592,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**ListContacts200Response**](ListContacts200Response.md)
 
 ### Authorization
 
@@ -594,7 +614,7 @@ void (empty response body)
 
 <a id="updatecontact"></a>
 # **UpdateContact**
-> void UpdateContact (string contactId, UpdateContactRequest? updateContactRequest = null)
+> UpdateContact200Response UpdateContact (string contactId, UpdateContactRequest? updateContactRequest = null)
 
 Update a contact
 
@@ -628,7 +648,8 @@ namespace Example
             try
             {
                 // Update a contact
-                apiInstance.UpdateContact(contactId, updateContactRequest);
+                UpdateContact200Response result = apiInstance.UpdateContact(contactId, updateContactRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -648,7 +669,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a contact
-    apiInstance.UpdateContactWithHttpInfo(contactId, updateContactRequest);
+    ApiResponse<UpdateContact200Response> response = apiInstance.UpdateContactWithHttpInfo(contactId, updateContactRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -667,7 +691,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**UpdateContact200Response**](UpdateContact200Response.md)
 
 ### Authorization
 
