@@ -17,7 +17,7 @@ All URIs are relative to *https://zernio.com/api*
 
 <a id="addbroadcastrecipients"></a>
 # **AddBroadcastRecipients**
-> void AddBroadcastRecipients (string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest)
+> AddBroadcastRecipients200Response AddBroadcastRecipients (string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest)
 
 Add recipients to a broadcast
 
@@ -51,7 +51,8 @@ namespace Example
             try
             {
                 // Add recipients to a broadcast
-                apiInstance.AddBroadcastRecipients(broadcastId, addBroadcastRecipientsRequest);
+                AddBroadcastRecipients200Response result = apiInstance.AddBroadcastRecipients(broadcastId, addBroadcastRecipientsRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -71,7 +72,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Add recipients to a broadcast
-    apiInstance.AddBroadcastRecipientsWithHttpInfo(broadcastId, addBroadcastRecipientsRequest);
+    ApiResponse<AddBroadcastRecipients200Response> response = apiInstance.AddBroadcastRecipientsWithHttpInfo(broadcastId, addBroadcastRecipientsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -90,7 +94,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**AddBroadcastRecipients200Response**](AddBroadcastRecipients200Response.md)
 
 ### Authorization
 
@@ -113,7 +117,7 @@ void (empty response body)
 
 <a id="cancelbroadcast"></a>
 # **CancelBroadcast**
-> void CancelBroadcast (string broadcastId)
+> CancelBroadcast200Response CancelBroadcast (string broadcastId)
 
 Cancel a broadcast
 
@@ -146,7 +150,8 @@ namespace Example
             try
             {
                 // Cancel a broadcast
-                apiInstance.CancelBroadcast(broadcastId);
+                CancelBroadcast200Response result = apiInstance.CancelBroadcast(broadcastId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -166,7 +171,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Cancel a broadcast
-    apiInstance.CancelBroadcastWithHttpInfo(broadcastId);
+    ApiResponse<CancelBroadcast200Response> response = apiInstance.CancelBroadcastWithHttpInfo(broadcastId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -184,7 +192,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**CancelBroadcast200Response**](CancelBroadcast200Response.md)
 
 ### Authorization
 
@@ -395,7 +403,7 @@ void (empty response body)
 
 <a id="getbroadcast"></a>
 # **GetBroadcast**
-> void GetBroadcast (string broadcastId)
+> GetBroadcast200Response GetBroadcast (string broadcastId)
 
 Get broadcast details
 
@@ -428,7 +436,8 @@ namespace Example
             try
             {
                 // Get broadcast details
-                apiInstance.GetBroadcast(broadcastId);
+                GetBroadcast200Response result = apiInstance.GetBroadcast(broadcastId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -448,7 +457,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get broadcast details
-    apiInstance.GetBroadcastWithHttpInfo(broadcastId);
+    ApiResponse<GetBroadcast200Response> response = apiInstance.GetBroadcastWithHttpInfo(broadcastId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -466,7 +478,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**GetBroadcast200Response**](GetBroadcast200Response.md)
 
 ### Authorization
 
@@ -489,7 +501,7 @@ void (empty response body)
 
 <a id="listbroadcastrecipients"></a>
 # **ListBroadcastRecipients**
-> void ListBroadcastRecipients (string broadcastId, string? status = null, int? limit = null, int? skip = null)
+> ListBroadcastRecipients200Response ListBroadcastRecipients (string broadcastId, string? status = null, int? limit = null, int? skip = null)
 
 List broadcast recipients
 
@@ -525,7 +537,8 @@ namespace Example
             try
             {
                 // List broadcast recipients
-                apiInstance.ListBroadcastRecipients(broadcastId, status, limit, skip);
+                ListBroadcastRecipients200Response result = apiInstance.ListBroadcastRecipients(broadcastId, status, limit, skip);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -545,7 +558,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List broadcast recipients
-    apiInstance.ListBroadcastRecipientsWithHttpInfo(broadcastId, status, limit, skip);
+    ApiResponse<ListBroadcastRecipients200Response> response = apiInstance.ListBroadcastRecipientsWithHttpInfo(broadcastId, status, limit, skip);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -566,7 +582,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**ListBroadcastRecipients200Response**](ListBroadcastRecipients200Response.md)
 
 ### Authorization
 
@@ -694,7 +710,7 @@ catch (ApiException e)
 
 <a id="schedulebroadcast"></a>
 # **ScheduleBroadcast**
-> void ScheduleBroadcast (string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest)
+> ScheduleBroadcast200Response ScheduleBroadcast (string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest)
 
 Schedule broadcast for later
 
@@ -728,7 +744,8 @@ namespace Example
             try
             {
                 // Schedule broadcast for later
-                apiInstance.ScheduleBroadcast(broadcastId, scheduleBroadcastRequest);
+                ScheduleBroadcast200Response result = apiInstance.ScheduleBroadcast(broadcastId, scheduleBroadcastRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -748,7 +765,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Schedule broadcast for later
-    apiInstance.ScheduleBroadcastWithHttpInfo(broadcastId, scheduleBroadcastRequest);
+    ApiResponse<ScheduleBroadcast200Response> response = apiInstance.ScheduleBroadcastWithHttpInfo(broadcastId, scheduleBroadcastRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -767,7 +787,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**ScheduleBroadcast200Response**](ScheduleBroadcast200Response.md)
 
 ### Authorization
 
@@ -890,7 +910,7 @@ catch (ApiException e)
 
 <a id="updatebroadcast"></a>
 # **UpdateBroadcast**
-> void UpdateBroadcast (string broadcastId)
+> UpdateBroadcast200Response UpdateBroadcast (string broadcastId)
 
 Update a broadcast
 
@@ -923,7 +943,8 @@ namespace Example
             try
             {
                 // Update a broadcast
-                apiInstance.UpdateBroadcast(broadcastId);
+                UpdateBroadcast200Response result = apiInstance.UpdateBroadcast(broadcastId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -943,7 +964,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a broadcast
-    apiInstance.UpdateBroadcastWithHttpInfo(broadcastId);
+    ApiResponse<UpdateBroadcast200Response> response = apiInstance.UpdateBroadcastWithHttpInfo(broadcastId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -961,7 +985,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**UpdateBroadcast200Response**](UpdateBroadcast200Response.md)
 
 ### Authorization
 

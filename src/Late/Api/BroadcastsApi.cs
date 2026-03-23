@@ -34,8 +34,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="addBroadcastRecipientsRequest"></param>
-        /// <returns></returns>
-        void AddBroadcastRecipients(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest);
+        /// <returns>AddBroadcastRecipients200Response</returns>
+        AddBroadcastRecipients200Response AddBroadcastRecipients(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest);
 
         /// <summary>
         /// Add recipients to a broadcast
@@ -46,15 +46,15 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="addBroadcastRecipientsRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AddBroadcastRecipientsWithHttpInfo(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest);
+        /// <returns>ApiResponse of AddBroadcastRecipients200Response</returns>
+        ApiResponse<AddBroadcastRecipients200Response> AddBroadcastRecipientsWithHttpInfo(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest);
         /// <summary>
         /// Cancel a broadcast
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns></returns>
-        void CancelBroadcast(string broadcastId);
+        /// <returns>CancelBroadcast200Response</returns>
+        CancelBroadcast200Response CancelBroadcast(string broadcastId);
 
         /// <summary>
         /// Cancel a broadcast
@@ -64,8 +64,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CancelBroadcastWithHttpInfo(string broadcastId);
+        /// <returns>ApiResponse of CancelBroadcast200Response</returns>
+        ApiResponse<CancelBroadcast200Response> CancelBroadcastWithHttpInfo(string broadcastId);
         /// <summary>
         /// Create a broadcast draft
         /// </summary>
@@ -107,8 +107,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns></returns>
-        void GetBroadcast(string broadcastId);
+        /// <returns>GetBroadcast200Response</returns>
+        GetBroadcast200Response GetBroadcast(string broadcastId);
 
         /// <summary>
         /// Get broadcast details
@@ -118,8 +118,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetBroadcastWithHttpInfo(string broadcastId);
+        /// <returns>ApiResponse of GetBroadcast200Response</returns>
+        ApiResponse<GetBroadcast200Response> GetBroadcastWithHttpInfo(string broadcastId);
         /// <summary>
         /// List broadcast recipients
         /// </summary>
@@ -128,8 +128,8 @@ namespace Late.Api
         /// <param name="status"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns></returns>
-        void ListBroadcastRecipients(string broadcastId, string? status = default, int? limit = default, int? skip = default);
+        /// <returns>ListBroadcastRecipients200Response</returns>
+        ListBroadcastRecipients200Response ListBroadcastRecipients(string broadcastId, string? status = default, int? limit = default, int? skip = default);
 
         /// <summary>
         /// List broadcast recipients
@@ -142,8 +142,8 @@ namespace Late.Api
         /// <param name="status"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListBroadcastRecipientsWithHttpInfo(string broadcastId, string? status = default, int? limit = default, int? skip = default);
+        /// <returns>ApiResponse of ListBroadcastRecipients200Response</returns>
+        ApiResponse<ListBroadcastRecipients200Response> ListBroadcastRecipientsWithHttpInfo(string broadcastId, string? status = default, int? limit = default, int? skip = default);
         /// <summary>
         /// List broadcasts
         /// </summary>
@@ -176,8 +176,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="scheduleBroadcastRequest"></param>
-        /// <returns></returns>
-        void ScheduleBroadcast(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest);
+        /// <returns>ScheduleBroadcast200Response</returns>
+        ScheduleBroadcast200Response ScheduleBroadcast(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest);
 
         /// <summary>
         /// Schedule broadcast for later
@@ -188,8 +188,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="scheduleBroadcastRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ScheduleBroadcastWithHttpInfo(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest);
+        /// <returns>ApiResponse of ScheduleBroadcast200Response</returns>
+        ApiResponse<ScheduleBroadcast200Response> ScheduleBroadcastWithHttpInfo(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest);
         /// <summary>
         /// Trigger immediate send
         /// </summary>
@@ -213,8 +213,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns></returns>
-        void UpdateBroadcast(string broadcastId);
+        /// <returns>UpdateBroadcast200Response</returns>
+        UpdateBroadcast200Response UpdateBroadcast(string broadcastId);
 
         /// <summary>
         /// Update a broadcast
@@ -224,8 +224,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateBroadcastWithHttpInfo(string broadcastId);
+        /// <returns>ApiResponse of UpdateBroadcast200Response</returns>
+        ApiResponse<UpdateBroadcast200Response> UpdateBroadcastWithHttpInfo(string broadcastId);
         #endregion Synchronous Operations
     }
 
@@ -245,8 +245,8 @@ namespace Late.Api
         /// <param name="broadcastId"></param>
         /// <param name="addBroadcastRecipientsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AddBroadcastRecipientsAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of AddBroadcastRecipients200Response</returns>
+        System.Threading.Tasks.Task<AddBroadcastRecipients200Response> AddBroadcastRecipientsAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add recipients to a broadcast
@@ -258,8 +258,8 @@ namespace Late.Api
         /// <param name="broadcastId"></param>
         /// <param name="addBroadcastRecipientsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AddBroadcastRecipientsWithHttpInfoAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (AddBroadcastRecipients200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AddBroadcastRecipients200Response>> AddBroadcastRecipientsWithHttpInfoAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Cancel a broadcast
         /// </summary>
@@ -269,8 +269,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CancelBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of CancelBroadcast200Response</returns>
+        System.Threading.Tasks.Task<CancelBroadcast200Response> CancelBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Cancel a broadcast
@@ -281,8 +281,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CancelBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (CancelBroadcast200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CancelBroadcast200Response>> CancelBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a broadcast draft
         /// </summary>
@@ -338,8 +338,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of GetBroadcast200Response</returns>
+        System.Threading.Tasks.Task<GetBroadcast200Response> GetBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get broadcast details
@@ -350,8 +350,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (GetBroadcast200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetBroadcast200Response>> GetBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List broadcast recipients
         /// </summary>
@@ -364,8 +364,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListBroadcastRecipientsAsync(string broadcastId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ListBroadcastRecipients200Response</returns>
+        System.Threading.Tasks.Task<ListBroadcastRecipients200Response> ListBroadcastRecipientsAsync(string broadcastId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List broadcast recipients
@@ -379,8 +379,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListBroadcastRecipientsWithHttpInfoAsync(string broadcastId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ListBroadcastRecipients200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListBroadcastRecipients200Response>> ListBroadcastRecipientsWithHttpInfoAsync(string broadcastId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List broadcasts
         /// </summary>
@@ -422,8 +422,8 @@ namespace Late.Api
         /// <param name="broadcastId"></param>
         /// <param name="scheduleBroadcastRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ScheduleBroadcastAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ScheduleBroadcast200Response</returns>
+        System.Threading.Tasks.Task<ScheduleBroadcast200Response> ScheduleBroadcastAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Schedule broadcast for later
@@ -435,8 +435,8 @@ namespace Late.Api
         /// <param name="broadcastId"></param>
         /// <param name="scheduleBroadcastRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ScheduleBroadcastWithHttpInfoAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ScheduleBroadcast200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ScheduleBroadcast200Response>> ScheduleBroadcastWithHttpInfoAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Trigger immediate send
         /// </summary>
@@ -469,8 +469,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of UpdateBroadcast200Response</returns>
+        System.Threading.Tasks.Task<UpdateBroadcast200Response> UpdateBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a broadcast
@@ -481,8 +481,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (UpdateBroadcast200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateBroadcast200Response>> UpdateBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -702,10 +702,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="addBroadcastRecipientsRequest"></param>
-        /// <returns></returns>
-        public void AddBroadcastRecipients(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest)
+        /// <returns>AddBroadcastRecipients200Response</returns>
+        public AddBroadcastRecipients200Response AddBroadcastRecipients(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest)
         {
-            AddBroadcastRecipientsWithHttpInfo(broadcastId, addBroadcastRecipientsRequest);
+            Late.Client.ApiResponse<AddBroadcastRecipients200Response> localVarResponse = AddBroadcastRecipientsWithHttpInfo(broadcastId, addBroadcastRecipientsRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -714,8 +715,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="addBroadcastRecipientsRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> AddBroadcastRecipientsWithHttpInfo(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest)
+        /// <returns>ApiResponse of AddBroadcastRecipients200Response</returns>
+        public Late.Client.ApiResponse<AddBroadcastRecipients200Response> AddBroadcastRecipientsWithHttpInfo(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -753,7 +754,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/broadcasts/{broadcastId}/recipients", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<AddBroadcastRecipients200Response>("/v1/broadcasts/{broadcastId}/recipients", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -771,10 +772,11 @@ namespace Late.Api
         /// <param name="broadcastId"></param>
         /// <param name="addBroadcastRecipientsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AddBroadcastRecipientsAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of AddBroadcastRecipients200Response</returns>
+        public async System.Threading.Tasks.Task<AddBroadcastRecipients200Response> AddBroadcastRecipientsAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await AddBroadcastRecipientsWithHttpInfoAsync(broadcastId, addBroadcastRecipientsRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<AddBroadcastRecipients200Response> localVarResponse = await AddBroadcastRecipientsWithHttpInfoAsync(broadcastId, addBroadcastRecipientsRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -784,8 +786,8 @@ namespace Late.Api
         /// <param name="broadcastId"></param>
         /// <param name="addBroadcastRecipientsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> AddBroadcastRecipientsWithHttpInfoAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (AddBroadcastRecipients200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<AddBroadcastRecipients200Response>> AddBroadcastRecipientsWithHttpInfoAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -826,7 +828,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/broadcasts/{broadcastId}/recipients", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<AddBroadcastRecipients200Response>("/v1/broadcasts/{broadcastId}/recipients", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -842,10 +844,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns></returns>
-        public void CancelBroadcast(string broadcastId)
+        /// <returns>CancelBroadcast200Response</returns>
+        public CancelBroadcast200Response CancelBroadcast(string broadcastId)
         {
-            CancelBroadcastWithHttpInfo(broadcastId);
+            Late.Client.ApiResponse<CancelBroadcast200Response> localVarResponse = CancelBroadcastWithHttpInfo(broadcastId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -853,8 +856,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> CancelBroadcastWithHttpInfo(string broadcastId)
+        /// <returns>ApiResponse of CancelBroadcast200Response</returns>
+        public Late.Client.ApiResponse<CancelBroadcast200Response> CancelBroadcastWithHttpInfo(string broadcastId)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -886,7 +889,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/broadcasts/{broadcastId}/cancel", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<CancelBroadcast200Response>("/v1/broadcasts/{broadcastId}/cancel", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -903,10 +906,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CancelBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of CancelBroadcast200Response</returns>
+        public async System.Threading.Tasks.Task<CancelBroadcast200Response> CancelBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await CancelBroadcastWithHttpInfoAsync(broadcastId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<CancelBroadcast200Response> localVarResponse = await CancelBroadcastWithHttpInfoAsync(broadcastId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -915,8 +919,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> CancelBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (CancelBroadcast200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CancelBroadcast200Response>> CancelBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -951,7 +955,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/broadcasts/{broadcastId}/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CancelBroadcast200Response>("/v1/broadcasts/{broadcastId}/cancel", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1219,10 +1223,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns></returns>
-        public void GetBroadcast(string broadcastId)
+        /// <returns>GetBroadcast200Response</returns>
+        public GetBroadcast200Response GetBroadcast(string broadcastId)
         {
-            GetBroadcastWithHttpInfo(broadcastId);
+            Late.Client.ApiResponse<GetBroadcast200Response> localVarResponse = GetBroadcastWithHttpInfo(broadcastId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1230,8 +1235,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> GetBroadcastWithHttpInfo(string broadcastId)
+        /// <returns>ApiResponse of GetBroadcast200Response</returns>
+        public Late.Client.ApiResponse<GetBroadcast200Response> GetBroadcastWithHttpInfo(string broadcastId)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -1263,7 +1268,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/broadcasts/{broadcastId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetBroadcast200Response>("/v1/broadcasts/{broadcastId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1280,10 +1285,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of GetBroadcast200Response</returns>
+        public async System.Threading.Tasks.Task<GetBroadcast200Response> GetBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetBroadcastWithHttpInfoAsync(broadcastId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetBroadcast200Response> localVarResponse = await GetBroadcastWithHttpInfoAsync(broadcastId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1292,8 +1298,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> GetBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (GetBroadcast200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetBroadcast200Response>> GetBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -1328,7 +1334,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/broadcasts/{broadcastId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetBroadcast200Response>("/v1/broadcasts/{broadcastId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1347,10 +1353,11 @@ namespace Late.Api
         /// <param name="status"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns></returns>
-        public void ListBroadcastRecipients(string broadcastId, string? status = default, int? limit = default, int? skip = default)
+        /// <returns>ListBroadcastRecipients200Response</returns>
+        public ListBroadcastRecipients200Response ListBroadcastRecipients(string broadcastId, string? status = default, int? limit = default, int? skip = default)
         {
-            ListBroadcastRecipientsWithHttpInfo(broadcastId, status, limit, skip);
+            Late.Client.ApiResponse<ListBroadcastRecipients200Response> localVarResponse = ListBroadcastRecipientsWithHttpInfo(broadcastId, status, limit, skip);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1361,8 +1368,8 @@ namespace Late.Api
         /// <param name="status"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ListBroadcastRecipientsWithHttpInfo(string broadcastId, string? status = default, int? limit = default, int? skip = default)
+        /// <returns>ApiResponse of ListBroadcastRecipients200Response</returns>
+        public Late.Client.ApiResponse<ListBroadcastRecipients200Response> ListBroadcastRecipientsWithHttpInfo(string broadcastId, string? status = default, int? limit = default, int? skip = default)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -1406,7 +1413,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/broadcasts/{broadcastId}/recipients", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListBroadcastRecipients200Response>("/v1/broadcasts/{broadcastId}/recipients", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1426,10 +1433,11 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListBroadcastRecipientsAsync(string broadcastId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ListBroadcastRecipients200Response</returns>
+        public async System.Threading.Tasks.Task<ListBroadcastRecipients200Response> ListBroadcastRecipientsAsync(string broadcastId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ListBroadcastRecipientsWithHttpInfoAsync(broadcastId, status, limit, skip, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListBroadcastRecipients200Response> localVarResponse = await ListBroadcastRecipientsWithHttpInfoAsync(broadcastId, status, limit, skip, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1441,8 +1449,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListBroadcastRecipientsWithHttpInfoAsync(string broadcastId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ListBroadcastRecipients200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListBroadcastRecipients200Response>> ListBroadcastRecipientsWithHttpInfoAsync(string broadcastId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -1489,7 +1497,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/broadcasts/{broadcastId}/recipients", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListBroadcastRecipients200Response>("/v1/broadcasts/{broadcastId}/recipients", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1679,10 +1687,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="scheduleBroadcastRequest"></param>
-        /// <returns></returns>
-        public void ScheduleBroadcast(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest)
+        /// <returns>ScheduleBroadcast200Response</returns>
+        public ScheduleBroadcast200Response ScheduleBroadcast(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest)
         {
-            ScheduleBroadcastWithHttpInfo(broadcastId, scheduleBroadcastRequest);
+            Late.Client.ApiResponse<ScheduleBroadcast200Response> localVarResponse = ScheduleBroadcastWithHttpInfo(broadcastId, scheduleBroadcastRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1691,8 +1700,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="scheduleBroadcastRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ScheduleBroadcastWithHttpInfo(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest)
+        /// <returns>ApiResponse of ScheduleBroadcast200Response</returns>
+        public Late.Client.ApiResponse<ScheduleBroadcast200Response> ScheduleBroadcastWithHttpInfo(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -1730,7 +1739,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/broadcasts/{broadcastId}/schedule", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ScheduleBroadcast200Response>("/v1/broadcasts/{broadcastId}/schedule", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1748,10 +1757,11 @@ namespace Late.Api
         /// <param name="broadcastId"></param>
         /// <param name="scheduleBroadcastRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ScheduleBroadcastAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ScheduleBroadcast200Response</returns>
+        public async System.Threading.Tasks.Task<ScheduleBroadcast200Response> ScheduleBroadcastAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ScheduleBroadcastWithHttpInfoAsync(broadcastId, scheduleBroadcastRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ScheduleBroadcast200Response> localVarResponse = await ScheduleBroadcastWithHttpInfoAsync(broadcastId, scheduleBroadcastRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1761,8 +1771,8 @@ namespace Late.Api
         /// <param name="broadcastId"></param>
         /// <param name="scheduleBroadcastRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ScheduleBroadcastWithHttpInfoAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ScheduleBroadcast200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ScheduleBroadcast200Response>> ScheduleBroadcastWithHttpInfoAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -1803,7 +1813,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/broadcasts/{broadcastId}/schedule", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ScheduleBroadcast200Response>("/v1/broadcasts/{broadcastId}/schedule", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1946,10 +1956,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns></returns>
-        public void UpdateBroadcast(string broadcastId)
+        /// <returns>UpdateBroadcast200Response</returns>
+        public UpdateBroadcast200Response UpdateBroadcast(string broadcastId)
         {
-            UpdateBroadcastWithHttpInfo(broadcastId);
+            Late.Client.ApiResponse<UpdateBroadcast200Response> localVarResponse = UpdateBroadcastWithHttpInfo(broadcastId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1957,8 +1968,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> UpdateBroadcastWithHttpInfo(string broadcastId)
+        /// <returns>ApiResponse of UpdateBroadcast200Response</returns>
+        public Late.Client.ApiResponse<UpdateBroadcast200Response> UpdateBroadcastWithHttpInfo(string broadcastId)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -1990,7 +2001,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<Object>("/v1/broadcasts/{broadcastId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<UpdateBroadcast200Response>("/v1/broadcasts/{broadcastId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2007,10 +2018,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of UpdateBroadcast200Response</returns>
+        public async System.Threading.Tasks.Task<UpdateBroadcast200Response> UpdateBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await UpdateBroadcastWithHttpInfoAsync(broadcastId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<UpdateBroadcast200Response> localVarResponse = await UpdateBroadcastWithHttpInfoAsync(broadcastId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -2019,8 +2031,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> UpdateBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (UpdateBroadcast200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateBroadcast200Response>> UpdateBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'broadcastId' is set
             if (broadcastId == null)
@@ -2055,7 +2067,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/v1/broadcasts/{broadcastId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateBroadcast200Response>("/v1/broadcasts/{broadcastId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

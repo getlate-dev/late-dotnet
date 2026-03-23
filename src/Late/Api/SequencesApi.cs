@@ -33,8 +33,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns></returns>
-        void ActivateSequence(string sequenceId);
+        /// <returns>ActivateSequence200Response</returns>
+        ActivateSequence200Response ActivateSequence(string sequenceId);
 
         /// <summary>
         /// Activate a sequence
@@ -44,8 +44,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ActivateSequenceWithHttpInfo(string sequenceId);
+        /// <returns>ApiResponse of ActivateSequence200Response</returns>
+        ApiResponse<ActivateSequence200Response> ActivateSequenceWithHttpInfo(string sequenceId);
         /// <summary>
         /// Create a sequence
         /// </summary>
@@ -88,8 +88,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="enrollContactsRequest"></param>
-        /// <returns></returns>
-        void EnrollContacts(string sequenceId, EnrollContactsRequest enrollContactsRequest);
+        /// <returns>EnrollContacts200Response</returns>
+        EnrollContacts200Response EnrollContacts(string sequenceId, EnrollContactsRequest enrollContactsRequest);
 
         /// <summary>
         /// Enroll contacts in a sequence
@@ -100,15 +100,15 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="enrollContactsRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> EnrollContactsWithHttpInfo(string sequenceId, EnrollContactsRequest enrollContactsRequest);
+        /// <returns>ApiResponse of EnrollContacts200Response</returns>
+        ApiResponse<EnrollContacts200Response> EnrollContactsWithHttpInfo(string sequenceId, EnrollContactsRequest enrollContactsRequest);
         /// <summary>
         /// Get sequence with steps
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns></returns>
-        void GetSequence(string sequenceId);
+        /// <returns>GetSequence200Response</returns>
+        GetSequence200Response GetSequence(string sequenceId);
 
         /// <summary>
         /// Get sequence with steps
@@ -118,8 +118,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> GetSequenceWithHttpInfo(string sequenceId);
+        /// <returns>ApiResponse of GetSequence200Response</returns>
+        ApiResponse<GetSequence200Response> GetSequenceWithHttpInfo(string sequenceId);
         /// <summary>
         /// List enrollments for a sequence
         /// </summary>
@@ -128,8 +128,8 @@ namespace Late.Api
         /// <param name="status"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns></returns>
-        void ListSequenceEnrollments(string sequenceId, string? status = default, int? limit = default, int? skip = default);
+        /// <returns>ListSequenceEnrollments200Response</returns>
+        ListSequenceEnrollments200Response ListSequenceEnrollments(string sequenceId, string? status = default, int? limit = default, int? skip = default);
 
         /// <summary>
         /// List enrollments for a sequence
@@ -142,8 +142,8 @@ namespace Late.Api
         /// <param name="status"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ListSequenceEnrollmentsWithHttpInfo(string sequenceId, string? status = default, int? limit = default, int? skip = default);
+        /// <returns>ApiResponse of ListSequenceEnrollments200Response</returns>
+        ApiResponse<ListSequenceEnrollments200Response> ListSequenceEnrollmentsWithHttpInfo(string sequenceId, string? status = default, int? limit = default, int? skip = default);
         /// <summary>
         /// List sequences
         /// </summary>
@@ -173,8 +173,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns></returns>
-        void PauseSequence(string sequenceId);
+        /// <returns>ActivateSequence200Response</returns>
+        ActivateSequence200Response PauseSequence(string sequenceId);
 
         /// <summary>
         /// Pause a sequence
@@ -184,8 +184,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> PauseSequenceWithHttpInfo(string sequenceId);
+        /// <returns>ApiResponse of ActivateSequence200Response</returns>
+        ApiResponse<ActivateSequence200Response> PauseSequenceWithHttpInfo(string sequenceId);
         /// <summary>
         /// Unenroll a contact from a sequence
         /// </summary>
@@ -211,8 +211,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns></returns>
-        void UpdateSequence(string sequenceId);
+        /// <returns>UpdateSequence200Response</returns>
+        UpdateSequence200Response UpdateSequence(string sequenceId);
 
         /// <summary>
         /// Update a sequence
@@ -222,8 +222,8 @@ namespace Late.Api
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateSequenceWithHttpInfo(string sequenceId);
+        /// <returns>ApiResponse of UpdateSequence200Response</returns>
+        ApiResponse<UpdateSequence200Response> UpdateSequenceWithHttpInfo(string sequenceId);
         #endregion Synchronous Operations
     }
 
@@ -242,8 +242,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ActivateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ActivateSequence200Response</returns>
+        System.Threading.Tasks.Task<ActivateSequence200Response> ActivateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Activate a sequence
@@ -254,8 +254,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ActivateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ActivateSequence200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ActivateSequence200Response>> ActivateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create a sequence
         /// </summary>
@@ -312,8 +312,8 @@ namespace Late.Api
         /// <param name="sequenceId"></param>
         /// <param name="enrollContactsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task EnrollContactsAsync(string sequenceId, EnrollContactsRequest enrollContactsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of EnrollContacts200Response</returns>
+        System.Threading.Tasks.Task<EnrollContacts200Response> EnrollContactsAsync(string sequenceId, EnrollContactsRequest enrollContactsRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Enroll contacts in a sequence
@@ -325,8 +325,8 @@ namespace Late.Api
         /// <param name="sequenceId"></param>
         /// <param name="enrollContactsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> EnrollContactsWithHttpInfoAsync(string sequenceId, EnrollContactsRequest enrollContactsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (EnrollContacts200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EnrollContacts200Response>> EnrollContactsWithHttpInfoAsync(string sequenceId, EnrollContactsRequest enrollContactsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get sequence with steps
         /// </summary>
@@ -336,8 +336,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task GetSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of GetSequence200Response</returns>
+        System.Threading.Tasks.Task<GetSequence200Response> GetSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get sequence with steps
@@ -348,8 +348,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> GetSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (GetSequence200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetSequence200Response>> GetSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List enrollments for a sequence
         /// </summary>
@@ -362,8 +362,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ListSequenceEnrollmentsAsync(string sequenceId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ListSequenceEnrollments200Response</returns>
+        System.Threading.Tasks.Task<ListSequenceEnrollments200Response> ListSequenceEnrollmentsAsync(string sequenceId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List enrollments for a sequence
@@ -377,8 +377,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ListSequenceEnrollmentsWithHttpInfoAsync(string sequenceId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ListSequenceEnrollments200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListSequenceEnrollments200Response>> ListSequenceEnrollmentsWithHttpInfoAsync(string sequenceId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List sequences
         /// </summary>
@@ -417,8 +417,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task PauseSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ActivateSequence200Response</returns>
+        System.Threading.Tasks.Task<ActivateSequence200Response> PauseSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Pause a sequence
@@ -429,8 +429,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> PauseSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ActivateSequence200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ActivateSequence200Response>> PauseSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Unenroll a contact from a sequence
         /// </summary>
@@ -465,8 +465,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of UpdateSequence200Response</returns>
+        System.Threading.Tasks.Task<UpdateSequence200Response> UpdateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update a sequence
@@ -477,8 +477,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (UpdateSequence200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdateSequence200Response>> UpdateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -697,10 +697,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns></returns>
-        public void ActivateSequence(string sequenceId)
+        /// <returns>ActivateSequence200Response</returns>
+        public ActivateSequence200Response ActivateSequence(string sequenceId)
         {
-            ActivateSequenceWithHttpInfo(sequenceId);
+            Late.Client.ApiResponse<ActivateSequence200Response> localVarResponse = ActivateSequenceWithHttpInfo(sequenceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -708,8 +709,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ActivateSequenceWithHttpInfo(string sequenceId)
+        /// <returns>ApiResponse of ActivateSequence200Response</returns>
+        public Late.Client.ApiResponse<ActivateSequence200Response> ActivateSequenceWithHttpInfo(string sequenceId)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -741,7 +742,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/sequences/{sequenceId}/activate", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ActivateSequence200Response>("/v1/sequences/{sequenceId}/activate", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -758,10 +759,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ActivateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ActivateSequence200Response</returns>
+        public async System.Threading.Tasks.Task<ActivateSequence200Response> ActivateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ActivateSequenceWithHttpInfoAsync(sequenceId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ActivateSequence200Response> localVarResponse = await ActivateSequenceWithHttpInfoAsync(sequenceId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -770,8 +772,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ActivateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ActivateSequence200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ActivateSequence200Response>> ActivateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -806,7 +808,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/sequences/{sequenceId}/activate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ActivateSequence200Response>("/v1/sequences/{sequenceId}/activate", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1075,10 +1077,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="enrollContactsRequest"></param>
-        /// <returns></returns>
-        public void EnrollContacts(string sequenceId, EnrollContactsRequest enrollContactsRequest)
+        /// <returns>EnrollContacts200Response</returns>
+        public EnrollContacts200Response EnrollContacts(string sequenceId, EnrollContactsRequest enrollContactsRequest)
         {
-            EnrollContactsWithHttpInfo(sequenceId, enrollContactsRequest);
+            Late.Client.ApiResponse<EnrollContacts200Response> localVarResponse = EnrollContactsWithHttpInfo(sequenceId, enrollContactsRequest);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1087,8 +1090,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="enrollContactsRequest"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> EnrollContactsWithHttpInfo(string sequenceId, EnrollContactsRequest enrollContactsRequest)
+        /// <returns>ApiResponse of EnrollContacts200Response</returns>
+        public Late.Client.ApiResponse<EnrollContacts200Response> EnrollContactsWithHttpInfo(string sequenceId, EnrollContactsRequest enrollContactsRequest)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1126,7 +1129,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/sequences/{sequenceId}/enroll", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<EnrollContacts200Response>("/v1/sequences/{sequenceId}/enroll", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1144,10 +1147,11 @@ namespace Late.Api
         /// <param name="sequenceId"></param>
         /// <param name="enrollContactsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task EnrollContactsAsync(string sequenceId, EnrollContactsRequest enrollContactsRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of EnrollContacts200Response</returns>
+        public async System.Threading.Tasks.Task<EnrollContacts200Response> EnrollContactsAsync(string sequenceId, EnrollContactsRequest enrollContactsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
-            await EnrollContactsWithHttpInfoAsync(sequenceId, enrollContactsRequest, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<EnrollContacts200Response> localVarResponse = await EnrollContactsWithHttpInfoAsync(sequenceId, enrollContactsRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1157,8 +1161,8 @@ namespace Late.Api
         /// <param name="sequenceId"></param>
         /// <param name="enrollContactsRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> EnrollContactsWithHttpInfoAsync(string sequenceId, EnrollContactsRequest enrollContactsRequest, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (EnrollContacts200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<EnrollContacts200Response>> EnrollContactsWithHttpInfoAsync(string sequenceId, EnrollContactsRequest enrollContactsRequest, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1199,7 +1203,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/sequences/{sequenceId}/enroll", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<EnrollContacts200Response>("/v1/sequences/{sequenceId}/enroll", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1215,10 +1219,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns></returns>
-        public void GetSequence(string sequenceId)
+        /// <returns>GetSequence200Response</returns>
+        public GetSequence200Response GetSequence(string sequenceId)
         {
-            GetSequenceWithHttpInfo(sequenceId);
+            Late.Client.ApiResponse<GetSequence200Response> localVarResponse = GetSequenceWithHttpInfo(sequenceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1226,8 +1231,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> GetSequenceWithHttpInfo(string sequenceId)
+        /// <returns>ApiResponse of GetSequence200Response</returns>
+        public Late.Client.ApiResponse<GetSequence200Response> GetSequenceWithHttpInfo(string sequenceId)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1259,7 +1264,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/sequences/{sequenceId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<GetSequence200Response>("/v1/sequences/{sequenceId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1276,10 +1281,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task GetSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of GetSequence200Response</returns>
+        public async System.Threading.Tasks.Task<GetSequence200Response> GetSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await GetSequenceWithHttpInfoAsync(sequenceId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<GetSequence200Response> localVarResponse = await GetSequenceWithHttpInfoAsync(sequenceId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1288,8 +1294,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> GetSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (GetSequence200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetSequence200Response>> GetSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1324,7 +1330,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/sequences/{sequenceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetSequence200Response>("/v1/sequences/{sequenceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1343,10 +1349,11 @@ namespace Late.Api
         /// <param name="status"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns></returns>
-        public void ListSequenceEnrollments(string sequenceId, string? status = default, int? limit = default, int? skip = default)
+        /// <returns>ListSequenceEnrollments200Response</returns>
+        public ListSequenceEnrollments200Response ListSequenceEnrollments(string sequenceId, string? status = default, int? limit = default, int? skip = default)
         {
-            ListSequenceEnrollmentsWithHttpInfo(sequenceId, status, limit, skip);
+            Late.Client.ApiResponse<ListSequenceEnrollments200Response> localVarResponse = ListSequenceEnrollmentsWithHttpInfo(sequenceId, status, limit, skip);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1357,8 +1364,8 @@ namespace Late.Api
         /// <param name="status"> (optional)</param>
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> ListSequenceEnrollmentsWithHttpInfo(string sequenceId, string? status = default, int? limit = default, int? skip = default)
+        /// <returns>ApiResponse of ListSequenceEnrollments200Response</returns>
+        public Late.Client.ApiResponse<ListSequenceEnrollments200Response> ListSequenceEnrollmentsWithHttpInfo(string sequenceId, string? status = default, int? limit = default, int? skip = default)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1402,7 +1409,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Object>("/v1/sequences/{sequenceId}/enrollments", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListSequenceEnrollments200Response>("/v1/sequences/{sequenceId}/enrollments", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1422,10 +1429,11 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ListSequenceEnrollmentsAsync(string sequenceId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ListSequenceEnrollments200Response</returns>
+        public async System.Threading.Tasks.Task<ListSequenceEnrollments200Response> ListSequenceEnrollmentsAsync(string sequenceId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ListSequenceEnrollmentsWithHttpInfoAsync(sequenceId, status, limit, skip, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListSequenceEnrollments200Response> localVarResponse = await ListSequenceEnrollmentsWithHttpInfoAsync(sequenceId, status, limit, skip, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1437,8 +1445,8 @@ namespace Late.Api
         /// <param name="limit"> (optional, default to 50)</param>
         /// <param name="skip"> (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> ListSequenceEnrollmentsWithHttpInfoAsync(string sequenceId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ListSequenceEnrollments200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListSequenceEnrollments200Response>> ListSequenceEnrollmentsWithHttpInfoAsync(string sequenceId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1485,7 +1493,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/v1/sequences/{sequenceId}/enrollments", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListSequenceEnrollments200Response>("/v1/sequences/{sequenceId}/enrollments", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1662,10 +1670,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns></returns>
-        public void PauseSequence(string sequenceId)
+        /// <returns>ActivateSequence200Response</returns>
+        public ActivateSequence200Response PauseSequence(string sequenceId)
         {
-            PauseSequenceWithHttpInfo(sequenceId);
+            Late.Client.ApiResponse<ActivateSequence200Response> localVarResponse = PauseSequenceWithHttpInfo(sequenceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1673,8 +1682,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> PauseSequenceWithHttpInfo(string sequenceId)
+        /// <returns>ApiResponse of ActivateSequence200Response</returns>
+        public Late.Client.ApiResponse<ActivateSequence200Response> PauseSequenceWithHttpInfo(string sequenceId)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1706,7 +1715,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/v1/sequences/{sequenceId}/pause", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ActivateSequence200Response>("/v1/sequences/{sequenceId}/pause", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1723,10 +1732,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task PauseSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ActivateSequence200Response</returns>
+        public async System.Threading.Tasks.Task<ActivateSequence200Response> PauseSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await PauseSequenceWithHttpInfoAsync(sequenceId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ActivateSequence200Response> localVarResponse = await PauseSequenceWithHttpInfoAsync(sequenceId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1735,8 +1745,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> PauseSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ActivateSequence200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ActivateSequence200Response>> PauseSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1771,7 +1781,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/v1/sequences/{sequenceId}/pause", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ActivateSequence200Response>("/v1/sequences/{sequenceId}/pause", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1926,10 +1936,11 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns></returns>
-        public void UpdateSequence(string sequenceId)
+        /// <returns>UpdateSequence200Response</returns>
+        public UpdateSequence200Response UpdateSequence(string sequenceId)
         {
-            UpdateSequenceWithHttpInfo(sequenceId);
+            Late.Client.ApiResponse<UpdateSequence200Response> localVarResponse = UpdateSequenceWithHttpInfo(sequenceId);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1937,8 +1948,8 @@ namespace Late.Api
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Late.Client.ApiResponse<Object> UpdateSequenceWithHttpInfo(string sequenceId)
+        /// <returns>ApiResponse of UpdateSequence200Response</returns>
+        public Late.Client.ApiResponse<UpdateSequence200Response> UpdateSequenceWithHttpInfo(string sequenceId)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -1970,7 +1981,7 @@ namespace Late.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Patch<Object>("/v1/sequences/{sequenceId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Patch<UpdateSequence200Response>("/v1/sequences/{sequenceId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1987,10 +1998,11 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of UpdateSequence200Response</returns>
+        public async System.Threading.Tasks.Task<UpdateSequence200Response> UpdateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
         {
-            await UpdateSequenceWithHttpInfoAsync(sequenceId, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<UpdateSequence200Response> localVarResponse = await UpdateSequenceWithHttpInfoAsync(sequenceId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1999,8 +2011,8 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> UpdateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (UpdateSequence200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdateSequence200Response>> UpdateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'sequenceId' is set
             if (sequenceId == null)
@@ -2035,7 +2047,7 @@ namespace Late.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/v1/sequences/{sequenceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<UpdateSequence200Response>("/v1/sequences/{sequenceId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

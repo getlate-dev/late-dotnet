@@ -28,54 +28,57 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// CreateSequenceRequestStepsInner
+    /// UpdateBroadcast200ResponseBroadcast
     /// </summary>
-    [DataContract(Name = "createSequence_request_steps_inner")]
-    public partial class CreateSequenceRequestStepsInner : IValidatableObject
+    [DataContract(Name = "updateBroadcast_200_response_broadcast")]
+    public partial class UpdateBroadcast200ResponseBroadcast : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateSequenceRequestStepsInner" /> class.
+        /// Initializes a new instance of the <see cref="UpdateBroadcast200ResponseBroadcast" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CreateSequenceRequestStepsInner() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateSequenceRequestStepsInner" /> class.
-        /// </summary>
-        /// <param name="order">order (required).</param>
-        /// <param name="delayMinutes">delayMinutes (required).</param>
-        /// <param name="message">message.</param>
-        /// <param name="template">template.</param>
-        public CreateSequenceRequestStepsInner(int order = default, int delayMinutes = default, GetBroadcast200ResponseBroadcastMessage message = default, CreateSequenceRequestStepsInnerTemplate template = default)
+        /// <param name="id">id.</param>
+        /// <param name="name">name.</param>
+        /// <param name="description">description.</param>
+        /// <param name="status">status.</param>
+        /// <param name="updatedAt">updatedAt.</param>
+        public UpdateBroadcast200ResponseBroadcast(string id = default, string name = default, string description = default, string status = default, DateTime updatedAt = default)
         {
-            this.Order = order;
-            this.DelayMinutes = delayMinutes;
-            this.Message = message;
-            this.Template = template;
+            this.Id = id;
+            this.Name = name;
+            this.Description = description;
+            this.Status = status;
+            this.UpdatedAt = updatedAt;
         }
 
         /// <summary>
-        /// Gets or Sets Order
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "order", IsRequired = true, EmitDefaultValue = true)]
-        public int Order { get; set; }
+        [DataMember(Name = "id", EmitDefaultValue = false)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets DelayMinutes
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "delayMinutes", IsRequired = true, EmitDefaultValue = true)]
-        public int DelayMinutes { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "message", EmitDefaultValue = false)]
-        public GetBroadcast200ResponseBroadcastMessage Message { get; set; }
+        [DataMember(Name = "description", EmitDefaultValue = false)]
+        public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets Template
+        /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "template", EmitDefaultValue = false)]
-        public CreateSequenceRequestStepsInnerTemplate Template { get; set; }
+        [DataMember(Name = "status", EmitDefaultValue = false)]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdatedAt
+        /// </summary>
+        [DataMember(Name = "updatedAt", EmitDefaultValue = false)]
+        public DateTime UpdatedAt { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -84,11 +87,12 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateSequenceRequestStepsInner {\n");
-            sb.Append("  Order: ").Append(Order).Append("\n");
-            sb.Append("  DelayMinutes: ").Append(DelayMinutes).Append("\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Template: ").Append(Template).Append("\n");
+            sb.Append("class UpdateBroadcast200ResponseBroadcast {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

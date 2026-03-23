@@ -17,7 +17,7 @@ All URIs are relative to *https://zernio.com/api*
 
 <a id="activatesequence"></a>
 # **ActivateSequence**
-> void ActivateSequence (string sequenceId)
+> ActivateSequence200Response ActivateSequence (string sequenceId)
 
 Activate a sequence
 
@@ -50,7 +50,8 @@ namespace Example
             try
             {
                 // Activate a sequence
-                apiInstance.ActivateSequence(sequenceId);
+                ActivateSequence200Response result = apiInstance.ActivateSequence(sequenceId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -70,7 +71,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Activate a sequence
-    apiInstance.ActivateSequenceWithHttpInfo(sequenceId);
+    ApiResponse<ActivateSequence200Response> response = apiInstance.ActivateSequenceWithHttpInfo(sequenceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -88,7 +92,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**ActivateSequence200Response**](ActivateSequence200Response.md)
 
 ### Authorization
 
@@ -299,7 +303,7 @@ void (empty response body)
 
 <a id="enrollcontacts"></a>
 # **EnrollContacts**
-> void EnrollContacts (string sequenceId, EnrollContactsRequest enrollContactsRequest)
+> EnrollContacts200Response EnrollContacts (string sequenceId, EnrollContactsRequest enrollContactsRequest)
 
 Enroll contacts in a sequence
 
@@ -333,7 +337,8 @@ namespace Example
             try
             {
                 // Enroll contacts in a sequence
-                apiInstance.EnrollContacts(sequenceId, enrollContactsRequest);
+                EnrollContacts200Response result = apiInstance.EnrollContacts(sequenceId, enrollContactsRequest);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -353,7 +358,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Enroll contacts in a sequence
-    apiInstance.EnrollContactsWithHttpInfo(sequenceId, enrollContactsRequest);
+    ApiResponse<EnrollContacts200Response> response = apiInstance.EnrollContactsWithHttpInfo(sequenceId, enrollContactsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -372,7 +380,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**EnrollContacts200Response**](EnrollContacts200Response.md)
 
 ### Authorization
 
@@ -395,7 +403,7 @@ void (empty response body)
 
 <a id="getsequence"></a>
 # **GetSequence**
-> void GetSequence (string sequenceId)
+> GetSequence200Response GetSequence (string sequenceId)
 
 Get sequence with steps
 
@@ -428,7 +436,8 @@ namespace Example
             try
             {
                 // Get sequence with steps
-                apiInstance.GetSequence(sequenceId);
+                GetSequence200Response result = apiInstance.GetSequence(sequenceId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -448,7 +457,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get sequence with steps
-    apiInstance.GetSequenceWithHttpInfo(sequenceId);
+    ApiResponse<GetSequence200Response> response = apiInstance.GetSequenceWithHttpInfo(sequenceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -466,7 +478,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**GetSequence200Response**](GetSequence200Response.md)
 
 ### Authorization
 
@@ -489,7 +501,7 @@ void (empty response body)
 
 <a id="listsequenceenrollments"></a>
 # **ListSequenceEnrollments**
-> void ListSequenceEnrollments (string sequenceId, string? status = null, int? limit = null, int? skip = null)
+> ListSequenceEnrollments200Response ListSequenceEnrollments (string sequenceId, string? status = null, int? limit = null, int? skip = null)
 
 List enrollments for a sequence
 
@@ -525,7 +537,8 @@ namespace Example
             try
             {
                 // List enrollments for a sequence
-                apiInstance.ListSequenceEnrollments(sequenceId, status, limit, skip);
+                ListSequenceEnrollments200Response result = apiInstance.ListSequenceEnrollments(sequenceId, status, limit, skip);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -545,7 +558,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List enrollments for a sequence
-    apiInstance.ListSequenceEnrollmentsWithHttpInfo(sequenceId, status, limit, skip);
+    ApiResponse<ListSequenceEnrollments200Response> response = apiInstance.ListSequenceEnrollmentsWithHttpInfo(sequenceId, status, limit, skip);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -566,7 +582,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**ListSequenceEnrollments200Response**](ListSequenceEnrollments200Response.md)
 
 ### Authorization
 
@@ -692,7 +708,7 @@ catch (ApiException e)
 
 <a id="pausesequence"></a>
 # **PauseSequence**
-> void PauseSequence (string sequenceId)
+> ActivateSequence200Response PauseSequence (string sequenceId)
 
 Pause a sequence
 
@@ -725,7 +741,8 @@ namespace Example
             try
             {
                 // Pause a sequence
-                apiInstance.PauseSequence(sequenceId);
+                ActivateSequence200Response result = apiInstance.PauseSequence(sequenceId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -745,7 +762,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Pause a sequence
-    apiInstance.PauseSequenceWithHttpInfo(sequenceId);
+    ApiResponse<ActivateSequence200Response> response = apiInstance.PauseSequenceWithHttpInfo(sequenceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -763,7 +783,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**ActivateSequence200Response**](ActivateSequence200Response.md)
 
 ### Authorization
 
@@ -883,7 +903,7 @@ void (empty response body)
 
 <a id="updatesequence"></a>
 # **UpdateSequence**
-> void UpdateSequence (string sequenceId)
+> UpdateSequence200Response UpdateSequence (string sequenceId)
 
 Update a sequence
 
@@ -916,7 +936,8 @@ namespace Example
             try
             {
                 // Update a sequence
-                apiInstance.UpdateSequence(sequenceId);
+                UpdateSequence200Response result = apiInstance.UpdateSequence(sequenceId);
+                Debug.WriteLine(result);
             }
             catch (ApiException  e)
             {
@@ -936,7 +957,10 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update a sequence
-    apiInstance.UpdateSequenceWithHttpInfo(sequenceId);
+    ApiResponse<UpdateSequence200Response> response = apiInstance.UpdateSequenceWithHttpInfo(sequenceId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
 }
 catch (ApiException e)
 {
@@ -954,7 +978,7 @@ catch (ApiException e)
 
 ### Return type
 
-void (empty response body)
+[**UpdateSequence200Response**](UpdateSequence200Response.md)
 
 ### Authorization
 

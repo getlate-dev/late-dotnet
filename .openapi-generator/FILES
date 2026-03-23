@@ -11,6 +11,8 @@ docs/AccountWithFollowerStats.md
 docs/AccountWithFollowerStatsAllOfAccountStats.md
 docs/AccountsApi.md
 docs/AccountsListResponse.md
+docs/ActivateSequence200Response.md
+docs/AddBroadcastRecipients200Response.md
 docs/AddBroadcastRecipientsRequest.md
 docs/AddWhatsAppBroadcastRecipients200Response.md
 docs/AddWhatsAppBroadcastRecipientsRequest.md
@@ -37,6 +39,8 @@ docs/BulkUpdateWhatsAppContactsRequest.md
 docs/BulkUploadPosts200Response.md
 docs/BulkUploadPosts200ResponseErrorsInner.md
 docs/BulkUploadPosts429Response.md
+docs/CancelBroadcast200Response.md
+docs/CancelBroadcast200ResponseBroadcast.md
 docs/CancelWhatsAppBroadcastSchedule200Response.md
 docs/CancelWhatsAppBroadcastSchedule200ResponseBroadcast.md
 docs/CaptionResponse.md
@@ -90,7 +94,6 @@ docs/CreateQueueSlot201Response.md
 docs/CreateQueueSlotRequest.md
 docs/CreateSequenceRequest.md
 docs/CreateSequenceRequestStepsInner.md
-docs/CreateSequenceRequestStepsInnerMessage.md
 docs/CreateSequenceRequestStepsInnerTemplate.md
 docs/CreateSequenceRequestStepsInnerTemplateVariableMappingValue.md
 docs/CreateWebhookSettingsRequest.md
@@ -129,6 +132,7 @@ docs/EditInboxMessage200ResponseData.md
 docs/EditInboxMessageRequest.md
 docs/EditInboxMessageRequestReplyMarkup.md
 docs/EditInboxMessageRequestReplyMarkupKeyboardInnerInner.md
+docs/EnrollContacts200Response.md
 docs/EnrollContactsRequest.md
 docs/ErrorResponse.md
 docs/Expired.md
@@ -161,6 +165,10 @@ docs/GetAnalytics402Response.md
 docs/GetBestTimeToPost200Response.md
 docs/GetBestTimeToPost200ResponseSlotsInner.md
 docs/GetBestTimeToPost403Response.md
+docs/GetBroadcast200Response.md
+docs/GetBroadcast200ResponseBroadcast.md
+docs/GetBroadcast200ResponseBroadcastMessage.md
+docs/GetBroadcast200ResponseBroadcastSegmentFilters.md
 docs/GetConnectUrl200Response.md
 docs/GetContentDecay200Response.md
 docs/GetContentDecay200ResponseBucketsInner.md
@@ -249,6 +257,10 @@ docs/GetRedditFlairs200Response.md
 docs/GetRedditFlairs200ResponseFlairsInner.md
 docs/GetRedditSubreddits200Response.md
 docs/GetRedditSubreddits200ResponseSubredditsInner.md
+docs/GetSequence200Response.md
+docs/GetSequence200ResponseSequence.md
+docs/GetSequence200ResponseSequenceStepsInner.md
+docs/GetSequence200ResponseSequenceStepsInnerTemplate.md
 docs/GetTelegramCommands200Response.md
 docs/GetTelegramCommands200ResponseDataInner.md
 docs/GetTelegramConnectStatus200Response.md
@@ -337,6 +349,8 @@ docs/ListAccountGroups200Response.md
 docs/ListAccountGroups200ResponseGroupsInner.md
 docs/ListAccounts200Response.md
 docs/ListApiKeys200Response.md
+docs/ListBroadcastRecipients200Response.md
+docs/ListBroadcastRecipients200ResponseRecipientsInner.md
 docs/ListBroadcasts200Response.md
 docs/ListBroadcasts200ResponseBroadcastsInner.md
 docs/ListCommentAutomations200Response.md
@@ -374,6 +388,8 @@ docs/ListPostsLogs200ResponsePagination.md
 docs/ListQueueSlots200Response.md
 docs/ListQueueSlots200ResponseOneOf.md
 docs/ListQueueSlots200ResponseOneOf1.md
+docs/ListSequenceEnrollments200Response.md
+docs/ListSequenceEnrollments200ResponseEnrollmentsInner.md
 docs/ListSequences200Response.md
 docs/ListSequences200ResponseSequencesInner.md
 docs/ListSnapchatProfiles200Response.md
@@ -449,6 +465,8 @@ docs/ReplyToInboxReviewRequest.md
 docs/RetweetPost200Response.md
 docs/RetweetPostRequest.md
 docs/ReviewsApi.md
+docs/ScheduleBroadcast200Response.md
+docs/ScheduleBroadcast200ResponseBroadcast.md
 docs/ScheduleBroadcastRequest.md
 docs/ScheduleWhatsAppBroadcast200Response.md
 docs/ScheduleWhatsAppBroadcast200ResponseBroadcast.md
@@ -525,6 +543,8 @@ docs/UpdateAccount200Response.md
 docs/UpdateAccountGroup200Response.md
 docs/UpdateAccountGroupRequest.md
 docs/UpdateAccountRequest.md
+docs/UpdateBroadcast200Response.md
+docs/UpdateBroadcast200ResponseBroadcast.md
 docs/UpdateCommentAutomationRequest.md
 docs/UpdateContactRequest.md
 docs/UpdateCustomFieldRequest.md
@@ -563,6 +583,8 @@ docs/UpdateQueueSlot200Response.md
 docs/UpdateQueueSlotRequest.md
 docs/UpdateRedditSubreddits200Response.md
 docs/UpdateRedditSubredditsRequest.md
+docs/UpdateSequence200Response.md
+docs/UpdateSequence200ResponseSequence.md
 docs/UpdateWebhookSettings200Response.md
 docs/UpdateWebhookSettingsRequest.md
 docs/UpdateWhatsAppBusinessProfileRequest.md
@@ -640,11 +662,29 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
-src/Late.Test/Model/ListBroadcasts200ResponseBroadcastsInnerTests.cs
-src/Late.Test/Model/ListBroadcasts200ResponseTests.cs
-src/Late.Test/Model/ListSequences200ResponseSequencesInnerTests.cs
-src/Late.Test/Model/ListSequences200ResponseTests.cs
-src/Late.Test/Model/SendBroadcast200ResponseTests.cs
+src/Late.Test/Model/ActivateSequence200ResponseTests.cs
+src/Late.Test/Model/AddBroadcastRecipients200ResponseTests.cs
+src/Late.Test/Model/CancelBroadcast200ResponseBroadcastTests.cs
+src/Late.Test/Model/CancelBroadcast200ResponseTests.cs
+src/Late.Test/Model/EnrollContacts200ResponseTests.cs
+src/Late.Test/Model/GetBroadcast200ResponseBroadcastMessageTests.cs
+src/Late.Test/Model/GetBroadcast200ResponseBroadcastSegmentFiltersTests.cs
+src/Late.Test/Model/GetBroadcast200ResponseBroadcastTests.cs
+src/Late.Test/Model/GetBroadcast200ResponseTests.cs
+src/Late.Test/Model/GetSequence200ResponseSequenceStepsInnerTemplateTests.cs
+src/Late.Test/Model/GetSequence200ResponseSequenceStepsInnerTests.cs
+src/Late.Test/Model/GetSequence200ResponseSequenceTests.cs
+src/Late.Test/Model/GetSequence200ResponseTests.cs
+src/Late.Test/Model/ListBroadcastRecipients200ResponseRecipientsInnerTests.cs
+src/Late.Test/Model/ListBroadcastRecipients200ResponseTests.cs
+src/Late.Test/Model/ListSequenceEnrollments200ResponseEnrollmentsInnerTests.cs
+src/Late.Test/Model/ListSequenceEnrollments200ResponseTests.cs
+src/Late.Test/Model/ScheduleBroadcast200ResponseBroadcastTests.cs
+src/Late.Test/Model/ScheduleBroadcast200ResponseTests.cs
+src/Late.Test/Model/UpdateBroadcast200ResponseBroadcastTests.cs
+src/Late.Test/Model/UpdateBroadcast200ResponseTests.cs
+src/Late.Test/Model/UpdateSequence200ResponseSequenceTests.cs
+src/Late.Test/Model/UpdateSequence200ResponseTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -704,6 +744,8 @@ src/Late/Model/AccountGetResponse.cs
 src/Late/Model/AccountWithFollowerStats.cs
 src/Late/Model/AccountWithFollowerStatsAllOfAccountStats.cs
 src/Late/Model/AccountsListResponse.cs
+src/Late/Model/ActivateSequence200Response.cs
+src/Late/Model/AddBroadcastRecipients200Response.cs
 src/Late/Model/AddBroadcastRecipientsRequest.cs
 src/Late/Model/AddWhatsAppBroadcastRecipients200Response.cs
 src/Late/Model/AddWhatsAppBroadcastRecipientsRequest.cs
@@ -728,6 +770,8 @@ src/Late/Model/BulkUpdateWhatsAppContactsRequest.cs
 src/Late/Model/BulkUploadPosts200Response.cs
 src/Late/Model/BulkUploadPosts200ResponseErrorsInner.cs
 src/Late/Model/BulkUploadPosts429Response.cs
+src/Late/Model/CancelBroadcast200Response.cs
+src/Late/Model/CancelBroadcast200ResponseBroadcast.cs
 src/Late/Model/CancelWhatsAppBroadcastSchedule200Response.cs
 src/Late/Model/CancelWhatsAppBroadcastSchedule200ResponseBroadcast.cs
 src/Late/Model/CaptionResponse.cs
@@ -777,7 +821,6 @@ src/Late/Model/CreateQueueSlot201Response.cs
 src/Late/Model/CreateQueueSlotRequest.cs
 src/Late/Model/CreateSequenceRequest.cs
 src/Late/Model/CreateSequenceRequestStepsInner.cs
-src/Late/Model/CreateSequenceRequestStepsInnerMessage.cs
 src/Late/Model/CreateSequenceRequestStepsInnerTemplate.cs
 src/Late/Model/CreateSequenceRequestStepsInnerTemplateVariableMappingValue.cs
 src/Late/Model/CreateWebhookSettingsRequest.cs
@@ -815,6 +858,7 @@ src/Late/Model/EditInboxMessage200ResponseData.cs
 src/Late/Model/EditInboxMessageRequest.cs
 src/Late/Model/EditInboxMessageRequestReplyMarkup.cs
 src/Late/Model/EditInboxMessageRequestReplyMarkupKeyboardInnerInner.cs
+src/Late/Model/EnrollContacts200Response.cs
 src/Late/Model/EnrollContactsRequest.cs
 src/Late/Model/ErrorResponse.cs
 src/Late/Model/Expired.cs
@@ -841,6 +885,10 @@ src/Late/Model/GetAnalytics402Response.cs
 src/Late/Model/GetBestTimeToPost200Response.cs
 src/Late/Model/GetBestTimeToPost200ResponseSlotsInner.cs
 src/Late/Model/GetBestTimeToPost403Response.cs
+src/Late/Model/GetBroadcast200Response.cs
+src/Late/Model/GetBroadcast200ResponseBroadcast.cs
+src/Late/Model/GetBroadcast200ResponseBroadcastMessage.cs
+src/Late/Model/GetBroadcast200ResponseBroadcastSegmentFilters.cs
 src/Late/Model/GetConnectUrl200Response.cs
 src/Late/Model/GetContentDecay200Response.cs
 src/Late/Model/GetContentDecay200ResponseBucketsInner.cs
@@ -929,6 +977,10 @@ src/Late/Model/GetRedditFlairs200Response.cs
 src/Late/Model/GetRedditFlairs200ResponseFlairsInner.cs
 src/Late/Model/GetRedditSubreddits200Response.cs
 src/Late/Model/GetRedditSubreddits200ResponseSubredditsInner.cs
+src/Late/Model/GetSequence200Response.cs
+src/Late/Model/GetSequence200ResponseSequence.cs
+src/Late/Model/GetSequence200ResponseSequenceStepsInner.cs
+src/Late/Model/GetSequence200ResponseSequenceStepsInnerTemplate.cs
 src/Late/Model/GetTelegramCommands200Response.cs
 src/Late/Model/GetTelegramCommands200ResponseDataInner.cs
 src/Late/Model/GetTelegramConnectStatus200Response.cs
@@ -1015,6 +1067,8 @@ src/Late/Model/ListAccountGroups200Response.cs
 src/Late/Model/ListAccountGroups200ResponseGroupsInner.cs
 src/Late/Model/ListAccounts200Response.cs
 src/Late/Model/ListApiKeys200Response.cs
+src/Late/Model/ListBroadcastRecipients200Response.cs
+src/Late/Model/ListBroadcastRecipients200ResponseRecipientsInner.cs
 src/Late/Model/ListBroadcasts200Response.cs
 src/Late/Model/ListBroadcasts200ResponseBroadcastsInner.cs
 src/Late/Model/ListCommentAutomations200Response.cs
@@ -1052,6 +1106,8 @@ src/Late/Model/ListPostsLogs200ResponsePagination.cs
 src/Late/Model/ListQueueSlots200Response.cs
 src/Late/Model/ListQueueSlots200ResponseOneOf.cs
 src/Late/Model/ListQueueSlots200ResponseOneOf1.cs
+src/Late/Model/ListSequenceEnrollments200Response.cs
+src/Late/Model/ListSequenceEnrollments200ResponseEnrollmentsInner.cs
 src/Late/Model/ListSequences200Response.cs
 src/Late/Model/ListSequences200ResponseSequencesInner.cs
 src/Late/Model/ListSnapchatProfiles200Response.cs
@@ -1119,6 +1175,8 @@ src/Late/Model/ReplyToInboxReview200ResponseReply.cs
 src/Late/Model/ReplyToInboxReviewRequest.cs
 src/Late/Model/RetweetPost200Response.cs
 src/Late/Model/RetweetPostRequest.cs
+src/Late/Model/ScheduleBroadcast200Response.cs
+src/Late/Model/ScheduleBroadcast200ResponseBroadcast.cs
 src/Late/Model/ScheduleBroadcastRequest.cs
 src/Late/Model/ScheduleWhatsAppBroadcast200Response.cs
 src/Late/Model/ScheduleWhatsAppBroadcast200ResponseBroadcast.cs
@@ -1192,6 +1250,8 @@ src/Late/Model/UpdateAccount200Response.cs
 src/Late/Model/UpdateAccountGroup200Response.cs
 src/Late/Model/UpdateAccountGroupRequest.cs
 src/Late/Model/UpdateAccountRequest.cs
+src/Late/Model/UpdateBroadcast200Response.cs
+src/Late/Model/UpdateBroadcast200ResponseBroadcast.cs
 src/Late/Model/UpdateCommentAutomationRequest.cs
 src/Late/Model/UpdateContactRequest.cs
 src/Late/Model/UpdateCustomFieldRequest.cs
@@ -1230,6 +1290,8 @@ src/Late/Model/UpdateQueueSlot200Response.cs
 src/Late/Model/UpdateQueueSlotRequest.cs
 src/Late/Model/UpdateRedditSubreddits200Response.cs
 src/Late/Model/UpdateRedditSubredditsRequest.cs
+src/Late/Model/UpdateSequence200Response.cs
+src/Late/Model/UpdateSequence200ResponseSequence.cs
 src/Late/Model/UpdateWebhookSettings200Response.cs
 src/Late/Model/UpdateWebhookSettingsRequest.cs
 src/Late/Model/UpdateWhatsAppBusinessProfileRequest.cs

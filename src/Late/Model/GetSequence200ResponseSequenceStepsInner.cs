@@ -28,24 +28,19 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// CreateSequenceRequestStepsInner
+    /// GetSequence200ResponseSequenceStepsInner
     /// </summary>
-    [DataContract(Name = "createSequence_request_steps_inner")]
-    public partial class CreateSequenceRequestStepsInner : IValidatableObject
+    [DataContract(Name = "getSequence_200_response_sequence_steps_inner")]
+    public partial class GetSequence200ResponseSequenceStepsInner : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateSequenceRequestStepsInner" /> class.
+        /// Initializes a new instance of the <see cref="GetSequence200ResponseSequenceStepsInner" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CreateSequenceRequestStepsInner() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateSequenceRequestStepsInner" /> class.
-        /// </summary>
-        /// <param name="order">order (required).</param>
-        /// <param name="delayMinutes">delayMinutes (required).</param>
+        /// <param name="order">order.</param>
+        /// <param name="delayMinutes">delayMinutes.</param>
         /// <param name="message">message.</param>
         /// <param name="template">template.</param>
-        public CreateSequenceRequestStepsInner(int order = default, int delayMinutes = default, GetBroadcast200ResponseBroadcastMessage message = default, CreateSequenceRequestStepsInnerTemplate template = default)
+        public GetSequence200ResponseSequenceStepsInner(int order = default, int delayMinutes = default, GetBroadcast200ResponseBroadcastMessage message = default, GetSequence200ResponseSequenceStepsInnerTemplate template = default)
         {
             this.Order = order;
             this.DelayMinutes = delayMinutes;
@@ -56,13 +51,13 @@ namespace Late.Model
         /// <summary>
         /// Gets or Sets Order
         /// </summary>
-        [DataMember(Name = "order", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "order", EmitDefaultValue = false)]
         public int Order { get; set; }
 
         /// <summary>
         /// Gets or Sets DelayMinutes
         /// </summary>
-        [DataMember(Name = "delayMinutes", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "delayMinutes", EmitDefaultValue = false)]
         public int DelayMinutes { get; set; }
 
         /// <summary>
@@ -75,7 +70,7 @@ namespace Late.Model
         /// Gets or Sets Template
         /// </summary>
         [DataMember(Name = "template", EmitDefaultValue = false)]
-        public CreateSequenceRequestStepsInnerTemplate Template { get; set; }
+        public GetSequence200ResponseSequenceStepsInnerTemplate Template { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -84,7 +79,7 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class CreateSequenceRequestStepsInner {\n");
+            sb.Append("class GetSequence200ResponseSequenceStepsInner {\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  DelayMinutes: ").Append(DelayMinutes).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
