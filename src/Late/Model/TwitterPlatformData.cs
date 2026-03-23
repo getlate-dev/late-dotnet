@@ -78,11 +78,13 @@ namespace Late.Model
         /// <param name="replyToTweetId">ID of an existing tweet to reply to. The published tweet will appear as a reply in that tweet&#39;s thread. For threads, only the first tweet replies to the target; subsequent tweets chain normally..</param>
         /// <param name="replySettings">Controls who can reply to the tweet. \&quot;following\&quot; allows only people you follow, \&quot;mentionedUsers\&quot; allows only mentioned users, \&quot;subscribers\&quot; allows only subscribers, \&quot;verified\&quot; allows only verified users. Omit for default (everyone can reply). For threads, applies to the first tweet only. Cannot be combined with replyToTweetId..</param>
         /// <param name="threadItems">Sequence of tweets in a thread. First item is the root tweet..</param>
-        public TwitterPlatformData(string replyToTweetId = default, ReplySettingsEnum? replySettings = default, List<TwitterPlatformDataThreadItemsInner> threadItems = default)
+        /// <param name="poll">poll.</param>
+        public TwitterPlatformData(string replyToTweetId = default, ReplySettingsEnum? replySettings = default, List<TwitterPlatformDataThreadItemsInner> threadItems = default, TwitterPlatformDataPoll poll = default)
         {
             this.ReplyToTweetId = replyToTweetId;
             this.ReplySettings = replySettings;
             this.ThreadItems = threadItems;
+            this.Poll = poll;
         }
 
         /// <summary>
@@ -100,6 +102,12 @@ namespace Late.Model
         public List<TwitterPlatformDataThreadItemsInner> ThreadItems { get; set; }
 
         /// <summary>
+        /// Gets or Sets Poll
+        /// </summary>
+        [DataMember(Name = "poll", EmitDefaultValue = false)]
+        public TwitterPlatformDataPoll Poll { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -110,6 +118,7 @@ namespace Late.Model
             sb.Append("  ReplyToTweetId: ").Append(ReplyToTweetId).Append("\n");
             sb.Append("  ReplySettings: ").Append(ReplySettings).Append("\n");
             sb.Append("  ThreadItems: ").Append(ThreadItems).Append("\n");
+            sb.Append("  Poll: ").Append(Poll).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

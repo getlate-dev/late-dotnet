@@ -12179,6 +12179,13 @@ components:
               url: https://openapi-generator.tech
             content: content
           replyToTweetId: replyToTweetId
+          poll:
+            duration_minutes: 6077
+            options:
+            - options
+            - options
+            - options
+            - options
         publishedAt: 2000-01-23T04:56:07.000+00:00
         errorSource: user
         errorMessage: errorMessage
@@ -12293,9 +12300,9 @@ components:
         visibility: public
         timezone: timezone
         recycling:
-          recycleCount: 5
-          gap: 6
-          expireCount: 1
+          recycleCount: 2
+          gap: 1
+          expireCount: 5
           lastRecycledAt: 2000-01-23T04:56:07.000+00:00
           expireDate: 2000-01-23T04:56:07.000+00:00
           nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -12355,6 +12362,13 @@ components:
                 url: https://openapi-generator.tech
               content: content
             replyToTweetId: replyToTweetId
+            poll:
+              duration_minutes: 6077
+              options:
+              - options
+              - options
+              - options
+              - options
           publishedAt: 2000-01-23T04:56:07.000+00:00
           errorSource: user
           errorMessage: errorMessage
@@ -12429,6 +12443,13 @@ components:
                 url: https://openapi-generator.tech
               content: content
             replyToTweetId: replyToTweetId
+            poll:
+              duration_minutes: 6077
+              options:
+              - options
+              - options
+              - options
+              - options
           publishedAt: 2000-01-23T04:56:07.000+00:00
           errorSource: user
           errorMessage: errorMessage
@@ -12618,9 +12639,9 @@ components:
     RecyclingState:
       description: Current recycling configuration and state on a post
       example:
-        recycleCount: 5
-        gap: 6
-        expireCount: 1
+        recycleCount: 2
+        gap: 1
+        expireCount: 5
         lastRecycledAt: 2000-01-23T04:56:07.000+00:00
         expireDate: 2000-01-23T04:56:07.000+00:00
         nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -12716,6 +12737,13 @@ components:
             url: https://openapi-generator.tech
           content: content
         replyToTweetId: replyToTweetId
+        poll:
+          duration_minutes: 6077
+          options:
+          - options
+          - options
+          - options
+          - options
       properties:
         replyToTweetId:
           description: "ID of an existing tweet to reply to. The published tweet will\
@@ -12739,6 +12767,8 @@ components:
           items:
             $ref: "#/components/schemas/TwitterPlatformData_threadItems_inner"
           type: array
+        poll:
+          $ref: "#/components/schemas/TwitterPlatformData_poll"
     ThreadsPlatformData:
       description: "Up to 10 images per carousel (no videos). Videos must be H.264/AAC\
         \ MP4, max 5 min. Images JPEG/PNG, max 8 MB. Use threadItems for reply chains."
@@ -13135,10 +13165,10 @@ components:
           type: string
     Pagination:
       example:
-        total: 9
-        pages: 3
-        limit: 7
-        page: 2
+        total: 3
+        pages: 2
+        limit: 9
+        page: 7
       properties:
         page:
           type: integer
@@ -13666,10 +13696,10 @@ components:
     PostsListResponse:
       example:
         pagination:
-          total: 9
-          pages: 3
-          limit: 7
-          page: 2
+          total: 3
+          pages: 2
+          limit: 9
+          page: 7
         posts:
         - queueId: queueId
           metadata:
@@ -13680,9 +13710,9 @@ components:
           visibility: public
           timezone: timezone
           recycling:
-            recycleCount: 5
-            gap: 6
-            expireCount: 1
+            recycleCount: 2
+            gap: 1
+            expireCount: 5
             lastRecycledAt: 2000-01-23T04:56:07.000+00:00
             expireDate: 2000-01-23T04:56:07.000+00:00
             nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -13742,6 +13772,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -13816,6 +13853,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -13886,9 +13930,9 @@ components:
           visibility: public
           timezone: timezone
           recycling:
-            recycleCount: 5
-            gap: 6
-            expireCount: 1
+            recycleCount: 2
+            gap: 1
+            expireCount: 5
             lastRecycledAt: 2000-01-23T04:56:07.000+00:00
             expireDate: 2000-01-23T04:56:07.000+00:00
             nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -13948,6 +13992,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14022,6 +14073,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14102,9 +14160,9 @@ components:
           visibility: public
           timezone: timezone
           recycling:
-            recycleCount: 5
-            gap: 6
-            expireCount: 1
+            recycleCount: 2
+            gap: 1
+            expireCount: 5
             lastRecycledAt: 2000-01-23T04:56:07.000+00:00
             expireDate: 2000-01-23T04:56:07.000+00:00
             nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -14164,6 +14222,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14238,6 +14303,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14314,9 +14386,9 @@ components:
           visibility: public
           timezone: timezone
           recycling:
-            recycleCount: 5
-            gap: 6
-            expireCount: 1
+            recycleCount: 2
+            gap: 1
+            expireCount: 5
             lastRecycledAt: 2000-01-23T04:56:07.000+00:00
             expireDate: 2000-01-23T04:56:07.000+00:00
             nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -14376,6 +14448,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14450,6 +14529,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14529,9 +14615,9 @@ components:
           visibility: public
           timezone: timezone
           recycling:
-            recycleCount: 5
-            gap: 6
-            expireCount: 1
+            recycleCount: 2
+            gap: 1
+            expireCount: 5
             lastRecycledAt: 2000-01-23T04:56:07.000+00:00
             expireDate: 2000-01-23T04:56:07.000+00:00
             nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -14591,6 +14677,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14665,6 +14758,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14750,9 +14850,9 @@ components:
           visibility: public
           timezone: timezone
           recycling:
-            recycleCount: 5
-            gap: 6
-            expireCount: 1
+            recycleCount: 2
+            gap: 1
+            expireCount: 5
             lastRecycledAt: 2000-01-23T04:56:07.000+00:00
             expireDate: 2000-01-23T04:56:07.000+00:00
             nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -14812,6 +14912,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -14886,6 +14993,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -16687,9 +16801,9 @@ components:
           visibility: public
           timezone: timezone
           recycling:
-            recycleCount: 5
-            gap: 6
-            expireCount: 1
+            recycleCount: 2
+            gap: 1
+            expireCount: 5
             lastRecycledAt: 2000-01-23T04:56:07.000+00:00
             expireDate: 2000-01-23T04:56:07.000+00:00
             nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -16749,6 +16863,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -16823,6 +16944,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -16893,9 +17021,9 @@ components:
           visibility: public
           timezone: timezone
           recycling:
-            recycleCount: 5
-            gap: 6
-            expireCount: 1
+            recycleCount: 2
+            gap: 1
+            expireCount: 5
             lastRecycledAt: 2000-01-23T04:56:07.000+00:00
             expireDate: 2000-01-23T04:56:07.000+00:00
             nextRecycleAt: 2000-01-23T04:56:07.000+00:00
@@ -16955,6 +17083,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -17029,6 +17164,13 @@ components:
                   url: https://openapi-generator.tech
                 content: content
               replyToTweetId: replyToTweetId
+              poll:
+                duration_minutes: 6077
+                options:
+                - options
+                - options
+                - options
+                - options
             publishedAt: 2000-01-23T04:56:07.000+00:00
             errorSource: user
             errorMessage: errorMessage
@@ -26929,6 +27071,34 @@ components:
           items:
             $ref: "#/components/schemas/MediaItem"
           type: array
+    TwitterPlatformData_poll:
+      description: Create a poll with this tweet. Mutually exclusive with media attachments
+        and threads.
+      example:
+        duration_minutes: 6077
+        options:
+        - options
+        - options
+        - options
+        - options
+      properties:
+        options:
+          description: "Poll options (2-4 choices, max 25 characters each)"
+          items:
+            maxLength: 25
+            minLength: 1
+            type: string
+          maxItems: 4
+          minItems: 2
+          type: array
+        duration_minutes:
+          description: Poll duration in minutes (5 min to 7 days)
+          maximum: 10080
+          minimum: 5
+          type: integer
+      required:
+      - duration_minutes
+      - options
     InstagramPlatformData_trialParams:
       description: Trial Reels configuration. Trial reels are shared to non-followers
         first and can later be graduated to regular reels manually or automatically

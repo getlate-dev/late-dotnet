@@ -482,6 +482,7 @@ docs/TranscriptResponse.md
 docs/TranscriptSegment.md
 docs/TwitterEngagementApi.md
 docs/TwitterPlatformData.md
+docs/TwitterPlatformDataPoll.md
 docs/TwitterPlatformDataThreadItemsInner.md
 docs/UndoRetweet200Response.md
 docs/UnfollowUser200Response.md
@@ -604,6 +605,7 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/TwitterPlatformDataPollTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -1108,6 +1110,7 @@ src/Late/Model/TikTokPlatformData.cs
 src/Late/Model/TranscriptResponse.cs
 src/Late/Model/TranscriptSegment.cs
 src/Late/Model/TwitterPlatformData.cs
+src/Late/Model/TwitterPlatformDataPoll.cs
 src/Late/Model/TwitterPlatformDataThreadItemsInner.cs
 src/Late/Model/UndoRetweet200Response.cs
 src/Late/Model/UnfollowUser200Response.cs
