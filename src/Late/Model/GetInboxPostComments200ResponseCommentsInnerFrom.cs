@@ -34,6 +34,45 @@ namespace Late.Model
     public partial class GetInboxPostComments200ResponseCommentsInnerFrom : IValidatableObject
     {
         /// <summary>
+        /// X/Twitter verified badge type. Only present for Twitter/X comments.
+        /// </summary>
+        /// <value>X/Twitter verified badge type. Only present for Twitter/X comments.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum VerifiedTypeEnum
+        {
+            /// <summary>
+            /// Enum Blue for value: blue
+            /// </summary>
+            [EnumMember(Value = "blue")]
+            Blue = 1,
+
+            /// <summary>
+            /// Enum Government for value: government
+            /// </summary>
+            [EnumMember(Value = "government")]
+            Government = 2,
+
+            /// <summary>
+            /// Enum Business for value: business
+            /// </summary>
+            [EnumMember(Value = "business")]
+            Business = 3,
+
+            /// <summary>
+            /// Enum None for value: none
+            /// </summary>
+            [EnumMember(Value = "none")]
+            None = 4
+        }
+
+
+        /// <summary>
+        /// X/Twitter verified badge type. Only present for Twitter/X comments.
+        /// </summary>
+        /// <value>X/Twitter verified badge type. Only present for Twitter/X comments.</value>
+        [DataMember(Name = "verifiedType", EmitDefaultValue = false)]
+        public VerifiedTypeEnum? VerifiedType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="GetInboxPostComments200ResponseCommentsInnerFrom" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -41,13 +80,15 @@ namespace Late.Model
         /// <param name="username">username.</param>
         /// <param name="picture">picture.</param>
         /// <param name="isOwner">isOwner.</param>
-        public GetInboxPostComments200ResponseCommentsInnerFrom(string id = default, string name = default, string username = default, string picture = default, bool isOwner = default)
+        /// <param name="verifiedType">X/Twitter verified badge type. Only present for Twitter/X comments..</param>
+        public GetInboxPostComments200ResponseCommentsInnerFrom(string id = default, string name = default, string username = default, string picture = default, bool isOwner = default, VerifiedTypeEnum? verifiedType = default)
         {
             this.Id = id;
             this.Name = name;
             this.Username = username;
             this.Picture = picture;
             this.IsOwner = isOwner;
+            this.VerifiedType = verifiedType;
         }
 
         /// <summary>
@@ -93,6 +134,7 @@ namespace Late.Model
             sb.Append("  Username: ").Append(Username).Append("\n");
             sb.Append("  Picture: ").Append(Picture).Append("\n");
             sb.Append("  IsOwner: ").Append(IsOwner).Append("\n");
+            sb.Append("  VerifiedType: ").Append(VerifiedType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

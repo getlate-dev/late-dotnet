@@ -34,6 +34,45 @@ namespace Late.Model
     public partial class WebhookPayloadMessageConversation : IValidatableObject
     {
         /// <summary>
+        /// X/Twitter verified badge type. Only present for Twitter/X conversations.
+        /// </summary>
+        /// <value>X/Twitter verified badge type. Only present for Twitter/X conversations.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ParticipantVerifiedTypeEnum
+        {
+            /// <summary>
+            /// Enum Blue for value: blue
+            /// </summary>
+            [EnumMember(Value = "blue")]
+            Blue = 1,
+
+            /// <summary>
+            /// Enum Government for value: government
+            /// </summary>
+            [EnumMember(Value = "government")]
+            Government = 2,
+
+            /// <summary>
+            /// Enum Business for value: business
+            /// </summary>
+            [EnumMember(Value = "business")]
+            Business = 3,
+
+            /// <summary>
+            /// Enum None for value: none
+            /// </summary>
+            [EnumMember(Value = "none")]
+            None = 4
+        }
+
+
+        /// <summary>
+        /// X/Twitter verified badge type. Only present for Twitter/X conversations.
+        /// </summary>
+        /// <value>X/Twitter verified badge type. Only present for Twitter/X conversations.</value>
+        [DataMember(Name = "participantVerifiedType", EmitDefaultValue = false)]
+        public ParticipantVerifiedTypeEnum? ParticipantVerifiedType { get; set; }
+        /// <summary>
         /// Defines Status
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -67,8 +106,9 @@ namespace Late.Model
         /// <param name="participantName">participantName.</param>
         /// <param name="participantUsername">participantUsername.</param>
         /// <param name="participantPicture">participantPicture.</param>
+        /// <param name="participantVerifiedType">X/Twitter verified badge type. Only present for Twitter/X conversations..</param>
         /// <param name="status">status.</param>
-        public WebhookPayloadMessageConversation(string id = default, string platformConversationId = default, string participantId = default, string participantName = default, string participantUsername = default, string participantPicture = default, StatusEnum? status = default)
+        public WebhookPayloadMessageConversation(string id = default, string platformConversationId = default, string participantId = default, string participantName = default, string participantUsername = default, string participantPicture = default, ParticipantVerifiedTypeEnum? participantVerifiedType = default, StatusEnum? status = default)
         {
             this.Id = id;
             this.PlatformConversationId = platformConversationId;
@@ -76,6 +116,7 @@ namespace Late.Model
             this.ParticipantName = participantName;
             this.ParticipantUsername = participantUsername;
             this.ParticipantPicture = participantPicture;
+            this.ParticipantVerifiedType = participantVerifiedType;
             this.Status = status;
         }
 
@@ -129,6 +170,7 @@ namespace Late.Model
             sb.Append("  ParticipantName: ").Append(ParticipantName).Append("\n");
             sb.Append("  ParticipantUsername: ").Append(ParticipantUsername).Append("\n");
             sb.Append("  ParticipantPicture: ").Append(ParticipantPicture).Append("\n");
+            sb.Append("  ParticipantVerifiedType: ").Append(ParticipantVerifiedType).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

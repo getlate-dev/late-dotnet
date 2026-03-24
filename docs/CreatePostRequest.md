@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Timezone** | **string** |  | [optional] [default to "UTC"]
 **Tags** | **List&lt;string&gt;** | Tags/keywords. YouTube constraints: each tag max 100 chars, combined max 500 chars, duplicates auto-removed. | [optional] 
 **Hashtags** | **List&lt;string&gt;** |  | [optional] 
-**Mentions** | **List&lt;string&gt;** |  | [optional] 
+**Mentions** | **List&lt;string&gt;** | Stored for reference only. This field does NOT automatically create @mentions when publishing. For LinkedIn @mentions, use the /v1/accounts/{accountId}/linkedin-mentions endpoint to resolve profile URLs to URNs, then embed the returned mentionFormat directly in the post content field. | [optional] 
 **CrosspostingEnabled** | **bool** |  | [optional] [default to true]
 **Metadata** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **TiktokSettings** | [**TikTokPlatformData**](TikTokPlatformData.md) | Root-level TikTok settings applied to all TikTok platforms. Merged into each platform&#39;s platformSpecificData, with platform-specific settings taking precedence. | [optional] 

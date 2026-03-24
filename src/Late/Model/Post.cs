@@ -127,7 +127,7 @@ namespace Late.Model
         /// <param name="status">status.</param>
         /// <param name="tags">YouTube constraints: each tag max 100 chars, combined max 500 chars, duplicates removed..</param>
         /// <param name="hashtags">hashtags.</param>
-        /// <param name="mentions">mentions.</param>
+        /// <param name="mentions">Stored for reference only. This field does NOT automatically create @mentions when publishing. For LinkedIn @mentions, use the /v1/accounts/{accountId}/linkedin-mentions endpoint to resolve profile URLs to URNs, then embed the returned mentionFormat directly in the post content field..</param>
         /// <param name="visibility">visibility.</param>
         /// <param name="metadata">metadata.</param>
         /// <param name="recycling">recycling.</param>
@@ -223,8 +223,9 @@ namespace Late.Model
         public List<string> Hashtags { get; set; }
 
         /// <summary>
-        /// Gets or Sets Mentions
+        /// Stored for reference only. This field does NOT automatically create @mentions when publishing. For LinkedIn @mentions, use the /v1/accounts/{accountId}/linkedin-mentions endpoint to resolve profile URLs to URNs, then embed the returned mentionFormat directly in the post content field.
         /// </summary>
+        /// <value>Stored for reference only. This field does NOT automatically create @mentions when publishing. For LinkedIn @mentions, use the /v1/accounts/{accountId}/linkedin-mentions endpoint to resolve profile URLs to URNs, then embed the returned mentionFormat directly in the post content field.</value>
         [DataMember(Name = "mentions", EmitDefaultValue = false)]
         public List<string> Mentions { get; set; }
 

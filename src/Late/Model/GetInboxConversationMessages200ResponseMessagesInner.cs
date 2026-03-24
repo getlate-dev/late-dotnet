@@ -34,6 +34,45 @@ namespace Late.Model
     public partial class GetInboxConversationMessages200ResponseMessagesInner : IValidatableObject
     {
         /// <summary>
+        /// X/Twitter verified badge type. Only present for Twitter/X messages.
+        /// </summary>
+        /// <value>X/Twitter verified badge type. Only present for Twitter/X messages.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SenderVerifiedTypeEnum
+        {
+            /// <summary>
+            /// Enum Blue for value: blue
+            /// </summary>
+            [EnumMember(Value = "blue")]
+            Blue = 1,
+
+            /// <summary>
+            /// Enum Government for value: government
+            /// </summary>
+            [EnumMember(Value = "government")]
+            Government = 2,
+
+            /// <summary>
+            /// Enum Business for value: business
+            /// </summary>
+            [EnumMember(Value = "business")]
+            Business = 3,
+
+            /// <summary>
+            /// Enum None for value: none
+            /// </summary>
+            [EnumMember(Value = "none")]
+            None = 4
+        }
+
+
+        /// <summary>
+        /// X/Twitter verified badge type. Only present for Twitter/X messages.
+        /// </summary>
+        /// <value>X/Twitter verified badge type. Only present for Twitter/X messages.</value>
+        [DataMember(Name = "senderVerifiedType", EmitDefaultValue = false)]
+        public SenderVerifiedTypeEnum? SenderVerifiedType { get; set; }
+        /// <summary>
         /// Defines Direction
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -68,13 +107,14 @@ namespace Late.Model
         /// <param name="message">message.</param>
         /// <param name="senderId">senderId.</param>
         /// <param name="senderName">senderName.</param>
+        /// <param name="senderVerifiedType">X/Twitter verified badge type. Only present for Twitter/X messages..</param>
         /// <param name="direction">direction.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="attachments">attachments.</param>
         /// <param name="subject">Reddit message subject.</param>
         /// <param name="storyReply">Instagram story reply.</param>
         /// <param name="isStoryMention">Instagram story mention.</param>
-        public GetInboxConversationMessages200ResponseMessagesInner(string id = default, string conversationId = default, string accountId = default, string platform = default, string message = default, string senderId = default, string senderName = default, DirectionEnum? direction = default, DateTime createdAt = default, List<GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner> attachments = default, string subject = default, bool storyReply = default, bool isStoryMention = default)
+        public GetInboxConversationMessages200ResponseMessagesInner(string id = default, string conversationId = default, string accountId = default, string platform = default, string message = default, string senderId = default, string senderName = default, SenderVerifiedTypeEnum? senderVerifiedType = default, DirectionEnum? direction = default, DateTime createdAt = default, List<GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner> attachments = default, string subject = default, bool storyReply = default, bool isStoryMention = default)
         {
             this.Id = id;
             this.ConversationId = conversationId;
@@ -83,6 +123,7 @@ namespace Late.Model
             this.Message = message;
             this.SenderId = senderId;
             this.SenderName = senderName;
+            this.SenderVerifiedType = senderVerifiedType;
             this.Direction = direction;
             this.CreatedAt = createdAt;
             this.Attachments = attachments;
@@ -181,6 +222,7 @@ namespace Late.Model
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  SenderId: ").Append(SenderId).Append("\n");
             sb.Append("  SenderName: ").Append(SenderName).Append("\n");
+            sb.Append("  SenderVerifiedType: ").Append(SenderVerifiedType).Append("\n");
             sb.Append("  Direction: ").Append(Direction).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");

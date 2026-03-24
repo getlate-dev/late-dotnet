@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Message** | **string** |  | [optional] 
 **SenderId** | **string** |  | [optional] 
 **SenderName** | **string** |  | [optional] 
+**SenderVerifiedType** | **string** | X/Twitter verified badge type. Only present for Twitter/X messages. | [optional] 
 **Direction** | **string** |  | [optional] 
 **CreatedAt** | **DateTime** |  | [optional] 
 **Attachments** | [**List&lt;GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner&gt;**](GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner.md) |  | [optional] 

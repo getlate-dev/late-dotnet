@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ParticipantName** | **string** |  | [optional] 
 **ParticipantUsername** | **string** |  | [optional] 
 **ParticipantPicture** | **string** |  | [optional] 
+**ParticipantVerifiedType** | **string** | X/Twitter verified badge type. Only present for Twitter/X conversations. | [optional] 
 **Status** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

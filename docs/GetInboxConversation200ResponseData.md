@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Status** | **string** |  | [optional] 
 **ParticipantName** | **string** |  | [optional] 
 **ParticipantId** | **string** |  | [optional] 
+**ParticipantVerifiedType** | **string** | X/Twitter verified badge type. Only present for Twitter/X conversations. | [optional] 
 **LastMessage** | **string** |  | [optional] 
 **LastMessageAt** | **DateTime** |  | [optional] 
 **UpdatedTime** | **DateTime** |  | [optional] 

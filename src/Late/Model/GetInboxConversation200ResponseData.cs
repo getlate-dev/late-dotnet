@@ -59,6 +59,45 @@ namespace Late.Model
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
+        /// X/Twitter verified badge type. Only present for Twitter/X conversations.
+        /// </summary>
+        /// <value>X/Twitter verified badge type. Only present for Twitter/X conversations.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum ParticipantVerifiedTypeEnum
+        {
+            /// <summary>
+            /// Enum Blue for value: blue
+            /// </summary>
+            [EnumMember(Value = "blue")]
+            Blue = 1,
+
+            /// <summary>
+            /// Enum Government for value: government
+            /// </summary>
+            [EnumMember(Value = "government")]
+            Government = 2,
+
+            /// <summary>
+            /// Enum Business for value: business
+            /// </summary>
+            [EnumMember(Value = "business")]
+            Business = 3,
+
+            /// <summary>
+            /// Enum None for value: none
+            /// </summary>
+            [EnumMember(Value = "none")]
+            None = 4
+        }
+
+
+        /// <summary>
+        /// X/Twitter verified badge type. Only present for Twitter/X conversations.
+        /// </summary>
+        /// <value>X/Twitter verified badge type. Only present for Twitter/X conversations.</value>
+        [DataMember(Name = "participantVerifiedType", EmitDefaultValue = false)]
+        public ParticipantVerifiedTypeEnum? ParticipantVerifiedType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="GetInboxConversation200ResponseData" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -68,12 +107,13 @@ namespace Late.Model
         /// <param name="status">status.</param>
         /// <param name="participantName">participantName.</param>
         /// <param name="participantId">participantId.</param>
+        /// <param name="participantVerifiedType">X/Twitter verified badge type. Only present for Twitter/X conversations..</param>
         /// <param name="lastMessage">lastMessage.</param>
         /// <param name="lastMessageAt">lastMessageAt.</param>
         /// <param name="updatedTime">updatedTime.</param>
         /// <param name="participants">participants.</param>
         /// <param name="instagramProfile">instagramProfile.</param>
-        public GetInboxConversation200ResponseData(string id = default, string accountId = default, string accountUsername = default, string platform = default, StatusEnum? status = default, string participantName = default, string participantId = default, string lastMessage = default, DateTime lastMessageAt = default, DateTime updatedTime = default, List<UpdateFacebookPage200ResponseSelectedPage> participants = default, ListInboxConversations200ResponseDataInnerInstagramProfile instagramProfile = default)
+        public GetInboxConversation200ResponseData(string id = default, string accountId = default, string accountUsername = default, string platform = default, StatusEnum? status = default, string participantName = default, string participantId = default, ParticipantVerifiedTypeEnum? participantVerifiedType = default, string lastMessage = default, DateTime lastMessageAt = default, DateTime updatedTime = default, List<UpdateFacebookPage200ResponseSelectedPage> participants = default, ListInboxConversations200ResponseDataInnerInstagramProfile instagramProfile = default)
         {
             this.Id = id;
             this.AccountId = accountId;
@@ -82,6 +122,7 @@ namespace Late.Model
             this.Status = status;
             this.ParticipantName = participantName;
             this.ParticipantId = participantId;
+            this.ParticipantVerifiedType = participantVerifiedType;
             this.LastMessage = lastMessage;
             this.LastMessageAt = lastMessageAt;
             this.UpdatedTime = updatedTime;
@@ -170,6 +211,7 @@ namespace Late.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  ParticipantName: ").Append(ParticipantName).Append("\n");
             sb.Append("  ParticipantId: ").Append(ParticipantId).Append("\n");
+            sb.Append("  ParticipantVerifiedType: ").Append(ParticipantVerifiedType).Append("\n");
             sb.Append("  LastMessage: ").Append(LastMessage).Append("\n");
             sb.Append("  LastMessageAt: ").Append(LastMessageAt).Append("\n");
             sb.Append("  UpdatedTime: ").Append(UpdatedTime).Append("\n");

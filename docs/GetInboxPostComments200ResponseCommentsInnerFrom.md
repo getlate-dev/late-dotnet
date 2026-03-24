@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Username** | **string** |  | [optional] 
 **Picture** | **string** |  | [optional] 
 **IsOwner** | **bool** |  | [optional] 
+**VerifiedType** | **string** | X/Twitter verified badge type. Only present for Twitter/X comments. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
