@@ -222,6 +222,29 @@ namespace Late.Api
         /// <param name="updatePostRequest"></param>
         /// <returns>ApiResponse of PostUpdateResponse</returns>
         ApiResponse<PostUpdateResponse> UpdatePostWithHttpInfo(string postId, UpdatePostRequest updatePostRequest);
+        /// <summary>
+        /// Update post metadata
+        /// </summary>
+        /// <remarks>
+        /// Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \&quot;published\&quot; status on the target platform. At least one updatable field is required. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="updatePostMetadataRequest"></param>
+        /// <returns>UpdatePostMetadata200Response</returns>
+        UpdatePostMetadata200Response UpdatePostMetadata(string postId, UpdatePostMetadataRequest updatePostMetadataRequest);
+
+        /// <summary>
+        /// Update post metadata
+        /// </summary>
+        /// <remarks>
+        /// Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \&quot;published\&quot; status on the target platform. At least one updatable field is required. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="updatePostMetadataRequest"></param>
+        /// <returns>ApiResponse of UpdatePostMetadata200Response</returns>
+        ApiResponse<UpdatePostMetadata200Response> UpdatePostMetadataWithHttpInfo(string postId, UpdatePostMetadataRequest updatePostMetadataRequest);
         #endregion Synchronous Operations
     }
 
@@ -441,6 +464,31 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PostUpdateResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PostUpdateResponse>> UpdatePostWithHttpInfoAsync(string postId, UpdatePostRequest updatePostRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update post metadata
+        /// </summary>
+        /// <remarks>
+        /// Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \&quot;published\&quot; status on the target platform. At least one updatable field is required. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="updatePostMetadataRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UpdatePostMetadata200Response</returns>
+        System.Threading.Tasks.Task<UpdatePostMetadata200Response> UpdatePostMetadataAsync(string postId, UpdatePostMetadataRequest updatePostMetadataRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update post metadata
+        /// </summary>
+        /// <remarks>
+        /// Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \&quot;published\&quot; status on the target platform. At least one updatable field is required. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="updatePostMetadataRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UpdatePostMetadata200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UpdatePostMetadata200Response>> UpdatePostMetadataWithHttpInfoAsync(string postId, UpdatePostMetadataRequest updatePostMetadataRequest, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -1828,6 +1876,149 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdatePost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update post metadata Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \&quot;published\&quot; status on the target platform. At least one updatable field is required. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="updatePostMetadataRequest"></param>
+        /// <returns>UpdatePostMetadata200Response</returns>
+        public UpdatePostMetadata200Response UpdatePostMetadata(string postId, UpdatePostMetadataRequest updatePostMetadataRequest)
+        {
+            Late.Client.ApiResponse<UpdatePostMetadata200Response> localVarResponse = UpdatePostMetadataWithHttpInfo(postId, updatePostMetadataRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update post metadata Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \&quot;published\&quot; status on the target platform. At least one updatable field is required. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="updatePostMetadataRequest"></param>
+        /// <returns>ApiResponse of UpdatePostMetadata200Response</returns>
+        public Late.Client.ApiResponse<UpdatePostMetadata200Response> UpdatePostMetadataWithHttpInfo(string postId, UpdatePostMetadataRequest updatePostMetadataRequest)
+        {
+            // verify the required parameter 'postId' is set
+            if (postId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'postId' when calling PostsApi->UpdatePostMetadata");
+
+            // verify the required parameter 'updatePostMetadataRequest' is set
+            if (updatePostMetadataRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'updatePostMetadataRequest' when calling PostsApi->UpdatePostMetadata");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("postId", Late.Client.ClientUtils.ParameterToString(postId)); // path parameter
+            localVarRequestOptions.Data = updatePostMetadataRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<UpdatePostMetadata200Response>("/v1/posts/{postId}/update-metadata", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdatePostMetadata", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update post metadata Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \&quot;published\&quot; status on the target platform. At least one updatable field is required. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="updatePostMetadataRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UpdatePostMetadata200Response</returns>
+        public async System.Threading.Tasks.Task<UpdatePostMetadata200Response> UpdatePostMetadataAsync(string postId, UpdatePostMetadataRequest updatePostMetadataRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<UpdatePostMetadata200Response> localVarResponse = await UpdatePostMetadataWithHttpInfoAsync(postId, updatePostMetadataRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update post metadata Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \&quot;published\&quot; status on the target platform. At least one updatable field is required. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postId"></param>
+        /// <param name="updatePostMetadataRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UpdatePostMetadata200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UpdatePostMetadata200Response>> UpdatePostMetadataWithHttpInfoAsync(string postId, UpdatePostMetadataRequest updatePostMetadataRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'postId' is set
+            if (postId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'postId' when calling PostsApi->UpdatePostMetadata");
+
+            // verify the required parameter 'updatePostMetadataRequest' is set
+            if (updatePostMetadataRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'updatePostMetadataRequest' when calling PostsApi->UpdatePostMetadata");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("postId", Late.Client.ClientUtils.ParameterToString(postId)); // path parameter
+            localVarRequestOptions.Data = updatePostMetadataRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UpdatePostMetadata200Response>("/v1/posts/{postId}/update-metadata", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdatePostMetadata", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

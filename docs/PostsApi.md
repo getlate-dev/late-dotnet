@@ -12,6 +12,7 @@ All URIs are relative to *https://zernio.com/api*
 | [**RetryPost**](PostsApi.md#retrypost) | **POST** /v1/posts/{postId}/retry | Retry failed post |
 | [**UnpublishPost**](PostsApi.md#unpublishpost) | **POST** /v1/posts/{postId}/unpublish | Unpublish post |
 | [**UpdatePost**](PostsApi.md#updatepost) | **PUT** /v1/posts/{postId} | Update post |
+| [**UpdatePostMetadata**](PostsApi.md#updatepostmetadata) | **POST** /v1/posts/{postId}/update-metadata | Update post metadata |
 
 <a id="bulkuploadposts"></a>
 # **BulkUploadPosts**
@@ -854,6 +855,111 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Resource not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updatepostmetadata"></a>
+# **UpdatePostMetadata**
+> UpdatePostMetadata200Response UpdatePostMetadata (string postId, UpdatePostMetadataRequest updatePostMetadataRequest)
+
+Update post metadata
+
+Updates metadata of an already-published post on the specified platform without re-uploading the media. Currently only supported for YouTube videos (title, description, tags, category, privacy status). The post must have \"published\" status on the target platform. At least one updatable field is required. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class UpdatePostMetadataExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new PostsApi(httpClient, config, httpClientHandler);
+            var postId = "postId_example";  // string | 
+            var updatePostMetadataRequest = new UpdatePostMetadataRequest(); // UpdatePostMetadataRequest | 
+
+            try
+            {
+                // Update post metadata
+                UpdatePostMetadata200Response result = apiInstance.UpdatePostMetadata(postId, updatePostMetadataRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PostsApi.UpdatePostMetadata: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdatePostMetadataWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update post metadata
+    ApiResponse<UpdatePostMetadata200Response> response = apiInstance.UpdatePostMetadataWithHttpInfo(postId, updatePostMetadataRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PostsApi.UpdatePostMetadataWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **postId** | **string** |  |  |
+| **updatePostMetadataRequest** | [**UpdatePostMetadataRequest**](UpdatePostMetadataRequest.md) |  |  |
+
+### Return type
+
+[**UpdatePostMetadata200Response**](UpdatePostMetadata200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Metadata updated successfully |  -  |
+| **400** | Invalid request: unsupported platform, post not published, missing fields, or validation error. |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Resource not found |  -  |
+| **500** | Platform API update failed |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
