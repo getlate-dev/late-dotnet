@@ -5,15 +5,20 @@ All URIs are relative to *https://zernio.com/api*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**AddWhatsAppBroadcastRecipients**](WhatsAppApi.md#addwhatsappbroadcastrecipients) | **PATCH** /v1/whatsapp/broadcasts/{broadcastId}/recipients | Add recipients |
+| [**AddWhatsAppGroupParticipants**](WhatsAppApi.md#addwhatsappgroupparticipants) | **POST** /v1/whatsapp/wa-groups/{groupId}/participants | Add participants |
+| [**ApproveWhatsAppGroupJoinRequests**](WhatsAppApi.md#approvewhatsappgroupjoinrequests) | **POST** /v1/whatsapp/wa-groups/{groupId}/join-requests | Approve join requests |
 | [**BulkDeleteWhatsAppContacts**](WhatsAppApi.md#bulkdeletewhatsappcontacts) | **DELETE** /v1/whatsapp/contacts/bulk | Bulk delete contacts |
 | [**BulkUpdateWhatsAppContacts**](WhatsAppApi.md#bulkupdatewhatsappcontacts) | **POST** /v1/whatsapp/contacts/bulk | Bulk update contacts |
 | [**CancelWhatsAppBroadcastSchedule**](WhatsAppApi.md#cancelwhatsappbroadcastschedule) | **DELETE** /v1/whatsapp/broadcasts/{broadcastId}/schedule | Cancel scheduled broadcast |
 | [**CreateWhatsAppBroadcast**](WhatsAppApi.md#createwhatsappbroadcast) | **POST** /v1/whatsapp/broadcasts | Create broadcast |
 | [**CreateWhatsAppContact**](WhatsAppApi.md#createwhatsappcontact) | **POST** /v1/whatsapp/contacts | Create contact |
+| [**CreateWhatsAppGroupChat**](WhatsAppApi.md#createwhatsappgroupchat) | **POST** /v1/whatsapp/wa-groups | Create group |
+| [**CreateWhatsAppGroupInviteLink**](WhatsAppApi.md#createwhatsappgroupinvitelink) | **POST** /v1/whatsapp/wa-groups/{groupId}/invite-link | Create invite link |
 | [**CreateWhatsAppTemplate**](WhatsAppApi.md#createwhatsapptemplate) | **POST** /v1/whatsapp/templates | Create template |
 | [**DeleteWhatsAppBroadcast**](WhatsAppApi.md#deletewhatsappbroadcast) | **DELETE** /v1/whatsapp/broadcasts/{broadcastId} | Delete broadcast |
 | [**DeleteWhatsAppContact**](WhatsAppApi.md#deletewhatsappcontact) | **DELETE** /v1/whatsapp/contacts/{contactId} | Delete contact |
 | [**DeleteWhatsAppGroup**](WhatsAppApi.md#deletewhatsappgroup) | **DELETE** /v1/whatsapp/groups | Delete group |
+| [**DeleteWhatsAppGroupChat**](WhatsAppApi.md#deletewhatsappgroupchat) | **DELETE** /v1/whatsapp/wa-groups/{groupId} | Delete group |
 | [**DeleteWhatsAppTemplate**](WhatsAppApi.md#deletewhatsapptemplate) | **DELETE** /v1/whatsapp/templates/{templateName} | Delete template |
 | [**GetWhatsAppBroadcast**](WhatsAppApi.md#getwhatsappbroadcast) | **GET** /v1/whatsapp/broadcasts/{broadcastId} | Get broadcast |
 | [**GetWhatsAppBroadcastRecipients**](WhatsAppApi.md#getwhatsappbroadcastrecipients) | **GET** /v1/whatsapp/broadcasts/{broadcastId}/recipients | List recipients |
@@ -22,11 +27,16 @@ All URIs are relative to *https://zernio.com/api*
 | [**GetWhatsAppContact**](WhatsAppApi.md#getwhatsappcontact) | **GET** /v1/whatsapp/contacts/{contactId} | Get contact |
 | [**GetWhatsAppContacts**](WhatsAppApi.md#getwhatsappcontacts) | **GET** /v1/whatsapp/contacts | List contacts |
 | [**GetWhatsAppDisplayName**](WhatsAppApi.md#getwhatsappdisplayname) | **GET** /v1/whatsapp/business-profile/display-name | Get display name and review status |
+| [**GetWhatsAppGroupChat**](WhatsAppApi.md#getwhatsappgroupchat) | **GET** /v1/whatsapp/wa-groups/{groupId} | Get group info |
 | [**GetWhatsAppGroups**](WhatsAppApi.md#getwhatsappgroups) | **GET** /v1/whatsapp/groups | List contact groups |
 | [**GetWhatsAppTemplate**](WhatsAppApi.md#getwhatsapptemplate) | **GET** /v1/whatsapp/templates/{templateName} | Get template |
 | [**GetWhatsAppTemplates**](WhatsAppApi.md#getwhatsapptemplates) | **GET** /v1/whatsapp/templates | List templates |
 | [**ImportWhatsAppContacts**](WhatsAppApi.md#importwhatsappcontacts) | **POST** /v1/whatsapp/contacts/import | Bulk import contacts |
+| [**ListWhatsAppGroupChats**](WhatsAppApi.md#listwhatsappgroupchats) | **GET** /v1/whatsapp/wa-groups | List active groups |
+| [**ListWhatsAppGroupJoinRequests**](WhatsAppApi.md#listwhatsappgroupjoinrequests) | **GET** /v1/whatsapp/wa-groups/{groupId}/join-requests | List join requests |
+| [**RejectWhatsAppGroupJoinRequests**](WhatsAppApi.md#rejectwhatsappgroupjoinrequests) | **DELETE** /v1/whatsapp/wa-groups/{groupId}/join-requests | Reject join requests |
 | [**RemoveWhatsAppBroadcastRecipients**](WhatsAppApi.md#removewhatsappbroadcastrecipients) | **DELETE** /v1/whatsapp/broadcasts/{broadcastId}/recipients | Remove recipients |
+| [**RemoveWhatsAppGroupParticipants**](WhatsAppApi.md#removewhatsappgroupparticipants) | **DELETE** /v1/whatsapp/wa-groups/{groupId}/participants | Remove participants |
 | [**RenameWhatsAppGroup**](WhatsAppApi.md#renamewhatsappgroup) | **POST** /v1/whatsapp/groups | Rename group |
 | [**ScheduleWhatsAppBroadcast**](WhatsAppApi.md#schedulewhatsappbroadcast) | **POST** /v1/whatsapp/broadcasts/{broadcastId}/schedule | Schedule broadcast |
 | [**SendWhatsAppBroadcast**](WhatsAppApi.md#sendwhatsappbroadcast) | **POST** /v1/whatsapp/broadcasts/{broadcastId}/send | Send broadcast |
@@ -34,6 +44,7 @@ All URIs are relative to *https://zernio.com/api*
 | [**UpdateWhatsAppBusinessProfile**](WhatsAppApi.md#updatewhatsappbusinessprofile) | **POST** /v1/whatsapp/business-profile | Update business profile |
 | [**UpdateWhatsAppContact**](WhatsAppApi.md#updatewhatsappcontact) | **PUT** /v1/whatsapp/contacts/{contactId} | Update contact |
 | [**UpdateWhatsAppDisplayName**](WhatsAppApi.md#updatewhatsappdisplayname) | **POST** /v1/whatsapp/business-profile/display-name | Request display name change |
+| [**UpdateWhatsAppGroupChat**](WhatsAppApi.md#updatewhatsappgroupchat) | **POST** /v1/whatsapp/wa-groups/{groupId} | Update group settings |
 | [**UpdateWhatsAppTemplate**](WhatsAppApi.md#updatewhatsapptemplate) | **PATCH** /v1/whatsapp/templates/{templateName} | Update template |
 | [**UploadWhatsAppProfilePhoto**](WhatsAppApi.md#uploadwhatsappprofilephoto) | **POST** /v1/whatsapp/business-profile/photo | Upload profile picture |
 
@@ -137,6 +148,212 @@ catch (ApiException e)
 | **400** | Validation error or broadcast not in draft status |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Resource not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="addwhatsappgroupparticipants"></a>
+# **AddWhatsAppGroupParticipants**
+> UnpublishPost200Response AddWhatsAppGroupParticipants (string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest)
+
+Add participants
+
+Add participants to a WhatsApp group. Maximum 8 participants per request. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class AddWhatsAppGroupParticipantsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+            var addWhatsAppGroupParticipantsRequest = new AddWhatsAppGroupParticipantsRequest(); // AddWhatsAppGroupParticipantsRequest | 
+
+            try
+            {
+                // Add participants
+                UnpublishPost200Response result = apiInstance.AddWhatsAppGroupParticipants(groupId, accountId, addWhatsAppGroupParticipantsRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.AddWhatsAppGroupParticipants: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the AddWhatsAppGroupParticipantsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Add participants
+    ApiResponse<UnpublishPost200Response> response = apiInstance.AddWhatsAppGroupParticipantsWithHttpInfo(groupId, accountId, addWhatsAppGroupParticipantsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.AddWhatsAppGroupParticipantsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+| **addWhatsAppGroupParticipantsRequest** | [**AddWhatsAppGroupParticipantsRequest**](AddWhatsAppGroupParticipantsRequest.md) |  |  |
+
+### Return type
+
+[**UnpublishPost200Response**](UnpublishPost200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Participants added |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="approvewhatsappgroupjoinrequests"></a>
+# **ApproveWhatsAppGroupJoinRequests**
+> UnpublishPost200Response ApproveWhatsAppGroupJoinRequests (string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest)
+
+Approve join requests
+
+Approve pending join requests for a WhatsApp group. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class ApproveWhatsAppGroupJoinRequestsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+            var approveWhatsAppGroupJoinRequestsRequest = new ApproveWhatsAppGroupJoinRequestsRequest(); // ApproveWhatsAppGroupJoinRequestsRequest | 
+
+            try
+            {
+                // Approve join requests
+                UnpublishPost200Response result = apiInstance.ApproveWhatsAppGroupJoinRequests(groupId, accountId, approveWhatsAppGroupJoinRequestsRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.ApproveWhatsAppGroupJoinRequests: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApproveWhatsAppGroupJoinRequestsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Approve join requests
+    ApiResponse<UnpublishPost200Response> response = apiInstance.ApproveWhatsAppGroupJoinRequestsWithHttpInfo(groupId, accountId, approveWhatsAppGroupJoinRequestsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.ApproveWhatsAppGroupJoinRequestsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+| **approveWhatsAppGroupJoinRequestsRequest** | [**ApproveWhatsAppGroupJoinRequestsRequest**](ApproveWhatsAppGroupJoinRequestsRequest.md) |  |  |
+
+### Return type
+
+[**UnpublishPost200Response**](UnpublishPost200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Requests approved |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -644,6 +861,206 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="createwhatsappgroupchat"></a>
+# **CreateWhatsAppGroupChat**
+> CreateWhatsAppGroupChat201Response CreateWhatsAppGroupChat (CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest)
+
+Create group
+
+Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class CreateWhatsAppGroupChatExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var createWhatsAppGroupChatRequest = new CreateWhatsAppGroupChatRequest(); // CreateWhatsAppGroupChatRequest | 
+
+            try
+            {
+                // Create group
+                CreateWhatsAppGroupChat201Response result = apiInstance.CreateWhatsAppGroupChat(createWhatsAppGroupChatRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.CreateWhatsAppGroupChat: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateWhatsAppGroupChatWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create group
+    ApiResponse<CreateWhatsAppGroupChat201Response> response = apiInstance.CreateWhatsAppGroupChatWithHttpInfo(createWhatsAppGroupChatRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.CreateWhatsAppGroupChatWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **createWhatsAppGroupChatRequest** | [**CreateWhatsAppGroupChatRequest**](CreateWhatsAppGroupChatRequest.md) |  |  |
+
+### Return type
+
+[**CreateWhatsAppGroupChat201Response**](CreateWhatsAppGroupChat201Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Group created |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="createwhatsappgroupinvitelink"></a>
+# **CreateWhatsAppGroupInviteLink**
+> CreateWhatsAppGroupInviteLink200Response CreateWhatsAppGroupInviteLink (string groupId, string accountId)
+
+Create invite link
+
+Create a new invite link for a WhatsApp group. The previous link is revoked. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class CreateWhatsAppGroupInviteLinkExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+
+            try
+            {
+                // Create invite link
+                CreateWhatsAppGroupInviteLink200Response result = apiInstance.CreateWhatsAppGroupInviteLink(groupId, accountId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.CreateWhatsAppGroupInviteLink: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the CreateWhatsAppGroupInviteLinkWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Create invite link
+    ApiResponse<CreateWhatsAppGroupInviteLink200Response> response = apiInstance.CreateWhatsAppGroupInviteLinkWithHttpInfo(groupId, accountId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.CreateWhatsAppGroupInviteLinkWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+
+### Return type
+
+[**CreateWhatsAppGroupInviteLink200Response**](CreateWhatsAppGroupInviteLink200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Invite link created |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="createwhatsapptemplate"></a>
 # **CreateWhatsAppTemplate**
 > CreateWhatsAppTemplate200Response CreateWhatsAppTemplate (CreateWhatsAppTemplateRequest createWhatsAppTemplateRequest)
@@ -1044,6 +1461,108 @@ catch (ApiException e)
 | **400** | Validation error (missing fields) |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | WhatsApp account not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="deletewhatsappgroupchat"></a>
+# **DeleteWhatsAppGroupChat**
+> UnpublishPost200Response DeleteWhatsAppGroupChat (string groupId, string accountId)
+
+Delete group
+
+Delete a WhatsApp group and remove all participants. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class DeleteWhatsAppGroupChatExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+
+            try
+            {
+                // Delete group
+                UnpublishPost200Response result = apiInstance.DeleteWhatsAppGroupChat(groupId, accountId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.DeleteWhatsAppGroupChat: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the DeleteWhatsAppGroupChatWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Delete group
+    ApiResponse<UnpublishPost200Response> response = apiInstance.DeleteWhatsAppGroupChatWithHttpInfo(groupId, accountId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.DeleteWhatsAppGroupChatWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+
+### Return type
+
+[**UnpublishPost200Response**](UnpublishPost200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Group deleted |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1877,6 +2396,108 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="getwhatsappgroupchat"></a>
+# **GetWhatsAppGroupChat**
+> GetWhatsAppGroupChat200Response GetWhatsAppGroupChat (string groupId, string accountId)
+
+Get group info
+
+Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class GetWhatsAppGroupChatExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+
+            try
+            {
+                // Get group info
+                GetWhatsAppGroupChat200Response result = apiInstance.GetWhatsAppGroupChat(groupId, accountId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.GetWhatsAppGroupChat: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetWhatsAppGroupChatWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get group info
+    ApiResponse<GetWhatsAppGroupChat200Response> response = apiInstance.GetWhatsAppGroupChatWithHttpInfo(groupId, accountId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.GetWhatsAppGroupChatWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+
+### Return type
+
+[**GetWhatsAppGroupChat200Response**](GetWhatsAppGroupChat200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Group info |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Resource not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="getwhatsappgroups"></a>
 # **GetWhatsAppGroups**
 > GetWhatsAppGroups200Response GetWhatsAppGroups (string accountId)
@@ -2283,6 +2904,313 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="listwhatsappgroupchats"></a>
+# **ListWhatsAppGroupChats**
+> ListWhatsAppGroupChats200Response ListWhatsAppGroupChats (string accountId, int? limit = null, string? after = null)
+
+List active groups
+
+List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class ListWhatsAppGroupChatsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+            var limit = 25;  // int? | Max groups to return (optional)  (default to 25)
+            var after = "after_example";  // string? | Pagination cursor (optional) 
+
+            try
+            {
+                // List active groups
+                ListWhatsAppGroupChats200Response result = apiInstance.ListWhatsAppGroupChats(accountId, limit, after);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.ListWhatsAppGroupChats: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListWhatsAppGroupChatsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List active groups
+    ApiResponse<ListWhatsAppGroupChats200Response> response = apiInstance.ListWhatsAppGroupChatsWithHttpInfo(accountId, limit, after);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.ListWhatsAppGroupChatsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **accountId** | **string** | WhatsApp social account ID |  |
+| **limit** | **int?** | Max groups to return | [optional] [default to 25] |
+| **after** | **string?** | Pagination cursor | [optional]  |
+
+### Return type
+
+[**ListWhatsAppGroupChats200Response**](ListWhatsAppGroupChats200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | List of active groups |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="listwhatsappgroupjoinrequests"></a>
+# **ListWhatsAppGroupJoinRequests**
+> ListWhatsAppGroupJoinRequests200Response ListWhatsAppGroupJoinRequests (string groupId, string accountId)
+
+List join requests
+
+List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class ListWhatsAppGroupJoinRequestsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+
+            try
+            {
+                // List join requests
+                ListWhatsAppGroupJoinRequests200Response result = apiInstance.ListWhatsAppGroupJoinRequests(groupId, accountId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.ListWhatsAppGroupJoinRequests: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ListWhatsAppGroupJoinRequestsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // List join requests
+    ApiResponse<ListWhatsAppGroupJoinRequests200Response> response = apiInstance.ListWhatsAppGroupJoinRequestsWithHttpInfo(groupId, accountId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.ListWhatsAppGroupJoinRequestsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+
+### Return type
+
+[**ListWhatsAppGroupJoinRequests200Response**](ListWhatsAppGroupJoinRequests200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Join requests |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="rejectwhatsappgroupjoinrequests"></a>
+# **RejectWhatsAppGroupJoinRequests**
+> UnpublishPost200Response RejectWhatsAppGroupJoinRequests (string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest)
+
+Reject join requests
+
+Reject pending join requests for a WhatsApp group. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class RejectWhatsAppGroupJoinRequestsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+            var rejectWhatsAppGroupJoinRequestsRequest = new RejectWhatsAppGroupJoinRequestsRequest(); // RejectWhatsAppGroupJoinRequestsRequest | 
+
+            try
+            {
+                // Reject join requests
+                UnpublishPost200Response result = apiInstance.RejectWhatsAppGroupJoinRequests(groupId, accountId, rejectWhatsAppGroupJoinRequestsRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.RejectWhatsAppGroupJoinRequests: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RejectWhatsAppGroupJoinRequestsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Reject join requests
+    ApiResponse<UnpublishPost200Response> response = apiInstance.RejectWhatsAppGroupJoinRequestsWithHttpInfo(groupId, accountId, rejectWhatsAppGroupJoinRequestsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.RejectWhatsAppGroupJoinRequestsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+| **rejectWhatsAppGroupJoinRequestsRequest** | [**RejectWhatsAppGroupJoinRequestsRequest**](RejectWhatsAppGroupJoinRequestsRequest.md) |  |  |
+
+### Return type
+
+[**UnpublishPost200Response**](UnpublishPost200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Requests rejected |  -  |
+| **401** | Unauthorized |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="removewhatsappbroadcastrecipients"></a>
 # **RemoveWhatsAppBroadcastRecipients**
 > RemoveWhatsAppBroadcastRecipients200Response RemoveWhatsAppBroadcastRecipients (string broadcastId, RemoveWhatsAppBroadcastRecipientsRequest removeWhatsAppBroadcastRecipientsRequest)
@@ -2383,6 +3311,109 @@ catch (ApiException e)
 | **400** | Validation error or broadcast not in draft status |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Resource not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="removewhatsappgroupparticipants"></a>
+# **RemoveWhatsAppGroupParticipants**
+> UnpublishPost200Response RemoveWhatsAppGroupParticipants (string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest)
+
+Remove participants
+
+Remove participants from a WhatsApp group. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class RemoveWhatsAppGroupParticipantsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+            var removeWhatsAppGroupParticipantsRequest = new RemoveWhatsAppGroupParticipantsRequest(); // RemoveWhatsAppGroupParticipantsRequest | 
+
+            try
+            {
+                // Remove participants
+                UnpublishPost200Response result = apiInstance.RemoveWhatsAppGroupParticipants(groupId, accountId, removeWhatsAppGroupParticipantsRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.RemoveWhatsAppGroupParticipants: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the RemoveWhatsAppGroupParticipantsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Remove participants
+    ApiResponse<UnpublishPost200Response> response = apiInstance.RemoveWhatsAppGroupParticipantsWithHttpInfo(groupId, accountId, removeWhatsAppGroupParticipantsRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.RemoveWhatsAppGroupParticipantsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+| **removeWhatsAppGroupParticipantsRequest** | [**RemoveWhatsAppGroupParticipantsRequest**](RemoveWhatsAppGroupParticipantsRequest.md) |  |  |
+
+### Return type
+
+[**UnpublishPost200Response**](UnpublishPost200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Participants removed |  -  |
+| **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -3093,6 +4124,110 @@ catch (ApiException e)
 | **400** | Invalid display name (too short |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | WhatsApp account not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="updatewhatsappgroupchat"></a>
+# **UpdateWhatsAppGroupChat**
+> UnpublishPost200Response UpdateWhatsAppGroupChat (string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest)
+
+Update group settings
+
+Update the subject, description, or join approval mode of a WhatsApp group. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class UpdateWhatsAppGroupChatExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WhatsAppApi(httpClient, config, httpClientHandler);
+            var groupId = "groupId_example";  // string | Group ID
+            var accountId = "accountId_example";  // string | WhatsApp social account ID
+            var updateWhatsAppGroupChatRequest = new UpdateWhatsAppGroupChatRequest(); // UpdateWhatsAppGroupChatRequest | 
+
+            try
+            {
+                // Update group settings
+                UnpublishPost200Response result = apiInstance.UpdateWhatsAppGroupChat(groupId, accountId, updateWhatsAppGroupChatRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WhatsAppApi.UpdateWhatsAppGroupChat: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the UpdateWhatsAppGroupChatWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update group settings
+    ApiResponse<UnpublishPost200Response> response = apiInstance.UpdateWhatsAppGroupChatWithHttpInfo(groupId, accountId, updateWhatsAppGroupChatRequest);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WhatsAppApi.UpdateWhatsAppGroupChatWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **groupId** | **string** | Group ID |  |
+| **accountId** | **string** | WhatsApp social account ID |  |
+| **updateWhatsAppGroupChatRequest** | [**UpdateWhatsAppGroupChatRequest**](UpdateWhatsAppGroupChatRequest.md) |  |  |
+
+### Return type
+
+[**UnpublishPost200Response**](UnpublishPost200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Group updated |  -  |
+| **401** | Unauthorized |  -  |
+| **404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -54,6 +54,56 @@ namespace Late.Api
         [Obsolete]
         ApiResponse<AddWhatsAppBroadcastRecipients200Response> AddWhatsAppBroadcastRecipientsWithHttpInfo(string broadcastId, AddWhatsAppBroadcastRecipientsRequest addWhatsAppBroadcastRecipientsRequest);
         /// <summary>
+        /// Add participants
+        /// </summary>
+        /// <remarks>
+        /// Add participants to a WhatsApp group. Maximum 8 participants per request. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="addWhatsAppGroupParticipantsRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        UnpublishPost200Response AddWhatsAppGroupParticipants(string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest);
+
+        /// <summary>
+        /// Add participants
+        /// </summary>
+        /// <remarks>
+        /// Add participants to a WhatsApp group. Maximum 8 participants per request. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="addWhatsAppGroupParticipantsRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        ApiResponse<UnpublishPost200Response> AddWhatsAppGroupParticipantsWithHttpInfo(string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest);
+        /// <summary>
+        /// Approve join requests
+        /// </summary>
+        /// <remarks>
+        /// Approve pending join requests for a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="approveWhatsAppGroupJoinRequestsRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        UnpublishPost200Response ApproveWhatsAppGroupJoinRequests(string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest);
+
+        /// <summary>
+        /// Approve join requests
+        /// </summary>
+        /// <remarks>
+        /// Approve pending join requests for a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="approveWhatsAppGroupJoinRequestsRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        ApiResponse<UnpublishPost200Response> ApproveWhatsAppGroupJoinRequestsWithHttpInfo(string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest);
+        /// <summary>
         /// Bulk delete contacts
         /// </summary>
         /// <remarks>
@@ -169,6 +219,50 @@ namespace Late.Api
         [Obsolete]
         ApiResponse<CreateWhatsAppContact200Response> CreateWhatsAppContactWithHttpInfo(CreateWhatsAppContactRequest createWhatsAppContactRequest);
         /// <summary>
+        /// Create group
+        /// </summary>
+        /// <remarks>
+        /// Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWhatsAppGroupChatRequest"></param>
+        /// <returns>CreateWhatsAppGroupChat201Response</returns>
+        CreateWhatsAppGroupChat201Response CreateWhatsAppGroupChat(CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest);
+
+        /// <summary>
+        /// Create group
+        /// </summary>
+        /// <remarks>
+        /// Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWhatsAppGroupChatRequest"></param>
+        /// <returns>ApiResponse of CreateWhatsAppGroupChat201Response</returns>
+        ApiResponse<CreateWhatsAppGroupChat201Response> CreateWhatsAppGroupChatWithHttpInfo(CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest);
+        /// <summary>
+        /// Create invite link
+        /// </summary>
+        /// <remarks>
+        /// Create a new invite link for a WhatsApp group. The previous link is revoked. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>CreateWhatsAppGroupInviteLink200Response</returns>
+        CreateWhatsAppGroupInviteLink200Response CreateWhatsAppGroupInviteLink(string groupId, string accountId);
+
+        /// <summary>
+        /// Create invite link
+        /// </summary>
+        /// <remarks>
+        /// Create a new invite link for a WhatsApp group. The previous link is revoked. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ApiResponse of CreateWhatsAppGroupInviteLink200Response</returns>
+        ApiResponse<CreateWhatsAppGroupInviteLink200Response> CreateWhatsAppGroupInviteLinkWithHttpInfo(string groupId, string accountId);
+        /// <summary>
         /// Create template
         /// </summary>
         /// <remarks>
@@ -258,6 +352,29 @@ namespace Late.Api
         /// <returns>ApiResponse of RenameWhatsAppGroup200Response</returns>
         [Obsolete]
         ApiResponse<RenameWhatsAppGroup200Response> DeleteWhatsAppGroupWithHttpInfo(DeleteWhatsAppGroupRequest deleteWhatsAppGroupRequest);
+        /// <summary>
+        /// Delete group
+        /// </summary>
+        /// <remarks>
+        /// Delete a WhatsApp group and remove all participants. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>UnpublishPost200Response</returns>
+        UnpublishPost200Response DeleteWhatsAppGroupChat(string groupId, string accountId);
+
+        /// <summary>
+        /// Delete group
+        /// </summary>
+        /// <remarks>
+        /// Delete a WhatsApp group and remove all participants. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        ApiResponse<UnpublishPost200Response> DeleteWhatsAppGroupChatWithHttpInfo(string groupId, string accountId);
         /// <summary>
         /// Delete template
         /// </summary>
@@ -463,6 +580,29 @@ namespace Late.Api
         /// <returns>ApiResponse of GetWhatsAppDisplayName200Response</returns>
         ApiResponse<GetWhatsAppDisplayName200Response> GetWhatsAppDisplayNameWithHttpInfo(string accountId);
         /// <summary>
+        /// Get group info
+        /// </summary>
+        /// <remarks>
+        /// Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>GetWhatsAppGroupChat200Response</returns>
+        GetWhatsAppGroupChat200Response GetWhatsAppGroupChat(string groupId, string accountId);
+
+        /// <summary>
+        /// Get group info
+        /// </summary>
+        /// <remarks>
+        /// Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ApiResponse of GetWhatsAppGroupChat200Response</returns>
+        ApiResponse<GetWhatsAppGroupChat200Response> GetWhatsAppGroupChatWithHttpInfo(string groupId, string accountId);
+        /// <summary>
         /// List contact groups
         /// </summary>
         /// <remarks>
@@ -553,6 +693,79 @@ namespace Late.Api
         [Obsolete]
         ApiResponse<ImportWhatsAppContacts200Response> ImportWhatsAppContactsWithHttpInfo(ImportWhatsAppContactsRequest importWhatsAppContactsRequest);
         /// <summary>
+        /// List active groups
+        /// </summary>
+        /// <remarks>
+        /// List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="limit">Max groups to return (optional, default to 25)</param>
+        /// <param name="after">Pagination cursor (optional)</param>
+        /// <returns>ListWhatsAppGroupChats200Response</returns>
+        ListWhatsAppGroupChats200Response ListWhatsAppGroupChats(string accountId, int? limit = default, string? after = default);
+
+        /// <summary>
+        /// List active groups
+        /// </summary>
+        /// <remarks>
+        /// List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="limit">Max groups to return (optional, default to 25)</param>
+        /// <param name="after">Pagination cursor (optional)</param>
+        /// <returns>ApiResponse of ListWhatsAppGroupChats200Response</returns>
+        ApiResponse<ListWhatsAppGroupChats200Response> ListWhatsAppGroupChatsWithHttpInfo(string accountId, int? limit = default, string? after = default);
+        /// <summary>
+        /// List join requests
+        /// </summary>
+        /// <remarks>
+        /// List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ListWhatsAppGroupJoinRequests200Response</returns>
+        ListWhatsAppGroupJoinRequests200Response ListWhatsAppGroupJoinRequests(string groupId, string accountId);
+
+        /// <summary>
+        /// List join requests
+        /// </summary>
+        /// <remarks>
+        /// List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ApiResponse of ListWhatsAppGroupJoinRequests200Response</returns>
+        ApiResponse<ListWhatsAppGroupJoinRequests200Response> ListWhatsAppGroupJoinRequestsWithHttpInfo(string groupId, string accountId);
+        /// <summary>
+        /// Reject join requests
+        /// </summary>
+        /// <remarks>
+        /// Reject pending join requests for a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="rejectWhatsAppGroupJoinRequestsRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        UnpublishPost200Response RejectWhatsAppGroupJoinRequests(string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest);
+
+        /// <summary>
+        /// Reject join requests
+        /// </summary>
+        /// <remarks>
+        /// Reject pending join requests for a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="rejectWhatsAppGroupJoinRequestsRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        ApiResponse<UnpublishPost200Response> RejectWhatsAppGroupJoinRequestsWithHttpInfo(string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest);
+        /// <summary>
         /// Remove recipients
         /// </summary>
         /// <remarks>
@@ -577,6 +790,31 @@ namespace Late.Api
         /// <returns>ApiResponse of RemoveWhatsAppBroadcastRecipients200Response</returns>
         [Obsolete]
         ApiResponse<RemoveWhatsAppBroadcastRecipients200Response> RemoveWhatsAppBroadcastRecipientsWithHttpInfo(string broadcastId, RemoveWhatsAppBroadcastRecipientsRequest removeWhatsAppBroadcastRecipientsRequest);
+        /// <summary>
+        /// Remove participants
+        /// </summary>
+        /// <remarks>
+        /// Remove participants from a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="removeWhatsAppGroupParticipantsRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        UnpublishPost200Response RemoveWhatsAppGroupParticipants(string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest);
+
+        /// <summary>
+        /// Remove participants
+        /// </summary>
+        /// <remarks>
+        /// Remove participants from a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="removeWhatsAppGroupParticipantsRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        ApiResponse<UnpublishPost200Response> RemoveWhatsAppGroupParticipantsWithHttpInfo(string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest);
         /// <summary>
         /// Rename group
         /// </summary>
@@ -739,6 +977,31 @@ namespace Late.Api
         /// <returns>ApiResponse of UpdateWhatsAppDisplayName200Response</returns>
         ApiResponse<UpdateWhatsAppDisplayName200Response> UpdateWhatsAppDisplayNameWithHttpInfo(UpdateWhatsAppDisplayNameRequest updateWhatsAppDisplayNameRequest);
         /// <summary>
+        /// Update group settings
+        /// </summary>
+        /// <remarks>
+        /// Update the subject, description, or join approval mode of a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="updateWhatsAppGroupChatRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        UnpublishPost200Response UpdateWhatsAppGroupChat(string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest);
+
+        /// <summary>
+        /// Update group settings
+        /// </summary>
+        /// <remarks>
+        /// Update the subject, description, or join approval mode of a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="updateWhatsAppGroupChatRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        ApiResponse<UnpublishPost200Response> UpdateWhatsAppGroupChatWithHttpInfo(string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest);
+        /// <summary>
         /// Update template
         /// </summary>
         /// <remarks>
@@ -820,6 +1083,60 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (AddWhatsAppBroadcastRecipients200Response)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<AddWhatsAppBroadcastRecipients200Response>> AddWhatsAppBroadcastRecipientsWithHttpInfoAsync(string broadcastId, AddWhatsAppBroadcastRecipientsRequest addWhatsAppBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Add participants
+        /// </summary>
+        /// <remarks>
+        /// Add participants to a WhatsApp group. Maximum 8 participants per request. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="addWhatsAppGroupParticipantsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        System.Threading.Tasks.Task<UnpublishPost200Response> AddWhatsAppGroupParticipantsAsync(string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Add participants
+        /// </summary>
+        /// <remarks>
+        /// Add participants to a WhatsApp group. Maximum 8 participants per request. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="addWhatsAppGroupParticipantsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> AddWhatsAppGroupParticipantsWithHttpInfoAsync(string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Approve join requests
+        /// </summary>
+        /// <remarks>
+        /// Approve pending join requests for a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="approveWhatsAppGroupJoinRequestsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        System.Threading.Tasks.Task<UnpublishPost200Response> ApproveWhatsAppGroupJoinRequestsAsync(string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Approve join requests
+        /// </summary>
+        /// <remarks>
+        /// Approve pending join requests for a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="approveWhatsAppGroupJoinRequestsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> ApproveWhatsAppGroupJoinRequestsWithHttpInfoAsync(string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Bulk delete contacts
         /// </summary>
@@ -946,6 +1263,54 @@ namespace Late.Api
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<CreateWhatsAppContact200Response>> CreateWhatsAppContactWithHttpInfoAsync(CreateWhatsAppContactRequest createWhatsAppContactRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create group
+        /// </summary>
+        /// <remarks>
+        /// Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWhatsAppGroupChatRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CreateWhatsAppGroupChat201Response</returns>
+        System.Threading.Tasks.Task<CreateWhatsAppGroupChat201Response> CreateWhatsAppGroupChatAsync(CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create group
+        /// </summary>
+        /// <remarks>
+        /// Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWhatsAppGroupChatRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CreateWhatsAppGroupChat201Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateWhatsAppGroupChat201Response>> CreateWhatsAppGroupChatWithHttpInfoAsync(CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create invite link
+        /// </summary>
+        /// <remarks>
+        /// Create a new invite link for a WhatsApp group. The previous link is revoked. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CreateWhatsAppGroupInviteLink200Response</returns>
+        System.Threading.Tasks.Task<CreateWhatsAppGroupInviteLink200Response> CreateWhatsAppGroupInviteLinkAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create invite link
+        /// </summary>
+        /// <remarks>
+        /// Create a new invite link for a WhatsApp group. The previous link is revoked. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CreateWhatsAppGroupInviteLink200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreateWhatsAppGroupInviteLink200Response>> CreateWhatsAppGroupInviteLinkWithHttpInfoAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Create template
         /// </summary>
         /// <remarks>
@@ -1043,6 +1408,31 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (RenameWhatsAppGroup200Response)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<RenameWhatsAppGroup200Response>> DeleteWhatsAppGroupWithHttpInfoAsync(DeleteWhatsAppGroupRequest deleteWhatsAppGroupRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Delete group
+        /// </summary>
+        /// <remarks>
+        /// Delete a WhatsApp group and remove all participants. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        System.Threading.Tasks.Task<UnpublishPost200Response> DeleteWhatsAppGroupChatAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Delete group
+        /// </summary>
+        /// <remarks>
+        /// Delete a WhatsApp group and remove all participants. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> DeleteWhatsAppGroupChatWithHttpInfoAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete template
         /// </summary>
@@ -1264,6 +1654,31 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetWhatsAppDisplayName200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetWhatsAppDisplayName200Response>> GetWhatsAppDisplayNameWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Get group info
+        /// </summary>
+        /// <remarks>
+        /// Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetWhatsAppGroupChat200Response</returns>
+        System.Threading.Tasks.Task<GetWhatsAppGroupChat200Response> GetWhatsAppGroupChatAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get group info
+        /// </summary>
+        /// <remarks>
+        /// Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetWhatsAppGroupChat200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetWhatsAppGroupChat200Response>> GetWhatsAppGroupChatWithHttpInfoAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// List contact groups
         /// </summary>
         /// <remarks>
@@ -1362,6 +1777,85 @@ namespace Late.Api
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ImportWhatsAppContacts200Response>> ImportWhatsAppContactsWithHttpInfoAsync(ImportWhatsAppContactsRequest importWhatsAppContactsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List active groups
+        /// </summary>
+        /// <remarks>
+        /// List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="limit">Max groups to return (optional, default to 25)</param>
+        /// <param name="after">Pagination cursor (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListWhatsAppGroupChats200Response</returns>
+        System.Threading.Tasks.Task<ListWhatsAppGroupChats200Response> ListWhatsAppGroupChatsAsync(string accountId, int? limit = default, string? after = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// List active groups
+        /// </summary>
+        /// <remarks>
+        /// List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="limit">Max groups to return (optional, default to 25)</param>
+        /// <param name="after">Pagination cursor (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListWhatsAppGroupChats200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListWhatsAppGroupChats200Response>> ListWhatsAppGroupChatsWithHttpInfoAsync(string accountId, int? limit = default, string? after = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List join requests
+        /// </summary>
+        /// <remarks>
+        /// List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListWhatsAppGroupJoinRequests200Response</returns>
+        System.Threading.Tasks.Task<ListWhatsAppGroupJoinRequests200Response> ListWhatsAppGroupJoinRequestsAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// List join requests
+        /// </summary>
+        /// <remarks>
+        /// List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListWhatsAppGroupJoinRequests200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListWhatsAppGroupJoinRequests200Response>> ListWhatsAppGroupJoinRequestsWithHttpInfoAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Reject join requests
+        /// </summary>
+        /// <remarks>
+        /// Reject pending join requests for a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="rejectWhatsAppGroupJoinRequestsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        System.Threading.Tasks.Task<UnpublishPost200Response> RejectWhatsAppGroupJoinRequestsAsync(string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Reject join requests
+        /// </summary>
+        /// <remarks>
+        /// Reject pending join requests for a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="rejectWhatsAppGroupJoinRequestsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> RejectWhatsAppGroupJoinRequestsWithHttpInfoAsync(string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Remove recipients
         /// </summary>
         /// <remarks>
@@ -1388,6 +1882,33 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (RemoveWhatsAppBroadcastRecipients200Response)</returns>
         [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<RemoveWhatsAppBroadcastRecipients200Response>> RemoveWhatsAppBroadcastRecipientsWithHttpInfoAsync(string broadcastId, RemoveWhatsAppBroadcastRecipientsRequest removeWhatsAppBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Remove participants
+        /// </summary>
+        /// <remarks>
+        /// Remove participants from a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="removeWhatsAppGroupParticipantsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        System.Threading.Tasks.Task<UnpublishPost200Response> RemoveWhatsAppGroupParticipantsAsync(string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Remove participants
+        /// </summary>
+        /// <remarks>
+        /// Remove participants from a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="removeWhatsAppGroupParticipantsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> RemoveWhatsAppGroupParticipantsWithHttpInfoAsync(string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Rename group
         /// </summary>
@@ -1563,6 +2084,33 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UpdateWhatsAppDisplayName200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateWhatsAppDisplayName200Response>> UpdateWhatsAppDisplayNameWithHttpInfoAsync(UpdateWhatsAppDisplayNameRequest updateWhatsAppDisplayNameRequest, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update group settings
+        /// </summary>
+        /// <remarks>
+        /// Update the subject, description, or join approval mode of a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="updateWhatsAppGroupChatRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        System.Threading.Tasks.Task<UnpublishPost200Response> UpdateWhatsAppGroupChatAsync(string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update group settings
+        /// </summary>
+        /// <remarks>
+        /// Update the subject, description, or join approval mode of a WhatsApp group. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="updateWhatsAppGroupChatRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UnpublishPost200Response>> UpdateWhatsAppGroupChatWithHttpInfoAsync(string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update template
         /// </summary>
@@ -1967,6 +2515,320 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddWhatsAppBroadcastRecipients", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add participants Add participants to a WhatsApp group. Maximum 8 participants per request. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="addWhatsAppGroupParticipantsRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        public UnpublishPost200Response AddWhatsAppGroupParticipants(string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = AddWhatsAppGroupParticipantsWithHttpInfo(groupId, accountId, addWhatsAppGroupParticipantsRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add participants Add participants to a WhatsApp group. Maximum 8 participants per request. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="addWhatsAppGroupParticipantsRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        public Late.Client.ApiResponse<UnpublishPost200Response> AddWhatsAppGroupParticipantsWithHttpInfo(string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->AddWhatsAppGroupParticipants");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->AddWhatsAppGroupParticipants");
+
+            // verify the required parameter 'addWhatsAppGroupParticipantsRequest' is set
+            if (addWhatsAppGroupParticipantsRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'addWhatsAppGroupParticipantsRequest' when calling WhatsAppApi->AddWhatsAppGroupParticipants");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = addWhatsAppGroupParticipantsRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}/participants", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddWhatsAppGroupParticipants", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Add participants Add participants to a WhatsApp group. Maximum 8 participants per request. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="addWhatsAppGroupParticipantsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        public async System.Threading.Tasks.Task<UnpublishPost200Response> AddWhatsAppGroupParticipantsAsync(string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = await AddWhatsAppGroupParticipantsWithHttpInfoAsync(groupId, accountId, addWhatsAppGroupParticipantsRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Add participants Add participants to a WhatsApp group. Maximum 8 participants per request. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="addWhatsAppGroupParticipantsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UnpublishPost200Response>> AddWhatsAppGroupParticipantsWithHttpInfoAsync(string groupId, string accountId, AddWhatsAppGroupParticipantsRequest addWhatsAppGroupParticipantsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->AddWhatsAppGroupParticipants");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->AddWhatsAppGroupParticipants");
+
+            // verify the required parameter 'addWhatsAppGroupParticipantsRequest' is set
+            if (addWhatsAppGroupParticipantsRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'addWhatsAppGroupParticipantsRequest' when calling WhatsAppApi->AddWhatsAppGroupParticipants");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = addWhatsAppGroupParticipantsRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}/participants", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("AddWhatsAppGroupParticipants", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Approve join requests Approve pending join requests for a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="approveWhatsAppGroupJoinRequestsRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        public UnpublishPost200Response ApproveWhatsAppGroupJoinRequests(string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = ApproveWhatsAppGroupJoinRequestsWithHttpInfo(groupId, accountId, approveWhatsAppGroupJoinRequestsRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Approve join requests Approve pending join requests for a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="approveWhatsAppGroupJoinRequestsRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        public Late.Client.ApiResponse<UnpublishPost200Response> ApproveWhatsAppGroupJoinRequestsWithHttpInfo(string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->ApproveWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->ApproveWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'approveWhatsAppGroupJoinRequestsRequest' is set
+            if (approveWhatsAppGroupJoinRequestsRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'approveWhatsAppGroupJoinRequestsRequest' when calling WhatsAppApi->ApproveWhatsAppGroupJoinRequests");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = approveWhatsAppGroupJoinRequestsRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}/join-requests", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApproveWhatsAppGroupJoinRequests", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Approve join requests Approve pending join requests for a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="approveWhatsAppGroupJoinRequestsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        public async System.Threading.Tasks.Task<UnpublishPost200Response> ApproveWhatsAppGroupJoinRequestsAsync(string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = await ApproveWhatsAppGroupJoinRequestsWithHttpInfoAsync(groupId, accountId, approveWhatsAppGroupJoinRequestsRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Approve join requests Approve pending join requests for a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="approveWhatsAppGroupJoinRequestsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UnpublishPost200Response>> ApproveWhatsAppGroupJoinRequestsWithHttpInfoAsync(string groupId, string accountId, ApproveWhatsAppGroupJoinRequestsRequest approveWhatsAppGroupJoinRequestsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->ApproveWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->ApproveWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'approveWhatsAppGroupJoinRequestsRequest' is set
+            if (approveWhatsAppGroupJoinRequestsRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'approveWhatsAppGroupJoinRequestsRequest' when calling WhatsAppApi->ApproveWhatsAppGroupJoinRequests");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = approveWhatsAppGroupJoinRequestsRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}/join-requests", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApproveWhatsAppGroupJoinRequests", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -2637,6 +3499,276 @@ namespace Late.Api
         }
 
         /// <summary>
+        /// Create group Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWhatsAppGroupChatRequest"></param>
+        /// <returns>CreateWhatsAppGroupChat201Response</returns>
+        public CreateWhatsAppGroupChat201Response CreateWhatsAppGroupChat(CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest)
+        {
+            Late.Client.ApiResponse<CreateWhatsAppGroupChat201Response> localVarResponse = CreateWhatsAppGroupChatWithHttpInfo(createWhatsAppGroupChatRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create group Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWhatsAppGroupChatRequest"></param>
+        /// <returns>ApiResponse of CreateWhatsAppGroupChat201Response</returns>
+        public Late.Client.ApiResponse<CreateWhatsAppGroupChat201Response> CreateWhatsAppGroupChatWithHttpInfo(CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest)
+        {
+            // verify the required parameter 'createWhatsAppGroupChatRequest' is set
+            if (createWhatsAppGroupChatRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'createWhatsAppGroupChatRequest' when calling WhatsAppApi->CreateWhatsAppGroupChat");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = createWhatsAppGroupChatRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CreateWhatsAppGroupChat201Response>("/v1/whatsapp/wa-groups", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateWhatsAppGroupChat", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create group Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWhatsAppGroupChatRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CreateWhatsAppGroupChat201Response</returns>
+        public async System.Threading.Tasks.Task<CreateWhatsAppGroupChat201Response> CreateWhatsAppGroupChatAsync(CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<CreateWhatsAppGroupChat201Response> localVarResponse = await CreateWhatsAppGroupChatWithHttpInfoAsync(createWhatsAppGroupChatRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create group Create a new WhatsApp group chat. Returns the group ID and optionally an invite link. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createWhatsAppGroupChatRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CreateWhatsAppGroupChat201Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateWhatsAppGroupChat201Response>> CreateWhatsAppGroupChatWithHttpInfoAsync(CreateWhatsAppGroupChatRequest createWhatsAppGroupChatRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'createWhatsAppGroupChatRequest' is set
+            if (createWhatsAppGroupChatRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'createWhatsAppGroupChatRequest' when calling WhatsAppApi->CreateWhatsAppGroupChat");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = createWhatsAppGroupChatRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateWhatsAppGroupChat201Response>("/v1/whatsapp/wa-groups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateWhatsAppGroupChat", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create invite link Create a new invite link for a WhatsApp group. The previous link is revoked. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>CreateWhatsAppGroupInviteLink200Response</returns>
+        public CreateWhatsAppGroupInviteLink200Response CreateWhatsAppGroupInviteLink(string groupId, string accountId)
+        {
+            Late.Client.ApiResponse<CreateWhatsAppGroupInviteLink200Response> localVarResponse = CreateWhatsAppGroupInviteLinkWithHttpInfo(groupId, accountId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create invite link Create a new invite link for a WhatsApp group. The previous link is revoked. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ApiResponse of CreateWhatsAppGroupInviteLink200Response</returns>
+        public Late.Client.ApiResponse<CreateWhatsAppGroupInviteLink200Response> CreateWhatsAppGroupInviteLinkWithHttpInfo(string groupId, string accountId)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->CreateWhatsAppGroupInviteLink");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->CreateWhatsAppGroupInviteLink");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CreateWhatsAppGroupInviteLink200Response>("/v1/whatsapp/wa-groups/{groupId}/invite-link", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateWhatsAppGroupInviteLink", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create invite link Create a new invite link for a WhatsApp group. The previous link is revoked. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CreateWhatsAppGroupInviteLink200Response</returns>
+        public async System.Threading.Tasks.Task<CreateWhatsAppGroupInviteLink200Response> CreateWhatsAppGroupInviteLinkAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<CreateWhatsAppGroupInviteLink200Response> localVarResponse = await CreateWhatsAppGroupInviteLinkWithHttpInfoAsync(groupId, accountId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create invite link Create a new invite link for a WhatsApp group. The previous link is revoked. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CreateWhatsAppGroupInviteLink200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<CreateWhatsAppGroupInviteLink200Response>> CreateWhatsAppGroupInviteLinkWithHttpInfoAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->CreateWhatsAppGroupInviteLink");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->CreateWhatsAppGroupInviteLink");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CreateWhatsAppGroupInviteLink200Response>("/v1/whatsapp/wa-groups/{groupId}/invite-link", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CreateWhatsAppGroupInviteLink", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Create template Create a new message template. Supports two modes:  **Custom template:** Provide &#x60;components&#x60; with your own content. Submitted to Meta for review (can take up to 24h).  **Library template:** Provide &#x60;library_template_name&#x60; instead of &#x60;components&#x60; to use a pre-built template from Meta&#39;s template library. Library templates are **pre-approved** (no review wait). You can optionally customize parameters and buttons via &#x60;library_template_body_inputs&#x60; and &#x60;library_template_button_inputs&#x60;.  Browse available library templates at: https://business.facebook.com/wa/manage/message-templates/ 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3154,6 +4286,147 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("DeleteWhatsAppGroup", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete group Delete a WhatsApp group and remove all participants. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>UnpublishPost200Response</returns>
+        public UnpublishPost200Response DeleteWhatsAppGroupChat(string groupId, string accountId)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = DeleteWhatsAppGroupChatWithHttpInfo(groupId, accountId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete group Delete a WhatsApp group and remove all participants. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        public Late.Client.ApiResponse<UnpublishPost200Response> DeleteWhatsAppGroupChatWithHttpInfo(string groupId, string accountId)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->DeleteWhatsAppGroupChat");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->DeleteWhatsAppGroupChat");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteWhatsAppGroupChat", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete group Delete a WhatsApp group and remove all participants. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        public async System.Threading.Tasks.Task<UnpublishPost200Response> DeleteWhatsAppGroupChatAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = await DeleteWhatsAppGroupChatWithHttpInfoAsync(groupId, accountId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete group Delete a WhatsApp group and remove all participants. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UnpublishPost200Response>> DeleteWhatsAppGroupChatWithHttpInfoAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->DeleteWhatsAppGroupChat");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->DeleteWhatsAppGroupChat");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("DeleteWhatsAppGroupChat", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -4355,6 +5628,147 @@ namespace Late.Api
         }
 
         /// <summary>
+        /// Get group info Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>GetWhatsAppGroupChat200Response</returns>
+        public GetWhatsAppGroupChat200Response GetWhatsAppGroupChat(string groupId, string accountId)
+        {
+            Late.Client.ApiResponse<GetWhatsAppGroupChat200Response> localVarResponse = GetWhatsAppGroupChatWithHttpInfo(groupId, accountId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get group info Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ApiResponse of GetWhatsAppGroupChat200Response</returns>
+        public Late.Client.ApiResponse<GetWhatsAppGroupChat200Response> GetWhatsAppGroupChatWithHttpInfo(string groupId, string accountId)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->GetWhatsAppGroupChat");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->GetWhatsAppGroupChat");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetWhatsAppGroupChat200Response>("/v1/whatsapp/wa-groups/{groupId}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetWhatsAppGroupChat", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get group info Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetWhatsAppGroupChat200Response</returns>
+        public async System.Threading.Tasks.Task<GetWhatsAppGroupChat200Response> GetWhatsAppGroupChatAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<GetWhatsAppGroupChat200Response> localVarResponse = await GetWhatsAppGroupChatWithHttpInfoAsync(groupId, accountId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get group info Retrieve metadata about a WhatsApp group including subject, description, participants, and settings. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetWhatsAppGroupChat200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetWhatsAppGroupChat200Response>> GetWhatsAppGroupChatWithHttpInfoAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->GetWhatsAppGroupChat");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->GetWhatsAppGroupChat");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetWhatsAppGroupChat200Response>("/v1/whatsapp/wa-groups/{groupId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetWhatsAppGroupChat", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// List contact groups **Deprecated.** Use contact tags via &#x60;GET /v1/contacts&#x60; for grouping instead. WhatsApp groups have no cross-platform equivalent. List all contact groups for a WhatsApp account with contact counts. Groups are derived from the groups field on contacts, not stored as separate documents. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
@@ -4887,6 +6301,455 @@ namespace Late.Api
         }
 
         /// <summary>
+        /// List active groups List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="limit">Max groups to return (optional, default to 25)</param>
+        /// <param name="after">Pagination cursor (optional)</param>
+        /// <returns>ListWhatsAppGroupChats200Response</returns>
+        public ListWhatsAppGroupChats200Response ListWhatsAppGroupChats(string accountId, int? limit = default, string? after = default)
+        {
+            Late.Client.ApiResponse<ListWhatsAppGroupChats200Response> localVarResponse = ListWhatsAppGroupChatsWithHttpInfo(accountId, limit, after);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List active groups List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="limit">Max groups to return (optional, default to 25)</param>
+        /// <param name="after">Pagination cursor (optional)</param>
+        /// <returns>ApiResponse of ListWhatsAppGroupChats200Response</returns>
+        public Late.Client.ApiResponse<ListWhatsAppGroupChats200Response> ListWhatsAppGroupChatsWithHttpInfo(string accountId, int? limit = default, string? after = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->ListWhatsAppGroupChats");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (after != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "after", after));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ListWhatsAppGroupChats200Response>("/v1/whatsapp/wa-groups", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListWhatsAppGroupChats", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List active groups List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="limit">Max groups to return (optional, default to 25)</param>
+        /// <param name="after">Pagination cursor (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListWhatsAppGroupChats200Response</returns>
+        public async System.Threading.Tasks.Task<ListWhatsAppGroupChats200Response> ListWhatsAppGroupChatsAsync(string accountId, int? limit = default, string? after = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<ListWhatsAppGroupChats200Response> localVarResponse = await ListWhatsAppGroupChatsWithHttpInfoAsync(accountId, limit, after, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List active groups List active WhatsApp group chats for a business phone number. These are actual WhatsApp group conversations on the platform. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="limit">Max groups to return (optional, default to 25)</param>
+        /// <param name="after">Pagination cursor (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListWhatsAppGroupChats200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListWhatsAppGroupChats200Response>> ListWhatsAppGroupChatsWithHttpInfoAsync(string accountId, int? limit = default, string? after = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->ListWhatsAppGroupChats");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (after != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "after", after));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListWhatsAppGroupChats200Response>("/v1/whatsapp/wa-groups", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListWhatsAppGroupChats", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List join requests List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ListWhatsAppGroupJoinRequests200Response</returns>
+        public ListWhatsAppGroupJoinRequests200Response ListWhatsAppGroupJoinRequests(string groupId, string accountId)
+        {
+            Late.Client.ApiResponse<ListWhatsAppGroupJoinRequests200Response> localVarResponse = ListWhatsAppGroupJoinRequestsWithHttpInfo(groupId, accountId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List join requests List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <returns>ApiResponse of ListWhatsAppGroupJoinRequests200Response</returns>
+        public Late.Client.ApiResponse<ListWhatsAppGroupJoinRequests200Response> ListWhatsAppGroupJoinRequestsWithHttpInfo(string groupId, string accountId)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->ListWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->ListWhatsAppGroupJoinRequests");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ListWhatsAppGroupJoinRequests200Response>("/v1/whatsapp/wa-groups/{groupId}/join-requests", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListWhatsAppGroupJoinRequests", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List join requests List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListWhatsAppGroupJoinRequests200Response</returns>
+        public async System.Threading.Tasks.Task<ListWhatsAppGroupJoinRequests200Response> ListWhatsAppGroupJoinRequestsAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<ListWhatsAppGroupJoinRequests200Response> localVarResponse = await ListWhatsAppGroupJoinRequestsWithHttpInfoAsync(groupId, accountId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List join requests List pending join requests for a WhatsApp group (only for groups with approval_required mode). 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListWhatsAppGroupJoinRequests200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListWhatsAppGroupJoinRequests200Response>> ListWhatsAppGroupJoinRequestsWithHttpInfoAsync(string groupId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->ListWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->ListWhatsAppGroupJoinRequests");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListWhatsAppGroupJoinRequests200Response>("/v1/whatsapp/wa-groups/{groupId}/join-requests", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListWhatsAppGroupJoinRequests", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Reject join requests Reject pending join requests for a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="rejectWhatsAppGroupJoinRequestsRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        public UnpublishPost200Response RejectWhatsAppGroupJoinRequests(string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = RejectWhatsAppGroupJoinRequestsWithHttpInfo(groupId, accountId, rejectWhatsAppGroupJoinRequestsRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Reject join requests Reject pending join requests for a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="rejectWhatsAppGroupJoinRequestsRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        public Late.Client.ApiResponse<UnpublishPost200Response> RejectWhatsAppGroupJoinRequestsWithHttpInfo(string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->RejectWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->RejectWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'rejectWhatsAppGroupJoinRequestsRequest' is set
+            if (rejectWhatsAppGroupJoinRequestsRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'rejectWhatsAppGroupJoinRequestsRequest' when calling WhatsAppApi->RejectWhatsAppGroupJoinRequests");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = rejectWhatsAppGroupJoinRequestsRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}/join-requests", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RejectWhatsAppGroupJoinRequests", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Reject join requests Reject pending join requests for a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="rejectWhatsAppGroupJoinRequestsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        public async System.Threading.Tasks.Task<UnpublishPost200Response> RejectWhatsAppGroupJoinRequestsAsync(string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = await RejectWhatsAppGroupJoinRequestsWithHttpInfoAsync(groupId, accountId, rejectWhatsAppGroupJoinRequestsRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Reject join requests Reject pending join requests for a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="rejectWhatsAppGroupJoinRequestsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UnpublishPost200Response>> RejectWhatsAppGroupJoinRequestsWithHttpInfoAsync(string groupId, string accountId, RejectWhatsAppGroupJoinRequestsRequest rejectWhatsAppGroupJoinRequestsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->RejectWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->RejectWhatsAppGroupJoinRequests");
+
+            // verify the required parameter 'rejectWhatsAppGroupJoinRequestsRequest' is set
+            if (rejectWhatsAppGroupJoinRequestsRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'rejectWhatsAppGroupJoinRequestsRequest' when calling WhatsAppApi->RejectWhatsAppGroupJoinRequests");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = rejectWhatsAppGroupJoinRequestsRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}/join-requests", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RejectWhatsAppGroupJoinRequests", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Remove recipients **Deprecated.** Use &#x60;POST /v1/broadcasts/{id}/recipients&#x60; with removal flag instead. Remove recipients from a draft broadcast by phone number. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
@@ -5027,6 +6890,163 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RemoveWhatsAppBroadcastRecipients", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove participants Remove participants from a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="removeWhatsAppGroupParticipantsRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        public UnpublishPost200Response RemoveWhatsAppGroupParticipants(string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = RemoveWhatsAppGroupParticipantsWithHttpInfo(groupId, accountId, removeWhatsAppGroupParticipantsRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Remove participants Remove participants from a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="removeWhatsAppGroupParticipantsRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        public Late.Client.ApiResponse<UnpublishPost200Response> RemoveWhatsAppGroupParticipantsWithHttpInfo(string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->RemoveWhatsAppGroupParticipants");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->RemoveWhatsAppGroupParticipants");
+
+            // verify the required parameter 'removeWhatsAppGroupParticipantsRequest' is set
+            if (removeWhatsAppGroupParticipantsRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'removeWhatsAppGroupParticipantsRequest' when calling WhatsAppApi->RemoveWhatsAppGroupParticipants");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = removeWhatsAppGroupParticipantsRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Delete<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}/participants", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveWhatsAppGroupParticipants", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Remove participants Remove participants from a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="removeWhatsAppGroupParticipantsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        public async System.Threading.Tasks.Task<UnpublishPost200Response> RemoveWhatsAppGroupParticipantsAsync(string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = await RemoveWhatsAppGroupParticipantsWithHttpInfoAsync(groupId, accountId, removeWhatsAppGroupParticipantsRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Remove participants Remove participants from a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="removeWhatsAppGroupParticipantsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UnpublishPost200Response>> RemoveWhatsAppGroupParticipantsWithHttpInfoAsync(string groupId, string accountId, RemoveWhatsAppGroupParticipantsRequest removeWhatsAppGroupParticipantsRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->RemoveWhatsAppGroupParticipants");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->RemoveWhatsAppGroupParticipants");
+
+            // verify the required parameter 'removeWhatsAppGroupParticipantsRequest' is set
+            if (removeWhatsAppGroupParticipantsRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'removeWhatsAppGroupParticipantsRequest' when calling WhatsAppApi->RemoveWhatsAppGroupParticipants");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = removeWhatsAppGroupParticipantsRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}/participants", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("RemoveWhatsAppGroupParticipants", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -5976,6 +7996,163 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("UpdateWhatsAppDisplayName", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update group settings Update the subject, description, or join approval mode of a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="updateWhatsAppGroupChatRequest"></param>
+        /// <returns>UnpublishPost200Response</returns>
+        public UnpublishPost200Response UpdateWhatsAppGroupChat(string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = UpdateWhatsAppGroupChatWithHttpInfo(groupId, accountId, updateWhatsAppGroupChatRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update group settings Update the subject, description, or join approval mode of a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="updateWhatsAppGroupChatRequest"></param>
+        /// <returns>ApiResponse of UnpublishPost200Response</returns>
+        public Late.Client.ApiResponse<UnpublishPost200Response> UpdateWhatsAppGroupChatWithHttpInfo(string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->UpdateWhatsAppGroupChat");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->UpdateWhatsAppGroupChat");
+
+            // verify the required parameter 'updateWhatsAppGroupChatRequest' is set
+            if (updateWhatsAppGroupChatRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'updateWhatsAppGroupChatRequest' when calling WhatsAppApi->UpdateWhatsAppGroupChat");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = updateWhatsAppGroupChatRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateWhatsAppGroupChat", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update group settings Update the subject, description, or join approval mode of a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="updateWhatsAppGroupChatRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of UnpublishPost200Response</returns>
+        public async System.Threading.Tasks.Task<UnpublishPost200Response> UpdateWhatsAppGroupChatAsync(string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<UnpublishPost200Response> localVarResponse = await UpdateWhatsAppGroupChatWithHttpInfoAsync(groupId, accountId, updateWhatsAppGroupChatRequest, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update group settings Update the subject, description, or join approval mode of a WhatsApp group. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="groupId">Group ID</param>
+        /// <param name="accountId">WhatsApp social account ID</param>
+        /// <param name="updateWhatsAppGroupChatRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (UnpublishPost200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<UnpublishPost200Response>> UpdateWhatsAppGroupChatWithHttpInfoAsync(string groupId, string accountId, UpdateWhatsAppGroupChatRequest updateWhatsAppGroupChatRequest, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'groupId' is set
+            if (groupId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'groupId' when calling WhatsAppApi->UpdateWhatsAppGroupChat");
+
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'accountId' when calling WhatsAppApi->UpdateWhatsAppGroupChat");
+
+            // verify the required parameter 'updateWhatsAppGroupChatRequest' is set
+            if (updateWhatsAppGroupChatRequest == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'updateWhatsAppGroupChatRequest' when calling WhatsAppApi->UpdateWhatsAppGroupChat");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("groupId", Late.Client.ClientUtils.ParameterToString(groupId)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.Data = updateWhatsAppGroupChatRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<UnpublishPost200Response>("/v1/whatsapp/wa-groups/{groupId}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("UpdateWhatsAppGroupChat", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
