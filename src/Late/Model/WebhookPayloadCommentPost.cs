@@ -36,11 +36,26 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadCommentPost" /> class.
         /// </summary>
-        /// <param name="id">Internal post ID.</param>
-        /// <param name="platformPostId">Platform&#39;s post ID.</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadCommentPost() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadCommentPost" /> class.
+        /// </summary>
+        /// <param name="id">Internal post ID (required).</param>
+        /// <param name="platformPostId">Platform&#39;s post ID (required).</param>
         public WebhookPayloadCommentPost(string id = default, string platformPostId = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadCommentPost and cannot be null");
+            }
             this.Id = id;
+            // to ensure "platformPostId" is required (not null)
+            if (platformPostId == null)
+            {
+                throw new ArgumentNullException("platformPostId is a required property for WebhookPayloadCommentPost and cannot be null");
+            }
             this.PlatformPostId = platformPostId;
         }
 
@@ -48,14 +63,14 @@ namespace Late.Model
         /// Internal post ID
         /// </summary>
         /// <value>Internal post ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Platform&#39;s post ID
         /// </summary>
         /// <value>Platform&#39;s post ID</value>
-        [DataMember(Name = "platformPostId", EmitDefaultValue = false)]
+        [DataMember(Name = "platformPostId", IsRequired = true, EmitDefaultValue = true)]
         public string PlatformPostId { get; set; }
 
         /// <summary>

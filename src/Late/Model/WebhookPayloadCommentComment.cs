@@ -86,30 +86,65 @@ namespace Late.Model
         /// <summary>
         /// Gets or Sets Platform
         /// </summary>
-        [DataMember(Name = "platform", EmitDefaultValue = false)]
-        public PlatformEnum? Platform { get; set; }
+        [DataMember(Name = "platform", IsRequired = true, EmitDefaultValue = true)]
+        public PlatformEnum Platform { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadCommentComment" /> class.
         /// </summary>
-        /// <param name="id">Platform comment ID.</param>
-        /// <param name="postId">Internal post ID.</param>
-        /// <param name="platformPostId">Platform&#39;s post ID.</param>
-        /// <param name="platform">platform.</param>
-        /// <param name="text">Comment text content.</param>
-        /// <param name="author">author.</param>
-        /// <param name="createdAt">createdAt.</param>
-        /// <param name="isReply">Whether this is a reply to another comment.</param>
-        /// <param name="parentCommentId">Parent comment ID if this is a reply.</param>
-        public WebhookPayloadCommentComment(string id = default, string postId = default, string platformPostId = default, PlatformEnum? platform = default, string text = default, WebhookPayloadCommentCommentAuthor author = default, DateTime createdAt = default, bool isReply = default, string parentCommentId = default)
+        [JsonConstructorAttribute]
+        protected WebhookPayloadCommentComment() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadCommentComment" /> class.
+        /// </summary>
+        /// <param name="id">Platform comment ID (required).</param>
+        /// <param name="postId">Internal post ID (required).</param>
+        /// <param name="platformPostId">Platform&#39;s post ID (required).</param>
+        /// <param name="platform">platform (required).</param>
+        /// <param name="text">Comment text content (required).</param>
+        /// <param name="author">author (required).</param>
+        /// <param name="createdAt">createdAt (required).</param>
+        /// <param name="isReply">Whether this is a reply to another comment (required).</param>
+        /// <param name="parentCommentId">Parent comment ID if this is a reply (required).</param>
+        public WebhookPayloadCommentComment(string id = default, string postId = default, string platformPostId = default, PlatformEnum platform = default, string text = default, WebhookPayloadCommentCommentAuthor author = default, DateTime createdAt = default, bool isReply = default, string parentCommentId = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadCommentComment and cannot be null");
+            }
             this.Id = id;
+            // to ensure "postId" is required (not null)
+            if (postId == null)
+            {
+                throw new ArgumentNullException("postId is a required property for WebhookPayloadCommentComment and cannot be null");
+            }
             this.PostId = postId;
+            // to ensure "platformPostId" is required (not null)
+            if (platformPostId == null)
+            {
+                throw new ArgumentNullException("platformPostId is a required property for WebhookPayloadCommentComment and cannot be null");
+            }
             this.PlatformPostId = platformPostId;
             this.Platform = platform;
+            // to ensure "text" is required (not null)
+            if (text == null)
+            {
+                throw new ArgumentNullException("text is a required property for WebhookPayloadCommentComment and cannot be null");
+            }
             this.Text = text;
+            // to ensure "author" is required (not null)
+            if (author == null)
+            {
+                throw new ArgumentNullException("author is a required property for WebhookPayloadCommentComment and cannot be null");
+            }
             this.Author = author;
             this.CreatedAt = createdAt;
             this.IsReply = isReply;
+            // to ensure "parentCommentId" is required (not null)
+            if (parentCommentId == null)
+            {
+                throw new ArgumentNullException("parentCommentId is a required property for WebhookPayloadCommentComment and cannot be null");
+            }
             this.ParentCommentId = parentCommentId;
         }
 
@@ -117,54 +152,54 @@ namespace Late.Model
         /// Platform comment ID
         /// </summary>
         /// <value>Platform comment ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Internal post ID
         /// </summary>
         /// <value>Internal post ID</value>
-        [DataMember(Name = "postId", EmitDefaultValue = false)]
+        [DataMember(Name = "postId", IsRequired = true, EmitDefaultValue = true)]
         public string PostId { get; set; }
 
         /// <summary>
         /// Platform&#39;s post ID
         /// </summary>
         /// <value>Platform&#39;s post ID</value>
-        [DataMember(Name = "platformPostId", EmitDefaultValue = false)]
+        [DataMember(Name = "platformPostId", IsRequired = true, EmitDefaultValue = true)]
         public string PlatformPostId { get; set; }
 
         /// <summary>
         /// Comment text content
         /// </summary>
         /// <value>Comment text content</value>
-        [DataMember(Name = "text", EmitDefaultValue = false)]
+        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets Author
         /// </summary>
-        [DataMember(Name = "author", EmitDefaultValue = false)]
+        [DataMember(Name = "author", IsRequired = true, EmitDefaultValue = true)]
         public WebhookPayloadCommentCommentAuthor Author { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        [DataMember(Name = "createdAt", EmitDefaultValue = false)]
+        [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// Whether this is a reply to another comment
         /// </summary>
         /// <value>Whether this is a reply to another comment</value>
-        [DataMember(Name = "isReply", EmitDefaultValue = true)]
+        [DataMember(Name = "isReply", IsRequired = true, EmitDefaultValue = true)]
         public bool IsReply { get; set; }
 
         /// <summary>
         /// Parent comment ID if this is a reply
         /// </summary>
         /// <value>Parent comment ID if this is a reply</value>
-        [DataMember(Name = "parentCommentId", EmitDefaultValue = false)]
+        [DataMember(Name = "parentCommentId", IsRequired = true, EmitDefaultValue = true)]
         public string ParentCommentId { get; set; }
 
         /// <summary>

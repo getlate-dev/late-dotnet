@@ -36,12 +36,27 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadMessageMessageAttachmentsInner" /> class.
         /// </summary>
-        /// <param name="type">Attachment type (image, video, file, sticker, audio).</param>
-        /// <param name="url">Attachment URL (may expire for Meta platforms).</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadMessageMessageAttachmentsInner() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadMessageMessageAttachmentsInner" /> class.
+        /// </summary>
+        /// <param name="type">Attachment type (image, video, file, sticker, audio) (required).</param>
+        /// <param name="url">Attachment URL (may expire for Meta platforms) (required).</param>
         /// <param name="payload">Additional attachment metadata.</param>
         public WebhookPayloadMessageMessageAttachmentsInner(string type = default, string url = default, Object payload = default)
         {
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new ArgumentNullException("type is a required property for WebhookPayloadMessageMessageAttachmentsInner and cannot be null");
+            }
             this.Type = type;
+            // to ensure "url" is required (not null)
+            if (url == null)
+            {
+                throw new ArgumentNullException("url is a required property for WebhookPayloadMessageMessageAttachmentsInner and cannot be null");
+            }
             this.Url = url;
             this.Payload = payload;
         }
@@ -50,14 +65,14 @@ namespace Late.Model
         /// Attachment type (image, video, file, sticker, audio)
         /// </summary>
         /// <value>Attachment type (image, video, file, sticker, audio)</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public string Type { get; set; }
 
         /// <summary>
         /// Attachment URL (may expire for Meta platforms)
         /// </summary>
         /// <value>Attachment URL (may expire for Meta platforms)</value>
-        [DataMember(Name = "url", EmitDefaultValue = false)]
+        [DataMember(Name = "url", IsRequired = true, EmitDefaultValue = true)]
         public string Url { get; set; }
 
         /// <summary>

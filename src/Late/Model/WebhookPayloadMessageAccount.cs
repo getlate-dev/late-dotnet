@@ -36,14 +36,34 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadMessageAccount" /> class.
         /// </summary>
-        /// <param name="id">Social account ID.</param>
-        /// <param name="platform">platform.</param>
-        /// <param name="username">username.</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadMessageAccount() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadMessageAccount" /> class.
+        /// </summary>
+        /// <param name="id">Social account ID (required).</param>
+        /// <param name="platform">platform (required).</param>
+        /// <param name="username">username (required).</param>
         /// <param name="displayName">displayName.</param>
         public WebhookPayloadMessageAccount(string id = default, string platform = default, string username = default, string displayName = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadMessageAccount and cannot be null");
+            }
             this.Id = id;
+            // to ensure "platform" is required (not null)
+            if (platform == null)
+            {
+                throw new ArgumentNullException("platform is a required property for WebhookPayloadMessageAccount and cannot be null");
+            }
             this.Platform = platform;
+            // to ensure "username" is required (not null)
+            if (username == null)
+            {
+                throw new ArgumentNullException("username is a required property for WebhookPayloadMessageAccount and cannot be null");
+            }
             this.Username = username;
             this.DisplayName = displayName;
         }
@@ -52,19 +72,19 @@ namespace Late.Model
         /// Social account ID
         /// </summary>
         /// <value>Social account ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Platform
         /// </summary>
-        [DataMember(Name = "platform", EmitDefaultValue = false)]
+        [DataMember(Name = "platform", IsRequired = true, EmitDefaultValue = true)]
         public string Platform { get; set; }
 
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
-        [DataMember(Name = "username", EmitDefaultValue = false)]
+        [DataMember(Name = "username", IsRequired = true, EmitDefaultValue = true)]
         public string Username { get; set; }
 
         /// <summary>

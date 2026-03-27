@@ -1,16 +1,17 @@
 # Late.Model.WebhookPayloadMessage
-Webhook payload for message received events (DMs from Instagram, Facebook, Telegram, Bluesky, Reddit)
+Webhook payload for message received events
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Event** | **string** |  | [optional] 
-**Message** | [**WebhookPayloadMessageMessage**](WebhookPayloadMessageMessage.md) |  | [optional] 
-**Conversation** | [**WebhookPayloadMessageConversation**](WebhookPayloadMessageConversation.md) |  | [optional] 
-**Account** | [**WebhookPayloadMessageAccount**](WebhookPayloadMessageAccount.md) |  | [optional] 
+**Id** | **string** | Stable webhook event ID | 
+**Event** | **string** |  | 
+**Message** | [**WebhookPayloadMessageMessage**](WebhookPayloadMessageMessage.md) |  | 
+**Conversation** | [**WebhookPayloadMessageConversation**](WebhookPayloadMessageConversation.md) |  | 
+**Account** | [**WebhookPayloadMessageAccount**](WebhookPayloadMessageAccount.md) |  | 
 **Metadata** | [**WebhookPayloadMessageMetadata**](WebhookPayloadMessageMetadata.md) |  | [optional] 
-**Timestamp** | **DateTime** |  | [optional] 
+**Timestamp** | **DateTime** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -36,12 +36,22 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadCommentCommentAuthor" /> class.
         /// </summary>
-        /// <param name="id">Author&#39;s platform ID.</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadCommentCommentAuthor() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadCommentCommentAuthor" /> class.
+        /// </summary>
+        /// <param name="id">Author&#39;s platform ID (required).</param>
         /// <param name="username">username.</param>
         /// <param name="name">name.</param>
         /// <param name="picture">picture.</param>
         public WebhookPayloadCommentCommentAuthor(string id = default, string username = default, string name = default, string picture = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadCommentCommentAuthor and cannot be null");
+            }
             this.Id = id;
             this.Username = username;
             this.Name = name;
@@ -52,7 +62,7 @@ namespace Late.Model
         /// Author&#39;s platform ID
         /// </summary>
         /// <value>Author&#39;s platform ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>

@@ -28,10 +28,10 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Webhook payload for message received events
+    /// Webhook payload for test deliveries
     /// </summary>
-    [DataContract(Name = "WebhookPayloadMessage")]
-    public partial class WebhookPayloadMessage : IValidatableObject
+    [DataContract(Name = "WebhookPayloadTest")]
+    public partial class WebhookPayloadTest : IValidatableObject
     {
         /// <summary>
         /// Defines Event
@@ -40,10 +40,10 @@ namespace Late.Model
         public enum EventEnum
         {
             /// <summary>
-            /// Enum MessageReceived for value: message.received
+            /// Enum WebhookTest for value: webhook.test
             /// </summary>
-            [EnumMember(Value = "message.received")]
-            MessageReceived = 1
+            [EnumMember(Value = "webhook.test")]
+            WebhookTest = 1
         }
 
 
@@ -53,49 +53,33 @@ namespace Late.Model
         [DataMember(Name = "event", IsRequired = true, EmitDefaultValue = true)]
         public EventEnum Event { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebhookPayloadMessage" /> class.
+        /// Initializes a new instance of the <see cref="WebhookPayloadTest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WebhookPayloadMessage() { }
+        protected WebhookPayloadTest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebhookPayloadMessage" /> class.
+        /// Initializes a new instance of the <see cref="WebhookPayloadTest" /> class.
         /// </summary>
         /// <param name="id">Stable webhook event ID (required).</param>
         /// <param name="varEvent">varEvent (required).</param>
-        /// <param name="message">message (required).</param>
-        /// <param name="conversation">conversation (required).</param>
-        /// <param name="account">account (required).</param>
-        /// <param name="metadata">metadata.</param>
+        /// <param name="message">Human-readable test message (required).</param>
         /// <param name="timestamp">timestamp (required).</param>
-        public WebhookPayloadMessage(string id = default, EventEnum varEvent = default, WebhookPayloadMessageMessage message = default, WebhookPayloadMessageConversation conversation = default, WebhookPayloadMessageAccount account = default, WebhookPayloadMessageMetadata metadata = default, DateTime timestamp = default)
+        public WebhookPayloadTest(string id = default, EventEnum varEvent = default, string message = default, DateTime timestamp = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
             {
-                throw new ArgumentNullException("id is a required property for WebhookPayloadMessage and cannot be null");
+                throw new ArgumentNullException("id is a required property for WebhookPayloadTest and cannot be null");
             }
             this.Id = id;
             this.Event = varEvent;
             // to ensure "message" is required (not null)
             if (message == null)
             {
-                throw new ArgumentNullException("message is a required property for WebhookPayloadMessage and cannot be null");
+                throw new ArgumentNullException("message is a required property for WebhookPayloadTest and cannot be null");
             }
             this.Message = message;
-            // to ensure "conversation" is required (not null)
-            if (conversation == null)
-            {
-                throw new ArgumentNullException("conversation is a required property for WebhookPayloadMessage and cannot be null");
-            }
-            this.Conversation = conversation;
-            // to ensure "account" is required (not null)
-            if (account == null)
-            {
-                throw new ArgumentNullException("account is a required property for WebhookPayloadMessage and cannot be null");
-            }
-            this.Account = account;
             this.Timestamp = timestamp;
-            this.Metadata = metadata;
         }
 
         /// <summary>
@@ -106,28 +90,11 @@ namespace Late.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Human-readable test message
         /// </summary>
+        /// <value>Human-readable test message</value>
         [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = true)]
-        public WebhookPayloadMessageMessage Message { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Conversation
-        /// </summary>
-        [DataMember(Name = "conversation", IsRequired = true, EmitDefaultValue = true)]
-        public WebhookPayloadMessageConversation Conversation { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Account
-        /// </summary>
-        [DataMember(Name = "account", IsRequired = true, EmitDefaultValue = true)]
-        public WebhookPayloadMessageAccount Account { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Metadata
-        /// </summary>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
-        public WebhookPayloadMessageMetadata Metadata { get; set; }
+        public string Message { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
@@ -142,13 +109,10 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WebhookPayloadMessage {\n");
+            sb.Append("class WebhookPayloadTest {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Event: ").Append(Event).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Conversation: ").Append(Conversation).Append("\n");
-            sb.Append("  Account: ").Append(Account).Append("\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

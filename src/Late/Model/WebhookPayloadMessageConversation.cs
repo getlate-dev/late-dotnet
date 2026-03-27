@@ -34,45 +34,6 @@ namespace Late.Model
     public partial class WebhookPayloadMessageConversation : IValidatableObject
     {
         /// <summary>
-        /// X/Twitter verified badge type. Only present for Twitter/X conversations.
-        /// </summary>
-        /// <value>X/Twitter verified badge type. Only present for Twitter/X conversations.</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum ParticipantVerifiedTypeEnum
-        {
-            /// <summary>
-            /// Enum Blue for value: blue
-            /// </summary>
-            [EnumMember(Value = "blue")]
-            Blue = 1,
-
-            /// <summary>
-            /// Enum Government for value: government
-            /// </summary>
-            [EnumMember(Value = "government")]
-            Government = 2,
-
-            /// <summary>
-            /// Enum Business for value: business
-            /// </summary>
-            [EnumMember(Value = "business")]
-            Business = 3,
-
-            /// <summary>
-            /// Enum None for value: none
-            /// </summary>
-            [EnumMember(Value = "none")]
-            None = 4
-        }
-
-
-        /// <summary>
-        /// X/Twitter verified badge type. Only present for Twitter/X conversations.
-        /// </summary>
-        /// <value>X/Twitter verified badge type. Only present for Twitter/X conversations.</value>
-        [DataMember(Name = "participantVerifiedType", EmitDefaultValue = false)]
-        public ParticipantVerifiedTypeEnum? ParticipantVerifiedType { get; set; }
-        /// <summary>
         /// Defines Status
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
@@ -95,41 +56,54 @@ namespace Late.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status { get; set; }
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
+        public StatusEnum Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadMessageConversation" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="platformConversationId">platformConversationId.</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadMessageConversation() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadMessageConversation" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="platformConversationId">platformConversationId (required).</param>
         /// <param name="participantId">participantId.</param>
         /// <param name="participantName">participantName.</param>
         /// <param name="participantUsername">participantUsername.</param>
         /// <param name="participantPicture">participantPicture.</param>
-        /// <param name="participantVerifiedType">X/Twitter verified badge type. Only present for Twitter/X conversations..</param>
-        /// <param name="status">status.</param>
-        public WebhookPayloadMessageConversation(string id = default, string platformConversationId = default, string participantId = default, string participantName = default, string participantUsername = default, string participantPicture = default, ParticipantVerifiedTypeEnum? participantVerifiedType = default, StatusEnum? status = default)
+        /// <param name="status">status (required).</param>
+        public WebhookPayloadMessageConversation(string id = default, string platformConversationId = default, string participantId = default, string participantName = default, string participantUsername = default, string participantPicture = default, StatusEnum status = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadMessageConversation and cannot be null");
+            }
             this.Id = id;
+            // to ensure "platformConversationId" is required (not null)
+            if (platformConversationId == null)
+            {
+                throw new ArgumentNullException("platformConversationId is a required property for WebhookPayloadMessageConversation and cannot be null");
+            }
             this.PlatformConversationId = platformConversationId;
+            this.Status = status;
             this.ParticipantId = participantId;
             this.ParticipantName = participantName;
             this.ParticipantUsername = participantUsername;
             this.ParticipantPicture = participantPicture;
-            this.ParticipantVerifiedType = participantVerifiedType;
-            this.Status = status;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets PlatformConversationId
         /// </summary>
-        [DataMember(Name = "platformConversationId", EmitDefaultValue = false)]
+        [DataMember(Name = "platformConversationId", IsRequired = true, EmitDefaultValue = true)]
         public string PlatformConversationId { get; set; }
 
         /// <summary>
@@ -170,7 +144,6 @@ namespace Late.Model
             sb.Append("  ParticipantName: ").Append(ParticipantName).Append("\n");
             sb.Append("  ParticipantUsername: ").Append(ParticipantUsername).Append("\n");
             sb.Append("  ParticipantPicture: ").Append(ParticipantPicture).Append("\n");
-            sb.Append("  ParticipantVerifiedType: ").Append(ParticipantVerifiedType).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

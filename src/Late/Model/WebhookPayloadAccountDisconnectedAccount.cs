@@ -58,53 +58,83 @@ namespace Late.Model
         /// Whether the disconnection was intentional (user action) or unintentional (token expired/revoked)
         /// </summary>
         /// <value>Whether the disconnection was intentional (user action) or unintentional (token expired/revoked)</value>
-        [DataMember(Name = "disconnectionType", EmitDefaultValue = false)]
-        public DisconnectionTypeEnum? DisconnectionType { get; set; }
+        [DataMember(Name = "disconnectionType", IsRequired = true, EmitDefaultValue = true)]
+        public DisconnectionTypeEnum DisconnectionType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadAccountDisconnectedAccount" /> class.
         /// </summary>
-        /// <param name="accountId">The account&#39;s unique identifier (same as used in /v1/accounts/{accountId}).</param>
-        /// <param name="profileId">The profile&#39;s unique identifier this account belongs to.</param>
-        /// <param name="platform">platform.</param>
-        /// <param name="username">username.</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadAccountDisconnectedAccount() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadAccountDisconnectedAccount" /> class.
+        /// </summary>
+        /// <param name="accountId">The account&#39;s unique identifier (same as used in /v1/accounts/{accountId}) (required).</param>
+        /// <param name="profileId">The profile&#39;s unique identifier this account belongs to (required).</param>
+        /// <param name="platform">platform (required).</param>
+        /// <param name="username">username (required).</param>
         /// <param name="displayName">displayName.</param>
-        /// <param name="disconnectionType">Whether the disconnection was intentional (user action) or unintentional (token expired/revoked).</param>
-        /// <param name="reason">Human-readable reason for the disconnection.</param>
-        public WebhookPayloadAccountDisconnectedAccount(string accountId = default, string profileId = default, string platform = default, string username = default, string displayName = default, DisconnectionTypeEnum? disconnectionType = default, string reason = default)
+        /// <param name="disconnectionType">Whether the disconnection was intentional (user action) or unintentional (token expired/revoked) (required).</param>
+        /// <param name="reason">Human-readable reason for the disconnection (required).</param>
+        public WebhookPayloadAccountDisconnectedAccount(string accountId = default, string profileId = default, string platform = default, string username = default, string displayName = default, DisconnectionTypeEnum disconnectionType = default, string reason = default)
         {
+            // to ensure "accountId" is required (not null)
+            if (accountId == null)
+            {
+                throw new ArgumentNullException("accountId is a required property for WebhookPayloadAccountDisconnectedAccount and cannot be null");
+            }
             this.AccountId = accountId;
+            // to ensure "profileId" is required (not null)
+            if (profileId == null)
+            {
+                throw new ArgumentNullException("profileId is a required property for WebhookPayloadAccountDisconnectedAccount and cannot be null");
+            }
             this.ProfileId = profileId;
+            // to ensure "platform" is required (not null)
+            if (platform == null)
+            {
+                throw new ArgumentNullException("platform is a required property for WebhookPayloadAccountDisconnectedAccount and cannot be null");
+            }
             this.Platform = platform;
+            // to ensure "username" is required (not null)
+            if (username == null)
+            {
+                throw new ArgumentNullException("username is a required property for WebhookPayloadAccountDisconnectedAccount and cannot be null");
+            }
             this.Username = username;
-            this.DisplayName = displayName;
             this.DisconnectionType = disconnectionType;
+            // to ensure "reason" is required (not null)
+            if (reason == null)
+            {
+                throw new ArgumentNullException("reason is a required property for WebhookPayloadAccountDisconnectedAccount and cannot be null");
+            }
             this.Reason = reason;
+            this.DisplayName = displayName;
         }
 
         /// <summary>
         /// The account&#39;s unique identifier (same as used in /v1/accounts/{accountId})
         /// </summary>
         /// <value>The account&#39;s unique identifier (same as used in /v1/accounts/{accountId})</value>
-        [DataMember(Name = "accountId", EmitDefaultValue = false)]
+        [DataMember(Name = "accountId", IsRequired = true, EmitDefaultValue = true)]
         public string AccountId { get; set; }
 
         /// <summary>
         /// The profile&#39;s unique identifier this account belongs to
         /// </summary>
         /// <value>The profile&#39;s unique identifier this account belongs to</value>
-        [DataMember(Name = "profileId", EmitDefaultValue = false)]
+        [DataMember(Name = "profileId", IsRequired = true, EmitDefaultValue = true)]
         public string ProfileId { get; set; }
 
         /// <summary>
         /// Gets or Sets Platform
         /// </summary>
-        [DataMember(Name = "platform", EmitDefaultValue = false)]
+        [DataMember(Name = "platform", IsRequired = true, EmitDefaultValue = true)]
         public string Platform { get; set; }
 
         /// <summary>
         /// Gets or Sets Username
         /// </summary>
-        [DataMember(Name = "username", EmitDefaultValue = false)]
+        [DataMember(Name = "username", IsRequired = true, EmitDefaultValue = true)]
         public string Username { get; set; }
 
         /// <summary>
@@ -117,7 +147,7 @@ namespace Late.Model
         /// Human-readable reason for the disconnection
         /// </summary>
         /// <value>Human-readable reason for the disconnection</value>
-        [DataMember(Name = "reason", EmitDefaultValue = false)]
+        [DataMember(Name = "reason", IsRequired = true, EmitDefaultValue = true)]
         public string Reason { get; set; }
 
         /// <summary>

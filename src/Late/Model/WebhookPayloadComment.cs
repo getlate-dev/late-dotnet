@@ -50,47 +50,81 @@ namespace Late.Model
         /// <summary>
         /// Gets or Sets Event
         /// </summary>
-        [DataMember(Name = "event", EmitDefaultValue = false)]
-        public EventEnum? Event { get; set; }
+        [DataMember(Name = "event", IsRequired = true, EmitDefaultValue = true)]
+        public EventEnum Event { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadComment" /> class.
         /// </summary>
-        /// <param name="varEvent">varEvent.</param>
-        /// <param name="comment">comment.</param>
-        /// <param name="post">post.</param>
-        /// <param name="account">account.</param>
-        /// <param name="timestamp">timestamp.</param>
-        public WebhookPayloadComment(EventEnum? varEvent = default, WebhookPayloadCommentComment comment = default, WebhookPayloadCommentPost post = default, WebhookPayloadCommentAccount account = default, DateTime timestamp = default)
+        [JsonConstructorAttribute]
+        protected WebhookPayloadComment() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadComment" /> class.
+        /// </summary>
+        /// <param name="id">Stable webhook event ID (required).</param>
+        /// <param name="varEvent">varEvent (required).</param>
+        /// <param name="comment">comment (required).</param>
+        /// <param name="post">post (required).</param>
+        /// <param name="account">account (required).</param>
+        /// <param name="timestamp">timestamp (required).</param>
+        public WebhookPayloadComment(string id = default, EventEnum varEvent = default, WebhookPayloadCommentComment comment = default, WebhookPayloadCommentPost post = default, WebhookPayloadCommentAccount account = default, DateTime timestamp = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadComment and cannot be null");
+            }
+            this.Id = id;
             this.Event = varEvent;
+            // to ensure "comment" is required (not null)
+            if (comment == null)
+            {
+                throw new ArgumentNullException("comment is a required property for WebhookPayloadComment and cannot be null");
+            }
             this.Comment = comment;
+            // to ensure "post" is required (not null)
+            if (post == null)
+            {
+                throw new ArgumentNullException("post is a required property for WebhookPayloadComment and cannot be null");
+            }
             this.Post = post;
+            // to ensure "account" is required (not null)
+            if (account == null)
+            {
+                throw new ArgumentNullException("account is a required property for WebhookPayloadComment and cannot be null");
+            }
             this.Account = account;
             this.Timestamp = timestamp;
         }
 
         /// <summary>
+        /// Stable webhook event ID
+        /// </summary>
+        /// <value>Stable webhook event ID</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// Gets or Sets Comment
         /// </summary>
-        [DataMember(Name = "comment", EmitDefaultValue = false)]
+        [DataMember(Name = "comment", IsRequired = true, EmitDefaultValue = true)]
         public WebhookPayloadCommentComment Comment { get; set; }
 
         /// <summary>
         /// Gets or Sets Post
         /// </summary>
-        [DataMember(Name = "post", EmitDefaultValue = false)]
+        [DataMember(Name = "post", IsRequired = true, EmitDefaultValue = true)]
         public WebhookPayloadCommentPost Post { get; set; }
 
         /// <summary>
         /// Gets or Sets Account
         /// </summary>
-        [DataMember(Name = "account", EmitDefaultValue = false)]
+        [DataMember(Name = "account", IsRequired = true, EmitDefaultValue = true)]
         public WebhookPayloadCommentAccount Account { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
-        [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+        [DataMember(Name = "timestamp", IsRequired = true, EmitDefaultValue = true)]
         public DateTime Timestamp { get; set; }
 
         /// <summary>
@@ -101,6 +135,7 @@ namespace Late.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class WebhookPayloadComment {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Event: ").Append(Event).Append("\n");
             sb.Append("  Comment: ").Append(Comment).Append("\n");
             sb.Append("  Post: ").Append(Post).Append("\n");

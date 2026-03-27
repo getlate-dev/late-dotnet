@@ -36,14 +36,31 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadPostPostPlatformsInner" /> class.
         /// </summary>
-        /// <param name="platform">platform.</param>
-        /// <param name="status">status.</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadPostPostPlatformsInner() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadPostPostPlatformsInner" /> class.
+        /// </summary>
+        /// <param name="platform">platform (required).</param>
+        /// <param name="status">status (required).</param>
+        /// <param name="platformPostId">platformPostId.</param>
         /// <param name="publishedUrl">publishedUrl.</param>
         /// <param name="error">error.</param>
-        public WebhookPayloadPostPostPlatformsInner(string platform = default, string status = default, string publishedUrl = default, string error = default)
+        public WebhookPayloadPostPostPlatformsInner(string platform = default, string status = default, string platformPostId = default, string publishedUrl = default, string error = default)
         {
+            // to ensure "platform" is required (not null)
+            if (platform == null)
+            {
+                throw new ArgumentNullException("platform is a required property for WebhookPayloadPostPostPlatformsInner and cannot be null");
+            }
             this.Platform = platform;
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new ArgumentNullException("status is a required property for WebhookPayloadPostPostPlatformsInner and cannot be null");
+            }
             this.Status = status;
+            this.PlatformPostId = platformPostId;
             this.PublishedUrl = publishedUrl;
             this.Error = error;
         }
@@ -51,14 +68,20 @@ namespace Late.Model
         /// <summary>
         /// Gets or Sets Platform
         /// </summary>
-        [DataMember(Name = "platform", EmitDefaultValue = false)]
+        [DataMember(Name = "platform", IsRequired = true, EmitDefaultValue = true)]
         public string Platform { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PlatformPostId
+        /// </summary>
+        [DataMember(Name = "platformPostId", EmitDefaultValue = false)]
+        public string PlatformPostId { get; set; }
 
         /// <summary>
         /// Gets or Sets PublishedUrl
@@ -82,6 +105,7 @@ namespace Late.Model
             sb.Append("class WebhookPayloadPostPostPlatformsInner {\n");
             sb.Append("  Platform: ").Append(Platform).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  PlatformPostId: ").Append(PlatformPostId).Append("\n");
             sb.Append("  PublishedUrl: ").Append(PublishedUrl).Append("\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
             sb.Append("}\n");

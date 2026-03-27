@@ -58,24 +58,18 @@ namespace Late.Model
             Telegram = 3,
 
             /// <summary>
-            /// Enum Bluesky for value: bluesky
+            /// Enum Whatsapp for value: whatsapp
             /// </summary>
-            [EnumMember(Value = "bluesky")]
-            Bluesky = 4,
-
-            /// <summary>
-            /// Enum Reddit for value: reddit
-            /// </summary>
-            [EnumMember(Value = "reddit")]
-            Reddit = 5
+            [EnumMember(Value = "whatsapp")]
+            Whatsapp = 4
         }
 
 
         /// <summary>
         /// Gets or Sets Platform
         /// </summary>
-        [DataMember(Name = "platform", EmitDefaultValue = false)]
-        public PlatformEnum? Platform { get; set; }
+        [DataMember(Name = "platform", IsRequired = true, EmitDefaultValue = true)]
+        public PlatformEnum Platform { get; set; }
         /// <summary>
         /// Defines Direction
         /// </summary>
@@ -86,37 +80,78 @@ namespace Late.Model
             /// Enum Incoming for value: incoming
             /// </summary>
             [EnumMember(Value = "incoming")]
-            Incoming = 1
+            Incoming = 1,
+
+            /// <summary>
+            /// Enum Outgoing for value: outgoing
+            /// </summary>
+            [EnumMember(Value = "outgoing")]
+            Outgoing = 2
         }
 
 
         /// <summary>
         /// Gets or Sets Direction
         /// </summary>
-        [DataMember(Name = "direction", EmitDefaultValue = false)]
-        public DirectionEnum? Direction { get; set; }
+        [DataMember(Name = "direction", IsRequired = true, EmitDefaultValue = true)]
+        public DirectionEnum Direction { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadMessageMessage" /> class.
         /// </summary>
-        /// <param name="id">Internal message ID.</param>
-        /// <param name="conversationId">Internal conversation ID.</param>
-        /// <param name="platform">platform.</param>
-        /// <param name="platformMessageId">Platform&#39;s message ID.</param>
-        /// <param name="direction">direction.</param>
-        /// <param name="text">Message text content.</param>
-        /// <param name="attachments">attachments.</param>
-        /// <param name="sender">sender.</param>
-        /// <param name="sentAt">sentAt.</param>
-        /// <param name="isRead">isRead.</param>
-        public WebhookPayloadMessageMessage(string id = default, string conversationId = default, PlatformEnum? platform = default, string platformMessageId = default, DirectionEnum? direction = default, string text = default, List<WebhookPayloadMessageMessageAttachmentsInner> attachments = default, WebhookPayloadMessageMessageSender sender = default, DateTime sentAt = default, bool isRead = default)
+        [JsonConstructorAttribute]
+        protected WebhookPayloadMessageMessage() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadMessageMessage" /> class.
+        /// </summary>
+        /// <param name="id">Internal message ID (required).</param>
+        /// <param name="conversationId">Internal conversation ID (required).</param>
+        /// <param name="platform">platform (required).</param>
+        /// <param name="platformMessageId">Platform&#39;s message ID (required).</param>
+        /// <param name="direction">direction (required).</param>
+        /// <param name="text">Message text content (required).</param>
+        /// <param name="attachments">attachments (required).</param>
+        /// <param name="sender">sender (required).</param>
+        /// <param name="sentAt">sentAt (required).</param>
+        /// <param name="isRead">isRead (required).</param>
+        public WebhookPayloadMessageMessage(string id = default, string conversationId = default, PlatformEnum platform = default, string platformMessageId = default, DirectionEnum direction = default, string text = default, List<WebhookPayloadMessageMessageAttachmentsInner> attachments = default, WebhookPayloadMessageMessageSender sender = default, DateTime sentAt = default, bool isRead = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadMessageMessage and cannot be null");
+            }
             this.Id = id;
+            // to ensure "conversationId" is required (not null)
+            if (conversationId == null)
+            {
+                throw new ArgumentNullException("conversationId is a required property for WebhookPayloadMessageMessage and cannot be null");
+            }
             this.ConversationId = conversationId;
             this.Platform = platform;
+            // to ensure "platformMessageId" is required (not null)
+            if (platformMessageId == null)
+            {
+                throw new ArgumentNullException("platformMessageId is a required property for WebhookPayloadMessageMessage and cannot be null");
+            }
             this.PlatformMessageId = platformMessageId;
             this.Direction = direction;
+            // to ensure "text" is required (not null)
+            if (text == null)
+            {
+                throw new ArgumentNullException("text is a required property for WebhookPayloadMessageMessage and cannot be null");
+            }
             this.Text = text;
+            // to ensure "attachments" is required (not null)
+            if (attachments == null)
+            {
+                throw new ArgumentNullException("attachments is a required property for WebhookPayloadMessageMessage and cannot be null");
+            }
             this.Attachments = attachments;
+            // to ensure "sender" is required (not null)
+            if (sender == null)
+            {
+                throw new ArgumentNullException("sender is a required property for WebhookPayloadMessageMessage and cannot be null");
+            }
             this.Sender = sender;
             this.SentAt = sentAt;
             this.IsRead = isRead;
@@ -126,52 +161,52 @@ namespace Late.Model
         /// Internal message ID
         /// </summary>
         /// <value>Internal message ID</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Internal conversation ID
         /// </summary>
         /// <value>Internal conversation ID</value>
-        [DataMember(Name = "conversationId", EmitDefaultValue = false)]
+        [DataMember(Name = "conversationId", IsRequired = true, EmitDefaultValue = true)]
         public string ConversationId { get; set; }
 
         /// <summary>
         /// Platform&#39;s message ID
         /// </summary>
         /// <value>Platform&#39;s message ID</value>
-        [DataMember(Name = "platformMessageId", EmitDefaultValue = false)]
+        [DataMember(Name = "platformMessageId", IsRequired = true, EmitDefaultValue = true)]
         public string PlatformMessageId { get; set; }
 
         /// <summary>
         /// Message text content
         /// </summary>
         /// <value>Message text content</value>
-        [DataMember(Name = "text", EmitDefaultValue = false)]
+        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
-        [DataMember(Name = "attachments", EmitDefaultValue = false)]
+        [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
         public List<WebhookPayloadMessageMessageAttachmentsInner> Attachments { get; set; }
 
         /// <summary>
         /// Gets or Sets Sender
         /// </summary>
-        [DataMember(Name = "sender", EmitDefaultValue = false)]
+        [DataMember(Name = "sender", IsRequired = true, EmitDefaultValue = true)]
         public WebhookPayloadMessageMessageSender Sender { get; set; }
 
         /// <summary>
         /// Gets or Sets SentAt
         /// </summary>
-        [DataMember(Name = "sentAt", EmitDefaultValue = false)]
+        [DataMember(Name = "sentAt", IsRequired = true, EmitDefaultValue = true)]
         public DateTime SentAt { get; set; }
 
         /// <summary>
         /// Gets or Sets IsRead
         /// </summary>
-        [DataMember(Name = "isRead", EmitDefaultValue = true)]
+        [DataMember(Name = "isRead", IsRequired = true, EmitDefaultValue = true)]
         public bool IsRead { get; set; }
 
         /// <summary>

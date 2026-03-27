@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Platform** | **string** |  | [optional] 
-**Status** | **string** |  | [optional] 
+**Platform** | **string** |  | 
+**Status** | **string** |  | 
+**PlatformPostId** | **string** |  | [optional] 
 **PublishedUrl** | **string** |  | [optional] 
 **Error** | **string** |  | [optional] 
 

@@ -36,44 +36,69 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadPostPost" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="content">content.</param>
-        /// <param name="status">status.</param>
-        /// <param name="scheduledFor">scheduledFor.</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadPostPost() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadPostPost" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="content">content (required).</param>
+        /// <param name="status">status (required).</param>
+        /// <param name="scheduledFor">scheduledFor (required).</param>
         /// <param name="publishedAt">publishedAt.</param>
-        /// <param name="platforms">platforms.</param>
+        /// <param name="platforms">platforms (required).</param>
         public WebhookPayloadPostPost(string id = default, string content = default, string status = default, DateTime scheduledFor = default, DateTime publishedAt = default, List<WebhookPayloadPostPostPlatformsInner> platforms = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadPostPost and cannot be null");
+            }
             this.Id = id;
+            // to ensure "content" is required (not null)
+            if (content == null)
+            {
+                throw new ArgumentNullException("content is a required property for WebhookPayloadPostPost and cannot be null");
+            }
             this.Content = content;
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new ArgumentNullException("status is a required property for WebhookPayloadPostPost and cannot be null");
+            }
             this.Status = status;
             this.ScheduledFor = scheduledFor;
-            this.PublishedAt = publishedAt;
+            // to ensure "platforms" is required (not null)
+            if (platforms == null)
+            {
+                throw new ArgumentNullException("platforms is a required property for WebhookPayloadPostPost and cannot be null");
+            }
             this.Platforms = platforms;
+            this.PublishedAt = publishedAt;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets Content
         /// </summary>
-        [DataMember(Name = "content", EmitDefaultValue = false)]
+        [DataMember(Name = "content", IsRequired = true, EmitDefaultValue = true)]
         public string Content { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = false)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public string Status { get; set; }
 
         /// <summary>
         /// Gets or Sets ScheduledFor
         /// </summary>
-        [DataMember(Name = "scheduledFor", EmitDefaultValue = false)]
+        [DataMember(Name = "scheduledFor", IsRequired = true, EmitDefaultValue = true)]
         public DateTime ScheduledFor { get; set; }
 
         /// <summary>
@@ -85,7 +110,7 @@ namespace Late.Model
         /// <summary>
         /// Gets or Sets Platforms
         /// </summary>
-        [DataMember(Name = "platforms", EmitDefaultValue = false)]
+        [DataMember(Name = "platforms", IsRequired = true, EmitDefaultValue = true)]
         public List<WebhookPayloadPostPostPlatformsInner> Platforms { get; set; }
 
         /// <summary>

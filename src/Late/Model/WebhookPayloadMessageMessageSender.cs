@@ -36,13 +36,23 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadMessageMessageSender" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
+        [JsonConstructorAttribute]
+        protected WebhookPayloadMessageMessageSender() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadMessageMessageSender" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
         /// <param name="name">name.</param>
         /// <param name="username">username.</param>
         /// <param name="picture">picture.</param>
         /// <param name="instagramProfile">instagramProfile.</param>
         public WebhookPayloadMessageMessageSender(string id = default, string name = default, string username = default, string picture = default, WebhookPayloadMessageMessageSenderInstagramProfile instagramProfile = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadMessageMessageSender and cannot be null");
+            }
             this.Id = id;
             this.Name = name;
             this.Username = username;
@@ -53,7 +63,7 @@ namespace Late.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>

@@ -1,13 +1,14 @@
-# Late.Model.WebhookPayloadCommentCommentAuthor
+# Late.Model.WebhookPayloadTest
+Webhook payload for test deliveries
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | Author&#39;s platform ID | 
-**Username** | **string** |  | [optional] 
-**Name** | **string** |  | [optional] 
-**Picture** | **string** |  | [optional] 
+**Id** | **string** | Stable webhook event ID | 
+**Event** | **string** |  | 
+**Message** | **string** | Human-readable test message | 
+**Timestamp** | **DateTime** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

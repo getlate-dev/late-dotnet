@@ -50,31 +50,55 @@ namespace Late.Model
         /// <summary>
         /// Gets or Sets Event
         /// </summary>
-        [DataMember(Name = "event", EmitDefaultValue = false)]
-        public EventEnum? Event { get; set; }
+        [DataMember(Name = "event", IsRequired = true, EmitDefaultValue = true)]
+        public EventEnum Event { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadAccountDisconnected" /> class.
         /// </summary>
-        /// <param name="varEvent">varEvent.</param>
-        /// <param name="account">account.</param>
-        /// <param name="timestamp">timestamp.</param>
-        public WebhookPayloadAccountDisconnected(EventEnum? varEvent = default, WebhookPayloadAccountDisconnectedAccount account = default, DateTime timestamp = default)
+        [JsonConstructorAttribute]
+        protected WebhookPayloadAccountDisconnected() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadAccountDisconnected" /> class.
+        /// </summary>
+        /// <param name="id">Stable webhook event ID (required).</param>
+        /// <param name="varEvent">varEvent (required).</param>
+        /// <param name="account">account (required).</param>
+        /// <param name="timestamp">timestamp (required).</param>
+        public WebhookPayloadAccountDisconnected(string id = default, EventEnum varEvent = default, WebhookPayloadAccountDisconnectedAccount account = default, DateTime timestamp = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadAccountDisconnected and cannot be null");
+            }
+            this.Id = id;
             this.Event = varEvent;
+            // to ensure "account" is required (not null)
+            if (account == null)
+            {
+                throw new ArgumentNullException("account is a required property for WebhookPayloadAccountDisconnected and cannot be null");
+            }
             this.Account = account;
             this.Timestamp = timestamp;
         }
 
         /// <summary>
+        /// Stable webhook event ID
+        /// </summary>
+        /// <value>Stable webhook event ID</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// Gets or Sets Account
         /// </summary>
-        [DataMember(Name = "account", EmitDefaultValue = false)]
+        [DataMember(Name = "account", IsRequired = true, EmitDefaultValue = true)]
         public WebhookPayloadAccountDisconnectedAccount Account { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
-        [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+        [DataMember(Name = "timestamp", IsRequired = true, EmitDefaultValue = true)]
         public DateTime Timestamp { get; set; }
 
         /// <summary>
@@ -85,6 +109,7 @@ namespace Late.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class WebhookPayloadAccountDisconnected {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Event: ").Append(Event).Append("\n");
             sb.Append("  Account: ").Append(Account).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");

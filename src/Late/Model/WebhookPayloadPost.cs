@@ -64,41 +64,71 @@ namespace Late.Model
             PostPartial = 4,
 
             /// <summary>
+            /// Enum PostCancelled for value: post.cancelled
+            /// </summary>
+            [EnumMember(Value = "post.cancelled")]
+            PostCancelled = 5,
+
+            /// <summary>
             /// Enum PostRecycled for value: post.recycled
             /// </summary>
             [EnumMember(Value = "post.recycled")]
-            PostRecycled = 5
+            PostRecycled = 6
         }
 
 
         /// <summary>
         /// Gets or Sets Event
         /// </summary>
-        [DataMember(Name = "event", EmitDefaultValue = false)]
-        public EventEnum? Event { get; set; }
+        [DataMember(Name = "event", IsRequired = true, EmitDefaultValue = true)]
+        public EventEnum Event { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadPost" /> class.
         /// </summary>
-        /// <param name="varEvent">varEvent.</param>
-        /// <param name="post">post.</param>
-        /// <param name="timestamp">timestamp.</param>
-        public WebhookPayloadPost(EventEnum? varEvent = default, WebhookPayloadPostPost post = default, DateTime timestamp = default)
+        [JsonConstructorAttribute]
+        protected WebhookPayloadPost() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPayloadPost" /> class.
+        /// </summary>
+        /// <param name="id">Stable webhook event ID (required).</param>
+        /// <param name="varEvent">varEvent (required).</param>
+        /// <param name="post">post (required).</param>
+        /// <param name="timestamp">timestamp (required).</param>
+        public WebhookPayloadPost(string id = default, EventEnum varEvent = default, WebhookPayloadPostPost post = default, DateTime timestamp = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for WebhookPayloadPost and cannot be null");
+            }
+            this.Id = id;
             this.Event = varEvent;
+            // to ensure "post" is required (not null)
+            if (post == null)
+            {
+                throw new ArgumentNullException("post is a required property for WebhookPayloadPost and cannot be null");
+            }
             this.Post = post;
             this.Timestamp = timestamp;
         }
 
         /// <summary>
+        /// Stable webhook event ID
+        /// </summary>
+        /// <value>Stable webhook event ID</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public string Id { get; set; }
+
+        /// <summary>
         /// Gets or Sets Post
         /// </summary>
-        [DataMember(Name = "post", EmitDefaultValue = false)]
+        [DataMember(Name = "post", IsRequired = true, EmitDefaultValue = true)]
         public WebhookPayloadPostPost Post { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
-        [DataMember(Name = "timestamp", EmitDefaultValue = false)]
+        [DataMember(Name = "timestamp", IsRequired = true, EmitDefaultValue = true)]
         public DateTime Timestamp { get; set; }
 
         /// <summary>
@@ -109,6 +139,7 @@ namespace Late.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class WebhookPayloadPost {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Event: ").Append(Event).Append("\n");
             sb.Append("  Post: ").Append(Post).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
