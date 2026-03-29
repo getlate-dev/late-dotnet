@@ -80,7 +80,7 @@ namespace Late.Api
         /// List messages
         /// </summary>
         /// <remarks>
-        /// Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// Fetch messages for a specific conversation. Requires accountId query parameter.  **Twitter/X limitation:** X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the [list conversations endpoint](#/Messages/listInboxConversations) for more details. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -92,7 +92,7 @@ namespace Late.Api
         /// List messages
         /// </summary>
         /// <remarks>
-        /// Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// Fetch messages for a specific conversation. Requires accountId query parameter.  **Twitter/X limitation:** X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the [list conversations endpoint](#/Messages/listInboxConversations) for more details. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -103,7 +103,7 @@ namespace Late.Api
         /// List conversations
         /// </summary>
         /// <remarks>
-        /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram. 
+        /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram.  **Twitter/X limitation:** X has replaced traditional DMs with encrypted \&quot;X Chat\&quot; for many accounts. Messages sent or received through encrypted X Chat are not accessible via X&#39;s API (the &#x60;/2/dm_events&#x60; endpoint only returns legacy unencrypted DMs). This means some Twitter/X conversations may show only outgoing messages or appear empty. This is an X platform limitation that affects all third-party applications. See [X&#39;s docs on encrypted messaging](https://help.x.com/en/using-x/about-chat) for more details. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -120,7 +120,7 @@ namespace Late.Api
         /// List conversations
         /// </summary>
         /// <remarks>
-        /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram. 
+        /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram.  **Twitter/X limitation:** X has replaced traditional DMs with encrypted \&quot;X Chat\&quot; for many accounts. Messages sent or received through encrypted X Chat are not accessible via X&#39;s API (the &#x60;/2/dm_events&#x60; endpoint only returns legacy unencrypted DMs). This means some Twitter/X conversations may show only outgoing messages or appear empty. This is an X platform limitation that affects all third-party applications. See [X&#39;s docs on encrypted messaging](https://help.x.com/en/using-x/about-chat) for more details. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -243,7 +243,7 @@ namespace Late.Api
         /// List messages
         /// </summary>
         /// <remarks>
-        /// Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// Fetch messages for a specific conversation. Requires accountId query parameter.  **Twitter/X limitation:** X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the [list conversations endpoint](#/Messages/listInboxConversations) for more details. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -256,7 +256,7 @@ namespace Late.Api
         /// List messages
         /// </summary>
         /// <remarks>
-        /// Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// Fetch messages for a specific conversation. Requires accountId query parameter.  **Twitter/X limitation:** X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the [list conversations endpoint](#/Messages/listInboxConversations) for more details. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -268,7 +268,7 @@ namespace Late.Api
         /// List conversations
         /// </summary>
         /// <remarks>
-        /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram. 
+        /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram.  **Twitter/X limitation:** X has replaced traditional DMs with encrypted \&quot;X Chat\&quot; for many accounts. Messages sent or received through encrypted X Chat are not accessible via X&#39;s API (the &#x60;/2/dm_events&#x60; endpoint only returns legacy unencrypted DMs). This means some Twitter/X conversations may show only outgoing messages or appear empty. This is an X platform limitation that affects all third-party applications. See [X&#39;s docs on encrypted messaging](https://help.x.com/en/using-x/about-chat) for more details. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -286,7 +286,7 @@ namespace Late.Api
         /// List conversations
         /// </summary>
         /// <remarks>
-        /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram. 
+        /// Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram.  **Twitter/X limitation:** X has replaced traditional DMs with encrypted \&quot;X Chat\&quot; for many accounts. Messages sent or received through encrypted X Chat are not accessible via X&#39;s API (the &#x60;/2/dm_events&#x60; endpoint only returns legacy unencrypted DMs). This means some Twitter/X conversations may show only outgoing messages or appear empty. This is an X platform limitation that affects all third-party applications. See [X&#39;s docs on encrypted messaging](https://help.x.com/en/using-x/about-chat) for more details. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -861,7 +861,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.  **Twitter/X limitation:** X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the [list conversations endpoint](#/Messages/listInboxConversations) for more details. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -874,7 +874,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.  **Twitter/X limitation:** X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the [list conversations endpoint](#/Messages/listInboxConversations) for more details. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -929,7 +929,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.  **Twitter/X limitation:** X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the [list conversations endpoint](#/Messages/listInboxConversations) for more details. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -943,7 +943,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.
+        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.  **Twitter/X limitation:** X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the [list conversations endpoint](#/Messages/listInboxConversations) for more details. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
@@ -1002,7 +1002,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram. 
+        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram.  **Twitter/X limitation:** X has replaced traditional DMs with encrypted \&quot;X Chat\&quot; for many accounts. Messages sent or received through encrypted X Chat are not accessible via X&#39;s API (the &#x60;/2/dm_events&#x60; endpoint only returns legacy unencrypted DMs). This means some Twitter/X conversations may show only outgoing messages or appear empty. This is an X platform limitation that affects all third-party applications. See [X&#39;s docs on encrypted messaging](https://help.x.com/en/using-x/about-chat) for more details. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1020,7 +1020,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram. 
+        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram.  **Twitter/X limitation:** X has replaced traditional DMs with encrypted \&quot;X Chat\&quot; for many accounts. Messages sent or received through encrypted X Chat are not accessible via X&#39;s API (the &#x60;/2/dm_events&#x60; endpoint only returns legacy unencrypted DMs). This means some Twitter/X conversations may show only outgoing messages or appear empty. This is an X platform limitation that affects all third-party applications. See [X&#39;s docs on encrypted messaging](https://help.x.com/en/using-x/about-chat) for more details. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1098,7 +1098,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram. 
+        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram.  **Twitter/X limitation:** X has replaced traditional DMs with encrypted \&quot;X Chat\&quot; for many accounts. Messages sent or received through encrypted X Chat are not accessible via X&#39;s API (the &#x60;/2/dm_events&#x60; endpoint only returns legacy unencrypted DMs). This means some Twitter/X conversations may show only outgoing messages or appear empty. This is an X platform limitation that affects all third-party applications. See [X&#39;s docs on encrypted messaging](https://help.x.com/en/using-x/about-chat) for more details. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>
@@ -1117,7 +1117,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram. 
+        /// List conversations Fetch conversations (DMs) from all connected messaging accounts in a single API call. Supports filtering by profile and platform. Results are aggregated and deduplicated. Supported platforms: Facebook, Instagram, Twitter/X, Bluesky, Reddit, Telegram.  **Twitter/X limitation:** X has replaced traditional DMs with encrypted \&quot;X Chat\&quot; for many accounts. Messages sent or received through encrypted X Chat are not accessible via X&#39;s API (the &#x60;/2/dm_events&#x60; endpoint only returns legacy unencrypted DMs). This means some Twitter/X conversations may show only outgoing messages or appear empty. This is an X platform limitation that affects all third-party applications. See [X&#39;s docs on encrypted messaging](https://help.x.com/en/using-x/about-chat) for more details. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="profileId">Filter by profile ID (optional)</param>

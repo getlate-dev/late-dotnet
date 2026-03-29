@@ -714,9 +714,7 @@ docs/YouTubePlatformData.md
 docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
-src/Late.Test/Api/WebhookEventsApiTests.cs
 src/Late.Test/Late.Test.csproj
-src/Late.Test/Model/WebhookPayloadTestTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
