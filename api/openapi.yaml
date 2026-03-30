@@ -12959,8 +12959,6 @@ components:
           additionalProperties: true
           type: object
     WhatsAppTemplateButton:
-      discriminator:
-        propertyName: type
       properties:
         type:
           enum:
@@ -13013,13 +13011,6 @@ components:
       - text
       - type
     WhatsAppTemplateComponent:
-      discriminator:
-        mapping:
-          HEADER: "#/components/schemas/WhatsAppHeaderComponent"
-          BODY: "#/components/schemas/WhatsAppBodyComponent"
-          FOOTER: "#/components/schemas/WhatsAppFooterComponent"
-          BUTTONS: "#/components/schemas/WhatsAppButtonsComponent"
-        propertyName: type
       oneOf:
       - $ref: "#/components/schemas/WhatsAppHeaderComponent"
       - $ref: "#/components/schemas/WhatsAppBodyComponent"

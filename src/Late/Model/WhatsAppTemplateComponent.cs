@@ -21,7 +21,6 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using FileParameter = Late.Client.FileParameter;
 using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
