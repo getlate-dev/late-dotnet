@@ -1,11 +1,12 @@
-# Late.Model.UpdateWhatsAppTemplateRequest
+# Late.Model.WhatsAppFooterComponent
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccountId** | **string** | WhatsApp social account ID | 
-**Components** | [**List&lt;WhatsAppTemplateComponent&gt;**](WhatsAppTemplateComponent.md) | Updated template components | 
+**Type** | **string** |  | 
+**Text** | **string** | Static footer text | [optional] 
+**CodeExpirationMinutes** | **int** | OTP code expiry in minutes (authentication templates only) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

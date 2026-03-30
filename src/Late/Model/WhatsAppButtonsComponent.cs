@@ -28,50 +28,56 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// UpdateWhatsAppTemplateRequest
+    /// WhatsAppButtonsComponent
     /// </summary>
-    [DataContract(Name = "updateWhatsAppTemplate_request")]
-    public partial class UpdateWhatsAppTemplateRequest : IValidatableObject
+    [DataContract(Name = "WhatsAppButtonsComponent")]
+    public partial class WhatsAppButtonsComponent : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateWhatsAppTemplateRequest" /> class.
+        /// Defines Type
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TypeEnum
+        {
+            /// <summary>
+            /// Enum BUTTONS for value: BUTTONS
+            /// </summary>
+            [EnumMember(Value = "BUTTONS")]
+            BUTTONS = 1
+        }
+
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public TypeEnum Type { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhatsAppButtonsComponent" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected UpdateWhatsAppTemplateRequest() { }
+        protected WhatsAppButtonsComponent() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateWhatsAppTemplateRequest" /> class.
+        /// Initializes a new instance of the <see cref="WhatsAppButtonsComponent" /> class.
         /// </summary>
-        /// <param name="accountId">WhatsApp social account ID (required).</param>
-        /// <param name="components">Updated template components (required).</param>
-        public UpdateWhatsAppTemplateRequest(string accountId = default, List<WhatsAppTemplateComponent> components = default)
+        /// <param name="type">type (required).</param>
+        /// <param name="buttons">buttons (required).</param>
+        public WhatsAppButtonsComponent(TypeEnum type = default, List<WhatsAppTemplateButton> buttons = default)
         {
-            // to ensure "accountId" is required (not null)
-            if (accountId == null)
+            this.Type = type;
+            // to ensure "buttons" is required (not null)
+            if (buttons == null)
             {
-                throw new ArgumentNullException("accountId is a required property for UpdateWhatsAppTemplateRequest and cannot be null");
+                throw new ArgumentNullException("buttons is a required property for WhatsAppButtonsComponent and cannot be null");
             }
-            this.AccountId = accountId;
-            // to ensure "components" is required (not null)
-            if (components == null)
-            {
-                throw new ArgumentNullException("components is a required property for UpdateWhatsAppTemplateRequest and cannot be null");
-            }
-            this.Components = components;
+            this.Buttons = buttons;
         }
 
         /// <summary>
-        /// WhatsApp social account ID
+        /// Gets or Sets Buttons
         /// </summary>
-        /// <value>WhatsApp social account ID</value>
-        [DataMember(Name = "accountId", IsRequired = true, EmitDefaultValue = true)]
-        public string AccountId { get; set; }
-
-        /// <summary>
-        /// Updated template components
-        /// </summary>
-        /// <value>Updated template components</value>
-        [DataMember(Name = "components", IsRequired = true, EmitDefaultValue = true)]
-        public List<WhatsAppTemplateComponent> Components { get; set; }
+        [DataMember(Name = "buttons", IsRequired = true, EmitDefaultValue = true)]
+        public List<WhatsAppTemplateButton> Buttons { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -80,9 +86,9 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateWhatsAppTemplateRequest {\n");
-            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
-            sb.Append("  Components: ").Append(Components).Append("\n");
+            sb.Append("class WhatsAppButtonsComponent {\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Buttons: ").Append(Buttons).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
