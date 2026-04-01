@@ -82,7 +82,9 @@ namespace Late.Model
         /// <param name="sourceAudienceId">Required for lookalike audiences.</param>
         /// <param name="country">2-letter code, required for lookalike audiences.</param>
         /// <param name="ratio">Required for lookalike audiences.</param>
-        public CreateAdAudienceRequest(string accountId = default, string adAccountId = default, string name = default, string description = default, TypeEnum type = default, string pixelId = default, int retentionDays = default, string sourceAudienceId = default, string country = default, decimal ratio = default)
+        /// <param name="rule">Pixel event rule for website audiences (optional).</param>
+        /// <param name="customerFileSource">Data source declaration for GDPR compliance (customer_list only).</param>
+        public CreateAdAudienceRequest(string accountId = default, string adAccountId = default, string name = default, string description = default, TypeEnum type = default, string pixelId = default, int retentionDays = default, string sourceAudienceId = default, string country = default, decimal ratio = default, Object rule = default, string customerFileSource = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -109,6 +111,8 @@ namespace Late.Model
             this.SourceAudienceId = sourceAudienceId;
             this.Country = country;
             this.Ratio = ratio;
+            this.Rule = rule;
+            this.CustomerFileSource = customerFileSource;
         }
 
         /// <summary>
@@ -172,6 +176,20 @@ namespace Late.Model
         public decimal Ratio { get; set; }
 
         /// <summary>
+        /// Pixel event rule for website audiences (optional)
+        /// </summary>
+        /// <value>Pixel event rule for website audiences (optional)</value>
+        [DataMember(Name = "rule", EmitDefaultValue = false)]
+        public Object Rule { get; set; }
+
+        /// <summary>
+        /// Data source declaration for GDPR compliance (customer_list only)
+        /// </summary>
+        /// <value>Data source declaration for GDPR compliance (customer_list only)</value>
+        [DataMember(Name = "customerFileSource", EmitDefaultValue = false)]
+        public string CustomerFileSource { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -189,6 +207,8 @@ namespace Late.Model
             sb.Append("  SourceAudienceId: ").Append(SourceAudienceId).Append("\n");
             sb.Append("  Country: ").Append(Country).Append("\n");
             sb.Append("  Ratio: ").Append(Ratio).Append("\n");
+            sb.Append("  Rule: ").Append(Rule).Append("\n");
+            sb.Append("  CustomerFileSource: ").Append(CustomerFileSource).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

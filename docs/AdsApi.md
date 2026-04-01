@@ -513,6 +513,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Ad analytics |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Ads add-on required |  -  |
 | **404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -613,6 +614,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Ad accounts |  -  |
 | **401** | Unauthorized |  -  |
+| **422** | Platform ads connection required (TikTok Ads, X Ads) or Instagram missing linked Facebook account |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -828,6 +830,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Matching interests |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Ads add-on required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -213,10 +213,13 @@ namespace Late.Model
         /// <param name="budgetType">budgetType (required).</param>
         /// <param name="currency">currency.</param>
         /// <param name="headline">Required for most platforms. Max: Meta&#x3D;255, Google&#x3D;30, Pinterest&#x3D;100.</param>
+        /// <param name="longHeadline">Google Display only.</param>
         /// <param name="body">Max: Google&#x3D;90, Pinterest&#x3D;500 (required).</param>
         /// <param name="callToAction">Meta only.</param>
         /// <param name="linkUrl">linkUrl.</param>
-        /// <param name="imageUrl">Image URL (or video URL for TikTok) (required).</param>
+        /// <param name="imageUrl">Image URL (or video URL for TikTok). Not required for Google Search campaigns..</param>
+        /// <param name="businessName">Google Display only.</param>
+        /// <param name="boardId">Pinterest only. Board ID (auto-creates if not provided)..</param>
         /// <param name="countries">countries.</param>
         /// <param name="ageMin">ageMin.</param>
         /// <param name="ageMax">ageMax.</param>
@@ -225,7 +228,9 @@ namespace Late.Model
         /// <param name="audienceId">Custom audience ID for targeting.</param>
         /// <param name="campaignType">Google only (default to CampaignTypeEnum.Display).</param>
         /// <param name="keywords">Google Search only.</param>
-        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, decimal budgetAmount = default, BudgetTypeEnum budgetType = default, string currency = default, string headline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<string> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default)
+        /// <param name="additionalHeadlines">Google Search RSA only. Extra headlines..</param>
+        /// <param name="additionalDescriptions">Google Search RSA only. Extra descriptions..</param>
+        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, decimal budgetAmount = default, BudgetTypeEnum budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<string> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -254,16 +259,14 @@ namespace Late.Model
                 throw new ArgumentNullException("body is a required property for CreateStandaloneAdRequest and cannot be null");
             }
             this.Body = body;
-            // to ensure "imageUrl" is required (not null)
-            if (imageUrl == null)
-            {
-                throw new ArgumentNullException("imageUrl is a required property for CreateStandaloneAdRequest and cannot be null");
-            }
-            this.ImageUrl = imageUrl;
             this.Currency = currency;
             this.Headline = headline;
+            this.LongHeadline = longHeadline;
             this.CallToAction = callToAction;
             this.LinkUrl = linkUrl;
+            this.ImageUrl = imageUrl;
+            this.BusinessName = businessName;
+            this.BoardId = boardId;
             this.Countries = countries;
             this.AgeMin = ageMin;
             this.AgeMax = ageMax;
@@ -272,6 +275,8 @@ namespace Late.Model
             this.AudienceId = audienceId;
             this.CampaignType = campaignType;
             this.Keywords = keywords;
+            this.AdditionalHeadlines = additionalHeadlines;
+            this.AdditionalDescriptions = additionalDescriptions;
         }
 
         /// <summary>
@@ -312,6 +317,13 @@ namespace Late.Model
         public string Headline { get; set; }
 
         /// <summary>
+        /// Google Display only
+        /// </summary>
+        /// <value>Google Display only</value>
+        [DataMember(Name = "longHeadline", EmitDefaultValue = false)]
+        public string LongHeadline { get; set; }
+
+        /// <summary>
         /// Max: Google&#x3D;90, Pinterest&#x3D;500
         /// </summary>
         /// <value>Max: Google&#x3D;90, Pinterest&#x3D;500</value>
@@ -325,11 +337,25 @@ namespace Late.Model
         public string LinkUrl { get; set; }
 
         /// <summary>
-        /// Image URL (or video URL for TikTok)
+        /// Image URL (or video URL for TikTok). Not required for Google Search campaigns.
         /// </summary>
-        /// <value>Image URL (or video URL for TikTok)</value>
-        [DataMember(Name = "imageUrl", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Image URL (or video URL for TikTok). Not required for Google Search campaigns.</value>
+        [DataMember(Name = "imageUrl", EmitDefaultValue = false)]
         public string ImageUrl { get; set; }
+
+        /// <summary>
+        /// Google Display only
+        /// </summary>
+        /// <value>Google Display only</value>
+        [DataMember(Name = "businessName", EmitDefaultValue = false)]
+        public string BusinessName { get; set; }
+
+        /// <summary>
+        /// Pinterest only. Board ID (auto-creates if not provided).
+        /// </summary>
+        /// <value>Pinterest only. Board ID (auto-creates if not provided).</value>
+        [DataMember(Name = "boardId", EmitDefaultValue = false)]
+        public string BoardId { get; set; }
 
         /// <summary>
         /// Gets or Sets Countries
@@ -377,6 +403,20 @@ namespace Late.Model
         public List<string> Keywords { get; set; }
 
         /// <summary>
+        /// Google Search RSA only. Extra headlines.
+        /// </summary>
+        /// <value>Google Search RSA only. Extra headlines.</value>
+        [DataMember(Name = "additionalHeadlines", EmitDefaultValue = false)]
+        public List<string> AdditionalHeadlines { get; set; }
+
+        /// <summary>
+        /// Google Search RSA only. Extra descriptions.
+        /// </summary>
+        /// <value>Google Search RSA only. Extra descriptions.</value>
+        [DataMember(Name = "additionalDescriptions", EmitDefaultValue = false)]
+        public List<string> AdditionalDescriptions { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -392,10 +432,13 @@ namespace Late.Model
             sb.Append("  BudgetType: ").Append(BudgetType).Append("\n");
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  Headline: ").Append(Headline).Append("\n");
+            sb.Append("  LongHeadline: ").Append(LongHeadline).Append("\n");
             sb.Append("  Body: ").Append(Body).Append("\n");
             sb.Append("  CallToAction: ").Append(CallToAction).Append("\n");
             sb.Append("  LinkUrl: ").Append(LinkUrl).Append("\n");
             sb.Append("  ImageUrl: ").Append(ImageUrl).Append("\n");
+            sb.Append("  BusinessName: ").Append(BusinessName).Append("\n");
+            sb.Append("  BoardId: ").Append(BoardId).Append("\n");
             sb.Append("  Countries: ").Append(Countries).Append("\n");
             sb.Append("  AgeMin: ").Append(AgeMin).Append("\n");
             sb.Append("  AgeMax: ").Append(AgeMax).Append("\n");
@@ -404,6 +447,8 @@ namespace Late.Model
             sb.Append("  AudienceId: ").Append(AudienceId).Append("\n");
             sb.Append("  CampaignType: ").Append(CampaignType).Append("\n");
             sb.Append("  Keywords: ").Append(Keywords).Append("\n");
+            sb.Append("  AdditionalHeadlines: ").Append(AdditionalHeadlines).Append("\n");
+            sb.Append("  AdditionalDescriptions: ").Append(AdditionalDescriptions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -428,6 +473,18 @@ namespace Late.Model
             if (this.Name != null && this.Name.Length > 255)
             {
                 yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // LongHeadline (string) maxLength
+            if (this.LongHeadline != null && this.LongHeadline.Length > 90)
+            {
+                yield return new ValidationResult("Invalid value for LongHeadline, length must be less than 90.", new [] { "LongHeadline" });
+            }
+
+            // BusinessName (string) maxLength
+            if (this.BusinessName != null && this.BusinessName.Length > 25)
+            {
+                yield return new ValidationResult("Invalid value for BusinessName, length must be less than 25.", new [] { "BusinessName" });
             }
 
             // AgeMin (int) maximum

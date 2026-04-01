@@ -107,9 +107,11 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Users added |  -  |
-| **400** | Invalid input or not a customer_list audience |  -  |
+| **400** | Invalid input (empty users array, missing email/phone) |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Ads add-on required |  -  |
 | **404** | Resource not found |  -  |
+| **422** | Audience is not a customer_list type or has no platform ID yet |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -310,6 +312,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Audience deleted |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Ads add-on required |  -  |
 | **404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -410,6 +413,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Audience details |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Ads add-on required |  -  |
 | **404** | Resource not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

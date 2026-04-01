@@ -13292,6 +13292,8 @@ paths:
           description: Ad analytics
         "401":
           $ref: "#/components/responses/Unauthorized"
+        "403":
+          description: Ads add-on required
         "404":
           $ref: "#/components/responses/NotFound"
       security:
@@ -13323,6 +13325,9 @@ paths:
           description: Ad accounts
         "401":
           $ref: "#/components/responses/Unauthorized"
+        "422":
+          description: "Platform ads connection required (TikTok Ads, X Ads) or Instagram\
+            \ missing linked Facebook account"
       security:
       - bearerAuth: []
       summary: List ad accounts for a social account
@@ -13438,6 +13443,8 @@ paths:
           description: Matching interests
         "401":
           $ref: "#/components/responses/Unauthorized"
+        "403":
+          description: Ads add-on required
       security:
       - bearerAuth: []
       summary: Search targeting interests
@@ -13541,6 +13548,8 @@ paths:
           description: Audience deleted
         "401":
           $ref: "#/components/responses/Unauthorized"
+        "403":
+          description: Ads add-on required
         "404":
           $ref: "#/components/responses/NotFound"
       security:
@@ -13569,6 +13578,8 @@ paths:
           description: Audience details
         "401":
           $ref: "#/components/responses/Unauthorized"
+        "403":
+          description: Ads add-on required
         "404":
           $ref: "#/components/responses/NotFound"
       security:
@@ -13604,11 +13615,16 @@ paths:
                 $ref: "#/components/schemas/addUsersToAdAudience_200_response"
           description: Users added
         "400":
-          description: Invalid input or not a customer_list audience
+          description: "Invalid input (empty users array, missing email/phone)"
         "401":
           $ref: "#/components/responses/Unauthorized"
+        "403":
+          description: Ads add-on required
         "404":
           $ref: "#/components/responses/NotFound"
+        "422":
+          description: Audience is not a customer_list type or has no platform ID
+            yet
       security:
       - bearerAuth: []
       summary: Add users to a customer list audience
@@ -33196,6 +33212,13 @@ components:
           items:
             type: string
           type: array
+    boostPost_request_tracking:
+      description: "Meta only. Tracking specs (pixel, URL tags)."
+      properties:
+        pixelId:
+          type: string
+        urlTags:
+          type: string
     boostPost_request:
       properties:
         postId:
@@ -33229,6 +33252,22 @@ components:
           $ref: "#/components/schemas/boostPost_request_schedule"
         targeting:
           $ref: "#/components/schemas/boostPost_request_targeting"
+        bidAmount:
+          description: Max bid cap (Meta only)
+          type: number
+        tracking:
+          $ref: "#/components/schemas/boostPost_request_tracking"
+        specialAdCategories:
+          description: "Meta only. Required for housing, employment, credit, or political\
+            \ ads."
+          items:
+            enum:
+            - HOUSING
+            - EMPLOYMENT
+            - CREDIT
+            - ISSUES_ELECTIONS_POLITICS
+            type: string
+          type: array
       required:
       - accountId
       - adAccountId
@@ -33263,6 +33302,10 @@ components:
         headline:
           description: "Required for most platforms. Max: Meta=255, Google=30, Pinterest=100"
           type: string
+        longHeadline:
+          description: Google Display only
+          maxLength: 90
+          type: string
         body:
           description: "Max: Google=90, Pinterest=500"
           type: string
@@ -33284,8 +33327,16 @@ components:
           format: uri
           type: string
         imageUrl:
-          description: Image URL (or video URL for TikTok)
+          description: Image URL (or video URL for TikTok). Not required for Google
+            Search campaigns.
           format: uri
+          type: string
+        businessName:
+          description: Google Display only
+          maxLength: 25
+          type: string
+        boardId:
+          description: Pinterest only. Board ID (auto-creates if not provided).
           type: string
         countries:
           items:
@@ -33322,6 +33373,16 @@ components:
           items:
             type: string
           type: array
+        additionalHeadlines:
+          description: Google Search RSA only. Extra headlines.
+          items:
+            type: string
+          type: array
+        additionalDescriptions:
+          description: Google Search RSA only. Extra descriptions.
+          items:
+            type: string
+          type: array
       required:
       - accountId
       - adAccountId
@@ -33329,7 +33390,6 @@ components:
       - budgetAmount
       - budgetType
       - goal
-      - imageUrl
       - name
     syncExternalAds_200_response:
       example:
@@ -33468,6 +33528,13 @@ components:
           maximum: 0.2
           minimum: 0.01
           type: number
+        rule:
+          description: Pixel event rule for website audiences (optional)
+          type: object
+        customerFileSource:
+          description: Data source declaration for GDPR compliance (customer_list
+            only)
+          type: string
       required:
       - accountId
       - adAccountId

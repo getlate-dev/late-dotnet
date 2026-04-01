@@ -71,6 +71,37 @@ namespace Late.Model
         [DataMember(Name = "goal", IsRequired = true, EmitDefaultValue = true)]
         public GoalEnum Goal { get; set; }
         /// <summary>
+        /// Defines SpecialAdCategories
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SpecialAdCategoriesEnum
+        {
+            /// <summary>
+            /// Enum HOUSING for value: HOUSING
+            /// </summary>
+            [EnumMember(Value = "HOUSING")]
+            HOUSING = 1,
+
+            /// <summary>
+            /// Enum EMPLOYMENT for value: EMPLOYMENT
+            /// </summary>
+            [EnumMember(Value = "EMPLOYMENT")]
+            EMPLOYMENT = 2,
+
+            /// <summary>
+            /// Enum CREDIT for value: CREDIT
+            /// </summary>
+            [EnumMember(Value = "CREDIT")]
+            CREDIT = 3,
+
+            /// <summary>
+            /// Enum ISSUESELECTIONSPOLITICS for value: ISSUES_ELECTIONS_POLITICS
+            /// </summary>
+            [EnumMember(Value = "ISSUES_ELECTIONS_POLITICS")]
+            ISSUESELECTIONSPOLITICS = 4
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="BoostPostRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -88,7 +119,10 @@ namespace Late.Model
         /// <param name="currency">currency.</param>
         /// <param name="schedule">schedule.</param>
         /// <param name="targeting">targeting.</param>
-        public BoostPostRequest(string postId = default, string platformPostId = default, string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, BoostPostRequestBudget budget = default, string currency = default, BoostPostRequestSchedule schedule = default, BoostPostRequestTargeting targeting = default)
+        /// <param name="bidAmount">Max bid cap (Meta only).</param>
+        /// <param name="tracking">tracking.</param>
+        /// <param name="specialAdCategories">Meta only. Required for housing, employment, credit, or political ads..</param>
+        public BoostPostRequest(string postId = default, string platformPostId = default, string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, BoostPostRequestBudget budget = default, string currency = default, BoostPostRequestSchedule schedule = default, BoostPostRequestTargeting targeting = default, decimal bidAmount = default, BoostPostRequestTracking tracking = default, List<SpecialAdCategoriesEnum> specialAdCategories = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -120,6 +154,9 @@ namespace Late.Model
             this.Currency = currency;
             this.Schedule = schedule;
             this.Targeting = targeting;
+            this.BidAmount = bidAmount;
+            this.Tracking = tracking;
+            this.SpecialAdCategories = specialAdCategories;
         }
 
         /// <summary>
@@ -184,6 +221,26 @@ namespace Late.Model
         public BoostPostRequestTargeting Targeting { get; set; }
 
         /// <summary>
+        /// Max bid cap (Meta only)
+        /// </summary>
+        /// <value>Max bid cap (Meta only)</value>
+        [DataMember(Name = "bidAmount", EmitDefaultValue = false)]
+        public decimal BidAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Tracking
+        /// </summary>
+        [DataMember(Name = "tracking", EmitDefaultValue = false)]
+        public BoostPostRequestTracking Tracking { get; set; }
+
+        /// <summary>
+        /// Meta only. Required for housing, employment, credit, or political ads.
+        /// </summary>
+        /// <value>Meta only. Required for housing, employment, credit, or political ads.</value>
+        [DataMember(Name = "specialAdCategories", EmitDefaultValue = false)]
+        public List<BoostPostRequest.SpecialAdCategoriesEnum> SpecialAdCategories { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -201,6 +258,9 @@ namespace Late.Model
             sb.Append("  Currency: ").Append(Currency).Append("\n");
             sb.Append("  Schedule: ").Append(Schedule).Append("\n");
             sb.Append("  Targeting: ").Append(Targeting).Append("\n");
+            sb.Append("  BidAmount: ").Append(BidAmount).Append("\n");
+            sb.Append("  Tracking: ").Append(Tracking).Append("\n");
+            sb.Append("  SpecialAdCategories: ").Append(SpecialAdCategories).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

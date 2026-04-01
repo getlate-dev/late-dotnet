@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **Currency** | **string** |  | [optional] 
 **Schedule** | [**BoostPostRequestSchedule**](BoostPostRequestSchedule.md) |  | [optional] 
 **Targeting** | [**BoostPostRequestTargeting**](BoostPostRequestTargeting.md) |  | [optional] 
+**BidAmount** | **decimal** | Max bid cap (Meta only) | [optional] 
+**Tracking** | [**BoostPostRequestTracking**](BoostPostRequestTracking.md) |  | [optional] 
+**SpecialAdCategories** | **List&lt;BoostPostRequest.SpecialAdCategoriesEnum&gt;** | Meta only. Required for housing, employment, credit, or political ads. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

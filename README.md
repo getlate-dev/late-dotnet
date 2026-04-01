@@ -443,6 +443,7 @@ Class | Method | HTTP request | Description
  - [Model.BoostPostRequestBudget](docs/BoostPostRequestBudget.md)
  - [Model.BoostPostRequestSchedule](docs/BoostPostRequestSchedule.md)
  - [Model.BoostPostRequestTargeting](docs/BoostPostRequestTargeting.md)
+ - [Model.BoostPostRequestTracking](docs/BoostPostRequestTracking.md)
  - [Model.BulkCreateContacts200Response](docs/BulkCreateContacts200Response.md)
  - [Model.BulkCreateContactsRequest](docs/BulkCreateContactsRequest.md)
  - [Model.BulkCreateContactsRequestContactsInner](docs/BulkCreateContactsRequestContactsInner.md)
