@@ -518,6 +518,7 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Audiences |  -  |
 | **401** | Unauthorized |  -  |
+| **403** | Ads add-on required |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
