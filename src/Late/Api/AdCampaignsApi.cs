@@ -29,6 +29,41 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Get nested campaign/ad-set/ad tree
+        /// </summary>
+        /// <remarks>
+        /// Returns a nested Campaign &gt; Ad Set &gt; Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \&quot;Ungrouped\&quot; buckets. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (1-based) (optional, default to 1)</param>
+        /// <param name="limit">Campaigns per page (optional, default to 20)</param>
+        /// <param name="source"> (optional, default to zernio)</param>
+        /// <param name="platform"> (optional)</param>
+        /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
+        /// <param name="adAccountId">Platform ad account ID (optional)</param>
+        /// <param name="accountId">Social account ID (optional)</param>
+        /// <param name="profileId">Profile ID (optional)</param>
+        /// <returns>GetAdTree200Response</returns>
+        GetAdTree200Response GetAdTree(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default);
+
+        /// <summary>
+        /// Get nested campaign/ad-set/ad tree
+        /// </summary>
+        /// <remarks>
+        /// Returns a nested Campaign &gt; Ad Set &gt; Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \&quot;Ungrouped\&quot; buckets. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (1-based) (optional, default to 1)</param>
+        /// <param name="limit">Campaigns per page (optional, default to 20)</param>
+        /// <param name="source"> (optional, default to zernio)</param>
+        /// <param name="platform"> (optional)</param>
+        /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
+        /// <param name="adAccountId">Platform ad account ID (optional)</param>
+        /// <param name="accountId">Social account ID (optional)</param>
+        /// <param name="profileId">Profile ID (optional)</param>
+        /// <returns>ApiResponse of GetAdTree200Response</returns>
+        ApiResponse<GetAdTree200Response> GetAdTreeWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default);
+        /// <summary>
         /// List campaigns with aggregate metrics
         /// </summary>
         /// <remarks>
@@ -95,6 +130,43 @@ namespace Late.Api
     public interface IAdCampaignsApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// Get nested campaign/ad-set/ad tree
+        /// </summary>
+        /// <remarks>
+        /// Returns a nested Campaign &gt; Ad Set &gt; Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \&quot;Ungrouped\&quot; buckets. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (1-based) (optional, default to 1)</param>
+        /// <param name="limit">Campaigns per page (optional, default to 20)</param>
+        /// <param name="source"> (optional, default to zernio)</param>
+        /// <param name="platform"> (optional)</param>
+        /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
+        /// <param name="adAccountId">Platform ad account ID (optional)</param>
+        /// <param name="accountId">Social account ID (optional)</param>
+        /// <param name="profileId">Profile ID (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetAdTree200Response</returns>
+        System.Threading.Tasks.Task<GetAdTree200Response> GetAdTreeAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get nested campaign/ad-set/ad tree
+        /// </summary>
+        /// <remarks>
+        /// Returns a nested Campaign &gt; Ad Set &gt; Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \&quot;Ungrouped\&quot; buckets. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (1-based) (optional, default to 1)</param>
+        /// <param name="limit">Campaigns per page (optional, default to 20)</param>
+        /// <param name="source"> (optional, default to zernio)</param>
+        /// <param name="platform"> (optional)</param>
+        /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
+        /// <param name="adAccountId">Platform ad account ID (optional)</param>
+        /// <param name="accountId">Social account ID (optional)</param>
+        /// <param name="profileId">Profile ID (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetAdTree200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GetAdTree200Response>> GetAdTreeWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List campaigns with aggregate metrics
         /// </summary>
@@ -368,6 +440,215 @@ namespace Late.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        /// Get nested campaign/ad-set/ad tree Returns a nested Campaign &gt; Ad Set &gt; Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \&quot;Ungrouped\&quot; buckets. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (1-based) (optional, default to 1)</param>
+        /// <param name="limit">Campaigns per page (optional, default to 20)</param>
+        /// <param name="source"> (optional, default to zernio)</param>
+        /// <param name="platform"> (optional)</param>
+        /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
+        /// <param name="adAccountId">Platform ad account ID (optional)</param>
+        /// <param name="accountId">Social account ID (optional)</param>
+        /// <param name="profileId">Profile ID (optional)</param>
+        /// <returns>GetAdTree200Response</returns>
+        public GetAdTree200Response GetAdTree(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default)
+        {
+            Late.Client.ApiResponse<GetAdTree200Response> localVarResponse = GetAdTreeWithHttpInfo(page, limit, source, platform, status, adAccountId, accountId, profileId);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get nested campaign/ad-set/ad tree Returns a nested Campaign &gt; Ad Set &gt; Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \&quot;Ungrouped\&quot; buckets. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (1-based) (optional, default to 1)</param>
+        /// <param name="limit">Campaigns per page (optional, default to 20)</param>
+        /// <param name="source"> (optional, default to zernio)</param>
+        /// <param name="platform"> (optional)</param>
+        /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
+        /// <param name="adAccountId">Platform ad account ID (optional)</param>
+        /// <param name="accountId">Social account ID (optional)</param>
+        /// <param name="profileId">Profile ID (optional)</param>
+        /// <returns>ApiResponse of GetAdTree200Response</returns>
+        public Late.Client.ApiResponse<GetAdTree200Response> GetAdTreeWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default)
+        {
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
+            }
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (adAccountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "adAccountId", adAccountId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<GetAdTree200Response>("/v1/ads/tree", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAdTree", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get nested campaign/ad-set/ad tree Returns a nested Campaign &gt; Ad Set &gt; Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \&quot;Ungrouped\&quot; buckets. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (1-based) (optional, default to 1)</param>
+        /// <param name="limit">Campaigns per page (optional, default to 20)</param>
+        /// <param name="source"> (optional, default to zernio)</param>
+        /// <param name="platform"> (optional)</param>
+        /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
+        /// <param name="adAccountId">Platform ad account ID (optional)</param>
+        /// <param name="accountId">Social account ID (optional)</param>
+        /// <param name="profileId">Profile ID (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GetAdTree200Response</returns>
+        public async System.Threading.Tasks.Task<GetAdTree200Response> GetAdTreeAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<GetAdTree200Response> localVarResponse = await GetAdTreeWithHttpInfoAsync(page, limit, source, platform, status, adAccountId, accountId, profileId, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get nested campaign/ad-set/ad tree Returns a nested Campaign &gt; Ad Set &gt; Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \&quot;Ungrouped\&quot; buckets. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="page">Page number (1-based) (optional, default to 1)</param>
+        /// <param name="limit">Campaigns per page (optional, default to 20)</param>
+        /// <param name="source"> (optional, default to zernio)</param>
+        /// <param name="platform"> (optional)</param>
+        /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
+        /// <param name="adAccountId">Platform ad account ID (optional)</param>
+        /// <param name="accountId">Social account ID (optional)</param>
+        /// <param name="profileId">Profile ID (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GetAdTree200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetAdTree200Response>> GetAdTreeWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (page != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (source != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "source", source));
+            }
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (adAccountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "adAccountId", adAccountId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            }
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<GetAdTree200Response>("/v1/ads/tree", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAdTree", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

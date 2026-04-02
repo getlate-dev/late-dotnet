@@ -4,8 +4,123 @@ All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**GetAdTree**](AdCampaignsApi.md#getadtree) | **GET** /v1/ads/tree | Get nested campaign/ad-set/ad tree |
 | [**ListAdCampaigns**](AdCampaignsApi.md#listadcampaigns) | **GET** /v1/ads/campaigns | List campaigns with aggregate metrics |
 | [**UpdateAdCampaignStatus**](AdCampaignsApi.md#updateadcampaignstatus) | **PUT** /v1/ads/campaigns/{campaignId}/status | Pause or resume a campaign |
+
+<a id="getadtree"></a>
+# **GetAdTree**
+> GetAdTree200Response GetAdTree (int? page = null, int? limit = null, string? source = null, string? platform = null, string? status = null, string? adAccountId = null, string? accountId = null, string? profileId = null)
+
+Get nested campaign/ad-set/ad tree
+
+Returns a nested Campaign > Ad Set > Ad hierarchy with rolled-up metrics at each level. Uses a two-stage aggregation: ads are grouped into ad sets, then ad sets into campaigns. Pagination is at the campaign level. Ads without a campaign or ad set ID are grouped into synthetic \"Ungrouped\" buckets. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class GetAdTreeExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AdCampaignsApi(httpClient, config, httpClientHandler);
+            var page = 1;  // int? | Page number (1-based) (optional)  (default to 1)
+            var limit = 20;  // int? | Campaigns per page (optional)  (default to 20)
+            var source = "zernio";  // string? |  (optional)  (default to zernio)
+            var platform = "facebook";  // string? |  (optional) 
+            var status = "active";  // string? | Filter by derived campaign status (post-aggregation) (optional) 
+            var adAccountId = "adAccountId_example";  // string? | Platform ad account ID (optional) 
+            var accountId = "accountId_example";  // string? | Social account ID (optional) 
+            var profileId = "profileId_example";  // string? | Profile ID (optional) 
+
+            try
+            {
+                // Get nested campaign/ad-set/ad tree
+                GetAdTree200Response result = apiInstance.GetAdTree(page, limit, source, platform, status, adAccountId, accountId, profileId);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdCampaignsApi.GetAdTree: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the GetAdTreeWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Get nested campaign/ad-set/ad tree
+    ApiResponse<GetAdTree200Response> response = apiInstance.GetAdTreeWithHttpInfo(page, limit, source, platform, status, adAccountId, accountId, profileId);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdCampaignsApi.GetAdTreeWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **page** | **int?** | Page number (1-based) | [optional] [default to 1] |
+| **limit** | **int?** | Campaigns per page | [optional] [default to 20] |
+| **source** | **string?** |  | [optional] [default to zernio] |
+| **platform** | **string?** |  | [optional]  |
+| **status** | **string?** | Filter by derived campaign status (post-aggregation) | [optional]  |
+| **adAccountId** | **string?** | Platform ad account ID | [optional]  |
+| **accountId** | **string?** | Social account ID | [optional]  |
+| **profileId** | **string?** | Profile ID | [optional]  |
+
+### Return type
+
+[**GetAdTree200Response**](GetAdTree200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Nested campaign tree with pagination |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Ads add-on required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="listadcampaigns"></a>
 # **ListAdCampaigns**
