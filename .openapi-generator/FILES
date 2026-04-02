@@ -17,6 +17,7 @@ docs/AdAudiencesApi.md
 docs/AdBudget.md
 docs/AdCampaign.md
 docs/AdCampaignsApi.md
+docs/AdCreative.md
 docs/AdMetrics.md
 docs/AdSchedule.md
 docs/AdTreeAdSet.md
@@ -751,6 +752,7 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/AdCreativeTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -817,6 +819,7 @@ src/Late/Model/ActivateSequence200Response.cs
 src/Late/Model/Ad.cs
 src/Late/Model/AdBudget.cs
 src/Late/Model/AdCampaign.cs
+src/Late/Model/AdCreative.cs
 src/Late/Model/AdMetrics.cs
 src/Late/Model/AdSchedule.cs
 src/Late/Model/AdTreeAdSet.cs

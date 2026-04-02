@@ -18354,7 +18354,19 @@ components:
         platformCampaignId: platformCampaignId
         platformAdId: platformAdId
         platform: facebook
-        creative: "{}"
+        creative:
+          googleDescription: googleDescription
+          pinterestDescription: pinterestDescription
+          imageUrl: imageUrl
+          linkUrl: linkUrl
+          googleHeadline: googleHeadline
+          pinterestTitle: pinterestTitle
+          body: body
+          mediaUrls:
+          - mediaUrls
+          - mediaUrls
+          thumbnailUrl: thumbnailUrl
+          pinterestImageUrl: pinterestImageUrl
         schedule:
           endDate: 2000-01-23T04:56:07.000+00:00
           startDate: 2000-01-23T04:56:07.000+00:00
@@ -18432,8 +18444,7 @@ components:
         adSetName:
           type: string
         creative:
-          description: Platform-specific creative data
-          type: object
+          $ref: "#/components/schemas/Ad_creative"
         targeting:
           type: object
         schedule:
@@ -18457,7 +18468,19 @@ components:
           platformCampaignId: platformCampaignId
           platformAdId: platformAdId
           platform: facebook
-          creative: "{}"
+          creative:
+            googleDescription: googleDescription
+            pinterestDescription: pinterestDescription
+            imageUrl: imageUrl
+            linkUrl: linkUrl
+            googleHeadline: googleHeadline
+            pinterestTitle: pinterestTitle
+            body: body
+            mediaUrls:
+            - mediaUrls
+            - mediaUrls
+            thumbnailUrl: thumbnailUrl
+            pinterestImageUrl: pinterestImageUrl
           schedule:
             endDate: 2000-01-23T04:56:07.000+00:00
             startDate: 2000-01-23T04:56:07.000+00:00
@@ -18482,7 +18505,19 @@ components:
           platformCampaignId: platformCampaignId
           platformAdId: platformAdId
           platform: facebook
-          creative: "{}"
+          creative:
+            googleDescription: googleDescription
+            pinterestDescription: pinterestDescription
+            imageUrl: imageUrl
+            linkUrl: linkUrl
+            googleHeadline: googleHeadline
+            pinterestTitle: pinterestTitle
+            body: body
+            mediaUrls:
+            - mediaUrls
+            - mediaUrls
+            thumbnailUrl: thumbnailUrl
+            pinterestImageUrl: pinterestImageUrl
           schedule:
             endDate: 2000-01-23T04:56:07.000+00:00
             startDate: 2000-01-23T04:56:07.000+00:00
@@ -18563,7 +18598,19 @@ components:
             platformCampaignId: platformCampaignId
             platformAdId: platformAdId
             platform: facebook
-            creative: "{}"
+            creative:
+              googleDescription: googleDescription
+              pinterestDescription: pinterestDescription
+              imageUrl: imageUrl
+              linkUrl: linkUrl
+              googleHeadline: googleHeadline
+              pinterestTitle: pinterestTitle
+              body: body
+              mediaUrls:
+              - mediaUrls
+              - mediaUrls
+              thumbnailUrl: thumbnailUrl
+              pinterestImageUrl: pinterestImageUrl
             schedule:
               endDate: 2000-01-23T04:56:07.000+00:00
               startDate: 2000-01-23T04:56:07.000+00:00
@@ -18588,7 +18635,19 @@ components:
             platformCampaignId: platformCampaignId
             platformAdId: platformAdId
             platform: facebook
-            creative: "{}"
+            creative:
+              googleDescription: googleDescription
+              pinterestDescription: pinterestDescription
+              imageUrl: imageUrl
+              linkUrl: linkUrl
+              googleHeadline: googleHeadline
+              pinterestTitle: pinterestTitle
+              body: body
+              mediaUrls:
+              - mediaUrls
+              - mediaUrls
+              thumbnailUrl: thumbnailUrl
+              pinterestImageUrl: pinterestImageUrl
             schedule:
               endDate: 2000-01-23T04:56:07.000+00:00
               startDate: 2000-01-23T04:56:07.000+00:00
@@ -18631,7 +18690,19 @@ components:
             platformCampaignId: platformCampaignId
             platformAdId: platformAdId
             platform: facebook
-            creative: "{}"
+            creative:
+              googleDescription: googleDescription
+              pinterestDescription: pinterestDescription
+              imageUrl: imageUrl
+              linkUrl: linkUrl
+              googleHeadline: googleHeadline
+              pinterestTitle: pinterestTitle
+              body: body
+              mediaUrls:
+              - mediaUrls
+              - mediaUrls
+              thumbnailUrl: thumbnailUrl
+              pinterestImageUrl: pinterestImageUrl
             schedule:
               endDate: 2000-01-23T04:56:07.000+00:00
               startDate: 2000-01-23T04:56:07.000+00:00
@@ -18656,7 +18727,19 @@ components:
             platformCampaignId: platformCampaignId
             platformAdId: platformAdId
             platform: facebook
-            creative: "{}"
+            creative:
+              googleDescription: googleDescription
+              pinterestDescription: pinterestDescription
+              imageUrl: imageUrl
+              linkUrl: linkUrl
+              googleHeadline: googleHeadline
+              pinterestTitle: pinterestTitle
+              body: body
+              mediaUrls:
+              - mediaUrls
+              - mediaUrls
+              thumbnailUrl: thumbnailUrl
+              pinterestImageUrl: pinterestImageUrl
             schedule:
               endDate: 2000-01-23T04:56:07.000+00:00
               startDate: 2000-01-23T04:56:07.000+00:00
@@ -32502,7 +32585,19 @@ components:
           platformCampaignId: platformCampaignId
           platformAdId: platformAdId
           platform: facebook
-          creative: "{}"
+          creative:
+            googleDescription: googleDescription
+            pinterestDescription: pinterestDescription
+            imageUrl: imageUrl
+            linkUrl: linkUrl
+            googleHeadline: googleHeadline
+            pinterestTitle: pinterestTitle
+            body: body
+            mediaUrls:
+            - mediaUrls
+            - mediaUrls
+            thumbnailUrl: thumbnailUrl
+            pinterestImageUrl: pinterestImageUrl
           schedule:
             endDate: 2000-01-23T04:56:07.000+00:00
             startDate: 2000-01-23T04:56:07.000+00:00
@@ -32527,7 +32622,19 @@ components:
           platformCampaignId: platformCampaignId
           platformAdId: platformAdId
           platform: facebook
-          creative: "{}"
+          creative:
+            googleDescription: googleDescription
+            pinterestDescription: pinterestDescription
+            imageUrl: imageUrl
+            linkUrl: linkUrl
+            googleHeadline: googleHeadline
+            pinterestTitle: pinterestTitle
+            body: body
+            mediaUrls:
+            - mediaUrls
+            - mediaUrls
+            thumbnailUrl: thumbnailUrl
+            pinterestImageUrl: pinterestImageUrl
           schedule:
             endDate: 2000-01-23T04:56:07.000+00:00
             startDate: 2000-01-23T04:56:07.000+00:00
@@ -32681,7 +32788,19 @@ components:
               platformCampaignId: platformCampaignId
               platformAdId: platformAdId
               platform: facebook
-              creative: "{}"
+              creative:
+                googleDescription: googleDescription
+                pinterestDescription: pinterestDescription
+                imageUrl: imageUrl
+                linkUrl: linkUrl
+                googleHeadline: googleHeadline
+                pinterestTitle: pinterestTitle
+                body: body
+                mediaUrls:
+                - mediaUrls
+                - mediaUrls
+                thumbnailUrl: thumbnailUrl
+                pinterestImageUrl: pinterestImageUrl
               schedule:
                 endDate: 2000-01-23T04:56:07.000+00:00
                 startDate: 2000-01-23T04:56:07.000+00:00
@@ -32706,7 +32825,19 @@ components:
               platformCampaignId: platformCampaignId
               platformAdId: platformAdId
               platform: facebook
-              creative: "{}"
+              creative:
+                googleDescription: googleDescription
+                pinterestDescription: pinterestDescription
+                imageUrl: imageUrl
+                linkUrl: linkUrl
+                googleHeadline: googleHeadline
+                pinterestTitle: pinterestTitle
+                body: body
+                mediaUrls:
+                - mediaUrls
+                - mediaUrls
+                thumbnailUrl: thumbnailUrl
+                pinterestImageUrl: pinterestImageUrl
               schedule:
                 endDate: 2000-01-23T04:56:07.000+00:00
                 startDate: 2000-01-23T04:56:07.000+00:00
@@ -32749,7 +32880,19 @@ components:
               platformCampaignId: platformCampaignId
               platformAdId: platformAdId
               platform: facebook
-              creative: "{}"
+              creative:
+                googleDescription: googleDescription
+                pinterestDescription: pinterestDescription
+                imageUrl: imageUrl
+                linkUrl: linkUrl
+                googleHeadline: googleHeadline
+                pinterestTitle: pinterestTitle
+                body: body
+                mediaUrls:
+                - mediaUrls
+                - mediaUrls
+                thumbnailUrl: thumbnailUrl
+                pinterestImageUrl: pinterestImageUrl
               schedule:
                 endDate: 2000-01-23T04:56:07.000+00:00
                 startDate: 2000-01-23T04:56:07.000+00:00
@@ -32774,7 +32917,19 @@ components:
               platformCampaignId: platformCampaignId
               platformAdId: platformAdId
               platform: facebook
-              creative: "{}"
+              creative:
+                googleDescription: googleDescription
+                pinterestDescription: pinterestDescription
+                imageUrl: imageUrl
+                linkUrl: linkUrl
+                googleHeadline: googleHeadline
+                pinterestTitle: pinterestTitle
+                body: body
+                mediaUrls:
+                - mediaUrls
+                - mediaUrls
+                thumbnailUrl: thumbnailUrl
+                pinterestImageUrl: pinterestImageUrl
               schedule:
                 endDate: 2000-01-23T04:56:07.000+00:00
                 startDate: 2000-01-23T04:56:07.000+00:00
@@ -32840,7 +32995,19 @@ components:
               platformCampaignId: platformCampaignId
               platformAdId: platformAdId
               platform: facebook
-              creative: "{}"
+              creative:
+                googleDescription: googleDescription
+                pinterestDescription: pinterestDescription
+                imageUrl: imageUrl
+                linkUrl: linkUrl
+                googleHeadline: googleHeadline
+                pinterestTitle: pinterestTitle
+                body: body
+                mediaUrls:
+                - mediaUrls
+                - mediaUrls
+                thumbnailUrl: thumbnailUrl
+                pinterestImageUrl: pinterestImageUrl
               schedule:
                 endDate: 2000-01-23T04:56:07.000+00:00
                 startDate: 2000-01-23T04:56:07.000+00:00
@@ -32865,7 +33032,19 @@ components:
               platformCampaignId: platformCampaignId
               platformAdId: platformAdId
               platform: facebook
-              creative: "{}"
+              creative:
+                googleDescription: googleDescription
+                pinterestDescription: pinterestDescription
+                imageUrl: imageUrl
+                linkUrl: linkUrl
+                googleHeadline: googleHeadline
+                pinterestTitle: pinterestTitle
+                body: body
+                mediaUrls:
+                - mediaUrls
+                - mediaUrls
+                thumbnailUrl: thumbnailUrl
+                pinterestImageUrl: pinterestImageUrl
               schedule:
                 endDate: 2000-01-23T04:56:07.000+00:00
                 startDate: 2000-01-23T04:56:07.000+00:00
@@ -32908,7 +33087,19 @@ components:
               platformCampaignId: platformCampaignId
               platformAdId: platformAdId
               platform: facebook
-              creative: "{}"
+              creative:
+                googleDescription: googleDescription
+                pinterestDescription: pinterestDescription
+                imageUrl: imageUrl
+                linkUrl: linkUrl
+                googleHeadline: googleHeadline
+                pinterestTitle: pinterestTitle
+                body: body
+                mediaUrls:
+                - mediaUrls
+                - mediaUrls
+                thumbnailUrl: thumbnailUrl
+                pinterestImageUrl: pinterestImageUrl
               schedule:
                 endDate: 2000-01-23T04:56:07.000+00:00
                 startDate: 2000-01-23T04:56:07.000+00:00
@@ -32933,7 +33124,19 @@ components:
               platformCampaignId: platformCampaignId
               platformAdId: platformAdId
               platform: facebook
-              creative: "{}"
+              creative:
+                googleDescription: googleDescription
+                pinterestDescription: pinterestDescription
+                imageUrl: imageUrl
+                linkUrl: linkUrl
+                googleHeadline: googleHeadline
+                pinterestTitle: pinterestTitle
+                body: body
+                mediaUrls:
+                - mediaUrls
+                - mediaUrls
+                thumbnailUrl: thumbnailUrl
+                pinterestImageUrl: pinterestImageUrl
               schedule:
                 endDate: 2000-01-23T04:56:07.000+00:00
                 startDate: 2000-01-23T04:56:07.000+00:00
@@ -33003,7 +33206,19 @@ components:
           platformCampaignId: platformCampaignId
           platformAdId: platformAdId
           platform: facebook
-          creative: "{}"
+          creative:
+            googleDescription: googleDescription
+            pinterestDescription: pinterestDescription
+            imageUrl: imageUrl
+            linkUrl: linkUrl
+            googleHeadline: googleHeadline
+            pinterestTitle: pinterestTitle
+            body: body
+            mediaUrls:
+            - mediaUrls
+            - mediaUrls
+            thumbnailUrl: thumbnailUrl
+            pinterestImageUrl: pinterestImageUrl
           schedule:
             endDate: 2000-01-23T04:56:07.000+00:00
             startDate: 2000-01-23T04:56:07.000+00:00
@@ -33077,7 +33292,19 @@ components:
           platformCampaignId: platformCampaignId
           platformAdId: platformAdId
           platform: facebook
-          creative: "{}"
+          creative:
+            googleDescription: googleDescription
+            pinterestDescription: pinterestDescription
+            imageUrl: imageUrl
+            linkUrl: linkUrl
+            googleHeadline: googleHeadline
+            pinterestTitle: pinterestTitle
+            body: body
+            mediaUrls:
+            - mediaUrls
+            - mediaUrls
+            thumbnailUrl: thumbnailUrl
+            pinterestImageUrl: pinterestImageUrl
           schedule:
             endDate: 2000-01-23T04:56:07.000+00:00
             startDate: 2000-01-23T04:56:07.000+00:00
@@ -34854,6 +35081,54 @@ components:
           enum:
           - daily
           - lifetime
+          type: string
+      nullable: true
+    Ad_creative:
+      description: Platform-specific creative data. Fields vary by platform.
+      example:
+        googleDescription: googleDescription
+        pinterestDescription: pinterestDescription
+        imageUrl: imageUrl
+        linkUrl: linkUrl
+        googleHeadline: googleHeadline
+        pinterestTitle: pinterestTitle
+        body: body
+        mediaUrls:
+        - mediaUrls
+        - mediaUrls
+        thumbnailUrl: thumbnailUrl
+        pinterestImageUrl: pinterestImageUrl
+      properties:
+        thumbnailUrl:
+          description: Primary thumbnail/image URL
+          type: string
+        imageUrl:
+          description: Alternative image URL
+          type: string
+        mediaUrls:
+          description: "All media URLs for this ad (carousel images, multiple assets).\
+            \ Populated for Meta (carousel child_attachments), Google Ads (responsive\
+            \ display marketing_images), and LinkedIn (multi-image posts)."
+          items:
+            type: string
+          type: array
+        body:
+          description: Ad copy/text
+          type: string
+        googleHeadline:
+          description: Google Ads headline
+          type: string
+        googleDescription:
+          description: Google Ads description
+          type: string
+        linkUrl:
+          description: Destination URL
+          type: string
+        pinterestImageUrl:
+          type: string
+        pinterestTitle:
+          type: string
+        pinterestDescription:
           type: string
       nullable: true
     Ad_schedule:

@@ -407,6 +407,7 @@ Class | Method | HTTP request | Description
  - [Model.Ad](docs/Ad.md)
  - [Model.AdBudget](docs/AdBudget.md)
  - [Model.AdCampaign](docs/AdCampaign.md)
+ - [Model.AdCreative](docs/AdCreative.md)
  - [Model.AdMetrics](docs/AdMetrics.md)
  - [Model.AdSchedule](docs/AdSchedule.md)
  - [Model.AdTreeAdSet](docs/AdTreeAdSet.md)

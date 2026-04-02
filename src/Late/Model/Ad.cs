@@ -223,13 +223,13 @@ namespace Late.Model
         /// <param name="platformAdSetId">platformAdSetId.</param>
         /// <param name="campaignName">campaignName.</param>
         /// <param name="adSetName">adSetName.</param>
-        /// <param name="creative">Platform-specific creative data.</param>
+        /// <param name="creative">creative.</param>
         /// <param name="targeting">targeting.</param>
         /// <param name="schedule">schedule.</param>
         /// <param name="rejectionReason">rejectionReason.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public Ad(string id = default, string name = default, PlatformEnum? platform = default, StatusEnum? status = default, AdTypeEnum? adType = default, GoalEnum? goal = default, bool isExternal = default, AdBudget budget = default, AdMetrics metrics = default, string platformAdId = default, string platformAdAccountId = default, string platformCampaignId = default, string platformAdSetId = default, string campaignName = default, string adSetName = default, Object creative = default, Object targeting = default, AdSchedule schedule = default, string rejectionReason = default, DateTime createdAt = default, DateTime updatedAt = default)
+        public Ad(string id = default, string name = default, PlatformEnum? platform = default, StatusEnum? status = default, AdTypeEnum? adType = default, GoalEnum? goal = default, bool isExternal = default, AdBudget budget = default, AdMetrics metrics = default, string platformAdId = default, string platformAdAccountId = default, string platformCampaignId = default, string platformAdSetId = default, string campaignName = default, string adSetName = default, AdCreative creative = default, Object targeting = default, AdSchedule schedule = default, string rejectionReason = default, DateTime createdAt = default, DateTime updatedAt = default)
         {
             this.Id = id;
             this.Name = name;
@@ -322,11 +322,10 @@ namespace Late.Model
         public string AdSetName { get; set; }
 
         /// <summary>
-        /// Platform-specific creative data
+        /// Gets or Sets Creative
         /// </summary>
-        /// <value>Platform-specific creative data</value>
         [DataMember(Name = "creative", EmitDefaultValue = false)]
-        public Object Creative { get; set; }
+        public AdCreative Creative { get; set; }
 
         /// <summary>
         /// Gets or Sets Targeting
