@@ -380,25 +380,27 @@ namespace Late.Api
         /// List GBP locations
         /// </summary>
         /// <remarks>
-        /// For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+        /// For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID from your connection flow</param>
-        /// <param name="tempToken">Temporary Google access token from the OAuth callback redirect</param>
+        /// <param name="profileId">Profile ID from your connection flow. Required for auth validation when provided. (optional)</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional)</param>
+        /// <param name="tempToken">Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional)</param>
         /// <returns>ListGoogleBusinessLocations200Response</returns>
-        ListGoogleBusinessLocations200Response ListGoogleBusinessLocations(string profileId, string tempToken);
+        ListGoogleBusinessLocations200Response ListGoogleBusinessLocations(string? profileId = default, string? pendingDataToken = default, string? tempToken = default);
 
         /// <summary>
         /// List GBP locations
         /// </summary>
         /// <remarks>
-        /// For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+        /// For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID from your connection flow</param>
-        /// <param name="tempToken">Temporary Google access token from the OAuth callback redirect</param>
+        /// <param name="profileId">Profile ID from your connection flow. Required for auth validation when provided. (optional)</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional)</param>
+        /// <param name="tempToken">Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional)</param>
         /// <returns>ApiResponse of ListGoogleBusinessLocations200Response</returns>
-        ApiResponse<ListGoogleBusinessLocations200Response> ListGoogleBusinessLocationsWithHttpInfo(string profileId, string tempToken);
+        ApiResponse<ListGoogleBusinessLocations200Response> ListGoogleBusinessLocationsWithHttpInfo(string? profileId = default, string? pendingDataToken = default, string? tempToken = default);
         /// <summary>
         /// List LinkedIn orgs
         /// </summary>
@@ -497,7 +499,7 @@ namespace Late.Api
         /// Select GBP location
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+        /// Complete the headless GBP flow by saving the user&#39;s selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step&#x3D;select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -508,7 +510,7 @@ namespace Late.Api
         /// Select GBP location
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+        /// Complete the headless GBP flow by saving the user&#39;s selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step&#x3D;select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -1110,27 +1112,29 @@ namespace Late.Api
         /// List GBP locations
         /// </summary>
         /// <remarks>
-        /// For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+        /// For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID from your connection flow</param>
-        /// <param name="tempToken">Temporary Google access token from the OAuth callback redirect</param>
+        /// <param name="profileId">Profile ID from your connection flow. Required for auth validation when provided. (optional)</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional)</param>
+        /// <param name="tempToken">Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListGoogleBusinessLocations200Response</returns>
-        System.Threading.Tasks.Task<ListGoogleBusinessLocations200Response> ListGoogleBusinessLocationsAsync(string profileId, string tempToken, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ListGoogleBusinessLocations200Response> ListGoogleBusinessLocationsAsync(string? profileId = default, string? pendingDataToken = default, string? tempToken = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List GBP locations
         /// </summary>
         /// <remarks>
-        /// For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+        /// For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID from your connection flow</param>
-        /// <param name="tempToken">Temporary Google access token from the OAuth callback redirect</param>
+        /// <param name="profileId">Profile ID from your connection flow. Required for auth validation when provided. (optional)</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional)</param>
+        /// <param name="tempToken">Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListGoogleBusinessLocations200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListGoogleBusinessLocations200Response>> ListGoogleBusinessLocationsWithHttpInfoAsync(string profileId, string tempToken, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ListGoogleBusinessLocations200Response>> ListGoogleBusinessLocationsWithHttpInfoAsync(string? profileId = default, string? pendingDataToken = default, string? tempToken = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List LinkedIn orgs
         /// </summary>
@@ -1237,7 +1241,7 @@ namespace Late.Api
         /// Select GBP location
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+        /// Complete the headless GBP flow by saving the user&#39;s selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step&#x3D;select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -1249,7 +1253,7 @@ namespace Late.Api
         /// Select GBP location
         /// </summary>
         /// <remarks>
-        /// Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+        /// Complete the headless GBP flow by saving the user&#39;s selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step&#x3D;select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -3819,35 +3823,29 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID from your connection flow</param>
-        /// <param name="tempToken">Temporary Google access token from the OAuth callback redirect</param>
+        /// <param name="profileId">Profile ID from your connection flow. Required for auth validation when provided. (optional)</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional)</param>
+        /// <param name="tempToken">Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional)</param>
         /// <returns>ListGoogleBusinessLocations200Response</returns>
-        public ListGoogleBusinessLocations200Response ListGoogleBusinessLocations(string profileId, string tempToken)
+        public ListGoogleBusinessLocations200Response ListGoogleBusinessLocations(string? profileId = default, string? pendingDataToken = default, string? tempToken = default)
         {
-            Late.Client.ApiResponse<ListGoogleBusinessLocations200Response> localVarResponse = ListGoogleBusinessLocationsWithHttpInfo(profileId, tempToken);
+            Late.Client.ApiResponse<ListGoogleBusinessLocations200Response> localVarResponse = ListGoogleBusinessLocationsWithHttpInfo(profileId, pendingDataToken, tempToken);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID from your connection flow</param>
-        /// <param name="tempToken">Temporary Google access token from the OAuth callback redirect</param>
+        /// <param name="profileId">Profile ID from your connection flow. Required for auth validation when provided. (optional)</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional)</param>
+        /// <param name="tempToken">Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional)</param>
         /// <returns>ApiResponse of ListGoogleBusinessLocations200Response</returns>
-        public Late.Client.ApiResponse<ListGoogleBusinessLocations200Response> ListGoogleBusinessLocationsWithHttpInfo(string profileId, string tempToken)
+        public Late.Client.ApiResponse<ListGoogleBusinessLocations200Response> ListGoogleBusinessLocationsWithHttpInfo(string? profileId = default, string? pendingDataToken = default, string? tempToken = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling ConnectApi->ListGoogleBusinessLocations");
-
-            // verify the required parameter 'tempToken' is set
-            if (tempToken == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'tempToken' when calling ConnectApi->ListGoogleBusinessLocations");
-
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
@@ -3864,8 +3862,18 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "tempToken", tempToken));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (pendingDataToken != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "pendingDataToken", pendingDataToken));
+            }
+            if (tempToken != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "tempToken", tempToken));
+            }
 
             // authentication (connectToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Connect-Token")))
@@ -3892,37 +3900,31 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID from your connection flow</param>
-        /// <param name="tempToken">Temporary Google access token from the OAuth callback redirect</param>
+        /// <param name="profileId">Profile ID from your connection flow. Required for auth validation when provided. (optional)</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional)</param>
+        /// <param name="tempToken">Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListGoogleBusinessLocations200Response</returns>
-        public async System.Threading.Tasks.Task<ListGoogleBusinessLocations200Response> ListGoogleBusinessLocationsAsync(string profileId, string tempToken, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ListGoogleBusinessLocations200Response> ListGoogleBusinessLocationsAsync(string? profileId = default, string? pendingDataToken = default, string? tempToken = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Late.Client.ApiResponse<ListGoogleBusinessLocations200Response> localVarResponse = await ListGoogleBusinessLocationsWithHttpInfoAsync(profileId, tempToken, cancellationToken).ConfigureAwait(false);
+            Late.Client.ApiResponse<ListGoogleBusinessLocations200Response> localVarResponse = await ListGoogleBusinessLocationsWithHttpInfoAsync(profileId, pendingDataToken, tempToken, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+        /// List GBP locations For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="profileId">Profile ID from your connection flow</param>
-        /// <param name="tempToken">Temporary Google access token from the OAuth callback redirect</param>
+        /// <param name="profileId">Profile ID from your connection flow. Required for auth validation when provided. (optional)</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional)</param>
+        /// <param name="tempToken">Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListGoogleBusinessLocations200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListGoogleBusinessLocations200Response>> ListGoogleBusinessLocationsWithHttpInfoAsync(string profileId, string tempToken, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListGoogleBusinessLocations200Response>> ListGoogleBusinessLocationsWithHttpInfoAsync(string? profileId = default, string? pendingDataToken = default, string? tempToken = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            // verify the required parameter 'profileId' is set
-            if (profileId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling ConnectApi->ListGoogleBusinessLocations");
-
-            // verify the required parameter 'tempToken' is set
-            if (tempToken == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'tempToken' when calling ConnectApi->ListGoogleBusinessLocations");
-
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -3941,8 +3943,18 @@ namespace Late.Api
             var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
-            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "tempToken", tempToken));
+            if (profileId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (pendingDataToken != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "pendingDataToken", pendingDataToken));
+            }
+            if (tempToken != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "tempToken", tempToken));
+            }
 
             // authentication (connectToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-Connect-Token")))
@@ -4560,7 +4572,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select GBP location Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+        /// Select GBP location Complete the headless GBP flow by saving the user&#39;s selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step&#x3D;select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -4572,7 +4584,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select GBP location Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+        /// Select GBP location Complete the headless GBP flow by saving the user&#39;s selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step&#x3D;select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -4627,7 +4639,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select GBP location Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+        /// Select GBP location Complete the headless GBP flow by saving the user&#39;s selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step&#x3D;select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>
@@ -4640,7 +4652,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Select GBP location Complete the headless flow by saving the user&#39;s selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+        /// Select GBP location Complete the headless GBP flow by saving the user&#39;s selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step&#x3D;select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectGoogleBusinessLocationRequest"></param>

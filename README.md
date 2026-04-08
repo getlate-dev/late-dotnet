@@ -953,7 +953,6 @@ Class | Method | HTTP request | Description
  - [Model.SelectGoogleBusinessLocation200Response](docs/SelectGoogleBusinessLocation200Response.md)
  - [Model.SelectGoogleBusinessLocation200ResponseAccount](docs/SelectGoogleBusinessLocation200ResponseAccount.md)
  - [Model.SelectGoogleBusinessLocationRequest](docs/SelectGoogleBusinessLocationRequest.md)
- - [Model.SelectGoogleBusinessLocationRequestUserProfile](docs/SelectGoogleBusinessLocationRequestUserProfile.md)
  - [Model.SelectLinkedInOrganization200Response](docs/SelectLinkedInOrganization200Response.md)
  - [Model.SelectLinkedInOrganization200ResponseAccount](docs/SelectLinkedInOrganization200ResponseAccount.md)
  - [Model.SelectLinkedInOrganization200ResponseBulkRefresh](docs/SelectLinkedInOrganization200ResponseBulkRefresh.md)

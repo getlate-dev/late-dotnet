@@ -572,7 +572,6 @@ docs/SelectFacebookPageRequestUserProfile.md
 docs/SelectGoogleBusinessLocation200Response.md
 docs/SelectGoogleBusinessLocation200ResponseAccount.md
 docs/SelectGoogleBusinessLocationRequest.md
-docs/SelectGoogleBusinessLocationRequestUserProfile.md
 docs/SelectLinkedInOrganization200Response.md
 docs/SelectLinkedInOrganization200ResponseAccount.md
 docs/SelectLinkedInOrganization200ResponseBulkRefresh.md
@@ -1391,7 +1390,6 @@ src/Late/Model/SelectFacebookPageRequestUserProfile.cs
 src/Late/Model/SelectGoogleBusinessLocation200Response.cs
 src/Late/Model/SelectGoogleBusinessLocation200ResponseAccount.cs
 src/Late/Model/SelectGoogleBusinessLocationRequest.cs
-src/Late/Model/SelectGoogleBusinessLocationRequestUserProfile.cs
 src/Late/Model/SelectLinkedInOrganization200Response.cs
 src/Late/Model/SelectLinkedInOrganization200ResponseAccount.cs
 src/Late/Model/SelectLinkedInOrganization200ResponseBulkRefresh.cs

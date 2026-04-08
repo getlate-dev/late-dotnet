@@ -43,10 +43,9 @@ namespace Late.Model
         /// </summary>
         /// <param name="profileId">Profile ID from your connection flow (required).</param>
         /// <param name="locationId">The Google Business location ID selected by the user (required).</param>
-        /// <param name="tempToken">Temporary Google access token from OAuth (required).</param>
-        /// <param name="userProfile">userProfile.</param>
+        /// <param name="pendingDataToken">Token from the OAuth callback redirect (pendingDataToken query param). Tokens and profile data are retrieved server-side from this token. (required).</param>
         /// <param name="redirectUrl">Optional custom redirect URL to return to after selection.</param>
-        public SelectGoogleBusinessLocationRequest(string profileId = default, string locationId = default, string tempToken = default, SelectGoogleBusinessLocationRequestUserProfile userProfile = default, string redirectUrl = default)
+        public SelectGoogleBusinessLocationRequest(string profileId = default, string locationId = default, string pendingDataToken = default, string redirectUrl = default)
         {
             // to ensure "profileId" is required (not null)
             if (profileId == null)
@@ -60,13 +59,12 @@ namespace Late.Model
                 throw new ArgumentNullException("locationId is a required property for SelectGoogleBusinessLocationRequest and cannot be null");
             }
             this.LocationId = locationId;
-            // to ensure "tempToken" is required (not null)
-            if (tempToken == null)
+            // to ensure "pendingDataToken" is required (not null)
+            if (pendingDataToken == null)
             {
-                throw new ArgumentNullException("tempToken is a required property for SelectGoogleBusinessLocationRequest and cannot be null");
+                throw new ArgumentNullException("pendingDataToken is a required property for SelectGoogleBusinessLocationRequest and cannot be null");
             }
-            this.TempToken = tempToken;
-            this.UserProfile = userProfile;
+            this.PendingDataToken = pendingDataToken;
             this.RedirectUrl = redirectUrl;
         }
 
@@ -85,17 +83,11 @@ namespace Late.Model
         public string LocationId { get; set; }
 
         /// <summary>
-        /// Temporary Google access token from OAuth
+        /// Token from the OAuth callback redirect (pendingDataToken query param). Tokens and profile data are retrieved server-side from this token.
         /// </summary>
-        /// <value>Temporary Google access token from OAuth</value>
-        [DataMember(Name = "tempToken", IsRequired = true, EmitDefaultValue = true)]
-        public string TempToken { get; set; }
-
-        /// <summary>
-        /// Gets or Sets UserProfile
-        /// </summary>
-        [DataMember(Name = "userProfile", EmitDefaultValue = false)]
-        public SelectGoogleBusinessLocationRequestUserProfile UserProfile { get; set; }
+        /// <value>Token from the OAuth callback redirect (pendingDataToken query param). Tokens and profile data are retrieved server-side from this token.</value>
+        [DataMember(Name = "pendingDataToken", IsRequired = true, EmitDefaultValue = true)]
+        public string PendingDataToken { get; set; }
 
         /// <summary>
         /// Optional custom redirect URL to return to after selection
@@ -114,8 +106,7 @@ namespace Late.Model
             sb.Append("class SelectGoogleBusinessLocationRequest {\n");
             sb.Append("  ProfileId: ").Append(ProfileId).Append("\n");
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
-            sb.Append("  TempToken: ").Append(TempToken).Append("\n");
-            sb.Append("  UserProfile: ").Append(UserProfile).Append("\n");
+            sb.Append("  PendingDataToken: ").Append(PendingDataToken).Append("\n");
             sb.Append("  RedirectUrl: ").Append(RedirectUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

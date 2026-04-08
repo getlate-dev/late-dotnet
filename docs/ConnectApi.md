@@ -1668,11 +1668,11 @@ catch (ApiException e)
 
 <a id="listgooglebusinesslocations"></a>
 # **ListGoogleBusinessLocations**
-> ListGoogleBusinessLocations200Response ListGoogleBusinessLocations (string profileId, string tempToken)
+> ListGoogleBusinessLocations200Response ListGoogleBusinessLocations (string? profileId = null, string? pendingDataToken = null, string? tempToken = null)
 
 List GBP locations
 
-For headless flows. Returns the list of GBP locations the user can manage. Use X-Connect-Token if connecting via API key.
+For headless flows. Returns the list of GBP locations the user can manage. Use pendingDataToken (from the OAuth callback redirect) to list locations without consuming the token, so it remains available for select-location. Use X-Connect-Token header if connecting via API key. 
 
 ### Example
 ```csharp
@@ -1702,13 +1702,14 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
-            var profileId = "profileId_example";  // string | Profile ID from your connection flow
-            var tempToken = "tempToken_example";  // string | Temporary Google access token from the OAuth callback redirect
+            var profileId = "profileId_example";  // string? | Profile ID from your connection flow. Required for auth validation when provided. (optional) 
+            var pendingDataToken = "pendingDataToken_example";  // string? | Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. (optional) 
+            var tempToken = "tempToken_example";  // string? | Legacy. Direct Google access token. Use pendingDataToken instead when available. (optional) 
 
             try
             {
                 // List GBP locations
-                ListGoogleBusinessLocations200Response result = apiInstance.ListGoogleBusinessLocations(profileId, tempToken);
+                ListGoogleBusinessLocations200Response result = apiInstance.ListGoogleBusinessLocations(profileId, pendingDataToken, tempToken);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1729,7 +1730,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List GBP locations
-    ApiResponse<ListGoogleBusinessLocations200Response> response = apiInstance.ListGoogleBusinessLocationsWithHttpInfo(profileId, tempToken);
+    ApiResponse<ListGoogleBusinessLocations200Response> response = apiInstance.ListGoogleBusinessLocationsWithHttpInfo(profileId, pendingDataToken, tempToken);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1746,8 +1747,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **profileId** | **string** | Profile ID from your connection flow |  |
-| **tempToken** | **string** | Temporary Google access token from the OAuth callback redirect |  |
+| **profileId** | **string?** | Profile ID from your connection flow. Required for auth validation when provided. | [optional]  |
+| **pendingDataToken** | **string?** | Token from the OAuth callback redirect. Preferred over tempToken because it preserves server-side token storage. One of pendingDataToken or tempToken is required. | [optional]  |
+| **tempToken** | **string?** | Legacy. Direct Google access token. Use pendingDataToken instead when available. | [optional]  |
 
 ### Return type
 
@@ -2200,7 +2202,7 @@ catch (ApiException e)
 
 Select GBP location
 
-Complete the headless flow by saving the user's selected GBP location. Include userProfile from the OAuth redirect (contains refresh token). Use X-Connect-Token if connecting via API key.
+Complete the headless GBP flow by saving the user's selected location. The pendingDataToken is returned in your redirect URL after OAuth completes (step=select_location). Tokens and profile data are stored server-side, so only the pendingDataToken is needed here. Use X-Connect-Token header if connecting via API key. 
 
 ### Example
 ```csharp
