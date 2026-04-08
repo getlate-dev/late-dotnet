@@ -74,7 +74,7 @@ namespace Late.Api
         /// Get delivery logs
         /// </summary>
         /// <remarks>
-        /// Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;webhooks&#x60; instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -82,13 +82,14 @@ namespace Late.Api
         /// <param name="varEvent">Filter by event type (optional)</param>
         /// <param name="webhookId">Filter by webhook ID (optional)</param>
         /// <returns>GetWebhookLogs200Response</returns>
+        [Obsolete]
         GetWebhookLogs200Response GetWebhookLogs(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default);
 
         /// <summary>
         /// Get delivery logs
         /// </summary>
         /// <remarks>
-        /// Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;webhooks&#x60; instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -96,6 +97,7 @@ namespace Late.Api
         /// <param name="varEvent">Filter by event type (optional)</param>
         /// <param name="webhookId">Filter by webhook ID (optional)</param>
         /// <returns>ApiResponse of GetWebhookLogs200Response</returns>
+        [Obsolete]
         ApiResponse<GetWebhookLogs200Response> GetWebhookLogsWithHttpInfo(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default);
         /// <summary>
         /// List webhooks
@@ -217,7 +219,7 @@ namespace Late.Api
         /// Get delivery logs
         /// </summary>
         /// <remarks>
-        /// Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;webhooks&#x60; instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -226,13 +228,14 @@ namespace Late.Api
         /// <param name="webhookId">Filter by webhook ID (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhookLogs200Response</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<GetWebhookLogs200Response> GetWebhookLogsAsync(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get delivery logs
         /// </summary>
         /// <remarks>
-        /// Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;webhooks&#x60; instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -241,6 +244,7 @@ namespace Late.Api
         /// <param name="webhookId">Filter by webhook ID (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhookLogs200Response)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<GetWebhookLogs200Response>> GetWebhookLogsWithHttpInfoAsync(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List webhooks
@@ -779,7 +783,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// Get delivery logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;webhooks&#x60; instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -787,6 +791,7 @@ namespace Late.Api
         /// <param name="varEvent">Filter by event type (optional)</param>
         /// <param name="webhookId">Filter by webhook ID (optional)</param>
         /// <returns>GetWebhookLogs200Response</returns>
+        [Obsolete]
         public GetWebhookLogs200Response GetWebhookLogs(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default)
         {
             Late.Client.ApiResponse<GetWebhookLogs200Response> localVarResponse = GetWebhookLogsWithHttpInfo(limit, status, varEvent, webhookId);
@@ -794,7 +799,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// Get delivery logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;webhooks&#x60; instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -802,6 +807,7 @@ namespace Late.Api
         /// <param name="varEvent">Filter by event type (optional)</param>
         /// <param name="webhookId">Filter by webhook ID (optional)</param>
         /// <returns>ApiResponse of GetWebhookLogs200Response</returns>
+        [Obsolete]
         public Late.Client.ApiResponse<GetWebhookLogs200Response> GetWebhookLogsWithHttpInfo(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -857,7 +863,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// Get delivery logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;webhooks&#x60; instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -866,6 +872,7 @@ namespace Late.Api
         /// <param name="webhookId">Filter by webhook ID (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetWebhookLogs200Response</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<GetWebhookLogs200Response> GetWebhookLogsAsync(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             Late.Client.ApiResponse<GetWebhookLogs200Response> localVarResponse = await GetWebhookLogsWithHttpInfoAsync(limit, status, varEvent, webhookId, cancellationToken).ConfigureAwait(false);
@@ -873,7 +880,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get delivery logs Retrieve webhook delivery history. Logs are automatically deleted after 7 days. 
+        /// Get delivery logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;webhooks&#x60; instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
@@ -882,6 +889,7 @@ namespace Late.Api
         /// <param name="webhookId">Filter by webhook ID (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetWebhookLogs200Response)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetWebhookLogs200Response>> GetWebhookLogsWithHttpInfoAsync(int? limit = default, string? status = default, string? varEvent = default, string? webhookId = default, System.Threading.CancellationToken cancellationToken = default)
         {
 

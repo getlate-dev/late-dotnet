@@ -50,6 +50,35 @@ namespace Late.Api
         /// <returns>ApiResponse of CompleteTelegramConnect200Response</returns>
         ApiResponse<CompleteTelegramConnect200Response> CompleteTelegramConnectWithHttpInfo(string code);
         /// <summary>
+        /// Connect ads for a platform
+        /// </summary>
+        /// <remarks>
+        /// Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns &#x60;alreadyConnected: true&#x60; immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (&#x60;accountId&#x60; param). If ads are already connected, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the Google Ads OAuth flow.  Use the &#x60;adsStatus&#x60; field from &#x60;GET /v1/accounts&#x60; to check which accounts need ads connection. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Platform to connect ads for. Only platforms with ads support are accepted.</param>
+        /// <param name="profileId">Your Zernio profile ID</param>
+        /// <param name="accountId">Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional)</param>
+        /// <param name="redirectUrl">Custom redirect URL after OAuth completes (same-token platforms only) (optional)</param>
+        /// <param name="headless">Enable headless mode (same-token platforms only) (optional, default to false)</param>
+        /// <returns>ConnectAds200Response</returns>
+        ConnectAds200Response ConnectAds(string platform, string profileId, string? accountId = default, string? redirectUrl = default, bool? headless = default);
+
+        /// <summary>
+        /// Connect ads for a platform
+        /// </summary>
+        /// <remarks>
+        /// Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns &#x60;alreadyConnected: true&#x60; immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (&#x60;accountId&#x60; param). If ads are already connected, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the Google Ads OAuth flow.  Use the &#x60;adsStatus&#x60; field from &#x60;GET /v1/accounts&#x60; to check which accounts need ads connection. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Platform to connect ads for. Only platforms with ads support are accepted.</param>
+        /// <param name="profileId">Your Zernio profile ID</param>
+        /// <param name="accountId">Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional)</param>
+        /// <param name="redirectUrl">Custom redirect URL after OAuth completes (same-token platforms only) (optional)</param>
+        /// <param name="headless">Enable headless mode (same-token platforms only) (optional, default to false)</param>
+        /// <returns>ApiResponse of ConnectAds200Response</returns>
+        ApiResponse<ConnectAds200Response> ConnectAdsWithHttpInfo(string platform, string profileId, string? accountId = default, string? redirectUrl = default, bool? headless = default);
+        /// <summary>
         /// Connect Bluesky account
         /// </summary>
         /// <remarks>
@@ -751,6 +780,37 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (CompleteTelegramConnect200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CompleteTelegramConnect200Response>> CompleteTelegramConnectWithHttpInfoAsync(string code, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Connect ads for a platform
+        /// </summary>
+        /// <remarks>
+        /// Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns &#x60;alreadyConnected: true&#x60; immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (&#x60;accountId&#x60; param). If ads are already connected, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the Google Ads OAuth flow.  Use the &#x60;adsStatus&#x60; field from &#x60;GET /v1/accounts&#x60; to check which accounts need ads connection. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Platform to connect ads for. Only platforms with ads support are accepted.</param>
+        /// <param name="profileId">Your Zernio profile ID</param>
+        /// <param name="accountId">Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional)</param>
+        /// <param name="redirectUrl">Custom redirect URL after OAuth completes (same-token platforms only) (optional)</param>
+        /// <param name="headless">Enable headless mode (same-token platforms only) (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ConnectAds200Response</returns>
+        System.Threading.Tasks.Task<ConnectAds200Response> ConnectAdsAsync(string platform, string profileId, string? accountId = default, string? redirectUrl = default, bool? headless = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Connect ads for a platform
+        /// </summary>
+        /// <remarks>
+        /// Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns &#x60;alreadyConnected: true&#x60; immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (&#x60;accountId&#x60; param). If ads are already connected, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the Google Ads OAuth flow.  Use the &#x60;adsStatus&#x60; field from &#x60;GET /v1/accounts&#x60; to check which accounts need ads connection. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Platform to connect ads for. Only platforms with ads support are accepted.</param>
+        /// <param name="profileId">Your Zernio profile ID</param>
+        /// <param name="accountId">Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional)</param>
+        /// <param name="redirectUrl">Custom redirect URL after OAuth completes (same-token platforms only) (optional)</param>
+        /// <param name="headless">Enable headless mode (same-token platforms only) (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ConnectAds200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ConnectAds200Response>> ConnectAdsWithHttpInfoAsync(string platform, string profileId, string? accountId = default, string? redirectUrl = default, bool? headless = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Connect Bluesky account
         /// </summary>
@@ -1815,6 +1875,183 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CompleteTelegramConnect", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Connect ads for a platform Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns &#x60;alreadyConnected: true&#x60; immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (&#x60;accountId&#x60; param). If ads are already connected, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the Google Ads OAuth flow.  Use the &#x60;adsStatus&#x60; field from &#x60;GET /v1/accounts&#x60; to check which accounts need ads connection. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Platform to connect ads for. Only platforms with ads support are accepted.</param>
+        /// <param name="profileId">Your Zernio profile ID</param>
+        /// <param name="accountId">Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional)</param>
+        /// <param name="redirectUrl">Custom redirect URL after OAuth completes (same-token platforms only) (optional)</param>
+        /// <param name="headless">Enable headless mode (same-token platforms only) (optional, default to false)</param>
+        /// <returns>ConnectAds200Response</returns>
+        public ConnectAds200Response ConnectAds(string platform, string profileId, string? accountId = default, string? redirectUrl = default, bool? headless = default)
+        {
+            Late.Client.ApiResponse<ConnectAds200Response> localVarResponse = ConnectAdsWithHttpInfo(platform, profileId, accountId, redirectUrl, headless);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Connect ads for a platform Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns &#x60;alreadyConnected: true&#x60; immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (&#x60;accountId&#x60; param). If ads are already connected, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the Google Ads OAuth flow.  Use the &#x60;adsStatus&#x60; field from &#x60;GET /v1/accounts&#x60; to check which accounts need ads connection. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Platform to connect ads for. Only platforms with ads support are accepted.</param>
+        /// <param name="profileId">Your Zernio profile ID</param>
+        /// <param name="accountId">Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional)</param>
+        /// <param name="redirectUrl">Custom redirect URL after OAuth completes (same-token platforms only) (optional)</param>
+        /// <param name="headless">Enable headless mode (same-token platforms only) (optional, default to false)</param>
+        /// <returns>ApiResponse of ConnectAds200Response</returns>
+        public Late.Client.ApiResponse<ConnectAds200Response> ConnectAdsWithHttpInfo(string platform, string profileId, string? accountId = default, string? redirectUrl = default, bool? headless = default)
+        {
+            // verify the required parameter 'platform' is set
+            if (platform == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'platform' when calling ConnectApi->ConnectAds");
+
+            // verify the required parameter 'profileId' is set
+            if (profileId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling ConnectApi->ConnectAds");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("platform", Late.Client.ClientUtils.ParameterToString(platform)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            }
+            if (redirectUrl != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "redirect_url", redirectUrl));
+            }
+            if (headless != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "headless", headless));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ConnectAds200Response>("/v1/connect/{platform}/ads", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ConnectAds", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Connect ads for a platform Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns &#x60;alreadyConnected: true&#x60; immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (&#x60;accountId&#x60; param). If ads are already connected, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the Google Ads OAuth flow.  Use the &#x60;adsStatus&#x60; field from &#x60;GET /v1/accounts&#x60; to check which accounts need ads connection. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Platform to connect ads for. Only platforms with ads support are accepted.</param>
+        /// <param name="profileId">Your Zernio profile ID</param>
+        /// <param name="accountId">Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional)</param>
+        /// <param name="redirectUrl">Custom redirect URL after OAuth completes (same-token platforms only) (optional)</param>
+        /// <param name="headless">Enable headless mode (same-token platforms only) (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ConnectAds200Response</returns>
+        public async System.Threading.Tasks.Task<ConnectAds200Response> ConnectAdsAsync(string platform, string profileId, string? accountId = default, string? redirectUrl = default, bool? headless = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<ConnectAds200Response> localVarResponse = await ConnectAdsWithHttpInfoAsync(platform, profileId, accountId, redirectUrl, headless, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Connect ads for a platform Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns &#x60;alreadyConnected: true&#x60; immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (&#x60;accountId&#x60; param). If ads are already connected, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns &#x60;alreadyConnected: true&#x60;. Otherwise, starts the Google Ads OAuth flow.  Use the &#x60;adsStatus&#x60; field from &#x60;GET /v1/accounts&#x60; to check which accounts need ads connection. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="platform">Platform to connect ads for. Only platforms with ads support are accepted.</param>
+        /// <param name="profileId">Your Zernio profile ID</param>
+        /// <param name="accountId">Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional)</param>
+        /// <param name="redirectUrl">Custom redirect URL after OAuth completes (same-token platforms only) (optional)</param>
+        /// <param name="headless">Enable headless mode (same-token platforms only) (optional, default to false)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ConnectAds200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ConnectAds200Response>> ConnectAdsWithHttpInfoAsync(string platform, string profileId, string? accountId = default, string? redirectUrl = default, bool? headless = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'platform' is set
+            if (platform == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'platform' when calling ConnectApi->ConnectAds");
+
+            // verify the required parameter 'profileId' is set
+            if (profileId == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'profileId' when calling ConnectApi->ConnectAds");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("platform", Late.Client.ClientUtils.ParameterToString(platform)); // path parameter
+            localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            }
+            if (redirectUrl != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "redirect_url", redirectUrl));
+            }
+            if (headless != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "headless", headless));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ConnectAds200Response>("/v1/connect/{platform}/ads", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ConnectAds", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

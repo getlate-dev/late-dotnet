@@ -1,14 +1,12 @@
-# Late.Model.ListLogs200ResponsePagination
+# Late.Model.ConnectAds200ResponseOneOf1
+OAuth URL to redirect user to
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Total** | **int** |  | [optional] 
-**Limit** | **int** |  | [optional] 
-**Skip** | **int** |  | [optional] 
-**Pages** | **int** |  | [optional] 
-**HasMore** | **bool** |  | [optional] 
+**AuthUrl** | **string** |  | [optional] 
+**State** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -28,33 +28,33 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// ListLogs200Response
+    /// OAuth URL to redirect user to
     /// </summary>
-    [DataContract(Name = "listLogs_200_response")]
-    public partial class ListLogs200Response : IValidatableObject
+    [DataContract(Name = "connectAds_200_response_oneOf_1")]
+    public partial class ConnectAds200ResponseOneOf1 : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListLogs200Response" /> class.
+        /// Initializes a new instance of the <see cref="ConnectAds200ResponseOneOf1" /> class.
         /// </summary>
-        /// <param name="logs">logs.</param>
-        /// <param name="pagination">pagination.</param>
-        public ListLogs200Response(List<ListLogs200ResponseLogsInner> logs = default, ListLogs200ResponsePagination pagination = default)
+        /// <param name="authUrl">authUrl.</param>
+        /// <param name="state">state.</param>
+        public ConnectAds200ResponseOneOf1(string authUrl = default, string state = default)
         {
-            this.Logs = logs;
-            this.Pagination = pagination;
+            this.AuthUrl = authUrl;
+            this.State = state;
         }
 
         /// <summary>
-        /// Gets or Sets Logs
+        /// Gets or Sets AuthUrl
         /// </summary>
-        [DataMember(Name = "logs", EmitDefaultValue = false)]
-        public List<ListLogs200ResponseLogsInner> Logs { get; set; }
+        [DataMember(Name = "authUrl", EmitDefaultValue = false)]
+        public string AuthUrl { get; set; }
 
         /// <summary>
-        /// Gets or Sets Pagination
+        /// Gets or Sets State
         /// </summary>
-        [DataMember(Name = "pagination", EmitDefaultValue = false)]
-        public ListLogs200ResponsePagination Pagination { get; set; }
+        [DataMember(Name = "state", EmitDefaultValue = false)]
+        public string State { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -63,9 +63,9 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListLogs200Response {\n");
-            sb.Append("  Logs: ").Append(Logs).Append("\n");
-            sb.Append("  Pagination: ").Append(Pagination).Append("\n");
+            sb.Append("class ConnectAds200ResponseOneOf1 {\n");
+            sb.Append("  AuthUrl: ").Append(AuthUrl).Append("\n");
+            sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

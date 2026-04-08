@@ -5,6 +5,7 @@ All URIs are relative to *https://zernio.com/api*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**CompleteTelegramConnect**](ConnectApi.md#completetelegramconnect) | **PATCH** /v1/connect/telegram | Check Telegram status |
+| [**ConnectAds**](ConnectApi.md#connectads) | **GET** /v1/connect/{platform}/ads | Connect ads for a platform |
 | [**ConnectBlueskyCredentials**](ConnectApi.md#connectblueskycredentials) | **POST** /v1/connect/bluesky/credentials | Connect Bluesky account |
 | [**ConnectWhatsAppCredentials**](ConnectApi.md#connectwhatsappcredentials) | **POST** /v1/connect/whatsapp/credentials | Connect WhatsApp via credentials |
 | [**GetConnectUrl**](ConnectApi.md#getconnecturl) | **GET** /v1/connect/{platform} | Get OAuth connect URL |
@@ -134,6 +135,116 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **404** | Code not found |  -  |
 | **500** | Internal error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="connectads"></a>
+# **ConnectAds**
+> ConnectAds200Response ConnectAds (string platform, string profileId, string? accountId = null, string? redirectUrl = null, bool? headless = null)
+
+Connect ads for a platform
+
+Unified ads connection endpoint. Handles all platforms through a single route:  **Same-token platforms** (facebook, instagram, linkedin): If a posting account already exists, returns `alreadyConnected: true` immediately (no extra OAuth needed). If not, starts the normal OAuth flow, and the resulting account supports both posting and ads.  **Separate-token platforms** (tiktok, twitter, pinterest): Requires an existing posting account (`accountId` param). If ads are already connected, returns `alreadyConnected: true`. Otherwise, starts the platform-specific marketing API OAuth flow.  **Ads-only platforms** (googleads): If a Google Ads account exists, returns `alreadyConnected: true`. Otherwise, starts the Google Ads OAuth flow.  Use the `adsStatus` field from `GET /v1/accounts` to check which accounts need ads connection. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class ConnectAdsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ConnectApi(httpClient, config, httpClientHandler);
+            var platform = "facebook";  // string | Platform to connect ads for. Only platforms with ads support are accepted.
+            var profileId = "profileId_example";  // string | Your Zernio profile ID
+            var accountId = "accountId_example";  // string? | Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. (optional) 
+            var redirectUrl = "redirectUrl_example";  // string? | Custom redirect URL after OAuth completes (same-token platforms only) (optional) 
+            var headless = false;  // bool? | Enable headless mode (same-token platforms only) (optional)  (default to false)
+
+            try
+            {
+                // Connect ads for a platform
+                ConnectAds200Response result = apiInstance.ConnectAds(platform, profileId, accountId, redirectUrl, headless);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ConnectApi.ConnectAds: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ConnectAdsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Connect ads for a platform
+    ApiResponse<ConnectAds200Response> response = apiInstance.ConnectAdsWithHttpInfo(platform, profileId, accountId, redirectUrl, headless);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ConnectApi.ConnectAdsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **platform** | **string** | Platform to connect ads for. Only platforms with ads support are accepted. |  |
+| **profileId** | **string** | Your Zernio profile ID |  |
+| **accountId** | **string?** | Existing SocialAccount ID. Required for separate-token platforms (tiktok, twitter, pinterest). Ignored for same-token and ads-only platforms. | [optional]  |
+| **redirectUrl** | **string?** | Custom redirect URL after OAuth completes (same-token platforms only) | [optional]  |
+| **headless** | **bool?** | Enable headless mode (same-token platforms only) | [optional] [default to false] |
+
+### Return type
+
+[**ConnectAds200Response**](ConnectAds200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Either an OAuth URL to redirect to, or confirmation that ads are already connected |  -  |
+| **400** | Platform doesn&#39;t support ads, or missing accountId for separate-token platform |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Ads add-on required, or no access to profile |  -  |
+| **404** | Profile or posting account not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

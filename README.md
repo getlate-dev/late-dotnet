@@ -223,6 +223,7 @@ Class | Method | HTTP request | Description
 *CommentsApi* | [**UnhideInboxComment**](docs/CommentsApi.md#unhideinboxcomment) | **DELETE** /v1/inbox/comments/{postId}/{commentId}/hide | Unhide comment
 *CommentsApi* | [**UnlikeInboxComment**](docs/CommentsApi.md#unlikeinboxcomment) | **DELETE** /v1/inbox/comments/{postId}/{commentId}/like | Unlike comment
 *ConnectApi* | [**CompleteTelegramConnect**](docs/ConnectApi.md#completetelegramconnect) | **PATCH** /v1/connect/telegram | Check Telegram status
+*ConnectApi* | [**ConnectAds**](docs/ConnectApi.md#connectads) | **GET** /v1/connect/{platform}/ads | Connect ads for a platform
 *ConnectApi* | [**ConnectBlueskyCredentials**](docs/ConnectApi.md#connectblueskycredentials) | **POST** /v1/connect/bluesky/credentials | Connect Bluesky account
 *ConnectApi* | [**ConnectWhatsAppCredentials**](docs/ConnectApi.md#connectwhatsappcredentials) | **POST** /v1/connect/whatsapp/credentials | Connect WhatsApp via credentials
 *ConnectApi* | [**GetConnectUrl**](docs/ConnectApi.md#getconnecturl) | **GET** /v1/connect/{platform} | Get OAuth connect URL
@@ -283,6 +284,7 @@ Class | Method | HTTP request | Description
 *LinkedInMentionsApi* | [**GetLinkedInMentions**](docs/LinkedInMentionsApi.md#getlinkedinmentions) | **GET** /v1/accounts/{accountId}/linkedin-mentions | Resolve LinkedIn mention
 *LogsApi* | [**GetPostLogs**](docs/LogsApi.md#getpostlogs) | **GET** /v1/posts/{postId}/logs | Get post logs
 *LogsApi* | [**ListConnectionLogs**](docs/LogsApi.md#listconnectionlogs) | **GET** /v1/connections/logs | List connection logs
+*LogsApi* | [**ListLogs**](docs/LogsApi.md#listlogs) | **GET** /v1/logs | List activity logs
 *LogsApi* | [**ListPostsLogs**](docs/LogsApi.md#listpostslogs) | **GET** /v1/posts/logs | List publishing logs
 *MediaApi* | [**GetMediaPresignedUrl**](docs/MediaApi.md#getmediapresignedurl) | **POST** /v1/media/presign | Get presigned upload URL
 *MessagesApi* | [**AddMessageReaction**](docs/MessagesApi.md#addmessagereaction) | **POST** /v1/inbox/conversations/{conversationId}/messages/{messageId}/reactions | Add reaction
@@ -469,6 +471,9 @@ Class | Method | HTTP request | Description
  - [Model.CancelWhatsAppBroadcastSchedule200Response](docs/CancelWhatsAppBroadcastSchedule200Response.md)
  - [Model.CancelWhatsAppBroadcastSchedule200ResponseBroadcast](docs/CancelWhatsAppBroadcastSchedule200ResponseBroadcast.md)
  - [Model.CompleteTelegramConnect200Response](docs/CompleteTelegramConnect200Response.md)
+ - [Model.ConnectAds200Response](docs/ConnectAds200Response.md)
+ - [Model.ConnectAds200ResponseOneOf](docs/ConnectAds200ResponseOneOf.md)
+ - [Model.ConnectAds200ResponseOneOf1](docs/ConnectAds200ResponseOneOf1.md)
  - [Model.ConnectBlueskyCredentials200Response](docs/ConnectBlueskyCredentials200Response.md)
  - [Model.ConnectBlueskyCredentialsRequest](docs/ConnectBlueskyCredentialsRequest.md)
  - [Model.ConnectWhatsAppCredentials200Response](docs/ConnectWhatsAppCredentials200Response.md)
@@ -849,6 +854,9 @@ Class | Method | HTTP request | Description
  - [Model.ListInboxReviews200ResponseSummary](docs/ListInboxReviews200ResponseSummary.md)
  - [Model.ListLinkedInOrganizations200Response](docs/ListLinkedInOrganizations200Response.md)
  - [Model.ListLinkedInOrganizations200ResponseOrganizationsInner](docs/ListLinkedInOrganizations200ResponseOrganizationsInner.md)
+ - [Model.ListLogs200Response](docs/ListLogs200Response.md)
+ - [Model.ListLogs200ResponseLogsInner](docs/ListLogs200ResponseLogsInner.md)
+ - [Model.ListLogs200ResponsePagination](docs/ListLogs200ResponsePagination.md)
  - [Model.ListPinterestBoardsForSelection200Response](docs/ListPinterestBoardsForSelection200Response.md)
  - [Model.ListPinterestBoardsForSelection200ResponseBoardsInner](docs/ListPinterestBoardsForSelection200ResponseBoardsInner.md)
  - [Model.ListPostsLogs200Response](docs/ListPostsLogs200Response.md)

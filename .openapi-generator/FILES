@@ -69,6 +69,9 @@ docs/CancelWhatsAppBroadcastSchedule200ResponseBroadcast.md
 docs/CommentAutomationsApi.md
 docs/CommentsApi.md
 docs/CompleteTelegramConnect200Response.md
+docs/ConnectAds200Response.md
+docs/ConnectAds200ResponseOneOf.md
+docs/ConnectAds200ResponseOneOf1.md
 docs/ConnectApi.md
 docs/ConnectBlueskyCredentials200Response.md
 docs/ConnectBlueskyCredentialsRequest.md
@@ -460,6 +463,9 @@ docs/ListInboxReviews200ResponseDataInnerReviewer.md
 docs/ListInboxReviews200ResponseSummary.md
 docs/ListLinkedInOrganizations200Response.md
 docs/ListLinkedInOrganizations200ResponseOrganizationsInner.md
+docs/ListLogs200Response.md
+docs/ListLogs200ResponseLogsInner.md
+docs/ListLogs200ResponsePagination.md
 docs/ListPinterestBoardsForSelection200Response.md
 docs/ListPinterestBoardsForSelection200ResponseBoardsInner.md
 docs/ListPostsLogs200Response.md
@@ -792,6 +798,10 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/ConnectAds200ResponseOneOf1Tests.cs
+src/Late.Test/Model/ConnectAds200ResponseOneOfTests.cs
+src/Late.Test/Model/ConnectAds200ResponseTests.cs
+src/Late.Test/Model/ListLogs200ResponseLogsInnerTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -906,6 +916,9 @@ src/Late/Model/CancelBroadcast200ResponseBroadcast.cs
 src/Late/Model/CancelWhatsAppBroadcastSchedule200Response.cs
 src/Late/Model/CancelWhatsAppBroadcastSchedule200ResponseBroadcast.cs
 src/Late/Model/CompleteTelegramConnect200Response.cs
+src/Late/Model/ConnectAds200Response.cs
+src/Late/Model/ConnectAds200ResponseOneOf.cs
+src/Late/Model/ConnectAds200ResponseOneOf1.cs
 src/Late/Model/ConnectBlueskyCredentials200Response.cs
 src/Late/Model/ConnectBlueskyCredentialsRequest.cs
 src/Late/Model/ConnectWhatsAppCredentials200Response.cs
@@ -1286,6 +1299,9 @@ src/Late/Model/ListInboxReviews200ResponseDataInnerReviewer.cs
 src/Late/Model/ListInboxReviews200ResponseSummary.cs
 src/Late/Model/ListLinkedInOrganizations200Response.cs
 src/Late/Model/ListLinkedInOrganizations200ResponseOrganizationsInner.cs
+src/Late/Model/ListLogs200Response.cs
+src/Late/Model/ListLogs200ResponseLogsInner.cs
+src/Late/Model/ListLogs200ResponsePagination.cs
 src/Late/Model/ListPinterestBoardsForSelection200Response.cs
 src/Late/Model/ListPinterestBoardsForSelection200ResponseBoardsInner.cs
 src/Late/Model/ListPostsLogs200Response.cs

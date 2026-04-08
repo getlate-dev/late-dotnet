@@ -55,7 +55,7 @@ namespace Late.Api
         /// List connection logs
         /// </summary>
         /// <remarks>
-        /// Retrieve connection event logs showing account connection and disconnection history. Event types: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;connections&#x60; instead. Retrieve connection event logs. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -65,13 +65,14 @@ namespace Late.Api
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <returns>ListConnectionLogs200Response</returns>
+        [Obsolete]
         ListConnectionLogs200Response ListConnectionLogs(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default);
 
         /// <summary>
         /// List connection logs
         /// </summary>
         /// <remarks>
-        /// Retrieve connection event logs showing account connection and disconnection history. Event types: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;connections&#x60; instead. Retrieve connection event logs. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -81,12 +82,48 @@ namespace Late.Api
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <returns>ApiResponse of ListConnectionLogs200Response</returns>
+        [Obsolete]
         ApiResponse<ListConnectionLogs200Response> ListConnectionLogsWithHttpInfo(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default);
+        /// <summary>
+        /// List activity logs
+        /// </summary>
+        /// <remarks>
+        /// Unified logs endpoint. Returns logs for publishing, connections, webhooks, and messaging. Filter by type, platform, status, and time range. Logs are retained for 90 days. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Log category to query (optional, default to publishing)</param>
+        /// <param name="status">Filter by status (optional)</param>
+        /// <param name="platform">Filter by platform (optional)</param>
+        /// <param name="action">Filter by action (e.g., post.published, message.sent, account.connected, webhook.delivered) (optional)</param>
+        /// <param name="search">Free-text search across log fields (optional)</param>
+        /// <param name="days">Number of days to look back (max 90) (optional, default to 90)</param>
+        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
+        /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <returns>ListLogs200Response</returns>
+        ListLogs200Response ListLogs(string? type = default, string? status = default, string? platform = default, string? action = default, string? search = default, int? days = default, int? limit = default, int? skip = default);
+
+        /// <summary>
+        /// List activity logs
+        /// </summary>
+        /// <remarks>
+        /// Unified logs endpoint. Returns logs for publishing, connections, webhooks, and messaging. Filter by type, platform, status, and time range. Logs are retained for 90 days. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Log category to query (optional, default to publishing)</param>
+        /// <param name="status">Filter by status (optional)</param>
+        /// <param name="platform">Filter by platform (optional)</param>
+        /// <param name="action">Filter by action (e.g., post.published, message.sent, account.connected, webhook.delivered) (optional)</param>
+        /// <param name="search">Free-text search across log fields (optional)</param>
+        /// <param name="days">Number of days to look back (max 90) (optional, default to 90)</param>
+        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
+        /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <returns>ApiResponse of ListLogs200Response</returns>
+        ApiResponse<ListLogs200Response> ListLogsWithHttpInfo(string? type = default, string? status = default, string? platform = default, string? action = default, string? search = default, int? days = default, int? limit = default, int? skip = default);
         /// <summary>
         /// List publishing logs
         /// </summary>
         /// <remarks>
-        /// Retrieve publishing logs for all posts with detailed information about each publishing attempt. Filter by status, platform, or action. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;publishing&#x60; instead. Retrieve publishing logs for all posts. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -97,13 +134,14 @@ namespace Late.Api
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <returns>ListPostsLogs200Response</returns>
+        [Obsolete]
         ListPostsLogs200Response ListPostsLogs(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default);
 
         /// <summary>
         /// List publishing logs
         /// </summary>
         /// <remarks>
-        /// Retrieve publishing logs for all posts with detailed information about each publishing attempt. Filter by status, platform, or action. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;publishing&#x60; instead. Retrieve publishing logs for all posts. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -114,6 +152,7 @@ namespace Late.Api
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <returns>ApiResponse of ListPostsLogs200Response</returns>
+        [Obsolete]
         ApiResponse<ListPostsLogs200Response> ListPostsLogsWithHttpInfo(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default);
         #endregion Synchronous Operations
     }
@@ -153,7 +192,7 @@ namespace Late.Api
         /// List connection logs
         /// </summary>
         /// <remarks>
-        /// Retrieve connection event logs showing account connection and disconnection history. Event types: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;connections&#x60; instead. Retrieve connection event logs. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -164,13 +203,14 @@ namespace Late.Api
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListConnectionLogs200Response</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ListConnectionLogs200Response> ListConnectionLogsAsync(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List connection logs
         /// </summary>
         /// <remarks>
-        /// Retrieve connection event logs showing account connection and disconnection history. Event types: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;connections&#x60; instead. Retrieve connection event logs. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -181,12 +221,50 @@ namespace Late.Api
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListConnectionLogs200Response)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ListConnectionLogs200Response>> ListConnectionLogsWithHttpInfoAsync(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List activity logs
+        /// </summary>
+        /// <remarks>
+        /// Unified logs endpoint. Returns logs for publishing, connections, webhooks, and messaging. Filter by type, platform, status, and time range. Logs are retained for 90 days. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Log category to query (optional, default to publishing)</param>
+        /// <param name="status">Filter by status (optional)</param>
+        /// <param name="platform">Filter by platform (optional)</param>
+        /// <param name="action">Filter by action (e.g., post.published, message.sent, account.connected, webhook.delivered) (optional)</param>
+        /// <param name="search">Free-text search across log fields (optional)</param>
+        /// <param name="days">Number of days to look back (max 90) (optional, default to 90)</param>
+        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
+        /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListLogs200Response</returns>
+        System.Threading.Tasks.Task<ListLogs200Response> ListLogsAsync(string? type = default, string? status = default, string? platform = default, string? action = default, string? search = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// List activity logs
+        /// </summary>
+        /// <remarks>
+        /// Unified logs endpoint. Returns logs for publishing, connections, webhooks, and messaging. Filter by type, platform, status, and time range. Logs are retained for 90 days. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Log category to query (optional, default to publishing)</param>
+        /// <param name="status">Filter by status (optional)</param>
+        /// <param name="platform">Filter by platform (optional)</param>
+        /// <param name="action">Filter by action (e.g., post.published, message.sent, account.connected, webhook.delivered) (optional)</param>
+        /// <param name="search">Free-text search across log fields (optional)</param>
+        /// <param name="days">Number of days to look back (max 90) (optional, default to 90)</param>
+        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
+        /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListLogs200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListLogs200Response>> ListLogsWithHttpInfoAsync(string? type = default, string? status = default, string? platform = default, string? action = default, string? search = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List publishing logs
         /// </summary>
         /// <remarks>
-        /// Retrieve publishing logs for all posts with detailed information about each publishing attempt. Filter by status, platform, or action. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;publishing&#x60; instead. Retrieve publishing logs for all posts. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -198,13 +276,14 @@ namespace Late.Api
         /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListPostsLogs200Response</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ListPostsLogs200Response> ListPostsLogsAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List publishing logs
         /// </summary>
         /// <remarks>
-        /// Retrieve publishing logs for all posts with detailed information about each publishing attempt. Filter by status, platform, or action. Logs are automatically deleted after 7 days. 
+        /// **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;publishing&#x60; instead. Retrieve publishing logs for all posts. Logs are retained for 90 days. 
         /// </remarks>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -216,6 +295,7 @@ namespace Late.Api
         /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListPostsLogs200Response)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<ListPostsLogs200Response>> ListPostsLogsWithHttpInfoAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
@@ -570,7 +650,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List connection logs Retrieve connection event logs showing account connection and disconnection history. Event types: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed. Logs are automatically deleted after 7 days. 
+        /// List connection logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;connections&#x60; instead. Retrieve connection event logs. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -580,6 +660,7 @@ namespace Late.Api
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <returns>ListConnectionLogs200Response</returns>
+        [Obsolete]
         public ListConnectionLogs200Response ListConnectionLogs(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default)
         {
             Late.Client.ApiResponse<ListConnectionLogs200Response> localVarResponse = ListConnectionLogsWithHttpInfo(platform, eventType, status, days, limit, skip);
@@ -587,7 +668,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List connection logs Retrieve connection event logs showing account connection and disconnection history. Event types: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed. Logs are automatically deleted after 7 days. 
+        /// List connection logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;connections&#x60; instead. Retrieve connection event logs. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -597,6 +678,7 @@ namespace Late.Api
         /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <returns>ApiResponse of ListConnectionLogs200Response</returns>
+        [Obsolete]
         public Late.Client.ApiResponse<ListConnectionLogs200Response> ListConnectionLogsWithHttpInfo(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -660,7 +742,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List connection logs Retrieve connection event logs showing account connection and disconnection history. Event types: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed. Logs are automatically deleted after 7 days. 
+        /// List connection logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;connections&#x60; instead. Retrieve connection event logs. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -671,6 +753,7 @@ namespace Late.Api
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListConnectionLogs200Response</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ListConnectionLogs200Response> ListConnectionLogsAsync(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
             Late.Client.ApiResponse<ListConnectionLogs200Response> localVarResponse = await ListConnectionLogsWithHttpInfoAsync(platform, eventType, status, days, limit, skip, cancellationToken).ConfigureAwait(false);
@@ -678,7 +761,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List connection logs Retrieve connection event logs showing account connection and disconnection history. Event types: connect_success, connect_failed, disconnect, reconnect_success, reconnect_failed. Logs are automatically deleted after 7 days. 
+        /// List connection logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;connections&#x60; instead. Retrieve connection event logs. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (optional)</param>
@@ -689,6 +772,7 @@ namespace Late.Api
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListConnectionLogs200Response)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListConnectionLogs200Response>> ListConnectionLogsWithHttpInfoAsync(string? platform = default, string? eventType = default, string? status = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
@@ -755,7 +839,216 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List publishing logs Retrieve publishing logs for all posts with detailed information about each publishing attempt. Filter by status, platform, or action. Logs are automatically deleted after 7 days. 
+        /// List activity logs Unified logs endpoint. Returns logs for publishing, connections, webhooks, and messaging. Filter by type, platform, status, and time range. Logs are retained for 90 days. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Log category to query (optional, default to publishing)</param>
+        /// <param name="status">Filter by status (optional)</param>
+        /// <param name="platform">Filter by platform (optional)</param>
+        /// <param name="action">Filter by action (e.g., post.published, message.sent, account.connected, webhook.delivered) (optional)</param>
+        /// <param name="search">Free-text search across log fields (optional)</param>
+        /// <param name="days">Number of days to look back (max 90) (optional, default to 90)</param>
+        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
+        /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <returns>ListLogs200Response</returns>
+        public ListLogs200Response ListLogs(string? type = default, string? status = default, string? platform = default, string? action = default, string? search = default, int? days = default, int? limit = default, int? skip = default)
+        {
+            Late.Client.ApiResponse<ListLogs200Response> localVarResponse = ListLogsWithHttpInfo(type, status, platform, action, search, days, limit, skip);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List activity logs Unified logs endpoint. Returns logs for publishing, connections, webhooks, and messaging. Filter by type, platform, status, and time range. Logs are retained for 90 days. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Log category to query (optional, default to publishing)</param>
+        /// <param name="status">Filter by status (optional)</param>
+        /// <param name="platform">Filter by platform (optional)</param>
+        /// <param name="action">Filter by action (e.g., post.published, message.sent, account.connected, webhook.delivered) (optional)</param>
+        /// <param name="search">Free-text search across log fields (optional)</param>
+        /// <param name="days">Number of days to look back (max 90) (optional, default to 90)</param>
+        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
+        /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <returns>ApiResponse of ListLogs200Response</returns>
+        public Late.Client.ApiResponse<ListLogs200Response> ListLogsWithHttpInfo(string? type = default, string? status = default, string? platform = default, string? action = default, string? search = default, int? days = default, int? limit = default, int? skip = default)
+        {
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (action != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "action", action));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "search", search));
+            }
+            if (days != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "days", days));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "skip", skip));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ListLogs200Response>("/v1/logs", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListLogs", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List activity logs Unified logs endpoint. Returns logs for publishing, connections, webhooks, and messaging. Filter by type, platform, status, and time range. Logs are retained for 90 days. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Log category to query (optional, default to publishing)</param>
+        /// <param name="status">Filter by status (optional)</param>
+        /// <param name="platform">Filter by platform (optional)</param>
+        /// <param name="action">Filter by action (e.g., post.published, message.sent, account.connected, webhook.delivered) (optional)</param>
+        /// <param name="search">Free-text search across log fields (optional)</param>
+        /// <param name="days">Number of days to look back (max 90) (optional, default to 90)</param>
+        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
+        /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListLogs200Response</returns>
+        public async System.Threading.Tasks.Task<ListLogs200Response> ListLogsAsync(string? type = default, string? status = default, string? platform = default, string? action = default, string? search = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Late.Client.ApiResponse<ListLogs200Response> localVarResponse = await ListLogsWithHttpInfoAsync(type, status, platform, action, search, days, limit, skip, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List activity logs Unified logs endpoint. Returns logs for publishing, connections, webhooks, and messaging. Filter by type, platform, status, and time range. Logs are retained for 90 days. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="type">Log category to query (optional, default to publishing)</param>
+        /// <param name="status">Filter by status (optional)</param>
+        /// <param name="platform">Filter by platform (optional)</param>
+        /// <param name="action">Filter by action (e.g., post.published, message.sent, account.connected, webhook.delivered) (optional)</param>
+        /// <param name="search">Free-text search across log fields (optional)</param>
+        /// <param name="days">Number of days to look back (max 90) (optional, default to 90)</param>
+        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
+        /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListLogs200Response)</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListLogs200Response>> ListLogsWithHttpInfoAsync(string? type = default, string? status = default, string? platform = default, string? action = default, string? search = default, int? days = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (status != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "status", status));
+            }
+            if (platform != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "platform", platform));
+            }
+            if (action != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "action", action));
+            }
+            if (search != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "search", search));
+            }
+            if (days != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "days", days));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (skip != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "skip", skip));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListLogs200Response>("/v1/logs", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListLogs", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List publishing logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;publishing&#x60; instead. Retrieve publishing logs for all posts. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -766,6 +1059,7 @@ namespace Late.Api
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <returns>ListPostsLogs200Response</returns>
+        [Obsolete]
         public ListPostsLogs200Response ListPostsLogs(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default)
         {
             Late.Client.ApiResponse<ListPostsLogs200Response> localVarResponse = ListPostsLogsWithHttpInfo(status, platform, action, days, limit, skip, search);
@@ -773,7 +1067,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List publishing logs Retrieve publishing logs for all posts with detailed information about each publishing attempt. Filter by status, platform, or action. Logs are automatically deleted after 7 days. 
+        /// List publishing logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;publishing&#x60; instead. Retrieve publishing logs for all posts. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -784,6 +1078,7 @@ namespace Late.Api
         /// <param name="skip">Number of logs to skip (for pagination) (optional, default to 0)</param>
         /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <returns>ApiResponse of ListPostsLogs200Response</returns>
+        [Obsolete]
         public Late.Client.ApiResponse<ListPostsLogs200Response> ListPostsLogsWithHttpInfo(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -851,7 +1146,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List publishing logs Retrieve publishing logs for all posts with detailed information about each publishing attempt. Filter by status, platform, or action. Logs are automatically deleted after 7 days. 
+        /// List publishing logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;publishing&#x60; instead. Retrieve publishing logs for all posts. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -863,6 +1158,7 @@ namespace Late.Api
         /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListPostsLogs200Response</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<ListPostsLogs200Response> ListPostsLogsAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default, System.Threading.CancellationToken cancellationToken = default)
         {
             Late.Client.ApiResponse<ListPostsLogs200Response> localVarResponse = await ListPostsLogsWithHttpInfoAsync(status, platform, action, days, limit, skip, search, cancellationToken).ConfigureAwait(false);
@@ -870,7 +1166,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List publishing logs Retrieve publishing logs for all posts with detailed information about each publishing attempt. Filter by status, platform, or action. Logs are automatically deleted after 7 days. 
+        /// List publishing logs **Deprecated.** Use &#x60;GET /v1/logs?type&#x3D;publishing&#x60; instead. Retrieve publishing logs for all posts. Logs are retained for 90 days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="status">Filter by log status (optional)</param>
@@ -882,6 +1178,7 @@ namespace Late.Api
         /// <param name="search">Search through log entries by text content. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListPostsLogs200Response)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListPostsLogs200Response>> ListPostsLogsWithHttpInfoAsync(string? status = default, string? platform = default, string? action = default, int? days = default, int? limit = default, int? skip = default, string? search = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
