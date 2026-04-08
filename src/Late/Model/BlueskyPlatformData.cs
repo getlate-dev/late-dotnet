@@ -36,16 +36,16 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BlueskyPlatformData" /> class.
         /// </summary>
-        /// <param name="threadItems">Sequence of posts in a Bluesky thread (root then replies in order)..</param>
+        /// <param name="threadItems">Complete sequence of posts in a Bluesky thread. The first item becomes the root post, subsequent items are chained as replies. When threadItems is provided, the top-level content field is used only for display and search purposes, it is NOT published. You must include your first post as threadItems[0]. .</param>
         public BlueskyPlatformData(List<TwitterPlatformDataThreadItemsInner> threadItems = default)
         {
             this.ThreadItems = threadItems;
         }
 
         /// <summary>
-        /// Sequence of posts in a Bluesky thread (root then replies in order).
+        /// Complete sequence of posts in a Bluesky thread. The first item becomes the root post, subsequent items are chained as replies. When threadItems is provided, the top-level content field is used only for display and search purposes, it is NOT published. You must include your first post as threadItems[0]. 
         /// </summary>
-        /// <value>Sequence of posts in a Bluesky thread (root then replies in order).</value>
+        /// <value>Complete sequence of posts in a Bluesky thread. The first item becomes the root post, subsequent items are chained as replies. When threadItems is provided, the top-level content field is used only for display and search purposes, it is NOT published. You must include your first post as threadItems[0]. </value>
         [DataMember(Name = "threadItems", EmitDefaultValue = false)]
         public List<TwitterPlatformDataThreadItemsInner> ThreadItems { get; set; }
 

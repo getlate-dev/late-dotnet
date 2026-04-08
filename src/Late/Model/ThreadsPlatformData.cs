@@ -37,7 +37,7 @@ namespace Late.Model
         /// Initializes a new instance of the <see cref="ThreadsPlatformData" /> class.
         /// </summary>
         /// <param name="topicTag">Topic tag for post categorization and discoverability on Threads. Must be 1-50 characters, cannot contain periods (.) or ampersands (&amp;). Overrides auto-extraction from content hashtags when provided..</param>
-        /// <param name="threadItems">Sequence of posts in a Threads thread (root then replies in order)..</param>
+        /// <param name="threadItems">Complete sequence of posts in a Threads thread. The first item becomes the root post, subsequent items are chained as replies. When threadItems is provided, the top-level content field is used only for display and search purposes, it is NOT published. You must include your first post as threadItems[0]. .</param>
         public ThreadsPlatformData(string topicTag = default, List<TwitterPlatformDataThreadItemsInner> threadItems = default)
         {
             this.TopicTag = topicTag;
@@ -52,9 +52,9 @@ namespace Late.Model
         public string TopicTag { get; set; }
 
         /// <summary>
-        /// Sequence of posts in a Threads thread (root then replies in order).
+        /// Complete sequence of posts in a Threads thread. The first item becomes the root post, subsequent items are chained as replies. When threadItems is provided, the top-level content field is used only for display and search purposes, it is NOT published. You must include your first post as threadItems[0]. 
         /// </summary>
-        /// <value>Sequence of posts in a Threads thread (root then replies in order).</value>
+        /// <value>Complete sequence of posts in a Threads thread. The first item becomes the root post, subsequent items are chained as replies. When threadItems is provided, the top-level content field is used only for display and search purposes, it is NOT published. You must include your first post as threadItems[0]. </value>
         [DataMember(Name = "threadItems", EmitDefaultValue = false)]
         public List<TwitterPlatformDataThreadItemsInner> ThreadItems { get; set; }
 
