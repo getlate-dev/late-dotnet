@@ -94,16 +94,22 @@ namespace Late.Model
             MessageReceived = 9,
 
             /// <summary>
+            /// Enum MessageSent for value: message.sent
+            /// </summary>
+            [EnumMember(Value = "message.sent")]
+            MessageSent = 10,
+
+            /// <summary>
             /// Enum CommentReceived for value: comment.received
             /// </summary>
             [EnumMember(Value = "comment.received")]
-            CommentReceived = 10,
+            CommentReceived = 11,
 
             /// <summary>
             /// Enum WebhookTest for value: webhook.test
             /// </summary>
             [EnumMember(Value = "webhook.test")]
-            WebhookTest = 11
+            WebhookTest = 12
         }
 
 

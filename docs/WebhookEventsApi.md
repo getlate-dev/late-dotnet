@@ -8,6 +8,7 @@ All URIs are relative to *https://zernio.com/api*
 | [**OnAccountDisconnected**](WebhookEventsApi.md#onaccountdisconnected) | **POST** /account.disconnected | Account disconnected event |
 | [**OnCommentReceived**](WebhookEventsApi.md#oncommentreceived) | **POST** /comment.received | Comment received event |
 | [**OnMessageReceived**](WebhookEventsApi.md#onmessagereceived) | **POST** /message.received | Message received event |
+| [**OnMessageSent**](WebhookEventsApi.md#onmessagesent) | **POST** /message.sent | Message sent event |
 | [**OnPostCancelled**](WebhookEventsApi.md#onpostcancelled) | **POST** /post.cancelled | Post cancelled event |
 | [**OnPostFailed**](WebhookEventsApi.md#onpostfailed) | **POST** /post.failed | Post failed event |
 | [**OnPostPartial**](WebhookEventsApi.md#onpostpartial) | **POST** /post.partial | Post partial event |
@@ -370,6 +371,100 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **webhookPayloadMessage** | [**WebhookPayloadMessage**](WebhookPayloadMessage.md) |  |  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook received successfully |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="onmessagesent"></a>
+# **OnMessageSent**
+> void OnMessageSent (WebhookPayloadMessageSent webhookPayloadMessageSent)
+
+Message sent event
+
+Fired when a message is sent via the API.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Late.Api;
+using Late.Client;
+using Late.Model;
+
+namespace Example
+{
+    public class OnMessageSentExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WebhookEventsApi(httpClient, config, httpClientHandler);
+            var webhookPayloadMessageSent = new WebhookPayloadMessageSent(); // WebhookPayloadMessageSent | 
+
+            try
+            {
+                // Message sent event
+                apiInstance.OnMessageSent(webhookPayloadMessageSent);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WebhookEventsApi.OnMessageSent: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the OnMessageSentWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Message sent event
+    apiInstance.OnMessageSentWithHttpInfo(webhookPayloadMessageSent);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WebhookEventsApi.OnMessageSentWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **webhookPayloadMessageSent** | [**WebhookPayloadMessageSent**](WebhookPayloadMessageSent.md) |  |  |
 
 ### Return type
 

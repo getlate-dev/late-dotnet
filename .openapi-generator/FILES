@@ -770,6 +770,9 @@ docs/WebhookPayloadMessageMessageAttachmentsInner.md
 docs/WebhookPayloadMessageMessageSender.md
 docs/WebhookPayloadMessageMessageSenderInstagramProfile.md
 docs/WebhookPayloadMessageMetadata.md
+docs/WebhookPayloadMessageSent.md
+docs/WebhookPayloadMessageSentMessage.md
+docs/WebhookPayloadMessageSentMessageSender.md
 docs/WebhookPayloadPost.md
 docs/WebhookPayloadPostPost.md
 docs/WebhookPayloadPostPostPlatformsInner.md
@@ -798,7 +801,9 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
-src/Late.Test/Model/DisconnectAdsRequestTests.cs
+src/Late.Test/Model/WebhookPayloadMessageSentMessageSenderTests.cs
+src/Late.Test/Model/WebhookPayloadMessageSentMessageTests.cs
+src/Late.Test/Model/WebhookPayloadMessageSentTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -1589,6 +1594,9 @@ src/Late/Model/WebhookPayloadMessageMessageAttachmentsInner.cs
 src/Late/Model/WebhookPayloadMessageMessageSender.cs
 src/Late/Model/WebhookPayloadMessageMessageSenderInstagramProfile.cs
 src/Late/Model/WebhookPayloadMessageMetadata.cs
+src/Late/Model/WebhookPayloadMessageSent.cs
+src/Late/Model/WebhookPayloadMessageSentMessage.cs
+src/Late/Model/WebhookPayloadMessageSentMessageSender.cs
 src/Late/Model/WebhookPayloadPost.cs
 src/Late/Model/WebhookPayloadPostPost.cs
 src/Late/Model/WebhookPayloadPostPostPlatformsInner.cs
