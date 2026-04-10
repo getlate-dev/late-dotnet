@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **RequestPayload** | **Object** | Payload sent to webhook endpoint | [optional] 
 **ResponseBody** | **string** | Response body from webhook endpoint (truncated to 10KB) | [optional] 
 **ErrorMessage** | **string** | Error message if delivery failed | [optional] 
-**AttemptNumber** | **int** | Delivery attempt number (max 3 retries) | [optional] 
+**AttemptNumber** | **int** | Delivery attempt number (max 7 attempts) | [optional] 
 **ResponseTime** | **int** | Response time in milliseconds | [optional] 
 **CreatedAt** | **DateTime** |  | [optional] 
 

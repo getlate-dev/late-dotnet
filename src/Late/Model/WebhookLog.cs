@@ -156,7 +156,7 @@ namespace Late.Model
         /// <param name="requestPayload">Payload sent to webhook endpoint.</param>
         /// <param name="responseBody">Response body from webhook endpoint (truncated to 10KB).</param>
         /// <param name="errorMessage">Error message if delivery failed.</param>
-        /// <param name="attemptNumber">Delivery attempt number (max 3 retries).</param>
+        /// <param name="attemptNumber">Delivery attempt number (max 7 attempts).</param>
         /// <param name="responseTime">Response time in milliseconds.</param>
         /// <param name="createdAt">createdAt.</param>
         public WebhookLog(string id = default, string webhookId = default, string webhookName = default, EventEnum? varEvent = default, string url = default, StatusEnum? status = default, int statusCode = default, Object requestPayload = default, string responseBody = default, string errorMessage = default, int attemptNumber = default, int responseTime = default, DateTime createdAt = default)
@@ -231,9 +231,9 @@ namespace Late.Model
         public string ErrorMessage { get; set; }
 
         /// <summary>
-        /// Delivery attempt number (max 3 retries)
+        /// Delivery attempt number (max 7 attempts)
         /// </summary>
-        /// <value>Delivery attempt number (max 3 retries)</value>
+        /// <value>Delivery attempt number (max 7 attempts)</value>
         [DataMember(Name = "attemptNumber", EmitDefaultValue = false)]
         public int AttemptNumber { get; set; }
 
