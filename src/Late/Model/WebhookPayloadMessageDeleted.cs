@@ -67,7 +67,7 @@ namespace Late.Model
         /// <param name="conversation">conversation (required).</param>
         /// <param name="account">account (required).</param>
         /// <param name="timestamp">timestamp (required).</param>
-        public WebhookPayloadMessageDeleted(string id = default, EventEnum varEvent = default, WebhookPayloadMessageMessage message = default, DateTime deletedAt = default, WebhookPayloadMessageConversation conversation = default, WebhookPayloadMessageAccount account = default, DateTime timestamp = default)
+        public WebhookPayloadMessageDeleted(string id = default, EventEnum varEvent = default, InboxWebhookMessage message = default, DateTime deletedAt = default, InboxWebhookConversation conversation = default, InboxWebhookAccount account = default, DateTime timestamp = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -108,7 +108,7 @@ namespace Late.Model
         /// Gets or Sets Message
         /// </summary>
         [DataMember(Name = "message", IsRequired = true, EmitDefaultValue = true)]
-        public WebhookPayloadMessageMessage Message { get; set; }
+        public InboxWebhookMessage Message { get; set; }
 
         /// <summary>
         /// Gets or Sets DeletedAt
@@ -120,13 +120,13 @@ namespace Late.Model
         /// Gets or Sets Conversation
         /// </summary>
         [DataMember(Name = "conversation", IsRequired = true, EmitDefaultValue = true)]
-        public WebhookPayloadMessageConversation Conversation { get; set; }
+        public InboxWebhookConversation Conversation { get; set; }
 
         /// <summary>
         /// Gets or Sets Account
         /// </summary>
         [DataMember(Name = "account", IsRequired = true, EmitDefaultValue = true)]
-        public WebhookPayloadMessageAccount Account { get; set; }
+        public InboxWebhookAccount Account { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp

@@ -4,7 +4,6 @@ README.md
 api/openapi.yaml
 appveyor.yml
 docs/APIKeysApi.md
-docs/Account.md
 docs/AccountGetResponse.md
 docs/AccountGroupsApi.md
 docs/AccountSettingsApi.md
@@ -86,7 +85,6 @@ docs/ConnectionLogContext.md
 docs/ConnectionLogError.md
 docs/ConnectionLogSuccess.md
 docs/ContactsApi.md
-docs/Conversation.md
 docs/CreateAccountGroup201Response.md
 docs/CreateAccountGroupRequest.md
 docs/CreateAdAudience201Response.md
@@ -395,6 +393,12 @@ docs/ImportWhatsAppContacts200ResponseResultsInner.md
 docs/ImportWhatsAppContacts200ResponseSummary.md
 docs/ImportWhatsAppContactsRequest.md
 docs/ImportWhatsAppContactsRequestContactsInner.md
+docs/InboxWebhookAccount.md
+docs/InboxWebhookConversation.md
+docs/InboxWebhookMessage.md
+docs/InboxWebhookMessageAttachmentsInner.md
+docs/InboxWebhookMessageSender.md
+docs/InboxWebhookMessageSenderInstagramProfile.md
 docs/InitiateTelegramConnect200Response.md
 docs/InitiateTelegramConnect200ResponseAccount.md
 docs/InitiateTelegramConnectRequest.md
@@ -499,7 +503,6 @@ docs/LogsApi.md
 docs/MediaApi.md
 docs/MediaItem.md
 docs/MediaUploadResponse.md
-docs/Message.md
 docs/MessagesApi.md
 docs/Money.md
 docs/Pagination.md
@@ -777,7 +780,6 @@ docs/WebhookPayloadMessageDeliveryStatusError.md
 docs/WebhookPayloadMessageEdited.md
 docs/WebhookPayloadMessageEditedEditHistoryInner.md
 docs/WebhookPayloadMessageMessage.md
-docs/WebhookPayloadMessageMessageAttachmentsInner.md
 docs/WebhookPayloadMessageMessageSender.md
 docs/WebhookPayloadMessageMessageSenderInstagramProfile.md
 docs/WebhookPayloadMessageMetadata.md
@@ -812,6 +814,12 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/InboxWebhookAccountTests.cs
+src/Late.Test/Model/InboxWebhookConversationTests.cs
+src/Late.Test/Model/InboxWebhookMessageAttachmentsInnerTests.cs
+src/Late.Test/Model/InboxWebhookMessageSenderInstagramProfileTests.cs
+src/Late.Test/Model/InboxWebhookMessageSenderTests.cs
+src/Late.Test/Model/InboxWebhookMessageTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -871,7 +879,6 @@ src/Late/Client/RetryConfiguration.cs
 src/Late/Client/WebRequestPathBuilder.cs
 src/Late/Late.csproj
 src/Late/Model/AbstractOpenAPISchema.cs
-src/Late/Model/Account.cs
 src/Late/Model/AccountGetResponse.cs
 src/Late/Model/AccountWithFollowerStats.cs
 src/Late/Model/AccountWithFollowerStatsAllOfAccountStats.cs
@@ -941,7 +948,6 @@ src/Late/Model/ConnectionLog.cs
 src/Late/Model/ConnectionLogContext.cs
 src/Late/Model/ConnectionLogError.cs
 src/Late/Model/ConnectionLogSuccess.cs
-src/Late/Model/Conversation.cs
 src/Late/Model/CreateAccountGroup201Response.cs
 src/Late/Model/CreateAccountGroupRequest.cs
 src/Late/Model/CreateAdAudience201Response.cs
@@ -1243,6 +1249,12 @@ src/Late/Model/ImportWhatsAppContacts200ResponseResultsInner.cs
 src/Late/Model/ImportWhatsAppContacts200ResponseSummary.cs
 src/Late/Model/ImportWhatsAppContactsRequest.cs
 src/Late/Model/ImportWhatsAppContactsRequestContactsInner.cs
+src/Late/Model/InboxWebhookAccount.cs
+src/Late/Model/InboxWebhookConversation.cs
+src/Late/Model/InboxWebhookMessage.cs
+src/Late/Model/InboxWebhookMessageAttachmentsInner.cs
+src/Late/Model/InboxWebhookMessageSender.cs
+src/Late/Model/InboxWebhookMessageSenderInstagramProfile.cs
 src/Late/Model/InitiateTelegramConnect200Response.cs
 src/Late/Model/InitiateTelegramConnect200ResponseAccount.cs
 src/Late/Model/InitiateTelegramConnectRequest.cs
@@ -1343,7 +1355,6 @@ src/Late/Model/ListWhatsAppGroupJoinRequests200Response.cs
 src/Late/Model/ListWhatsAppGroupJoinRequests200ResponseJoinRequestsInner.cs
 src/Late/Model/MediaItem.cs
 src/Late/Model/MediaUploadResponse.cs
-src/Late/Model/Message.cs
 src/Late/Model/Money.cs
 src/Late/Model/Pagination.cs
 src/Late/Model/Pending.cs
@@ -1609,7 +1620,6 @@ src/Late/Model/WebhookPayloadMessageDeliveryStatusError.cs
 src/Late/Model/WebhookPayloadMessageEdited.cs
 src/Late/Model/WebhookPayloadMessageEditedEditHistoryInner.cs
 src/Late/Model/WebhookPayloadMessageMessage.cs
-src/Late/Model/WebhookPayloadMessageMessageAttachmentsInner.cs
 src/Late/Model/WebhookPayloadMessageMessageSender.cs
 src/Late/Model/WebhookPayloadMessageMessageSenderInstagramProfile.cs
 src/Late/Model/WebhookPayloadMessageMetadata.cs

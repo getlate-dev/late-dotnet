@@ -113,7 +113,7 @@ namespace Late.Model
         /// <param name="sender">sender (required).</param>
         /// <param name="sentAt">sentAt (required).</param>
         /// <param name="isRead">isRead (required).</param>
-        public WebhookPayloadMessageSentMessage(string id = default, string conversationId = default, PlatformEnum platform = default, string platformMessageId = default, DirectionEnum direction = default, string text = default, List<WebhookPayloadMessageMessageAttachmentsInner> attachments = default, WebhookPayloadMessageSentMessageSender sender = default, DateTime sentAt = default, bool isRead = default)
+        public WebhookPayloadMessageSentMessage(string id = default, string conversationId = default, PlatformEnum platform = default, string platformMessageId = default, DirectionEnum direction = default, string text = default, List<InboxWebhookMessageAttachmentsInner> attachments = default, WebhookPayloadMessageSentMessageSender sender = default, DateTime sentAt = default, bool isRead = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -189,7 +189,7 @@ namespace Late.Model
         /// Gets or Sets Attachments
         /// </summary>
         [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
-        public List<WebhookPayloadMessageMessageAttachmentsInner> Attachments { get; set; }
+        public List<InboxWebhookMessageAttachmentsInner> Attachments { get; set; }
 
         /// <summary>
         /// Gets or Sets Sender

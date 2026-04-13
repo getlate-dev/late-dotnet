@@ -1,4 +1,5 @@
-# Late.Model.WebhookPayloadMessageSentMessage
+# Late.Model.InboxWebhookMessage
+The `message` object included in inbox webhook payloads.
 
 ## Properties
 
@@ -9,9 +10,9 @@ Name | Type | Description | Notes
 **Platform** | **string** |  | 
 **PlatformMessageId** | **string** | Platform&#39;s message ID | 
 **Direction** | **string** |  | 
-**Text** | **string** | Message text content | 
+**Text** | **string** | Message text content (retained on deleted messages for API consumers; Zernio dashboard UI hides this) | 
 **Attachments** | [**List&lt;InboxWebhookMessageAttachmentsInner&gt;**](InboxWebhookMessageAttachmentsInner.md) |  | 
-**Sender** | [**WebhookPayloadMessageSentMessageSender**](WebhookPayloadMessageSentMessageSender.md) |  | 
+**Sender** | [**InboxWebhookMessageSender**](InboxWebhookMessageSender.md) |  | 
 **SentAt** | **DateTime** |  | 
 **IsRead** | **bool** |  | 
 

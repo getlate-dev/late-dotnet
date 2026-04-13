@@ -28,10 +28,10 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// WebhookPayloadMessageMessage
+    /// The &#x60;message&#x60; object included in inbox webhook payloads.
     /// </summary>
-    [DataContract(Name = "WebhookPayloadMessage_message")]
-    public partial class WebhookPayloadMessageMessage : IValidatableObject
+    [DataContract(Name = "InboxWebhookMessage")]
+    public partial class InboxWebhookMessage : IValidatableObject
     {
         /// <summary>
         /// Defines Platform
@@ -96,61 +96,61 @@ namespace Late.Model
         [DataMember(Name = "direction", IsRequired = true, EmitDefaultValue = true)]
         public DirectionEnum Direction { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebhookPayloadMessageMessage" /> class.
+        /// Initializes a new instance of the <see cref="InboxWebhookMessage" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WebhookPayloadMessageMessage() { }
+        protected InboxWebhookMessage() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebhookPayloadMessageMessage" /> class.
+        /// Initializes a new instance of the <see cref="InboxWebhookMessage" /> class.
         /// </summary>
         /// <param name="id">Internal message ID (required).</param>
         /// <param name="conversationId">Internal conversation ID (required).</param>
         /// <param name="platform">platform (required).</param>
         /// <param name="platformMessageId">Platform&#39;s message ID (required).</param>
         /// <param name="direction">direction (required).</param>
-        /// <param name="text">Message text content (required).</param>
+        /// <param name="text">Message text content (retained on deleted messages for API consumers; Zernio dashboard UI hides this) (required).</param>
         /// <param name="attachments">attachments (required).</param>
         /// <param name="sender">sender (required).</param>
         /// <param name="sentAt">sentAt (required).</param>
         /// <param name="isRead">isRead (required).</param>
-        public WebhookPayloadMessageMessage(string id = default, string conversationId = default, PlatformEnum platform = default, string platformMessageId = default, DirectionEnum direction = default, string text = default, List<InboxWebhookMessageAttachmentsInner> attachments = default, WebhookPayloadMessageMessageSender sender = default, DateTime sentAt = default, bool isRead = default)
+        public InboxWebhookMessage(string id = default, string conversationId = default, PlatformEnum platform = default, string platformMessageId = default, DirectionEnum direction = default, string text = default, List<InboxWebhookMessageAttachmentsInner> attachments = default, InboxWebhookMessageSender sender = default, DateTime sentAt = default, bool isRead = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
             {
-                throw new ArgumentNullException("id is a required property for WebhookPayloadMessageMessage and cannot be null");
+                throw new ArgumentNullException("id is a required property for InboxWebhookMessage and cannot be null");
             }
             this.Id = id;
             // to ensure "conversationId" is required (not null)
             if (conversationId == null)
             {
-                throw new ArgumentNullException("conversationId is a required property for WebhookPayloadMessageMessage and cannot be null");
+                throw new ArgumentNullException("conversationId is a required property for InboxWebhookMessage and cannot be null");
             }
             this.ConversationId = conversationId;
             this.Platform = platform;
             // to ensure "platformMessageId" is required (not null)
             if (platformMessageId == null)
             {
-                throw new ArgumentNullException("platformMessageId is a required property for WebhookPayloadMessageMessage and cannot be null");
+                throw new ArgumentNullException("platformMessageId is a required property for InboxWebhookMessage and cannot be null");
             }
             this.PlatformMessageId = platformMessageId;
             this.Direction = direction;
             // to ensure "text" is required (not null)
             if (text == null)
             {
-                throw new ArgumentNullException("text is a required property for WebhookPayloadMessageMessage and cannot be null");
+                throw new ArgumentNullException("text is a required property for InboxWebhookMessage and cannot be null");
             }
             this.Text = text;
             // to ensure "attachments" is required (not null)
             if (attachments == null)
             {
-                throw new ArgumentNullException("attachments is a required property for WebhookPayloadMessageMessage and cannot be null");
+                throw new ArgumentNullException("attachments is a required property for InboxWebhookMessage and cannot be null");
             }
             this.Attachments = attachments;
             // to ensure "sender" is required (not null)
             if (sender == null)
             {
-                throw new ArgumentNullException("sender is a required property for WebhookPayloadMessageMessage and cannot be null");
+                throw new ArgumentNullException("sender is a required property for InboxWebhookMessage and cannot be null");
             }
             this.Sender = sender;
             this.SentAt = sentAt;
@@ -179,9 +179,9 @@ namespace Late.Model
         public string PlatformMessageId { get; set; }
 
         /// <summary>
-        /// Message text content
+        /// Message text content (retained on deleted messages for API consumers; Zernio dashboard UI hides this)
         /// </summary>
-        /// <value>Message text content</value>
+        /// <value>Message text content (retained on deleted messages for API consumers; Zernio dashboard UI hides this)</value>
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
@@ -195,7 +195,7 @@ namespace Late.Model
         /// Gets or Sets Sender
         /// </summary>
         [DataMember(Name = "sender", IsRequired = true, EmitDefaultValue = true)]
-        public WebhookPayloadMessageMessageSender Sender { get; set; }
+        public InboxWebhookMessageSender Sender { get; set; }
 
         /// <summary>
         /// Gets or Sets SentAt
@@ -216,7 +216,7 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WebhookPayloadMessageMessage {\n");
+            sb.Append("class InboxWebhookMessage {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ConversationId: ").Append(ConversationId).Append("\n");
             sb.Append("  Platform: ").Append(Platform).Append("\n");
