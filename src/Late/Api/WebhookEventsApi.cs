@@ -92,6 +92,111 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> OnCommentReceivedWithHttpInfo(WebhookPayloadComment webhookPayloadComment);
         /// <summary>
+        /// Message deleted event
+        /// </summary>
+        /// <remarks>
+        /// Fired when a sender deletes (unsends) a message. Supported on Instagram (incoming unsend) and WhatsApp (when the business deletes an outgoing message via the Cloud API). The payload retains the pre-delete &#x60;text&#x60; and &#x60;attachments&#x60; so API consumers can access the original content for moderation or compliance — the Zernio dashboard UI hides it. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeleted"></param>
+        /// <returns></returns>
+        void OnMessageDeleted(WebhookPayloadMessageDeleted webhookPayloadMessageDeleted);
+
+        /// <summary>
+        /// Message deleted event
+        /// </summary>
+        /// <remarks>
+        /// Fired when a sender deletes (unsends) a message. Supported on Instagram (incoming unsend) and WhatsApp (when the business deletes an outgoing message via the Cloud API). The payload retains the pre-delete &#x60;text&#x60; and &#x60;attachments&#x60; so API consumers can access the original content for moderation or compliance — the Zernio dashboard UI hides it. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeleted"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> OnMessageDeletedWithHttpInfo(WebhookPayloadMessageDeleted webhookPayloadMessageDeleted);
+        /// <summary>
+        /// Message delivered event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message is delivered to the recipient. Supported on WhatsApp and Facebook Messenger. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns></returns>
+        void OnMessageDelivered(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus);
+
+        /// <summary>
+        /// Message delivered event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message is delivered to the recipient. Supported on WhatsApp and Facebook Messenger. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> OnMessageDeliveredWithHttpInfo(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus);
+        /// <summary>
+        /// Message edited event
+        /// </summary>
+        /// <remarks>
+        /// Fired when a sender edits a previously-sent message. Supported on Instagram, Facebook Messenger, and Telegram. The payload includes the full &#x60;editHistory&#x60; so consumers can show prior versions. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageEdited"></param>
+        /// <returns></returns>
+        void OnMessageEdited(WebhookPayloadMessageEdited webhookPayloadMessageEdited);
+
+        /// <summary>
+        /// Message edited event
+        /// </summary>
+        /// <remarks>
+        /// Fired when a sender edits a previously-sent message. Supported on Instagram, Facebook Messenger, and Telegram. The payload includes the full &#x60;editHistory&#x60; so consumers can show prior versions. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageEdited"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> OnMessageEditedWithHttpInfo(WebhookPayloadMessageEdited webhookPayloadMessageEdited);
+        /// <summary>
+        /// Message delivery failed event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message fails to deliver. Currently only emitted for WhatsApp (other platforms don&#39;t expose per-message failure via webhook). The payload &#x60;error&#x60; object contains &#x60;code&#x60;, &#x60;title&#x60;, and &#x60;message&#x60; from the platform. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns></returns>
+        void OnMessageFailed(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus);
+
+        /// <summary>
+        /// Message delivery failed event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message fails to deliver. Currently only emitted for WhatsApp (other platforms don&#39;t expose per-message failure via webhook). The payload &#x60;error&#x60; object contains &#x60;code&#x60;, &#x60;title&#x60;, and &#x60;message&#x60; from the platform. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> OnMessageFailedWithHttpInfo(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus);
+        /// <summary>
+        /// Message read event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message is read by the recipient. Supported on WhatsApp, Facebook Messenger, and Instagram. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns></returns>
+        void OnMessageRead(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus);
+
+        /// <summary>
+        /// Message read event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message is read by the recipient. Supported on WhatsApp, Facebook Messenger, and Instagram. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> OnMessageReadWithHttpInfo(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus);
+        /// <summary>
         /// Message received event
         /// </summary>
         /// <remarks>
@@ -358,6 +463,121 @@ namespace Late.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> OnCommentReceivedWithHttpInfoAsync(WebhookPayloadComment webhookPayloadComment, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Message deleted event
+        /// </summary>
+        /// <remarks>
+        /// Fired when a sender deletes (unsends) a message. Supported on Instagram (incoming unsend) and WhatsApp (when the business deletes an outgoing message via the Cloud API). The payload retains the pre-delete &#x60;text&#x60; and &#x60;attachments&#x60; so API consumers can access the original content for moderation or compliance — the Zernio dashboard UI hides it. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeleted"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task OnMessageDeletedAsync(WebhookPayloadMessageDeleted webhookPayloadMessageDeleted, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Message deleted event
+        /// </summary>
+        /// <remarks>
+        /// Fired when a sender deletes (unsends) a message. Supported on Instagram (incoming unsend) and WhatsApp (when the business deletes an outgoing message via the Cloud API). The payload retains the pre-delete &#x60;text&#x60; and &#x60;attachments&#x60; so API consumers can access the original content for moderation or compliance — the Zernio dashboard UI hides it. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeleted"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> OnMessageDeletedWithHttpInfoAsync(WebhookPayloadMessageDeleted webhookPayloadMessageDeleted, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Message delivered event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message is delivered to the recipient. Supported on WhatsApp and Facebook Messenger. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task OnMessageDeliveredAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Message delivered event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message is delivered to the recipient. Supported on WhatsApp and Facebook Messenger. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> OnMessageDeliveredWithHttpInfoAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Message edited event
+        /// </summary>
+        /// <remarks>
+        /// Fired when a sender edits a previously-sent message. Supported on Instagram, Facebook Messenger, and Telegram. The payload includes the full &#x60;editHistory&#x60; so consumers can show prior versions. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageEdited"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task OnMessageEditedAsync(WebhookPayloadMessageEdited webhookPayloadMessageEdited, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Message edited event
+        /// </summary>
+        /// <remarks>
+        /// Fired when a sender edits a previously-sent message. Supported on Instagram, Facebook Messenger, and Telegram. The payload includes the full &#x60;editHistory&#x60; so consumers can show prior versions. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageEdited"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> OnMessageEditedWithHttpInfoAsync(WebhookPayloadMessageEdited webhookPayloadMessageEdited, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Message delivery failed event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message fails to deliver. Currently only emitted for WhatsApp (other platforms don&#39;t expose per-message failure via webhook). The payload &#x60;error&#x60; object contains &#x60;code&#x60;, &#x60;title&#x60;, and &#x60;message&#x60; from the platform. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task OnMessageFailedAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Message delivery failed event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message fails to deliver. Currently only emitted for WhatsApp (other platforms don&#39;t expose per-message failure via webhook). The payload &#x60;error&#x60; object contains &#x60;code&#x60;, &#x60;title&#x60;, and &#x60;message&#x60; from the platform. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> OnMessageFailedWithHttpInfoAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Message read event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message is read by the recipient. Supported on WhatsApp, Facebook Messenger, and Instagram. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task OnMessageReadAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Message read event
+        /// </summary>
+        /// <remarks>
+        /// Fired when an outgoing message is read by the recipient. Supported on WhatsApp, Facebook Messenger, and Instagram. 
+        /// </remarks>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> OnMessageReadWithHttpInfoAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Message received event
         /// </summary>
@@ -1147,6 +1367,631 @@ namespace Late.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OnCommentReceived", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message deleted event Fired when a sender deletes (unsends) a message. Supported on Instagram (incoming unsend) and WhatsApp (when the business deletes an outgoing message via the Cloud API). The payload retains the pre-delete &#x60;text&#x60; and &#x60;attachments&#x60; so API consumers can access the original content for moderation or compliance — the Zernio dashboard UI hides it. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeleted"></param>
+        /// <returns></returns>
+        public void OnMessageDeleted(WebhookPayloadMessageDeleted webhookPayloadMessageDeleted)
+        {
+            OnMessageDeletedWithHttpInfo(webhookPayloadMessageDeleted);
+        }
+
+        /// <summary>
+        /// Message deleted event Fired when a sender deletes (unsends) a message. Supported on Instagram (incoming unsend) and WhatsApp (when the business deletes an outgoing message via the Cloud API). The payload retains the pre-delete &#x60;text&#x60; and &#x60;attachments&#x60; so API consumers can access the original content for moderation or compliance — the Zernio dashboard UI hides it. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeleted"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Late.Client.ApiResponse<Object> OnMessageDeletedWithHttpInfo(WebhookPayloadMessageDeleted webhookPayloadMessageDeleted)
+        {
+            // verify the required parameter 'webhookPayloadMessageDeleted' is set
+            if (webhookPayloadMessageDeleted == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageDeleted' when calling WebhookEventsApi->OnMessageDeleted");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageDeleted;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/message.deleted", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageDeleted", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message deleted event Fired when a sender deletes (unsends) a message. Supported on Instagram (incoming unsend) and WhatsApp (when the business deletes an outgoing message via the Cloud API). The payload retains the pre-delete &#x60;text&#x60; and &#x60;attachments&#x60; so API consumers can access the original content for moderation or compliance — the Zernio dashboard UI hides it. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeleted"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task OnMessageDeletedAsync(WebhookPayloadMessageDeleted webhookPayloadMessageDeleted, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await OnMessageDeletedWithHttpInfoAsync(webhookPayloadMessageDeleted, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Message deleted event Fired when a sender deletes (unsends) a message. Supported on Instagram (incoming unsend) and WhatsApp (when the business deletes an outgoing message via the Cloud API). The payload retains the pre-delete &#x60;text&#x60; and &#x60;attachments&#x60; so API consumers can access the original content for moderation or compliance — the Zernio dashboard UI hides it. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeleted"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> OnMessageDeletedWithHttpInfoAsync(WebhookPayloadMessageDeleted webhookPayloadMessageDeleted, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'webhookPayloadMessageDeleted' is set
+            if (webhookPayloadMessageDeleted == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageDeleted' when calling WebhookEventsApi->OnMessageDeleted");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageDeleted;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/message.deleted", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageDeleted", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message delivered event Fired when an outgoing message is delivered to the recipient. Supported on WhatsApp and Facebook Messenger. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns></returns>
+        public void OnMessageDelivered(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus)
+        {
+            OnMessageDeliveredWithHttpInfo(webhookPayloadMessageDeliveryStatus);
+        }
+
+        /// <summary>
+        /// Message delivered event Fired when an outgoing message is delivered to the recipient. Supported on WhatsApp and Facebook Messenger. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Late.Client.ApiResponse<Object> OnMessageDeliveredWithHttpInfo(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus)
+        {
+            // verify the required parameter 'webhookPayloadMessageDeliveryStatus' is set
+            if (webhookPayloadMessageDeliveryStatus == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageDeliveryStatus' when calling WebhookEventsApi->OnMessageDelivered");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageDeliveryStatus;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/message.delivered", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageDelivered", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message delivered event Fired when an outgoing message is delivered to the recipient. Supported on WhatsApp and Facebook Messenger. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task OnMessageDeliveredAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await OnMessageDeliveredWithHttpInfoAsync(webhookPayloadMessageDeliveryStatus, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Message delivered event Fired when an outgoing message is delivered to the recipient. Supported on WhatsApp and Facebook Messenger. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> OnMessageDeliveredWithHttpInfoAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'webhookPayloadMessageDeliveryStatus' is set
+            if (webhookPayloadMessageDeliveryStatus == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageDeliveryStatus' when calling WebhookEventsApi->OnMessageDelivered");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageDeliveryStatus;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/message.delivered", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageDelivered", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message edited event Fired when a sender edits a previously-sent message. Supported on Instagram, Facebook Messenger, and Telegram. The payload includes the full &#x60;editHistory&#x60; so consumers can show prior versions. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageEdited"></param>
+        /// <returns></returns>
+        public void OnMessageEdited(WebhookPayloadMessageEdited webhookPayloadMessageEdited)
+        {
+            OnMessageEditedWithHttpInfo(webhookPayloadMessageEdited);
+        }
+
+        /// <summary>
+        /// Message edited event Fired when a sender edits a previously-sent message. Supported on Instagram, Facebook Messenger, and Telegram. The payload includes the full &#x60;editHistory&#x60; so consumers can show prior versions. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageEdited"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Late.Client.ApiResponse<Object> OnMessageEditedWithHttpInfo(WebhookPayloadMessageEdited webhookPayloadMessageEdited)
+        {
+            // verify the required parameter 'webhookPayloadMessageEdited' is set
+            if (webhookPayloadMessageEdited == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageEdited' when calling WebhookEventsApi->OnMessageEdited");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageEdited;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/message.edited", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageEdited", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message edited event Fired when a sender edits a previously-sent message. Supported on Instagram, Facebook Messenger, and Telegram. The payload includes the full &#x60;editHistory&#x60; so consumers can show prior versions. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageEdited"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task OnMessageEditedAsync(WebhookPayloadMessageEdited webhookPayloadMessageEdited, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await OnMessageEditedWithHttpInfoAsync(webhookPayloadMessageEdited, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Message edited event Fired when a sender edits a previously-sent message. Supported on Instagram, Facebook Messenger, and Telegram. The payload includes the full &#x60;editHistory&#x60; so consumers can show prior versions. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageEdited"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> OnMessageEditedWithHttpInfoAsync(WebhookPayloadMessageEdited webhookPayloadMessageEdited, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'webhookPayloadMessageEdited' is set
+            if (webhookPayloadMessageEdited == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageEdited' when calling WebhookEventsApi->OnMessageEdited");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageEdited;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/message.edited", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageEdited", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message delivery failed event Fired when an outgoing message fails to deliver. Currently only emitted for WhatsApp (other platforms don&#39;t expose per-message failure via webhook). The payload &#x60;error&#x60; object contains &#x60;code&#x60;, &#x60;title&#x60;, and &#x60;message&#x60; from the platform. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns></returns>
+        public void OnMessageFailed(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus)
+        {
+            OnMessageFailedWithHttpInfo(webhookPayloadMessageDeliveryStatus);
+        }
+
+        /// <summary>
+        /// Message delivery failed event Fired when an outgoing message fails to deliver. Currently only emitted for WhatsApp (other platforms don&#39;t expose per-message failure via webhook). The payload &#x60;error&#x60; object contains &#x60;code&#x60;, &#x60;title&#x60;, and &#x60;message&#x60; from the platform. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Late.Client.ApiResponse<Object> OnMessageFailedWithHttpInfo(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus)
+        {
+            // verify the required parameter 'webhookPayloadMessageDeliveryStatus' is set
+            if (webhookPayloadMessageDeliveryStatus == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageDeliveryStatus' when calling WebhookEventsApi->OnMessageFailed");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageDeliveryStatus;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/message.failed", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageFailed", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message delivery failed event Fired when an outgoing message fails to deliver. Currently only emitted for WhatsApp (other platforms don&#39;t expose per-message failure via webhook). The payload &#x60;error&#x60; object contains &#x60;code&#x60;, &#x60;title&#x60;, and &#x60;message&#x60; from the platform. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task OnMessageFailedAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await OnMessageFailedWithHttpInfoAsync(webhookPayloadMessageDeliveryStatus, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Message delivery failed event Fired when an outgoing message fails to deliver. Currently only emitted for WhatsApp (other platforms don&#39;t expose per-message failure via webhook). The payload &#x60;error&#x60; object contains &#x60;code&#x60;, &#x60;title&#x60;, and &#x60;message&#x60; from the platform. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> OnMessageFailedWithHttpInfoAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'webhookPayloadMessageDeliveryStatus' is set
+            if (webhookPayloadMessageDeliveryStatus == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageDeliveryStatus' when calling WebhookEventsApi->OnMessageFailed");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageDeliveryStatus;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/message.failed", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageFailed", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message read event Fired when an outgoing message is read by the recipient. Supported on WhatsApp, Facebook Messenger, and Instagram. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns></returns>
+        public void OnMessageRead(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus)
+        {
+            OnMessageReadWithHttpInfo(webhookPayloadMessageDeliveryStatus);
+        }
+
+        /// <summary>
+        /// Message read event Fired when an outgoing message is read by the recipient. Supported on WhatsApp, Facebook Messenger, and Instagram. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public Late.Client.ApiResponse<Object> OnMessageReadWithHttpInfo(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus)
+        {
+            // verify the required parameter 'webhookPayloadMessageDeliveryStatus' is set
+            if (webhookPayloadMessageDeliveryStatus == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageDeliveryStatus' when calling WebhookEventsApi->OnMessageRead");
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageDeliveryStatus;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/message.read", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageRead", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Message read event Fired when an outgoing message is read by the recipient. Supported on WhatsApp, Facebook Messenger, and Instagram. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task OnMessageReadAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await OnMessageReadWithHttpInfoAsync(webhookPayloadMessageDeliveryStatus, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Message read event Fired when an outgoing message is read by the recipient. Supported on WhatsApp, Facebook Messenger, and Instagram. 
+        /// </summary>
+        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="webhookPayloadMessageDeliveryStatus"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<Object>> OnMessageReadWithHttpInfoAsync(WebhookPayloadMessageDeliveryStatus webhookPayloadMessageDeliveryStatus, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'webhookPayloadMessageDeliveryStatus' is set
+            if (webhookPayloadMessageDeliveryStatus == null)
+                throw new Late.Client.ApiException(400, "Missing required parameter 'webhookPayloadMessageDeliveryStatus' when calling WebhookEventsApi->OnMessageRead");
+
+
+            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+            };
+
+
+            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = webhookPayloadMessageDeliveryStatus;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/message.read", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("OnMessageRead", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
