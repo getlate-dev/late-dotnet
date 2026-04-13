@@ -20339,13 +20339,16 @@ components:
         platformAdId: platformAdId
         platform: facebook
         creative:
+          videoId: videoId
+          pinterestTitle: pinterestTitle
+          body: body
+          objectType: objectType
           googleDescription: googleDescription
+          videoUrl: videoUrl
           pinterestDescription: pinterestDescription
           imageUrl: imageUrl
           linkUrl: linkUrl
           googleHeadline: googleHeadline
-          pinterestTitle: pinterestTitle
-          body: body
           mediaUrls:
           - mediaUrls
           - mediaUrls
@@ -20453,13 +20456,16 @@ components:
           platformAdId: platformAdId
           platform: facebook
           creative:
+            videoId: videoId
+            pinterestTitle: pinterestTitle
+            body: body
+            objectType: objectType
             googleDescription: googleDescription
+            videoUrl: videoUrl
             pinterestDescription: pinterestDescription
             imageUrl: imageUrl
             linkUrl: linkUrl
             googleHeadline: googleHeadline
-            pinterestTitle: pinterestTitle
-            body: body
             mediaUrls:
             - mediaUrls
             - mediaUrls
@@ -20490,13 +20496,16 @@ components:
           platformAdId: platformAdId
           platform: facebook
           creative:
+            videoId: videoId
+            pinterestTitle: pinterestTitle
+            body: body
+            objectType: objectType
             googleDescription: googleDescription
+            videoUrl: videoUrl
             pinterestDescription: pinterestDescription
             imageUrl: imageUrl
             linkUrl: linkUrl
             googleHeadline: googleHeadline
-            pinterestTitle: pinterestTitle
-            body: body
             mediaUrls:
             - mediaUrls
             - mediaUrls
@@ -20583,13 +20592,16 @@ components:
             platformAdId: platformAdId
             platform: facebook
             creative:
+              videoId: videoId
+              pinterestTitle: pinterestTitle
+              body: body
+              objectType: objectType
               googleDescription: googleDescription
+              videoUrl: videoUrl
               pinterestDescription: pinterestDescription
               imageUrl: imageUrl
               linkUrl: linkUrl
               googleHeadline: googleHeadline
-              pinterestTitle: pinterestTitle
-              body: body
               mediaUrls:
               - mediaUrls
               - mediaUrls
@@ -20620,13 +20632,16 @@ components:
             platformAdId: platformAdId
             platform: facebook
             creative:
+              videoId: videoId
+              pinterestTitle: pinterestTitle
+              body: body
+              objectType: objectType
               googleDescription: googleDescription
+              videoUrl: videoUrl
               pinterestDescription: pinterestDescription
               imageUrl: imageUrl
               linkUrl: linkUrl
               googleHeadline: googleHeadline
-              pinterestTitle: pinterestTitle
-              body: body
               mediaUrls:
               - mediaUrls
               - mediaUrls
@@ -20675,13 +20690,16 @@ components:
             platformAdId: platformAdId
             platform: facebook
             creative:
+              videoId: videoId
+              pinterestTitle: pinterestTitle
+              body: body
+              objectType: objectType
               googleDescription: googleDescription
+              videoUrl: videoUrl
               pinterestDescription: pinterestDescription
               imageUrl: imageUrl
               linkUrl: linkUrl
               googleHeadline: googleHeadline
-              pinterestTitle: pinterestTitle
-              body: body
               mediaUrls:
               - mediaUrls
               - mediaUrls
@@ -20712,13 +20730,16 @@ components:
             platformAdId: platformAdId
             platform: facebook
             creative:
+              videoId: videoId
+              pinterestTitle: pinterestTitle
+              body: body
+              objectType: objectType
               googleDescription: googleDescription
+              videoUrl: videoUrl
               pinterestDescription: pinterestDescription
               imageUrl: imageUrl
               linkUrl: linkUrl
               googleHeadline: googleHeadline
-              pinterestTitle: pinterestTitle
-              body: body
               mediaUrls:
               - mediaUrls
               - mediaUrls
@@ -35650,13 +35671,16 @@ components:
           platformAdId: platformAdId
           platform: facebook
           creative:
+            videoId: videoId
+            pinterestTitle: pinterestTitle
+            body: body
+            objectType: objectType
             googleDescription: googleDescription
+            videoUrl: videoUrl
             pinterestDescription: pinterestDescription
             imageUrl: imageUrl
             linkUrl: linkUrl
             googleHeadline: googleHeadline
-            pinterestTitle: pinterestTitle
-            body: body
             mediaUrls:
             - mediaUrls
             - mediaUrls
@@ -35687,13 +35711,16 @@ components:
           platformAdId: platformAdId
           platform: facebook
           creative:
+            videoId: videoId
+            pinterestTitle: pinterestTitle
+            body: body
+            objectType: objectType
             googleDescription: googleDescription
+            videoUrl: videoUrl
             pinterestDescription: pinterestDescription
             imageUrl: imageUrl
             linkUrl: linkUrl
             googleHeadline: googleHeadline
-            pinterestTitle: pinterestTitle
-            body: body
             mediaUrls:
             - mediaUrls
             - mediaUrls
@@ -35853,13 +35880,16 @@ components:
               platformAdId: platformAdId
               platform: facebook
               creative:
+                videoId: videoId
+                pinterestTitle: pinterestTitle
+                body: body
+                objectType: objectType
                 googleDescription: googleDescription
+                videoUrl: videoUrl
                 pinterestDescription: pinterestDescription
                 imageUrl: imageUrl
                 linkUrl: linkUrl
                 googleHeadline: googleHeadline
-                pinterestTitle: pinterestTitle
-                body: body
                 mediaUrls:
                 - mediaUrls
                 - mediaUrls
@@ -35890,13 +35920,16 @@ components:
               platformAdId: platformAdId
               platform: facebook
               creative:
+                videoId: videoId
+                pinterestTitle: pinterestTitle
+                body: body
+                objectType: objectType
                 googleDescription: googleDescription
+                videoUrl: videoUrl
                 pinterestDescription: pinterestDescription
                 imageUrl: imageUrl
                 linkUrl: linkUrl
                 googleHeadline: googleHeadline
-                pinterestTitle: pinterestTitle
-                body: body
                 mediaUrls:
                 - mediaUrls
                 - mediaUrls
@@ -35945,13 +35978,16 @@ components:
               platformAdId: platformAdId
               platform: facebook
               creative:
+                videoId: videoId
+                pinterestTitle: pinterestTitle
+                body: body
+                objectType: objectType
                 googleDescription: googleDescription
+                videoUrl: videoUrl
                 pinterestDescription: pinterestDescription
                 imageUrl: imageUrl
                 linkUrl: linkUrl
                 googleHeadline: googleHeadline
-                pinterestTitle: pinterestTitle
-                body: body
                 mediaUrls:
                 - mediaUrls
                 - mediaUrls
@@ -35982,13 +36018,16 @@ components:
               platformAdId: platformAdId
               platform: facebook
               creative:
+                videoId: videoId
+                pinterestTitle: pinterestTitle
+                body: body
+                objectType: objectType
                 googleDescription: googleDescription
+                videoUrl: videoUrl
                 pinterestDescription: pinterestDescription
                 imageUrl: imageUrl
                 linkUrl: linkUrl
                 googleHeadline: googleHeadline
-                pinterestTitle: pinterestTitle
-                body: body
                 mediaUrls:
                 - mediaUrls
                 - mediaUrls
@@ -36060,13 +36099,16 @@ components:
               platformAdId: platformAdId
               platform: facebook
               creative:
+                videoId: videoId
+                pinterestTitle: pinterestTitle
+                body: body
+                objectType: objectType
                 googleDescription: googleDescription
+                videoUrl: videoUrl
                 pinterestDescription: pinterestDescription
                 imageUrl: imageUrl
                 linkUrl: linkUrl
                 googleHeadline: googleHeadline
-                pinterestTitle: pinterestTitle
-                body: body
                 mediaUrls:
                 - mediaUrls
                 - mediaUrls
@@ -36097,13 +36139,16 @@ components:
               platformAdId: platformAdId
               platform: facebook
               creative:
+                videoId: videoId
+                pinterestTitle: pinterestTitle
+                body: body
+                objectType: objectType
                 googleDescription: googleDescription
+                videoUrl: videoUrl
                 pinterestDescription: pinterestDescription
                 imageUrl: imageUrl
                 linkUrl: linkUrl
                 googleHeadline: googleHeadline
-                pinterestTitle: pinterestTitle
-                body: body
                 mediaUrls:
                 - mediaUrls
                 - mediaUrls
@@ -36152,13 +36197,16 @@ components:
               platformAdId: platformAdId
               platform: facebook
               creative:
+                videoId: videoId
+                pinterestTitle: pinterestTitle
+                body: body
+                objectType: objectType
                 googleDescription: googleDescription
+                videoUrl: videoUrl
                 pinterestDescription: pinterestDescription
                 imageUrl: imageUrl
                 linkUrl: linkUrl
                 googleHeadline: googleHeadline
-                pinterestTitle: pinterestTitle
-                body: body
                 mediaUrls:
                 - mediaUrls
                 - mediaUrls
@@ -36189,13 +36237,16 @@ components:
               platformAdId: platformAdId
               platform: facebook
               creative:
+                videoId: videoId
+                pinterestTitle: pinterestTitle
+                body: body
+                objectType: objectType
                 googleDescription: googleDescription
+                videoUrl: videoUrl
                 pinterestDescription: pinterestDescription
                 imageUrl: imageUrl
                 linkUrl: linkUrl
                 googleHeadline: googleHeadline
-                pinterestTitle: pinterestTitle
-                body: body
                 mediaUrls:
                 - mediaUrls
                 - mediaUrls
@@ -36271,13 +36322,16 @@ components:
           platformAdId: platformAdId
           platform: facebook
           creative:
+            videoId: videoId
+            pinterestTitle: pinterestTitle
+            body: body
+            objectType: objectType
             googleDescription: googleDescription
+            videoUrl: videoUrl
             pinterestDescription: pinterestDescription
             imageUrl: imageUrl
             linkUrl: linkUrl
             googleHeadline: googleHeadline
-            pinterestTitle: pinterestTitle
-            body: body
             mediaUrls:
             - mediaUrls
             - mediaUrls
@@ -36357,13 +36411,16 @@ components:
           platformAdId: platformAdId
           platform: facebook
           creative:
+            videoId: videoId
+            pinterestTitle: pinterestTitle
+            body: body
+            objectType: objectType
             googleDescription: googleDescription
+            videoUrl: videoUrl
             pinterestDescription: pinterestDescription
             imageUrl: imageUrl
             linkUrl: linkUrl
             googleHeadline: googleHeadline
-            pinterestTitle: pinterestTitle
-            body: body
             mediaUrls:
             - mediaUrls
             - mediaUrls
@@ -38325,13 +38382,16 @@ components:
     Ad_creative:
       description: Platform-specific creative data. Fields vary by platform.
       example:
+        videoId: videoId
+        pinterestTitle: pinterestTitle
+        body: body
+        objectType: objectType
         googleDescription: googleDescription
+        videoUrl: videoUrl
         pinterestDescription: pinterestDescription
         imageUrl: imageUrl
         linkUrl: linkUrl
         googleHeadline: googleHeadline
-        pinterestTitle: pinterestTitle
-        body: body
         mediaUrls:
         - mediaUrls
         - mediaUrls
@@ -38343,6 +38403,22 @@ components:
           type: string
         imageUrl:
           description: Alternative image URL
+          type: string
+        videoId:
+          description: "Meta video ID for VIDEO-type ads. Null for non-video ads.\
+            \ Callers that need an embeddable MP4 can call GET /{videoId}?fields=source\
+            \ with the page access token."
+          type: string
+          nullable: true
+        videoUrl:
+          description: "Public Facebook watch URL for VIDEO-type ads (https://www.facebook.com/watch/?v={videoId}).\
+            \ Null for non-video ads."
+          type: string
+          nullable: true
+        objectType:
+          description: "Meta creative object_type (e.g. SHARE, VIDEO, PRIVACY_CHECK_FAIL,\
+            \ POST_DELETED). Use this to render state-aware previews — when Meta moderation\
+            \ strips image/video fields, only thumbnailUrl at 64x64 is available."
           type: string
         mediaUrls:
           description: "All media URLs for this ad (carousel images, multiple assets).\
