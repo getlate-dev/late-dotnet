@@ -4,6 +4,7 @@ README.md
 api/openapi.yaml
 appveyor.yml
 docs/APIKeysApi.md
+docs/Account.md
 docs/AccountGetResponse.md
 docs/AccountGroupsApi.md
 docs/AccountSettingsApi.md
@@ -85,6 +86,7 @@ docs/ConnectionLogContext.md
 docs/ConnectionLogError.md
 docs/ConnectionLogSuccess.md
 docs/ContactsApi.md
+docs/Conversation.md
 docs/CreateAccountGroup201Response.md
 docs/CreateAccountGroupRequest.md
 docs/CreateAdAudience201Response.md
@@ -277,6 +279,9 @@ docs/GetInboxConversation200ResponseData.md
 docs/GetInboxConversationMessages200Response.md
 docs/GetInboxConversationMessages200ResponseMessagesInner.md
 docs/GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner.md
+docs/GetInboxConversationMessages200ResponseMessagesInnerDeliveryError.md
+docs/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInner.md
+docs/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInnerAttachmentsInner.md
 docs/GetInboxPostComments200Response.md
 docs/GetInboxPostComments200ResponseCommentsInner.md
 docs/GetInboxPostComments200ResponseCommentsInnerFrom.md
@@ -494,6 +499,7 @@ docs/LogsApi.md
 docs/MediaApi.md
 docs/MediaItem.md
 docs/MediaUploadResponse.md
+docs/Message.md
 docs/MessagesApi.md
 docs/Money.md
 docs/Pagination.md
@@ -765,6 +771,11 @@ docs/WebhookPayloadCommentPost.md
 docs/WebhookPayloadMessage.md
 docs/WebhookPayloadMessageAccount.md
 docs/WebhookPayloadMessageConversation.md
+docs/WebhookPayloadMessageDeleted.md
+docs/WebhookPayloadMessageDeliveryStatus.md
+docs/WebhookPayloadMessageDeliveryStatusError.md
+docs/WebhookPayloadMessageEdited.md
+docs/WebhookPayloadMessageEditedEditHistoryInner.md
 docs/WebhookPayloadMessageMessage.md
 docs/WebhookPayloadMessageMessageAttachmentsInner.md
 docs/WebhookPayloadMessageMessageSender.md
@@ -801,6 +812,17 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/AccountTests.cs
+src/Late.Test/Model/ConversationTests.cs
+src/Late.Test/Model/GetInboxConversationMessages200ResponseMessagesInnerDeliveryErrorTests.cs
+src/Late.Test/Model/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInnerAttachmentsInnerTests.cs
+src/Late.Test/Model/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInnerTests.cs
+src/Late.Test/Model/MessageTests.cs
+src/Late.Test/Model/WebhookPayloadMessageDeletedTests.cs
+src/Late.Test/Model/WebhookPayloadMessageDeliveryStatusErrorTests.cs
+src/Late.Test/Model/WebhookPayloadMessageDeliveryStatusTests.cs
+src/Late.Test/Model/WebhookPayloadMessageEditedEditHistoryInnerTests.cs
+src/Late.Test/Model/WebhookPayloadMessageEditedTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -860,6 +882,7 @@ src/Late/Client/RetryConfiguration.cs
 src/Late/Client/WebRequestPathBuilder.cs
 src/Late/Late.csproj
 src/Late/Model/AbstractOpenAPISchema.cs
+src/Late/Model/Account.cs
 src/Late/Model/AccountGetResponse.cs
 src/Late/Model/AccountWithFollowerStats.cs
 src/Late/Model/AccountWithFollowerStatsAllOfAccountStats.cs
@@ -929,6 +952,7 @@ src/Late/Model/ConnectionLog.cs
 src/Late/Model/ConnectionLogContext.cs
 src/Late/Model/ConnectionLogError.cs
 src/Late/Model/ConnectionLogSuccess.cs
+src/Late/Model/Conversation.cs
 src/Late/Model/CreateAccountGroup201Response.cs
 src/Late/Model/CreateAccountGroupRequest.cs
 src/Late/Model/CreateAdAudience201Response.cs
@@ -1114,6 +1138,9 @@ src/Late/Model/GetInboxConversation200ResponseData.cs
 src/Late/Model/GetInboxConversationMessages200Response.cs
 src/Late/Model/GetInboxConversationMessages200ResponseMessagesInner.cs
 src/Late/Model/GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner.cs
+src/Late/Model/GetInboxConversationMessages200ResponseMessagesInnerDeliveryError.cs
+src/Late/Model/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInner.cs
+src/Late/Model/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInnerAttachmentsInner.cs
 src/Late/Model/GetInboxPostComments200Response.cs
 src/Late/Model/GetInboxPostComments200ResponseCommentsInner.cs
 src/Late/Model/GetInboxPostComments200ResponseCommentsInnerFrom.cs
@@ -1327,6 +1354,7 @@ src/Late/Model/ListWhatsAppGroupJoinRequests200Response.cs
 src/Late/Model/ListWhatsAppGroupJoinRequests200ResponseJoinRequestsInner.cs
 src/Late/Model/MediaItem.cs
 src/Late/Model/MediaUploadResponse.cs
+src/Late/Model/Message.cs
 src/Late/Model/Money.cs
 src/Late/Model/Pagination.cs
 src/Late/Model/Pending.cs
@@ -1586,6 +1614,11 @@ src/Late/Model/WebhookPayloadCommentPost.cs
 src/Late/Model/WebhookPayloadMessage.cs
 src/Late/Model/WebhookPayloadMessageAccount.cs
 src/Late/Model/WebhookPayloadMessageConversation.cs
+src/Late/Model/WebhookPayloadMessageDeleted.cs
+src/Late/Model/WebhookPayloadMessageDeliveryStatus.cs
+src/Late/Model/WebhookPayloadMessageDeliveryStatusError.cs
+src/Late/Model/WebhookPayloadMessageEdited.cs
+src/Late/Model/WebhookPayloadMessageEditedEditHistoryInner.cs
 src/Late/Model/WebhookPayloadMessageMessage.cs
 src/Late/Model/WebhookPayloadMessageMessageAttachmentsInner.cs
 src/Late/Model/WebhookPayloadMessageMessageSender.cs

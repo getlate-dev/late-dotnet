@@ -100,16 +100,46 @@ namespace Late.Model
             MessageSent = 10,
 
             /// <summary>
+            /// Enum MessageEdited for value: message.edited
+            /// </summary>
+            [EnumMember(Value = "message.edited")]
+            MessageEdited = 11,
+
+            /// <summary>
+            /// Enum MessageDeleted for value: message.deleted
+            /// </summary>
+            [EnumMember(Value = "message.deleted")]
+            MessageDeleted = 12,
+
+            /// <summary>
+            /// Enum MessageDelivered for value: message.delivered
+            /// </summary>
+            [EnumMember(Value = "message.delivered")]
+            MessageDelivered = 13,
+
+            /// <summary>
+            /// Enum MessageRead for value: message.read
+            /// </summary>
+            [EnumMember(Value = "message.read")]
+            MessageRead = 14,
+
+            /// <summary>
+            /// Enum MessageFailed for value: message.failed
+            /// </summary>
+            [EnumMember(Value = "message.failed")]
+            MessageFailed = 15,
+
+            /// <summary>
             /// Enum CommentReceived for value: comment.received
             /// </summary>
             [EnumMember(Value = "comment.received")]
-            CommentReceived = 11,
+            CommentReceived = 16,
 
             /// <summary>
             /// Enum WebhookTest for value: webhook.test
             /// </summary>
             [EnumMember(Value = "webhook.test")]
-            WebhookTest = 12
+            WebhookTest = 17
         }
 
 

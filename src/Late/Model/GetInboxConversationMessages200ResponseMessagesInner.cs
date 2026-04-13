@@ -98,6 +98,51 @@ namespace Late.Model
         [DataMember(Name = "direction", EmitDefaultValue = false)]
         public DirectionEnum? Direction { get; set; }
         /// <summary>
+        /// Lifecycle status for outgoing messages. Not all platforms emit every state (see webhook support matrix).
+        /// </summary>
+        /// <value>Lifecycle status for outgoing messages. Not all platforms emit every state (see webhook support matrix).</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum DeliveryStatusEnum
+        {
+            /// <summary>
+            /// Enum Sent for value: sent
+            /// </summary>
+            [EnumMember(Value = "sent")]
+            Sent = 1,
+
+            /// <summary>
+            /// Enum Delivered for value: delivered
+            /// </summary>
+            [EnumMember(Value = "delivered")]
+            Delivered = 2,
+
+            /// <summary>
+            /// Enum Read for value: read
+            /// </summary>
+            [EnumMember(Value = "read")]
+            Read = 3,
+
+            /// <summary>
+            /// Enum Failed for value: failed
+            /// </summary>
+            [EnumMember(Value = "failed")]
+            Failed = 4,
+
+            /// <summary>
+            /// Enum Deleted for value: deleted
+            /// </summary>
+            [EnumMember(Value = "deleted")]
+            Deleted = 5
+        }
+
+
+        /// <summary>
+        /// Lifecycle status for outgoing messages. Not all platforms emit every state (see webhook support matrix).
+        /// </summary>
+        /// <value>Lifecycle status for outgoing messages. Not all platforms emit every state (see webhook support matrix).</value>
+        [DataMember(Name = "deliveryStatus", EmitDefaultValue = false)]
+        public DeliveryStatusEnum? DeliveryStatus { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="GetInboxConversationMessages200ResponseMessagesInner" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -114,7 +159,18 @@ namespace Late.Model
         /// <param name="subject">Reddit message subject.</param>
         /// <param name="storyReply">Instagram story reply.</param>
         /// <param name="isStoryMention">Instagram story mention.</param>
-        public GetInboxConversationMessages200ResponseMessagesInner(string id = default, string conversationId = default, string accountId = default, string platform = default, string message = default, string senderId = default, string senderName = default, SenderVerifiedTypeEnum? senderVerifiedType = default, DirectionEnum? direction = default, DateTime createdAt = default, List<GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner> attachments = default, string subject = default, bool storyReply = default, bool isStoryMention = default)
+        /// <param name="isEdited">True if the sender has edited this message at least once..</param>
+        /// <param name="editedAt">When the most recent edit happened..</param>
+        /// <param name="editCount">Total number of edits applied..</param>
+        /// <param name="editHistory">Every prior version of the message, oldest first..</param>
+        /// <param name="isDeleted">True if the sender has deleted (unsent) this message. The original &#x60;message&#x60; and &#x60;attachments&#x60; fields remain populated..</param>
+        /// <param name="deletedAt">deletedAt.</param>
+        /// <param name="deliveryStatus">Lifecycle status for outgoing messages. Not all platforms emit every state (see webhook support matrix)..</param>
+        /// <param name="deliveredAt">deliveredAt.</param>
+        /// <param name="readAt">readAt.</param>
+        /// <param name="sentAt">Original send time for outgoing messages (used for Messenger watermark queries)..</param>
+        /// <param name="deliveryError">deliveryError.</param>
+        public GetInboxConversationMessages200ResponseMessagesInner(string id = default, string conversationId = default, string accountId = default, string platform = default, string message = default, string senderId = default, string senderName = default, SenderVerifiedTypeEnum? senderVerifiedType = default, DirectionEnum? direction = default, DateTime createdAt = default, List<GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner> attachments = default, string subject = default, bool storyReply = default, bool isStoryMention = default, bool isEdited = default, DateTime editedAt = default, int editCount = default, List<GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInner> editHistory = default, bool isDeleted = default, DateTime deletedAt = default, DeliveryStatusEnum? deliveryStatus = default, DateTime deliveredAt = default, DateTime readAt = default, DateTime sentAt = default, GetInboxConversationMessages200ResponseMessagesInnerDeliveryError deliveryError = default)
         {
             this.Id = id;
             this.ConversationId = conversationId;
@@ -130,6 +186,17 @@ namespace Late.Model
             this.Subject = subject;
             this.StoryReply = storyReply;
             this.IsStoryMention = isStoryMention;
+            this.IsEdited = isEdited;
+            this.EditedAt = editedAt;
+            this.EditCount = editCount;
+            this.EditHistory = editHistory;
+            this.IsDeleted = isDeleted;
+            this.DeletedAt = deletedAt;
+            this.DeliveryStatus = deliveryStatus;
+            this.DeliveredAt = deliveredAt;
+            this.ReadAt = readAt;
+            this.SentAt = sentAt;
+            this.DeliveryError = deliveryError;
         }
 
         /// <summary>
@@ -208,6 +275,72 @@ namespace Late.Model
         public bool IsStoryMention { get; set; }
 
         /// <summary>
+        /// True if the sender has edited this message at least once.
+        /// </summary>
+        /// <value>True if the sender has edited this message at least once.</value>
+        [DataMember(Name = "isEdited", EmitDefaultValue = true)]
+        public bool IsEdited { get; set; }
+
+        /// <summary>
+        /// When the most recent edit happened.
+        /// </summary>
+        /// <value>When the most recent edit happened.</value>
+        [DataMember(Name = "editedAt", EmitDefaultValue = false)]
+        public DateTime EditedAt { get; set; }
+
+        /// <summary>
+        /// Total number of edits applied.
+        /// </summary>
+        /// <value>Total number of edits applied.</value>
+        [DataMember(Name = "editCount", EmitDefaultValue = false)]
+        public int EditCount { get; set; }
+
+        /// <summary>
+        /// Every prior version of the message, oldest first.
+        /// </summary>
+        /// <value>Every prior version of the message, oldest first.</value>
+        [DataMember(Name = "editHistory", EmitDefaultValue = false)]
+        public List<GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInner> EditHistory { get; set; }
+
+        /// <summary>
+        /// True if the sender has deleted (unsent) this message. The original &#x60;message&#x60; and &#x60;attachments&#x60; fields remain populated.
+        /// </summary>
+        /// <value>True if the sender has deleted (unsent) this message. The original &#x60;message&#x60; and &#x60;attachments&#x60; fields remain populated.</value>
+        [DataMember(Name = "isDeleted", EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeletedAt
+        /// </summary>
+        [DataMember(Name = "deletedAt", EmitDefaultValue = false)]
+        public DateTime DeletedAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeliveredAt
+        /// </summary>
+        [DataMember(Name = "deliveredAt", EmitDefaultValue = false)]
+        public DateTime DeliveredAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ReadAt
+        /// </summary>
+        [DataMember(Name = "readAt", EmitDefaultValue = false)]
+        public DateTime ReadAt { get; set; }
+
+        /// <summary>
+        /// Original send time for outgoing messages (used for Messenger watermark queries).
+        /// </summary>
+        /// <value>Original send time for outgoing messages (used for Messenger watermark queries).</value>
+        [DataMember(Name = "sentAt", EmitDefaultValue = false)]
+        public DateTime SentAt { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DeliveryError
+        /// </summary>
+        [DataMember(Name = "deliveryError", EmitDefaultValue = false)]
+        public GetInboxConversationMessages200ResponseMessagesInnerDeliveryError DeliveryError { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -229,6 +362,17 @@ namespace Late.Model
             sb.Append("  Subject: ").Append(Subject).Append("\n");
             sb.Append("  StoryReply: ").Append(StoryReply).Append("\n");
             sb.Append("  IsStoryMention: ").Append(IsStoryMention).Append("\n");
+            sb.Append("  IsEdited: ").Append(IsEdited).Append("\n");
+            sb.Append("  EditedAt: ").Append(EditedAt).Append("\n");
+            sb.Append("  EditCount: ").Append(EditCount).Append("\n");
+            sb.Append("  EditHistory: ").Append(EditHistory).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  DeletedAt: ").Append(DeletedAt).Append("\n");
+            sb.Append("  DeliveryStatus: ").Append(DeliveryStatus).Append("\n");
+            sb.Append("  DeliveredAt: ").Append(DeliveredAt).Append("\n");
+            sb.Append("  ReadAt: ").Append(ReadAt).Append("\n");
+            sb.Append("  SentAt: ").Append(SentAt).Append("\n");
+            sb.Append("  DeliveryError: ").Append(DeliveryError).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
