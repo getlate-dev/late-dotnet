@@ -115,7 +115,13 @@ namespace Late.Model
             /// Enum Snapchat for value: snapchat
             /// </summary>
             [EnumMember(Value = "snapchat")]
-            Snapchat = 13
+            Snapchat = 13,
+
+            /// <summary>
+            /// Enum Discord for value: discord
+            /// </summary>
+            [EnumMember(Value = "discord")]
+            Discord = 14
         }
 
 

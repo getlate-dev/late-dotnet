@@ -118,46 +118,52 @@ namespace Late.Model
             Snapchat = 13,
 
             /// <summary>
+            /// Enum Discord for value: discord
+            /// </summary>
+            [EnumMember(Value = "discord")]
+            Discord = 14,
+
+            /// <summary>
             /// Enum Whatsapp for value: whatsapp
             /// </summary>
             [EnumMember(Value = "whatsapp")]
-            Whatsapp = 14,
+            Whatsapp = 15,
 
             /// <summary>
             /// Enum Linkedinads for value: linkedinads
             /// </summary>
             [EnumMember(Value = "linkedinads")]
-            Linkedinads = 15,
+            Linkedinads = 16,
 
             /// <summary>
             /// Enum Metaads for value: metaads
             /// </summary>
             [EnumMember(Value = "metaads")]
-            Metaads = 16,
+            Metaads = 17,
 
             /// <summary>
             /// Enum Pinterestads for value: pinterestads
             /// </summary>
             [EnumMember(Value = "pinterestads")]
-            Pinterestads = 17,
+            Pinterestads = 18,
 
             /// <summary>
             /// Enum Tiktokads for value: tiktokads
             /// </summary>
             [EnumMember(Value = "tiktokads")]
-            Tiktokads = 18,
+            Tiktokads = 19,
 
             /// <summary>
             /// Enum Xads for value: xads
             /// </summary>
             [EnumMember(Value = "xads")]
-            Xads = 19,
+            Xads = 20,
 
             /// <summary>
             /// Enum Googleads for value: googleads
             /// </summary>
             [EnumMember(Value = "googleads")]
-            Googleads = 20
+            Googleads = 21
         }
 
 

@@ -115,7 +115,13 @@ namespace Late.Model
             /// Enum Googlebusiness for value: googlebusiness
             /// </summary>
             [EnumMember(Value = "googlebusiness")]
-            Googlebusiness = 13
+            Googlebusiness = 13,
+
+            /// <summary>
+            /// Enum Discord for value: discord
+            /// </summary>
+            [EnumMember(Value = "discord")]
+            Discord = 14
         }
 
 
