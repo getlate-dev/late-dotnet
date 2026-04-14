@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Countries** | **List&lt;string&gt;** |  | [optional] 
 **AgeMin** | **int** |  | [optional] 
 **AgeMax** | **int** |  | [optional] 
-**Interests** | **List&lt;string&gt;** |  | [optional] 
+**Interests** | [**List&lt;UpdateAdRequestTargetingInterestsInner&gt;**](UpdateAdRequestTargetingInterestsInner.md) | Interest objects from /v1/ads/interests. Each must include id and name. | [optional] 
 **EndDate** | **DateTime** | Required for lifetime budgets | [optional] 
 **AudienceId** | **string** | Custom audience ID for targeting | [optional] 
 **CampaignType** | **string** | Google only | [optional] [default to CampaignTypeEnum.Display]

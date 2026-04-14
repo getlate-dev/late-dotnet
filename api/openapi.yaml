@@ -33513,6 +33513,15 @@ components:
           - daily
           - lifetime
           type: string
+    updateAd_request_targeting_interests_inner:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      required:
+      - id
+      - name
     updateAd_request_targeting:
       description: Meta-only. Targeting updates for other platforms are not supported
         after creation.
@@ -33530,8 +33539,10 @@ components:
             type: string
           type: array
         interests:
+          description: Interest objects from /v1/ads/interests. Each must include
+            id and name.
           items:
-            type: string
+            $ref: "#/components/schemas/updateAd_request_targeting_interests_inner"
           type: array
     updateAd_request:
       properties:
@@ -33802,8 +33813,10 @@ components:
             type: string
           type: array
         interests:
+          description: Interest objects from /v1/ads/interests. Each must include
+            id and name.
           items:
-            type: string
+            $ref: "#/components/schemas/updateAd_request_targeting_interests_inner"
           type: array
     boostPost_request_tracking:
       description: "Meta only. Tracking specs (pixel, URL tags)."
@@ -33944,8 +33957,10 @@ components:
           minimum: 13
           type: integer
         interests:
+          description: Interest objects from /v1/ads/interests. Each must include
+            id and name.
           items:
-            type: string
+            $ref: "#/components/schemas/updateAd_request_targeting_interests_inner"
           type: array
         endDate:
           description: Required for lifetime budgets

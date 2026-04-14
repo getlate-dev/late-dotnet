@@ -39,8 +39,8 @@ namespace Late.Model
         /// <param name="ageMin">ageMin.</param>
         /// <param name="ageMax">ageMax.</param>
         /// <param name="countries">countries.</param>
-        /// <param name="interests">interests.</param>
-        public UpdateAdRequestTargeting(int ageMin = default, int ageMax = default, List<string> countries = default, List<string> interests = default)
+        /// <param name="interests">Interest objects from /v1/ads/interests. Each must include id and name..</param>
+        public UpdateAdRequestTargeting(int ageMin = default, int ageMax = default, List<string> countries = default, List<UpdateAdRequestTargetingInterestsInner> interests = default)
         {
             this.AgeMin = ageMin;
             this.AgeMax = ageMax;
@@ -67,10 +67,11 @@ namespace Late.Model
         public List<string> Countries { get; set; }
 
         /// <summary>
-        /// Gets or Sets Interests
+        /// Interest objects from /v1/ads/interests. Each must include id and name.
         /// </summary>
+        /// <value>Interest objects from /v1/ads/interests. Each must include id and name.</value>
         [DataMember(Name = "interests", EmitDefaultValue = false)]
-        public List<string> Interests { get; set; }
+        public List<UpdateAdRequestTargetingInterestsInner> Interests { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

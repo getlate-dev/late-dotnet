@@ -602,6 +602,7 @@ docs/UpdateAdCampaignStatusRequest.md
 docs/UpdateAdRequest.md
 docs/UpdateAdRequestBudget.md
 docs/UpdateAdRequestTargeting.md
+docs/UpdateAdRequestTargetingInterestsInner.md
 docs/UpdateBroadcast200Response.md
 docs/UpdateBroadcast200ResponseBroadcast.md
 docs/UpdateCommentAutomation200Response.md
@@ -754,10 +755,7 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
-src/Late.Test/Model/AdPromotedObjectTests.cs
-src/Late.Test/Model/AdTreeAdSetPromotedObjectTests.cs
-src/Late.Test/Model/AdTreeCampaignOptimizationGoalTests.cs
-src/Late.Test/Model/AdTreeCampaignPromotedObjectTests.cs
+src/Late.Test/Model/UpdateAdRequestTargetingInterestsInnerTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -1384,6 +1382,7 @@ src/Late/Model/UpdateAdCampaignStatusRequest.cs
 src/Late/Model/UpdateAdRequest.cs
 src/Late/Model/UpdateAdRequestBudget.cs
 src/Late/Model/UpdateAdRequestTargeting.cs
+src/Late/Model/UpdateAdRequestTargetingInterestsInner.cs
 src/Late/Model/UpdateBroadcast200Response.cs
 src/Late/Model/UpdateBroadcast200ResponseBroadcast.cs
 src/Late/Model/UpdateCommentAutomation200Response.cs

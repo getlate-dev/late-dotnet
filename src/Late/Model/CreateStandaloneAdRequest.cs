@@ -223,14 +223,14 @@ namespace Late.Model
         /// <param name="countries">countries.</param>
         /// <param name="ageMin">ageMin.</param>
         /// <param name="ageMax">ageMax.</param>
-        /// <param name="interests">interests.</param>
+        /// <param name="interests">Interest objects from /v1/ads/interests. Each must include id and name..</param>
         /// <param name="endDate">Required for lifetime budgets.</param>
         /// <param name="audienceId">Custom audience ID for targeting.</param>
         /// <param name="campaignType">Google only (default to CampaignTypeEnum.Display).</param>
         /// <param name="keywords">Google Search only.</param>
         /// <param name="additionalHeadlines">Google Search RSA only. Extra headlines..</param>
         /// <param name="additionalDescriptions">Google Search RSA only. Extra descriptions..</param>
-        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, decimal budgetAmount = default, BudgetTypeEnum budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<string> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default)
+        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, decimal budgetAmount = default, BudgetTypeEnum budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -376,10 +376,11 @@ namespace Late.Model
         public int AgeMax { get; set; }
 
         /// <summary>
-        /// Gets or Sets Interests
+        /// Interest objects from /v1/ads/interests. Each must include id and name.
         /// </summary>
+        /// <value>Interest objects from /v1/ads/interests. Each must include id and name.</value>
         [DataMember(Name = "interests", EmitDefaultValue = false)]
-        public List<string> Interests { get; set; }
+        public List<UpdateAdRequestTargetingInterestsInner> Interests { get; set; }
 
         /// <summary>
         /// Required for lifetime budgets
