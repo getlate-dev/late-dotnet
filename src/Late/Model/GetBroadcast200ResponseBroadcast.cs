@@ -104,7 +104,7 @@ namespace Late.Model
         /// <param name="failedCount">failedCount.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public GetBroadcast200ResponseBroadcast(string id = default, string name = default, string description = default, string platform = default, string accountId = default, GetBroadcast200ResponseBroadcastMessage message = default, GetWhatsAppBroadcasts200ResponseBroadcastsInnerTemplate template = default, ListContacts200ResponseFilters segmentFilters = default, StatusEnum? status = default, DateTime scheduledAt = default, DateTime startedAt = default, DateTime completedAt = default, int recipientCount = default, int sentCount = default, int deliveredCount = default, int readCount = default, int failedCount = default, DateTime createdAt = default, DateTime updatedAt = default)
+        public GetBroadcast200ResponseBroadcast(string id = default, string name = default, string description = default, string platform = default, string accountId = default, GetBroadcast200ResponseBroadcastMessage message = default, GetBroadcast200ResponseBroadcastTemplate template = default, ListContacts200ResponseFilters segmentFilters = default, StatusEnum? status = default, DateTime scheduledAt = default, DateTime startedAt = default, DateTime completedAt = default, int recipientCount = default, int sentCount = default, int deliveredCount = default, int readCount = default, int failedCount = default, DateTime createdAt = default, DateTime updatedAt = default)
         {
             this.Id = id;
             this.Name = name;
@@ -167,7 +167,7 @@ namespace Late.Model
         /// Gets or Sets Template
         /// </summary>
         [DataMember(Name = "template", EmitDefaultValue = false)]
-        public GetWhatsAppBroadcasts200ResponseBroadcastsInnerTemplate Template { get; set; }
+        public GetBroadcast200ResponseBroadcastTemplate Template { get; set; }
 
         /// <summary>
         /// Gets or Sets SegmentFilters

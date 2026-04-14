@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Platform** | **string** |  | [optional] 
 **AccountId** | **string** |  | [optional] 
 **Message** | [**GetBroadcast200ResponseBroadcastMessage**](GetBroadcast200ResponseBroadcastMessage.md) |  | [optional] 
-**Template** | [**GetWhatsAppBroadcasts200ResponseBroadcastsInnerTemplate**](GetWhatsAppBroadcasts200ResponseBroadcastsInnerTemplate.md) |  | [optional] 
+**Template** | [**GetBroadcast200ResponseBroadcastTemplate**](GetBroadcast200ResponseBroadcastTemplate.md) |  | [optional] 
 **SegmentFilters** | [**ListContacts200ResponseFilters**](ListContacts200ResponseFilters.md) |  | [optional] 
 **Status** | **string** |  | [optional] 
 **ScheduledAt** | **DateTime** |  | [optional] 

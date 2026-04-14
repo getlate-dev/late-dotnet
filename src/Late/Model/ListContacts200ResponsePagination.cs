@@ -28,41 +28,49 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// ListCommentAutomationLogs200Response
+    /// ListContacts200ResponsePagination
     /// </summary>
-    [DataContract(Name = "listCommentAutomationLogs_200_response")]
-    public partial class ListCommentAutomationLogs200Response : IValidatableObject
+    [DataContract(Name = "listContacts_200_response_pagination")]
+    public partial class ListContacts200ResponsePagination : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListCommentAutomationLogs200Response" /> class.
+        /// Initializes a new instance of the <see cref="ListContacts200ResponsePagination" /> class.
         /// </summary>
-        /// <param name="success">success.</param>
-        /// <param name="logs">logs.</param>
-        /// <param name="pagination">pagination.</param>
-        public ListCommentAutomationLogs200Response(bool success = default, List<GetCommentAutomation200ResponseLogsInner> logs = default, ListContacts200ResponsePagination pagination = default)
+        /// <param name="total">total.</param>
+        /// <param name="limit">limit.</param>
+        /// <param name="skip">skip.</param>
+        /// <param name="hasMore">hasMore.</param>
+        public ListContacts200ResponsePagination(int total = default, int limit = default, int skip = default, bool hasMore = default)
         {
-            this.Success = success;
-            this.Logs = logs;
-            this.Pagination = pagination;
+            this.Total = total;
+            this.Limit = limit;
+            this.Skip = skip;
+            this.HasMore = hasMore;
         }
 
         /// <summary>
-        /// Gets or Sets Success
+        /// Gets or Sets Total
         /// </summary>
-        [DataMember(Name = "success", EmitDefaultValue = true)]
-        public bool Success { get; set; }
+        [DataMember(Name = "total", EmitDefaultValue = false)]
+        public int Total { get; set; }
 
         /// <summary>
-        /// Gets or Sets Logs
+        /// Gets or Sets Limit
         /// </summary>
-        [DataMember(Name = "logs", EmitDefaultValue = false)]
-        public List<GetCommentAutomation200ResponseLogsInner> Logs { get; set; }
+        [DataMember(Name = "limit", EmitDefaultValue = false)]
+        public int Limit { get; set; }
 
         /// <summary>
-        /// Gets or Sets Pagination
+        /// Gets or Sets Skip
         /// </summary>
-        [DataMember(Name = "pagination", EmitDefaultValue = false)]
-        public ListContacts200ResponsePagination Pagination { get; set; }
+        [DataMember(Name = "skip", EmitDefaultValue = false)]
+        public int Skip { get; set; }
+
+        /// <summary>
+        /// Gets or Sets HasMore
+        /// </summary>
+        [DataMember(Name = "hasMore", EmitDefaultValue = true)]
+        public bool HasMore { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,10 +79,11 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListCommentAutomationLogs200Response {\n");
-            sb.Append("  Success: ").Append(Success).Append("\n");
-            sb.Append("  Logs: ").Append(Logs).Append("\n");
-            sb.Append("  Pagination: ").Append(Pagination).Append("\n");
+            sb.Append("class ListContacts200ResponsePagination {\n");
+            sb.Append("  Total: ").Append(Total).Append("\n");
+            sb.Append("  Limit: ").Append(Limit).Append("\n");
+            sb.Append("  Skip: ").Append(Skip).Append("\n");
+            sb.Append("  HasMore: ").Append(HasMore).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

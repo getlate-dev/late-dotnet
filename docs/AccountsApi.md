@@ -5,7 +5,6 @@ All URIs are relative to *https://zernio.com/api*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**DeleteAccount**](AccountsApi.md#deleteaccount) | **DELETE** /v1/accounts/{accountId} | Disconnect account |
-| [**DisconnectAds**](AccountsApi.md#disconnectads) | **POST** /v1/accounts/{accountId}/disconnect-ads | Disconnect ads from an account |
 | [**GetAccountHealth**](AccountsApi.md#getaccounthealth) | **GET** /v1/accounts/{accountId}/health | Check account health |
 | [**GetAllAccountsHealth**](AccountsApi.md#getallaccountshealth) | **GET** /v1/accounts/health | Check accounts health |
 | [**GetFollowerStats**](AccountsApi.md#getfollowerstats) | **GET** /v1/accounts/follower-stats | Get follower stats |
@@ -108,109 +107,6 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Disconnected |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | Resource not found |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="disconnectads"></a>
-# **DisconnectAds**
-> DeleteAccountGroup200Response DisconnectAds (string accountId, DisconnectAdsRequest? disconnectAdsRequest = null)
-
-Disconnect ads from an account
-
-**Deprecated.** Ads accounts are now standalone SocialAccount documents. Use `DELETE /v1/accounts/{accountId}` instead, passing the ads account's own ID.  This endpoint is kept for backward compatibility. It soft-deletes the ads SocialAccount identified by `accountId` (which must be an ads account, not a posting account). The parent posting account is left untouched. 
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
-
-namespace Example
-{
-    public class DisconnectAdsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://zernio.com/api";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new AccountsApi(httpClient, config, httpClientHandler);
-            var accountId = "accountId_example";  // string | The ads SocialAccount ID to disconnect
-            var disconnectAdsRequest = new DisconnectAdsRequest?(); // DisconnectAdsRequest? |  (optional) 
-
-            try
-            {
-                // Disconnect ads from an account
-                DeleteAccountGroup200Response result = apiInstance.DisconnectAds(accountId, disconnectAdsRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AccountsApi.DisconnectAds: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the DisconnectAdsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Disconnect ads from an account
-    ApiResponse<DeleteAccountGroup200Response> response = apiInstance.DisconnectAdsWithHttpInfo(accountId, disconnectAdsRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AccountsApi.DisconnectAdsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **accountId** | **string** | The ads SocialAccount ID to disconnect |  |
-| **disconnectAdsRequest** | [**DisconnectAdsRequest?**](DisconnectAdsRequest?.md) |  | [optional]  |
-
-### Return type
-
-[**DeleteAccountGroup200Response**](DeleteAccountGroup200Response.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Ads disconnected |  -  |
-| **400** | Invalid ads platform |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Resource not found |  -  |
 

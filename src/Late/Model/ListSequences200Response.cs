@@ -39,7 +39,7 @@ namespace Late.Model
         /// <param name="success">success.</param>
         /// <param name="sequences">sequences.</param>
         /// <param name="pagination">pagination.</param>
-        public ListSequences200Response(bool success = default, List<ListSequences200ResponseSequencesInner> sequences = default, GetWhatsAppContacts200ResponsePagination pagination = default)
+        public ListSequences200Response(bool success = default, List<ListSequences200ResponseSequencesInner> sequences = default, ListContacts200ResponsePagination pagination = default)
         {
             this.Success = success;
             this.Sequences = sequences;
@@ -62,7 +62,7 @@ namespace Late.Model
         /// Gets or Sets Pagination
         /// </summary>
         [DataMember(Name = "pagination", EmitDefaultValue = false)]
-        public GetWhatsAppContacts200ResponsePagination Pagination { get; set; }
+        public ListContacts200ResponsePagination Pagination { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

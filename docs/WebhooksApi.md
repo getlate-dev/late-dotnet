@@ -6,7 +6,6 @@ All URIs are relative to *https://zernio.com/api*
 |--------|--------------|-------------|
 | [**CreateWebhookSettings**](WebhooksApi.md#createwebhooksettings) | **POST** /v1/webhooks/settings | Create webhook |
 | [**DeleteWebhookSettings**](WebhooksApi.md#deletewebhooksettings) | **DELETE** /v1/webhooks/settings | Delete webhook |
-| [**GetWebhookLogs**](WebhooksApi.md#getwebhooklogs) | **GET** /v1/webhooks/logs | Get delivery logs |
 | [**GetWebhookSettings**](WebhooksApi.md#getwebhooksettings) | **GET** /v1/webhooks/settings | List webhooks |
 | [**TestWebhook**](WebhooksApi.md#testwebhook) | **POST** /v1/webhooks/test | Send test webhook |
 | [**UpdateWebhookSettings**](WebhooksApi.md#updatewebhooksettings) | **PUT** /v1/webhooks/settings | Update webhook |
@@ -207,111 +206,6 @@ catch (ApiException e)
 |-------------|-------------|------------------|
 | **200** | Webhook deleted successfully |  -  |
 | **400** | Webhook ID required |  -  |
-| **401** | Unauthorized |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="getwebhooklogs"></a>
-# **GetWebhookLogs**
-> GetWebhookLogs200Response GetWebhookLogs (int? limit = null, string? status = null, string? varEvent = null, string? webhookId = null)
-
-Get delivery logs
-
-**Deprecated.** Use `GET /v1/logs?type=webhooks` instead. Retrieve webhook delivery history. Logs are retained for 90 days. 
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
-
-namespace Example
-{
-    public class GetWebhookLogsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://zernio.com/api";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new WebhooksApi(httpClient, config, httpClientHandler);
-            var limit = 50;  // int? | Maximum number of logs to return (max 100) (optional)  (default to 50)
-            var status = "success";  // string? | Filter by delivery status (optional) 
-            var varEvent = "post.scheduled";  // string? | Filter by event type (optional) 
-            var webhookId = "webhookId_example";  // string? | Filter by webhook ID (optional) 
-
-            try
-            {
-                // Get delivery logs
-                GetWebhookLogs200Response result = apiInstance.GetWebhookLogs(limit, status, varEvent, webhookId);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WebhooksApi.GetWebhookLogs: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetWebhookLogsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Get delivery logs
-    ApiResponse<GetWebhookLogs200Response> response = apiInstance.GetWebhookLogsWithHttpInfo(limit, status, varEvent, webhookId);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WebhooksApi.GetWebhookLogsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **limit** | **int?** | Maximum number of logs to return (max 100) | [optional] [default to 50] |
-| **status** | **string?** | Filter by delivery status | [optional]  |
-| **varEvent** | **string?** | Filter by event type | [optional]  |
-| **webhookId** | **string?** | Filter by webhook ID | [optional]  |
-
-### Return type
-
-[**GetWebhookLogs200Response**](GetWebhookLogs200Response.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Webhook logs retrieved successfully |  -  |
 | **401** | Unauthorized |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

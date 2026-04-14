@@ -28,41 +28,33 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// ListCommentAutomationLogs200Response
+    /// GetBroadcast200ResponseBroadcastTemplate
     /// </summary>
-    [DataContract(Name = "listCommentAutomationLogs_200_response")]
-    public partial class ListCommentAutomationLogs200Response : IValidatableObject
+    [DataContract(Name = "getBroadcast_200_response_broadcast_template")]
+    public partial class GetBroadcast200ResponseBroadcastTemplate : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListCommentAutomationLogs200Response" /> class.
+        /// Initializes a new instance of the <see cref="GetBroadcast200ResponseBroadcastTemplate" /> class.
         /// </summary>
-        /// <param name="success">success.</param>
-        /// <param name="logs">logs.</param>
-        /// <param name="pagination">pagination.</param>
-        public ListCommentAutomationLogs200Response(bool success = default, List<GetCommentAutomation200ResponseLogsInner> logs = default, ListContacts200ResponsePagination pagination = default)
+        /// <param name="name">name.</param>
+        /// <param name="language">language.</param>
+        public GetBroadcast200ResponseBroadcastTemplate(string name = default, string language = default)
         {
-            this.Success = success;
-            this.Logs = logs;
-            this.Pagination = pagination;
+            this.Name = name;
+            this.Language = language;
         }
 
         /// <summary>
-        /// Gets or Sets Success
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "success", EmitDefaultValue = true)]
-        public bool Success { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Logs
+        /// Gets or Sets Language
         /// </summary>
-        [DataMember(Name = "logs", EmitDefaultValue = false)]
-        public List<GetCommentAutomation200ResponseLogsInner> Logs { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Pagination
-        /// </summary>
-        [DataMember(Name = "pagination", EmitDefaultValue = false)]
-        public ListContacts200ResponsePagination Pagination { get; set; }
+        [DataMember(Name = "language", EmitDefaultValue = false)]
+        public string Language { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -71,10 +63,9 @@ namespace Late.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListCommentAutomationLogs200Response {\n");
-            sb.Append("  Success: ").Append(Success).Append("\n");
-            sb.Append("  Logs: ").Append(Logs).Append("\n");
-            sb.Append("  Pagination: ").Append(Pagination).Append("\n");
+            sb.Append("class GetBroadcast200ResponseBroadcastTemplate {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Language: ").Append(Language).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

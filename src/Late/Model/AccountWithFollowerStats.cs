@@ -173,40 +173,6 @@ namespace Late.Model
         [DataMember(Name = "platform", EmitDefaultValue = false)]
         public PlatformEnum? Platform { get; set; }
         /// <summary>
-        /// **Deprecated.** With the new ads account model, ads accounts are separate SocialAccount documents. Check for accounts with ads platform values (metaads, linkedinads, pinterestads, tiktokads, xads, googleads) instead.  Legacy behavior: - &#x60;connected&#x60;: Ads are ready to use (same-token platforms like Meta/LinkedIn, or separate ads token is present). - &#x60;not_connected&#x60;: Platform supports ads but requires a separate ads OAuth. Use &#x60;GET /v1/connect/{platform}/ads&#x60; to connect. - &#x60;not_available&#x60;: Platform does not support ads (e.g., YouTube, Reddit, Bluesky). 
-        /// </summary>
-        /// <value>**Deprecated.** With the new ads account model, ads accounts are separate SocialAccount documents. Check for accounts with ads platform values (metaads, linkedinads, pinterestads, tiktokads, xads, googleads) instead.  Legacy behavior: - &#x60;connected&#x60;: Ads are ready to use (same-token platforms like Meta/LinkedIn, or separate ads token is present). - &#x60;not_connected&#x60;: Platform supports ads but requires a separate ads OAuth. Use &#x60;GET /v1/connect/{platform}/ads&#x60; to connect. - &#x60;not_available&#x60;: Platform does not support ads (e.g., YouTube, Reddit, Bluesky). </value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum AdsStatusEnum
-        {
-            /// <summary>
-            /// Enum Connected for value: connected
-            /// </summary>
-            [EnumMember(Value = "connected")]
-            Connected = 1,
-
-            /// <summary>
-            /// Enum NotConnected for value: not_connected
-            /// </summary>
-            [EnumMember(Value = "not_connected")]
-            NotConnected = 2,
-
-            /// <summary>
-            /// Enum NotAvailable for value: not_available
-            /// </summary>
-            [EnumMember(Value = "not_available")]
-            NotAvailable = 3
-        }
-
-
-        /// <summary>
-        /// **Deprecated.** With the new ads account model, ads accounts are separate SocialAccount documents. Check for accounts with ads platform values (metaads, linkedinads, pinterestads, tiktokads, xads, googleads) instead.  Legacy behavior: - &#x60;connected&#x60;: Ads are ready to use (same-token platforms like Meta/LinkedIn, or separate ads token is present). - &#x60;not_connected&#x60;: Platform supports ads but requires a separate ads OAuth. Use &#x60;GET /v1/connect/{platform}/ads&#x60; to connect. - &#x60;not_available&#x60;: Platform does not support ads (e.g., YouTube, Reddit, Bluesky). 
-        /// </summary>
-        /// <value>**Deprecated.** With the new ads account model, ads accounts are separate SocialAccount documents. Check for accounts with ads platform values (metaads, linkedinads, pinterestads, tiktokads, xads, googleads) instead.  Legacy behavior: - &#x60;connected&#x60;: Ads are ready to use (same-token platforms like Meta/LinkedIn, or separate ads token is present). - &#x60;not_connected&#x60;: Platform supports ads but requires a separate ads OAuth. Use &#x60;GET /v1/connect/{platform}/ads&#x60; to connect. - &#x60;not_available&#x60;: Platform does not support ads (e.g., YouTube, Reddit, Bluesky). </value>
-        [DataMember(Name = "adsStatus", EmitDefaultValue = false)]
-        [Obsolete]
-        public AdsStatusEnum? AdsStatus { get; set; }
-        /// <summary>
         /// Initializes a new instance of the <see cref="AccountWithFollowerStats" /> class.
         /// </summary>
         /// <param name="id">id.</param>
@@ -220,7 +186,6 @@ namespace Late.Model
         /// <param name="followersLastUpdated">Last time follower count was updated (only included if user has analytics add-on).</param>
         /// <param name="parentAccountId">Reference to the parent posting SocialAccount. Set for ads accounts that share or derive from a posting account&#39;s OAuth token. null for standalone ads (Google Ads) and all posting accounts. .</param>
         /// <param name="enabled">Whether the user explicitly activated this account. false means the account was created as a side effect (e.g., posting account auto-created when user connected ads first). Posting UI and scheduler ignore accounts with enabled: false. .</param>
-        /// <param name="adsStatus">**Deprecated.** With the new ads account model, ads accounts are separate SocialAccount documents. Check for accounts with ads platform values (metaads, linkedinads, pinterestads, tiktokads, xads, googleads) instead.  Legacy behavior: - &#x60;connected&#x60;: Ads are ready to use (same-token platforms like Meta/LinkedIn, or separate ads token is present). - &#x60;not_connected&#x60;: Platform supports ads but requires a separate ads OAuth. Use &#x60;GET /v1/connect/{platform}/ads&#x60; to connect. - &#x60;not_available&#x60;: Platform does not support ads (e.g., YouTube, Reddit, Bluesky). .</param>
         /// <param name="metadata">Platform-specific metadata. Fields vary by platform. For WhatsApp accounts, includes: - &#x60;qualityRating&#x60;: Phone number quality rating from Meta (&#x60;GREEN&#x60;, &#x60;YELLOW&#x60;, &#x60;RED&#x60;, or &#x60;UNKNOWN&#x60;) - &#x60;nameStatus&#x60;: Display name review status (&#x60;APPROVED&#x60;, &#x60;PENDING_REVIEW&#x60;, &#x60;DECLINED&#x60;, or &#x60;NONE&#x60;). Messages cannot be sent until the display name is approved by Meta. - &#x60;messagingLimitTier&#x60;: Maximum unique business-initiated conversations per 24h rolling window (&#x60;TIER_250&#x60;, &#x60;TIER_1K&#x60;, &#x60;TIER_10K&#x60;, &#x60;TIER_100K&#x60;, or &#x60;TIER_UNLIMITED&#x60;). Scales automatically as quality rating improves. - &#x60;verifiedName&#x60;: Meta-verified business display name - &#x60;displayPhoneNumber&#x60;: Formatted phone number (e.g., \&quot;+1 555-123-4567\&quot;) - &#x60;wabaId&#x60;: WhatsApp Business Account ID - &#x60;phoneNumberId&#x60;: Meta phone number ID .</param>
         /// <param name="profilePicture">profilePicture.</param>
         /// <param name="currentFollowers">Current follower count.</param>
@@ -229,7 +194,7 @@ namespace Late.Model
         /// <param name="growthPercentage">Percentage growth.</param>
         /// <param name="dataPoints">Number of historical snapshots.</param>
         /// <param name="accountStats">accountStats.</param>
-        public AccountWithFollowerStats(string id = default, PlatformEnum? platform = default, SocialAccountProfileId profileId = default, string username = default, string displayName = default, string profileUrl = default, bool isActive = default, decimal followersCount = default, DateTime followersLastUpdated = default, string parentAccountId = default, bool enabled = default, AdsStatusEnum? adsStatus = default, Object metadata = default, string profilePicture = default, decimal currentFollowers = default, DateTime lastUpdated = default, decimal growth = default, decimal growthPercentage = default, decimal dataPoints = default, AccountWithFollowerStatsAllOfAccountStats accountStats = default)
+        public AccountWithFollowerStats(string id = default, PlatformEnum? platform = default, SocialAccountProfileId profileId = default, string username = default, string displayName = default, string profileUrl = default, bool isActive = default, decimal followersCount = default, DateTime followersLastUpdated = default, string parentAccountId = default, bool enabled = default, Object metadata = default, string profilePicture = default, decimal currentFollowers = default, DateTime lastUpdated = default, decimal growth = default, decimal growthPercentage = default, decimal dataPoints = default, AccountWithFollowerStatsAllOfAccountStats accountStats = default)
         {
             this.Id = id;
             this.Platform = platform;
@@ -242,7 +207,6 @@ namespace Late.Model
             this.FollowersLastUpdated = followersLastUpdated;
             this.ParentAccountId = parentAccountId;
             this.Enabled = enabled;
-            this.AdsStatus = adsStatus;
             this.Metadata = metadata;
             this.ProfilePicture = profilePicture;
             this.CurrentFollowers = currentFollowers;
@@ -390,7 +354,6 @@ namespace Late.Model
             sb.Append("  FollowersLastUpdated: ").Append(FollowersLastUpdated).Append("\n");
             sb.Append("  ParentAccountId: ").Append(ParentAccountId).Append("\n");
             sb.Append("  Enabled: ").Append(Enabled).Append("\n");
-            sb.Append("  AdsStatus: ").Append(AdsStatus).Append("\n");
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("  ProfilePicture: ").Append(ProfilePicture).Append("\n");
             sb.Append("  CurrentFollowers: ").Append(CurrentFollowers).Append("\n");
