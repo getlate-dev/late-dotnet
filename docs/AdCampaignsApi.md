@@ -10,7 +10,7 @@ All URIs are relative to *https://zernio.com/api*
 
 <a id="getadtree"></a>
 # **GetAdTree**
-> GetAdTree200Response GetAdTree (int? page = null, int? limit = null, string? source = null, string? platform = null, string? status = null, string? adAccountId = null, string? accountId = null, string? profileId = null, DateOnly? fromDate = null, DateOnly? toDate = null)
+> GetAdTree200Response GetAdTree (int? page = null, int? limit = null, string? source = null, string? platform = null, AdStatus? status = null, string? adAccountId = null, string? accountId = null, string? profileId = null, DateOnly? fromDate = null, DateOnly? toDate = null)
 
 Get campaign tree
 
@@ -44,7 +44,7 @@ namespace Example
             var limit = 20;  // int? | Campaigns per page (optional)  (default to 20)
             var source = "zernio";  // string? |  (optional)  (default to zernio)
             var platform = "facebook";  // string? |  (optional) 
-            var status = "active";  // string? | Filter by derived campaign status (post-aggregation) (optional) 
+            var status = new AdStatus?(); // AdStatus? | Filter by derived campaign status (post-aggregation) (optional) 
             var adAccountId = "adAccountId_example";  // string? | Platform ad account ID (optional) 
             var accountId = "accountId_example";  // string? | Social account ID (optional) 
             var profileId = "profileId_example";  // string? | Profile ID (optional) 
@@ -96,7 +96,7 @@ catch (ApiException e)
 | **limit** | **int?** | Campaigns per page | [optional] [default to 20] |
 | **source** | **string?** |  | [optional] [default to zernio] |
 | **platform** | **string?** |  | [optional]  |
-| **status** | **string?** | Filter by derived campaign status (post-aggregation) | [optional]  |
+| **status** | [**AdStatus?**](AdStatus?.md) | Filter by derived campaign status (post-aggregation) | [optional]  |
 | **adAccountId** | **string?** | Platform ad account ID | [optional]  |
 | **accountId** | **string?** | Social account ID | [optional]  |
 | **profileId** | **string?** | Profile ID | [optional]  |
@@ -128,7 +128,7 @@ catch (ApiException e)
 
 <a id="listadcampaigns"></a>
 # **ListAdCampaigns**
-> ListAdCampaigns200Response ListAdCampaigns (int? page = null, int? limit = null, string? source = null, string? platform = null, string? status = null, string? adAccountId = null, string? accountId = null, string? profileId = null)
+> ListAdCampaigns200Response ListAdCampaigns (int? page = null, int? limit = null, string? source = null, string? platform = null, AdStatus? status = null, string? adAccountId = null, string? accountId = null, string? profileId = null)
 
 List campaigns
 
@@ -162,7 +162,7 @@ namespace Example
             var limit = 20;  // int? |  (optional)  (default to 20)
             var source = "zernio";  // string? |  (optional)  (default to zernio)
             var platform = "facebook";  // string? |  (optional) 
-            var status = "active";  // string? | Filter by derived campaign status (post-aggregation) (optional) 
+            var status = new AdStatus?(); // AdStatus? | Filter by derived campaign status (post-aggregation) (optional) 
             var adAccountId = "adAccountId_example";  // string? | Platform ad account ID (e.g. act_123 for Meta) (optional) 
             var accountId = "accountId_example";  // string? | Social account ID (optional) 
             var profileId = "profileId_example";  // string? | Profile ID (optional) 
@@ -212,7 +212,7 @@ catch (ApiException e)
 | **limit** | **int?** |  | [optional] [default to 20] |
 | **source** | **string?** |  | [optional] [default to zernio] |
 | **platform** | **string?** |  | [optional]  |
-| **status** | **string?** | Filter by derived campaign status (post-aggregation) | [optional]  |
+| **status** | [**AdStatus?**](AdStatus?.md) | Filter by derived campaign status (post-aggregation) | [optional]  |
 | **adAccountId** | **string?** | Platform ad account ID (e.g. act_123 for Meta) | [optional]  |
 | **accountId** | **string?** | Social account ID | [optional]  |
 | **profileId** | **string?** | Profile ID | [optional]  |

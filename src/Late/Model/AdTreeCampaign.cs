@@ -88,63 +88,13 @@ namespace Late.Model
         /// </summary>
         [DataMember(Name = "platform", EmitDefaultValue = false)]
         public PlatformEnum? Platform { get; set; }
-        /// <summary>
-        /// Derived from child ad statuses
-        /// </summary>
-        /// <value>Derived from child ad statuses</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum Active for value: active
-            /// </summary>
-            [EnumMember(Value = "active")]
-            Active = 1,
-
-            /// <summary>
-            /// Enum Paused for value: paused
-            /// </summary>
-            [EnumMember(Value = "paused")]
-            Paused = 2,
-
-            /// <summary>
-            /// Enum PendingReview for value: pending_review
-            /// </summary>
-            [EnumMember(Value = "pending_review")]
-            PendingReview = 3,
-
-            /// <summary>
-            /// Enum Rejected for value: rejected
-            /// </summary>
-            [EnumMember(Value = "rejected")]
-            Rejected = 4,
-
-            /// <summary>
-            /// Enum Completed for value: completed
-            /// </summary>
-            [EnumMember(Value = "completed")]
-            Completed = 5,
-
-            /// <summary>
-            /// Enum Cancelled for value: cancelled
-            /// </summary>
-            [EnumMember(Value = "cancelled")]
-            Cancelled = 6,
-
-            /// <summary>
-            /// Enum Error for value: error
-            /// </summary>
-            [EnumMember(Value = "error")]
-            Error = 7
-        }
-
 
         /// <summary>
         /// Derived from child ad statuses
         /// </summary>
         /// <value>Derived from child ad statuses</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status { get; set; }
+        public AdStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AdTreeCampaign" /> class.
         /// </summary>
@@ -160,11 +110,11 @@ namespace Late.Model
         /// <param name="accountId">accountId.</param>
         /// <param name="profileId">profileId.</param>
         /// <param name="platformObjective">Raw Meta campaign objective (e.g. OUTCOME_SALES, OUTCOME_LEADS, OUTCOME_TRAFFIC).</param>
-        /// <param name="optimizationGoal">optimizationGoal.</param>
+        /// <param name="optimizationGoal">Meta optimization goal shared across ad sets, or comma-separated values when ad sets differ (e.g. OFFSITE_CONVERSIONS, VALUE, LEAD_GENERATION).</param>
         /// <param name="bidStrategy">Campaign-level bid strategy (e.g. LOWEST_COST_WITHOUT_CAP, COST_CAP, LOWEST_COST_WITH_MIN_ROAS).</param>
         /// <param name="promotedObject">promotedObject.</param>
         /// <param name="adSets">adSets.</param>
-        public AdTreeCampaign(string platformCampaignId = default, PlatformEnum? platform = default, string campaignName = default, StatusEnum? status = default, int adCount = default, int adSetCount = default, AdBudget budget = default, AdMetrics metrics = default, string platformAdAccountId = default, string accountId = default, string profileId = default, string platformObjective = default, AdTreeCampaignOptimizationGoal optimizationGoal = default, string bidStrategy = default, AdTreeCampaignPromotedObject promotedObject = default, List<AdTreeAdSet> adSets = default)
+        public AdTreeCampaign(string platformCampaignId = default, PlatformEnum? platform = default, string campaignName = default, AdStatus? status = default, int adCount = default, int adSetCount = default, AdBudget budget = default, AdMetrics metrics = default, string platformAdAccountId = default, string accountId = default, string profileId = default, string platformObjective = default, string optimizationGoal = default, string bidStrategy = default, AdTreeCampaignPromotedObject promotedObject = default, List<AdTreeAdSet> adSets = default)
         {
             this.PlatformCampaignId = platformCampaignId;
             this.Platform = platform;
@@ -247,10 +197,11 @@ namespace Late.Model
         public string PlatformObjective { get; set; }
 
         /// <summary>
-        /// Gets or Sets OptimizationGoal
+        /// Meta optimization goal shared across ad sets, or comma-separated values when ad sets differ (e.g. OFFSITE_CONVERSIONS, VALUE, LEAD_GENERATION)
         /// </summary>
+        /// <value>Meta optimization goal shared across ad sets, or comma-separated values when ad sets differ (e.g. OFFSITE_CONVERSIONS, VALUE, LEAD_GENERATION)</value>
         [DataMember(Name = "optimizationGoal", EmitDefaultValue = false)]
-        public AdTreeCampaignOptimizationGoal OptimizationGoal { get; set; }
+        public string OptimizationGoal { get; set; }
 
         /// <summary>
         /// Campaign-level bid strategy (e.g. LOWEST_COST_WITHOUT_CAP, COST_CAP, LOWEST_COST_WITH_MIN_ROAS)

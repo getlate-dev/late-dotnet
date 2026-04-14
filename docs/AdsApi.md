@@ -627,7 +627,7 @@ catch (ApiException e)
 
 <a id="listads"></a>
 # **ListAds**
-> ListAds200Response ListAds (int? page = null, int? limit = null, string? source = null, string? status = null, string? platform = null, string? accountId = null, string? adAccountId = null, string? profileId = null, string? campaignId = null, DateOnly? fromDate = null, DateOnly? toDate = null)
+> ListAds200Response ListAds (int? page = null, int? limit = null, string? source = null, AdStatus? status = null, string? platform = null, string? accountId = null, string? adAccountId = null, string? profileId = null, string? campaignId = null, DateOnly? fromDate = null, DateOnly? toDate = null)
 
 List ads
 
@@ -660,7 +660,7 @@ namespace Example
             var page = 1;  // int? | Page number (1-based) (optional)  (default to 1)
             var limit = 50;  // int? |  (optional)  (default to 50)
             var source = "zernio";  // string? | zernio = Zernio-created only, all = include external ads (optional)  (default to zernio)
-            var status = "active";  // string? |  (optional) 
+            var status = new AdStatus?(); // AdStatus? |  (optional) 
             var platform = "facebook";  // string? |  (optional) 
             var accountId = "accountId_example";  // string? | Social account ID (optional) 
             var adAccountId = "adAccountId_example";  // string? | Platform ad account ID (e.g. act_123 for Meta). Mirrors the same filter on /v1/ads/campaigns and /v1/ads/tree. (optional) 
@@ -713,7 +713,7 @@ catch (ApiException e)
 | **page** | **int?** | Page number (1-based) | [optional] [default to 1] |
 | **limit** | **int?** |  | [optional] [default to 50] |
 | **source** | **string?** | zernio &#x3D; Zernio-created only, all &#x3D; include external ads | [optional] [default to zernio] |
-| **status** | **string?** |  | [optional]  |
+| **status** | [**AdStatus?**](AdStatus?.md) |  | [optional]  |
 | **platform** | **string?** |  | [optional]  |
 | **accountId** | **string?** | Social account ID | [optional]  |
 | **adAccountId** | **string?** | Platform ad account ID (e.g. act_123 for Meta). Mirrors the same filter on /v1/ads/campaigns and /v1/ads/tree. | [optional]  |

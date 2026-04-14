@@ -88,61 +88,12 @@ namespace Late.Model
         /// </summary>
         [DataMember(Name = "platform", EmitDefaultValue = false)]
         public PlatformEnum? Platform { get; set; }
-        /// <summary>
-        /// Defines Status
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum Active for value: active
-            /// </summary>
-            [EnumMember(Value = "active")]
-            Active = 1,
-
-            /// <summary>
-            /// Enum Paused for value: paused
-            /// </summary>
-            [EnumMember(Value = "paused")]
-            Paused = 2,
-
-            /// <summary>
-            /// Enum PendingReview for value: pending_review
-            /// </summary>
-            [EnumMember(Value = "pending_review")]
-            PendingReview = 3,
-
-            /// <summary>
-            /// Enum Rejected for value: rejected
-            /// </summary>
-            [EnumMember(Value = "rejected")]
-            Rejected = 4,
-
-            /// <summary>
-            /// Enum Completed for value: completed
-            /// </summary>
-            [EnumMember(Value = "completed")]
-            Completed = 5,
-
-            /// <summary>
-            /// Enum Cancelled for value: cancelled
-            /// </summary>
-            [EnumMember(Value = "cancelled")]
-            Cancelled = 6,
-
-            /// <summary>
-            /// Enum Error for value: error
-            /// </summary>
-            [EnumMember(Value = "error")]
-            Error = 7
-        }
-
 
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status { get; set; }
+        public AdStatus? Status { get; set; }
         /// <summary>
         /// Defines AdType
         /// </summary>
@@ -233,7 +184,7 @@ namespace Late.Model
         /// <param name="rejectionReason">rejectionReason.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public Ad(string id = default, string name = default, PlatformEnum? platform = default, StatusEnum? status = default, AdTypeEnum? adType = default, GoalEnum? goal = default, bool isExternal = default, AdBudget budget = default, AdMetrics metrics = default, string platformAdId = default, string platformAdAccountId = default, string platformCampaignId = default, string platformAdSetId = default, string campaignName = default, string adSetName = default, string platformObjective = default, string optimizationGoal = default, string bidStrategy = default, AdPromotedObject promotedObject = default, AdCreative creative = default, Object targeting = default, AdSchedule schedule = default, string rejectionReason = default, DateTime createdAt = default, DateTime updatedAt = default)
+        public Ad(string id = default, string name = default, PlatformEnum? platform = default, AdStatus? status = default, AdTypeEnum? adType = default, GoalEnum? goal = default, bool isExternal = default, AdBudget budget = default, AdMetrics metrics = default, string platformAdId = default, string platformAdAccountId = default, string platformCampaignId = default, string platformAdSetId = default, string campaignName = default, string adSetName = default, string platformObjective = default, string optimizationGoal = default, string bidStrategy = default, AdPromotedObject promotedObject = default, AdCreative creative = default, Object targeting = default, AdSchedule schedule = default, string rejectionReason = default, DateTime createdAt = default, DateTime updatedAt = default)
         {
             this.Id = id;
             this.Name = name;

@@ -33,63 +33,13 @@ namespace Late.Model
     [DataContract(Name = "AdTreeAdSet")]
     public partial class AdTreeAdSet : IValidatableObject
     {
-        /// <summary>
-        /// Derived from child ad statuses
-        /// </summary>
-        /// <value>Derived from child ad statuses</value>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Enum Active for value: active
-            /// </summary>
-            [EnumMember(Value = "active")]
-            Active = 1,
-
-            /// <summary>
-            /// Enum Paused for value: paused
-            /// </summary>
-            [EnumMember(Value = "paused")]
-            Paused = 2,
-
-            /// <summary>
-            /// Enum PendingReview for value: pending_review
-            /// </summary>
-            [EnumMember(Value = "pending_review")]
-            PendingReview = 3,
-
-            /// <summary>
-            /// Enum Rejected for value: rejected
-            /// </summary>
-            [EnumMember(Value = "rejected")]
-            Rejected = 4,
-
-            /// <summary>
-            /// Enum Completed for value: completed
-            /// </summary>
-            [EnumMember(Value = "completed")]
-            Completed = 5,
-
-            /// <summary>
-            /// Enum Cancelled for value: cancelled
-            /// </summary>
-            [EnumMember(Value = "cancelled")]
-            Cancelled = 6,
-
-            /// <summary>
-            /// Enum Error for value: error
-            /// </summary>
-            [EnumMember(Value = "error")]
-            Error = 7
-        }
-
 
         /// <summary>
         /// Derived from child ad statuses
         /// </summary>
         /// <value>Derived from child ad statuses</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
-        public StatusEnum? Status { get; set; }
+        public AdStatus? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AdTreeAdSet" /> class.
         /// </summary>
@@ -103,7 +53,7 @@ namespace Late.Model
         /// <param name="bidStrategy">Bid strategy for this ad set (overrides campaign level when set).</param>
         /// <param name="promotedObject">promotedObject.</param>
         /// <param name="ads">Individual ads within this ad set (capped at 100). Returns a subset of Ad fields from the aggregation (core fields like _id, name, platform, status, budget, metrics, creative, goal are included; targeting and schedule may be absent)..</param>
-        public AdTreeAdSet(string platformAdSetId = default, string adSetName = default, StatusEnum? status = default, int adCount = default, AdBudget budget = default, AdMetrics metrics = default, string optimizationGoal = default, string bidStrategy = default, AdTreeAdSetPromotedObject promotedObject = default, List<Ad> ads = default)
+        public AdTreeAdSet(string platformAdSetId = default, string adSetName = default, AdStatus? status = default, int adCount = default, AdBudget budget = default, AdMetrics metrics = default, string optimizationGoal = default, string bidStrategy = default, AdTreeAdSetPromotedObject promotedObject = default, List<Ad> ads = default)
         {
             this.PlatformAdSetId = platformAdSetId;
             this.AdSetName = adSetName;

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PlatformAdSetId** | **string** |  | [optional] 
 **AdSetName** | **string** |  | [optional] 
-**Status** | **string** | Derived from child ad statuses | [optional] 
+**Status** | **AdStatus** | Derived from child ad statuses | [optional] 
 **AdCount** | **int** |  | [optional] 
 **Budget** | [**AdBudget**](AdBudget.md) |  | [optional] 
 **Metrics** | [**AdMetrics**](AdMetrics.md) |  | [optional] 

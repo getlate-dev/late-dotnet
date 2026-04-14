@@ -46,7 +46,7 @@ namespace Late.Api
         /// <param name="fromDate">Start of metrics date range (YYYY-MM-DD). Defaults to 90 days ago. (optional)</param>
         /// <param name="toDate">End of metrics date range (YYYY-MM-DD). Defaults to today. Max 90-day range. (optional)</param>
         /// <returns>GetAdTree200Response</returns>
-        GetAdTree200Response GetAdTree(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default);
+        GetAdTree200Response GetAdTree(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default);
 
         /// <summary>
         /// Get campaign tree
@@ -66,7 +66,7 @@ namespace Late.Api
         /// <param name="fromDate">Start of metrics date range (YYYY-MM-DD). Defaults to 90 days ago. (optional)</param>
         /// <param name="toDate">End of metrics date range (YYYY-MM-DD). Defaults to today. Max 90-day range. (optional)</param>
         /// <returns>ApiResponse of GetAdTree200Response</returns>
-        ApiResponse<GetAdTree200Response> GetAdTreeWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default);
+        ApiResponse<GetAdTree200Response> GetAdTreeWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default);
         /// <summary>
         /// List campaigns
         /// </summary>
@@ -83,7 +83,7 @@ namespace Late.Api
         /// <param name="accountId">Social account ID (optional)</param>
         /// <param name="profileId">Profile ID (optional)</param>
         /// <returns>ListAdCampaigns200Response</returns>
-        ListAdCampaigns200Response ListAdCampaigns(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default);
+        ListAdCampaigns200Response ListAdCampaigns(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default);
 
         /// <summary>
         /// List campaigns
@@ -101,7 +101,7 @@ namespace Late.Api
         /// <param name="accountId">Social account ID (optional)</param>
         /// <param name="profileId">Profile ID (optional)</param>
         /// <returns>ApiResponse of ListAdCampaigns200Response</returns>
-        ApiResponse<ListAdCampaigns200Response> ListAdCampaignsWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default);
+        ApiResponse<ListAdCampaigns200Response> ListAdCampaignsWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default);
         /// <summary>
         /// Pause or resume a campaign
         /// </summary>
@@ -153,7 +153,7 @@ namespace Late.Api
         /// <param name="toDate">End of metrics date range (YYYY-MM-DD). Defaults to today. Max 90-day range. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetAdTree200Response</returns>
-        System.Threading.Tasks.Task<GetAdTree200Response> GetAdTreeAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetAdTree200Response> GetAdTreeAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get campaign tree
@@ -174,7 +174,7 @@ namespace Late.Api
         /// <param name="toDate">End of metrics date range (YYYY-MM-DD). Defaults to today. Max 90-day range. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetAdTree200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetAdTree200Response>> GetAdTreeWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetAdTree200Response>> GetAdTreeWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List campaigns
         /// </summary>
@@ -192,7 +192,7 @@ namespace Late.Api
         /// <param name="profileId">Profile ID (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAdCampaigns200Response</returns>
-        System.Threading.Tasks.Task<ListAdCampaigns200Response> ListAdCampaignsAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ListAdCampaigns200Response> ListAdCampaignsAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List campaigns
@@ -211,7 +211,7 @@ namespace Late.Api
         /// <param name="profileId">Profile ID (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAdCampaigns200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListAdCampaigns200Response>> ListAdCampaignsWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<ListAdCampaigns200Response>> ListAdCampaignsWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Pause or resume a campaign
         /// </summary>
@@ -465,7 +465,7 @@ namespace Late.Api
         /// <param name="fromDate">Start of metrics date range (YYYY-MM-DD). Defaults to 90 days ago. (optional)</param>
         /// <param name="toDate">End of metrics date range (YYYY-MM-DD). Defaults to today. Max 90-day range. (optional)</param>
         /// <returns>GetAdTree200Response</returns>
-        public GetAdTree200Response GetAdTree(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default)
+        public GetAdTree200Response GetAdTree(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default)
         {
             Late.Client.ApiResponse<GetAdTree200Response> localVarResponse = GetAdTreeWithHttpInfo(page, limit, source, platform, status, adAccountId, accountId, profileId, fromDate, toDate);
             return localVarResponse.Data;
@@ -486,7 +486,7 @@ namespace Late.Api
         /// <param name="fromDate">Start of metrics date range (YYYY-MM-DD). Defaults to 90 days ago. (optional)</param>
         /// <param name="toDate">End of metrics date range (YYYY-MM-DD). Defaults to today. Max 90-day range. (optional)</param>
         /// <returns>ApiResponse of GetAdTree200Response</returns>
-        public Late.Client.ApiResponse<GetAdTree200Response> GetAdTreeWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default)
+        public Late.Client.ApiResponse<GetAdTree200Response> GetAdTreeWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -580,7 +580,7 @@ namespace Late.Api
         /// <param name="toDate">End of metrics date range (YYYY-MM-DD). Defaults to today. Max 90-day range. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetAdTree200Response</returns>
-        public async System.Threading.Tasks.Task<GetAdTree200Response> GetAdTreeAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetAdTree200Response> GetAdTreeAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, System.Threading.CancellationToken cancellationToken = default)
         {
             Late.Client.ApiResponse<GetAdTree200Response> localVarResponse = await GetAdTreeWithHttpInfoAsync(page, limit, source, platform, status, adAccountId, accountId, profileId, fromDate, toDate, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -602,7 +602,7 @@ namespace Late.Api
         /// <param name="toDate">End of metrics date range (YYYY-MM-DD). Defaults to today. Max 90-day range. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetAdTree200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetAdTree200Response>> GetAdTreeWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetAdTree200Response>> GetAdTreeWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
@@ -696,7 +696,7 @@ namespace Late.Api
         /// <param name="accountId">Social account ID (optional)</param>
         /// <param name="profileId">Profile ID (optional)</param>
         /// <returns>ListAdCampaigns200Response</returns>
-        public ListAdCampaigns200Response ListAdCampaigns(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default)
+        public ListAdCampaigns200Response ListAdCampaigns(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default)
         {
             Late.Client.ApiResponse<ListAdCampaigns200Response> localVarResponse = ListAdCampaignsWithHttpInfo(page, limit, source, platform, status, adAccountId, accountId, profileId);
             return localVarResponse.Data;
@@ -715,7 +715,7 @@ namespace Late.Api
         /// <param name="accountId">Social account ID (optional)</param>
         /// <param name="profileId">Profile ID (optional)</param>
         /// <returns>ApiResponse of ListAdCampaigns200Response</returns>
-        public Late.Client.ApiResponse<ListAdCampaigns200Response> ListAdCampaignsWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default)
+        public Late.Client.ApiResponse<ListAdCampaigns200Response> ListAdCampaignsWithHttpInfo(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default)
         {
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
 
@@ -799,7 +799,7 @@ namespace Late.Api
         /// <param name="profileId">Profile ID (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ListAdCampaigns200Response</returns>
-        public async System.Threading.Tasks.Task<ListAdCampaigns200Response> ListAdCampaignsAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<ListAdCampaigns200Response> ListAdCampaignsAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             Late.Client.ApiResponse<ListAdCampaigns200Response> localVarResponse = await ListAdCampaignsWithHttpInfoAsync(page, limit, source, platform, status, adAccountId, accountId, profileId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -819,7 +819,7 @@ namespace Late.Api
         /// <param name="profileId">Profile ID (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListAdCampaigns200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListAdCampaigns200Response>> ListAdCampaignsWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, string? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<ListAdCampaigns200Response>> ListAdCampaignsWithHttpInfoAsync(int? page = default, int? limit = default, string? source = default, string? platform = default, AdStatus? status = default, string? adAccountId = default, string? accountId = default, string? profileId = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();

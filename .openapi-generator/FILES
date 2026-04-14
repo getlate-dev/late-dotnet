@@ -21,10 +21,10 @@ docs/AdCreative.md
 docs/AdMetrics.md
 docs/AdPromotedObject.md
 docs/AdSchedule.md
+docs/AdStatus.md
 docs/AdTreeAdSet.md
 docs/AdTreeAdSetPromotedObject.md
 docs/AdTreeCampaign.md
-docs/AdTreeCampaignOptimizationGoal.md
 docs/AdTreeCampaignPromotedObject.md
 docs/AddBroadcastRecipients200Response.md
 docs/AddBroadcastRecipientsRequest.md
@@ -749,6 +749,7 @@ docs/YouTubeScopeMissingResponse.md
 docs/YouTubeScopeMissingResponseScopeStatus.md
 git_push.sh
 src/Late.Test/Late.Test.csproj
+src/Late.Test/Model/AdStatusTests.cs
 src/Late/Api/APIKeysApi.cs
 src/Late/Api/AccountGroupsApi.cs
 src/Late/Api/AccountSettingsApi.cs
@@ -820,10 +821,10 @@ src/Late/Model/AdCreative.cs
 src/Late/Model/AdMetrics.cs
 src/Late/Model/AdPromotedObject.cs
 src/Late/Model/AdSchedule.cs
+src/Late/Model/AdStatus.cs
 src/Late/Model/AdTreeAdSet.cs
 src/Late/Model/AdTreeAdSetPromotedObject.cs
 src/Late/Model/AdTreeCampaign.cs
-src/Late/Model/AdTreeCampaignOptimizationGoal.cs
 src/Late/Model/AdTreeCampaignPromotedObject.cs
 src/Late/Model/AddBroadcastRecipients200Response.cs
 src/Late/Model/AddBroadcastRecipientsRequest.cs

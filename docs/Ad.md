@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Platform** | **string** |  | [optional] 
-**Status** | **string** |  | [optional] 
+**Status** | **AdStatus** |  | [optional] 
 **AdType** | **string** |  | [optional] 
 **Goal** | **string** |  | [optional] 
 **IsExternal** | **bool** | True for ads synced from platform ad managers | [optional] 
