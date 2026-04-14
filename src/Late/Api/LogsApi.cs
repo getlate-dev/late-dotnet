@@ -29,29 +29,6 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get post logs
-        /// </summary>
-        /// <remarks>
-        /// Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
-        /// </remarks>
-        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post ID</param>
-        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
-        /// <returns>GetPostLogs200Response</returns>
-        GetPostLogs200Response GetPostLogs(string postId, int? limit = default);
-
-        /// <summary>
-        /// Get post logs
-        /// </summary>
-        /// <remarks>
-        /// Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
-        /// </remarks>
-        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post ID</param>
-        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
-        /// <returns>ApiResponse of GetPostLogs200Response</returns>
-        ApiResponse<GetPostLogs200Response> GetPostLogsWithHttpInfo(string postId, int? limit = default);
-        /// <summary>
         /// List activity logs
         /// </summary>
         /// <remarks>
@@ -95,31 +72,6 @@ namespace Late.Api
     public interface ILogsApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
-        /// <summary>
-        /// Get post logs
-        /// </summary>
-        /// <remarks>
-        /// Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
-        /// </remarks>
-        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post ID</param>
-        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetPostLogs200Response</returns>
-        System.Threading.Tasks.Task<GetPostLogs200Response> GetPostLogsAsync(string postId, int? limit = default, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Get post logs
-        /// </summary>
-        /// <remarks>
-        /// Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
-        /// </remarks>
-        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post ID</param>
-        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetPostLogs200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPostLogs200Response>> GetPostLogsWithHttpInfoAsync(string postId, int? limit = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List activity logs
         /// </summary>
@@ -368,145 +320,6 @@ namespace Late.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
-        }
-
-        /// <summary>
-        /// Get post logs Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
-        /// </summary>
-        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post ID</param>
-        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
-        /// <returns>GetPostLogs200Response</returns>
-        public GetPostLogs200Response GetPostLogs(string postId, int? limit = default)
-        {
-            Late.Client.ApiResponse<GetPostLogs200Response> localVarResponse = GetPostLogsWithHttpInfo(postId, limit);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get post logs Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
-        /// </summary>
-        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post ID</param>
-        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
-        /// <returns>ApiResponse of GetPostLogs200Response</returns>
-        public Late.Client.ApiResponse<GetPostLogs200Response> GetPostLogsWithHttpInfo(string postId, int? limit = default)
-        {
-            // verify the required parameter 'postId' is set
-            if (postId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'postId' when calling LogsApi->GetPostLogs");
-
-            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("postId", Late.Client.ClientUtils.ParameterToString(postId)); // path parameter
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Get<GetPostLogs200Response>("/v1/posts/{postId}/logs", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetPostLogs", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Get post logs Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
-        /// </summary>
-        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post ID</param>
-        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of GetPostLogs200Response</returns>
-        public async System.Threading.Tasks.Task<GetPostLogs200Response> GetPostLogsAsync(string postId, int? limit = default, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Late.Client.ApiResponse<GetPostLogs200Response> localVarResponse = await GetPostLogsWithHttpInfoAsync(postId, limit, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get post logs Retrieve all publishing logs for a specific post. Shows the complete history of publishing attempts for that post across all platforms. 
-        /// </summary>
-        /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="postId">The post ID</param>
-        /// <param name="limit">Maximum number of logs to return (max 100) (optional, default to 50)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (GetPostLogs200Response)</returns>
-        public async System.Threading.Tasks.Task<Late.Client.ApiResponse<GetPostLogs200Response>> GetPostLogsWithHttpInfoAsync(string postId, int? limit = default, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'postId' is set
-            if (postId == null)
-                throw new Late.Client.ApiException(400, "Missing required parameter 'postId' when calling LogsApi->GetPostLogs");
-
-
-            Late.Client.RequestOptions localVarRequestOptions = new Late.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Late.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Late.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.PathParameters.Add("postId", Late.Client.ClientUtils.ParameterToString(postId)); // path parameter
-            if (limit != null)
-            {
-                localVarRequestOptions.QueryParameters.Add(Late.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
-            }
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.GetAsync<GetPostLogs200Response>("/v1/posts/{postId}/logs", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("GetPostLogs", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
         }
 
         /// <summary>
