@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get presigned upload URL
+        /// Get upload URL
         /// </summary>
         /// <remarks>
         /// Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
@@ -40,7 +40,7 @@ namespace Late.Api
         GetMediaPresignedUrl200Response GetMediaPresignedUrl(GetMediaPresignedUrlRequest getMediaPresignedUrlRequest);
 
         /// <summary>
-        /// Get presigned upload URL
+        /// Get upload URL
         /// </summary>
         /// <remarks>
         /// Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
@@ -59,7 +59,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get presigned upload URL
+        /// Get upload URL
         /// </summary>
         /// <remarks>
         /// Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
@@ -71,7 +71,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetMediaPresignedUrl200Response> GetMediaPresignedUrlAsync(GetMediaPresignedUrlRequest getMediaPresignedUrlRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get presigned upload URL
+        /// Get upload URL
         /// </summary>
         /// <remarks>
         /// Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
@@ -295,7 +295,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get presigned upload URL Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
+        /// Get upload URL Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMediaPresignedUrlRequest"></param>
@@ -307,7 +307,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get presigned upload URL Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
+        /// Get upload URL Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMediaPresignedUrlRequest"></param>
@@ -357,7 +357,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get presigned upload URL Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
+        /// Get upload URL Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMediaPresignedUrlRequest"></param>
@@ -370,7 +370,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get presigned upload URL Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
+        /// Get upload URL Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getMediaPresignedUrlRequest"></param>

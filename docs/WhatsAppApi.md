@@ -12,7 +12,7 @@ All URIs are relative to *https://zernio.com/api*
 | [**DeleteWhatsAppGroupChat**](WhatsAppApi.md#deletewhatsappgroupchat) | **DELETE** /v1/whatsapp/wa-groups/{groupId} | Delete group |
 | [**DeleteWhatsAppTemplate**](WhatsAppApi.md#deletewhatsapptemplate) | **DELETE** /v1/whatsapp/templates/{templateName} | Delete template |
 | [**GetWhatsAppBusinessProfile**](WhatsAppApi.md#getwhatsappbusinessprofile) | **GET** /v1/whatsapp/business-profile | Get business profile |
-| [**GetWhatsAppDisplayName**](WhatsAppApi.md#getwhatsappdisplayname) | **GET** /v1/whatsapp/business-profile/display-name | Get display name and review status |
+| [**GetWhatsAppDisplayName**](WhatsAppApi.md#getwhatsappdisplayname) | **GET** /v1/whatsapp/business-profile/display-name | Get display name status |
 | [**GetWhatsAppGroupChat**](WhatsAppApi.md#getwhatsappgroupchat) | **GET** /v1/whatsapp/wa-groups/{groupId} | Get group info |
 | [**GetWhatsAppTemplate**](WhatsAppApi.md#getwhatsapptemplate) | **GET** /v1/whatsapp/templates/{templateName} | Get template |
 | [**GetWhatsAppTemplates**](WhatsAppApi.md#getwhatsapptemplates) | **GET** /v1/whatsapp/templates | List templates |
@@ -843,7 +843,7 @@ catch (ApiException e)
 # **GetWhatsAppDisplayName**
 > GetWhatsAppDisplayName200Response GetWhatsAppDisplayName (string accountId)
 
-Get display name and review status
+Get display name status
 
 Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
 
@@ -875,7 +875,7 @@ namespace Example
 
             try
             {
-                // Get display name and review status
+                // Get display name status
                 GetWhatsAppDisplayName200Response result = apiInstance.GetWhatsAppDisplayName(accountId);
                 Debug.WriteLine(result);
             }
@@ -896,7 +896,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get display name and review status
+    // Get display name status
     ApiResponse<GetWhatsAppDisplayName200Response> response = apiInstance.GetWhatsAppDisplayNameWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

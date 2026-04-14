@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Add users to a customer list audience
+        /// Add users to audience
         /// </summary>
         /// <remarks>
         /// Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
@@ -41,7 +41,7 @@ namespace Late.Api
         AddUsersToAdAudience200Response AddUsersToAdAudience(string audienceId, AddUsersToAdAudienceRequest addUsersToAdAudienceRequest);
 
         /// <summary>
-        /// Add users to a customer list audience
+        /// Add users to audience
         /// </summary>
         /// <remarks>
         /// Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
@@ -52,7 +52,7 @@ namespace Late.Api
         /// <returns>ApiResponse of AddUsersToAdAudience200Response</returns>
         ApiResponse<AddUsersToAdAudience200Response> AddUsersToAdAudienceWithHttpInfo(string audienceId, AddUsersToAdAudienceRequest addUsersToAdAudienceRequest);
         /// <summary>
-        /// Create a custom audience (Meta only)
+        /// Create custom audience
         /// </summary>
         /// <remarks>
         /// Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
@@ -63,7 +63,7 @@ namespace Late.Api
         CreateAdAudience201Response CreateAdAudience(CreateAdAudienceRequest createAdAudienceRequest);
 
         /// <summary>
-        /// Create a custom audience (Meta only)
+        /// Create custom audience
         /// </summary>
         /// <remarks>
         /// Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
@@ -73,7 +73,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateAdAudience201Response</returns>
         ApiResponse<CreateAdAudience201Response> CreateAdAudienceWithHttpInfo(CreateAdAudienceRequest createAdAudienceRequest);
         /// <summary>
-        /// Delete a custom audience
+        /// Delete custom audience
         /// </summary>
         /// <remarks>
         /// Deletes the audience from both Meta and the local database.
@@ -84,7 +84,7 @@ namespace Late.Api
         DeleteAccountGroup200Response DeleteAdAudience(string audienceId);
 
         /// <summary>
-        /// Delete a custom audience
+        /// Delete custom audience
         /// </summary>
         /// <remarks>
         /// Deletes the audience from both Meta and the local database.
@@ -149,7 +149,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Add users to a customer list audience
+        /// Add users to audience
         /// </summary>
         /// <remarks>
         /// Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
@@ -162,7 +162,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<AddUsersToAdAudience200Response> AddUsersToAdAudienceAsync(string audienceId, AddUsersToAdAudienceRequest addUsersToAdAudienceRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Add users to a customer list audience
+        /// Add users to audience
         /// </summary>
         /// <remarks>
         /// Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
@@ -174,7 +174,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (AddUsersToAdAudience200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<AddUsersToAdAudience200Response>> AddUsersToAdAudienceWithHttpInfoAsync(string audienceId, AddUsersToAdAudienceRequest addUsersToAdAudienceRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a custom audience (Meta only)
+        /// Create custom audience
         /// </summary>
         /// <remarks>
         /// Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
@@ -186,7 +186,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateAdAudience201Response> CreateAdAudienceAsync(CreateAdAudienceRequest createAdAudienceRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a custom audience (Meta only)
+        /// Create custom audience
         /// </summary>
         /// <remarks>
         /// Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
@@ -197,7 +197,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateAdAudience201Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateAdAudience201Response>> CreateAdAudienceWithHttpInfoAsync(CreateAdAudienceRequest createAdAudienceRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a custom audience
+        /// Delete custom audience
         /// </summary>
         /// <remarks>
         /// Deletes the audience from both Meta and the local database.
@@ -209,7 +209,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<DeleteAccountGroup200Response> DeleteAdAudienceAsync(string audienceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a custom audience
+        /// Delete custom audience
         /// </summary>
         /// <remarks>
         /// Deletes the audience from both Meta and the local database.
@@ -483,7 +483,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Add users to a customer list audience Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
+        /// Add users to audience Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="audienceId"></param>
@@ -496,7 +496,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Add users to a customer list audience Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
+        /// Add users to audience Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="audienceId"></param>
@@ -552,7 +552,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Add users to a customer list audience Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
+        /// Add users to audience Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="audienceId"></param>
@@ -566,7 +566,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Add users to a customer list audience Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
+        /// Add users to audience Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="audienceId"></param>
@@ -626,7 +626,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a custom audience (Meta only) Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
+        /// Create custom audience Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAdAudienceRequest"></param>
@@ -638,7 +638,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a custom audience (Meta only) Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
+        /// Create custom audience Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAdAudienceRequest"></param>
@@ -688,7 +688,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a custom audience (Meta only) Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
+        /// Create custom audience Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAdAudienceRequest"></param>
@@ -701,7 +701,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a custom audience (Meta only) Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
+        /// Create custom audience Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createAdAudienceRequest"></param>
@@ -755,7 +755,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a custom audience Deletes the audience from both Meta and the local database.
+        /// Delete custom audience Deletes the audience from both Meta and the local database.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="audienceId"></param>
@@ -767,7 +767,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a custom audience Deletes the audience from both Meta and the local database.
+        /// Delete custom audience Deletes the audience from both Meta and the local database.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="audienceId"></param>
@@ -816,7 +816,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a custom audience Deletes the audience from both Meta and the local database.
+        /// Delete custom audience Deletes the audience from both Meta and the local database.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="audienceId"></param>
@@ -829,7 +829,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a custom audience Deletes the audience from both Meta and the local database.
+        /// Delete custom audience Deletes the audience from both Meta and the local database.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="audienceId"></param>

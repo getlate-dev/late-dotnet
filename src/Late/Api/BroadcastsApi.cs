@@ -49,7 +49,7 @@ namespace Late.Api
         /// <returns>ApiResponse of AddBroadcastRecipients200Response</returns>
         ApiResponse<AddBroadcastRecipients200Response> AddBroadcastRecipientsWithHttpInfo(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest);
         /// <summary>
-        /// Cancel a broadcast
+        /// Cancel broadcast
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -57,7 +57,7 @@ namespace Late.Api
         CancelBroadcast200Response CancelBroadcast(string broadcastId);
 
         /// <summary>
-        /// Cancel a broadcast
+        /// Cancel broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -67,7 +67,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CancelBroadcast200Response</returns>
         ApiResponse<CancelBroadcast200Response> CancelBroadcastWithHttpInfo(string broadcastId);
         /// <summary>
-        /// Create a broadcast draft
+        /// Create broadcast draft
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBroadcastRequest"></param>
@@ -75,7 +75,7 @@ namespace Late.Api
         CreateBroadcast200Response CreateBroadcast(CreateBroadcastRequest createBroadcastRequest);
 
         /// <summary>
-        /// Create a broadcast draft
+        /// Create broadcast draft
         /// </summary>
         /// <remarks>
         /// 
@@ -85,7 +85,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateBroadcast200Response</returns>
         ApiResponse<CreateBroadcast200Response> CreateBroadcastWithHttpInfo(CreateBroadcastRequest createBroadcastRequest);
         /// <summary>
-        /// Delete a broadcast (draft only)
+        /// Delete broadcast
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -93,7 +93,7 @@ namespace Late.Api
         void DeleteBroadcast(string broadcastId);
 
         /// <summary>
-        /// Delete a broadcast (draft only)
+        /// Delete broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -191,7 +191,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ScheduleBroadcast200Response</returns>
         ApiResponse<ScheduleBroadcast200Response> ScheduleBroadcastWithHttpInfo(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest);
         /// <summary>
-        /// Trigger immediate send
+        /// Send broadcast now
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -199,7 +199,7 @@ namespace Late.Api
         SendBroadcast200Response SendBroadcast(string broadcastId);
 
         /// <summary>
-        /// Trigger immediate send
+        /// Send broadcast now
         /// </summary>
         /// <remarks>
         /// 
@@ -209,7 +209,7 @@ namespace Late.Api
         /// <returns>ApiResponse of SendBroadcast200Response</returns>
         ApiResponse<SendBroadcast200Response> SendBroadcastWithHttpInfo(string broadcastId);
         /// <summary>
-        /// Update a broadcast
+        /// Update broadcast
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -217,7 +217,7 @@ namespace Late.Api
         UpdateBroadcast200Response UpdateBroadcast(string broadcastId);
 
         /// <summary>
-        /// Update a broadcast
+        /// Update broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -261,7 +261,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (AddBroadcastRecipients200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<AddBroadcastRecipients200Response>> AddBroadcastRecipientsWithHttpInfoAsync(string broadcastId, AddBroadcastRecipientsRequest addBroadcastRecipientsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Cancel a broadcast
+        /// Cancel broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -273,7 +273,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CancelBroadcast200Response> CancelBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Cancel a broadcast
+        /// Cancel broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -284,7 +284,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CancelBroadcast200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CancelBroadcast200Response>> CancelBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a broadcast draft
+        /// Create broadcast draft
         /// </summary>
         /// <remarks>
         /// 
@@ -296,7 +296,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateBroadcast200Response> CreateBroadcastAsync(CreateBroadcastRequest createBroadcastRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a broadcast draft
+        /// Create broadcast draft
         /// </summary>
         /// <remarks>
         /// 
@@ -307,7 +307,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateBroadcast200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateBroadcast200Response>> CreateBroadcastWithHttpInfoAsync(CreateBroadcastRequest createBroadcastRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a broadcast (draft only)
+        /// Delete broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -319,7 +319,7 @@ namespace Late.Api
         System.Threading.Tasks.Task DeleteBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a broadcast (draft only)
+        /// Delete broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -438,7 +438,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ScheduleBroadcast200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ScheduleBroadcast200Response>> ScheduleBroadcastWithHttpInfoAsync(string broadcastId, ScheduleBroadcastRequest scheduleBroadcastRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Trigger immediate send
+        /// Send broadcast now
         /// </summary>
         /// <remarks>
         /// 
@@ -450,7 +450,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<SendBroadcast200Response> SendBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Trigger immediate send
+        /// Send broadcast now
         /// </summary>
         /// <remarks>
         /// 
@@ -461,7 +461,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (SendBroadcast200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<SendBroadcast200Response>> SendBroadcastWithHttpInfoAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a broadcast
+        /// Update broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -473,7 +473,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateBroadcast200Response> UpdateBroadcastAsync(string broadcastId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update a broadcast
+        /// Update broadcast
         /// </summary>
         /// <remarks>
         /// 
@@ -840,7 +840,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Cancel a broadcast 
+        /// Cancel broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -852,7 +852,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Cancel a broadcast 
+        /// Cancel broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -901,7 +901,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Cancel a broadcast 
+        /// Cancel broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -914,7 +914,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Cancel a broadcast 
+        /// Cancel broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -967,7 +967,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a broadcast draft 
+        /// Create broadcast draft 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBroadcastRequest"></param>
@@ -979,7 +979,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a broadcast draft 
+        /// Create broadcast draft 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBroadcastRequest"></param>
@@ -1029,7 +1029,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a broadcast draft 
+        /// Create broadcast draft 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBroadcastRequest"></param>
@@ -1042,7 +1042,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a broadcast draft 
+        /// Create broadcast draft 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createBroadcastRequest"></param>
@@ -1096,7 +1096,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a broadcast (draft only) 
+        /// Delete broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1107,7 +1107,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a broadcast (draft only) 
+        /// Delete broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1156,7 +1156,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a broadcast (draft only) 
+        /// Delete broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1168,7 +1168,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a broadcast (draft only) 
+        /// Delete broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1827,7 +1827,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Trigger immediate send 
+        /// Send broadcast now 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1839,7 +1839,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Trigger immediate send 
+        /// Send broadcast now 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1888,7 +1888,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Trigger immediate send 
+        /// Send broadcast now 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1901,7 +1901,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Trigger immediate send 
+        /// Send broadcast now 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1954,7 +1954,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a broadcast 
+        /// Update broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -1966,7 +1966,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a broadcast 
+        /// Update broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -2015,7 +2015,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a broadcast 
+        /// Update broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>
@@ -2028,7 +2028,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a broadcast 
+        /// Update broadcast 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="broadcastId"></param>

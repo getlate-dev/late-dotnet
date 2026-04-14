@@ -6,7 +6,7 @@ All URIs are relative to *https://zernio.com/api*
 |--------|--------------|-------------|
 | [**ValidateMedia**](ValidateApi.md#validatemedia) | **POST** /v1/tools/validate/media | Validate media URL |
 | [**ValidatePost**](ValidateApi.md#validatepost) | **POST** /v1/tools/validate/post | Validate post content |
-| [**ValidatePostLength**](ValidateApi.md#validatepostlength) | **POST** /v1/tools/validate/post-length | Validate post character count |
+| [**ValidatePostLength**](ValidateApi.md#validatepostlength) | **POST** /v1/tools/validate/post-length | Validate character count |
 | [**ValidateSubreddit**](ValidateApi.md#validatesubreddit) | **GET** /v1/tools/validate/subreddit | Check subreddit existence |
 
 <a id="validatemedia"></a>
@@ -209,7 +209,7 @@ catch (ApiException e)
 # **ValidatePostLength**
 > ValidatePostLength200Response ValidatePostLength (ValidatePostLengthRequest validatePostLengthRequest)
 
-Validate post character count
+Validate character count
 
 Check weighted character count per platform and whether the text is within each platform's limit.  Twitter/X uses weighted counting (URLs = 23 chars via t.co, emojis = 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
 
@@ -241,7 +241,7 @@ namespace Example
 
             try
             {
-                // Validate post character count
+                // Validate character count
                 ValidatePostLength200Response result = apiInstance.ValidatePostLength(validatePostLengthRequest);
                 Debug.WriteLine(result);
             }
@@ -262,7 +262,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Validate post character count
+    // Validate character count
     ApiResponse<ValidatePostLength200Response> response = apiInstance.ValidatePostLengthWithHttpInfo(validatePostLengthRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

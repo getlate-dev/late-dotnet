@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Create a comment-to-DM automation
+        /// Create comment-to-DM automation
         /// </summary>
         /// <remarks>
         /// Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
@@ -40,7 +40,7 @@ namespace Late.Api
         CreateCommentAutomation200Response CreateCommentAutomation(CreateCommentAutomationRequest createCommentAutomationRequest);
 
         /// <summary>
-        /// Create a comment-to-DM automation
+        /// Create comment-to-DM automation
         /// </summary>
         /// <remarks>
         /// Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
@@ -50,7 +50,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateCommentAutomation200Response</returns>
         ApiResponse<CreateCommentAutomation200Response> CreateCommentAutomationWithHttpInfo(CreateCommentAutomationRequest createCommentAutomationRequest);
         /// <summary>
-        /// Delete automation and all logs
+        /// Delete automation
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -58,7 +58,7 @@ namespace Late.Api
         void DeleteCommentAutomation(string automationId);
 
         /// <summary>
-        /// Delete automation and all logs
+        /// Delete automation
         /// </summary>
         /// <remarks>
         /// 
@@ -68,7 +68,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteCommentAutomationWithHttpInfo(string automationId);
         /// <summary>
-        /// Get automation details with recent logs
+        /// Get automation details
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -76,7 +76,7 @@ namespace Late.Api
         GetCommentAutomation200Response GetCommentAutomation(string automationId);
 
         /// <summary>
-        /// Get automation details with recent logs
+        /// Get automation details
         /// </summary>
         /// <remarks>
         /// 
@@ -86,7 +86,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetCommentAutomation200Response</returns>
         ApiResponse<GetCommentAutomation200Response> GetCommentAutomationWithHttpInfo(string automationId);
         /// <summary>
-        /// List trigger logs for an automation
+        /// List automation logs
         /// </summary>
         /// <remarks>
         /// Paginated list of every comment that triggered this automation, with send status and commenter info.
@@ -100,7 +100,7 @@ namespace Late.Api
         ListCommentAutomationLogs200Response ListCommentAutomationLogs(string automationId, string? status = default, int? limit = default, int? skip = default);
 
         /// <summary>
-        /// List trigger logs for an automation
+        /// List automation logs
         /// </summary>
         /// <remarks>
         /// Paginated list of every comment that triggered this automation, with send status and commenter info.
@@ -163,7 +163,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Create a comment-to-DM automation
+        /// Create comment-to-DM automation
         /// </summary>
         /// <remarks>
         /// Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
@@ -175,7 +175,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateCommentAutomation200Response> CreateCommentAutomationAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a comment-to-DM automation
+        /// Create comment-to-DM automation
         /// </summary>
         /// <remarks>
         /// Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
@@ -186,7 +186,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateCommentAutomation200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateCommentAutomation200Response>> CreateCommentAutomationWithHttpInfoAsync(CreateCommentAutomationRequest createCommentAutomationRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete automation and all logs
+        /// Delete automation
         /// </summary>
         /// <remarks>
         /// 
@@ -198,7 +198,7 @@ namespace Late.Api
         System.Threading.Tasks.Task DeleteCommentAutomationAsync(string automationId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete automation and all logs
+        /// Delete automation
         /// </summary>
         /// <remarks>
         /// 
@@ -209,7 +209,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteCommentAutomationWithHttpInfoAsync(string automationId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get automation details with recent logs
+        /// Get automation details
         /// </summary>
         /// <remarks>
         /// 
@@ -221,7 +221,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetCommentAutomation200Response> GetCommentAutomationAsync(string automationId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get automation details with recent logs
+        /// Get automation details
         /// </summary>
         /// <remarks>
         /// 
@@ -232,7 +232,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetCommentAutomation200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetCommentAutomation200Response>> GetCommentAutomationWithHttpInfoAsync(string automationId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List trigger logs for an automation
+        /// List automation logs
         /// </summary>
         /// <remarks>
         /// Paginated list of every comment that triggered this automation, with send status and commenter info.
@@ -247,7 +247,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListCommentAutomationLogs200Response> ListCommentAutomationLogsAsync(string automationId, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List trigger logs for an automation
+        /// List automation logs
         /// </summary>
         /// <remarks>
         /// Paginated list of every comment that triggered this automation, with send status and commenter info.
@@ -522,7 +522,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a comment-to-DM automation Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
+        /// Create comment-to-DM automation Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
@@ -534,7 +534,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a comment-to-DM automation Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
+        /// Create comment-to-DM automation Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
@@ -584,7 +584,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a comment-to-DM automation Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
+        /// Create comment-to-DM automation Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
@@ -597,7 +597,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a comment-to-DM automation Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
+        /// Create comment-to-DM automation Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCommentAutomationRequest"></param>
@@ -651,7 +651,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete automation and all logs 
+        /// Delete automation 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -662,7 +662,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete automation and all logs 
+        /// Delete automation 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -711,7 +711,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete automation and all logs 
+        /// Delete automation 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -723,7 +723,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete automation and all logs 
+        /// Delete automation 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -776,7 +776,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get automation details with recent logs 
+        /// Get automation details 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -788,7 +788,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get automation details with recent logs 
+        /// Get automation details 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -837,7 +837,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get automation details with recent logs 
+        /// Get automation details 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -850,7 +850,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get automation details with recent logs 
+        /// Get automation details 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -903,7 +903,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List trigger logs for an automation Paginated list of every comment that triggered this automation, with send status and commenter info.
+        /// List automation logs Paginated list of every comment that triggered this automation, with send status and commenter info.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -918,7 +918,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List trigger logs for an automation Paginated list of every comment that triggered this automation, with send status and commenter info.
+        /// List automation logs Paginated list of every comment that triggered this automation, with send status and commenter info.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -982,7 +982,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List trigger logs for an automation Paginated list of every comment that triggered this automation, with send status and commenter info.
+        /// List automation logs Paginated list of every comment that triggered this automation, with send status and commenter info.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>
@@ -998,7 +998,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List trigger logs for an automation Paginated list of every comment that triggered this automation, with send status and commenter info.
+        /// List automation logs Paginated list of every comment that triggered this automation, with send status and commenter info.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="automationId"></param>

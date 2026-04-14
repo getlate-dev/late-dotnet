@@ -9,17 +9,17 @@ All URIs are relative to *https://zernio.com/api*
 | [**GetContentDecay**](AnalyticsApi.md#getcontentdecay) | **GET** /v1/analytics/content-decay | Get content performance decay |
 | [**GetDailyMetrics**](AnalyticsApi.md#getdailymetrics) | **GET** /v1/analytics/daily-metrics | Get daily aggregated metrics |
 | [**GetFollowerStats**](AnalyticsApi.md#getfollowerstats) | **GET** /v1/accounts/follower-stats | Get follower stats |
-| [**GetGoogleBusinessPerformance**](AnalyticsApi.md#getgooglebusinessperformance) | **GET** /v1/analytics/googlebusiness/performance | Get Google Business Profile performance metrics |
-| [**GetGoogleBusinessSearchKeywords**](AnalyticsApi.md#getgooglebusinesssearchkeywords) | **GET** /v1/analytics/googlebusiness/search-keywords | Get Google Business Profile search keywords |
-| [**GetInstagramAccountInsights**](AnalyticsApi.md#getinstagramaccountinsights) | **GET** /v1/analytics/instagram/account-insights | Get Instagram account-level insights |
-| [**GetInstagramDemographics**](AnalyticsApi.md#getinstagramdemographics) | **GET** /v1/analytics/instagram/demographics | Get Instagram audience demographics |
+| [**GetGoogleBusinessPerformance**](AnalyticsApi.md#getgooglebusinessperformance) | **GET** /v1/analytics/googlebusiness/performance | Get GBP performance metrics |
+| [**GetGoogleBusinessSearchKeywords**](AnalyticsApi.md#getgooglebusinesssearchkeywords) | **GET** /v1/analytics/googlebusiness/search-keywords | Get GBP search keywords |
+| [**GetInstagramAccountInsights**](AnalyticsApi.md#getinstagramaccountinsights) | **GET** /v1/analytics/instagram/account-insights | Get Instagram insights |
+| [**GetInstagramDemographics**](AnalyticsApi.md#getinstagramdemographics) | **GET** /v1/analytics/instagram/demographics | Get Instagram demographics |
 | [**GetLinkedInAggregateAnalytics**](AnalyticsApi.md#getlinkedinaggregateanalytics) | **GET** /v1/accounts/{accountId}/linkedin-aggregate-analytics | Get LinkedIn aggregate stats |
 | [**GetLinkedInPostAnalytics**](AnalyticsApi.md#getlinkedinpostanalytics) | **GET** /v1/accounts/{accountId}/linkedin-post-analytics | Get LinkedIn post stats |
 | [**GetLinkedInPostReactions**](AnalyticsApi.md#getlinkedinpostreactions) | **GET** /v1/accounts/{accountId}/linkedin-post-reactions | Get LinkedIn post reactions |
 | [**GetPostTimeline**](AnalyticsApi.md#getposttimeline) | **GET** /v1/analytics/post-timeline | Get post analytics timeline |
-| [**GetPostingFrequency**](AnalyticsApi.md#getpostingfrequency) | **GET** /v1/analytics/posting-frequency | Get posting frequency vs engagement |
+| [**GetPostingFrequency**](AnalyticsApi.md#getpostingfrequency) | **GET** /v1/analytics/posting-frequency | Get frequency vs engagement |
 | [**GetYouTubeDailyViews**](AnalyticsApi.md#getyoutubedailyviews) | **GET** /v1/analytics/youtube/daily-views | Get YouTube daily views |
-| [**GetYouTubeDemographics**](AnalyticsApi.md#getyoutubedemographics) | **GET** /v1/analytics/youtube/demographics | Get YouTube audience demographics |
+| [**GetYouTubeDemographics**](AnalyticsApi.md#getyoutubedemographics) | **GET** /v1/analytics/youtube/demographics | Get YouTube demographics |
 
 <a id="getanalytics"></a>
 # **GetAnalytics**
@@ -576,7 +576,7 @@ catch (ApiException e)
 # **GetGoogleBusinessPerformance**
 > GetGoogleBusinessPerformance200Response GetGoogleBusinessPerformance (string accountId, string? metrics = null, DateOnly? startDate = null, DateOnly? endDate = null)
 
-Get Google Business Profile performance metrics
+Get GBP performance metrics
 
 Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
 
@@ -611,7 +611,7 @@ namespace Example
 
             try
             {
-                // Get Google Business Profile performance metrics
+                // Get GBP performance metrics
                 GetGoogleBusinessPerformance200Response result = apiInstance.GetGoogleBusinessPerformance(accountId, metrics, startDate, endDate);
                 Debug.WriteLine(result);
             }
@@ -632,7 +632,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Google Business Profile performance metrics
+    // Get GBP performance metrics
     ApiResponse<GetGoogleBusinessPerformance200Response> response = apiInstance.GetGoogleBusinessPerformanceWithHttpInfo(accountId, metrics, startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -684,7 +684,7 @@ catch (ApiException e)
 # **GetGoogleBusinessSearchKeywords**
 > GetGoogleBusinessSearchKeywords200Response GetGoogleBusinessSearchKeywords (string accountId, string? startMonth = null, string? endMonth = null)
 
-Get Google Business Profile search keywords
+Get GBP search keywords
 
 Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
 
@@ -718,7 +718,7 @@ namespace Example
 
             try
             {
-                // Get Google Business Profile search keywords
+                // Get GBP search keywords
                 GetGoogleBusinessSearchKeywords200Response result = apiInstance.GetGoogleBusinessSearchKeywords(accountId, startMonth, endMonth);
                 Debug.WriteLine(result);
             }
@@ -739,7 +739,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Google Business Profile search keywords
+    // Get GBP search keywords
     ApiResponse<GetGoogleBusinessSearchKeywords200Response> response = apiInstance.GetGoogleBusinessSearchKeywordsWithHttpInfo(accountId, startMonth, endMonth);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -790,7 +790,7 @@ catch (ApiException e)
 # **GetInstagramAccountInsights**
 > InstagramAccountInsightsResponse GetInstagramAccountInsights (string accountId, string? metrics = null, DateOnly? since = null, DateOnly? until = null, string? metricType = null, string? breakdown = null)
 
-Get Instagram account-level insights
+Get Instagram insights
 
 Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account's performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
 
@@ -827,7 +827,7 @@ namespace Example
 
             try
             {
-                // Get Instagram account-level insights
+                // Get Instagram insights
                 InstagramAccountInsightsResponse result = apiInstance.GetInstagramAccountInsights(accountId, metrics, since, until, metricType, breakdown);
                 Debug.WriteLine(result);
             }
@@ -848,7 +848,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Instagram account-level insights
+    // Get Instagram insights
     ApiResponse<InstagramAccountInsightsResponse> response = apiInstance.GetInstagramAccountInsightsWithHttpInfo(accountId, metrics, since, until, metricType, breakdown);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -903,7 +903,7 @@ catch (ApiException e)
 # **GetInstagramDemographics**
 > InstagramDemographicsResponse GetInstagramDemographics (string accountId, string? metric = null, string? breakdown = null, string? timeframe = null)
 
-Get Instagram audience demographics
+Get Instagram demographics
 
 Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
 
@@ -938,7 +938,7 @@ namespace Example
 
             try
             {
-                // Get Instagram audience demographics
+                // Get Instagram demographics
                 InstagramDemographicsResponse result = apiInstance.GetInstagramDemographics(accountId, metric, breakdown, timeframe);
                 Debug.WriteLine(result);
             }
@@ -959,7 +959,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get Instagram audience demographics
+    // Get Instagram demographics
     ApiResponse<InstagramDemographicsResponse> response = apiInstance.GetInstagramDemographicsWithHttpInfo(accountId, metric, breakdown, timeframe);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -1444,7 +1444,7 @@ catch (ApiException e)
 # **GetPostingFrequency**
 > GetPostingFrequency200Response GetPostingFrequency (string? platform = null, string? profileId = null, string? source = null)
 
-Get posting frequency vs engagement
+Get frequency vs engagement
 
 Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
 
@@ -1478,7 +1478,7 @@ namespace Example
 
             try
             {
-                // Get posting frequency vs engagement
+                // Get frequency vs engagement
                 GetPostingFrequency200Response result = apiInstance.GetPostingFrequency(platform, profileId, source);
                 Debug.WriteLine(result);
             }
@@ -1499,7 +1499,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get posting frequency vs engagement
+    // Get frequency vs engagement
     ApiResponse<GetPostingFrequency200Response> response = apiInstance.GetPostingFrequencyWithHttpInfo(platform, profileId, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -1658,7 +1658,7 @@ catch (ApiException e)
 # **GetYouTubeDemographics**
 > YouTubeDemographicsResponse GetYouTubeDemographics (string accountId, string? breakdown = null, DateOnly? startDate = null, DateOnly? endDate = null)
 
-Get YouTube audience demographics
+Get YouTube demographics
 
 Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
 
@@ -1693,7 +1693,7 @@ namespace Example
 
             try
             {
-                // Get YouTube audience demographics
+                // Get YouTube demographics
                 YouTubeDemographicsResponse result = apiInstance.GetYouTubeDemographics(accountId, breakdown, startDate, endDate);
                 Debug.WriteLine(result);
             }
@@ -1714,7 +1714,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get YouTube audience demographics
+    // Get YouTube demographics
     ApiResponse<YouTubeDemographicsResponse> response = apiInstance.GetYouTubeDemographicsWithHttpInfo(accountId, breakdown, startDate, endDate);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

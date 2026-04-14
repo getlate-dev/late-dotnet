@@ -5,15 +5,15 @@ All URIs are relative to *https://zernio.com/api*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**AddBroadcastRecipients**](BroadcastsApi.md#addbroadcastrecipients) | **POST** /v1/broadcasts/{broadcastId}/recipients | Add recipients to a broadcast |
-| [**CancelBroadcast**](BroadcastsApi.md#cancelbroadcast) | **POST** /v1/broadcasts/{broadcastId}/cancel | Cancel a broadcast |
-| [**CreateBroadcast**](BroadcastsApi.md#createbroadcast) | **POST** /v1/broadcasts | Create a broadcast draft |
-| [**DeleteBroadcast**](BroadcastsApi.md#deletebroadcast) | **DELETE** /v1/broadcasts/{broadcastId} | Delete a broadcast (draft only) |
+| [**CancelBroadcast**](BroadcastsApi.md#cancelbroadcast) | **POST** /v1/broadcasts/{broadcastId}/cancel | Cancel broadcast |
+| [**CreateBroadcast**](BroadcastsApi.md#createbroadcast) | **POST** /v1/broadcasts | Create broadcast draft |
+| [**DeleteBroadcast**](BroadcastsApi.md#deletebroadcast) | **DELETE** /v1/broadcasts/{broadcastId} | Delete broadcast |
 | [**GetBroadcast**](BroadcastsApi.md#getbroadcast) | **GET** /v1/broadcasts/{broadcastId} | Get broadcast details |
 | [**ListBroadcastRecipients**](BroadcastsApi.md#listbroadcastrecipients) | **GET** /v1/broadcasts/{broadcastId}/recipients | List broadcast recipients |
 | [**ListBroadcasts**](BroadcastsApi.md#listbroadcasts) | **GET** /v1/broadcasts | List broadcasts |
 | [**ScheduleBroadcast**](BroadcastsApi.md#schedulebroadcast) | **POST** /v1/broadcasts/{broadcastId}/schedule | Schedule broadcast for later |
-| [**SendBroadcast**](BroadcastsApi.md#sendbroadcast) | **POST** /v1/broadcasts/{broadcastId}/send | Trigger immediate send |
-| [**UpdateBroadcast**](BroadcastsApi.md#updatebroadcast) | **PATCH** /v1/broadcasts/{broadcastId} | Update a broadcast |
+| [**SendBroadcast**](BroadcastsApi.md#sendbroadcast) | **POST** /v1/broadcasts/{broadcastId}/send | Send broadcast now |
+| [**UpdateBroadcast**](BroadcastsApi.md#updatebroadcast) | **PATCH** /v1/broadcasts/{broadcastId} | Update broadcast |
 
 <a id="addbroadcastrecipients"></a>
 # **AddBroadcastRecipients**
@@ -119,7 +119,7 @@ catch (ApiException e)
 # **CancelBroadcast**
 > CancelBroadcast200Response CancelBroadcast (string broadcastId)
 
-Cancel a broadcast
+Cancel broadcast
 
 ### Example
 ```csharp
@@ -149,7 +149,7 @@ namespace Example
 
             try
             {
-                // Cancel a broadcast
+                // Cancel broadcast
                 CancelBroadcast200Response result = apiInstance.CancelBroadcast(broadcastId);
                 Debug.WriteLine(result);
             }
@@ -170,7 +170,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Cancel a broadcast
+    // Cancel broadcast
     ApiResponse<CancelBroadcast200Response> response = apiInstance.CancelBroadcastWithHttpInfo(broadcastId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -218,7 +218,7 @@ catch (ApiException e)
 # **CreateBroadcast**
 > CreateBroadcast200Response CreateBroadcast (CreateBroadcastRequest createBroadcastRequest)
 
-Create a broadcast draft
+Create broadcast draft
 
 ### Example
 ```csharp
@@ -248,7 +248,7 @@ namespace Example
 
             try
             {
-                // Create a broadcast draft
+                // Create broadcast draft
                 CreateBroadcast200Response result = apiInstance.CreateBroadcast(createBroadcastRequest);
                 Debug.WriteLine(result);
             }
@@ -269,7 +269,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a broadcast draft
+    // Create broadcast draft
     ApiResponse<CreateBroadcast200Response> response = apiInstance.CreateBroadcastWithHttpInfo(createBroadcastRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -315,7 +315,7 @@ catch (ApiException e)
 # **DeleteBroadcast**
 > void DeleteBroadcast (string broadcastId)
 
-Delete a broadcast (draft only)
+Delete broadcast
 
 ### Example
 ```csharp
@@ -345,7 +345,7 @@ namespace Example
 
             try
             {
-                // Delete a broadcast (draft only)
+                // Delete broadcast
                 apiInstance.DeleteBroadcast(broadcastId);
             }
             catch (ApiException  e)
@@ -365,7 +365,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a broadcast (draft only)
+    // Delete broadcast
     apiInstance.DeleteBroadcastWithHttpInfo(broadcastId);
 }
 catch (ApiException e)
@@ -817,7 +817,7 @@ catch (ApiException e)
 # **SendBroadcast**
 > SendBroadcast200Response SendBroadcast (string broadcastId)
 
-Trigger immediate send
+Send broadcast now
 
 ### Example
 ```csharp
@@ -847,7 +847,7 @@ namespace Example
 
             try
             {
-                // Trigger immediate send
+                // Send broadcast now
                 SendBroadcast200Response result = apiInstance.SendBroadcast(broadcastId);
                 Debug.WriteLine(result);
             }
@@ -868,7 +868,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Trigger immediate send
+    // Send broadcast now
     ApiResponse<SendBroadcast200Response> response = apiInstance.SendBroadcastWithHttpInfo(broadcastId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -916,7 +916,7 @@ catch (ApiException e)
 # **UpdateBroadcast**
 > UpdateBroadcast200Response UpdateBroadcast (string broadcastId)
 
-Update a broadcast
+Update broadcast
 
 ### Example
 ```csharp
@@ -946,7 +946,7 @@ namespace Example
 
             try
             {
-                // Update a broadcast
+                // Update broadcast
                 UpdateBroadcast200Response result = apiInstance.UpdateBroadcast(broadcastId);
                 Debug.WriteLine(result);
             }
@@ -967,7 +967,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a broadcast
+    // Update broadcast
     ApiResponse<UpdateBroadcast200Response> response = apiInstance.UpdateBroadcastWithHttpInfo(broadcastId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -4,18 +4,18 @@ All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ClearContactFieldValue**](CustomFieldsApi.md#clearcontactfieldvalue) | **DELETE** /v1/contacts/{contactId}/fields/{slug} | Clear a custom field value |
-| [**CreateCustomField**](CustomFieldsApi.md#createcustomfield) | **POST** /v1/custom-fields | Create a custom field definition |
-| [**DeleteCustomField**](CustomFieldsApi.md#deletecustomfield) | **DELETE** /v1/custom-fields/{fieldId} | Delete a custom field definition |
+| [**ClearContactFieldValue**](CustomFieldsApi.md#clearcontactfieldvalue) | **DELETE** /v1/contacts/{contactId}/fields/{slug} | Clear custom field value |
+| [**CreateCustomField**](CustomFieldsApi.md#createcustomfield) | **POST** /v1/custom-fields | Create custom field |
+| [**DeleteCustomField**](CustomFieldsApi.md#deletecustomfield) | **DELETE** /v1/custom-fields/{fieldId} | Delete custom field |
 | [**ListCustomFields**](CustomFieldsApi.md#listcustomfields) | **GET** /v1/custom-fields | List custom field definitions |
-| [**SetContactFieldValue**](CustomFieldsApi.md#setcontactfieldvalue) | **PUT** /v1/contacts/{contactId}/fields/{slug} | Set a custom field value |
-| [**UpdateCustomField**](CustomFieldsApi.md#updatecustomfield) | **PATCH** /v1/custom-fields/{fieldId} | Update a custom field definition |
+| [**SetContactFieldValue**](CustomFieldsApi.md#setcontactfieldvalue) | **PUT** /v1/contacts/{contactId}/fields/{slug} | Set custom field value |
+| [**UpdateCustomField**](CustomFieldsApi.md#updatecustomfield) | **PATCH** /v1/custom-fields/{fieldId} | Update custom field |
 
 <a id="clearcontactfieldvalue"></a>
 # **ClearContactFieldValue**
 > void ClearContactFieldValue (string contactId, string slug)
 
-Clear a custom field value
+Clear custom field value
 
 ### Example
 ```csharp
@@ -46,7 +46,7 @@ namespace Example
 
             try
             {
-                // Clear a custom field value
+                // Clear custom field value
                 apiInstance.ClearContactFieldValue(contactId, slug);
             }
             catch (ApiException  e)
@@ -66,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Clear a custom field value
+    // Clear custom field value
     apiInstance.ClearContactFieldValueWithHttpInfo(contactId, slug);
 }
 catch (ApiException e)
@@ -111,7 +111,7 @@ void (empty response body)
 # **CreateCustomField**
 > CreateCustomField200Response CreateCustomField (CreateCustomFieldRequest createCustomFieldRequest)
 
-Create a custom field definition
+Create custom field
 
 ### Example
 ```csharp
@@ -141,7 +141,7 @@ namespace Example
 
             try
             {
-                // Create a custom field definition
+                // Create custom field
                 CreateCustomField200Response result = apiInstance.CreateCustomField(createCustomFieldRequest);
                 Debug.WriteLine(result);
             }
@@ -162,7 +162,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a custom field definition
+    // Create custom field
     ApiResponse<CreateCustomField200Response> response = apiInstance.CreateCustomFieldWithHttpInfo(createCustomFieldRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -209,7 +209,7 @@ catch (ApiException e)
 # **DeleteCustomField**
 > void DeleteCustomField (string fieldId)
 
-Delete a custom field definition
+Delete custom field
 
 ### Example
 ```csharp
@@ -239,7 +239,7 @@ namespace Example
 
             try
             {
-                // Delete a custom field definition
+                // Delete custom field
                 apiInstance.DeleteCustomField(fieldId);
             }
             catch (ApiException  e)
@@ -259,7 +259,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a custom field definition
+    // Delete custom field
     apiInstance.DeleteCustomFieldWithHttpInfo(fieldId);
 }
 catch (ApiException e)
@@ -400,7 +400,7 @@ catch (ApiException e)
 # **SetContactFieldValue**
 > void SetContactFieldValue (string contactId, string slug, SetContactFieldValueRequest setContactFieldValueRequest)
 
-Set a custom field value
+Set custom field value
 
 ### Example
 ```csharp
@@ -432,7 +432,7 @@ namespace Example
 
             try
             {
-                // Set a custom field value
+                // Set custom field value
                 apiInstance.SetContactFieldValue(contactId, slug, setContactFieldValueRequest);
             }
             catch (ApiException  e)
@@ -452,7 +452,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Set a custom field value
+    // Set custom field value
     apiInstance.SetContactFieldValueWithHttpInfo(contactId, slug, setContactFieldValueRequest);
 }
 catch (ApiException e)
@@ -498,7 +498,7 @@ void (empty response body)
 # **UpdateCustomField**
 > UpdateCustomField200Response UpdateCustomField (string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = null)
 
-Update a custom field definition
+Update custom field
 
 ### Example
 ```csharp
@@ -529,7 +529,7 @@ namespace Example
 
             try
             {
-                // Update a custom field definition
+                // Update custom field
                 UpdateCustomField200Response result = apiInstance.UpdateCustomField(fieldId, updateCustomFieldRequest);
                 Debug.WriteLine(result);
             }
@@ -550,7 +550,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a custom field definition
+    // Update custom field
     ApiResponse<UpdateCustomField200Response> response = apiInstance.UpdateCustomFieldWithHttpInfo(fieldId, updateCustomFieldRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

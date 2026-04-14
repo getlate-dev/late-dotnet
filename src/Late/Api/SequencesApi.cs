@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Activate a sequence
+        /// Activate sequence
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -37,7 +37,7 @@ namespace Late.Api
         ActivateSequence200Response ActivateSequence(string sequenceId);
 
         /// <summary>
-        /// Activate a sequence
+        /// Activate sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -47,7 +47,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ActivateSequence200Response</returns>
         ApiResponse<ActivateSequence200Response> ActivateSequenceWithHttpInfo(string sequenceId);
         /// <summary>
-        /// Create a sequence
+        /// Create sequence
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createSequenceRequest"></param>
@@ -55,7 +55,7 @@ namespace Late.Api
         CreateSequence200Response CreateSequence(CreateSequenceRequest createSequenceRequest);
 
         /// <summary>
-        /// Create a sequence
+        /// Create sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -65,7 +65,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateSequence200Response</returns>
         ApiResponse<CreateSequence200Response> CreateSequenceWithHttpInfo(CreateSequenceRequest createSequenceRequest);
         /// <summary>
-        /// Delete a sequence
+        /// Delete sequence
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -73,7 +73,7 @@ namespace Late.Api
         void DeleteSequence(string sequenceId);
 
         /// <summary>
-        /// Delete a sequence
+        /// Delete sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -169,7 +169,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ListSequences200Response</returns>
         ApiResponse<ListSequences200Response> ListSequencesWithHttpInfo(string? profileId = default, string? status = default, int? limit = default, int? skip = default);
         /// <summary>
-        /// Pause a sequence
+        /// Pause sequence
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -177,7 +177,7 @@ namespace Late.Api
         ActivateSequence200Response PauseSequence(string sequenceId);
 
         /// <summary>
-        /// Pause a sequence
+        /// Pause sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -187,7 +187,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ActivateSequence200Response</returns>
         ApiResponse<ActivateSequence200Response> PauseSequenceWithHttpInfo(string sequenceId);
         /// <summary>
-        /// Unenroll a contact from a sequence
+        /// Unenroll contact
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -196,7 +196,7 @@ namespace Late.Api
         void UnenrollContact(string sequenceId, string contactId);
 
         /// <summary>
-        /// Unenroll a contact from a sequence
+        /// Unenroll contact
         /// </summary>
         /// <remarks>
         /// 
@@ -207,7 +207,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> UnenrollContactWithHttpInfo(string sequenceId, string contactId);
         /// <summary>
-        /// Update a sequence
+        /// Update sequence
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -215,7 +215,7 @@ namespace Late.Api
         UpdateSequence200Response UpdateSequence(string sequenceId);
 
         /// <summary>
-        /// Update a sequence
+        /// Update sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -234,7 +234,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Activate a sequence
+        /// Activate sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -246,7 +246,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ActivateSequence200Response> ActivateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Activate a sequence
+        /// Activate sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -257,7 +257,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ActivateSequence200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ActivateSequence200Response>> ActivateSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a sequence
+        /// Create sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -269,7 +269,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateSequence200Response> CreateSequenceAsync(CreateSequenceRequest createSequenceRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a sequence
+        /// Create sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -280,7 +280,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateSequence200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateSequence200Response>> CreateSequenceWithHttpInfoAsync(CreateSequenceRequest createSequenceRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a sequence
+        /// Delete sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -292,7 +292,7 @@ namespace Late.Api
         System.Threading.Tasks.Task DeleteSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a sequence
+        /// Delete sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -409,7 +409,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListSequences200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListSequences200Response>> ListSequencesWithHttpInfoAsync(string? profileId = default, string? status = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Pause a sequence
+        /// Pause sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -421,7 +421,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ActivateSequence200Response> PauseSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Pause a sequence
+        /// Pause sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -432,7 +432,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ActivateSequence200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ActivateSequence200Response>> PauseSequenceWithHttpInfoAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Unenroll a contact from a sequence
+        /// Unenroll contact
         /// </summary>
         /// <remarks>
         /// 
@@ -445,7 +445,7 @@ namespace Late.Api
         System.Threading.Tasks.Task UnenrollContactAsync(string sequenceId, string contactId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Unenroll a contact from a sequence
+        /// Unenroll contact
         /// </summary>
         /// <remarks>
         /// 
@@ -457,7 +457,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> UnenrollContactWithHttpInfoAsync(string sequenceId, string contactId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a sequence
+        /// Update sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -469,7 +469,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateSequence200Response> UpdateSequenceAsync(string sequenceId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update a sequence
+        /// Update sequence
         /// </summary>
         /// <remarks>
         /// 
@@ -693,7 +693,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Activate a sequence 
+        /// Activate sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -705,7 +705,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Activate a sequence 
+        /// Activate sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -754,7 +754,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Activate a sequence 
+        /// Activate sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -767,7 +767,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Activate a sequence 
+        /// Activate sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -820,7 +820,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a sequence 
+        /// Create sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createSequenceRequest"></param>
@@ -832,7 +832,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a sequence 
+        /// Create sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createSequenceRequest"></param>
@@ -882,7 +882,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a sequence 
+        /// Create sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createSequenceRequest"></param>
@@ -895,7 +895,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a sequence 
+        /// Create sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createSequenceRequest"></param>
@@ -949,7 +949,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a sequence 
+        /// Delete sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -960,7 +960,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a sequence 
+        /// Delete sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1009,7 +1009,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a sequence 
+        /// Delete sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1021,7 +1021,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a sequence 
+        /// Delete sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1668,7 +1668,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Pause a sequence 
+        /// Pause sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1680,7 +1680,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Pause a sequence 
+        /// Pause sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1729,7 +1729,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Pause a sequence 
+        /// Pause sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1742,7 +1742,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Pause a sequence 
+        /// Pause sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1795,7 +1795,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unenroll a contact from a sequence 
+        /// Unenroll contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1807,7 +1807,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unenroll a contact from a sequence 
+        /// Unenroll contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1862,7 +1862,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unenroll a contact from a sequence 
+        /// Unenroll contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1875,7 +1875,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Unenroll a contact from a sequence 
+        /// Unenroll contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1934,7 +1934,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a sequence 
+        /// Update sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1946,7 +1946,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a sequence 
+        /// Update sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -1995,7 +1995,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a sequence 
+        /// Update sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>
@@ -2008,7 +2008,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a sequence 
+        /// Update sequence 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sequenceId"></param>

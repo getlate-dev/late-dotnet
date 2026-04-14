@@ -4,13 +4,13 @@ All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetMediaPresignedUrl**](MediaApi.md#getmediapresignedurl) | **POST** /v1/media/presign | Get presigned upload URL |
+| [**GetMediaPresignedUrl**](MediaApi.md#getmediapresignedurl) | **POST** /v1/media/presign | Get upload URL |
 
 <a id="getmediapresignedurl"></a>
 # **GetMediaPresignedUrl**
 > GetMediaPresignedUrl200Response GetMediaPresignedUrl (GetMediaPresignedUrlRequest getMediaPresignedUrlRequest)
 
-Get presigned upload URL
+Get upload URL
 
 Get a presigned URL to upload files directly to cloud storage (up to 5GB). Returns an uploadUrl and publicUrl. PUT your file to the uploadUrl, then use the publicUrl in your posts.
 
@@ -42,7 +42,7 @@ namespace Example
 
             try
             {
-                // Get presigned upload URL
+                // Get upload URL
                 GetMediaPresignedUrl200Response result = apiInstance.GetMediaPresignedUrl(getMediaPresignedUrlRequest);
                 Debug.WriteLine(result);
             }
@@ -63,7 +63,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get presigned upload URL
+    // Get upload URL
     ApiResponse<GetMediaPresignedUrl200Response> response = apiInstance.GetMediaPresignedUrlWithHttpInfo(getMediaPresignedUrlRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

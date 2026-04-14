@@ -71,7 +71,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ValidatePost200Response</returns>
         ApiResponse<ValidatePost200Response> ValidatePostWithHttpInfo(ValidatePostRequest validatePostRequest);
         /// <summary>
-        /// Validate post character count
+        /// Validate character count
         /// </summary>
         /// <remarks>
         /// Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
@@ -82,7 +82,7 @@ namespace Late.Api
         ValidatePostLength200Response ValidatePostLength(ValidatePostLengthRequest validatePostLengthRequest);
 
         /// <summary>
-        /// Validate post character count
+        /// Validate character count
         /// </summary>
         /// <remarks>
         /// Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
@@ -170,7 +170,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ValidatePost200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ValidatePost200Response>> ValidatePostWithHttpInfoAsync(ValidatePostRequest validatePostRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Validate post character count
+        /// Validate character count
         /// </summary>
         /// <remarks>
         /// Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
@@ -182,7 +182,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ValidatePostLength200Response> ValidatePostLengthAsync(ValidatePostLengthRequest validatePostLengthRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Validate post character count
+        /// Validate character count
         /// </summary>
         /// <remarks>
         /// Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
@@ -689,7 +689,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Validate post character count Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
+        /// Validate character count Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="validatePostLengthRequest"></param>
@@ -701,7 +701,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Validate post character count Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
+        /// Validate character count Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="validatePostLengthRequest"></param>
@@ -751,7 +751,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Validate post character count Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
+        /// Validate character count Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="validatePostLengthRequest"></param>
@@ -764,7 +764,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Validate post character count Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
+        /// Validate character count Check weighted character count per platform and whether the text is within each platform&#39;s limit.  Twitter/X uses weighted counting (URLs &#x3D; 23 chars via t.co, emojis &#x3D; 2 chars). All other platforms use plain character length.  Returns counts and limits for all 15 supported platform variants. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="validatePostLengthRequest"></param>

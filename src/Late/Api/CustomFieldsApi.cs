@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Clear a custom field value
+        /// Clear custom field value
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -38,7 +38,7 @@ namespace Late.Api
         void ClearContactFieldValue(string contactId, string slug);
 
         /// <summary>
-        /// Clear a custom field value
+        /// Clear custom field value
         /// </summary>
         /// <remarks>
         /// 
@@ -49,7 +49,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ClearContactFieldValueWithHttpInfo(string contactId, string slug);
         /// <summary>
-        /// Create a custom field definition
+        /// Create custom field
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
@@ -57,7 +57,7 @@ namespace Late.Api
         CreateCustomField200Response CreateCustomField(CreateCustomFieldRequest createCustomFieldRequest);
 
         /// <summary>
-        /// Create a custom field definition
+        /// Create custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -67,7 +67,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateCustomField200Response</returns>
         ApiResponse<CreateCustomField200Response> CreateCustomFieldWithHttpInfo(CreateCustomFieldRequest createCustomFieldRequest);
         /// <summary>
-        /// Delete a custom field definition
+        /// Delete custom field
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -75,7 +75,7 @@ namespace Late.Api
         void DeleteCustomField(string fieldId);
 
         /// <summary>
-        /// Delete a custom field definition
+        /// Delete custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -103,7 +103,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ListCustomFields200Response</returns>
         ApiResponse<ListCustomFields200Response> ListCustomFieldsWithHttpInfo(string? profileId = default);
         /// <summary>
-        /// Set a custom field value
+        /// Set custom field value
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -113,7 +113,7 @@ namespace Late.Api
         void SetContactFieldValue(string contactId, string slug, SetContactFieldValueRequest setContactFieldValueRequest);
 
         /// <summary>
-        /// Set a custom field value
+        /// Set custom field value
         /// </summary>
         /// <remarks>
         /// 
@@ -125,7 +125,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> SetContactFieldValueWithHttpInfo(string contactId, string slug, SetContactFieldValueRequest setContactFieldValueRequest);
         /// <summary>
-        /// Update a custom field definition
+        /// Update custom field
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -134,7 +134,7 @@ namespace Late.Api
         UpdateCustomField200Response UpdateCustomField(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default);
 
         /// <summary>
-        /// Update a custom field definition
+        /// Update custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -154,7 +154,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Clear a custom field value
+        /// Clear custom field value
         /// </summary>
         /// <remarks>
         /// 
@@ -167,7 +167,7 @@ namespace Late.Api
         System.Threading.Tasks.Task ClearContactFieldValueAsync(string contactId, string slug, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Clear a custom field value
+        /// Clear custom field value
         /// </summary>
         /// <remarks>
         /// 
@@ -179,7 +179,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ClearContactFieldValueWithHttpInfoAsync(string contactId, string slug, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a custom field definition
+        /// Create custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -191,7 +191,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateCustomField200Response> CreateCustomFieldAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a custom field definition
+        /// Create custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -202,7 +202,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateCustomField200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateCustomField200Response>> CreateCustomFieldWithHttpInfoAsync(CreateCustomFieldRequest createCustomFieldRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a custom field definition
+        /// Delete custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -214,7 +214,7 @@ namespace Late.Api
         System.Threading.Tasks.Task DeleteCustomFieldAsync(string fieldId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a custom field definition
+        /// Delete custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -248,7 +248,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListCustomFields200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListCustomFields200Response>> ListCustomFieldsWithHttpInfoAsync(string? profileId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Set a custom field value
+        /// Set custom field value
         /// </summary>
         /// <remarks>
         /// 
@@ -262,7 +262,7 @@ namespace Late.Api
         System.Threading.Tasks.Task SetContactFieldValueAsync(string contactId, string slug, SetContactFieldValueRequest setContactFieldValueRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Set a custom field value
+        /// Set custom field value
         /// </summary>
         /// <remarks>
         /// 
@@ -275,7 +275,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> SetContactFieldValueWithHttpInfoAsync(string contactId, string slug, SetContactFieldValueRequest setContactFieldValueRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a custom field definition
+        /// Update custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -288,7 +288,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateCustomField200Response> UpdateCustomFieldAsync(string fieldId, UpdateCustomFieldRequest? updateCustomFieldRequest = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update a custom field definition
+        /// Update custom field
         /// </summary>
         /// <remarks>
         /// 
@@ -513,7 +513,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Clear a custom field value 
+        /// Clear custom field value 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -525,7 +525,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Clear a custom field value 
+        /// Clear custom field value 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -580,7 +580,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Clear a custom field value 
+        /// Clear custom field value 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -593,7 +593,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Clear a custom field value 
+        /// Clear custom field value 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -652,7 +652,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a custom field definition 
+        /// Create custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
@@ -664,7 +664,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a custom field definition 
+        /// Create custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
@@ -714,7 +714,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a custom field definition 
+        /// Create custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
@@ -727,7 +727,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a custom field definition 
+        /// Create custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createCustomFieldRequest"></param>
@@ -781,7 +781,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a custom field definition 
+        /// Delete custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -792,7 +792,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a custom field definition 
+        /// Delete custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -841,7 +841,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a custom field definition 
+        /// Delete custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -853,7 +853,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a custom field definition 
+        /// Delete custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -1031,7 +1031,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set a custom field value 
+        /// Set custom field value 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1044,7 +1044,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set a custom field value 
+        /// Set custom field value 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1106,7 +1106,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set a custom field value 
+        /// Set custom field value 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1120,7 +1120,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Set a custom field value 
+        /// Set custom field value 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1186,7 +1186,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a custom field definition 
+        /// Update custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -1199,7 +1199,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a custom field definition 
+        /// Update custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -1251,7 +1251,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a custom field definition 
+        /// Update custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>
@@ -1265,7 +1265,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a custom field definition 
+        /// Update custom field 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fieldId"></param>

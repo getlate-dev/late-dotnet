@@ -4,10 +4,10 @@ All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**CreateCommentAutomation**](CommentAutomationsApi.md#createcommentautomation) | **POST** /v1/comment-automations | Create a comment-to-DM automation |
-| [**DeleteCommentAutomation**](CommentAutomationsApi.md#deletecommentautomation) | **DELETE** /v1/comment-automations/{automationId} | Delete automation and all logs |
-| [**GetCommentAutomation**](CommentAutomationsApi.md#getcommentautomation) | **GET** /v1/comment-automations/{automationId} | Get automation details with recent logs |
-| [**ListCommentAutomationLogs**](CommentAutomationsApi.md#listcommentautomationlogs) | **GET** /v1/comment-automations/{automationId}/logs | List trigger logs for an automation |
+| [**CreateCommentAutomation**](CommentAutomationsApi.md#createcommentautomation) | **POST** /v1/comment-automations | Create comment-to-DM automation |
+| [**DeleteCommentAutomation**](CommentAutomationsApi.md#deletecommentautomation) | **DELETE** /v1/comment-automations/{automationId} | Delete automation |
+| [**GetCommentAutomation**](CommentAutomationsApi.md#getcommentautomation) | **GET** /v1/comment-automations/{automationId} | Get automation details |
+| [**ListCommentAutomationLogs**](CommentAutomationsApi.md#listcommentautomationlogs) | **GET** /v1/comment-automations/{automationId}/logs | List automation logs |
 | [**ListCommentAutomations**](CommentAutomationsApi.md#listcommentautomations) | **GET** /v1/comment-automations | List comment-to-DM automations |
 | [**UpdateCommentAutomation**](CommentAutomationsApi.md#updatecommentautomation) | **PATCH** /v1/comment-automations/{automationId} | Update automation settings |
 
@@ -15,7 +15,7 @@ All URIs are relative to *https://zernio.com/api*
 # **CreateCommentAutomation**
 > CreateCommentAutomation200Response CreateCommentAutomation (CreateCommentAutomationRequest createCommentAutomationRequest)
 
-Create a comment-to-DM automation
+Create comment-to-DM automation
 
 Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
 
@@ -47,7 +47,7 @@ namespace Example
 
             try
             {
-                // Create a comment-to-DM automation
+                // Create comment-to-DM automation
                 CreateCommentAutomation200Response result = apiInstance.CreateCommentAutomation(createCommentAutomationRequest);
                 Debug.WriteLine(result);
             }
@@ -68,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a comment-to-DM automation
+    // Create comment-to-DM automation
     ApiResponse<CreateCommentAutomation200Response> response = apiInstance.CreateCommentAutomationWithHttpInfo(createCommentAutomationRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -116,7 +116,7 @@ catch (ApiException e)
 # **DeleteCommentAutomation**
 > void DeleteCommentAutomation (string automationId)
 
-Delete automation and all logs
+Delete automation
 
 ### Example
 ```csharp
@@ -146,7 +146,7 @@ namespace Example
 
             try
             {
-                // Delete automation and all logs
+                // Delete automation
                 apiInstance.DeleteCommentAutomation(automationId);
             }
             catch (ApiException  e)
@@ -166,7 +166,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete automation and all logs
+    // Delete automation
     apiInstance.DeleteCommentAutomationWithHttpInfo(automationId);
 }
 catch (ApiException e)
@@ -210,7 +210,7 @@ void (empty response body)
 # **GetCommentAutomation**
 > GetCommentAutomation200Response GetCommentAutomation (string automationId)
 
-Get automation details with recent logs
+Get automation details
 
 ### Example
 ```csharp
@@ -240,7 +240,7 @@ namespace Example
 
             try
             {
-                // Get automation details with recent logs
+                // Get automation details
                 GetCommentAutomation200Response result = apiInstance.GetCommentAutomation(automationId);
                 Debug.WriteLine(result);
             }
@@ -261,7 +261,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get automation details with recent logs
+    // Get automation details
     ApiResponse<GetCommentAutomation200Response> response = apiInstance.GetCommentAutomationWithHttpInfo(automationId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -308,7 +308,7 @@ catch (ApiException e)
 # **ListCommentAutomationLogs**
 > ListCommentAutomationLogs200Response ListCommentAutomationLogs (string automationId, string? status = null, int? limit = null, int? skip = null)
 
-List trigger logs for an automation
+List automation logs
 
 Paginated list of every comment that triggered this automation, with send status and commenter info.
 
@@ -343,7 +343,7 @@ namespace Example
 
             try
             {
-                // List trigger logs for an automation
+                // List automation logs
                 ListCommentAutomationLogs200Response result = apiInstance.ListCommentAutomationLogs(automationId, status, limit, skip);
                 Debug.WriteLine(result);
             }
@@ -364,7 +364,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List trigger logs for an automation
+    // List automation logs
     ApiResponse<ListCommentAutomationLogs200Response> response = apiInstance.ListCommentAutomationLogsWithHttpInfo(automationId, status, limit, skip);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -180,7 +180,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetFollowerStats200Response</returns>
         ApiResponse<GetFollowerStats200Response> GetFollowerStatsWithHttpInfo(string? accountIds = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, string? granularity = default);
         /// <summary>
-        /// Get Google Business Profile performance metrics
+        /// Get GBP performance metrics
         /// </summary>
         /// <remarks>
         /// Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
@@ -194,7 +194,7 @@ namespace Late.Api
         GetGoogleBusinessPerformance200Response GetGoogleBusinessPerformance(string accountId, string? metrics = default, DateOnly? startDate = default, DateOnly? endDate = default);
 
         /// <summary>
-        /// Get Google Business Profile performance metrics
+        /// Get GBP performance metrics
         /// </summary>
         /// <remarks>
         /// Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
@@ -207,7 +207,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetGoogleBusinessPerformance200Response</returns>
         ApiResponse<GetGoogleBusinessPerformance200Response> GetGoogleBusinessPerformanceWithHttpInfo(string accountId, string? metrics = default, DateOnly? startDate = default, DateOnly? endDate = default);
         /// <summary>
-        /// Get Google Business Profile search keywords
+        /// Get GBP search keywords
         /// </summary>
         /// <remarks>
         /// Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
@@ -220,7 +220,7 @@ namespace Late.Api
         GetGoogleBusinessSearchKeywords200Response GetGoogleBusinessSearchKeywords(string accountId, string? startMonth = default, string? endMonth = default);
 
         /// <summary>
-        /// Get Google Business Profile search keywords
+        /// Get GBP search keywords
         /// </summary>
         /// <remarks>
         /// Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
@@ -232,7 +232,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetGoogleBusinessSearchKeywords200Response</returns>
         ApiResponse<GetGoogleBusinessSearchKeywords200Response> GetGoogleBusinessSearchKeywordsWithHttpInfo(string accountId, string? startMonth = default, string? endMonth = default);
         /// <summary>
-        /// Get Instagram account-level insights
+        /// Get Instagram insights
         /// </summary>
         /// <remarks>
         /// Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
@@ -248,7 +248,7 @@ namespace Late.Api
         InstagramAccountInsightsResponse GetInstagramAccountInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default);
 
         /// <summary>
-        /// Get Instagram account-level insights
+        /// Get Instagram insights
         /// </summary>
         /// <remarks>
         /// Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
@@ -263,7 +263,7 @@ namespace Late.Api
         /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
         ApiResponse<InstagramAccountInsightsResponse> GetInstagramAccountInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default);
         /// <summary>
-        /// Get Instagram audience demographics
+        /// Get Instagram demographics
         /// </summary>
         /// <remarks>
         /// Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
@@ -277,7 +277,7 @@ namespace Late.Api
         InstagramDemographicsResponse GetInstagramDemographics(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default);
 
         /// <summary>
-        /// Get Instagram audience demographics
+        /// Get Instagram demographics
         /// </summary>
         /// <remarks>
         /// Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
@@ -394,7 +394,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetPostTimeline200Response</returns>
         ApiResponse<GetPostTimeline200Response> GetPostTimelineWithHttpInfo(string postId, DateTime? fromDate = default, DateTime? toDate = default);
         /// <summary>
-        /// Get posting frequency vs engagement
+        /// Get frequency vs engagement
         /// </summary>
         /// <remarks>
         /// Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
@@ -407,7 +407,7 @@ namespace Late.Api
         GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default, string? source = default);
 
         /// <summary>
-        /// Get posting frequency vs engagement
+        /// Get frequency vs engagement
         /// </summary>
         /// <remarks>
         /// Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
@@ -446,7 +446,7 @@ namespace Late.Api
         /// <returns>ApiResponse of YouTubeDailyViewsResponse</returns>
         ApiResponse<YouTubeDailyViewsResponse> GetYouTubeDailyViewsWithHttpInfo(string videoId, string accountId, DateOnly? startDate = default, DateOnly? endDate = default);
         /// <summary>
-        /// Get YouTube audience demographics
+        /// Get YouTube demographics
         /// </summary>
         /// <remarks>
         /// Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
@@ -460,7 +460,7 @@ namespace Late.Api
         YouTubeDemographicsResponse GetYouTubeDemographics(string accountId, string? breakdown = default, DateOnly? startDate = default, DateOnly? endDate = default);
 
         /// <summary>
-        /// Get YouTube audience demographics
+        /// Get YouTube demographics
         /// </summary>
         /// <remarks>
         /// Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
@@ -643,7 +643,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetFollowerStats200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetFollowerStats200Response>> GetFollowerStatsWithHttpInfoAsync(string? accountIds = default, string? profileId = default, DateOnly? fromDate = default, DateOnly? toDate = default, string? granularity = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Google Business Profile performance metrics
+        /// Get GBP performance metrics
         /// </summary>
         /// <remarks>
         /// Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
@@ -658,7 +658,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetGoogleBusinessPerformance200Response> GetGoogleBusinessPerformanceAsync(string accountId, string? metrics = default, DateOnly? startDate = default, DateOnly? endDate = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Google Business Profile performance metrics
+        /// Get GBP performance metrics
         /// </summary>
         /// <remarks>
         /// Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
@@ -672,7 +672,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetGoogleBusinessPerformance200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessPerformance200Response>> GetGoogleBusinessPerformanceWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? startDate = default, DateOnly? endDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Google Business Profile search keywords
+        /// Get GBP search keywords
         /// </summary>
         /// <remarks>
         /// Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
@@ -686,7 +686,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetGoogleBusinessSearchKeywords200Response> GetGoogleBusinessSearchKeywordsAsync(string accountId, string? startMonth = default, string? endMonth = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Google Business Profile search keywords
+        /// Get GBP search keywords
         /// </summary>
         /// <remarks>
         /// Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
@@ -699,7 +699,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetGoogleBusinessSearchKeywords200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessSearchKeywords200Response>> GetGoogleBusinessSearchKeywordsWithHttpInfoAsync(string accountId, string? startMonth = default, string? endMonth = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Instagram account-level insights
+        /// Get Instagram insights
         /// </summary>
         /// <remarks>
         /// Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
@@ -716,7 +716,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetInstagramAccountInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Instagram account-level insights
+        /// Get Instagram insights
         /// </summary>
         /// <remarks>
         /// Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
@@ -732,7 +732,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<InstagramAccountInsightsResponse>> GetInstagramAccountInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, string? breakdown = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get Instagram audience demographics
+        /// Get Instagram demographics
         /// </summary>
         /// <remarks>
         /// Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
@@ -747,7 +747,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<InstagramDemographicsResponse> GetInstagramDemographicsAsync(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get Instagram audience demographics
+        /// Get Instagram demographics
         /// </summary>
         /// <remarks>
         /// Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
@@ -873,7 +873,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetPostTimeline200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetPostTimeline200Response>> GetPostTimelineWithHttpInfoAsync(string postId, DateTime? fromDate = default, DateTime? toDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get posting frequency vs engagement
+        /// Get frequency vs engagement
         /// </summary>
         /// <remarks>
         /// Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
@@ -887,7 +887,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get posting frequency vs engagement
+        /// Get frequency vs engagement
         /// </summary>
         /// <remarks>
         /// Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
@@ -929,7 +929,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (YouTubeDailyViewsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<YouTubeDailyViewsResponse>> GetYouTubeDailyViewsWithHttpInfoAsync(string videoId, string accountId, DateOnly? startDate = default, DateOnly? endDate = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get YouTube audience demographics
+        /// Get YouTube demographics
         /// </summary>
         /// <remarks>
         /// Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
@@ -944,7 +944,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<YouTubeDemographicsResponse> GetYouTubeDemographicsAsync(string accountId, string? breakdown = default, DateOnly? startDate = default, DateOnly? endDate = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get YouTube audience demographics
+        /// Get YouTube demographics
         /// </summary>
         /// <remarks>
         /// Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
@@ -2072,7 +2072,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile performance metrics Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
+        /// Get GBP performance metrics Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Google Business Profile account.</param>
@@ -2087,7 +2087,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile performance metrics Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
+        /// Get GBP performance metrics Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Google Business Profile account.</param>
@@ -2151,7 +2151,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile performance metrics Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
+        /// Get GBP performance metrics Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Google Business Profile account.</param>
@@ -2167,7 +2167,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile performance metrics Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
+        /// Get GBP performance metrics Returns daily performance metrics for a Google Business Profile location. Metrics include impressions (Maps/Search, desktop/mobile), website clicks, call clicks, direction requests, conversations, bookings, and food orders. Data may be delayed 2-3 days. Max 18 months of historical data. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Google Business Profile account.</param>
@@ -2235,7 +2235,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile search keywords Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
+        /// Get GBP search keywords Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Google Business Profile account.</param>
@@ -2249,7 +2249,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile search keywords Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
+        /// Get GBP search keywords Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Google Business Profile account.</param>
@@ -2308,7 +2308,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile search keywords Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
+        /// Get GBP search keywords Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Google Business Profile account.</param>
@@ -2323,7 +2323,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Google Business Profile search keywords Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
+        /// Get GBP search keywords Returns search keywords that triggered impressions for a Google Business Profile location. Data is aggregated monthly. Keywords below a minimum impression threshold set by Google are excluded. Max 18 months of historical data. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Google Business Profile account.</param>
@@ -2386,7 +2386,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram account-level insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// Get Instagram insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
@@ -2403,7 +2403,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram account-level insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// Get Instagram insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
@@ -2477,7 +2477,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram account-level insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// Get Instagram insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
@@ -2495,7 +2495,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram account-level insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// Get Instagram insights Returns account-level Instagram insights such as reach, views, accounts engaged, and total interactions. These metrics reflect the entire account&#39;s performance across all content surfaces (feed, stories, explore, profile), and are fundamentally different from post-level metrics. Data may be delayed up to 48 hours. Max 90 days, defaults to last 30 days. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
@@ -2573,7 +2573,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram audience demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// Get Instagram demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
@@ -2588,7 +2588,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram audience demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// Get Instagram demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
@@ -2652,7 +2652,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram audience demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// Get Instagram demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
@@ -2668,7 +2668,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get Instagram audience demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
+        /// Get Instagram demographics Returns audience demographic insights for an Instagram account, broken down by age, city, country, and/or gender. Requires at least 100 followers. Returns top 45 entries per dimension. Data may be delayed up to 48 hours. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
@@ -3368,7 +3368,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get posting frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// Get frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
@@ -3382,7 +3382,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get posting frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// Get frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
@@ -3440,7 +3440,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get posting frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// Get frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
@@ -3455,7 +3455,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get posting frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
+        /// Get frequency vs engagement Returns the correlation between posting frequency (posts per week) and engagement rate, broken down by platform. Helps find the optimal posting cadence for each platform. Each row represents a specific (platform, posts_per_week) combination with the average engagement rate observed across all weeks matching that frequency. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
@@ -3682,7 +3682,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get YouTube audience demographics Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
+        /// Get YouTube demographics Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account</param>
@@ -3697,7 +3697,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get YouTube audience demographics Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
+        /// Get YouTube demographics Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account</param>
@@ -3761,7 +3761,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get YouTube audience demographics Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
+        /// Get YouTube demographics Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account</param>
@@ -3777,7 +3777,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get YouTube audience demographics Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
+        /// Get YouTube demographics Returns audience demographic insights for a YouTube channel, broken down by age, gender, and/or country. Age and gender values are viewer percentages (0-100). Country values are view counts. Data is based on signed-in viewers only, with a 2-3 day delay. Requires the Analytics add-on. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account</param>

@@ -29,7 +29,7 @@ namespace Late.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Boost an existing post as a paid ad
+        /// Boost post as ad
         /// </summary>
         /// <remarks>
         /// Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
@@ -40,7 +40,7 @@ namespace Late.Api
         UpdateAd200Response BoostPost(BoostPostRequest boostPostRequest);
 
         /// <summary>
-        /// Boost an existing post as a paid ad
+        /// Boost post as ad
         /// </summary>
         /// <remarks>
         /// Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
@@ -50,7 +50,7 @@ namespace Late.Api
         /// <returns>ApiResponse of UpdateAd200Response</returns>
         ApiResponse<UpdateAd200Response> BoostPostWithHttpInfo(BoostPostRequest boostPostRequest);
         /// <summary>
-        /// Create a standalone ad with custom creative
+        /// Create standalone ad
         /// </summary>
         /// <remarks>
         /// Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
@@ -61,7 +61,7 @@ namespace Late.Api
         UpdateAd200Response CreateStandaloneAd(CreateStandaloneAdRequest createStandaloneAdRequest);
 
         /// <summary>
-        /// Create a standalone ad with custom creative
+        /// Create standalone ad
         /// </summary>
         /// <remarks>
         /// Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
@@ -110,7 +110,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetAd200Response</returns>
         ApiResponse<GetAd200Response> GetAdWithHttpInfo(string adId);
         /// <summary>
-        /// Get ad analytics with daily breakdown
+        /// Get ad analytics
         /// </summary>
         /// <remarks>
         /// Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
@@ -124,7 +124,7 @@ namespace Late.Api
         GetAdAnalytics200Response GetAdAnalytics(string adId, DateOnly? fromDate = default, DateOnly? toDate = default, string? breakdowns = default);
 
         /// <summary>
-        /// Get ad analytics with daily breakdown
+        /// Get ad analytics
         /// </summary>
         /// <remarks>
         /// Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
@@ -137,7 +137,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetAdAnalytics200Response</returns>
         ApiResponse<GetAdAnalytics200Response> GetAdAnalyticsWithHttpInfo(string adId, DateOnly? fromDate = default, DateOnly? toDate = default, string? breakdowns = default);
         /// <summary>
-        /// List ad accounts for a social account
+        /// List ad accounts
         /// </summary>
         /// <remarks>
         /// Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
@@ -148,7 +148,7 @@ namespace Late.Api
         ListAdAccounts200Response ListAdAccounts(string accountId);
 
         /// <summary>
-        /// List ad accounts for a social account
+        /// List ad accounts
         /// </summary>
         /// <remarks>
         /// Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
@@ -222,7 +222,7 @@ namespace Late.Api
         /// <returns>ApiResponse of SearchAdInterests200Response</returns>
         ApiResponse<SearchAdInterests200Response> SearchAdInterestsWithHttpInfo(string q, string accountId);
         /// <summary>
-        /// Update ad (pause/resume, budget, targeting, name)
+        /// Update ad
         /// </summary>
         /// <remarks>
         /// Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
@@ -234,7 +234,7 @@ namespace Late.Api
         UpdateAd200Response UpdateAd(string adId, UpdateAdRequest updateAdRequest);
 
         /// <summary>
-        /// Update ad (pause/resume, budget, targeting, name)
+        /// Update ad
         /// </summary>
         /// <remarks>
         /// Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
@@ -254,7 +254,7 @@ namespace Late.Api
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Boost an existing post as a paid ad
+        /// Boost post as ad
         /// </summary>
         /// <remarks>
         /// Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
@@ -266,7 +266,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateAd200Response> BoostPostAsync(BoostPostRequest boostPostRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Boost an existing post as a paid ad
+        /// Boost post as ad
         /// </summary>
         /// <remarks>
         /// Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
@@ -277,7 +277,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (UpdateAd200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<UpdateAd200Response>> BoostPostWithHttpInfoAsync(BoostPostRequest boostPostRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a standalone ad with custom creative
+        /// Create standalone ad
         /// </summary>
         /// <remarks>
         /// Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
@@ -289,7 +289,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateAd200Response> CreateStandaloneAdAsync(CreateStandaloneAdRequest createStandaloneAdRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a standalone ad with custom creative
+        /// Create standalone ad
         /// </summary>
         /// <remarks>
         /// Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
@@ -346,7 +346,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetAd200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetAd200Response>> GetAdWithHttpInfoAsync(string adId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get ad analytics with daily breakdown
+        /// Get ad analytics
         /// </summary>
         /// <remarks>
         /// Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
@@ -361,7 +361,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetAdAnalytics200Response> GetAdAnalyticsAsync(string adId, DateOnly? fromDate = default, DateOnly? toDate = default, string? breakdowns = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get ad analytics with daily breakdown
+        /// Get ad analytics
         /// </summary>
         /// <remarks>
         /// Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
@@ -375,7 +375,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetAdAnalytics200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetAdAnalytics200Response>> GetAdAnalyticsWithHttpInfoAsync(string adId, DateOnly? fromDate = default, DateOnly? toDate = default, string? breakdowns = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List ad accounts for a social account
+        /// List ad accounts
         /// </summary>
         /// <remarks>
         /// Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
@@ -387,7 +387,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<ListAdAccounts200Response> ListAdAccountsAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// List ad accounts for a social account
+        /// List ad accounts
         /// </summary>
         /// <remarks>
         /// Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
@@ -466,7 +466,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (SearchAdInterests200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<SearchAdInterests200Response>> SearchAdInterestsWithHttpInfoAsync(string q, string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update ad (pause/resume, budget, targeting, name)
+        /// Update ad
         /// </summary>
         /// <remarks>
         /// Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
@@ -479,7 +479,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateAd200Response> UpdateAdAsync(string adId, UpdateAdRequest updateAdRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update ad (pause/resume, budget, targeting, name)
+        /// Update ad
         /// </summary>
         /// <remarks>
         /// Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
@@ -704,7 +704,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Boost an existing post as a paid ad Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
+        /// Boost post as ad Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="boostPostRequest"></param>
@@ -716,7 +716,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Boost an existing post as a paid ad Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
+        /// Boost post as ad Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="boostPostRequest"></param>
@@ -766,7 +766,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Boost an existing post as a paid ad Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
+        /// Boost post as ad Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="boostPostRequest"></param>
@@ -779,7 +779,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Boost an existing post as a paid ad Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
+        /// Boost post as ad Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="boostPostRequest"></param>
@@ -833,7 +833,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a standalone ad with custom creative Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
+        /// Create standalone ad Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createStandaloneAdRequest"></param>
@@ -845,7 +845,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a standalone ad with custom creative Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
+        /// Create standalone ad Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createStandaloneAdRequest"></param>
@@ -895,7 +895,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a standalone ad with custom creative Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
+        /// Create standalone ad Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createStandaloneAdRequest"></param>
@@ -908,7 +908,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a standalone ad with custom creative Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
+        /// Create standalone ad Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createStandaloneAdRequest"></param>
@@ -1216,7 +1216,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get ad analytics with daily breakdown Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
+        /// Get ad analytics Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adId"></param>
@@ -1231,7 +1231,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get ad analytics with daily breakdown Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
+        /// Get ad analytics Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adId"></param>
@@ -1295,7 +1295,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get ad analytics with daily breakdown Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
+        /// Get ad analytics Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adId"></param>
@@ -1311,7 +1311,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get ad analytics with daily breakdown Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
+        /// Get ad analytics Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adId"></param>
@@ -1379,7 +1379,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List ad accounts for a social account Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
+        /// List ad accounts Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">Social account ID</param>
@@ -1391,7 +1391,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List ad accounts for a social account Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
+        /// List ad accounts Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">Social account ID</param>
@@ -1440,7 +1440,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List ad accounts for a social account Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
+        /// List ad accounts Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">Social account ID</param>
@@ -1453,7 +1453,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// List ad accounts for a social account Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
+        /// List ad accounts Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">Social account ID</param>
@@ -1892,7 +1892,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update ad (pause/resume, budget, targeting, name) Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
+        /// Update ad Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adId"></param>
@@ -1905,7 +1905,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update ad (pause/resume, budget, targeting, name) Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
+        /// Update ad Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adId"></param>
@@ -1961,7 +1961,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update ad (pause/resume, budget, targeting, name) Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
+        /// Update ad Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adId"></param>
@@ -1975,7 +1975,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update ad (pause/resume, budget, targeting, name) Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
+        /// Update ad Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="adId"></param>

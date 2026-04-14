@@ -4,22 +4,22 @@ All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**ActivateSequence**](SequencesApi.md#activatesequence) | **POST** /v1/sequences/{sequenceId}/activate | Activate a sequence |
-| [**CreateSequence**](SequencesApi.md#createsequence) | **POST** /v1/sequences | Create a sequence |
-| [**DeleteSequence**](SequencesApi.md#deletesequence) | **DELETE** /v1/sequences/{sequenceId} | Delete a sequence |
+| [**ActivateSequence**](SequencesApi.md#activatesequence) | **POST** /v1/sequences/{sequenceId}/activate | Activate sequence |
+| [**CreateSequence**](SequencesApi.md#createsequence) | **POST** /v1/sequences | Create sequence |
+| [**DeleteSequence**](SequencesApi.md#deletesequence) | **DELETE** /v1/sequences/{sequenceId} | Delete sequence |
 | [**EnrollContacts**](SequencesApi.md#enrollcontacts) | **POST** /v1/sequences/{sequenceId}/enroll | Enroll contacts in a sequence |
 | [**GetSequence**](SequencesApi.md#getsequence) | **GET** /v1/sequences/{sequenceId} | Get sequence with steps |
 | [**ListSequenceEnrollments**](SequencesApi.md#listsequenceenrollments) | **GET** /v1/sequences/{sequenceId}/enrollments | List enrollments for a sequence |
 | [**ListSequences**](SequencesApi.md#listsequences) | **GET** /v1/sequences | List sequences |
-| [**PauseSequence**](SequencesApi.md#pausesequence) | **POST** /v1/sequences/{sequenceId}/pause | Pause a sequence |
-| [**UnenrollContact**](SequencesApi.md#unenrollcontact) | **DELETE** /v1/sequences/{sequenceId}/enroll/{contactId} | Unenroll a contact from a sequence |
-| [**UpdateSequence**](SequencesApi.md#updatesequence) | **PATCH** /v1/sequences/{sequenceId} | Update a sequence |
+| [**PauseSequence**](SequencesApi.md#pausesequence) | **POST** /v1/sequences/{sequenceId}/pause | Pause sequence |
+| [**UnenrollContact**](SequencesApi.md#unenrollcontact) | **DELETE** /v1/sequences/{sequenceId}/enroll/{contactId} | Unenroll contact |
+| [**UpdateSequence**](SequencesApi.md#updatesequence) | **PATCH** /v1/sequences/{sequenceId} | Update sequence |
 
 <a id="activatesequence"></a>
 # **ActivateSequence**
 > ActivateSequence200Response ActivateSequence (string sequenceId)
 
-Activate a sequence
+Activate sequence
 
 ### Example
 ```csharp
@@ -49,7 +49,7 @@ namespace Example
 
             try
             {
-                // Activate a sequence
+                // Activate sequence
                 ActivateSequence200Response result = apiInstance.ActivateSequence(sequenceId);
                 Debug.WriteLine(result);
             }
@@ -70,7 +70,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Activate a sequence
+    // Activate sequence
     ApiResponse<ActivateSequence200Response> response = apiInstance.ActivateSequenceWithHttpInfo(sequenceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -118,7 +118,7 @@ catch (ApiException e)
 # **CreateSequence**
 > CreateSequence200Response CreateSequence (CreateSequenceRequest createSequenceRequest)
 
-Create a sequence
+Create sequence
 
 ### Example
 ```csharp
@@ -148,7 +148,7 @@ namespace Example
 
             try
             {
-                // Create a sequence
+                // Create sequence
                 CreateSequence200Response result = apiInstance.CreateSequence(createSequenceRequest);
                 Debug.WriteLine(result);
             }
@@ -169,7 +169,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a sequence
+    // Create sequence
     ApiResponse<CreateSequence200Response> response = apiInstance.CreateSequenceWithHttpInfo(createSequenceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -215,7 +215,7 @@ catch (ApiException e)
 # **DeleteSequence**
 > void DeleteSequence (string sequenceId)
 
-Delete a sequence
+Delete sequence
 
 ### Example
 ```csharp
@@ -245,7 +245,7 @@ namespace Example
 
             try
             {
-                // Delete a sequence
+                // Delete sequence
                 apiInstance.DeleteSequence(sequenceId);
             }
             catch (ApiException  e)
@@ -265,7 +265,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a sequence
+    // Delete sequence
     apiInstance.DeleteSequenceWithHttpInfo(sequenceId);
 }
 catch (ApiException e)
@@ -714,7 +714,7 @@ catch (ApiException e)
 # **PauseSequence**
 > ActivateSequence200Response PauseSequence (string sequenceId)
 
-Pause a sequence
+Pause sequence
 
 ### Example
 ```csharp
@@ -744,7 +744,7 @@ namespace Example
 
             try
             {
-                // Pause a sequence
+                // Pause sequence
                 ActivateSequence200Response result = apiInstance.PauseSequence(sequenceId);
                 Debug.WriteLine(result);
             }
@@ -765,7 +765,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Pause a sequence
+    // Pause sequence
     ApiResponse<ActivateSequence200Response> response = apiInstance.PauseSequenceWithHttpInfo(sequenceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -813,7 +813,7 @@ catch (ApiException e)
 # **UnenrollContact**
 > void UnenrollContact (string sequenceId, string contactId)
 
-Unenroll a contact from a sequence
+Unenroll contact
 
 ### Example
 ```csharp
@@ -844,7 +844,7 @@ namespace Example
 
             try
             {
-                // Unenroll a contact from a sequence
+                // Unenroll contact
                 apiInstance.UnenrollContact(sequenceId, contactId);
             }
             catch (ApiException  e)
@@ -864,7 +864,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Unenroll a contact from a sequence
+    // Unenroll contact
     apiInstance.UnenrollContactWithHttpInfo(sequenceId, contactId);
 }
 catch (ApiException e)
@@ -909,7 +909,7 @@ void (empty response body)
 # **UpdateSequence**
 > UpdateSequence200Response UpdateSequence (string sequenceId)
 
-Update a sequence
+Update sequence
 
 ### Example
 ```csharp
@@ -939,7 +939,7 @@ namespace Example
 
             try
             {
-                // Update a sequence
+                // Update sequence
                 UpdateSequence200Response result = apiInstance.UpdateSequence(sequenceId);
                 Debug.WriteLine(result);
             }
@@ -960,7 +960,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a sequence
+    // Update sequence
     ApiResponse<UpdateSequence200Response> response = apiInstance.UpdateSequenceWithHttpInfo(sequenceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

@@ -193,7 +193,7 @@ paths:
           description: Character counts per platform
       security:
       - bearerAuth: []
-      summary: Validate post character count
+      summary: Validate character count
       tags:
       - Validate
   /v1/tools/validate/post:
@@ -898,7 +898,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/getInstagramAccountInsights_404_response"
           description: Account not found
-      summary: Get Instagram account-level insights
+      summary: Get Instagram insights
       tags:
       - Analytics
   /v1/analytics/instagram/demographics:
@@ -1032,7 +1032,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/getInstagramAccountInsights_404_response"
           description: Account not found
-      summary: Get Instagram audience demographics
+      summary: Get Instagram demographics
       tags:
       - Analytics
   /v1/analytics/youtube/demographics:
@@ -1149,7 +1149,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/getYouTubeDemographics_412_response"
           description: YouTube Analytics scope not granted
-      summary: Get YouTube audience demographics
+      summary: Get YouTube demographics
       tags:
       - Analytics
   /v1/analytics/daily-metrics:
@@ -1501,7 +1501,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/getBestTimeToPost_403_response"
           description: Analytics add-on required
-      summary: Get posting frequency vs engagement
+      summary: Get frequency vs engagement
       tags:
       - Analytics
   /v1/analytics/post-timeline:
@@ -1709,7 +1709,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/getYouTubeDailyViews_403_response"
           description: Access denied
-      summary: Get Google Business Profile performance metrics
+      summary: Get GBP performance metrics
       tags:
       - Analytics
   /v1/analytics/googlebusiness/search-keywords:
@@ -1792,7 +1792,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/getYouTubeDailyViews_403_response"
           description: Access denied
-      summary: Get Google Business Profile search keywords
+      summary: Get GBP search keywords
       tags:
       - Analytics
   /v1/account-groups:
@@ -1985,7 +1985,7 @@ paths:
             \ content type)"
         "401":
           $ref: "#/components/responses/Unauthorized"
-      summary: Get presigned upload URL
+      summary: Get upload URL
       tags:
       - Media
   /v1/reddit/search:
@@ -10100,7 +10100,7 @@ paths:
           description: WhatsApp account not found
       security:
       - bearerAuth: []
-      summary: Get display name and review status
+      summary: Get display name status
       tags:
       - WhatsApp
     post:
@@ -11236,7 +11236,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "409":
           description: Duplicate contact
-      summary: Create a contact
+      summary: Create contact
       tags:
       - Contacts
   /v1/contacts/{contactId}:
@@ -11257,7 +11257,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Delete a contact
+      summary: Delete contact
       tags:
       - Contacts
     get:
@@ -11281,7 +11281,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Get contact with channels
+      summary: Get contact
       tags:
       - Contacts
     patch:
@@ -11310,7 +11310,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Update a contact
+      summary: Update contact
       tags:
       - Contacts
   /v1/contacts/{contactId}/channels:
@@ -11385,7 +11385,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Clear a custom field value
+      summary: Clear custom field value
       tags:
       - Custom Fields
     put:
@@ -11418,7 +11418,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Set a custom field value
+      summary: Set custom field value
       tags:
       - Custom Fields
   /v1/custom-fields:
@@ -11464,7 +11464,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "409":
           description: Duplicate slug
-      summary: Create a custom field definition
+      summary: Create custom field
       tags:
       - Custom Fields
   /v1/custom-fields/{fieldId}:
@@ -11485,7 +11485,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Delete a custom field definition
+      summary: Delete custom field
       tags:
       - Custom Fields
     patch:
@@ -11514,7 +11514,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Update a custom field definition
+      summary: Update custom field
       tags:
       - Custom Fields
   /v1/broadcasts:
@@ -11595,7 +11595,7 @@ paths:
           description: Broadcast created
         "401":
           $ref: "#/components/responses/Unauthorized"
-      summary: Create a broadcast draft
+      summary: Create broadcast draft
       tags:
       - Broadcasts
   /v1/broadcasts/{broadcastId}:
@@ -11616,7 +11616,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Delete a broadcast (draft only)
+      summary: Delete broadcast
       tags:
       - Broadcasts
     get:
@@ -11664,7 +11664,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Update a broadcast
+      summary: Update broadcast
       tags:
       - Broadcasts
   /v1/broadcasts/{broadcastId}/send:
@@ -11691,7 +11691,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Trigger immediate send
+      summary: Send broadcast now
       tags:
       - Broadcasts
   /v1/broadcasts/{broadcastId}/schedule:
@@ -11751,7 +11751,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Cancel a broadcast
+      summary: Cancel broadcast
       tags:
       - Broadcasts
   /v1/broadcasts/{broadcastId}/recipients:
@@ -11906,7 +11906,7 @@ paths:
           description: Sequence created
         "401":
           $ref: "#/components/responses/Unauthorized"
-      summary: Create a sequence
+      summary: Create sequence
       tags:
       - Sequences
   /v1/sequences/{sequenceId}:
@@ -11927,7 +11927,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Delete a sequence
+      summary: Delete sequence
       tags:
       - Sequences
     get:
@@ -11975,7 +11975,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Update a sequence
+      summary: Update sequence
       tags:
       - Sequences
   /v1/sequences/{sequenceId}/activate:
@@ -12002,7 +12002,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Activate a sequence
+      summary: Activate sequence
       tags:
       - Sequences
   /v1/sequences/{sequenceId}/pause:
@@ -12029,7 +12029,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Pause a sequence
+      summary: Pause sequence
       tags:
       - Sequences
   /v1/sequences/{sequenceId}/enroll:
@@ -12088,7 +12088,7 @@ paths:
           $ref: "#/components/responses/Unauthorized"
         "404":
           $ref: "#/components/responses/NotFound"
-      summary: Unenroll a contact from a sequence
+      summary: Unenroll contact
       tags:
       - Sequences
   /v1/sequences/{sequenceId}/enrollments:
@@ -12199,7 +12199,7 @@ paths:
           description: Active automation already exists for this post
       security:
       - bearerAuth: []
-      summary: Create a comment-to-DM automation
+      summary: Create comment-to-DM automation
       tags:
       - Comment Automations
   /v1/comment-automations/{automationId}:
@@ -12222,7 +12222,7 @@ paths:
           $ref: "#/components/responses/NotFound"
       security:
       - bearerAuth: []
-      summary: Delete automation and all logs
+      summary: Delete automation
       tags:
       - Comment Automations
     get:
@@ -12248,7 +12248,7 @@ paths:
           $ref: "#/components/responses/NotFound"
       security:
       - bearerAuth: []
-      summary: Get automation details with recent logs
+      summary: Get automation details
       tags:
       - Comment Automations
     patch:
@@ -12336,7 +12336,7 @@ paths:
           $ref: "#/components/responses/NotFound"
       security:
       - bearerAuth: []
-      summary: List trigger logs for an automation
+      summary: List automation logs
       tags:
       - Comment Automations
   /v1/ads:
@@ -12567,7 +12567,7 @@ paths:
           description: Ads add-on required
       security:
       - bearerAuth: []
-      summary: List campaigns with aggregate metrics
+      summary: List campaigns
       tags:
       - Ad Campaigns
   /v1/ads/campaigns/{campaignId}/status:
@@ -12731,7 +12731,7 @@ paths:
           description: Ads add-on required
       security:
       - bearerAuth: []
-      summary: Get nested campaign/ad-set/ad tree
+      summary: Get campaign tree
       tags:
       - Ad Campaigns
   /v1/ads/{adId}:
@@ -12822,7 +12822,7 @@ paths:
           $ref: "#/components/responses/NotFound"
       security:
       - bearerAuth: []
-      summary: "Update ad (pause/resume, budget, targeting, name)"
+      summary: Update ad
       tags:
       - Ads
   /v1/ads/{adId}/analytics:
@@ -12884,7 +12884,7 @@ paths:
           $ref: "#/components/responses/NotFound"
       security:
       - bearerAuth: []
-      summary: Get ad analytics with daily breakdown
+      summary: Get ad analytics
       tags:
       - Ads
   /v1/ads/accounts:
@@ -12916,7 +12916,7 @@ paths:
             \ missing linked Facebook account"
       security:
       - bearerAuth: []
-      summary: List ad accounts for a social account
+      summary: List ad accounts
       tags:
       - Ads
   /v1/ads/boost:
@@ -12948,7 +12948,7 @@ paths:
             \ linked account"
       security:
       - bearerAuth: []
-      summary: Boost an existing post as a paid ad
+      summary: Boost post as ad
       tags:
       - Ads
   /v1/ads/create:
@@ -12980,7 +12980,7 @@ paths:
             \ linked account"
       security:
       - bearerAuth: []
-      summary: Create a standalone ad with custom creative
+      summary: Create standalone ad
       tags:
       - Ads
   /v1/ads/interests:
@@ -13096,7 +13096,7 @@ paths:
           description: Ads add-on required
       security:
       - bearerAuth: []
-      summary: Create a custom audience (Meta only)
+      summary: Create custom audience
       tags:
       - Ad Audiences
   /v1/ads/audiences/{audienceId}:
@@ -13126,7 +13126,7 @@ paths:
           $ref: "#/components/responses/NotFound"
       security:
       - bearerAuth: []
-      summary: Delete a custom audience
+      summary: Delete custom audience
       tags:
       - Ad Audiences
     get:
@@ -13199,7 +13199,7 @@ paths:
             yet
       security:
       - bearerAuth: []
-      summary: Add users to a customer list audience
+      summary: Add users to audience
       tags:
       - Ad Audiences
 components:
@@ -16400,16 +16400,17 @@ components:
     SocialAccount:
       example:
         profileUrl: profileUrl
-        parentAccountId: parentAccountId
         metadata: "{}"
         followersLastUpdated: 2000-01-23T04:56:07.000+00:00
-        profileId: SocialAccount_profileId
         displayName: displayName
-        _id: _id
-        followersCount: 0.8008281904610115
         isActive: true
         platform: tiktok
         enabled: true
+        parentAccountId: parentAccountId
+        profilePicture: profilePicture
+        profileId: SocialAccount_profileId
+        _id: _id
+        followersCount: 0.8008281904610115
         username: username
       properties:
         _id:
@@ -16444,6 +16445,11 @@ components:
           type: string
         displayName:
           type: string
+        profilePicture:
+          description: URL to the account's profile picture on the platform. May be
+            null if the platform does not provide one.
+          type: string
+          nullable: true
         profileUrl:
           description: Full profile URL for the connected account on its platform.
           type: string
@@ -16485,8 +16491,6 @@ components:
       allOf:
       - $ref: "#/components/schemas/SocialAccount"
       - properties:
-          profilePicture:
-            type: string
           currentFollowers:
             description: Current follower count
             type: number
@@ -21454,28 +21458,30 @@ components:
         pagination: ""
         accounts:
         - profileUrl: profileUrl
-          parentAccountId: parentAccountId
           metadata: "{}"
           followersLastUpdated: 2000-01-23T04:56:07.000+00:00
-          profileId: SocialAccount_profileId
           displayName: displayName
-          _id: _id
-          followersCount: 0.8008281904610115
           isActive: true
           platform: tiktok
           enabled: true
+          parentAccountId: parentAccountId
+          profilePicture: profilePicture
+          profileId: SocialAccount_profileId
+          _id: _id
+          followersCount: 0.8008281904610115
           username: username
         - profileUrl: profileUrl
-          parentAccountId: parentAccountId
           metadata: "{}"
           followersLastUpdated: 2000-01-23T04:56:07.000+00:00
-          profileId: SocialAccount_profileId
           displayName: displayName
-          _id: _id
-          followersCount: 0.8008281904610115
           isActive: true
           platform: tiktok
           enabled: true
+          parentAccountId: parentAccountId
+          profilePicture: profilePicture
+          profileId: SocialAccount_profileId
+          _id: _id
+          followersCount: 0.8008281904610115
           username: username
       properties:
         accounts:
@@ -25299,16 +25305,17 @@ components:
         message: message
         account:
           profileUrl: profileUrl
-          parentAccountId: parentAccountId
           metadata: "{}"
           followersLastUpdated: 2000-01-23T04:56:07.000+00:00
-          profileId: SocialAccount_profileId
           displayName: displayName
-          _id: _id
-          followersCount: 0.8008281904610115
           isActive: true
           platform: tiktok
           enabled: true
+          parentAccountId: parentAccountId
+          profilePicture: profilePicture
+          profileId: SocialAccount_profileId
+          _id: _id
+          followersCount: 0.8008281904610115
           username: username
       properties:
         message:

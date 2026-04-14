@@ -4,9 +4,9 @@ All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**AddUsersToAdAudience**](AdAudiencesApi.md#adduserstoadaudience) | **POST** /v1/ads/audiences/{audienceId}/users | Add users to a customer list audience |
-| [**CreateAdAudience**](AdAudiencesApi.md#createadaudience) | **POST** /v1/ads/audiences | Create a custom audience (Meta only) |
-| [**DeleteAdAudience**](AdAudiencesApi.md#deleteadaudience) | **DELETE** /v1/ads/audiences/{audienceId} | Delete a custom audience |
+| [**AddUsersToAdAudience**](AdAudiencesApi.md#adduserstoadaudience) | **POST** /v1/ads/audiences/{audienceId}/users | Add users to audience |
+| [**CreateAdAudience**](AdAudiencesApi.md#createadaudience) | **POST** /v1/ads/audiences | Create custom audience |
+| [**DeleteAdAudience**](AdAudiencesApi.md#deleteadaudience) | **DELETE** /v1/ads/audiences/{audienceId} | Delete custom audience |
 | [**GetAdAudience**](AdAudiencesApi.md#getadaudience) | **GET** /v1/ads/audiences/{audienceId} | Get audience details |
 | [**ListAdAudiences**](AdAudiencesApi.md#listadaudiences) | **GET** /v1/ads/audiences | List custom audiences |
 
@@ -14,7 +14,7 @@ All URIs are relative to *https://zernio.com/api*
 # **AddUsersToAdAudience**
 > AddUsersToAdAudience200Response AddUsersToAdAudience (string audienceId, AddUsersToAdAudienceRequest addUsersToAdAudienceRequest)
 
-Add users to a customer list audience
+Add users to audience
 
 Upload user data (emails and/or phone numbers) to a customer_list audience. Data is SHA256-hashed server-side before sending to Meta. Max 10,000 users per request.
 
@@ -47,7 +47,7 @@ namespace Example
 
             try
             {
-                // Add users to a customer list audience
+                // Add users to audience
                 AddUsersToAdAudience200Response result = apiInstance.AddUsersToAdAudience(audienceId, addUsersToAdAudienceRequest);
                 Debug.WriteLine(result);
             }
@@ -68,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Add users to a customer list audience
+    // Add users to audience
     ApiResponse<AddUsersToAdAudience200Response> response = apiInstance.AddUsersToAdAudienceWithHttpInfo(audienceId, addUsersToAdAudienceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -119,7 +119,7 @@ catch (ApiException e)
 # **CreateAdAudience**
 > CreateAdAudience201Response CreateAdAudience (CreateAdAudienceRequest createAdAudienceRequest)
 
-Create a custom audience (Meta only)
+Create custom audience
 
 Create a customer list, website retargeting, or lookalike audience on Meta (Facebook/Instagram).
 
@@ -151,7 +151,7 @@ namespace Example
 
             try
             {
-                // Create a custom audience (Meta only)
+                // Create custom audience
                 CreateAdAudience201Response result = apiInstance.CreateAdAudience(createAdAudienceRequest);
                 Debug.WriteLine(result);
             }
@@ -172,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a custom audience (Meta only)
+    // Create custom audience
     ApiResponse<CreateAdAudience201Response> response = apiInstance.CreateAdAudienceWithHttpInfo(createAdAudienceRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -220,7 +220,7 @@ catch (ApiException e)
 # **DeleteAdAudience**
 > DeleteAccountGroup200Response DeleteAdAudience (string audienceId)
 
-Delete a custom audience
+Delete custom audience
 
 Deletes the audience from both Meta and the local database.
 
@@ -252,7 +252,7 @@ namespace Example
 
             try
             {
-                // Delete a custom audience
+                // Delete custom audience
                 DeleteAccountGroup200Response result = apiInstance.DeleteAdAudience(audienceId);
                 Debug.WriteLine(result);
             }
@@ -273,7 +273,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a custom audience
+    // Delete custom audience
     ApiResponse<DeleteAccountGroup200Response> response = apiInstance.DeleteAdAudienceWithHttpInfo(audienceId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

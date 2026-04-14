@@ -5,12 +5,12 @@ All URIs are relative to *https://zernio.com/api*
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
 | [**BulkCreateContacts**](ContactsApi.md#bulkcreatecontacts) | **POST** /v1/contacts/bulk | Bulk create contacts |
-| [**CreateContact**](ContactsApi.md#createcontact) | **POST** /v1/contacts | Create a contact |
-| [**DeleteContact**](ContactsApi.md#deletecontact) | **DELETE** /v1/contacts/{contactId} | Delete a contact |
-| [**GetContact**](ContactsApi.md#getcontact) | **GET** /v1/contacts/{contactId} | Get contact with channels |
+| [**CreateContact**](ContactsApi.md#createcontact) | **POST** /v1/contacts | Create contact |
+| [**DeleteContact**](ContactsApi.md#deletecontact) | **DELETE** /v1/contacts/{contactId} | Delete contact |
+| [**GetContact**](ContactsApi.md#getcontact) | **GET** /v1/contacts/{contactId} | Get contact |
 | [**GetContactChannels**](ContactsApi.md#getcontactchannels) | **GET** /v1/contacts/{contactId}/channels | List channels for a contact |
 | [**ListContacts**](ContactsApi.md#listcontacts) | **GET** /v1/contacts | List contacts |
-| [**UpdateContact**](ContactsApi.md#updatecontact) | **PATCH** /v1/contacts/{contactId} | Update a contact |
+| [**UpdateContact**](ContactsApi.md#updatecontact) | **PATCH** /v1/contacts/{contactId} | Update contact |
 
 <a id="bulkcreatecontacts"></a>
 # **BulkCreateContacts**
@@ -115,7 +115,7 @@ catch (ApiException e)
 # **CreateContact**
 > CreateContact200Response CreateContact (CreateContactRequest createContactRequest)
 
-Create a contact
+Create contact
 
 Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
 
@@ -147,7 +147,7 @@ namespace Example
 
             try
             {
-                // Create a contact
+                // Create contact
                 CreateContact200Response result = apiInstance.CreateContact(createContactRequest);
                 Debug.WriteLine(result);
             }
@@ -168,7 +168,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a contact
+    // Create contact
     ApiResponse<CreateContact200Response> response = apiInstance.CreateContactWithHttpInfo(createContactRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -215,7 +215,7 @@ catch (ApiException e)
 # **DeleteContact**
 > void DeleteContact (string contactId)
 
-Delete a contact
+Delete contact
 
 ### Example
 ```csharp
@@ -245,7 +245,7 @@ namespace Example
 
             try
             {
-                // Delete a contact
+                // Delete contact
                 apiInstance.DeleteContact(contactId);
             }
             catch (ApiException  e)
@@ -265,7 +265,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Delete a contact
+    // Delete contact
     apiInstance.DeleteContactWithHttpInfo(contactId);
 }
 catch (ApiException e)
@@ -309,7 +309,7 @@ void (empty response body)
 # **GetContact**
 > GetContact200Response GetContact (string contactId)
 
-Get contact with channels
+Get contact
 
 ### Example
 ```csharp
@@ -339,7 +339,7 @@ namespace Example
 
             try
             {
-                // Get contact with channels
+                // Get contact
                 GetContact200Response result = apiInstance.GetContact(contactId);
                 Debug.WriteLine(result);
             }
@@ -360,7 +360,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get contact with channels
+    // Get contact
     ApiResponse<GetContact200Response> response = apiInstance.GetContactWithHttpInfo(contactId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -616,7 +616,7 @@ catch (ApiException e)
 # **UpdateContact**
 > UpdateContact200Response UpdateContact (string contactId, UpdateContactRequest? updateContactRequest = null)
 
-Update a contact
+Update contact
 
 ### Example
 ```csharp
@@ -647,7 +647,7 @@ namespace Example
 
             try
             {
-                // Update a contact
+                // Update contact
                 UpdateContact200Response result = apiInstance.UpdateContact(contactId, updateContactRequest);
                 Debug.WriteLine(result);
             }
@@ -668,7 +668,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a contact
+    // Update contact
     ApiResponse<UpdateContact200Response> response = apiInstance.UpdateContactWithHttpInfo(contactId, updateContactRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);

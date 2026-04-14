@@ -211,7 +211,7 @@ namespace Late.Api
         /// <returns>ApiResponse of GetWhatsAppBusinessProfile200Response</returns>
         ApiResponse<GetWhatsAppBusinessProfile200Response> GetWhatsAppBusinessProfileWithHttpInfo(string accountId);
         /// <summary>
-        /// Get display name and review status
+        /// Get display name status
         /// </summary>
         /// <remarks>
         /// Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
@@ -222,7 +222,7 @@ namespace Late.Api
         GetWhatsAppDisplayName200Response GetWhatsAppDisplayName(string accountId);
 
         /// <summary>
-        /// Get display name and review status
+        /// Get display name status
         /// </summary>
         /// <remarks>
         /// Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
@@ -717,7 +717,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (GetWhatsAppBusinessProfile200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetWhatsAppBusinessProfile200Response>> GetWhatsAppBusinessProfileWithHttpInfoAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get display name and review status
+        /// Get display name status
         /// </summary>
         /// <remarks>
         /// Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
@@ -729,7 +729,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetWhatsAppDisplayName200Response> GetWhatsAppDisplayNameAsync(string accountId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get display name and review status
+        /// Get display name status
         /// </summary>
         /// <remarks>
         /// Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
@@ -2377,7 +2377,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get display name and review status Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
+        /// Get display name status Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">WhatsApp social account ID</param>
@@ -2389,7 +2389,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get display name and review status Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
+        /// Get display name status Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">WhatsApp social account ID</param>
@@ -2438,7 +2438,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get display name and review status Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
+        /// Get display name status Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">WhatsApp social account ID</param>
@@ -2451,7 +2451,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get display name and review status Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
+        /// Get display name status Fetch the current display name and its Meta review status for a WhatsApp Business account. Display name changes require Meta approval and can take 1-3 business days. 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">WhatsApp social account ID</param>

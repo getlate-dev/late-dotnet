@@ -50,7 +50,7 @@ namespace Late.Api
         /// <returns>ApiResponse of BulkCreateContacts200Response</returns>
         ApiResponse<BulkCreateContacts200Response> BulkCreateContactsWithHttpInfo(BulkCreateContactsRequest bulkCreateContactsRequest);
         /// <summary>
-        /// Create a contact
+        /// Create contact
         /// </summary>
         /// <remarks>
         /// Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
@@ -61,7 +61,7 @@ namespace Late.Api
         CreateContact200Response CreateContact(CreateContactRequest createContactRequest);
 
         /// <summary>
-        /// Create a contact
+        /// Create contact
         /// </summary>
         /// <remarks>
         /// Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
@@ -71,7 +71,7 @@ namespace Late.Api
         /// <returns>ApiResponse of CreateContact200Response</returns>
         ApiResponse<CreateContact200Response> CreateContactWithHttpInfo(CreateContactRequest createContactRequest);
         /// <summary>
-        /// Delete a contact
+        /// Delete contact
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -79,7 +79,7 @@ namespace Late.Api
         void DeleteContact(string contactId);
 
         /// <summary>
-        /// Delete a contact
+        /// Delete contact
         /// </summary>
         /// <remarks>
         /// 
@@ -89,7 +89,7 @@ namespace Late.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteContactWithHttpInfo(string contactId);
         /// <summary>
-        /// Get contact with channels
+        /// Get contact
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -97,7 +97,7 @@ namespace Late.Api
         GetContact200Response GetContact(string contactId);
 
         /// <summary>
-        /// Get contact with channels
+        /// Get contact
         /// </summary>
         /// <remarks>
         /// 
@@ -158,7 +158,7 @@ namespace Late.Api
         /// <returns>ApiResponse of ListContacts200Response</returns>
         ApiResponse<ListContacts200Response> ListContactsWithHttpInfo(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default);
         /// <summary>
-        /// Update a contact
+        /// Update contact
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -167,7 +167,7 @@ namespace Late.Api
         UpdateContact200Response UpdateContact(string contactId, UpdateContactRequest? updateContactRequest = default);
 
         /// <summary>
-        /// Update a contact
+        /// Update contact
         /// </summary>
         /// <remarks>
         /// 
@@ -210,7 +210,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (BulkCreateContacts200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<BulkCreateContacts200Response>> BulkCreateContactsWithHttpInfoAsync(BulkCreateContactsRequest bulkCreateContactsRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create a contact
+        /// Create contact
         /// </summary>
         /// <remarks>
         /// Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
@@ -222,7 +222,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<CreateContact200Response> CreateContactAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a contact
+        /// Create contact
         /// </summary>
         /// <remarks>
         /// Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
@@ -233,7 +233,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (CreateContact200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CreateContact200Response>> CreateContactWithHttpInfoAsync(CreateContactRequest createContactRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Delete a contact
+        /// Delete contact
         /// </summary>
         /// <remarks>
         /// 
@@ -245,7 +245,7 @@ namespace Late.Api
         System.Threading.Tasks.Task DeleteContactAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Delete a contact
+        /// Delete contact
         /// </summary>
         /// <remarks>
         /// 
@@ -256,7 +256,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteContactWithHttpInfoAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Get contact with channels
+        /// Get contact
         /// </summary>
         /// <remarks>
         /// 
@@ -268,7 +268,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<GetContact200Response> GetContactAsync(string contactId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get contact with channels
+        /// Get contact
         /// </summary>
         /// <remarks>
         /// 
@@ -337,7 +337,7 @@ namespace Late.Api
         /// <returns>Task of ApiResponse (ListContacts200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListContacts200Response>> ListContactsWithHttpInfoAsync(string? profileId = default, string? search = default, string? tag = default, string? platform = default, string? isSubscribed = default, int? limit = default, int? skip = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Update a contact
+        /// Update contact
         /// </summary>
         /// <remarks>
         /// 
@@ -350,7 +350,7 @@ namespace Late.Api
         System.Threading.Tasks.Task<UpdateContact200Response> UpdateContactAsync(string contactId, UpdateContactRequest? updateContactRequest = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Update a contact
+        /// Update contact
         /// </summary>
         /// <remarks>
         /// 
@@ -704,7 +704,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a contact Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
+        /// Create contact Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
@@ -716,7 +716,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a contact Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
+        /// Create contact Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
@@ -766,7 +766,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a contact Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
+        /// Create contact Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
@@ -779,7 +779,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Create a contact Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
+        /// Create contact Create a new contact. Optionally create a platform channel in the same request by providing accountId, platform, and platformIdentifier.
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createContactRequest"></param>
@@ -833,7 +833,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a contact 
+        /// Delete contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -844,7 +844,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a contact 
+        /// Delete contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -893,7 +893,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a contact 
+        /// Delete contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -905,7 +905,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Delete a contact 
+        /// Delete contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -958,7 +958,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get contact with channels 
+        /// Get contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -970,7 +970,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get contact with channels 
+        /// Get contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1019,7 +1019,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get contact with channels 
+        /// Get contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1032,7 +1032,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Get contact with channels 
+        /// Get contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1409,7 +1409,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a contact 
+        /// Update contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1422,7 +1422,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a contact 
+        /// Update contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1474,7 +1474,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a contact 
+        /// Update contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>
@@ -1488,7 +1488,7 @@ namespace Late.Api
         }
 
         /// <summary>
-        /// Update a contact 
+        /// Update contact 
         /// </summary>
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="contactId"></param>

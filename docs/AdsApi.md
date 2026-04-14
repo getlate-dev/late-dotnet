@@ -4,21 +4,21 @@ All URIs are relative to *https://zernio.com/api*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**BoostPost**](AdsApi.md#boostpost) | **POST** /v1/ads/boost | Boost an existing post as a paid ad |
-| [**CreateStandaloneAd**](AdsApi.md#createstandalonead) | **POST** /v1/ads/create | Create a standalone ad with custom creative |
+| [**BoostPost**](AdsApi.md#boostpost) | **POST** /v1/ads/boost | Boost post as ad |
+| [**CreateStandaloneAd**](AdsApi.md#createstandalonead) | **POST** /v1/ads/create | Create standalone ad |
 | [**DeleteAd**](AdsApi.md#deletead) | **DELETE** /v1/ads/{adId} | Cancel an ad |
 | [**GetAd**](AdsApi.md#getad) | **GET** /v1/ads/{adId} | Get ad details |
-| [**GetAdAnalytics**](AdsApi.md#getadanalytics) | **GET** /v1/ads/{adId}/analytics | Get ad analytics with daily breakdown |
-| [**ListAdAccounts**](AdsApi.md#listadaccounts) | **GET** /v1/ads/accounts | List ad accounts for a social account |
+| [**GetAdAnalytics**](AdsApi.md#getadanalytics) | **GET** /v1/ads/{adId}/analytics | Get ad analytics |
+| [**ListAdAccounts**](AdsApi.md#listadaccounts) | **GET** /v1/ads/accounts | List ad accounts |
 | [**ListAds**](AdsApi.md#listads) | **GET** /v1/ads | List ads |
 | [**SearchAdInterests**](AdsApi.md#searchadinterests) | **GET** /v1/ads/interests | Search targeting interests |
-| [**UpdateAd**](AdsApi.md#updatead) | **PUT** /v1/ads/{adId} | Update ad (pause/resume, budget, targeting, name) |
+| [**UpdateAd**](AdsApi.md#updatead) | **PUT** /v1/ads/{adId} | Update ad |
 
 <a id="boostpost"></a>
 # **BoostPost**
 > UpdateAd200Response BoostPost (BoostPostRequest boostPostRequest)
 
-Boost an existing post as a paid ad
+Boost post as ad
 
 Creates a paid ad campaign from an existing published post. Creates the full platform campaign hierarchy (campaign, ad set, ad).
 
@@ -50,7 +50,7 @@ namespace Example
 
             try
             {
-                // Boost an existing post as a paid ad
+                // Boost post as ad
                 UpdateAd200Response result = apiInstance.BoostPost(boostPostRequest);
                 Debug.WriteLine(result);
             }
@@ -71,7 +71,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Boost an existing post as a paid ad
+    // Boost post as ad
     ApiResponse<UpdateAd200Response> response = apiInstance.BoostPostWithHttpInfo(boostPostRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -120,7 +120,7 @@ catch (ApiException e)
 # **CreateStandaloneAd**
 > UpdateAd200Response CreateStandaloneAd (CreateStandaloneAdRequest createStandaloneAdRequest)
 
-Create a standalone ad with custom creative
+Create standalone ad
 
 Creates a paid ad with custom creative (headline, body, image/video, link). Creates the full platform campaign hierarchy.
 
@@ -152,7 +152,7 @@ namespace Example
 
             try
             {
-                // Create a standalone ad with custom creative
+                // Create standalone ad
                 UpdateAd200Response result = apiInstance.CreateStandaloneAd(createStandaloneAdRequest);
                 Debug.WriteLine(result);
             }
@@ -173,7 +173,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Create a standalone ad with custom creative
+    // Create standalone ad
     ApiResponse<UpdateAd200Response> response = apiInstance.CreateStandaloneAdWithHttpInfo(createStandaloneAdRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -420,7 +420,7 @@ catch (ApiException e)
 # **GetAdAnalytics**
 > GetAdAnalytics200Response GetAdAnalytics (string adId, DateOnly? fromDate = null, DateOnly? toDate = null, string? breakdowns = null)
 
-Get ad analytics with daily breakdown
+Get ad analytics
 
 Returns detailed performance analytics for an ad. Includes summary metrics, a daily timeline over the requested date range, and optional demographic breakdowns (Meta and TikTok only). If no date range is provided, defaults to the last 90 days. Date range is capped at 90 days max. 
 
@@ -455,7 +455,7 @@ namespace Example
 
             try
             {
-                // Get ad analytics with daily breakdown
+                // Get ad analytics
                 GetAdAnalytics200Response result = apiInstance.GetAdAnalytics(adId, fromDate, toDate, breakdowns);
                 Debug.WriteLine(result);
             }
@@ -476,7 +476,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Get ad analytics with daily breakdown
+    // Get ad analytics
     ApiResponse<GetAdAnalytics200Response> response = apiInstance.GetAdAnalyticsWithHttpInfo(adId, fromDate, toDate, breakdowns);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -527,7 +527,7 @@ catch (ApiException e)
 # **ListAdAccounts**
 > ListAdAccounts200Response ListAdAccounts (string accountId)
 
-List ad accounts for a social account
+List ad accounts
 
 Returns the platform ad accounts available for the given social account (e.g. Meta ad accounts, TikTok advertiser IDs, Google Ads customer IDs).
 
@@ -559,7 +559,7 @@ namespace Example
 
             try
             {
-                // List ad accounts for a social account
+                // List ad accounts
                 ListAdAccounts200Response result = apiInstance.ListAdAccounts(accountId);
                 Debug.WriteLine(result);
             }
@@ -580,7 +580,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // List ad accounts for a social account
+    // List ad accounts
     ApiResponse<ListAdAccounts200Response> response = apiInstance.ListAdAccountsWithHttpInfo(accountId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -849,7 +849,7 @@ catch (ApiException e)
 # **UpdateAd**
 > UpdateAd200Response UpdateAd (string adId, UpdateAdRequest updateAdRequest)
 
-Update ad (pause/resume, budget, targeting, name)
+Update ad
 
 Update one or more fields on an ad. Status changes and budget updates are propagated to the platform. Targeting updates are Meta-only.
 
@@ -882,7 +882,7 @@ namespace Example
 
             try
             {
-                // Update ad (pause/resume, budget, targeting, name)
+                // Update ad
                 UpdateAd200Response result = apiInstance.UpdateAd(adId, updateAdRequest);
                 Debug.WriteLine(result);
             }
@@ -903,7 +903,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update ad (pause/resume, budget, targeting, name)
+    // Update ad
     ApiResponse<UpdateAd200Response> response = apiInstance.UpdateAdWithHttpInfo(adId, updateAdRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
