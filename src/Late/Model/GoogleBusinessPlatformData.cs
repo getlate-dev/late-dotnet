@@ -28,22 +28,61 @@ using OpenAPIDateConverter = Late.Client.OpenAPIDateConverter;
 namespace Late.Model
 {
     /// <summary>
-    /// Text and single image only (no videos). Optional call-to-action button. Posts appear on GBP, Google Search, and Maps. Use locationId for multi-location posting.
+    /// Text and single image only (no videos). Supports STANDARD, EVENT, and OFFER post types. Posts appear on GBP, Google Search, and Maps. Use locationId for multi-location posting.
     /// </summary>
     [DataContract(Name = "GoogleBusinessPlatformData")]
     public partial class GoogleBusinessPlatformData : IValidatableObject
     {
         /// <summary>
+        /// Post type. STANDARD is a regular update. EVENT requires the event object. OFFER requires the offer object. Defaults to STANDARD if omitted.
+        /// </summary>
+        /// <value>Post type. STANDARD is a regular update. EVENT requires the event object. OFFER requires the offer object. Defaults to STANDARD if omitted.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum TopicTypeEnum
+        {
+            /// <summary>
+            /// Enum STANDARD for value: STANDARD
+            /// </summary>
+            [EnumMember(Value = "STANDARD")]
+            STANDARD = 1,
+
+            /// <summary>
+            /// Enum EVENT for value: EVENT
+            /// </summary>
+            [EnumMember(Value = "EVENT")]
+            EVENT = 2,
+
+            /// <summary>
+            /// Enum OFFER for value: OFFER
+            /// </summary>
+            [EnumMember(Value = "OFFER")]
+            OFFER = 3
+        }
+
+
+        /// <summary>
+        /// Post type. STANDARD is a regular update. EVENT requires the event object. OFFER requires the offer object. Defaults to STANDARD if omitted.
+        /// </summary>
+        /// <value>Post type. STANDARD is a regular update. EVENT requires the event object. OFFER requires the offer object. Defaults to STANDARD if omitted.</value>
+        [DataMember(Name = "topicType", EmitDefaultValue = false)]
+        public TopicTypeEnum? TopicType { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="GoogleBusinessPlatformData" /> class.
         /// </summary>
         /// <param name="locationId">Target GBP location ID (e.g. \&quot;locations/123456789\&quot;). If omitted, uses the default location. Use GET /v1/accounts/{id}/gmb-locations to list locations..</param>
         /// <param name="languageCode">BCP 47 language code (e.g. \&quot;en\&quot;, \&quot;de\&quot;, \&quot;es\&quot;). Auto-detected if omitted. Set explicitly for short or mixed-language posts..</param>
+        /// <param name="topicType">Post type. STANDARD is a regular update. EVENT requires the event object. OFFER requires the offer object. Defaults to STANDARD if omitted. (default to TopicTypeEnum.STANDARD).</param>
         /// <param name="callToAction">callToAction.</param>
-        public GoogleBusinessPlatformData(string locationId = default, string languageCode = default, GoogleBusinessPlatformDataCallToAction callToAction = default)
+        /// <param name="varEvent">varEvent.</param>
+        /// <param name="offer">offer.</param>
+        public GoogleBusinessPlatformData(string locationId = default, string languageCode = default, TopicTypeEnum? topicType = TopicTypeEnum.STANDARD, GoogleBusinessPlatformDataCallToAction callToAction = default, GoogleBusinessPlatformDataEvent varEvent = default, GoogleBusinessPlatformDataOffer offer = default)
         {
             this.LocationId = locationId;
             this.LanguageCode = languageCode;
+            this.TopicType = topicType;
             this.CallToAction = callToAction;
+            this.Event = varEvent;
+            this.Offer = offer;
         }
 
         /// <summary>
@@ -70,6 +109,18 @@ namespace Late.Model
         public GoogleBusinessPlatformDataCallToAction CallToAction { get; set; }
 
         /// <summary>
+        /// Gets or Sets Event
+        /// </summary>
+        [DataMember(Name = "event", EmitDefaultValue = false)]
+        public GoogleBusinessPlatformDataEvent Event { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Offer
+        /// </summary>
+        [DataMember(Name = "offer", EmitDefaultValue = false)]
+        public GoogleBusinessPlatformDataOffer Offer { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -79,7 +130,10 @@ namespace Late.Model
             sb.Append("class GoogleBusinessPlatformData {\n");
             sb.Append("  LocationId: ").Append(LocationId).Append("\n");
             sb.Append("  LanguageCode: ").Append(LanguageCode).Append("\n");
+            sb.Append("  TopicType: ").Append(TopicType).Append("\n");
             sb.Append("  CallToAction: ").Append(CallToAction).Append("\n");
+            sb.Append("  Event: ").Append(Event).Append("\n");
+            sb.Append("  Offer: ").Append(Offer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
