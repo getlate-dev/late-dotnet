@@ -41,7 +41,7 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebhookPayloadCommentPost" /> class.
         /// </summary>
-        /// <param name="id">Internal post ID (required).</param>
+        /// <param name="id">Internal post ID (null for posts not published through Zernio) (required).</param>
         /// <param name="platformPostId">Platform&#39;s post ID (required).</param>
         public WebhookPayloadCommentPost(string id = default, string platformPostId = default)
         {
@@ -60,9 +60,9 @@ namespace Late.Model
         }
 
         /// <summary>
-        /// Internal post ID
+        /// Internal post ID (null for posts not published through Zernio)
         /// </summary>
-        /// <value>Internal post ID</value>
+        /// <value>Internal post ID (null for posts not published through Zernio)</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 

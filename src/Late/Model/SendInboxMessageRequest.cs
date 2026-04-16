@@ -162,7 +162,7 @@ namespace Late.Model
         /// <param name="replyMarkup">replyMarkup.</param>
         /// <param name="messagingType">Facebook messaging type. Required when using messageTag..</param>
         /// <param name="messageTag">Facebook message tag for messaging outside 24h window. Requires messagingType MESSAGE_TAG. Instagram only supports HUMAN_AGENT..</param>
-        /// <param name="replyTo">Platform message ID to reply to (Telegram only)..</param>
+        /// <param name="replyTo">Platform message ID to quote-reply to. For WhatsApp, pass the wamid (available in message.platformMessageId from webhooks). For Telegram, pass the Telegram message ID..</param>
         public SendInboxMessageRequest(string accountId = default, string message = default, string attachmentUrl = default, AttachmentTypeEnum? attachmentType = default, List<SendInboxMessageRequestQuickRepliesInner> quickReplies = default, List<SendInboxMessageRequestButtonsInner> buttons = default, SendInboxMessageRequestTemplate template = default, SendInboxMessageRequestReplyMarkup replyMarkup = default, MessagingTypeEnum? messagingType = default, MessageTagEnum? messageTag = default, string replyTo = default)
         {
             // to ensure "accountId" is required (not null)
@@ -231,9 +231,9 @@ namespace Late.Model
         public SendInboxMessageRequestReplyMarkup ReplyMarkup { get; set; }
 
         /// <summary>
-        /// Platform message ID to reply to (Telegram only).
+        /// Platform message ID to quote-reply to. For WhatsApp, pass the wamid (available in message.platformMessageId from webhooks). For Telegram, pass the Telegram message ID.
         /// </summary>
-        /// <value>Platform message ID to reply to (Telegram only).</value>
+        /// <value>Platform message ID to quote-reply to. For WhatsApp, pass the wamid (available in message.platformMessageId from webhooks). For Telegram, pass the Telegram message ID.</value>
         [DataMember(Name = "replyTo", EmitDefaultValue = false)]
         public string ReplyTo { get; set; }
 
