@@ -191,6 +191,18 @@ namespace Late.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatePostRequestPlatformsInnerPlatformSpecificData" /> class
+        /// with the <see cref="DiscordPlatformData" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of DiscordPlatformData.</param>
+        public CreatePostRequestPlatformsInnerPlatformSpecificData(DiscordPlatformData actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -206,6 +218,10 @@ namespace Late.Model
             set
             {
                 if (value.GetType() == typeof(BlueskyPlatformData) || value is BlueskyPlatformData)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(DiscordPlatformData) || value is DiscordPlatformData)
                 {
                     this._actualInstance = value;
                 }
@@ -259,7 +275,7 @@ namespace Late.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: BlueskyPlatformData, FacebookPlatformData, GoogleBusinessPlatformData, InstagramPlatformData, LinkedInPlatformData, PinterestPlatformData, RedditPlatformData, SnapchatPlatformData, TelegramPlatformData, ThreadsPlatformData, TikTokPlatformData, TwitterPlatformData, YouTubePlatformData");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: BlueskyPlatformData, DiscordPlatformData, FacebookPlatformData, GoogleBusinessPlatformData, InstagramPlatformData, LinkedInPlatformData, PinterestPlatformData, RedditPlatformData, SnapchatPlatformData, TelegramPlatformData, ThreadsPlatformData, TikTokPlatformData, TwitterPlatformData, YouTubePlatformData");
                 }
             }
         }
@@ -395,6 +411,16 @@ namespace Late.Model
         }
 
         /// <summary>
+        /// Get the actual instance of `DiscordPlatformData`. If the actual instance is not `DiscordPlatformData`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of DiscordPlatformData</returns>
+        public DiscordPlatformData GetDiscordPlatformData()
+        {
+            return (DiscordPlatformData)this.ActualInstance;
+        }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -450,6 +476,26 @@ namespace Late.Model
             {
                 // deserialization failed, try the next one
                 System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into BlueskyPlatformData: {1}", jsonString, exception.ToString()));
+            }
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(DiscordPlatformData).GetProperty("AdditionalProperties") == null)
+                {
+                    newCreatePostRequestPlatformsInnerPlatformSpecificData = new CreatePostRequestPlatformsInnerPlatformSpecificData(JsonConvert.DeserializeObject<DiscordPlatformData>(jsonString, CreatePostRequestPlatformsInnerPlatformSpecificData.SerializerSettings));
+                }
+                else
+                {
+                    newCreatePostRequestPlatformsInnerPlatformSpecificData = new CreatePostRequestPlatformsInnerPlatformSpecificData(JsonConvert.DeserializeObject<DiscordPlatformData>(jsonString, CreatePostRequestPlatformsInnerPlatformSpecificData.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("DiscordPlatformData");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into DiscordPlatformData: {1}", jsonString, exception.ToString()));
             }
 
             try

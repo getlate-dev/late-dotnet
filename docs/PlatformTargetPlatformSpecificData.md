@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **ReplyToTweetId** | **string** | ID of an existing tweet to reply to. The published tweet will appear as a reply in that tweet&#39;s thread. For threads, only the first tweet replies to the target; subsequent tweets chain normally. | [optional] 
 **ReplySettings** | **string** | Controls who can reply to the tweet. \&quot;following\&quot; allows only people you follow, \&quot;mentionedUsers\&quot; allows only mentioned users, \&quot;subscribers\&quot; allows only subscribers, \&quot;verified\&quot; allows only verified users. Omit for default (everyone can reply). For threads, applies to the first tweet only. Cannot be combined with replyToTweetId. | [optional] 
 **ThreadItems** | [**List&lt;TwitterPlatformDataThreadItemsInner&gt;**](TwitterPlatformDataThreadItemsInner.md) | Complete sequence of posts in a Bluesky thread. The first item becomes the root post, subsequent items are chained as replies. When threadItems is provided, the top-level content field is used only for display and search purposes, it is NOT published. You must include your first post as threadItems[0].  | [optional] 
-**Poll** | [**TwitterPlatformDataPoll**](TwitterPlatformDataPoll.md) |  | [optional] 
+**Poll** | [**DiscordPlatformDataPoll**](DiscordPlatformDataPoll.md) |  | [optional] 
 **LongVideo** | **bool** | Enable long video uploads (over 140 seconds) using amplify_video media category. Requires the connected X account to have an active X Premium subscription. When true, videos are uploaded with the amplify_video category which supports longer durations (up to 10 minutes via API). When false or omitted, the standard tweet_video category is used (140 second limit). Note that not all Premium accounts have API long-video access, as X may require separate allowlisting. | [optional] [default to false]
 **TopicTag** | **string** | Topic tag for post categorization and discoverability on Threads. Must be 1-50 characters, cannot contain periods (.) or ampersands (&amp;). Overrides auto-extraction from content hashtags when provided. | [optional] 
 **Draft** | **bool** | When true, sends the post to the TikTok Creator Inbox as a draft instead of publishing immediately. The creator receives an inbox notification to complete posting via TikTok&#39;s editing flow. Maps to TikTok API post_mode: \&quot;MEDIA_UPLOAD\&quot; (photos) or the dedicated inbox endpoint (videos). When false or omitted, publishes directly via post_mode: \&quot;DIRECT_POST\&quot;. Note: publish_type is not a supported field. Use this field instead.  | [optional] 
@@ -63,6 +63,15 @@ Name | Type | Description | Notes
 **Url** | **string** | URL for link posts. If provided (and forceSelf is not true), creates a link post instead of a text post. | [optional] 
 **ForceSelf** | **bool** | When true, creates a text/self post even when a URL or media is provided. | [optional] 
 **FlairId** | **string** | Flair ID for the post. Required by some subreddits. Use GET /v1/accounts/{id}/reddit-flairs?subreddit&#x3D;name to list flairs. | [optional] 
+**ChannelId** | **string** | Target channel snowflake ID. Determines which channel in the connected server receives the message. | 
+**Embeds** | [**List&lt;DiscordPlatformDataEmbedsInner&gt;**](DiscordPlatformDataEmbedsInner.md) | Up to 10 Discord embed objects (combined max 6,000 characters across all embeds). Sent alongside or instead of plain-text content. | [optional] 
+**Crosspost** | **bool** | Auto-crosspost to every server following this announcement channel (type 5). No-op for regular text channels. | [optional] 
+**ForumThreadName** | **string** | Thread title for forum channel posts (type 15). Required when posting to a forum channel. | [optional] 
+**ForumAppliedTags** | **List&lt;string&gt;** | Tag snowflake IDs to apply to forum posts. Max 5 tags. | [optional] 
+**ThreadFromMessage** | [**DiscordPlatformDataThreadFromMessage**](DiscordPlatformDataThreadFromMessage.md) |  | [optional] 
+**Tts** | **bool** | Send as text-to-speech message. Discord reads the message aloud in the channel. | [optional] 
+**WebhookUsername** | **string** | Override the webhook display name for this post only (1-80 chars). Falls back to the account-level default set via PATCH /v1/connect/discord. | [optional] 
+**WebhookAvatarUrl** | **string** | Override the webhook avatar URL for this post only. Falls back to the account-level default. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

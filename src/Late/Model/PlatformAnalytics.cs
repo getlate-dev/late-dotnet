@@ -96,16 +96,18 @@ namespace Late.Model
         /// </summary>
         /// <param name="platform">platform.</param>
         /// <param name="status">status.</param>
+        /// <param name="platformPostId">The native post ID on the platform (e.g. Instagram media ID, tweet ID).</param>
         /// <param name="accountId">accountId.</param>
         /// <param name="accountUsername">accountUsername.</param>
         /// <param name="analytics">analytics.</param>
         /// <param name="syncStatus">Sync state of analytics for this platform.</param>
         /// <param name="platformPostUrl">platformPostUrl.</param>
         /// <param name="errorMessage">Error details when status is failed.</param>
-        public PlatformAnalytics(string platform = default, StatusEnum? status = default, string accountId = default, string accountUsername = default, PostAnalytics analytics = default, SyncStatusEnum? syncStatus = default, string platformPostUrl = default, string errorMessage = default)
+        public PlatformAnalytics(string platform = default, StatusEnum? status = default, string platformPostId = default, string accountId = default, string accountUsername = default, PostAnalytics analytics = default, SyncStatusEnum? syncStatus = default, string platformPostUrl = default, string errorMessage = default)
         {
             this.Platform = platform;
             this.Status = status;
+            this.PlatformPostId = platformPostId;
             this.AccountId = accountId;
             this.AccountUsername = accountUsername;
             this.Analytics = analytics;
@@ -119,6 +121,13 @@ namespace Late.Model
         /// </summary>
         [DataMember(Name = "platform", EmitDefaultValue = false)]
         public string Platform { get; set; }
+
+        /// <summary>
+        /// The native post ID on the platform (e.g. Instagram media ID, tweet ID)
+        /// </summary>
+        /// <value>The native post ID on the platform (e.g. Instagram media ID, tweet ID)</value>
+        [DataMember(Name = "platformPostId", EmitDefaultValue = false)]
+        public string PlatformPostId { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountId
@@ -161,6 +170,7 @@ namespace Late.Model
             sb.Append("class PlatformAnalytics {\n");
             sb.Append("  Platform: ").Append(Platform).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  PlatformPostId: ").Append(PlatformPostId).Append("\n");
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  AccountUsername: ").Append(AccountUsername).Append("\n");
             sb.Append("  Analytics: ").Append(Analytics).Append("\n");

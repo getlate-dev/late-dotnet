@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Platform** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
+**PlatformPostId** | **string** | The native post ID on the platform (e.g. Instagram media ID, tweet ID) | [optional] 
 **AccountId** | **string** |  | [optional] 
 **AccountUsername** | **string** |  | [optional] 
 **Analytics** | [**PostAnalytics**](PostAnalytics.md) |  | [optional] 

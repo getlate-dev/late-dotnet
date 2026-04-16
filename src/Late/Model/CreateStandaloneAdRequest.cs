@@ -34,8 +34,9 @@ namespace Late.Model
     public partial class CreateStandaloneAdRequest : IValidatableObject
     {
         /// <summary>
-        /// Defines Goal
+        /// Available goals vary by platform. Meta (Facebook/Instagram) and TikTok support all 7. LinkedIn supports all except app_promotion. Twitter/X supports engagement, traffic, awareness, video_views, app_promotion. Pinterest and Google Ads support only engagement, traffic, awareness, video_views.
         /// </summary>
+        /// <value>Available goals vary by platform. Meta (Facebook/Instagram) and TikTok support all 7. LinkedIn supports all except app_promotion. Twitter/X supports engagement, traffic, awareness, video_views, app_promotion. Pinterest and Google Ads support only engagement, traffic, awareness, video_views.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum GoalEnum
         {
@@ -61,13 +62,32 @@ namespace Late.Model
             /// Enum VideoViews for value: video_views
             /// </summary>
             [EnumMember(Value = "video_views")]
-            VideoViews = 4
+            VideoViews = 4,
+
+            /// <summary>
+            /// Enum LeadGeneration for value: lead_generation
+            /// </summary>
+            [EnumMember(Value = "lead_generation")]
+            LeadGeneration = 5,
+
+            /// <summary>
+            /// Enum Conversions for value: conversions
+            /// </summary>
+            [EnumMember(Value = "conversions")]
+            Conversions = 6,
+
+            /// <summary>
+            /// Enum AppPromotion for value: app_promotion
+            /// </summary>
+            [EnumMember(Value = "app_promotion")]
+            AppPromotion = 7
         }
 
 
         /// <summary>
-        /// Gets or Sets Goal
+        /// Available goals vary by platform. Meta (Facebook/Instagram) and TikTok support all 7. LinkedIn supports all except app_promotion. Twitter/X supports engagement, traffic, awareness, video_views, app_promotion. Pinterest and Google Ads support only engagement, traffic, awareness, video_views.
         /// </summary>
+        /// <value>Available goals vary by platform. Meta (Facebook/Instagram) and TikTok support all 7. LinkedIn supports all except app_promotion. Twitter/X supports engagement, traffic, awareness, video_views, app_promotion. Pinterest and Google Ads support only engagement, traffic, awareness, video_views.</value>
         [DataMember(Name = "goal", IsRequired = true, EmitDefaultValue = true)]
         public GoalEnum Goal { get; set; }
         /// <summary>
@@ -208,7 +228,7 @@ namespace Late.Model
         /// <param name="accountId">accountId (required).</param>
         /// <param name="adAccountId">adAccountId (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="goal">goal (required).</param>
+        /// <param name="goal">Available goals vary by platform. Meta (Facebook/Instagram) and TikTok support all 7. LinkedIn supports all except app_promotion. Twitter/X supports engagement, traffic, awareness, video_views, app_promotion. Pinterest and Google Ads support only engagement, traffic, awareness, video_views. (required).</param>
         /// <param name="budgetAmount">budgetAmount (required).</param>
         /// <param name="budgetType">budgetType (required).</param>
         /// <param name="currency">currency.</param>

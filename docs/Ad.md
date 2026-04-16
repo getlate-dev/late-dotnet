@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Platform** | **string** |  | [optional] 
 **Status** | **AdStatus** |  | [optional] 
 **AdType** | **string** |  | [optional] 
-**Goal** | **string** |  | [optional] 
+**Goal** | **string** | Available goals vary by platform. Meta (Facebook/Instagram) and TikTok support all 7. LinkedIn supports all except app_promotion. Twitter/X supports engagement, traffic, awareness, video_views, app_promotion. Pinterest and Google Ads support only engagement, traffic, awareness, video_views. | [optional] 
 **IsExternal** | **bool** | True for ads synced from platform ad managers | [optional] 
 **Budget** | [**AdBudget**](AdBudget.md) |  | [optional] 
 **Metrics** | [**AdMetrics**](AdMetrics.md) |  | [optional] 
