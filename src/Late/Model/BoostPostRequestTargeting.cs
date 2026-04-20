@@ -34,18 +34,44 @@ namespace Late.Model
     public partial class BoostPostRequestTargeting : IValidatableObject
     {
         /// <summary>
+        /// Meta only. 0 &#x3D; disabled (default), 1 &#x3D; enabled.
+        /// </summary>
+        /// <value>Meta only. 0 &#x3D; disabled (default), 1 &#x3D; enabled.</value>
+        public enum AdvantageAudienceEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            NUMBER_1 = 1
+        }
+
+
+        /// <summary>
+        /// Meta only. 0 &#x3D; disabled (default), 1 &#x3D; enabled.
+        /// </summary>
+        /// <value>Meta only. 0 &#x3D; disabled (default), 1 &#x3D; enabled.</value>
+        [DataMember(Name = "advantage_audience", EmitDefaultValue = false)]
+        public AdvantageAudienceEnum? AdvantageAudience { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="BoostPostRequestTargeting" /> class.
         /// </summary>
         /// <param name="ageMin">ageMin.</param>
         /// <param name="ageMax">ageMax.</param>
         /// <param name="countries">countries.</param>
         /// <param name="interests">Interest objects from /v1/ads/interests. Each must include id and name..</param>
-        public BoostPostRequestTargeting(int ageMin = default, int ageMax = default, List<string> countries = default, List<UpdateAdRequestTargetingInterestsInner> interests = default)
+        /// <param name="advantageAudience">Meta only. 0 &#x3D; disabled (default), 1 &#x3D; enabled..</param>
+        public BoostPostRequestTargeting(int ageMin = default, int ageMax = default, List<string> countries = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, AdvantageAudienceEnum? advantageAudience = default)
         {
             this.AgeMin = ageMin;
             this.AgeMax = ageMax;
             this.Countries = countries;
             this.Interests = interests;
+            this.AdvantageAudience = advantageAudience;
         }
 
         /// <summary>
@@ -85,6 +111,7 @@ namespace Late.Model
             sb.Append("  AgeMax: ").Append(AgeMax).Append("\n");
             sb.Append("  Countries: ").Append(Countries).Append("\n");
             sb.Append("  Interests: ").Append(Interests).Append("\n");
+            sb.Append("  AdvantageAudience: ").Append(AdvantageAudience).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

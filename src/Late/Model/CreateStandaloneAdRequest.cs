@@ -218,6 +218,30 @@ namespace Late.Model
         [DataMember(Name = "campaignType", EmitDefaultValue = false)]
         public CampaignTypeEnum? CampaignType { get; set; }
         /// <summary>
+        /// Meta only. Controls the Advantage audience feature (targeting_automation). 0 &#x3D; disabled (default), 1 &#x3D; enabled. Meta Marketing API requires this field on all ad set creation requests.
+        /// </summary>
+        /// <value>Meta only. Controls the Advantage audience feature (targeting_automation). 0 &#x3D; disabled (default), 1 &#x3D; enabled. Meta Marketing API requires this field on all ad set creation requests.</value>
+        public enum AdvantageAudienceEnum
+        {
+            /// <summary>
+            /// Enum NUMBER_0 for value: 0
+            /// </summary>
+            NUMBER_0 = 0,
+
+            /// <summary>
+            /// Enum NUMBER_1 for value: 1
+            /// </summary>
+            NUMBER_1 = 1
+        }
+
+
+        /// <summary>
+        /// Meta only. Controls the Advantage audience feature (targeting_automation). 0 &#x3D; disabled (default), 1 &#x3D; enabled. Meta Marketing API requires this field on all ad set creation requests.
+        /// </summary>
+        /// <value>Meta only. Controls the Advantage audience feature (targeting_automation). 0 &#x3D; disabled (default), 1 &#x3D; enabled. Meta Marketing API requires this field on all ad set creation requests.</value>
+        [DataMember(Name = "advantageAudience", EmitDefaultValue = false)]
+        public AdvantageAudienceEnum? AdvantageAudience { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateStandaloneAdRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -250,7 +274,8 @@ namespace Late.Model
         /// <param name="keywords">Google Search only.</param>
         /// <param name="additionalHeadlines">Google Search RSA only. Extra headlines..</param>
         /// <param name="additionalDescriptions">Google Search RSA only. Extra descriptions..</param>
-        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, decimal budgetAmount = default, BudgetTypeEnum budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default)
+        /// <param name="advantageAudience">Meta only. Controls the Advantage audience feature (targeting_automation). 0 &#x3D; disabled (default), 1 &#x3D; enabled. Meta Marketing API requires this field on all ad set creation requests..</param>
+        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, decimal budgetAmount = default, BudgetTypeEnum budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -297,6 +322,7 @@ namespace Late.Model
             this.Keywords = keywords;
             this.AdditionalHeadlines = additionalHeadlines;
             this.AdditionalDescriptions = additionalDescriptions;
+            this.AdvantageAudience = advantageAudience;
         }
 
         /// <summary>
@@ -470,6 +496,7 @@ namespace Late.Model
             sb.Append("  Keywords: ").Append(Keywords).Append("\n");
             sb.Append("  AdditionalHeadlines: ").Append(AdditionalHeadlines).Append("\n");
             sb.Append("  AdditionalDescriptions: ").Append(AdditionalDescriptions).Append("\n");
+            sb.Append("  AdvantageAudience: ").Append(AdvantageAudience).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
