@@ -1166,6 +1166,7 @@ catch (ApiException e)
 | **200** | Conversation updated |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Inbox addon required |  -  |
+| **404** | Conversation not found (WhatsApp only; other platforms upsert) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
