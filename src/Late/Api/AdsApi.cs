@@ -169,7 +169,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 50)</param>
-        /// <param name="source">zernio &#x3D; Zernio-created only, all &#x3D; include external ads (optional, default to zernio)</param>
+        /// <param name="source">all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. (optional, default to all)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="accountId">Social account ID (optional)</param>
@@ -190,7 +190,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 50)</param>
-        /// <param name="source">zernio &#x3D; Zernio-created only, all &#x3D; include external ads (optional, default to zernio)</param>
+        /// <param name="source">all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. (optional, default to all)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="accountId">Social account ID (optional)</param>
@@ -451,7 +451,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 50)</param>
-        /// <param name="source">zernio &#x3D; Zernio-created only, all &#x3D; include external ads (optional, default to zernio)</param>
+        /// <param name="source">all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. (optional, default to all)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="accountId">Social account ID (optional)</param>
@@ -473,7 +473,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 50)</param>
-        /// <param name="source">zernio &#x3D; Zernio-created only, all &#x3D; include external ads (optional, default to zernio)</param>
+        /// <param name="source">all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. (optional, default to all)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="accountId">Social account ID (optional)</param>
@@ -1602,7 +1602,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 50)</param>
-        /// <param name="source">zernio &#x3D; Zernio-created only, all &#x3D; include external ads (optional, default to zernio)</param>
+        /// <param name="source">all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. (optional, default to all)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="accountId">Social account ID (optional)</param>
@@ -1624,7 +1624,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 50)</param>
-        /// <param name="source">zernio &#x3D; Zernio-created only, all &#x3D; include external ads (optional, default to zernio)</param>
+        /// <param name="source">all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. (optional, default to all)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="accountId">Social account ID (optional)</param>
@@ -1722,7 +1722,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 50)</param>
-        /// <param name="source">zernio &#x3D; Zernio-created only, all &#x3D; include external ads (optional, default to zernio)</param>
+        /// <param name="source">all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. (optional, default to all)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="accountId">Social account ID (optional)</param>
@@ -1745,7 +1745,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 50)</param>
-        /// <param name="source">zernio &#x3D; Zernio-created only, all &#x3D; include external ads (optional, default to zernio)</param>
+        /// <param name="source">all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. (optional, default to all)</param>
         /// <param name="status"> (optional)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="accountId">Social account ID (optional)</param>

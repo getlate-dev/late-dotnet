@@ -661,7 +661,7 @@ namespace Example
             var apiInstance = new AdsApi(httpClient, config, httpClientHandler);
             var page = 1;  // int? | Page number (1-based) (optional)  (default to 1)
             var limit = 50;  // int? |  (optional)  (default to 50)
-            var source = "zernio";  // string? | zernio = Zernio-created only, all = include external ads (optional)  (default to zernio)
+            var source = "zernio";  // string? | all (default) = Zernio-created + platform-discovered ads. zernio = restrict to Zernio-created only. (optional)  (default to all)
             var status = new AdStatus?(); // AdStatus? |  (optional) 
             var platform = "facebook";  // string? |  (optional) 
             var accountId = "accountId_example";  // string? | Social account ID (optional) 
@@ -714,7 +714,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **int?** | Page number (1-based) | [optional] [default to 1] |
 | **limit** | **int?** |  | [optional] [default to 50] |
-| **source** | **string?** | zernio &#x3D; Zernio-created only, all &#x3D; include external ads | [optional] [default to zernio] |
+| **source** | **string?** | all (default) &#x3D; Zernio-created + platform-discovered ads. zernio &#x3D; restrict to Zernio-created only. | [optional] [default to all] |
 | **status** | [**AdStatus?**](AdStatus?.md) |  | [optional]  |
 | **platform** | **string?** |  | [optional]  |
 | **accountId** | **string?** | Social account ID | [optional]  |

@@ -104,7 +104,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit">Campaigns per page (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (optional)</param>
@@ -124,7 +124,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit">Campaigns per page (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (optional)</param>
@@ -143,7 +143,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (e.g. act_123 for Meta) (optional)</param>
@@ -161,7 +161,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (e.g. act_123 for Meta) (optional)</param>
@@ -352,7 +352,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit">Campaigns per page (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (optional)</param>
@@ -373,7 +373,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit">Campaigns per page (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (optional)</param>
@@ -393,7 +393,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (e.g. act_123 for Meta) (optional)</param>
@@ -412,7 +412,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (e.g. act_123 for Meta) (optional)</param>
@@ -1155,7 +1155,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit">Campaigns per page (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (optional)</param>
@@ -1176,7 +1176,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit">Campaigns per page (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (optional)</param>
@@ -1269,7 +1269,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit">Campaigns per page (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (optional)</param>
@@ -1291,7 +1291,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit">Campaigns per page (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (optional)</param>
@@ -1388,7 +1388,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (e.g. act_123 for Meta) (optional)</param>
@@ -1407,7 +1407,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (e.g. act_123 for Meta) (optional)</param>
@@ -1490,7 +1490,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (e.g. act_123 for Meta) (optional)</param>
@@ -1510,7 +1510,7 @@ namespace Late.Api
         /// <exception cref="Late.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">Page number (1-based) (optional, default to 1)</param>
         /// <param name="limit"> (optional, default to 20)</param>
-        /// <param name="source">&#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to zernio)</param>
+        /// <param name="source">&#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. (optional, default to all)</param>
         /// <param name="platform"> (optional)</param>
         /// <param name="status">Filter by derived campaign status (post-aggregation) (optional)</param>
         /// <param name="adAccountId">Platform ad account ID (e.g. act_123 for Meta) (optional)</param>

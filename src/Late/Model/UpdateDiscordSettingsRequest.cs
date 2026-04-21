@@ -36,34 +36,15 @@ namespace Late.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateDiscordSettingsRequest" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected UpdateDiscordSettingsRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateDiscordSettingsRequest" /> class.
-        /// </summary>
-        /// <param name="accountId">Discord account ID (required).</param>
         /// <param name="webhookUsername">Custom display name for the webhook (1-80 chars). Empty string resets to default (\&quot;Zernio\&quot;). Cannot contain \&quot;clyde\&quot; or \&quot;discord\&quot;..</param>
         /// <param name="webhookAvatarUrl">Custom avatar URL. Empty string resets to default bot avatar..</param>
         /// <param name="channelId">Switch to a different channel in the same guild. Must be a text (0), announcement (5), or forum (15) channel..</param>
-        public UpdateDiscordSettingsRequest(string accountId = default, string webhookUsername = default, string webhookAvatarUrl = default, string channelId = default)
+        public UpdateDiscordSettingsRequest(string webhookUsername = default, string webhookAvatarUrl = default, string channelId = default)
         {
-            // to ensure "accountId" is required (not null)
-            if (accountId == null)
-            {
-                throw new ArgumentNullException("accountId is a required property for UpdateDiscordSettingsRequest and cannot be null");
-            }
-            this.AccountId = accountId;
             this.WebhookUsername = webhookUsername;
             this.WebhookAvatarUrl = webhookAvatarUrl;
             this.ChannelId = channelId;
         }
-
-        /// <summary>
-        /// Discord account ID
-        /// </summary>
-        /// <value>Discord account ID</value>
-        [DataMember(Name = "accountId", IsRequired = true, EmitDefaultValue = true)]
-        public string AccountId { get; set; }
 
         /// <summary>
         /// Custom display name for the webhook (1-80 chars). Empty string resets to default (\&quot;Zernio\&quot;). Cannot contain \&quot;clyde\&quot; or \&quot;discord\&quot;.
@@ -94,7 +75,6 @@ namespace Late.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class UpdateDiscordSettingsRequest {\n");
-            sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  WebhookUsername: ").Append(WebhookUsername).Append("\n");
             sb.Append("  WebhookAvatarUrl: ").Append(WebhookAvatarUrl).Append("\n");
             sb.Append("  ChannelId: ").Append(ChannelId).Append("\n");

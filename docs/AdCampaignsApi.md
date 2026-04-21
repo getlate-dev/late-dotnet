@@ -355,7 +355,7 @@ namespace Example
             var apiInstance = new AdCampaignsApi(httpClient, config, httpClientHandler);
             var page = 1;  // int? | Page number (1-based) (optional)  (default to 1)
             var limit = 20;  // int? | Campaigns per page (optional)  (default to 20)
-            var source = "zernio";  // string? | `zernio` (default) returns only ads created via Zernio (isExternal=false). `all` additionally returns ads discovered from the platform's ad manager (isExternal=true). Status is NOT filtered by default — use the `status` param for that. (optional)  (default to zernio)
+            var source = "zernio";  // string? | `all` (default) returns both Zernio-created ads and those discovered from the platform's ad manager — matches the web UI's default view. Pass `zernio` to restrict to isExternal=false only. Status is NOT filtered by default — use the `status` param for that. (optional)  (default to all)
             var platform = "facebook";  // string? |  (optional) 
             var status = new AdStatus?(); // AdStatus? | Filter by derived campaign status (post-aggregation) (optional) 
             var adAccountId = "adAccountId_example";  // string? | Platform ad account ID (optional) 
@@ -407,7 +407,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **int?** | Page number (1-based) | [optional] [default to 1] |
 | **limit** | **int?** | Campaigns per page | [optional] [default to 20] |
-| **source** | **string?** | &#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. | [optional] [default to zernio] |
+| **source** | **string?** | &#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. | [optional] [default to all] |
 | **platform** | **string?** |  | [optional]  |
 | **status** | [**AdStatus?**](AdStatus?.md) | Filter by derived campaign status (post-aggregation) | [optional]  |
 | **adAccountId** | **string?** | Platform ad account ID | [optional]  |
@@ -473,7 +473,7 @@ namespace Example
             var apiInstance = new AdCampaignsApi(httpClient, config, httpClientHandler);
             var page = 1;  // int? | Page number (1-based) (optional)  (default to 1)
             var limit = 20;  // int? |  (optional)  (default to 20)
-            var source = "zernio";  // string? | `zernio` (default) returns only ads created via Zernio (isExternal=false). `all` additionally returns ads discovered from the platform's ad manager (isExternal=true). Status is NOT filtered by default — use the `status` param for that. (optional)  (default to zernio)
+            var source = "zernio";  // string? | `all` (default) returns both Zernio-created ads and those discovered from the platform's ad manager — matches the web UI's default view. Pass `zernio` to restrict to isExternal=false only. Status is NOT filtered by default — use the `status` param for that. (optional)  (default to all)
             var platform = "facebook";  // string? |  (optional) 
             var status = new AdStatus?(); // AdStatus? | Filter by derived campaign status (post-aggregation) (optional) 
             var adAccountId = "adAccountId_example";  // string? | Platform ad account ID (e.g. act_123 for Meta) (optional) 
@@ -523,7 +523,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **page** | **int?** | Page number (1-based) | [optional] [default to 1] |
 | **limit** | **int?** |  | [optional] [default to 20] |
-| **source** | **string?** | &#x60;zernio&#x60; (default) returns only ads created via Zernio (isExternal&#x3D;false). &#x60;all&#x60; additionally returns ads discovered from the platform&#39;s ad manager (isExternal&#x3D;true). Status is NOT filtered by default — use the &#x60;status&#x60; param for that. | [optional] [default to zernio] |
+| **source** | **string?** | &#x60;all&#x60; (default) returns both Zernio-created ads and those discovered from the platform&#39;s ad manager — matches the web UI&#39;s default view. Pass &#x60;zernio&#x60; to restrict to isExternal&#x3D;false only. Status is NOT filtered by default — use the &#x60;status&#x60; param for that. | [optional] [default to all] |
 | **platform** | **string?** |  | [optional]  |
 | **status** | [**AdStatus?**](AdStatus?.md) | Filter by derived campaign status (post-aggregation) | [optional]  |
 | **adAccountId** | **string?** | Platform ad account ID (e.g. act_123 for Meta) | [optional]  |
