@@ -38,14 +38,22 @@ jobs:
           curl -f -o openapi.yaml https://zernio.com/openapi.yaml
           echo "Fetched OpenAPI spec"
 
-      - name: Generate SDK
+      - name: Clean previous generation
+        run: |
+          # Remove both Zernio (re-gen) and pre-rebrand Late trees so only the
+          # fresh Zernio.* tree is committed.
+          rm -rf src/Zernio src/Zernio.Test Zernio.sln
+          rm -rf src/Late src/Late.Test Late.sln
+          rm -rf docs
+
+      - name: Generate SDK (primary — Zernio namespace)
         run: |
           openapi-generator-cli generate \
             -i openapi.yaml \
             -g csharp \
             -o . \
             --skip-validate-spec \
-            --additional-properties=packageName=Late,targetFramework=net8.0,library=httpclient \
+            --additional-properties=packageName=Zernio,targetFramework=net8.0,library=httpclient \
             --git-user-id=zernio-dev \
             --git-repo-id=zernio-dotnet
 
@@ -60,23 +68,18 @@ jobs:
           Install via NuGet:
 
           \`\`\`bash
-          dotnet add package Late
-          \`\`\`
-
-          Or via the Package Manager Console:
-
-          \`\`\`
-          Install-Package Late
+          dotnet add package Zernio
           \`\`\`
 
           Then add the namespaces to your project:
 
           \`\`\`csharp
-          using Late.Api;
-          using Late.Client;
-          using Late.Model;
-          \`\`\`''')
-          # Remove frameworks-supported, dependencies, and old installation sections
+          using Zernio.Api;
+          using Zernio.Client;
+          using Zernio.Model;
+          \`\`\`
+
+          The legacy \`Late\` package is still published at the same version and ships the same SDK under the \`Late.*\` namespace for pre-rebrand users.''')
           content = re.sub(r'<a id=\"frameworks-supported\">.*?(?=<a id=\"packaging\">)', '<a id=\"installation\">\n' + install_section + '\n\n', content, flags=re.DOTALL)
           with open('README.md', 'w') as f:
               f.write(content)
@@ -129,23 +132,34 @@ jobs:
         if: steps.changes.outputs.has_changes == 'true'
         run: dotnet build -c Release
 
-      - name: Pack NuGet
-        if: steps.changes.outputs.has_changes == 'true'
-        run: dotnet pack -c Release --no-build -o ./nupkg
-
-      - name: Publish to NuGet
-        if: steps.changes.outputs.has_changes == 'true'
-        run: dotnet nuget push ./nupkg/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
-        continue-on-error: true
-
-      - name: Publish as Zernio to NuGet
+      - name: Pack and publish Zernio (primary)
         if: steps.changes.outputs.has_changes == 'true'
         run: |
-          sed -i 's/<PackageId>Late<\/PackageId>/<PackageId>Zernio<\/PackageId>/' src/Late/Late.csproj
-          sed -i 's/<AssemblyName>Late<\/AssemblyName>/<AssemblyName>Zernio<\/AssemblyName>/' src/Late/Late.csproj
-          dotnet build src/Late/Late.csproj -c Release
-          dotnet pack src/Late/Late.csproj -c Release --no-build -o ./nupkg-zernio
-          dotnet nuget push ./nupkg-zernio/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+          dotnet pack -c Release --no-build -o ./nupkg
+          dotnet nuget push ./nupkg/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+        continue-on-error: true
+
+      - name: Generate and publish legacy Late package
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          # Regenerate the SDK with packageName=Late into an ephemeral dir,
+          # build, pack, and publish as the `Late` NuGet package. Not committed
+          # back to the repo — only published so `using Late.Api;` callers
+          # keep working.
+          LATE_BUILD_DIR=$(mktemp -d)
+          openapi-generator-cli generate \
+            -i openapi.yaml \
+            -g csharp \
+            -o "$LATE_BUILD_DIR" \
+            --skip-validate-spec \
+            --additional-properties=packageName=Late,targetFramework=net8.0,library=httpclient \
+            --git-user-id=zernio-dev \
+            --git-repo-id=zernio-dotnet
+          find "$LATE_BUILD_DIR" -name "*.csproj" -exec sed -i "s/<Version>.*<\/Version>/<Version>${{ steps.version.outputs.nuget_version }}<\/Version>/" {} \;
+          dotnet build "$LATE_BUILD_DIR" -c Release
+          dotnet pack "$LATE_BUILD_DIR" -c Release --no-build -o "$LATE_BUILD_DIR/nupkg-late"
+          dotnet nuget push "$LATE_BUILD_DIR"/nupkg-late/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json --skip-duplicate
+          rm -rf "$LATE_BUILD_DIR"
         continue-on-error: true
 
       - name: Create GitHub Release
@@ -159,13 +173,10 @@ jobs:
             ## Auto-generated SDK Update
 
             ```bash
-            dotnet add package Late --version ${{ steps.version.outputs.nuget_version }}
-            ```
-
-            Or use the new package name:
-
-            ```bash
             dotnet add package Zernio --version ${{ steps.version.outputs.nuget_version }}
             ```
+
+            The legacy `Late` package is also published at the same version for
+            backwards compatibility with pre-rebrand users.
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
