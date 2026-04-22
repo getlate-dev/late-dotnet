@@ -1,4 +1,4 @@
-# Late.Model.QueueNextSlotResponse
+# Zernio.Model.QueueNextSlotResponse
 
 ## Properties
 

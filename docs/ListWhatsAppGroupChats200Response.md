@@ -1,4 +1,4 @@
-# Late.Model.ListWhatsAppGroupChats200Response
+# Zernio.Model.ListWhatsAppGroupChats200Response
 
 ## Properties
 

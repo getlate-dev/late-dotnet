@@ -1,4 +1,4 @@
-# Late.Model.GetDiscordChannels200ResponseChannelsInner
+# Zernio.Model.GetDiscordChannels200ResponseChannelsInner
 
 ## Properties
 

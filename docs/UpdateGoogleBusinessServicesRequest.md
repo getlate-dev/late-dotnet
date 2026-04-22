@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessServicesRequest
+# Zernio.Model.UpdateGoogleBusinessServicesRequest
 
 ## Properties
 

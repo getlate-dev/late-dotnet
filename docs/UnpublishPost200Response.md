@@ -1,4 +1,4 @@
-# Late.Model.UnpublishPost200Response
+# Zernio.Model.UnpublishPost200Response
 
 ## Properties
 

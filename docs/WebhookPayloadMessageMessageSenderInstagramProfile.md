@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadMessageMessageSenderInstagramProfile
+# Zernio.Model.WebhookPayloadMessageMessageSenderInstagramProfile
 Instagram profile data for the sender. Only present for Instagram conversations.
 
 ## Properties

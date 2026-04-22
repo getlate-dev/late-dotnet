@@ -1,4 +1,4 @@
-# Late.Model.ValidatePost200ResponseOneOf1ErrorsInner
+# Zernio.Model.ValidatePost200ResponseOneOf1ErrorsInner
 
 ## Properties
 

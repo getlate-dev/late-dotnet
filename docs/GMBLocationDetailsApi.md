@@ -1,4 +1,4 @@
-# Late.Api.GMBLocationDetailsApi
+# Zernio.Api.GMBLocationDetailsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -20,9 +20,9 @@ Returns detailed GBP location info (hours, description, phone, website, categori
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -125,9 +125,9 @@ Updates GBP location details. The updateMask field is required and specifies whi
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

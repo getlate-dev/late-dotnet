@@ -1,4 +1,4 @@
-# Late.Api.ValidateApi
+# Zernio.Api.ValidateApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -22,9 +22,9 @@ Check if a media URL is accessible and return metadata (content type, file size)
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -120,9 +120,9 @@ Dry-run the full post validation pipeline without publishing. Catches issues lik
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -218,9 +218,9 @@ Check weighted character count per platform and whether the text is within each 
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -316,9 +316,9 @@ Check if a subreddit exists and return basic info (title, subscriber count, NSFW
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# Late.Model.BookmarkPostRequest
+# Zernio.Model.BookmarkPostRequest
 
 ## Properties
 

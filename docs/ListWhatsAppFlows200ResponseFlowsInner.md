@@ -1,4 +1,4 @@
-# Late.Model.ListWhatsAppFlows200ResponseFlowsInner
+# Zernio.Model.ListWhatsAppFlows200ResponseFlowsInner
 
 ## Properties
 

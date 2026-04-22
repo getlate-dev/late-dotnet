@@ -1,4 +1,4 @@
-# Late.Model.CreateStandaloneAdRequestCreativesInner
+# Zernio.Model.CreateStandaloneAdRequestCreativesInner
 
 ## Properties
 

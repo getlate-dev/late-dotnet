@@ -1,4 +1,4 @@
-# Late.Model.EnrollContacts200Response
+# Zernio.Model.EnrollContacts200Response
 
 ## Properties
 

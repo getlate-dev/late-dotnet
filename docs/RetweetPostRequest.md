@@ -1,4 +1,4 @@
-# Late.Model.RetweetPostRequest
+# Zernio.Model.RetweetPostRequest
 
 ## Properties
 

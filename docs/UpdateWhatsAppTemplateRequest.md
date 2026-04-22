@@ -1,4 +1,4 @@
-# Late.Model.UpdateWhatsAppTemplateRequest
+# Zernio.Model.UpdateWhatsAppTemplateRequest
 
 ## Properties
 

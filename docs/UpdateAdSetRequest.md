@@ -1,4 +1,4 @@
-# Late.Model.UpdateAdSetRequest
+# Zernio.Model.UpdateAdSetRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.CreateWhatsAppGroupChat201ResponseGroup
+# Zernio.Model.CreateWhatsAppGroupChat201ResponseGroup
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.CreateInviteTokenRequest
+# Zernio.Model.CreateInviteTokenRequest
 
 ## Properties
 

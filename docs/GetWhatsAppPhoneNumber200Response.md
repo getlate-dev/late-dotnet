@@ -1,4 +1,4 @@
-# Late.Model.GetWhatsAppPhoneNumber200Response
+# Zernio.Model.GetWhatsAppPhoneNumber200Response
 
 ## Properties
 

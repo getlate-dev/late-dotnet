@@ -1,4 +1,4 @@
-# Late.Model.SendConversions200ResponseFailuresInnerCode
+# Zernio.Model.SendConversions200ResponseFailuresInnerCode
 
 ## Properties
 

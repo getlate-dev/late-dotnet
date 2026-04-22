@@ -1,4 +1,4 @@
-# Late.Model.CreateBroadcastRequest
+# Zernio.Model.CreateBroadcastRequest
 
 ## Properties
 

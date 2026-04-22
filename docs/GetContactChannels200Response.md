@@ -1,4 +1,4 @@
-# Late.Model.GetContactChannels200Response
+# Zernio.Model.GetContactChannels200Response
 
 ## Properties
 

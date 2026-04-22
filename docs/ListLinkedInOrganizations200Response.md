@@ -1,4 +1,4 @@
-# Late.Model.ListLinkedInOrganizations200Response
+# Zernio.Model.ListLinkedInOrganizations200Response
 
 ## Properties
 

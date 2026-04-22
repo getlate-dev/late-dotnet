@@ -1,4 +1,4 @@
-# Late.Model.PurchaseWhatsAppPhoneNumber200ResponseOneOf1PhoneNumber
+# Zernio.Model.PurchaseWhatsAppPhoneNumber200ResponseOneOf1PhoneNumber
 
 ## Properties
 

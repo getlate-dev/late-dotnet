@@ -1,4 +1,4 @@
-# Late.Model.CreateInviteToken201Response
+# Zernio.Model.CreateInviteToken201Response
 
 ## Properties
 

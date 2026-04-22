@@ -1,4 +1,4 @@
-# Late.Model.CreatePost429Response
+# Zernio.Model.CreatePost429Response
 
 ## Properties
 

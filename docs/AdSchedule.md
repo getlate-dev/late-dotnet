@@ -1,4 +1,4 @@
-# Late.Model.AdSchedule
+# Zernio.Model.AdSchedule
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Api.AccountGroupsApi
+# Zernio.Api.AccountGroupsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -22,9 +22,9 @@ Creates a new account group with a name and a list of social account IDs.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -123,9 +123,9 @@ Permanently deletes an account group. The accounts themselves are not affected.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -223,9 +223,9 @@ Returns all account groups for the authenticated user, including group names and
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -317,9 +317,9 @@ Updates the name or account list of an existing group. You can rename the group,
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

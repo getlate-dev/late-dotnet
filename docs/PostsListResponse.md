@@ -1,4 +1,4 @@
-# Late.Model.PostsListResponse
+# Zernio.Model.PostsListResponse
 
 ## Properties
 

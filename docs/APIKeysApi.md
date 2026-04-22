@@ -1,4 +1,4 @@
-# Late.Api.APIKeysApi
+# Zernio.Api.APIKeysApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -21,9 +21,9 @@ Creates a new API key with an optional expiry. The full key value is only return
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -121,9 +121,9 @@ Permanently revokes and deletes an API key.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -221,9 +221,9 @@ Returns all API keys for the authenticated user. Keys are returned with a previe
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

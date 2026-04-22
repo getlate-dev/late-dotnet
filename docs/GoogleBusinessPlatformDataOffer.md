@@ -1,4 +1,4 @@
-# Late.Model.GoogleBusinessPlatformDataOffer
+# Zernio.Model.GoogleBusinessPlatformDataOffer
 Offer details. Required when topicType is OFFER. All fields are optional per Google's API, but at least one is recommended.
 
 ## Properties

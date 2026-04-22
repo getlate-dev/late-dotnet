@@ -1,4 +1,4 @@
-# Late.Model.CreateSequence200Response
+# Zernio.Model.CreateSequence200Response
 
 ## Properties
 

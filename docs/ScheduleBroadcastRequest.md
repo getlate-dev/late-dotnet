@@ -1,4 +1,4 @@
-# Late.Model.ScheduleBroadcastRequest
+# Zernio.Model.ScheduleBroadcastRequest
 
 ## Properties
 

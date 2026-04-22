@@ -1,4 +1,4 @@
-# Late.Model.SendTypingIndicatorRequest
+# Zernio.Model.SendTypingIndicatorRequest
 
 ## Properties
 

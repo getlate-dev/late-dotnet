@@ -1,4 +1,4 @@
-# Late.Model.GetLinkedInMentions200Response
+# Zernio.Model.GetLinkedInMentions200Response
 
 ## Properties
 

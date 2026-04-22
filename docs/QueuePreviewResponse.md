@@ -1,4 +1,4 @@
-# Late.Model.QueuePreviewResponse
+# Zernio.Model.QueuePreviewResponse
 
 ## Properties
 

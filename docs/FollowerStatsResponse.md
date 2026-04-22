@@ -1,4 +1,4 @@
-# Late.Model.FollowerStatsResponse
+# Zernio.Model.FollowerStatsResponse
 
 ## Properties
 

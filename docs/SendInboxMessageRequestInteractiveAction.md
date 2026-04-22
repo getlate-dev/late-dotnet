@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestInteractiveAction
+# Zernio.Model.SendInboxMessageRequestInteractiveAction
 
 ## Properties
 

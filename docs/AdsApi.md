@@ -1,4 +1,4 @@
-# Late.Api.AdsApi
+# Zernio.Api.AdsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -29,9 +29,9 @@ Creates a paid ad campaign from an existing published post. Creates the full pla
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -131,9 +131,9 @@ Creates a paid ad with custom creative. The request body supports three mutually
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -233,9 +233,9 @@ Cancels the ad on the platform and marks it as cancelled in the database. The ad
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -333,9 +333,9 @@ Returns an ad with its creative, targeting, status, and performance metrics.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -433,9 +433,9 @@ Returns detailed performance analytics for an ad. Includes summary metrics, a da
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -540,9 +540,9 @@ Returns the platform ad accounts available for the given social account (e.g. Me
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -640,9 +640,9 @@ Returns a paginated list of ads with metrics computed over an optional date rang
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -760,9 +760,9 @@ Returns the list of pixels (Meta) or conversion actions (Google) accessible to t
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -862,9 +862,9 @@ Search for interest-based targeting options available on the platform.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -964,9 +964,9 @@ Relay one or more conversion events to the target ad platform's native Conversio
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -1066,9 +1066,9 @@ Update one or more fields on an ad. Status changes and budget updates are propag
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

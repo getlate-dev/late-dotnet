@@ -1,4 +1,4 @@
-# Late.Model.EditPost200Response
+# Zernio.Model.EditPost200Response
 
 ## Properties
 

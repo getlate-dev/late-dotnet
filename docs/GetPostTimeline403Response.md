@@ -1,4 +1,4 @@
-# Late.Model.GetPostTimeline403Response
+# Zernio.Model.GetPostTimeline403Response
 
 ## Properties
 

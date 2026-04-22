@@ -1,4 +1,4 @@
-# Late.Model.BulkCreateContactsRequestContactsInner
+# Zernio.Model.BulkCreateContactsRequestContactsInner
 
 ## Properties
 

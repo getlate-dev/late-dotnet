@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadMessageMetadata
+# Zernio.Model.WebhookPayloadMessageMetadata
 Interactive message metadata (present when message is a quick reply tap, postback button tap, or inline keyboard callback)
 
 ## Properties

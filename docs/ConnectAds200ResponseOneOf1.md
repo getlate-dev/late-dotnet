@@ -1,4 +1,4 @@
-# Late.Model.ConnectAds200ResponseOneOf1
+# Zernio.Model.ConnectAds200ResponseOneOf1
 OAuth URL to redirect user to
 
 ## Properties

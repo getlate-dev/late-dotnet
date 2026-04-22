@@ -1,4 +1,4 @@
-# Late.Model.UsageStats
+# Zernio.Model.UsageStats
 
 ## Properties
 

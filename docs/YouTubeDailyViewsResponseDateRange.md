@@ -1,4 +1,4 @@
-# Late.Model.YouTubeDailyViewsResponseDateRange
+# Zernio.Model.YouTubeDailyViewsResponseDateRange
 
 ## Properties
 

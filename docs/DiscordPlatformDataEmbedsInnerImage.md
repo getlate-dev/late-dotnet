@@ -1,4 +1,4 @@
-# Late.Model.DiscordPlatformDataEmbedsInnerImage
+# Zernio.Model.DiscordPlatformDataEmbedsInnerImage
 
 ## Properties
 

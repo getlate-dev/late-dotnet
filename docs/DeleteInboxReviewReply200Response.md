@@ -1,4 +1,4 @@
-# Late.Model.DeleteInboxReviewReply200Response
+# Zernio.Model.DeleteInboxReviewReply200Response
 
 ## Properties
 

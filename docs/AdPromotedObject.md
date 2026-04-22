@@ -1,4 +1,4 @@
-# Late.Model.AdPromotedObject
+# Zernio.Model.AdPromotedObject
 Meta promoted object containing conversion event details. Structure varies by objective. Only present for Meta ads.
 
 ## Properties

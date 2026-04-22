@@ -1,4 +1,4 @@
-# Late.Model.SendPrivateReplyToCommentRequest
+# Zernio.Model.SendPrivateReplyToCommentRequest
 
 ## Properties
 

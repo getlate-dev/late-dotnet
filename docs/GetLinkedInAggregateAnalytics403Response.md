@@ -1,4 +1,4 @@
-# Late.Model.GetLinkedInAggregateAnalytics403Response
+# Zernio.Model.GetLinkedInAggregateAnalytics403Response
 
 ## Properties
 

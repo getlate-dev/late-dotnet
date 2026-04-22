@@ -1,4 +1,4 @@
-# Late.Model.CreateStandaloneAdRequest
+# Zernio.Model.CreateStandaloneAdRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.PlatformTargetAccountId
+# Zernio.Model.PlatformTargetAccountId
 
 ## Properties
 

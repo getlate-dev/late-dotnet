@@ -1,4 +1,4 @@
-# Late.Model.QueueUpdateResponse
+# Zernio.Model.QueueUpdateResponse
 
 ## Properties
 

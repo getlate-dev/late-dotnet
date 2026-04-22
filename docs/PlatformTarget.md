@@ -1,4 +1,4 @@
-# Late.Model.PlatformTarget
+# Zernio.Model.PlatformTarget
 
 ## Properties
 

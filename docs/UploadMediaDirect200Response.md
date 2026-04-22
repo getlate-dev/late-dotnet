@@ -1,4 +1,4 @@
-# Late.Model.UploadMediaDirect200Response
+# Zernio.Model.UploadMediaDirect200Response
 
 ## Properties
 

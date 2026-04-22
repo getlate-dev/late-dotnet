@@ -1,4 +1,4 @@
-# Late.Model.ListInboxConversations200ResponseMetaFailedAccountsInner
+# Zernio.Model.ListInboxConversations200ResponseMetaFailedAccountsInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.InstagramPlatformDataTrialParams
+# Zernio.Model.InstagramPlatformDataTrialParams
 Trial Reels configuration. Trial reels are shared to non-followers first and can later be graduated to regular reels manually or automatically based on performance. Only applies to Reels.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Late.Model.CreateWhatsAppTemplate200ResponseTemplate
+# Zernio.Model.CreateWhatsAppTemplate200ResponseTemplate
 
 ## Properties
 

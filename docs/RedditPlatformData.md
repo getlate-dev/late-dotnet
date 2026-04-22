@@ -1,4 +1,4 @@
-# Late.Model.RedditPlatformData
+# Zernio.Model.RedditPlatformData
 Posts are either link (with URL/media), native video (via nativeVideo), or self (text-only). Use forceSelf to override. Subreddit defaults to the account's configured one. Some subreddits require a flair.
 
 ## Properties

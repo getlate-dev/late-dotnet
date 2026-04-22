@@ -1,4 +1,4 @@
-# Late.Model.GetBestTimeToPost200Response
+# Zernio.Model.GetBestTimeToPost200Response
 
 ## Properties
 

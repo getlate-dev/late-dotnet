@@ -1,4 +1,4 @@
-# Late.Model.GetTikTokCreatorInfo200ResponseCommercialContentTypesInner
+# Zernio.Model.GetTikTokCreatorInfo200ResponseCommercialContentTypesInner
 
 ## Properties
 

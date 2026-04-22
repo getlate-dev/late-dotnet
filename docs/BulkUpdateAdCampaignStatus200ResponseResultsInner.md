@@ -1,4 +1,4 @@
-# Late.Model.BulkUpdateAdCampaignStatus200ResponseResultsInner
+# Zernio.Model.BulkUpdateAdCampaignStatus200ResponseResultsInner
 
 ## Properties
 

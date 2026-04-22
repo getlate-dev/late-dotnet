@@ -1,4 +1,4 @@
-# Late.Model.DuplicateAdCampaignRequest
+# Zernio.Model.DuplicateAdCampaignRequest
 
 ## Properties
 

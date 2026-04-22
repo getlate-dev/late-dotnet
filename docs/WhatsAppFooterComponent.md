@@ -1,4 +1,4 @@
-# Late.Model.WhatsAppFooterComponent
+# Zernio.Model.WhatsAppFooterComponent
 
 ## Properties
 

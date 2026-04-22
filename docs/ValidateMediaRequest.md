@@ -1,4 +1,4 @@
-# Late.Model.ValidateMediaRequest
+# Zernio.Model.ValidateMediaRequest
 
 ## Properties
 

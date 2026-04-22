@@ -1,4 +1,4 @@
-# Late.Model.UpdateInboxConversationRequest
+# Zernio.Model.UpdateInboxConversationRequest
 
 ## Properties
 

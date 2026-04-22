@@ -1,4 +1,4 @@
-# Late.Model.AdBudget
+# Zernio.Model.AdBudget
 
 ## Properties
 

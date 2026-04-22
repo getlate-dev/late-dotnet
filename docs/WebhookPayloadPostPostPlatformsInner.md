@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadPostPostPlatformsInner
+# Zernio.Model.WebhookPayloadPostPostPlatformsInner
 
 ## Properties
 

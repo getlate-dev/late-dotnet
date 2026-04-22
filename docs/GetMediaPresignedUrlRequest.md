@@ -1,4 +1,4 @@
-# Late.Model.GetMediaPresignedUrlRequest
+# Zernio.Model.GetMediaPresignedUrlRequest
 
 ## Properties
 

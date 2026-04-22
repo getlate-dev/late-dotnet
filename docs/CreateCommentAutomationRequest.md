@@ -1,4 +1,4 @@
-# Late.Model.CreateCommentAutomationRequest
+# Zernio.Model.CreateCommentAutomationRequest
 
 ## Properties
 

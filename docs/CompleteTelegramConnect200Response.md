@@ -1,4 +1,4 @@
-# Late.Model.CompleteTelegramConnect200Response
+# Zernio.Model.CompleteTelegramConnect200Response
 
 ## Properties
 

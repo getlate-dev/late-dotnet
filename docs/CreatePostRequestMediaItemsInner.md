@@ -1,4 +1,4 @@
-# Late.Model.CreatePostRequestMediaItemsInner
+# Zernio.Model.CreatePostRequestMediaItemsInner
 
 ## Properties
 

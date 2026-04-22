@@ -1,4 +1,4 @@
-# Late.Model.SelectSnapchatProfileRequestSelectedPublicProfile
+# Zernio.Model.SelectSnapchatProfileRequestSelectedPublicProfile
 The selected Snapchat Public Profile
 
 ## Properties

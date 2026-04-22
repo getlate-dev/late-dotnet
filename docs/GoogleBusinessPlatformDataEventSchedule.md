@@ -1,4 +1,4 @@
-# Late.Model.GoogleBusinessPlatformDataEventSchedule
+# Zernio.Model.GoogleBusinessPlatformDataEventSchedule
 Event date/time range. Uses Google's date format (NOT ISO 8601).
 
 ## Properties

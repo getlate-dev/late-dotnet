@@ -1,4 +1,4 @@
-# Late.Model.UpdateProfileRequest
+# Zernio.Model.UpdateProfileRequest
 
 ## Properties
 

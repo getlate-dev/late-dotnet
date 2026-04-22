@@ -1,4 +1,4 @@
-# Late.Api.RedditSearchApi
+# Zernio.Api.RedditSearchApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -20,9 +20,9 @@ Fetch posts from a subreddit feed. Supports sorting, time filtering, and cursor-
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -131,9 +131,9 @@ Search Reddit posts using a connected account. Optionally scope to a specific su
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

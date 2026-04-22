@@ -1,4 +1,4 @@
-# Late.Model.UpdateAdRequestTargeting
+# Zernio.Model.UpdateAdRequestTargeting
 Meta-only. Targeting updates for other platforms are not supported after creation.
 
 ## Properties

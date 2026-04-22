@@ -1,4 +1,4 @@
-# Late.Model.ListWhatsAppGroupJoinRequests200ResponseJoinRequestsInner
+# Zernio.Model.ListWhatsAppGroupJoinRequests200ResponseJoinRequestsInner
 
 ## Properties
 

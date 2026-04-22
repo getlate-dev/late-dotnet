@@ -1,4 +1,4 @@
-# Late.Model.DiscordPlatformDataThreadFromMessage
+# Zernio.Model.DiscordPlatformDataThreadFromMessage
 Create a follow-up thread under the published message.
 
 ## Properties

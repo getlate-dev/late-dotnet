@@ -1,4 +1,4 @@
-# Late.Model.EditInboxMessage200ResponseData
+# Zernio.Model.EditInboxMessage200ResponseData
 
 ## Properties
 

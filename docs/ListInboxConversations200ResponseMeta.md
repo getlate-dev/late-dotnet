@@ -1,4 +1,4 @@
-# Late.Model.ListInboxConversations200ResponseMeta
+# Zernio.Model.ListInboxConversations200ResponseMeta
 
 ## Properties
 

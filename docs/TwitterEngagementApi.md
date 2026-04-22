@@ -1,4 +1,4 @@
-# Late.Api.TwitterEngagementApi
+# Zernio.Api.TwitterEngagementApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -24,9 +24,9 @@ Bookmark a tweet by ID. Requires the bookmark.write OAuth scope. Rate limit: 50 
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -125,9 +125,9 @@ Follow a user on X/Twitter. Requires the follows.write OAuth scope. For protecte
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -226,9 +226,9 @@ Remove a bookmark from a tweet.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -329,9 +329,9 @@ Retweet (repost) a tweet by ID. Rate limit: 50 requests per 15-min window. Share
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -430,9 +430,9 @@ Undo a retweet (un-repost a tweet).
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -533,9 +533,9 @@ Unfollow a user on X/Twitter.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

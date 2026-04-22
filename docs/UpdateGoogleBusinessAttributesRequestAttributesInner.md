@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessAttributesRequestAttributesInner
+# Zernio.Model.UpdateGoogleBusinessAttributesRequestAttributesInner
 
 ## Properties
 

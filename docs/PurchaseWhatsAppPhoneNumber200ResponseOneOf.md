@@ -1,4 +1,4 @@
-# Late.Model.PurchaseWhatsAppPhoneNumber200ResponseOneOf
+# Zernio.Model.PurchaseWhatsAppPhoneNumber200ResponseOneOf
 Checkout session created (first number)
 
 ## Properties

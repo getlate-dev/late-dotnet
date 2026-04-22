@@ -1,4 +1,4 @@
-# Late.Model.ProfileCreateResponse
+# Zernio.Model.ProfileCreateResponse
 
 ## Properties
 

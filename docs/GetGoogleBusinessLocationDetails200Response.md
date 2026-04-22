@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessLocationDetails200Response
+# Zernio.Model.GetGoogleBusinessLocationDetails200Response
 
 ## Properties
 

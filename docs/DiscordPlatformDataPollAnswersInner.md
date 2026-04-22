@@ -1,4 +1,4 @@
-# Late.Model.DiscordPlatformDataPollAnswersInner
+# Zernio.Model.DiscordPlatformDataPollAnswersInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.AccountWithFollowerStatsAllOfAccountStats
+# Zernio.Model.AccountWithFollowerStatsAllOfAccountStats
 Platform-specific account stats from the latest daily snapshot. Fields vary by platform. Only present if metadata has been captured. 
 
 ## Properties

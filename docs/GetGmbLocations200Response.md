@@ -1,4 +1,4 @@
-# Late.Model.GetGmbLocations200Response
+# Zernio.Model.GetGmbLocations200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.UpdateProfile200Response
+# Zernio.Model.UpdateProfile200Response
 
 ## Properties
 

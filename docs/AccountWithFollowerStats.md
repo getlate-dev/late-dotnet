@@ -1,4 +1,4 @@
-# Late.Model.AccountWithFollowerStats
+# Zernio.Model.AccountWithFollowerStats
 
 ## Properties
 

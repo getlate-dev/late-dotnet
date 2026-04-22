@@ -1,4 +1,4 @@
-# Late.Model.GetWhatsAppFlowJson200ResponseAssetsInner
+# Zernio.Model.GetWhatsAppFlowJson200ResponseAssetsInner
 
 ## Properties
 

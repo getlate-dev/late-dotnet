@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessPerformance200ResponseMetricsValueValuesInner
+# Zernio.Model.GetGoogleBusinessPerformance200ResponseMetricsValueValuesInner
 
 ## Properties
 

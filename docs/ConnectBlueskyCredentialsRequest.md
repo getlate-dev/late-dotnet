@@ -1,4 +1,4 @@
-# Late.Model.ConnectBlueskyCredentialsRequest
+# Zernio.Model.ConnectBlueskyCredentialsRequest
 
 ## Properties
 

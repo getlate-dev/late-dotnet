@@ -1,4 +1,4 @@
-# Late.Model.DiscordPlatformDataPoll
+# Zernio.Model.DiscordPlatformDataPoll
 Native Discord poll. Cannot be combined with media attachments in the same message.
 
 ## Properties

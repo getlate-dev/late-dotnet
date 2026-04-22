@@ -1,4 +1,4 @@
-# Late.Model.ListInboxConversations200ResponseDataInnerInstagramProfile
+# Zernio.Model.ListInboxConversations200ResponseDataInnerInstagramProfile
 Instagram profile data for the participant. Only present for Instagram conversations.
 
 ## Properties

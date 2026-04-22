@@ -1,4 +1,4 @@
-# Late.Model.DeleteAdCampaignRequest
+# Zernio.Model.DeleteAdCampaignRequest
 
 ## Properties
 

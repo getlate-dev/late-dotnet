@@ -1,4 +1,4 @@
-# Late.Api.GMBMediaApi
+# Zernio.Api.GMBMediaApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -21,9 +21,9 @@ Creates a media item (photo) for a location from a publicly accessible URL.  Cat
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -125,9 +125,9 @@ Deletes a photo or media item from a GBP location.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -229,9 +229,9 @@ Lists media items (photos) for a Google Business Profile location. Returns photo
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

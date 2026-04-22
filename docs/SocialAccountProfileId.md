@@ -1,4 +1,4 @@
-# Late.Model.SocialAccountProfileId
+# Zernio.Model.SocialAccountProfileId
 
 ## Properties
 

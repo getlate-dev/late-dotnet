@@ -1,4 +1,4 @@
-# Late.Model.CreateGoogleBusinessMediaRequest
+# Zernio.Model.CreateGoogleBusinessMediaRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessSearchKeywords200ResponseMonthRange
+# Zernio.Model.GetGoogleBusinessSearchKeywords200ResponseMonthRange
 
 ## Properties
 

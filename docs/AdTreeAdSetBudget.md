@@ -1,4 +1,4 @@
-# Late.Model.AdTreeAdSetBudget
+# Zernio.Model.AdTreeAdSetBudget
 Effective budget at this level (back-compat). For CBO campaigns this mirrors the parent campaign's budget; for ABO this is the ad-set-specific budget. Use `adSetBudget` / parent `campaignBudget` + `budgetLevel` to disambiguate.
 
 ## Properties

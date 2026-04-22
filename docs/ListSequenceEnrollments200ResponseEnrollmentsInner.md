@@ -1,4 +1,4 @@
-# Late.Model.ListSequenceEnrollments200ResponseEnrollmentsInner
+# Zernio.Model.ListSequenceEnrollments200ResponseEnrollmentsInner
 
 ## Properties
 

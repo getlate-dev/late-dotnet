@@ -1,4 +1,4 @@
-# Late.Model.CreateContactRequest
+# Zernio.Model.CreateContactRequest
 
 ## Properties
 

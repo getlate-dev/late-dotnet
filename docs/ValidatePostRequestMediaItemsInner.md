@@ -1,4 +1,4 @@
-# Late.Model.ValidatePostRequestMediaItemsInner
+# Zernio.Model.ValidatePostRequestMediaItemsInner
 
 ## Properties
 

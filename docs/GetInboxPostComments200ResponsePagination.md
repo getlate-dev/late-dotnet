@@ -1,4 +1,4 @@
-# Late.Model.GetInboxPostComments200ResponsePagination
+# Zernio.Model.GetInboxPostComments200ResponsePagination
 
 ## Properties
 

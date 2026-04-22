@@ -1,4 +1,4 @@
-# Late.Model.FollowUserRequest
+# Zernio.Model.FollowUserRequest
 
 ## Properties
 

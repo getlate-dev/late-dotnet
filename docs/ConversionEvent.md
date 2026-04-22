@@ -1,4 +1,4 @@
-# Late.Model.ConversionEvent
+# Zernio.Model.ConversionEvent
 A single conversion event to relay to the ad platform. All PII fields (email, phone, names) are hashed with SHA-256 server-side using each platform's normalization rules before they leave Zernio. Callers send plaintext. 
 
 ## Properties

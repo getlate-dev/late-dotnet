@@ -1,4 +1,4 @@
-# Late.Model.UploadWhatsAppFlowJsonRequest
+# Zernio.Model.UploadWhatsAppFlowJsonRequest
 
 ## Properties
 

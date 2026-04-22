@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessLocationDetails200ResponseSpecialHoursSpecialHourPeriodsInnerStartDate
+# Zernio.Model.GetGoogleBusinessLocationDetails200ResponseSpecialHoursSpecialHourPeriodsInnerStartDate
 
 ## Properties
 

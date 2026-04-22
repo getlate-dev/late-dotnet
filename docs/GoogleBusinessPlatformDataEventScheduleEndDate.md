@@ -1,4 +1,4 @@
-# Late.Model.GoogleBusinessPlatformDataEventScheduleEndDate
+# Zernio.Model.GoogleBusinessPlatformDataEventScheduleEndDate
 Event end date as { year, month, day }
 
 ## Properties

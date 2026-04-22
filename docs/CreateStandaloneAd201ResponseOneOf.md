@@ -1,4 +1,4 @@
-# Late.Model.CreateStandaloneAd201ResponseOneOf
+# Zernio.Model.CreateStandaloneAd201ResponseOneOf
 Legacy + attach shapes — one ad returned.
 
 ## Properties

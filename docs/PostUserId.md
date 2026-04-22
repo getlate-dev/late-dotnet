@@ -1,4 +1,4 @@
-# Late.Model.PostUserId
+# Zernio.Model.PostUserId
 
 ## Properties
 

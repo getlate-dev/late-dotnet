@@ -1,4 +1,4 @@
-# Late.Model.LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner
+# Zernio.Model.LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner
 
 ## Properties
 

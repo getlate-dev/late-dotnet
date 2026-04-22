@@ -1,4 +1,4 @@
-# Late.Model.RemoveWhatsAppGroupParticipantsRequest
+# Zernio.Model.RemoveWhatsAppGroupParticipantsRequest
 
 ## Properties
 

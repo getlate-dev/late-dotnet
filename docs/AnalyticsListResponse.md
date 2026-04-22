@@ -1,4 +1,4 @@
-# Late.Model.AnalyticsListResponse
+# Zernio.Model.AnalyticsListResponse
 
 ## Properties
 

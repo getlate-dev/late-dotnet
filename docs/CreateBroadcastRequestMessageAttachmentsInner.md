@@ -1,4 +1,4 @@
-# Late.Model.CreateBroadcastRequestMessageAttachmentsInner
+# Zernio.Model.CreateBroadcastRequestMessageAttachmentsInner
 
 ## Properties
 

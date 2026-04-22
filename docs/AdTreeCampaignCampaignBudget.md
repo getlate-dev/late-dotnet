@@ -1,4 +1,4 @@
-# Late.Model.AdTreeCampaignCampaignBudget
+# Zernio.Model.AdTreeCampaignCampaignBudget
 Campaign-level budget (Campaign Budget Optimization / CBO). Populated only when the platform set the budget at the campaign level. For ABO campaigns this is null and the budget lives on the child ad set.
 
 ## Properties

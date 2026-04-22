@@ -1,4 +1,4 @@
-# Late.Model.ListGoogleBusinessMedia200ResponseMediaItemsInner
+# Zernio.Model.ListGoogleBusinessMedia200ResponseMediaItemsInner
 
 ## Properties
 

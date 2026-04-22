@@ -1,4 +1,4 @@
-# Late.Model.QueueSchedule
+# Zernio.Model.QueueSchedule
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.ErrorResponse
+# Zernio.Model.ErrorResponse
 
 ## Properties
 

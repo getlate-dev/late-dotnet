@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestQuickRepliesInner
+# Zernio.Model.SendInboxMessageRequestQuickRepliesInner
 
 ## Properties
 

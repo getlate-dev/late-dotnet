@@ -1,4 +1,4 @@
-# Late.Model.DiscordPlatformDataPollQuestion
+# Zernio.Model.DiscordPlatformDataPollQuestion
 
 ## Properties
 

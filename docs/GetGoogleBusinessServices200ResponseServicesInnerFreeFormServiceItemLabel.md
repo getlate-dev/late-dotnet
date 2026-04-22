@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessServices200ResponseServicesInnerFreeFormServiceItemLabel
+# Zernio.Model.GetGoogleBusinessServices200ResponseServicesInnerFreeFormServiceItemLabel
 
 ## Properties
 

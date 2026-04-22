@@ -1,4 +1,4 @@
-# Late.Model.GetPostTimeline200Response
+# Zernio.Model.GetPostTimeline200Response
 
 ## Properties
 

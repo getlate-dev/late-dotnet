@@ -1,4 +1,4 @@
-# Late.Model.UserGetResponse
+# Zernio.Model.UserGetResponse
 
 ## Properties
 

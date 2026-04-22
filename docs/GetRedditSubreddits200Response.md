@@ -1,4 +1,4 @@
-# Late.Model.GetRedditSubreddits200Response
+# Zernio.Model.GetRedditSubreddits200Response
 
 ## Properties
 

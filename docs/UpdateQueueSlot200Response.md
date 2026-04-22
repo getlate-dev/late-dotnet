@@ -1,4 +1,4 @@
-# Late.Model.UpdateQueueSlot200Response
+# Zernio.Model.UpdateQueueSlot200Response
 
 ## Properties
 

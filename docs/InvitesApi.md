@@ -1,4 +1,4 @@
-# Late.Api.InvitesApi
+# Zernio.Api.InvitesApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -19,9 +19,9 @@ Generate a secure invite link to grant team members access to your profiles. Inv
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

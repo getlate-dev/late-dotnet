@@ -1,4 +1,4 @@
-# Late.Model.GoogleBusinessPlatformDataEvent
+# Zernio.Model.GoogleBusinessPlatformDataEvent
 Event details. Required when topicType is EVENT. Google returns 400 if omitted for EVENT posts.
 
 ## Properties

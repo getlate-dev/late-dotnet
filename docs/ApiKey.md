@@ -1,4 +1,4 @@
-# Late.Model.ApiKey
+# Zernio.Model.ApiKey
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.GetTikTokCreatorInfo200ResponsePostingLimits
+# Zernio.Model.GetTikTokCreatorInfo200ResponsePostingLimits
 
 ## Properties
 

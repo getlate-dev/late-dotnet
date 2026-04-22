@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestInteractiveActionOneOf
+# Zernio.Model.SendInboxMessageRequestInteractiveActionOneOf
 List action. `type` on the parent must be `list`.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Late.Model.AdTreeCampaignPromotedObject
+# Zernio.Model.AdTreeCampaignPromotedObject
 Meta promoted object at campaign level (conversion event details)
 
 ## Properties

@@ -1,4 +1,4 @@
-# Late.Model.ListWhatsAppGroupChats200ResponsePaging
+# Zernio.Model.ListWhatsAppGroupChats200ResponsePaging
 
 ## Properties
 

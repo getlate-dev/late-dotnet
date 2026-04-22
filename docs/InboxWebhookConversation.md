@@ -1,4 +1,4 @@
-# Late.Model.InboxWebhookConversation
+# Zernio.Model.InboxWebhookConversation
 The conversation context included in inbox webhook payloads.
 
 ## Properties

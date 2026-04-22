@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadTest
+# Zernio.Model.WebhookPayloadTest
 Webhook payload for test deliveries
 
 ## Properties

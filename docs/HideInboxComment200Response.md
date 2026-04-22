@@ -1,4 +1,4 @@
-# Late.Model.HideInboxComment200Response
+# Zernio.Model.HideInboxComment200Response
 
 ## Properties
 

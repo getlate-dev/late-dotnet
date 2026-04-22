@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestInteractiveActionOneOf1
+# Zernio.Model.SendInboxMessageRequestInteractiveActionOneOf1
 CTA URL action. `type` on the parent must be `cta_url`.
 
 ## Properties

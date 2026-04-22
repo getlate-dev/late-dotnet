@@ -1,4 +1,4 @@
-# Late.Model.QueueSlot
+# Zernio.Model.QueueSlot
 
 ## Properties
 

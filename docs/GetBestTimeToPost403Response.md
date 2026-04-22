@@ -1,4 +1,4 @@
-# Late.Model.GetBestTimeToPost403Response
+# Zernio.Model.GetBestTimeToPost403Response
 
 ## Properties
 

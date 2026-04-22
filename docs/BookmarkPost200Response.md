@@ -1,4 +1,4 @@
-# Late.Model.BookmarkPost200Response
+# Zernio.Model.BookmarkPost200Response
 
 ## Properties
 

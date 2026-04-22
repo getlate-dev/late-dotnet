@@ -1,4 +1,4 @@
-# Late.Model.TwitterPlatformDataPoll
+# Zernio.Model.TwitterPlatformDataPoll
 Create a poll with this tweet. Mutually exclusive with media attachments and threads.
 
 ## Properties

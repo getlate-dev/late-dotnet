@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessSearchKeywords200Response
+# Zernio.Model.GetGoogleBusinessSearchKeywords200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.UploadTokenStatusResponse
+# Zernio.Model.UploadTokenStatusResponse
 
 ## Properties
 

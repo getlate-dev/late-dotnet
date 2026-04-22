@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadAccountDisconnected
+# Zernio.Model.WebhookPayloadAccountDisconnected
 Webhook payload for account disconnected events
 
 ## Properties

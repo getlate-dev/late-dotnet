@@ -1,4 +1,4 @@
-# Late.Model.ConnectAds200ResponseOneOf
+# Zernio.Model.ConnectAds200ResponseOneOf
 Ads already connected (no OAuth needed)
 
 ## Properties

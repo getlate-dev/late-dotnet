@@ -1,4 +1,4 @@
-# Late.Model.ConversionEventUser
+# Zernio.Model.ConversionEventUser
 User identity fields. More signals mean higher match rates.
 
 ## Properties

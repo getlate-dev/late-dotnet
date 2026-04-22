@@ -1,4 +1,4 @@
-# Late.Model.PlatformTargetPlatformSpecificData
+# Zernio.Model.PlatformTargetPlatformSpecificData
 Platform-specific overrides and options.
 
 ## Properties

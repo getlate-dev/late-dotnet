@@ -1,4 +1,4 @@
-# Late.Model.AddUsersToAdAudienceRequestUsersInner
+# Zernio.Model.AddUsersToAdAudienceRequestUsersInner
 Each user must have at least email or phone
 
 ## Properties

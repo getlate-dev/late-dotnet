@@ -1,4 +1,4 @@
-# Late.Api.MediaApi
+# Zernio.Api.MediaApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -19,9 +19,9 @@ Get a presigned URL to upload files directly to cloud storage (up to 5GB). Retur
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

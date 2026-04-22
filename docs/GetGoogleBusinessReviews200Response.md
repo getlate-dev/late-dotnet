@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessReviews200Response
+# Zernio.Model.GetGoogleBusinessReviews200Response
 
 ## Properties
 

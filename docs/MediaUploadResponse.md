@@ -1,4 +1,4 @@
-# Late.Model.MediaUploadResponse
+# Zernio.Model.MediaUploadResponse
 
 ## Properties
 

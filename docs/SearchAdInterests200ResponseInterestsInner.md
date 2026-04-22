@@ -1,4 +1,4 @@
-# Late.Model.SearchAdInterests200ResponseInterestsInner
+# Zernio.Model.SearchAdInterests200ResponseInterestsInner
 
 ## Properties
 

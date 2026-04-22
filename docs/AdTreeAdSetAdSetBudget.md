@@ -1,4 +1,4 @@
-# Late.Model.AdTreeAdSetAdSetBudget
+# Zernio.Model.AdTreeAdSetAdSetBudget
 Ad-set-level budget (ABO). Null for CBO campaigns where the budget is set on the campaign.
 
 ## Properties

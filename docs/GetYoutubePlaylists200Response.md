@@ -1,4 +1,4 @@
-# Late.Model.GetYoutubePlaylists200Response
+# Zernio.Model.GetYoutubePlaylists200Response
 
 ## Properties
 

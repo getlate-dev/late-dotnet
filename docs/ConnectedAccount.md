@@ -1,4 +1,4 @@
-# Late.Model.ConnectedAccount
+# Zernio.Model.ConnectedAccount
 
 ## Properties
 

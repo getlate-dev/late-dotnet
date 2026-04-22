@@ -1,4 +1,4 @@
-# Late.Model.AdTreeCampaign
+# Zernio.Model.AdTreeCampaign
 Campaign with nested ad sets and rolled-up metrics
 
 ## Properties

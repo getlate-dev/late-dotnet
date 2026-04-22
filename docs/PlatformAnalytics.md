@@ -1,4 +1,4 @@
-# Late.Model.PlatformAnalytics
+# Zernio.Model.PlatformAnalytics
 
 ## Properties
 

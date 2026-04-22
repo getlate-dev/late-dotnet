@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadAccountConnected
+# Zernio.Model.WebhookPayloadAccountConnected
 Webhook payload for account connected events
 
 ## Properties

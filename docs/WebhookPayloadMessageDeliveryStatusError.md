@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadMessageDeliveryStatusError
+# Zernio.Model.WebhookPayloadMessageDeliveryStatusError
 Populated only on message.failed.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Late.Model.CreateGoogleBusinessMedia200Response
+# Zernio.Model.CreateGoogleBusinessMedia200Response
 
 ## Properties
 

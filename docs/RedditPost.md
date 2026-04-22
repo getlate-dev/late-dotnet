@@ -1,4 +1,4 @@
-# Late.Model.RedditPost
+# Zernio.Model.RedditPost
 A normalized Reddit post returned by the feed and search endpoints
 
 ## Properties

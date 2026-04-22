@@ -1,4 +1,4 @@
-# Late.Model.LinkedInAggregateAnalyticsDailyResponseAnalytics
+# Zernio.Model.LinkedInAggregateAnalyticsDailyResponseAnalytics
 Daily breakdown of each metric as date/count pairs. Reach not available with DAILY aggregation.
 
 ## Properties

@@ -1,4 +1,4 @@
-# Late.Model.UpdateAdRequest
+# Zernio.Model.UpdateAdRequest
 
 ## Properties
 

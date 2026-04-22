@@ -1,4 +1,4 @@
-# Late.Model.ApiKeyProfileIdsInner
+# Zernio.Model.ApiKeyProfileIdsInner
 
 ## Properties
 

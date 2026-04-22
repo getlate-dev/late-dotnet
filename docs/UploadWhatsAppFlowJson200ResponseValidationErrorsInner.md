@@ -1,4 +1,4 @@
-# Late.Model.UploadWhatsAppFlowJson200ResponseValidationErrorsInner
+# Zernio.Model.UploadWhatsAppFlowJson200ResponseValidationErrorsInner
 
 ## Properties
 

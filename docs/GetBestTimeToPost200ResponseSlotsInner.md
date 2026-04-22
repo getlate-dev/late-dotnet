@@ -1,4 +1,4 @@
-# Late.Model.GetBestTimeToPost200ResponseSlotsInner
+# Zernio.Model.GetBestTimeToPost200ResponseSlotsInner
 
 ## Properties
 

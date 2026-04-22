@@ -1,4 +1,4 @@
-# Late.Model.GetTelegramConnectStatus200Response
+# Zernio.Model.GetTelegramConnectStatus200Response
 
 ## Properties
 

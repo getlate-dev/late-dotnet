@@ -1,4 +1,4 @@
-# Late.Model.ListInboxReviews200ResponseDataInnerReviewer
+# Zernio.Model.ListInboxReviews200ResponseDataInnerReviewer
 
 ## Properties
 

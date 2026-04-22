@@ -1,4 +1,4 @@
-# Late.Model.ConnectBlueskyCredentials200Response
+# Zernio.Model.ConnectBlueskyCredentials200Response
 
 ## Properties
 

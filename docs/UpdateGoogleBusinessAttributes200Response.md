@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessAttributes200Response
+# Zernio.Model.UpdateGoogleBusinessAttributes200Response
 
 ## Properties
 

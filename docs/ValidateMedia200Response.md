@@ -1,4 +1,4 @@
-# Late.Model.ValidateMedia200Response
+# Zernio.Model.ValidateMedia200Response
 
 ## Properties
 

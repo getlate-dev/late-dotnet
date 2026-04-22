@@ -1,4 +1,4 @@
-# Late.Model.UpdateLinkedInOrganizationRequest
+# Zernio.Model.UpdateLinkedInOrganizationRequest
 
 ## Properties
 

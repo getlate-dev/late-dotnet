@@ -1,4 +1,4 @@
-# Late.Api.WhatsAppFlowsApi
+# Zernio.Api.WhatsAppFlowsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -28,9 +28,9 @@ Create a new WhatsApp Flow in DRAFT status. Optionally clone an existing flow. A
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -129,9 +129,9 @@ Delete a DRAFT flow. This is irreversible. Only flows in DRAFT status can be del
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -232,9 +232,9 @@ Deprecate a PUBLISHED flow. This is irreversible. Deprecated flows cannot be sen
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -335,9 +335,9 @@ Get details for a specific flow, including status, categories, validation errors
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -439,9 +439,9 @@ Get the flow JSON asset metadata, including a temporary download URL for the Flo
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -541,9 +541,9 @@ List all WhatsApp Flows for the Business Account (WABA) associated with the give
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -642,9 +642,9 @@ Publish a DRAFT flow. This is irreversible. Once published, the flow and its JSO
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -745,9 +745,9 @@ Send a published flow as an interactive message with a CTA button. When the reci
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -846,9 +846,9 @@ Update metadata (name, categories) of a DRAFT flow. Published flows are immutabl
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -949,9 +949,9 @@ Upload or update the Flow JSON for a DRAFT flow. The Flow JSON defines all scree
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

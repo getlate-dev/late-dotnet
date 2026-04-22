@@ -1,4 +1,4 @@
-# Late.Model.CreateWhatsAppTemplateRequestLibraryTemplateButtonInputsInner
+# Zernio.Model.CreateWhatsAppTemplateRequestLibraryTemplateButtonInputsInner
 
 ## Properties
 

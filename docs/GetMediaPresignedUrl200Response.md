@@ -1,4 +1,4 @@
-# Late.Model.GetMediaPresignedUrl200Response
+# Zernio.Model.GetMediaPresignedUrl200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadMessageEditedEditHistoryInner
+# Zernio.Model.WebhookPayloadMessageEditedEditHistoryInner
 
 ## Properties
 

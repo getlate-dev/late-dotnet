@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadMessageSent
+# Zernio.Model.WebhookPayloadMessageSent
 Webhook payload for message sent events (fired when a message is sent via the API)
 
 ## Properties

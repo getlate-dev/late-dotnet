@@ -1,4 +1,4 @@
-# Late.Model.CreateApiKey201Response
+# Zernio.Model.CreateApiKey201Response
 
 ## Properties
 

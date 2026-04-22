@@ -1,4 +1,4 @@
-# Late.Model.LinkedInAggregateAnalyticsDailyResponse
+# Zernio.Model.LinkedInAggregateAnalyticsDailyResponse
 Response for DAILY aggregation (time series breakdown)
 
 ## Properties

@@ -1,4 +1,4 @@
-# Late.Model.TwitterPlatformDataThreadItemsInner
+# Zernio.Model.TwitterPlatformDataThreadItemsInner
 
 ## Properties
 

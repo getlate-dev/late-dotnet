@@ -1,4 +1,4 @@
-# Late.Model.GetLinkedInPostReactions200ResponseReactionsInnerFrom
+# Zernio.Model.GetLinkedInPostReactions200ResponseReactionsInnerFrom
 
 ## Properties
 

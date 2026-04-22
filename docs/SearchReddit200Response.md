@@ -1,4 +1,4 @@
-# Late.Model.SearchReddit200Response
+# Zernio.Model.SearchReddit200Response
 
 ## Properties
 

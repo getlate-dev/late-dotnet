@@ -1,4 +1,4 @@
-# Late.Model.CreateInboxConversation400Response
+# Zernio.Model.CreateInboxConversation400Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessLocationDetailsRequestServiceItemsInnerStructuredServiceItem
+# Zernio.Model.UpdateGoogleBusinessLocationDetailsRequestServiceItemsInnerStructuredServiceItem
 A predefined service from Google's service type catalog
 
 ## Properties

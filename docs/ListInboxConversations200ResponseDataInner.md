@@ -1,4 +1,4 @@
-# Late.Model.ListInboxConversations200ResponseDataInner
+# Zernio.Model.ListInboxConversations200ResponseDataInner
 
 ## Properties
 

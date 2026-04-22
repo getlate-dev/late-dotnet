@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessLocationDetailsRequestServiceItemsInnerPrice
+# Zernio.Model.UpdateGoogleBusinessLocationDetailsRequestServiceItemsInnerPrice
 Optional price for the service
 
 ## Properties

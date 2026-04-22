@@ -1,4 +1,4 @@
-# Late.Model.CreateContact200ResponseChannel
+# Zernio.Model.CreateContact200ResponseChannel
 Created when accountId, platform, and platformIdentifier are provided
 
 ## Properties

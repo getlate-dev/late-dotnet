@@ -1,4 +1,4 @@
-# Late.Model.CreateStandaloneAd201Response
+# Zernio.Model.CreateStandaloneAd201Response
 
 ## Properties
 

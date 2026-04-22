@@ -1,4 +1,4 @@
-# Late.Model.GetAllAccountsHealth200ResponseSummary
+# Zernio.Model.GetAllAccountsHealth200ResponseSummary
 
 ## Properties
 

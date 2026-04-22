@@ -1,4 +1,4 @@
-# Late.Api.AdCampaignsApi
+# Zernio.Api.AdCampaignsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -27,9 +27,9 @@ Process up to 50 campaigns in one call. Each campaign is updated concurrently an
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -127,9 +127,9 @@ Deletes the whole campaign on the platform, cascading to its ad sets and ads. Lo
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -230,9 +230,9 @@ Duplicates a campaign, including its ad sets, ads, creatives, and targeting by d
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -334,9 +334,9 @@ Returns a nested Campaign > Ad Set > Ad hierarchy with rolled-up metrics at each
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -452,9 +452,9 @@ Returns campaigns as virtual aggregations over ad documents grouped by platform 
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -566,9 +566,9 @@ Campaign-level edits. Currently supports updating the CBO (Campaign Budget Optim
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -671,9 +671,9 @@ Updates the status of all ads in a campaign. Makes one platform API call (not pe
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -774,9 +774,9 @@ Ad-set-level writes. Use this for ABO budget updates and ad-set-scoped pause/res
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -878,9 +878,9 @@ Ad-set-scoped pause/resume (doesn't touch sibling ad sets). Thin wrapper over PU
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

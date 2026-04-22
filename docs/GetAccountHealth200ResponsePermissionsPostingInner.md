@@ -1,4 +1,4 @@
-# Late.Model.GetAccountHealth200ResponsePermissionsPostingInner
+# Zernio.Model.GetAccountHealth200ResponsePermissionsPostingInner
 
 ## Properties
 

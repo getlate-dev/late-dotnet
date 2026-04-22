@@ -1,4 +1,4 @@
-# Late.Model.FollowUser200Response
+# Zernio.Model.FollowUser200Response
 
 ## Properties
 

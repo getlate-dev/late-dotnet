@@ -1,4 +1,4 @@
-# Late.Model.CreateBroadcast200ResponseBroadcast
+# Zernio.Model.CreateBroadcast200ResponseBroadcast
 
 ## Properties
 

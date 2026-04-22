@@ -1,4 +1,4 @@
-# Late.Model.GetWhatsAppBusinessProfile200ResponseBusinessProfile
+# Zernio.Model.GetWhatsAppBusinessProfile200ResponseBusinessProfile
 
 ## Properties
 

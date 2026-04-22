@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadMessageSentMessageSender
+# Zernio.Model.WebhookPayloadMessageSentMessageSender
 
 ## Properties
 

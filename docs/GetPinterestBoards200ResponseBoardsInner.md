@@ -1,4 +1,4 @@
-# Late.Model.GetPinterestBoards200ResponseBoardsInner
+# Zernio.Model.GetPinterestBoards200ResponseBoardsInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.CreatePostRequestPlatformsInnerPlatformSpecificData
+# Zernio.Model.CreatePostRequestPlatformsInnerPlatformSpecificData
 
 ## Properties
 

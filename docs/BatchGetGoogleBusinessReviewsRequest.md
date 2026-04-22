@@ -1,4 +1,4 @@
-# Late.Model.BatchGetGoogleBusinessReviewsRequest
+# Zernio.Model.BatchGetGoogleBusinessReviewsRequest
 
 ## Properties
 

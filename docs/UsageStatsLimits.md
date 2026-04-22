@@ -1,4 +1,4 @@
-# Late.Model.UsageStatsLimits
+# Zernio.Model.UsageStatsLimits
 
 ## Properties
 

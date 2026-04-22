@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadCommentCommentAuthor
+# Zernio.Model.WebhookPayloadCommentCommentAuthor
 
 ## Properties
 

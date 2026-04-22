@@ -1,4 +1,4 @@
-# Late.Model.GoogleBusinessPlatformDataEventScheduleStartTime
+# Zernio.Model.GoogleBusinessPlatformDataEventScheduleStartTime
 Optional start time as { hours, minutes } in 24h format
 
 ## Properties

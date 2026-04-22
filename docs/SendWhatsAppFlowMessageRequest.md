@@ -1,4 +1,4 @@
-# Late.Model.SendWhatsAppFlowMessageRequest
+# Zernio.Model.SendWhatsAppFlowMessageRequest
 
 ## Properties
 

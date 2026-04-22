@@ -1,4 +1,4 @@
-# Late.Model.GetLinkedInPostReactions200ResponsePagination
+# Zernio.Model.GetLinkedInPostReactions200ResponsePagination
 
 ## Properties
 

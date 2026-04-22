@@ -1,4 +1,4 @@
-# Late.Model.LinkedInAggregateAnalyticsTotalResponse
+# Zernio.Model.LinkedInAggregateAnalyticsTotalResponse
 Response for TOTAL aggregation (lifetime totals)
 
 ## Properties

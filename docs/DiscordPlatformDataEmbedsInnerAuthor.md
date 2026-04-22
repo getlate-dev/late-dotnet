@@ -1,4 +1,4 @@
-# Late.Model.DiscordPlatformDataEmbedsInnerAuthor
+# Zernio.Model.DiscordPlatformDataEmbedsInnerAuthor
 
 ## Properties
 

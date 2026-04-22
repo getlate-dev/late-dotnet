@@ -1,4 +1,4 @@
-# Late.Model.GetConnectUrl200Response
+# Zernio.Model.GetConnectUrl200Response
 
 ## Properties
 

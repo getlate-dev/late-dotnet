@@ -1,4 +1,4 @@
-# Late.Model.Webhook
+# Zernio.Model.Webhook
 Individual webhook configuration for receiving real-time notifications
 
 ## Properties

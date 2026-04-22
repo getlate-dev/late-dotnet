@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessLocationDetailsRequestRegularHours
+# Zernio.Model.UpdateGoogleBusinessLocationDetailsRequestRegularHours
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.UndoRetweet200Response
+# Zernio.Model.UndoRetweet200Response
 
 ## Properties
 

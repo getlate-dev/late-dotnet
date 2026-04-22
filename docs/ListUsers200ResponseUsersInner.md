@@ -1,4 +1,4 @@
-# Late.Model.ListUsers200ResponseUsersInner
+# Zernio.Model.ListUsers200ResponseUsersInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.ProfileDeleteResponse
+# Zernio.Model.ProfileDeleteResponse
 
 ## Properties
 

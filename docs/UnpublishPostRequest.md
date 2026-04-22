@@ -1,4 +1,4 @@
-# Late.Model.UnpublishPostRequest
+# Zernio.Model.UnpublishPostRequest
 
 ## Properties
 

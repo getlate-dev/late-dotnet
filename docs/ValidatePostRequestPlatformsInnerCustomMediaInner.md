@@ -1,4 +1,4 @@
-# Late.Model.ValidatePostRequestPlatformsInnerCustomMediaInner
+# Zernio.Model.ValidatePostRequestPlatformsInnerCustomMediaInner
 
 ## Properties
 

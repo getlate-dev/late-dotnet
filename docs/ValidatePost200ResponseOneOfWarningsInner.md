@@ -1,4 +1,4 @@
-# Late.Model.ValidatePost200ResponseOneOfWarningsInner
+# Zernio.Model.ValidatePost200ResponseOneOfWarningsInner
 
 ## Properties
 

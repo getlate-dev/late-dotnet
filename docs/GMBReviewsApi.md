@@ -1,4 +1,4 @@
-# Late.Api.GMBReviewsApi
+# Zernio.Api.GMBReviewsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -20,9 +20,9 @@ Fetches reviews across multiple locations in a single request. More efficient th
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -122,9 +122,9 @@ Returns reviews for a GBP account including ratings, comments, and owner replies
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

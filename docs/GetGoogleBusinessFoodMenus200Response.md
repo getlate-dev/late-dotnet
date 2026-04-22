@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessFoodMenus200Response
+# Zernio.Model.GetGoogleBusinessFoodMenus200Response
 
 ## Properties
 

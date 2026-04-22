@@ -1,4 +1,4 @@
-# Late.Model.UpdateAdSetRequestBudget
+# Zernio.Model.UpdateAdSetRequestBudget
 Omit if only toggling status
 
 ## Properties

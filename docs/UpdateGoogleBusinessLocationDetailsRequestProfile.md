@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessLocationDetailsRequestProfile
+# Zernio.Model.UpdateGoogleBusinessLocationDetailsRequestProfile
 
 ## Properties
 

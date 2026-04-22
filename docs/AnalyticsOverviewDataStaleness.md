@@ -1,4 +1,4 @@
-# Late.Model.AnalyticsOverviewDataStaleness
+# Zernio.Model.AnalyticsOverviewDataStaleness
 
 ## Properties
 

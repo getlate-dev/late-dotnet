@@ -1,4 +1,4 @@
-# Late.Model.SelectFacebookPage200Response
+# Zernio.Model.SelectFacebookPage200Response
 
 ## Properties
 

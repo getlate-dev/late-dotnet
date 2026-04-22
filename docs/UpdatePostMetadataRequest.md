@@ -1,4 +1,4 @@
-# Late.Model.UpdatePostMetadataRequest
+# Zernio.Model.UpdatePostMetadataRequest
 
 ## Properties
 

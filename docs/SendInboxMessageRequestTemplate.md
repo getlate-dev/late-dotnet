@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestTemplate
+# Zernio.Model.SendInboxMessageRequestTemplate
 Generic template for carousels (Instagram/Facebook only, ignored on Telegram).
 
 ## Properties

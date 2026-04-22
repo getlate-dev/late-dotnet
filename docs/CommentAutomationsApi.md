@@ -1,4 +1,4 @@
-# Late.Api.CommentAutomationsApi
+# Zernio.Api.CommentAutomationsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -24,9 +24,9 @@ Create a keyword-triggered DM automation on an Instagram or Facebook post. When 
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -125,9 +125,9 @@ Permanently delete an automation and all its trigger logs.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -221,9 +221,9 @@ Returns an automation with its configuration, stats, and recent trigger logs.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -321,9 +321,9 @@ Paginated list of every comment that triggered this automation, with send status
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -427,9 +427,9 @@ List all comment-to-DM automations for a profile. Returns automations with their
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -526,9 +526,9 @@ Update an automation's keywords, DM message, comment reply, or active status.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# Late.Model.UpdateAdSetStatus200Response
+# Zernio.Model.UpdateAdSetStatus200Response
 
 ## Properties
 

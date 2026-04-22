@@ -1,4 +1,4 @@
-# Late.Model.FoodMenuItemOptionsInner
+# Zernio.Model.FoodMenuItemOptionsInner
 
 ## Properties
 

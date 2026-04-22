@@ -1,4 +1,4 @@
-# Late.Model.SelectPinterestBoardRequest
+# Zernio.Model.SelectPinterestBoardRequest
 
 ## Properties
 

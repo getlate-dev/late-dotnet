@@ -1,4 +1,4 @@
-# Late.Model.Post
+# Zernio.Model.Post
 
 ## Properties
 

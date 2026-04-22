@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessage400Response
+# Zernio.Model.SendInboxMessage400Response
 
 ## Properties
 

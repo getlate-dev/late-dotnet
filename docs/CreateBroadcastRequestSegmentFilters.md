@@ -1,4 +1,4 @@
-# Late.Model.CreateBroadcastRequestSegmentFilters
+# Zernio.Model.CreateBroadcastRequestSegmentFilters
 
 ## Properties
 

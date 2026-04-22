@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestInteractiveFooter
+# Zernio.Model.SendInboxMessageRequestInteractiveFooter
 Optional footer shown below the action.
 
 ## Properties

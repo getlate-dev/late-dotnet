@@ -1,4 +1,4 @@
-# Late.Api.ReviewsApi
+# Zernio.Api.ReviewsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -21,9 +21,9 @@ Delete a reply to a review (Google Business only). Requires accountId in request
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -123,9 +123,9 @@ Fetch reviews from all connected Facebook Pages and Google Business accounts. Ag
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -241,9 +241,9 @@ Post a reply to a review. Requires accountId in request body.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessLocationDetailsRequestCategoriesPrimaryCategory
+# Zernio.Model.UpdateGoogleBusinessLocationDetailsRequestCategoriesPrimaryCategory
 
 ## Properties
 

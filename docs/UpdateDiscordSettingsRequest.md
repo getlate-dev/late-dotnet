@@ -1,4 +1,4 @@
-# Late.Model.UpdateDiscordSettingsRequest
+# Zernio.Model.UpdateDiscordSettingsRequest
 
 ## Properties
 

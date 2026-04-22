@@ -1,4 +1,4 @@
-# Late.Model.InstagramAccountInsightsResponseMetricsValueValuesInner
+# Zernio.Model.InstagramAccountInsightsResponseMetricsValueValuesInner
 
 ## Properties
 

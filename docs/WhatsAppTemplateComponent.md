@@ -1,4 +1,4 @@
-# Late.Model.WhatsAppTemplateComponent
+# Zernio.Model.WhatsAppTemplateComponent
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.InitiateTelegramConnectRequest
+# Zernio.Model.InitiateTelegramConnectRequest
 
 ## Properties
 

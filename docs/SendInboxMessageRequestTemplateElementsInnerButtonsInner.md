@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestTemplateElementsInnerButtonsInner
+# Zernio.Model.SendInboxMessageRequestTemplateElementsInnerButtonsInner
 
 ## Properties
 

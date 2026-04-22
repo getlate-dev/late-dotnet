@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestReplyMarkup
+# Zernio.Model.SendInboxMessageRequestReplyMarkup
 Telegram-native keyboard markup. Ignored on other platforms.
 
 ## Properties

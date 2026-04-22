@@ -1,4 +1,4 @@
-# Late.Model.GetMessengerMenu200Response
+# Zernio.Model.GetMessengerMenu200Response
 
 ## Properties
 

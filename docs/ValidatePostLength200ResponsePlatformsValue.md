@@ -1,4 +1,4 @@
-# Late.Model.ValidatePostLength200ResponsePlatformsValue
+# Zernio.Model.ValidatePostLength200ResponsePlatformsValue
 
 ## Properties
 

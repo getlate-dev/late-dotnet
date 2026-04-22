@@ -1,4 +1,4 @@
-# Late.Model.LinkedInPlatformData
+# Zernio.Model.LinkedInPlatformData
 Up to 20 images, no multi-video. Single PDF supported (max 100MB). Link previews auto-generated when no media attached. Use organizationUrn for multi-org posting. Geo-restriction only works for organization pages (not personal profiles) and requires the targeted audience to exceed 300 followers. 
 
 ## Properties

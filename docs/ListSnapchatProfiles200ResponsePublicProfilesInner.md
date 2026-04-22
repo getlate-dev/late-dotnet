@@ -1,4 +1,4 @@
-# Late.Model.ListSnapchatProfiles200ResponsePublicProfilesInner
+# Zernio.Model.ListSnapchatProfiles200ResponsePublicProfilesInner
 
 ## Properties
 

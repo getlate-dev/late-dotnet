@@ -1,4 +1,4 @@
-# Late.Model.SocialAccount
+# Zernio.Model.SocialAccount
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Api.GMBPlaceActionsApi
+# Zernio.Api.GMBPlaceActionsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -22,9 +22,9 @@ Creates a place action link for a location.  Available action types: APPOINTMENT
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -126,9 +126,9 @@ Deletes a place action link (e.g. booking or ordering URL) from a GBP location.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -230,9 +230,9 @@ Lists place action links for a Google Business Profile location.  Place actions 
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -336,9 +336,9 @@ Updates a place action link (change URL or action type). Only the fields include
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

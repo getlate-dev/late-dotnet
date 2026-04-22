@@ -1,4 +1,4 @@
-# Late.Model.YouTubePlatformData
+# Zernio.Model.YouTubePlatformData
 Videos under 3 min auto-detected as Shorts. Custom thumbnails for regular videos only. Scheduled videos are uploaded immediately with the specified visibility.
 
 ## Properties

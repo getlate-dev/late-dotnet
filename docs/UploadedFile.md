@@ -1,4 +1,4 @@
-# Late.Model.UploadedFile
+# Zernio.Model.UploadedFile
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.GetAdTree200Response
+# Zernio.Model.GetAdTree200Response
 
 ## Properties
 

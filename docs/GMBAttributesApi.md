@@ -1,4 +1,4 @@
-# Late.Api.GMBAttributesApi
+# Zernio.Api.GMBAttributesApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -20,9 +20,9 @@ Returns GBP location attributes (amenities, services, accessibility, payment typ
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -122,9 +122,9 @@ Updates location attributes (amenities, services, etc.).  The attributeMask spec
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

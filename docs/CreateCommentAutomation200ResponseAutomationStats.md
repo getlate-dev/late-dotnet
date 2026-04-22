@@ -1,4 +1,4 @@
-# Late.Model.CreateCommentAutomation200ResponseAutomationStats
+# Zernio.Model.CreateCommentAutomation200ResponseAutomationStats
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.GoogleBusinessPlatformDataCallToAction
+# Zernio.Model.GoogleBusinessPlatformDataCallToAction
 Optional call-to-action button displayed on the post
 
 ## Properties

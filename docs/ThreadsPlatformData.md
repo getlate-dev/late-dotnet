@@ -1,4 +1,4 @@
-# Late.Model.ThreadsPlatformData
+# Zernio.Model.ThreadsPlatformData
 Up to 10 images per carousel (no videos). Videos must be H.264/AAC MP4, max 5 min. Images JPEG/PNG, max 8 MB. Use threadItems for reply chains.
 
 ## Properties

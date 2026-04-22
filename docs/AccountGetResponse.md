@@ -1,4 +1,4 @@
-# Late.Model.AccountGetResponse
+# Zernio.Model.AccountGetResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.BulkUploadPosts429Response
+# Zernio.Model.BulkUploadPosts429Response
 
 ## Properties
 

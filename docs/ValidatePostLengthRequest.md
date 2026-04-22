@@ -1,4 +1,4 @@
-# Late.Model.ValidatePostLengthRequest
+# Zernio.Model.ValidatePostLengthRequest
 
 ## Properties
 

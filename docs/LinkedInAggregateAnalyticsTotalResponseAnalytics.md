@@ -1,4 +1,4 @@
-# Late.Model.LinkedInAggregateAnalyticsTotalResponseAnalytics
+# Zernio.Model.LinkedInAggregateAnalyticsTotalResponseAnalytics
 
 ## Properties
 

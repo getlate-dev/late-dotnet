@@ -1,4 +1,4 @@
-# Late.Model.AddUsersToAdAudienceRequest
+# Zernio.Model.AddUsersToAdAudienceRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.PostRetryResponse
+# Zernio.Model.PostRetryResponse
 
 ## Properties
 

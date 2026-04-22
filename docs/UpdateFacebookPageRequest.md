@@ -1,4 +1,4 @@
-# Late.Model.UpdateFacebookPageRequest
+# Zernio.Model.UpdateFacebookPageRequest
 
 ## Properties
 

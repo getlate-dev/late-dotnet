@@ -1,4 +1,4 @@
-# Late.Model.ListLogs200ResponsePagination
+# Zernio.Model.ListLogs200ResponsePagination
 
 ## Properties
 

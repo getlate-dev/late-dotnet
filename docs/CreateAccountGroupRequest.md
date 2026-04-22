@@ -1,4 +1,4 @@
-# Late.Model.CreateAccountGroupRequest
+# Zernio.Model.CreateAccountGroupRequest
 
 ## Properties
 

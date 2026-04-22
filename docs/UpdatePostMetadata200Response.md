@@ -1,4 +1,4 @@
-# Late.Model.UpdatePostMetadata200Response
+# Zernio.Model.UpdatePostMetadata200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.QueueDeleteResponse
+# Zernio.Model.QueueDeleteResponse
 
 ## Properties
 

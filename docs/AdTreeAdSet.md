@@ -1,4 +1,4 @@
-# Late.Model.AdTreeAdSet
+# Zernio.Model.AdTreeAdSet
 Ad set (or ad group/line item depending on platform) with rolled-up metrics and child ads
 
 ## Properties

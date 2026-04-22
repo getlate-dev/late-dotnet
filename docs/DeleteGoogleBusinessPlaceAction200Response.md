@@ -1,4 +1,4 @@
-# Late.Model.DeleteGoogleBusinessPlaceAction200Response
+# Zernio.Model.DeleteGoogleBusinessPlaceAction200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.UpdateGmbLocation200Response
+# Zernio.Model.UpdateGmbLocation200Response
 
 ## Properties
 

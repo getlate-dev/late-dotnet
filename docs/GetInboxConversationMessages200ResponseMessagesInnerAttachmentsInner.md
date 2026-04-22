@@ -1,4 +1,4 @@
-# Late.Model.GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner
+# Zernio.Model.GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner
 
 ## Properties
 

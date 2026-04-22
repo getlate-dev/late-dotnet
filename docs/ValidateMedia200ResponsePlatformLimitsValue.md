@@ -1,4 +1,4 @@
-# Late.Model.ValidateMedia200ResponsePlatformLimitsValue
+# Zernio.Model.ValidateMedia200ResponsePlatformLimitsValue
 
 ## Properties
 

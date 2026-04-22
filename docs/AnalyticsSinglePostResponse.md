@@ -1,4 +1,4 @@
-# Late.Model.AnalyticsSinglePostResponse
+# Zernio.Model.AnalyticsSinglePostResponse
 
 ## Properties
 

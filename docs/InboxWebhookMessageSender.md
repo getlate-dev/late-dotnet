@@ -1,4 +1,4 @@
-# Late.Model.InboxWebhookMessageSender
+# Zernio.Model.InboxWebhookMessageSender
 
 ## Properties
 

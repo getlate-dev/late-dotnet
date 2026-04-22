@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestReplyMarkupKeyboardInnerInner
+# Zernio.Model.SendInboxMessageRequestReplyMarkupKeyboardInnerInner
 
 ## Properties
 

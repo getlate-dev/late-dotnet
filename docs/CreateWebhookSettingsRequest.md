@@ -1,4 +1,4 @@
-# Late.Model.CreateWebhookSettingsRequest
+# Zernio.Model.CreateWebhookSettingsRequest
 
 ## Properties
 

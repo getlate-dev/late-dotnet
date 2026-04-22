@@ -1,4 +1,4 @@
-# Late.Model.GetAdAudience200Response
+# Zernio.Model.GetAdAudience200Response
 
 ## Properties
 

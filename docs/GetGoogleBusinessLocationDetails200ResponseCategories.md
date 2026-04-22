@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessLocationDetails200ResponseCategories
+# Zernio.Model.GetGoogleBusinessLocationDetails200ResponseCategories
 Business categories (returned when readMask includes 'categories')
 
 ## Properties

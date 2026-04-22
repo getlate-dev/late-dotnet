@@ -1,4 +1,4 @@
-# Late.Model.TelegramPlatformData
+# Zernio.Model.TelegramPlatformData
 Text, images (up to 10), videos (up to 10), and mixed media albums. Captions up to 1024 chars for media, 4096 for text-only.
 
 ## Properties

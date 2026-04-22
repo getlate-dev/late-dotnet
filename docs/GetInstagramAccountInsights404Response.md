@@ -1,4 +1,4 @@
-# Late.Model.GetInstagramAccountInsights404Response
+# Zernio.Model.GetInstagramAccountInsights404Response
 
 ## Properties
 

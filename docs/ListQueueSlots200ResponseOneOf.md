@@ -1,4 +1,4 @@
-# Late.Model.ListQueueSlots200ResponseOneOf
+# Zernio.Model.ListQueueSlots200ResponseOneOf
 Single queue response (default behavior)
 
 ## Properties

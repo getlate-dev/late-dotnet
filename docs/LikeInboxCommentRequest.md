@@ -1,4 +1,4 @@
-# Late.Model.LikeInboxCommentRequest
+# Zernio.Model.LikeInboxCommentRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.GetAccountHealth200ResponseTokenStatus
+# Zernio.Model.GetAccountHealth200ResponseTokenStatus
 
 ## Properties
 

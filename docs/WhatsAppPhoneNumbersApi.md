@@ -1,4 +1,4 @@
-# Late.Api.WhatsAppPhoneNumbersApi
+# Zernio.Api.WhatsAppPhoneNumbersApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -22,9 +22,9 @@ Retrieve the current status of a purchased phone number. Used to poll for Meta p
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -122,9 +122,9 @@ List all WhatsApp phone numbers purchased by the authenticated user. By default,
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -223,9 +223,9 @@ Initiate purchasing a WhatsApp phone number. Payment-first flow: the user does n
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -324,9 +324,9 @@ Release a purchased phone number. This will: 1. Disconnect any linked WhatsApp s
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

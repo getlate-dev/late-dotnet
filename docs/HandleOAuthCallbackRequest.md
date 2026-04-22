@@ -1,4 +1,4 @@
-# Late.Model.HandleOAuthCallbackRequest
+# Zernio.Model.HandleOAuthCallbackRequest
 
 ## Properties
 

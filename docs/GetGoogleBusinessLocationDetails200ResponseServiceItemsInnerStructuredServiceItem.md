@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessLocationDetails200ResponseServiceItemsInnerStructuredServiceItem
+# Zernio.Model.GetGoogleBusinessLocationDetails200ResponseServiceItemsInnerStructuredServiceItem
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.CancelBroadcast200Response
+# Zernio.Model.CancelBroadcast200Response
 
 ## Properties
 

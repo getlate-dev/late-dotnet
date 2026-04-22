@@ -1,4 +1,4 @@
-# Late.Model.Money
+# Zernio.Model.Money
 
 ## Properties
 

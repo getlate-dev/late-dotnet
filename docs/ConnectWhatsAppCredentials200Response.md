@@ -1,4 +1,4 @@
-# Late.Model.ConnectWhatsAppCredentials200Response
+# Zernio.Model.ConnectWhatsAppCredentials200Response
 
 ## Properties
 

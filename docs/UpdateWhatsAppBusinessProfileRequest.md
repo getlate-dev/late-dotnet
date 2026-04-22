@@ -1,4 +1,4 @@
-# Late.Model.UpdateWhatsAppBusinessProfileRequest
+# Zernio.Model.UpdateWhatsAppBusinessProfileRequest
 
 ## Properties
 

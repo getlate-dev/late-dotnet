@@ -1,4 +1,4 @@
-# Late.Model.SetMessengerMenuRequest
+# Zernio.Model.SetMessengerMenuRequest
 
 ## Properties
 

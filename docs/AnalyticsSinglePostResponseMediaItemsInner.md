@@ -1,4 +1,4 @@
-# Late.Model.AnalyticsSinglePostResponseMediaItemsInner
+# Zernio.Model.AnalyticsSinglePostResponseMediaItemsInner
 
 ## Properties
 

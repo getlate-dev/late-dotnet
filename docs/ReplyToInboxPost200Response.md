@@ -1,4 +1,4 @@
-# Late.Model.ReplyToInboxPost200Response
+# Zernio.Model.ReplyToInboxPost200Response
 
 ## Properties
 

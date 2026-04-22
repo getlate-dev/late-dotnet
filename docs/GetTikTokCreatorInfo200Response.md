@@ -1,4 +1,4 @@
-# Late.Model.GetTikTokCreatorInfo200Response
+# Zernio.Model.GetTikTokCreatorInfo200Response
 
 ## Properties
 

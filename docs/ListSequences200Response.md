@@ -1,4 +1,4 @@
-# Late.Model.ListSequences200Response
+# Zernio.Model.ListSequences200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.ApproveWhatsAppGroupJoinRequestsRequest
+# Zernio.Model.ApproveWhatsAppGroupJoinRequestsRequest
 
 ## Properties
 

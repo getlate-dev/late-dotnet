@@ -1,4 +1,4 @@
-# Late.Model.FacebookPlatformData
+# Zernio.Model.FacebookPlatformData
 Feed posts support up to 10 images (no mixed video+image). Stories require single media (24h, no captions). Reels require single vertical video (9:16, 3-60s). Geo-restriction is a hard visibility restriction: users outside the specified countries cannot see the post. Not supported for stories. 
 
 ## Properties

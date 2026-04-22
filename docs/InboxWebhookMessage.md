@@ -1,4 +1,4 @@
-# Late.Model.InboxWebhookMessage
+# Zernio.Model.InboxWebhookMessage
 The message object included in inbox webhook payloads.
 
 ## Properties

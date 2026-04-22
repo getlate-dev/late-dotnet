@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessAttributes200ResponseAttributesInnerRepeatedEnumValue
+# Zernio.Model.GetGoogleBusinessAttributes200ResponseAttributesInnerRepeatedEnumValue
 
 ## Properties
 

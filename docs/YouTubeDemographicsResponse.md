@@ -1,4 +1,4 @@
-# Late.Model.YouTubeDemographicsResponse
+# Zernio.Model.YouTubeDemographicsResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.LinkedInAggregateAnalyticsTotalResponseDateRange
+# Zernio.Model.LinkedInAggregateAnalyticsTotalResponseDateRange
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.PurchaseWhatsAppPhoneNumber200ResponseOneOf1
+# Zernio.Model.PurchaseWhatsAppPhoneNumber200ResponseOneOf1
 Phone number provisioned inline (subsequent numbers)
 
 ## Properties

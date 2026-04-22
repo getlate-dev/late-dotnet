@@ -1,4 +1,4 @@
-# Late.Model.FoodMenuLabel
+# Zernio.Model.FoodMenuLabel
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.GetAdAnalytics200ResponseAnalyticsDailyInner
+# Zernio.Model.GetAdAnalytics200ResponseAnalyticsDailyInner
 
 ## Properties
 

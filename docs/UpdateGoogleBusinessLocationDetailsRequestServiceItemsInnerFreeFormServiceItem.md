@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessLocationDetailsRequestServiceItemsInnerFreeFormServiceItem
+# Zernio.Model.UpdateGoogleBusinessLocationDetailsRequestServiceItemsInnerFreeFormServiceItem
 A custom service not in Google's catalog
 
 ## Properties

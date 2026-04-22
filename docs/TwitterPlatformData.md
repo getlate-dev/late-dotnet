@@ -1,4 +1,4 @@
-# Late.Model.TwitterPlatformData
+# Zernio.Model.TwitterPlatformData
 X (Twitter) geo-restriction applies at the media level. Media in geo-restricted tweets will be hidden for users outside the specified countries; the tweet text itself remains visible globally. Requires media to be attached (ignored for text-only tweets). 
 
 ## Properties

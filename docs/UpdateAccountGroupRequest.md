@@ -1,4 +1,4 @@
-# Late.Model.UpdateAccountGroupRequest
+# Zernio.Model.UpdateAccountGroupRequest
 
 ## Properties
 

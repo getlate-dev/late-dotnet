@@ -1,4 +1,4 @@
-# Late.Model.EnrollContactsRequest
+# Zernio.Model.EnrollContactsRequest
 
 ## Properties
 

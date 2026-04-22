@@ -1,4 +1,4 @@
-# Late.Model.ListInboxComments200Response
+# Zernio.Model.ListInboxComments200Response
 
 ## Properties
 

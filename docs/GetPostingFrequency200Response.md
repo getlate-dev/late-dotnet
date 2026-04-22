@@ -1,4 +1,4 @@
-# Late.Model.GetPostingFrequency200Response
+# Zernio.Model.GetPostingFrequency200Response
 
 ## Properties
 

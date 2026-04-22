@@ -1,4 +1,4 @@
-# Late.Api.AdAudiencesApi
+# Zernio.Api.AdAudiencesApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -23,9 +23,9 @@ Upload user data (emails and/or phone numbers) to a customer_list audience. Data
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -128,9 +128,9 @@ Create a customer list, website retargeting, or lookalike audience on Meta (Face
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -229,9 +229,9 @@ Deletes the audience from both Meta and the local database.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -330,9 +330,9 @@ Returns the local audience record and fresh data from Meta (if available).
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -431,9 +431,9 @@ Returns custom audiences for the given ad account. Supports Meta, Google, TikTok
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

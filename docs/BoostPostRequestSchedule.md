@@ -1,4 +1,4 @@
-# Late.Model.BoostPostRequestSchedule
+# Zernio.Model.BoostPostRequestSchedule
 
 ## Properties
 

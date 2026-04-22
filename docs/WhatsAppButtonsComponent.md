@@ -1,4 +1,4 @@
-# Late.Model.WhatsAppButtonsComponent
+# Zernio.Model.WhatsAppButtonsComponent
 
 ## Properties
 

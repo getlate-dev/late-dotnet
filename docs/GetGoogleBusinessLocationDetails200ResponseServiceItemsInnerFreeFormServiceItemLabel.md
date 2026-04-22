@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessLocationDetails200ResponseServiceItemsInnerFreeFormServiceItemLabel
+# Zernio.Model.GetGoogleBusinessLocationDetails200ResponseServiceItemsInnerFreeFormServiceItemLabel
 
 ## Properties
 

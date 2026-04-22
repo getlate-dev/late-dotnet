@@ -1,4 +1,4 @@
-# Late.Model.GetAnalytics400Response
+# Zernio.Model.GetAnalytics400Response
 
 ## Properties
 

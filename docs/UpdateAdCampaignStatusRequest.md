@@ -1,4 +1,4 @@
-# Late.Model.UpdateAdCampaignStatusRequest
+# Zernio.Model.UpdateAdCampaignStatusRequest
 
 ## Properties
 

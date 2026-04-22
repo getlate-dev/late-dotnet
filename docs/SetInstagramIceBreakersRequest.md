@@ -1,4 +1,4 @@
-# Late.Model.SetInstagramIceBreakersRequest
+# Zernio.Model.SetInstagramIceBreakersRequest
 
 ## Properties
 

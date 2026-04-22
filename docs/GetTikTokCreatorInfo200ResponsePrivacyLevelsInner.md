@@ -1,4 +1,4 @@
-# Late.Model.GetTikTokCreatorInfo200ResponsePrivacyLevelsInner
+# Zernio.Model.GetTikTokCreatorInfo200ResponsePrivacyLevelsInner
 
 ## Properties
 

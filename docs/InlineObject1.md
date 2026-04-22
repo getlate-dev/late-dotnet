@@ -1,4 +1,4 @@
-# Late.Model.InlineObject1
+# Zernio.Model.InlineObject1
 
 ## Properties
 

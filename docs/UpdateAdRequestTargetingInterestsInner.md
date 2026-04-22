@@ -1,4 +1,4 @@
-# Late.Model.UpdateAdRequestTargetingInterestsInner
+# Zernio.Model.UpdateAdRequestTargetingInterestsInner
 
 ## Properties
 

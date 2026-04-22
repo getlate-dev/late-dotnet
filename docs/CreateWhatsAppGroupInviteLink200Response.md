@@ -1,4 +1,4 @@
-# Late.Model.CreateWhatsAppGroupInviteLink200Response
+# Zernio.Model.CreateWhatsAppGroupInviteLink200Response
 
 ## Properties
 

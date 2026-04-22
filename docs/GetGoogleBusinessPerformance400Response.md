@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessPerformance400Response
+# Zernio.Model.GetGoogleBusinessPerformance400Response
 
 ## Properties
 

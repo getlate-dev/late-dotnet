@@ -1,4 +1,4 @@
-# Late.Model.ListQueueSlots200ResponseOneOf1
+# Zernio.Model.ListQueueSlots200ResponseOneOf1
 All queues response (when all=true)
 
 ## Properties

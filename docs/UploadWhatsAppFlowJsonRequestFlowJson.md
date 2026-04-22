@@ -1,4 +1,4 @@
-# Late.Model.UploadWhatsAppFlowJsonRequestFlowJson
+# Zernio.Model.UploadWhatsAppFlowJsonRequestFlowJson
 The Flow JSON content. Pass as a JSON object or a JSON string.
 
 ## Properties

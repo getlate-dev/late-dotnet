@@ -1,4 +1,4 @@
-# Late.Model.UpdateAccountRequest
+# Zernio.Model.UpdateAccountRequest
 
 ## Properties
 

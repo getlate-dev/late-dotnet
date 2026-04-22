@@ -1,4 +1,4 @@
-# Late.Model.PinterestPlatformData
+# Zernio.Model.PinterestPlatformData
 
 ## Properties
 

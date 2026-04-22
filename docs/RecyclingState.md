@@ -1,4 +1,4 @@
-# Late.Model.RecyclingState
+# Zernio.Model.RecyclingState
 Current recycling configuration and state on a post
 
 ## Properties

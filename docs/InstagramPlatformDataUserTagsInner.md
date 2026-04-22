@@ -1,4 +1,4 @@
-# Late.Model.InstagramPlatformDataUserTagsInner
+# Zernio.Model.InstagramPlatformDataUserTagsInner
 
 ## Properties
 

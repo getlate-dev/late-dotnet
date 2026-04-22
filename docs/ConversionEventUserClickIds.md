@@ -1,4 +1,4 @@
-# Late.Model.ConversionEventUserClickIds
+# Zernio.Model.ConversionEventUserClickIds
 Platform click identifiers captured from the originating ad click.
 
 ## Properties

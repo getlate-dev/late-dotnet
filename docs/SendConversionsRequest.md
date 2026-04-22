@@ -1,4 +1,4 @@
-# Late.Model.SendConversionsRequest
+# Zernio.Model.SendConversionsRequest
 
 ## Properties
 

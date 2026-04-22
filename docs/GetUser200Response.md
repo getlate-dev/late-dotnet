@@ -1,4 +1,4 @@
-# Late.Model.GetUser200Response
+# Zernio.Model.GetUser200Response
 
 ## Properties
 

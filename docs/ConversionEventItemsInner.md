@@ -1,4 +1,4 @@
-# Late.Model.ConversionEventItemsInner
+# Zernio.Model.ConversionEventItemsInner
 
 ## Properties
 

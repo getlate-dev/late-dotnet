@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestInteractiveBody
+# Zernio.Model.SendInboxMessageRequestInteractiveBody
 
 ## Properties
 

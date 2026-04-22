@@ -1,4 +1,4 @@
-# Late.Model.GetDailyMetrics200ResponseDailyDataInnerMetrics
+# Zernio.Model.GetDailyMetrics200ResponseDailyDataInnerMetrics
 
 ## Properties
 

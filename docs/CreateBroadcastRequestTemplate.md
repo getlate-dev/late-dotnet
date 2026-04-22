@@ -1,4 +1,4 @@
-# Late.Model.CreateBroadcastRequestTemplate
+# Zernio.Model.CreateBroadcastRequestTemplate
 WhatsApp template (required when platform is whatsapp)
 
 ## Properties

@@ -1,4 +1,4 @@
-# Late.Model.RemoveBookmark200Response
+# Zernio.Model.RemoveBookmark200Response
 
 ## Properties
 

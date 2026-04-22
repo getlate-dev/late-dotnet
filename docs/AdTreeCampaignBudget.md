@@ -1,4 +1,4 @@
-# Late.Model.AdTreeCampaignBudget
+# Zernio.Model.AdTreeCampaignBudget
 Effective budget (back-compat). For CBO this mirrors `campaignBudget`, for ABO this mirrors the child ad-set budget. Use `budgetLevel` to disambiguate.
 
 ## Properties

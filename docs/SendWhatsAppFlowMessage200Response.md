@@ -1,4 +1,4 @@
-# Late.Model.SendWhatsAppFlowMessage200Response
+# Zernio.Model.SendWhatsAppFlowMessage200Response
 
 ## Properties
 

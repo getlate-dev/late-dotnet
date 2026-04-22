@@ -1,4 +1,4 @@
-# Late.Model.GetYouTubeDailyViews403Response
+# Zernio.Model.GetYouTubeDailyViews403Response
 
 ## Properties
 

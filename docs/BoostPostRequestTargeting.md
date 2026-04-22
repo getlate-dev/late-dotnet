@@ -1,4 +1,4 @@
-# Late.Model.BoostPostRequestTargeting
+# Zernio.Model.BoostPostRequestTargeting
 
 ## Properties
 

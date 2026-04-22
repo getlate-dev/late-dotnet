@@ -1,4 +1,4 @@
-# Late.Model.AdCampaignBudget
+# Zernio.Model.AdCampaignBudget
 Effective budget (back-compat). Use `budgetLevel` to disambiguate CBO vs ABO.
 
 ## Properties

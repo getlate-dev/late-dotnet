@@ -1,4 +1,4 @@
-# Late.Model.GetRedditFlairs200Response
+# Zernio.Model.GetRedditFlairs200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.ListAdAccounts200ResponseAccountsInner
+# Zernio.Model.ListAdAccounts200ResponseAccountsInner
 
 ## Properties
 

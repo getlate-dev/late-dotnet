@@ -1,4 +1,4 @@
-# Late.Model.GetDiscordSettings200ResponseAccount
+# Zernio.Model.GetDiscordSettings200ResponseAccount
 
 ## Properties
 

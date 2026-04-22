@@ -1,4 +1,4 @@
-# Late.Model.UpdateYoutubeDefaultPlaylistRequest
+# Zernio.Model.UpdateYoutubeDefaultPlaylistRequest
 
 ## Properties
 

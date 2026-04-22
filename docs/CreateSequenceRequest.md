@@ -1,4 +1,4 @@
-# Late.Model.CreateSequenceRequest
+# Zernio.Model.CreateSequenceRequest
 
 ## Properties
 

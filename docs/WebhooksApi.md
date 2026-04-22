@@ -1,4 +1,4 @@
-# Late.Api.WebhooksApi
+# Zernio.Api.WebhooksApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -23,9 +23,9 @@ Create a new webhook configuration. Maximum 10 webhooks per user.  `name`, `url`
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -123,9 +123,9 @@ Permanently delete a webhook configuration.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -223,9 +223,9 @@ Retrieve all configured webhooks for the authenticated user. Supports up to 10 w
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -317,9 +317,9 @@ Send a test webhook to verify your endpoint is configured correctly. The test pa
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -418,9 +418,9 @@ Update an existing webhook configuration. All fields except `_id` are optional; 
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

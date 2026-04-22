@@ -1,4 +1,4 @@
-# Late.Api.CommentsApi
+# Zernio.Api.CommentsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -27,9 +27,9 @@ Delete a comment on a post. Supported by Facebook, Instagram, Bluesky, Reddit, Y
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -132,9 +132,9 @@ Fetch comments for a specific post. Requires accountId query parameter.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -242,9 +242,9 @@ Hide a comment on a post. Supported by Facebook, Instagram, Threads, and X/Twitt
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -347,9 +347,9 @@ Like or upvote a comment on a post. Supported platforms: Facebook, Twitter/X, Bl
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -452,9 +452,9 @@ Returns posts with comment counts from all connected accounts. Aggregates data a
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -568,9 +568,9 @@ Post a reply to a post or specific comment. Requires accountId in request body.
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -670,9 +670,9 @@ Send a private message to the author of a comment. Supported on Instagram and Fa
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -776,9 +776,9 @@ Unhide a previously hidden comment. Supported by Facebook, Instagram, Threads, a
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -881,9 +881,9 @@ Remove a like from a comment. Supported platforms: Facebook, Twitter/X, Bluesky,
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

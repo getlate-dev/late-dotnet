@@ -1,4 +1,4 @@
-# Late.Model.AdStatus
+# Zernio.Model.AdStatus
 
 ## Properties
 

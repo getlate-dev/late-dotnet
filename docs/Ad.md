@@ -1,4 +1,4 @@
-# Late.Model.Ad
+# Zernio.Model.Ad
 
 ## Properties
 

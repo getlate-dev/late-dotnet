@@ -1,4 +1,4 @@
-# Late.Model.PostDeleteResponse
+# Zernio.Model.PostDeleteResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.ListAccountGroups200Response
+# Zernio.Model.ListAccountGroups200Response
 
 ## Properties
 

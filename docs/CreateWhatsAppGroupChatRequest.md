@@ -1,4 +1,4 @@
-# Late.Model.CreateWhatsAppGroupChatRequest
+# Zernio.Model.CreateWhatsAppGroupChatRequest
 
 ## Properties
 

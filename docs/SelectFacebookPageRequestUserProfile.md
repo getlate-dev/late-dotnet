@@ -1,4 +1,4 @@
-# Late.Model.SelectFacebookPageRequestUserProfile
+# Zernio.Model.SelectFacebookPageRequestUserProfile
 Decoded user profile object from the OAuth callback
 
 ## Properties

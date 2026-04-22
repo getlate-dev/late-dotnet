@@ -1,4 +1,4 @@
-# Late.Model.GetPendingOAuthData200Response
+# Zernio.Model.GetPendingOAuthData200Response
 
 ## Properties
 

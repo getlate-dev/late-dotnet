@@ -1,4 +1,4 @@
-# Late.Model.UpdateInboxConversation200Response
+# Zernio.Model.UpdateInboxConversation200Response
 
 ## Properties
 

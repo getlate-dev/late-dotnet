@@ -1,4 +1,4 @@
-# Late.Model.WebhookPayloadMessage
+# Zernio.Model.WebhookPayloadMessage
 Webhook payload for message received events
 
 ## Properties

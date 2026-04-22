@@ -1,4 +1,4 @@
-# Late.Model.AdTreeAdSetPromotedObject
+# Zernio.Model.AdTreeAdSetPromotedObject
 Meta promoted object for this ad set (conversion event details)
 
 ## Properties

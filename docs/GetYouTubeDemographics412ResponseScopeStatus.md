@@ -1,4 +1,4 @@
-# Late.Model.GetYouTubeDemographics412ResponseScopeStatus
+# Zernio.Model.GetYouTubeDemographics412ResponseScopeStatus
 
 ## Properties
 

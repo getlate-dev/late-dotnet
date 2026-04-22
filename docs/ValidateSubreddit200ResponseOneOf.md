@@ -1,4 +1,4 @@
-# Late.Model.ValidateSubreddit200ResponseOneOf
+# Zernio.Model.ValidateSubreddit200ResponseOneOf
 Subreddit exists
 
 ## Properties

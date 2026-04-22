@@ -1,4 +1,4 @@
-# Late.Model.AdCampaignCampaignBudget
+# Zernio.Model.AdCampaignCampaignBudget
 Campaign-level budget (CBO). Null for ABO campaigns.
 
 ## Properties

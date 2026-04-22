@@ -1,4 +1,4 @@
-# Late.Model.ListCommentAutomationLogs200Response
+# Zernio.Model.ListCommentAutomationLogs200Response
 
 ## Properties
 

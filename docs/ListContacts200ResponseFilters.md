@@ -1,4 +1,4 @@
-# Late.Model.ListContacts200ResponseFilters
+# Zernio.Model.ListContacts200ResponseFilters
 
 ## Properties
 

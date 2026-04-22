@@ -1,4 +1,4 @@
-# Late.Model.GetContentDecay200Response
+# Zernio.Model.GetContentDecay200Response
 
 ## Properties
 

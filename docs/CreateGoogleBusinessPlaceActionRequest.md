@@ -1,4 +1,4 @@
-# Late.Model.CreateGoogleBusinessPlaceActionRequest
+# Zernio.Model.CreateGoogleBusinessPlaceActionRequest
 
 ## Properties
 

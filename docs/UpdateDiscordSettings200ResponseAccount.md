@@ -1,4 +1,4 @@
-# Late.Model.UpdateDiscordSettings200ResponseAccount
+# Zernio.Model.UpdateDiscordSettings200ResponseAccount
 
 ## Properties
 

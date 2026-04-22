@@ -1,4 +1,4 @@
-# Late.Model.DiscordPlatformDataEmbedsInner
+# Zernio.Model.DiscordPlatformDataEmbedsInner
 
 ## Properties
 

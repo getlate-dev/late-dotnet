@@ -1,4 +1,4 @@
-# Late.Api.GMBFoodMenusApi
+# Zernio.Api.GMBFoodMenusApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -20,9 +20,9 @@ Returns food menus for a GBP location including sections, items, pricing, and di
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -125,9 +125,9 @@ Updates food menus for a GBP location. Send the full menus array. Use updateMask
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

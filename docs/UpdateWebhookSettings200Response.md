@@ -1,4 +1,4 @@
-# Late.Model.UpdateWebhookSettings200Response
+# Zernio.Model.UpdateWebhookSettings200Response
 
 ## Properties
 

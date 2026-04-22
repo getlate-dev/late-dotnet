@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessLocationDetailsRequestCategories
+# Zernio.Model.UpdateGoogleBusinessLocationDetailsRequestCategories
 Primary and additional business categories. Use updateMask='categories' to update.
 
 ## Properties

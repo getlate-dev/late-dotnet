@@ -1,4 +1,4 @@
-# Late.Model.InstagramDemographicsResponseDemographicsValueInner
+# Zernio.Model.InstagramDemographicsResponseDemographicsValueInner
 
 ## Properties
 

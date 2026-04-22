@@ -1,4 +1,4 @@
-# Late.Model.DeleteAccountGroup200Response
+# Zernio.Model.DeleteAccountGroup200Response
 
 ## Properties
 

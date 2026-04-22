@@ -1,4 +1,4 @@
-# Late.Model.ListAds200Response
+# Zernio.Model.ListAds200Response
 
 ## Properties
 

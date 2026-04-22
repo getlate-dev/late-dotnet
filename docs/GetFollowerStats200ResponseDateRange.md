@@ -1,4 +1,4 @@
-# Late.Model.GetFollowerStats200ResponseDateRange
+# Zernio.Model.GetFollowerStats200ResponseDateRange
 
 ## Properties
 

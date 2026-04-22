@@ -1,4 +1,4 @@
-# Late.Model.AdCampaign
+# Zernio.Model.AdCampaign
 
 ## Properties
 

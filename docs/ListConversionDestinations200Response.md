@@ -1,4 +1,4 @@
-# Late.Model.ListConversionDestinations200Response
+# Zernio.Model.ListConversionDestinations200Response
 
 ## Properties
 

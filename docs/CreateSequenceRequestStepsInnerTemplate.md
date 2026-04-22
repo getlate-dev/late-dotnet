@@ -1,4 +1,4 @@
-# Late.Model.CreateSequenceRequestStepsInnerTemplate
+# Zernio.Model.CreateSequenceRequestStepsInnerTemplate
 
 ## Properties
 

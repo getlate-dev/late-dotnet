@@ -1,4 +1,4 @@
-# Late.Model.ListPinterestBoardsForSelection200Response
+# Zernio.Model.ListPinterestBoardsForSelection200Response
 
 ## Properties
 

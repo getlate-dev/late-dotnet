@@ -1,4 +1,4 @@
-# Late.Model.BoostPostRequestTracking
+# Zernio.Model.BoostPostRequestTracking
 Meta only. Tracking specs (pixel, URL tags).
 
 ## Properties

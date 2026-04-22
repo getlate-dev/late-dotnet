@@ -1,4 +1,4 @@
-# Late.Model.ListGoogleBusinessMedia200ResponseMediaItemsInnerLocationAssociation
+# Zernio.Model.ListGoogleBusinessMedia200ResponseMediaItemsInnerLocationAssociation
 
 ## Properties
 

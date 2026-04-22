@@ -1,4 +1,4 @@
-# Late.Model.ListBroadcasts200ResponseBroadcastsInner
+# Zernio.Model.ListBroadcasts200ResponseBroadcastsInner
 
 ## Properties
 

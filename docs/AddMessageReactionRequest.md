@@ -1,4 +1,4 @@
-# Late.Model.AddMessageReactionRequest
+# Zernio.Model.AddMessageReactionRequest
 
 ## Properties
 

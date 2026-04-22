@@ -1,4 +1,4 @@
-# Late.Model.TestWebhookRequest
+# Zernio.Model.TestWebhookRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.InboxWebhookAccount
+# Zernio.Model.InboxWebhookAccount
 The account context included in inbox webhook payloads.
 
 ## Properties

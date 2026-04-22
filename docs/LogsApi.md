@@ -1,4 +1,4 @@
-# Late.Api.LogsApi
+# Zernio.Api.LogsApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -19,9 +19,9 @@ Unified logs endpoint. Returns logs for publishing, connections, webhooks, and m
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

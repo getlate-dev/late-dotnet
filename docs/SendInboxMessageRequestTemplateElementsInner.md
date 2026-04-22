@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestTemplateElementsInner
+# Zernio.Model.SendInboxMessageRequestTemplateElementsInner
 
 ## Properties
 

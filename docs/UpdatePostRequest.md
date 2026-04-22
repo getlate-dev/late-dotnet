@@ -1,4 +1,4 @@
-# Late.Model.UpdatePostRequest
+# Zernio.Model.UpdatePostRequest
 
 ## Properties
 

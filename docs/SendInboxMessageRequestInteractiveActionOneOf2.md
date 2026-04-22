@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestInteractiveActionOneOf2
+# Zernio.Model.SendInboxMessageRequestInteractiveActionOneOf2
 Flow action. `type` on the parent must be `flow`.
 
 ## Properties

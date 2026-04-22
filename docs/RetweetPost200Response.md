@@ -1,4 +1,4 @@
-# Late.Model.RetweetPost200Response
+# Zernio.Model.RetweetPost200Response
 
 ## Properties
 

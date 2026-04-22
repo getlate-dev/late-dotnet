@@ -1,4 +1,4 @@
-# Late.Model.DeleteGoogleBusinessMedia200Response
+# Zernio.Model.DeleteGoogleBusinessMedia200Response
 
 ## Properties
 

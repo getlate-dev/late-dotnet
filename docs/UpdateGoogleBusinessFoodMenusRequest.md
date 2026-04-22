@@ -1,4 +1,4 @@
-# Late.Model.UpdateGoogleBusinessFoodMenusRequest
+# Zernio.Model.UpdateGoogleBusinessFoodMenusRequest
 
 ## Properties
 

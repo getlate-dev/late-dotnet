@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessAttributes200ResponseAttributesInner
+# Zernio.Model.GetGoogleBusinessAttributes200ResponseAttributesInner
 
 ## Properties
 

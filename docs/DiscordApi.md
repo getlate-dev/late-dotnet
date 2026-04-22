@@ -1,4 +1,4 @@
-# Late.Api.DiscordApi
+# Zernio.Api.DiscordApi
 
 All URIs are relative to *https://zernio.com/api*
 
@@ -21,9 +21,9 @@ Returns the text, announcement, and forum channels in the connected Discord guil
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -122,9 +122,9 @@ Returns the current Discord account settings including webhook identity (display
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {
@@ -223,9 +223,9 @@ Update Discord account settings. Supports two operations (can be combined):  1. 
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
-using Late.Api;
-using Late.Client;
-using Late.Model;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
 
 namespace Example
 {

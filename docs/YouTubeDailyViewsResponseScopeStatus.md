@@ -1,4 +1,4 @@
-# Late.Model.YouTubeDailyViewsResponseScopeStatus
+# Zernio.Model.YouTubeDailyViewsResponseScopeStatus
 
 ## Properties
 

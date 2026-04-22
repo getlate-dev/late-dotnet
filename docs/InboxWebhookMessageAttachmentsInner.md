@@ -1,4 +1,4 @@
-# Late.Model.InboxWebhookMessageAttachmentsInner
+# Zernio.Model.InboxWebhookMessageAttachmentsInner
 
 ## Properties
 

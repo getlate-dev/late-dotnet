@@ -1,4 +1,4 @@
-# Late.Model.YouTubeScopeMissingResponse
+# Zernio.Model.YouTubeScopeMissingResponse
 
 ## Properties
 

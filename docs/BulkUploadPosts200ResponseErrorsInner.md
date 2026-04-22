@@ -1,4 +1,4 @@
-# Late.Model.BulkUploadPosts200ResponseErrorsInner
+# Zernio.Model.BulkUploadPosts200ResponseErrorsInner
 
 ## Properties
 

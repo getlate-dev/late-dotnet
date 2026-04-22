@@ -1,4 +1,4 @@
-# Late.Model.CreateSequenceRequestStepsInnerTemplateVariableMappingValue
+# Zernio.Model.CreateSequenceRequestStepsInnerTemplateVariableMappingValue
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.ListLogs200ResponseLogsInner
+# Zernio.Model.ListLogs200ResponseLogsInner
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.AnalyticsListResponsePostsInner
+# Zernio.Model.AnalyticsListResponsePostsInner
 
 ## Properties
 

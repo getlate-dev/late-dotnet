@@ -1,4 +1,4 @@
-# Late.Model.GetSequence200ResponseSequenceStepsInner
+# Zernio.Model.GetSequence200ResponseSequenceStepsInner
 
 ## Properties
 

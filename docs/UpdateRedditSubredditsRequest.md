@@ -1,4 +1,4 @@
-# Late.Model.UpdateRedditSubredditsRequest
+# Zernio.Model.UpdateRedditSubredditsRequest
 
 ## Properties
 

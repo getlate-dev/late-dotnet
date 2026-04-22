@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestInteractiveHeaderImage
+# Zernio.Model.SendInboxMessageRequestInteractiveHeaderImage
 
 ## Properties
 

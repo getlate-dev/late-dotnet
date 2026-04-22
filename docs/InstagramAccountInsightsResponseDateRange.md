@@ -1,4 +1,4 @@
-# Late.Model.InstagramAccountInsightsResponseDateRange
+# Zernio.Model.InstagramAccountInsightsResponseDateRange
 
 ## Properties
 

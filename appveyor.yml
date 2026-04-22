@@ -6,4 +6,4 @@ build_script:
 - dotnet build -c Release
 - dotnet test -c Release
 after_build:
-- dotnet pack .\src\Late\Late.csproj -o ../../output -c Release --no-build
+- dotnet pack .\src\Zernio\Zernio.csproj -o ../../output -c Release --no-build

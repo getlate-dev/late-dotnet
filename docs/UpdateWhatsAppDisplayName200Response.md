@@ -1,4 +1,4 @@
-# Late.Model.UpdateWhatsAppDisplayName200Response
+# Zernio.Model.UpdateWhatsAppDisplayName200Response
 
 ## Properties
 

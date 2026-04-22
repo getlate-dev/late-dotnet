@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessLocationDetails200ResponseServiceItemsInnerPrice
+# Zernio.Model.GetGoogleBusinessLocationDetails200ResponseServiceItemsInnerPrice
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.ListInboxConversations200ResponsePagination
+# Zernio.Model.ListInboxConversations200ResponsePagination
 
 ## Properties
 

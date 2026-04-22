@@ -1,4 +1,4 @@
-# Late.Model.SendInboxMessageRequestInteractiveHeader
+# Zernio.Model.SendInboxMessageRequestInteractiveHeader
 Optional header shown above the body.
 
 ## Properties

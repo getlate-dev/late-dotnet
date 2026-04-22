@@ -1,4 +1,4 @@
-# Late.Model.GetGoogleBusinessServices200ResponseServicesInner
+# Zernio.Model.GetGoogleBusinessServices200ResponseServicesInner
 
 ## Properties
 

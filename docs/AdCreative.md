@@ -1,4 +1,4 @@
-# Late.Model.AdCreative
+# Zernio.Model.AdCreative
 Platform-specific creative data. Fields vary by platform.
 
 ## Properties

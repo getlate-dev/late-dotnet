@@ -1,4 +1,4 @@
-# Late.Model.ListAdCampaigns200Response
+# Zernio.Model.ListAdCampaigns200Response
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# Late.Model.DeleteQueueSlot200Response
+# Zernio.Model.DeleteQueueSlot200Response
 
 ## Properties
 
