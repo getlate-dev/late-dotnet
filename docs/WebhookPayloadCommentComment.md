@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **CreatedAt** | **DateTime** |  | 
 **IsReply** | **bool** | Whether this is a reply to another comment | 
 **ParentCommentId** | **string** | Parent comment ID if this is a reply | 
+**Ad** | [**WebhookPayloadCommentCommentAd**](WebhookPayloadCommentCommentAd.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

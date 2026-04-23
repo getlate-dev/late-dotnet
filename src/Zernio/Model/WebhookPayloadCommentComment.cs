@@ -105,7 +105,8 @@ namespace Zernio.Model
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="isReply">Whether this is a reply to another comment (required).</param>
         /// <param name="parentCommentId">Parent comment ID if this is a reply (required).</param>
-        public WebhookPayloadCommentComment(string id = default, string postId = default, string platformPostId = default, PlatformEnum platform = default, string text = default, WebhookPayloadCommentCommentAuthor author = default, DateTime createdAt = default, bool isReply = default, string parentCommentId = default)
+        /// <param name="ad">ad.</param>
+        public WebhookPayloadCommentComment(string id = default, string postId = default, string platformPostId = default, PlatformEnum platform = default, string text = default, WebhookPayloadCommentCommentAuthor author = default, DateTime createdAt = default, bool isReply = default, string parentCommentId = default, WebhookPayloadCommentCommentAd ad = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)
@@ -146,6 +147,7 @@ namespace Zernio.Model
                 throw new ArgumentNullException("parentCommentId is a required property for WebhookPayloadCommentComment and cannot be null");
             }
             this.ParentCommentId = parentCommentId;
+            this.Ad = ad;
         }
 
         /// <summary>
@@ -203,6 +205,12 @@ namespace Zernio.Model
         public string ParentCommentId { get; set; }
 
         /// <summary>
+        /// Gets or Sets Ad
+        /// </summary>
+        [DataMember(Name = "ad", EmitDefaultValue = false)]
+        public WebhookPayloadCommentCommentAd Ad { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -219,6 +227,7 @@ namespace Zernio.Model
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  IsReply: ").Append(IsReply).Append("\n");
             sb.Append("  ParentCommentId: ").Append(ParentCommentId).Append("\n");
+            sb.Append("  Ad: ").Append(Ad).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

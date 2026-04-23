@@ -135,5 +135,14 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'ParentCommentId'
         }
+
+        /// <summary>
+        /// Test the property 'Ad'
+        /// </summary>
+        [Fact]
+        public void AdTest()
+        {
+            // TODO unit test for the property 'Ad'
+        }
     }
 }
