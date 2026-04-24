@@ -189,16 +189,21 @@ Class | Method | HTTP request | Description
 *AnalyticsApi* | [**GetBestTimeToPost**](docs/AnalyticsApi.md#getbesttimetopost) | **GET** /v1/analytics/best-time | Get best times to post
 *AnalyticsApi* | [**GetContentDecay**](docs/AnalyticsApi.md#getcontentdecay) | **GET** /v1/analytics/content-decay | Get content performance decay
 *AnalyticsApi* | [**GetDailyMetrics**](docs/AnalyticsApi.md#getdailymetrics) | **GET** /v1/analytics/daily-metrics | Get daily aggregated metrics
+*AnalyticsApi* | [**GetFacebookPageInsights**](docs/AnalyticsApi.md#getfacebookpageinsights) | **GET** /v1/analytics/facebook/page-insights | Get Facebook Page insights
 *AnalyticsApi* | [**GetFollowerStats**](docs/AnalyticsApi.md#getfollowerstats) | **GET** /v1/accounts/follower-stats | Get follower stats
 *AnalyticsApi* | [**GetGoogleBusinessPerformance**](docs/AnalyticsApi.md#getgooglebusinessperformance) | **GET** /v1/analytics/googlebusiness/performance | Get GBP performance metrics
 *AnalyticsApi* | [**GetGoogleBusinessSearchKeywords**](docs/AnalyticsApi.md#getgooglebusinesssearchkeywords) | **GET** /v1/analytics/googlebusiness/search-keywords | Get GBP search keywords
 *AnalyticsApi* | [**GetInstagramAccountInsights**](docs/AnalyticsApi.md#getinstagramaccountinsights) | **GET** /v1/analytics/instagram/account-insights | Get Instagram insights
 *AnalyticsApi* | [**GetInstagramDemographics**](docs/AnalyticsApi.md#getinstagramdemographics) | **GET** /v1/analytics/instagram/demographics | Get Instagram demographics
+*AnalyticsApi* | [**GetInstagramFollowerHistory**](docs/AnalyticsApi.md#getinstagramfollowerhistory) | **GET** /v1/analytics/instagram/follower-history | Get Instagram follower history
 *AnalyticsApi* | [**GetLinkedInAggregateAnalytics**](docs/AnalyticsApi.md#getlinkedinaggregateanalytics) | **GET** /v1/accounts/{accountId}/linkedin-aggregate-analytics | Get LinkedIn aggregate stats
+*AnalyticsApi* | [**GetLinkedInOrgAggregateAnalytics**](docs/AnalyticsApi.md#getlinkedinorgaggregateanalytics) | **GET** /v1/analytics/linkedin/org-aggregate-analytics | Get LinkedIn organization page aggregate analytics
 *AnalyticsApi* | [**GetLinkedInPostAnalytics**](docs/AnalyticsApi.md#getlinkedinpostanalytics) | **GET** /v1/accounts/{accountId}/linkedin-post-analytics | Get LinkedIn post stats
 *AnalyticsApi* | [**GetLinkedInPostReactions**](docs/AnalyticsApi.md#getlinkedinpostreactions) | **GET** /v1/accounts/{accountId}/linkedin-post-reactions | Get LinkedIn post reactions
 *AnalyticsApi* | [**GetPostTimeline**](docs/AnalyticsApi.md#getposttimeline) | **GET** /v1/analytics/post-timeline | Get post analytics timeline
 *AnalyticsApi* | [**GetPostingFrequency**](docs/AnalyticsApi.md#getpostingfrequency) | **GET** /v1/analytics/posting-frequency | Get frequency vs engagement
+*AnalyticsApi* | [**GetTikTokAccountInsights**](docs/AnalyticsApi.md#gettiktokaccountinsights) | **GET** /v1/analytics/tiktok/account-insights | Get TikTok account-level insights
+*AnalyticsApi* | [**GetYouTubeChannelInsights**](docs/AnalyticsApi.md#getyoutubechannelinsights) | **GET** /v1/analytics/youtube/channel-insights | Get YouTube channel-level insights
 *AnalyticsApi* | [**GetYouTubeDailyViews**](docs/AnalyticsApi.md#getyoutubedailyviews) | **GET** /v1/analytics/youtube/daily-views | Get YouTube daily views
 *AnalyticsApi* | [**GetYouTubeDemographics**](docs/AnalyticsApi.md#getyoutubedemographics) | **GET** /v1/analytics/youtube/demographics | Get YouTube demographics
 *BroadcastsApi* | [**AddBroadcastRecipients**](docs/BroadcastsApi.md#addbroadcastrecipients) | **POST** /v1/broadcasts/{broadcastId}/recipients | Add recipients to a broadcast

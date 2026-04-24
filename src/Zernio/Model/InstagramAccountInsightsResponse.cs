@@ -28,11 +28,56 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// InstagramAccountInsightsResponse
+    /// Shared account-insights response envelope used by every platform-level analytics endpoint (/v1/analytics/{facebook|instagram|youtube|linkedin|tiktok}/_*). The name is historical - the shape was first shipped for Instagram and every new platform endpoint reuses it for response-shape consistency. The platform field echoes back which platform served the response. 
     /// </summary>
     [DataContract(Name = "InstagramAccountInsightsResponse")]
     public partial class InstagramAccountInsightsResponse : IValidatableObject
     {
+        /// <summary>
+        /// Platform that served this response.
+        /// </summary>
+        /// <value>Platform that served this response.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum PlatformEnum
+        {
+            /// <summary>
+            /// Enum Facebook for value: facebook
+            /// </summary>
+            [EnumMember(Value = "facebook")]
+            Facebook = 1,
+
+            /// <summary>
+            /// Enum Instagram for value: instagram
+            /// </summary>
+            [EnumMember(Value = "instagram")]
+            Instagram = 2,
+
+            /// <summary>
+            /// Enum Youtube for value: youtube
+            /// </summary>
+            [EnumMember(Value = "youtube")]
+            Youtube = 3,
+
+            /// <summary>
+            /// Enum Linkedin for value: linkedin
+            /// </summary>
+            [EnumMember(Value = "linkedin")]
+            Linkedin = 4,
+
+            /// <summary>
+            /// Enum Tiktok for value: tiktok
+            /// </summary>
+            [EnumMember(Value = "tiktok")]
+            Tiktok = 5
+        }
+
+
+        /// <summary>
+        /// Platform that served this response.
+        /// </summary>
+        /// <value>Platform that served this response.</value>
+        [DataMember(Name = "platform", EmitDefaultValue = false)]
+        public PlatformEnum? Platform { get; set; }
         /// <summary>
         /// Defines MetricType
         /// </summary>
@@ -63,13 +108,13 @@ namespace Zernio.Model
         /// </summary>
         /// <param name="success">success.</param>
         /// <param name="accountId">The Zernio SocialAccount ID.</param>
-        /// <param name="platform">platform.</param>
+        /// <param name="platform">Platform that served this response..</param>
         /// <param name="dateRange">dateRange.</param>
         /// <param name="metricType">metricType.</param>
         /// <param name="breakdown">Breakdown dimension used (only present when breakdown was requested).</param>
         /// <param name="metrics">Object keyed by metric name. For time_series: each metric has \&quot;total\&quot; (number) and \&quot;values\&quot; (array of {date, value}). For total_value: each metric has \&quot;total\&quot; (number) and optionally \&quot;breakdowns\&quot; (array of {dimension, value}). .</param>
         /// <param name="dataDelay">dataDelay.</param>
-        public InstagramAccountInsightsResponse(bool success = default, string accountId = default, string platform = default, InstagramAccountInsightsResponseDateRange dateRange = default, MetricTypeEnum? metricType = default, string breakdown = default, Dictionary<string, InstagramAccountInsightsResponseMetricsValue> metrics = default, string dataDelay = default)
+        public InstagramAccountInsightsResponse(bool success = default, string accountId = default, PlatformEnum? platform = default, InstagramAccountInsightsResponseDateRange dateRange = default, MetricTypeEnum? metricType = default, string breakdown = default, Dictionary<string, InstagramAccountInsightsResponseMetricsValue> metrics = default, string dataDelay = default)
         {
             this.Success = success;
             this.AccountId = accountId;
@@ -96,15 +141,6 @@ namespace Zernio.Model
         /// <value>The Zernio SocialAccount ID</value>
         [DataMember(Name = "accountId", EmitDefaultValue = false)]
         public string AccountId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Platform
-        /// </summary>
-        /*
-        <example>instagram</example>
-        */
-        [DataMember(Name = "platform", EmitDefaultValue = false)]
-        public string Platform { get; set; }
 
         /// <summary>
         /// Gets or Sets DateRange

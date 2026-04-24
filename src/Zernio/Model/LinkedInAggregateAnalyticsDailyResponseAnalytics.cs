@@ -40,12 +40,16 @@ namespace Zernio.Model
         /// <param name="reactions">reactions.</param>
         /// <param name="comments">comments.</param>
         /// <param name="shares">shares.</param>
-        public LinkedInAggregateAnalyticsDailyResponseAnalytics(List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> impressions = default, List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> reactions = default, List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> comments = default, List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> shares = default)
+        /// <param name="saves">Daily saves (personal accounts only).</param>
+        /// <param name="sends">Daily sends via LinkedIn messaging (personal accounts only).</param>
+        public LinkedInAggregateAnalyticsDailyResponseAnalytics(List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> impressions = default, List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> reactions = default, List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> comments = default, List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> shares = default, List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> saves = default, List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> sends = default)
         {
             this.Impressions = impressions;
             this.Reactions = reactions;
             this.Comments = comments;
             this.Shares = shares;
+            this.Saves = saves;
+            this.Sends = sends;
         }
 
         /// <summary>
@@ -73,6 +77,20 @@ namespace Zernio.Model
         public List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> Shares { get; set; }
 
         /// <summary>
+        /// Daily saves (personal accounts only)
+        /// </summary>
+        /// <value>Daily saves (personal accounts only)</value>
+        [DataMember(Name = "saves", EmitDefaultValue = false)]
+        public List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> Saves { get; set; }
+
+        /// <summary>
+        /// Daily sends via LinkedIn messaging (personal accounts only)
+        /// </summary>
+        /// <value>Daily sends via LinkedIn messaging (personal accounts only)</value>
+        [DataMember(Name = "sends", EmitDefaultValue = false)]
+        public List<LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInner> Sends { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +102,8 @@ namespace Zernio.Model
             sb.Append("  Reactions: ").Append(Reactions).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  Shares: ").Append(Shares).Append("\n");
+            sb.Append("  Saves: ").Append(Saves).Append("\n");
+            sb.Append("  Sends: ").Append(Sends).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

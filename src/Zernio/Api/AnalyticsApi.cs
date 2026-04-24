@@ -151,6 +151,35 @@ namespace Zernio.Api
         /// <returns>ApiResponse of GetDailyMetrics200Response</returns>
         ApiResponse<GetDailyMetrics200Response> GetDailyMetricsWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default);
         /// <summary>
+        /// Get Facebook Page insights
+        /// </summary>
+        /// <remarks>
+        /// Returns page-level Facebook insights (media views, views, post engagements, video metrics, follower counts). Response shape matches /v1/analytics/instagram/account-insights so the same client handling works across platforms.  Metric names track the current (post-November 2025) Meta Graph API. The legacy page_impressions / page_fans / page_fan_adds / page_fan_removes metrics were deprecated by Meta on November 15, 2025 and are NOT accepted by this endpoint. Use the replacements below. Because Meta did not provide direct adds/removes replacements, Zernio synthesizes followers_gained / followers_lost from the daily follower snapshotter.  Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the connected Facebook Page.</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;page_media_view,page_post_engagements,page_follows,followers_gained,followers_lost\&quot;.  Live Meta metrics (current names, post-Nov-2025):   - page_media_view       (replaces deprecated page_impressions)   - page_views_total   - page_post_engagements   - page_video_views   - page_video_view_time   - page_follows          (replaces deprecated page_fans)  Zernio-synthesized from daily follower snapshots (filling the Nov-2025 gap left by the page_fan_adds / page_fan_removes deprecation):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals only. \&quot;time_series\&quot; returns daily values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        InstagramAccountInsightsResponse GetFacebookPageInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
+
+        /// <summary>
+        /// Get Facebook Page insights
+        /// </summary>
+        /// <remarks>
+        /// Returns page-level Facebook insights (media views, views, post engagements, video metrics, follower counts). Response shape matches /v1/analytics/instagram/account-insights so the same client handling works across platforms.  Metric names track the current (post-November 2025) Meta Graph API. The legacy page_impressions / page_fans / page_fan_adds / page_fan_removes metrics were deprecated by Meta on November 15, 2025 and are NOT accepted by this endpoint. Use the replacements below. Because Meta did not provide direct adds/removes replacements, Zernio synthesizes followers_gained / followers_lost from the daily follower snapshotter.  Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the connected Facebook Page.</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;page_media_view,page_post_engagements,page_follows,followers_gained,followers_lost\&quot;.  Live Meta metrics (current names, post-Nov-2025):   - page_media_view       (replaces deprecated page_impressions)   - page_views_total   - page_post_engagements   - page_video_views   - page_video_view_time   - page_follows          (replaces deprecated page_fans)  Zernio-synthesized from daily follower snapshots (filling the Nov-2025 gap left by the page_fan_adds / page_fan_removes deprecation):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals only. \&quot;time_series\&quot; returns daily values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        ApiResponse<InstagramAccountInsightsResponse> GetFacebookPageInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
+        /// <summary>
         /// Get follower stats
         /// </summary>
         /// <remarks>
@@ -239,7 +268,7 @@ namespace Zernio.Api
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
-        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics (including follows_and_unfollows) are total_value only. This is an Instagram Graph API limitation, not a Zernio limitation - the IG API does not return time-series data for these metrics. For a daily running follower count, use /v1/analytics/instagram/follower-history instead.  (optional)</param>
         /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
         /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
         /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
@@ -255,7 +284,7 @@ namespace Zernio.Api
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
-        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics (including follows_and_unfollows) are total_value only. This is an Instagram Graph API limitation, not a Zernio limitation - the IG API does not return time-series data for these metrics. For a daily running follower count, use /v1/analytics/instagram/follower-history instead.  (optional)</param>
         /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
         /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
         /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
@@ -290,17 +319,46 @@ namespace Zernio.Api
         /// <returns>ApiResponse of InstagramDemographicsResponse</returns>
         ApiResponse<InstagramDemographicsResponse> GetInstagramDemographicsWithHttpInfo(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default);
         /// <summary>
+        /// Get Instagram follower history
+        /// </summary>
+        /// <remarks>
+        /// Returns a daily running Instagram follower count time series, served from Zernio&#39;s cross-platform daily snapshotter. Exists because Meta removed follower_count from the /insights endpoint in Graph API v22+ and never exposed a historical daily series via any public API.  Response envelope matches /v1/analytics/instagram/account-insights so the same client handling works. Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,followers_gained,followers_lost\&quot;.   - follower_count   : per-day raw follower count   - followers_gained : sum of positive daily deltas   - followers_lost   : sum of absolute negative daily deltas  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns aggregated totals (latest for follower_count, sum for gained/lost). \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        InstagramAccountInsightsResponse GetInstagramFollowerHistory(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
+
+        /// <summary>
+        /// Get Instagram follower history
+        /// </summary>
+        /// <remarks>
+        /// Returns a daily running Instagram follower count time series, served from Zernio&#39;s cross-platform daily snapshotter. Exists because Meta removed follower_count from the /insights endpoint in Graph API v22+ and never exposed a historical daily series via any public API.  Response envelope matches /v1/analytics/instagram/account-insights so the same client handling works. Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,followers_gained,followers_lost\&quot;.   - follower_count   : per-day raw follower count   - followers_gained : sum of positive daily deltas   - followers_lost   : sum of absolute negative daily deltas  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns aggregated totals (latest for follower_count, sum for gained/lost). \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        ApiResponse<InstagramAccountInsightsResponse> GetInstagramFollowerHistoryWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
+        /// <summary>
         /// Get LinkedIn aggregate stats
         /// </summary>
         /// <remarks>
-        /// Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope.
+        /// Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope. Saves (POST_SAVE) and sends (POST_SEND) are available for personal accounts; organization pages always return 0 for these two metrics because LinkedIn does not expose them on the organization analytics endpoint.
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn personal account</param>
         /// <param name="aggregation">TOTAL (default, lifetime totals) or DAILY (time series). MEMBERS_REACHED not available with DAILY. (optional, default to TOTAL)</param>
         /// <param name="startDate">Start date (YYYY-MM-DD). If omitted, returns lifetime analytics. (optional)</param>
         /// <param name="endDate">End date (YYYY-MM-DD, exclusive). Defaults to today if omitted. (optional)</param>
-        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE. Omit for all. (optional)</param>
+        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE, POST_SAVE, POST_SEND. Omit for all. (optional)</param>
         /// <returns>GetLinkedInAggregateAnalytics200Response</returns>
         GetLinkedInAggregateAnalytics200Response GetLinkedInAggregateAnalytics(string accountId, string? aggregation = default, DateOnly? startDate = default, DateOnly? endDate = default, string? metrics = default);
 
@@ -308,21 +366,50 @@ namespace Zernio.Api
         /// Get LinkedIn aggregate stats
         /// </summary>
         /// <remarks>
-        /// Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope.
+        /// Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope. Saves (POST_SAVE) and sends (POST_SEND) are available for personal accounts; organization pages always return 0 for these two metrics because LinkedIn does not expose them on the organization analytics endpoint.
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn personal account</param>
         /// <param name="aggregation">TOTAL (default, lifetime totals) or DAILY (time series). MEMBERS_REACHED not available with DAILY. (optional, default to TOTAL)</param>
         /// <param name="startDate">Start date (YYYY-MM-DD). If omitted, returns lifetime analytics. (optional)</param>
         /// <param name="endDate">End date (YYYY-MM-DD, exclusive). Defaults to today if omitted. (optional)</param>
-        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE. Omit for all. (optional)</param>
+        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE, POST_SAVE, POST_SEND. Omit for all. (optional)</param>
         /// <returns>ApiResponse of GetLinkedInAggregateAnalytics200Response</returns>
         ApiResponse<GetLinkedInAggregateAnalytics200Response> GetLinkedInAggregateAnalyticsWithHttpInfo(string accountId, string? aggregation = default, DateOnly? startDate = default, DateOnly? endDate = default, string? metrics = default);
+        /// <summary>
+        /// Get LinkedIn organization page aggregate analytics
+        /// </summary>
+        /// <remarks>
+        /// Returns aggregate analytics for a LinkedIn organization page. Parallel to /v1/accounts/{id}/linkedin-aggregate-analytics (which handles personal accounts only). Backed by LinkedIn&#39;s organizationalEntityShareStatistics, organizationalEntityFollowerStatistics, and organizationPageStatistics endpoints.  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  Scope requirements: r_organization_social, r_organization_followers, and r_organization_admin must all be present on the account. Accounts connected before these scopes were included in the OAuth flow will return 412 with a reauth hint.  Enforced by this endpoint:   - Page-view metrics accept only metricType&#x3D;total_value (LinkedIn omits per-day     segmentation even when the API is called with DAY granularity, so a time-series     response would be meaningless).   - Date range capped at 89 days.  LinkedIn-side platform limits (not re-enforced here, but worth knowing for larger ranges in a future release):   - Follower stats: rolling 12-month window, end must be no later than 2 days ago.   - Share stats: rolling 12-month window. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the LinkedIn organization account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;impressions,clicks,engagement_rate,organic_followers_gained,followers_gained,followers_lost\&quot;.  Share statistics (support both total_value and time_series):   - impressions   - unique_impressions   - clicks   - likes   - comments   - shares   - engagement_rate       (0..1, LinkedIn-computed)  Follower-gain statistics (support total_value and time_series):   - organic_followers_gained   (per-day organic gains for time_series; sum of organic gains over the range for total_value)   - paid_followers_gained      (per-day paid gains for time_series; sum of paid gains over the range for total_value)  Page-view statistics (total_value ONLY - LinkedIn platform limit):   - page_views_total   - page_views_overview   - page_views_careers   - page_views_jobs   - page_views_life  Zernio-synthesized from daily follower snapshots:   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType"> (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        InstagramAccountInsightsResponse GetLinkedInOrgAggregateAnalytics(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
+
+        /// <summary>
+        /// Get LinkedIn organization page aggregate analytics
+        /// </summary>
+        /// <remarks>
+        /// Returns aggregate analytics for a LinkedIn organization page. Parallel to /v1/accounts/{id}/linkedin-aggregate-analytics (which handles personal accounts only). Backed by LinkedIn&#39;s organizationalEntityShareStatistics, organizationalEntityFollowerStatistics, and organizationPageStatistics endpoints.  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  Scope requirements: r_organization_social, r_organization_followers, and r_organization_admin must all be present on the account. Accounts connected before these scopes were included in the OAuth flow will return 412 with a reauth hint.  Enforced by this endpoint:   - Page-view metrics accept only metricType&#x3D;total_value (LinkedIn omits per-day     segmentation even when the API is called with DAY granularity, so a time-series     response would be meaningless).   - Date range capped at 89 days.  LinkedIn-side platform limits (not re-enforced here, but worth knowing for larger ranges in a future release):   - Follower stats: rolling 12-month window, end must be no later than 2 days ago.   - Share stats: rolling 12-month window. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the LinkedIn organization account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;impressions,clicks,engagement_rate,organic_followers_gained,followers_gained,followers_lost\&quot;.  Share statistics (support both total_value and time_series):   - impressions   - unique_impressions   - clicks   - likes   - comments   - shares   - engagement_rate       (0..1, LinkedIn-computed)  Follower-gain statistics (support total_value and time_series):   - organic_followers_gained   (per-day organic gains for time_series; sum of organic gains over the range for total_value)   - paid_followers_gained      (per-day paid gains for time_series; sum of paid gains over the range for total_value)  Page-view statistics (total_value ONLY - LinkedIn platform limit):   - page_views_total   - page_views_overview   - page_views_careers   - page_views_jobs   - page_views_life  Zernio-synthesized from daily follower snapshots:   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType"> (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        ApiResponse<InstagramAccountInsightsResponse> GetLinkedInOrgAggregateAnalyticsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
         /// <summary>
         /// Get LinkedIn post stats
         /// </summary>
         /// <remarks>
-        /// Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts.
+        /// Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts. Saves and sends are only populated for personal accounts (LinkedIn does not expose these metrics on the organization analytics endpoint).
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn account</param>
@@ -334,7 +421,7 @@ namespace Zernio.Api
         /// Get LinkedIn post stats
         /// </summary>
         /// <remarks>
-        /// Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts.
+        /// Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts. Saves and sends are only populated for personal accounts (LinkedIn does not expose these metrics on the organization analytics endpoint).
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn account</param>
@@ -418,6 +505,64 @@ namespace Zernio.Api
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetPostingFrequency200Response</returns>
         ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default, string? source = default);
+        /// <summary>
+        /// Get TikTok account-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns account-level TikTok insights from /v2/user/info/ (live) plus historical time series joined from Zernio&#39;s daily snapshotter (AccountStats).  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on and the user.info.stats scope on the account (412 if missing).  Scope intentionally narrow. TikTok&#39;s public API exposes only the four counter metrics below. The deep metrics that live in TikTok Studio are NOT available on any public TikTok API, even for Business accounts:   - profile_views   - account-level impressions / reach   - follower inflow / outflow breakdown   - video watch time, average watch time, full-watched rate   - impression_sources (FYP / Following / Hashtag / Search / Personal profile)  TikTok&#39;s Research API doesn&#39;t expose those fields either, and is restricted to non-commercial academic use per TikTok&#39;s eligibility policy. There is no public API workaround. Post-level metrics (views, likes, comments, shares per video) are available via /v1/analytics?postId&#x3D;... from TikTok&#39;s /v2/video/query/. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the TikTok account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,likes_count,video_count,followers_gained,followers_lost\&quot;.  Live from /v2/user/info/ (requires user.info.stats scope):   - follower_count  (cumulative; time series joined from AccountStats)   - following_count (cumulative; time series joined from AccountStats.metadata)   - likes_count     (cumulative; time series joined from AccountStats.metadata)   - video_count     (cumulative; time series joined from AccountStats.metadata)  Zernio-synthesized:   - followers_gained  (sum of positive daily follower deltas)   - followers_lost    (sum of absolute negative daily deltas)  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns the latest cumulative counter value. \&quot;time_series\&quot; returns daily values joined from AccountStats snapshots.  (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        InstagramAccountInsightsResponse GetTikTokAccountInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
+
+        /// <summary>
+        /// Get TikTok account-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns account-level TikTok insights from /v2/user/info/ (live) plus historical time series joined from Zernio&#39;s daily snapshotter (AccountStats).  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on and the user.info.stats scope on the account (412 if missing).  Scope intentionally narrow. TikTok&#39;s public API exposes only the four counter metrics below. The deep metrics that live in TikTok Studio are NOT available on any public TikTok API, even for Business accounts:   - profile_views   - account-level impressions / reach   - follower inflow / outflow breakdown   - video watch time, average watch time, full-watched rate   - impression_sources (FYP / Following / Hashtag / Search / Personal profile)  TikTok&#39;s Research API doesn&#39;t expose those fields either, and is restricted to non-commercial academic use per TikTok&#39;s eligibility policy. There is no public API workaround. Post-level metrics (views, likes, comments, shares per video) are available via /v1/analytics?postId&#x3D;... from TikTok&#39;s /v2/video/query/. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the TikTok account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,likes_count,video_count,followers_gained,followers_lost\&quot;.  Live from /v2/user/info/ (requires user.info.stats scope):   - follower_count  (cumulative; time series joined from AccountStats)   - following_count (cumulative; time series joined from AccountStats.metadata)   - likes_count     (cumulative; time series joined from AccountStats.metadata)   - video_count     (cumulative; time series joined from AccountStats.metadata)  Zernio-synthesized:   - followers_gained  (sum of positive daily follower deltas)   - followers_lost    (sum of absolute negative daily deltas)  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns the latest cumulative counter value. \&quot;time_series\&quot; returns daily values joined from AccountStats snapshots.  (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        ApiResponse<InstagramAccountInsightsResponse> GetTikTokAccountInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
+        /// <summary>
+        /// Get YouTube channel-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns channel-scoped aggregate metrics from YouTube Analytics API v2. Saves you from looping /v1/analytics/youtube/daily-views over every video when you only need channel totals.  Response shape matches /v1/analytics/instagram/account-insights so the same client handling works. Requires yt-analytics.readonly scope (412 with reauthorizeUrl if missing). Data has a 2-3 day delay (endDate is clamped accordingly). Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  NOT exposed: impressions (Studio thumbnail impressions) and impressionsClickThroughRate. YouTube Analytics API v2 does not expose these for any principal type, not channel owners, not Partner Program channels, not content owners with CMS access. The only way to get them is Studio CSV export. This is a Google-side limitation. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;views,estimatedMinutesWatched,subscribersGained,subscribersLost\&quot;.  Live YouTube Analytics v2 metrics:   - views   - estimatedMinutesWatched   - averageViewDuration          (ratio - weighted mean computed across days)   - subscribersGained   - subscribersLost  Zernio-synthesized from daily follower snapshots (cross-platform parity):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. YouTube Analytics has a 2-3 day delay, so the fetch is internally clamped to 3 days ago; any requested range extending beyond that returns zero values for the tail days. The response&#39;s dateRange.until field reflects your requested value.  (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals. \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        InstagramAccountInsightsResponse GetYouTubeChannelInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
+
+        /// <summary>
+        /// Get YouTube channel-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns channel-scoped aggregate metrics from YouTube Analytics API v2. Saves you from looping /v1/analytics/youtube/daily-views over every video when you only need channel totals.  Response shape matches /v1/analytics/instagram/account-insights so the same client handling works. Requires yt-analytics.readonly scope (412 with reauthorizeUrl if missing). Data has a 2-3 day delay (endDate is clamped accordingly). Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  NOT exposed: impressions (Studio thumbnail impressions) and impressionsClickThroughRate. YouTube Analytics API v2 does not expose these for any principal type, not channel owners, not Partner Program channels, not content owners with CMS access. The only way to get them is Studio CSV export. This is a Google-side limitation. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;views,estimatedMinutesWatched,subscribersGained,subscribersLost\&quot;.  Live YouTube Analytics v2 metrics:   - views   - estimatedMinutesWatched   - averageViewDuration          (ratio - weighted mean computed across days)   - subscribersGained   - subscribersLost  Zernio-synthesized from daily follower snapshots (cross-platform parity):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. YouTube Analytics has a 2-3 day delay, so the fetch is internally clamped to 3 days ago; any requested range extending beyond that returns zero values for the tail days. The response&#39;s dateRange.until field reflects your requested value.  (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals. \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        ApiResponse<InstagramAccountInsightsResponse> GetYouTubeChannelInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default);
         /// <summary>
         /// Get YouTube daily views
         /// </summary>
@@ -612,6 +757,37 @@ namespace Zernio.Api
         /// <returns>Task of ApiResponse (GetDailyMetrics200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetDailyMetrics200Response>> GetDailyMetricsWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, DateTime? fromDate = default, DateTime? toDate = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Get Facebook Page insights
+        /// </summary>
+        /// <remarks>
+        /// Returns page-level Facebook insights (media views, views, post engagements, video metrics, follower counts). Response shape matches /v1/analytics/instagram/account-insights so the same client handling works across platforms.  Metric names track the current (post-November 2025) Meta Graph API. The legacy page_impressions / page_fans / page_fan_adds / page_fan_removes metrics were deprecated by Meta on November 15, 2025 and are NOT accepted by this endpoint. Use the replacements below. Because Meta did not provide direct adds/removes replacements, Zernio synthesizes followers_gained / followers_lost from the daily follower snapshotter.  Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the connected Facebook Page.</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;page_media_view,page_post_engagements,page_follows,followers_gained,followers_lost\&quot;.  Live Meta metrics (current names, post-Nov-2025):   - page_media_view       (replaces deprecated page_impressions)   - page_views_total   - page_post_engagements   - page_video_views   - page_video_view_time   - page_follows          (replaces deprecated page_fans)  Zernio-synthesized from daily follower snapshots (filling the Nov-2025 gap left by the page_fan_adds / page_fan_removes deprecation):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals only. \&quot;time_series\&quot; returns daily values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetFacebookPageInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Facebook Page insights
+        /// </summary>
+        /// <remarks>
+        /// Returns page-level Facebook insights (media views, views, post engagements, video metrics, follower counts). Response shape matches /v1/analytics/instagram/account-insights so the same client handling works across platforms.  Metric names track the current (post-November 2025) Meta Graph API. The legacy page_impressions / page_fans / page_fan_adds / page_fan_removes metrics were deprecated by Meta on November 15, 2025 and are NOT accepted by this endpoint. Use the replacements below. Because Meta did not provide direct adds/removes replacements, Zernio synthesizes followers_gained / followers_lost from the daily follower snapshotter.  Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the connected Facebook Page.</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;page_media_view,page_post_engagements,page_follows,followers_gained,followers_lost\&quot;.  Live Meta metrics (current names, post-Nov-2025):   - page_media_view       (replaces deprecated page_impressions)   - page_views_total   - page_post_engagements   - page_video_views   - page_video_view_time   - page_follows          (replaces deprecated page_fans)  Zernio-synthesized from daily follower snapshots (filling the Nov-2025 gap left by the page_fan_adds / page_fan_removes deprecation):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals only. \&quot;time_series\&quot; returns daily values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InstagramAccountInsightsResponse>> GetFacebookPageInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Get follower stats
         /// </summary>
         /// <remarks>
@@ -706,7 +882,7 @@ namespace Zernio.Api
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
-        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics (including follows_and_unfollows) are total_value only. This is an Instagram Graph API limitation, not a Zernio limitation - the IG API does not return time-series data for these metrics. For a daily running follower count, use /v1/analytics/instagram/follower-history instead.  (optional)</param>
         /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
         /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
         /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
@@ -723,7 +899,7 @@ namespace Zernio.Api
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
-        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics (including follows_and_unfollows) are total_value only. This is an Instagram Graph API limitation, not a Zernio limitation - the IG API does not return time-series data for these metrics. For a daily running follower count, use /v1/analytics/instagram/follower-history instead.  (optional)</param>
         /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
         /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
         /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
@@ -761,17 +937,48 @@ namespace Zernio.Api
         /// <returns>Task of ApiResponse (InstagramDemographicsResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<InstagramDemographicsResponse>> GetInstagramDemographicsWithHttpInfoAsync(string accountId, string? metric = default, string? breakdown = default, string? timeframe = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Get Instagram follower history
+        /// </summary>
+        /// <remarks>
+        /// Returns a daily running Instagram follower count time series, served from Zernio&#39;s cross-platform daily snapshotter. Exists because Meta removed follower_count from the /insights endpoint in Graph API v22+ and never exposed a historical daily series via any public API.  Response envelope matches /v1/analytics/instagram/account-insights so the same client handling works. Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,followers_gained,followers_lost\&quot;.   - follower_count   : per-day raw follower count   - followers_gained : sum of positive daily deltas   - followers_lost   : sum of absolute negative daily deltas  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns aggregated totals (latest for follower_count, sum for gained/lost). \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetInstagramFollowerHistoryAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get Instagram follower history
+        /// </summary>
+        /// <remarks>
+        /// Returns a daily running Instagram follower count time series, served from Zernio&#39;s cross-platform daily snapshotter. Exists because Meta removed follower_count from the /insights endpoint in Graph API v22+ and never exposed a historical daily series via any public API.  Response envelope matches /v1/analytics/instagram/account-insights so the same client handling works. Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,followers_gained,followers_lost\&quot;.   - follower_count   : per-day raw follower count   - followers_gained : sum of positive daily deltas   - followers_lost   : sum of absolute negative daily deltas  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns aggregated totals (latest for follower_count, sum for gained/lost). \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InstagramAccountInsightsResponse>> GetInstagramFollowerHistoryWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Get LinkedIn aggregate stats
         /// </summary>
         /// <remarks>
-        /// Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope.
+        /// Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope. Saves (POST_SAVE) and sends (POST_SEND) are available for personal accounts; organization pages always return 0 for these two metrics because LinkedIn does not expose them on the organization analytics endpoint.
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn personal account</param>
         /// <param name="aggregation">TOTAL (default, lifetime totals) or DAILY (time series). MEMBERS_REACHED not available with DAILY. (optional, default to TOTAL)</param>
         /// <param name="startDate">Start date (YYYY-MM-DD). If omitted, returns lifetime analytics. (optional)</param>
         /// <param name="endDate">End date (YYYY-MM-DD, exclusive). Defaults to today if omitted. (optional)</param>
-        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE. Omit for all. (optional)</param>
+        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE, POST_SAVE, POST_SEND. Omit for all. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetLinkedInAggregateAnalytics200Response</returns>
         System.Threading.Tasks.Task<GetLinkedInAggregateAnalytics200Response> GetLinkedInAggregateAnalyticsAsync(string accountId, string? aggregation = default, DateOnly? startDate = default, DateOnly? endDate = default, string? metrics = default, System.Threading.CancellationToken cancellationToken = default);
@@ -780,22 +987,53 @@ namespace Zernio.Api
         /// Get LinkedIn aggregate stats
         /// </summary>
         /// <remarks>
-        /// Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope.
+        /// Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope. Saves (POST_SAVE) and sends (POST_SEND) are available for personal accounts; organization pages always return 0 for these two metrics because LinkedIn does not expose them on the organization analytics endpoint.
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn personal account</param>
         /// <param name="aggregation">TOTAL (default, lifetime totals) or DAILY (time series). MEMBERS_REACHED not available with DAILY. (optional, default to TOTAL)</param>
         /// <param name="startDate">Start date (YYYY-MM-DD). If omitted, returns lifetime analytics. (optional)</param>
         /// <param name="endDate">End date (YYYY-MM-DD, exclusive). Defaults to today if omitted. (optional)</param>
-        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE. Omit for all. (optional)</param>
+        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE, POST_SAVE, POST_SEND. Omit for all. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetLinkedInAggregateAnalytics200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetLinkedInAggregateAnalytics200Response>> GetLinkedInAggregateAnalyticsWithHttpInfoAsync(string accountId, string? aggregation = default, DateOnly? startDate = default, DateOnly? endDate = default, string? metrics = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Get LinkedIn organization page aggregate analytics
+        /// </summary>
+        /// <remarks>
+        /// Returns aggregate analytics for a LinkedIn organization page. Parallel to /v1/accounts/{id}/linkedin-aggregate-analytics (which handles personal accounts only). Backed by LinkedIn&#39;s organizationalEntityShareStatistics, organizationalEntityFollowerStatistics, and organizationPageStatistics endpoints.  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  Scope requirements: r_organization_social, r_organization_followers, and r_organization_admin must all be present on the account. Accounts connected before these scopes were included in the OAuth flow will return 412 with a reauth hint.  Enforced by this endpoint:   - Page-view metrics accept only metricType&#x3D;total_value (LinkedIn omits per-day     segmentation even when the API is called with DAY granularity, so a time-series     response would be meaningless).   - Date range capped at 89 days.  LinkedIn-side platform limits (not re-enforced here, but worth knowing for larger ranges in a future release):   - Follower stats: rolling 12-month window, end must be no later than 2 days ago.   - Share stats: rolling 12-month window. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the LinkedIn organization account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;impressions,clicks,engagement_rate,organic_followers_gained,followers_gained,followers_lost\&quot;.  Share statistics (support both total_value and time_series):   - impressions   - unique_impressions   - clicks   - likes   - comments   - shares   - engagement_rate       (0..1, LinkedIn-computed)  Follower-gain statistics (support total_value and time_series):   - organic_followers_gained   (per-day organic gains for time_series; sum of organic gains over the range for total_value)   - paid_followers_gained      (per-day paid gains for time_series; sum of paid gains over the range for total_value)  Page-view statistics (total_value ONLY - LinkedIn platform limit):   - page_views_total   - page_views_overview   - page_views_careers   - page_views_jobs   - page_views_life  Zernio-synthesized from daily follower snapshots:   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType"> (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetLinkedInOrgAggregateAnalyticsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get LinkedIn organization page aggregate analytics
+        /// </summary>
+        /// <remarks>
+        /// Returns aggregate analytics for a LinkedIn organization page. Parallel to /v1/accounts/{id}/linkedin-aggregate-analytics (which handles personal accounts only). Backed by LinkedIn&#39;s organizationalEntityShareStatistics, organizationalEntityFollowerStatistics, and organizationPageStatistics endpoints.  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  Scope requirements: r_organization_social, r_organization_followers, and r_organization_admin must all be present on the account. Accounts connected before these scopes were included in the OAuth flow will return 412 with a reauth hint.  Enforced by this endpoint:   - Page-view metrics accept only metricType&#x3D;total_value (LinkedIn omits per-day     segmentation even when the API is called with DAY granularity, so a time-series     response would be meaningless).   - Date range capped at 89 days.  LinkedIn-side platform limits (not re-enforced here, but worth knowing for larger ranges in a future release):   - Follower stats: rolling 12-month window, end must be no later than 2 days ago.   - Share stats: rolling 12-month window. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the LinkedIn organization account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;impressions,clicks,engagement_rate,organic_followers_gained,followers_gained,followers_lost\&quot;.  Share statistics (support both total_value and time_series):   - impressions   - unique_impressions   - clicks   - likes   - comments   - shares   - engagement_rate       (0..1, LinkedIn-computed)  Follower-gain statistics (support total_value and time_series):   - organic_followers_gained   (per-day organic gains for time_series; sum of organic gains over the range for total_value)   - paid_followers_gained      (per-day paid gains for time_series; sum of paid gains over the range for total_value)  Page-view statistics (total_value ONLY - LinkedIn platform limit):   - page_views_total   - page_views_overview   - page_views_careers   - page_views_jobs   - page_views_life  Zernio-synthesized from daily follower snapshots:   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType"> (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InstagramAccountInsightsResponse>> GetLinkedInOrgAggregateAnalyticsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Get LinkedIn post stats
         /// </summary>
         /// <remarks>
-        /// Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts.
+        /// Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts. Saves and sends are only populated for personal accounts (LinkedIn does not expose these metrics on the organization analytics endpoint).
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn account</param>
@@ -808,7 +1046,7 @@ namespace Zernio.Api
         /// Get LinkedIn post stats
         /// </summary>
         /// <remarks>
-        /// Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts.
+        /// Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts. Saves and sends are only populated for personal accounts (LinkedIn does not expose these metrics on the organization analytics endpoint).
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn account</param>
@@ -899,6 +1137,68 @@ namespace Zernio.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPostingFrequency200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get TikTok account-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns account-level TikTok insights from /v2/user/info/ (live) plus historical time series joined from Zernio&#39;s daily snapshotter (AccountStats).  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on and the user.info.stats scope on the account (412 if missing).  Scope intentionally narrow. TikTok&#39;s public API exposes only the four counter metrics below. The deep metrics that live in TikTok Studio are NOT available on any public TikTok API, even for Business accounts:   - profile_views   - account-level impressions / reach   - follower inflow / outflow breakdown   - video watch time, average watch time, full-watched rate   - impression_sources (FYP / Following / Hashtag / Search / Personal profile)  TikTok&#39;s Research API doesn&#39;t expose those fields either, and is restricted to non-commercial academic use per TikTok&#39;s eligibility policy. There is no public API workaround. Post-level metrics (views, likes, comments, shares per video) are available via /v1/analytics?postId&#x3D;... from TikTok&#39;s /v2/video/query/. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the TikTok account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,likes_count,video_count,followers_gained,followers_lost\&quot;.  Live from /v2/user/info/ (requires user.info.stats scope):   - follower_count  (cumulative; time series joined from AccountStats)   - following_count (cumulative; time series joined from AccountStats.metadata)   - likes_count     (cumulative; time series joined from AccountStats.metadata)   - video_count     (cumulative; time series joined from AccountStats.metadata)  Zernio-synthesized:   - followers_gained  (sum of positive daily follower deltas)   - followers_lost    (sum of absolute negative daily deltas)  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns the latest cumulative counter value. \&quot;time_series\&quot; returns daily values joined from AccountStats snapshots.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetTikTokAccountInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get TikTok account-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns account-level TikTok insights from /v2/user/info/ (live) plus historical time series joined from Zernio&#39;s daily snapshotter (AccountStats).  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on and the user.info.stats scope on the account (412 if missing).  Scope intentionally narrow. TikTok&#39;s public API exposes only the four counter metrics below. The deep metrics that live in TikTok Studio are NOT available on any public TikTok API, even for Business accounts:   - profile_views   - account-level impressions / reach   - follower inflow / outflow breakdown   - video watch time, average watch time, full-watched rate   - impression_sources (FYP / Following / Hashtag / Search / Personal profile)  TikTok&#39;s Research API doesn&#39;t expose those fields either, and is restricted to non-commercial academic use per TikTok&#39;s eligibility policy. There is no public API workaround. Post-level metrics (views, likes, comments, shares per video) are available via /v1/analytics?postId&#x3D;... from TikTok&#39;s /v2/video/query/. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the TikTok account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,likes_count,video_count,followers_gained,followers_lost\&quot;.  Live from /v2/user/info/ (requires user.info.stats scope):   - follower_count  (cumulative; time series joined from AccountStats)   - following_count (cumulative; time series joined from AccountStats.metadata)   - likes_count     (cumulative; time series joined from AccountStats.metadata)   - video_count     (cumulative; time series joined from AccountStats.metadata)  Zernio-synthesized:   - followers_gained  (sum of positive daily follower deltas)   - followers_lost    (sum of absolute negative daily deltas)  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns the latest cumulative counter value. \&quot;time_series\&quot; returns daily values joined from AccountStats snapshots.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InstagramAccountInsightsResponse>> GetTikTokAccountInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Get YouTube channel-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns channel-scoped aggregate metrics from YouTube Analytics API v2. Saves you from looping /v1/analytics/youtube/daily-views over every video when you only need channel totals.  Response shape matches /v1/analytics/instagram/account-insights so the same client handling works. Requires yt-analytics.readonly scope (412 with reauthorizeUrl if missing). Data has a 2-3 day delay (endDate is clamped accordingly). Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  NOT exposed: impressions (Studio thumbnail impressions) and impressionsClickThroughRate. YouTube Analytics API v2 does not expose these for any principal type, not channel owners, not Partner Program channels, not content owners with CMS access. The only way to get them is Studio CSV export. This is a Google-side limitation. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;views,estimatedMinutesWatched,subscribersGained,subscribersLost\&quot;.  Live YouTube Analytics v2 metrics:   - views   - estimatedMinutesWatched   - averageViewDuration          (ratio - weighted mean computed across days)   - subscribersGained   - subscribersLost  Zernio-synthesized from daily follower snapshots (cross-platform parity):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. YouTube Analytics has a 2-3 day delay, so the fetch is internally clamped to 3 days ago; any requested range extending beyond that returns zero values for the tail days. The response&#39;s dateRange.until field reflects your requested value.  (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals. \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetYouTubeChannelInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Get YouTube channel-level insights
+        /// </summary>
+        /// <remarks>
+        /// Returns channel-scoped aggregate metrics from YouTube Analytics API v2. Saves you from looping /v1/analytics/youtube/daily-views over every video when you only need channel totals.  Response shape matches /v1/analytics/instagram/account-insights so the same client handling works. Requires yt-analytics.readonly scope (412 with reauthorizeUrl if missing). Data has a 2-3 day delay (endDate is clamped accordingly). Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  NOT exposed: impressions (Studio thumbnail impressions) and impressionsClickThroughRate. YouTube Analytics API v2 does not expose these for any principal type, not channel owners, not Partner Program channels, not content owners with CMS access. The only way to get them is Studio CSV export. This is a Google-side limitation. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;views,estimatedMinutesWatched,subscribersGained,subscribersLost\&quot;.  Live YouTube Analytics v2 metrics:   - views   - estimatedMinutesWatched   - averageViewDuration          (ratio - weighted mean computed across days)   - subscribersGained   - subscribersLost  Zernio-synthesized from daily follower snapshots (cross-platform parity):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. YouTube Analytics has a 2-3 day delay, so the fetch is internally clamped to 3 days ago; any requested range extending beyond that returns zero values for the tail days. The response&#39;s dateRange.until field reflects your requested value.  (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals. \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<InstagramAccountInsightsResponse>> GetYouTubeChannelInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get YouTube daily views
         /// </summary>
@@ -1899,6 +2199,181 @@ namespace Zernio.Api
         }
 
         /// <summary>
+        /// Get Facebook Page insights Returns page-level Facebook insights (media views, views, post engagements, video metrics, follower counts). Response shape matches /v1/analytics/instagram/account-insights so the same client handling works across platforms.  Metric names track the current (post-November 2025) Meta Graph API. The legacy page_impressions / page_fans / page_fan_adds / page_fan_removes metrics were deprecated by Meta on November 15, 2025 and are NOT accepted by this endpoint. Use the replacements below. Because Meta did not provide direct adds/removes replacements, Zernio synthesizes followers_gained / followers_lost from the daily follower snapshotter.  Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the connected Facebook Page.</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;page_media_view,page_post_engagements,page_follows,followers_gained,followers_lost\&quot;.  Live Meta metrics (current names, post-Nov-2025):   - page_media_view       (replaces deprecated page_impressions)   - page_views_total   - page_post_engagements   - page_video_views   - page_video_view_time   - page_follows          (replaces deprecated page_fans)  Zernio-synthesized from daily follower snapshots (filling the Nov-2025 gap left by the page_fan_adds / page_fan_removes deprecation):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals only. \&quot;time_series\&quot; returns daily values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        public InstagramAccountInsightsResponse GetFacebookPageInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = GetFacebookPageInsightsWithHttpInfo(accountId, metrics, since, until, metricType);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Facebook Page insights Returns page-level Facebook insights (media views, views, post engagements, video metrics, follower counts). Response shape matches /v1/analytics/instagram/account-insights so the same client handling works across platforms.  Metric names track the current (post-November 2025) Meta Graph API. The legacy page_impressions / page_fans / page_fan_adds / page_fan_removes metrics were deprecated by Meta on November 15, 2025 and are NOT accepted by this endpoint. Use the replacements below. Because Meta did not provide direct adds/removes replacements, Zernio synthesizes followers_gained / followers_lost from the daily follower snapshotter.  Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the connected Facebook Page.</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;page_media_view,page_post_engagements,page_follows,followers_gained,followers_lost\&quot;.  Live Meta metrics (current names, post-Nov-2025):   - page_media_view       (replaces deprecated page_impressions)   - page_views_total   - page_post_engagements   - page_video_views   - page_video_view_time   - page_follows          (replaces deprecated page_fans)  Zernio-synthesized from daily follower snapshots (filling the Nov-2025 gap left by the page_fan_adds / page_fan_removes deprecation):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals only. \&quot;time_series\&quot; returns daily values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        public Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> GetFacebookPageInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetFacebookPageInsights");
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InstagramAccountInsightsResponse>("/v1/analytics/facebook/page-insights", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetFacebookPageInsights", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Facebook Page insights Returns page-level Facebook insights (media views, views, post engagements, video metrics, follower counts). Response shape matches /v1/analytics/instagram/account-insights so the same client handling works across platforms.  Metric names track the current (post-November 2025) Meta Graph API. The legacy page_impressions / page_fans / page_fan_adds / page_fan_removes metrics were deprecated by Meta on November 15, 2025 and are NOT accepted by this endpoint. Use the replacements below. Because Meta did not provide direct adds/removes replacements, Zernio synthesizes followers_gained / followers_lost from the daily follower snapshotter.  Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the connected Facebook Page.</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;page_media_view,page_post_engagements,page_follows,followers_gained,followers_lost\&quot;.  Live Meta metrics (current names, post-Nov-2025):   - page_media_view       (replaces deprecated page_impressions)   - page_views_total   - page_post_engagements   - page_video_views   - page_video_view_time   - page_follows          (replaces deprecated page_fans)  Zernio-synthesized from daily follower snapshots (filling the Nov-2025 gap left by the page_fan_adds / page_fan_removes deprecation):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals only. \&quot;time_series\&quot; returns daily values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        public async System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetFacebookPageInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = await GetFacebookPageInsightsWithHttpInfoAsync(accountId, metrics, since, until, metricType, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Facebook Page insights Returns page-level Facebook insights (media views, views, post engagements, video metrics, follower counts). Response shape matches /v1/analytics/instagram/account-insights so the same client handling works across platforms.  Metric names track the current (post-November 2025) Meta Graph API. The legacy page_impressions / page_fans / page_fan_adds / page_fan_removes metrics were deprecated by Meta on November 15, 2025 and are NOT accepted by this endpoint. Use the replacements below. Because Meta did not provide direct adds/removes replacements, Zernio synthesizes followers_gained / followers_lost from the daily follower snapshotter.  Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the connected Facebook Page.</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;page_media_view,page_post_engagements,page_follows,followers_gained,followers_lost\&quot;.  Live Meta metrics (current names, post-Nov-2025):   - page_media_view       (replaces deprecated page_impressions)   - page_views_total   - page_post_engagements   - page_video_views   - page_video_view_time   - page_follows          (replaces deprecated page_fans)  Zernio-synthesized from daily follower snapshots (filling the Nov-2025 gap left by the page_fan_adds / page_fan_removes deprecation):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals only. \&quot;time_series\&quot; returns daily values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<InstagramAccountInsightsResponse>> GetFacebookPageInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetFacebookPageInsights");
+
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InstagramAccountInsightsResponse>("/v1/analytics/facebook/page-insights", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetFacebookPageInsights", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Get follower stats Returns follower count history and growth metrics for connected social accounts. Requires analytics add-on subscription. Follower counts are refreshed once per day. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2390,7 +2865,7 @@ namespace Zernio.Api
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
-        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics (including follows_and_unfollows) are total_value only. This is an Instagram Graph API limitation, not a Zernio limitation - the IG API does not return time-series data for these metrics. For a daily running follower count, use /v1/analytics/instagram/follower-history instead.  (optional)</param>
         /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
         /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
         /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
@@ -2407,7 +2882,7 @@ namespace Zernio.Api
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
-        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics (including follows_and_unfollows) are total_value only. This is an Instagram Graph API limitation, not a Zernio limitation - the IG API does not return time-series data for these metrics. For a daily running follower count, use /v1/analytics/instagram/follower-history instead.  (optional)</param>
         /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
         /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
         /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
@@ -2481,7 +2956,7 @@ namespace Zernio.Api
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
-        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics (including follows_and_unfollows) are total_value only. This is an Instagram Graph API limitation, not a Zernio limitation - the IG API does not return time-series data for these metrics. For a daily running follower count, use /v1/analytics/instagram/follower-history instead.  (optional)</param>
         /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
         /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
         /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
@@ -2499,7 +2974,7 @@ namespace Zernio.Api
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account</param>
-        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics are total_value only.  (optional)</param>
+        /// <param name="metrics">Comma-separated list of metrics. Defaults to \&quot;reach,views,accounts_engaged,total_interactions\&quot;. Valid metrics: reach, views, accounts_engaged, total_interactions, comments, likes, saves, shares, replies, reposts, follows_and_unfollows, profile_links_taps. Note: only \&quot;reach\&quot; supports metricType&#x3D;time_series. All other metrics (including follows_and_unfollows) are total_value only. This is an Instagram Graph API limitation, not a Zernio limitation - the IG API does not return time-series data for these metrics. For a daily running follower count, use /v1/analytics/instagram/follower-history instead.  (optional)</param>
         /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
         /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
         /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals and supports breakdowns. \&quot;time_series\&quot; returns daily values but only works with the \&quot;reach\&quot; metric.  (optional, default to total_value)</param>
@@ -2736,14 +3211,189 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get LinkedIn aggregate stats Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope.
+        /// Get Instagram follower history Returns a daily running Instagram follower count time series, served from Zernio&#39;s cross-platform daily snapshotter. Exists because Meta removed follower_count from the /insights endpoint in Graph API v22+ and never exposed a historical daily series via any public API.  Response envelope matches /v1/analytics/instagram/account-insights so the same client handling works. Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,followers_gained,followers_lost\&quot;.   - follower_count   : per-day raw follower count   - followers_gained : sum of positive daily deltas   - followers_lost   : sum of absolute negative daily deltas  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns aggregated totals (latest for follower_count, sum for gained/lost). \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        public InstagramAccountInsightsResponse GetInstagramFollowerHistory(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = GetInstagramFollowerHistoryWithHttpInfo(accountId, metrics, since, until, metricType);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Instagram follower history Returns a daily running Instagram follower count time series, served from Zernio&#39;s cross-platform daily snapshotter. Exists because Meta removed follower_count from the /insights endpoint in Graph API v22+ and never exposed a historical daily series via any public API.  Response envelope matches /v1/analytics/instagram/account-insights so the same client handling works. Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,followers_gained,followers_lost\&quot;.   - follower_count   : per-day raw follower count   - followers_gained : sum of positive daily deltas   - followers_lost   : sum of absolute negative daily deltas  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns aggregated totals (latest for follower_count, sum for gained/lost). \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        public Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> GetInstagramFollowerHistoryWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetInstagramFollowerHistory");
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InstagramAccountInsightsResponse>("/v1/analytics/instagram/follower-history", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetInstagramFollowerHistory", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get Instagram follower history Returns a daily running Instagram follower count time series, served from Zernio&#39;s cross-platform daily snapshotter. Exists because Meta removed follower_count from the /insights endpoint in Graph API v22+ and never exposed a historical daily series via any public API.  Response envelope matches /v1/analytics/instagram/account-insights so the same client handling works. Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,followers_gained,followers_lost\&quot;.   - follower_count   : per-day raw follower count   - followers_gained : sum of positive daily deltas   - followers_lost   : sum of absolute negative daily deltas  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns aggregated totals (latest for follower_count, sum for gained/lost). \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        public async System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetInstagramFollowerHistoryAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = await GetInstagramFollowerHistoryWithHttpInfoAsync(accountId, metrics, since, until, metricType, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get Instagram follower history Returns a daily running Instagram follower count time series, served from Zernio&#39;s cross-platform daily snapshotter. Exists because Meta removed follower_count from the /insights endpoint in Graph API v22+ and never exposed a historical daily series via any public API.  Response envelope matches /v1/analytics/instagram/account-insights so the same client handling works. Max 89 days, defaults to last 30 days. Requires the Analytics add-on. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the Instagram account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,followers_gained,followers_lost\&quot;.   - follower_count   : per-day raw follower count   - followers_gained : sum of positive daily deltas   - followers_lost   : sum of absolute negative daily deltas  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns aggregated totals (latest for follower_count, sum for gained/lost). \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<InstagramAccountInsightsResponse>> GetInstagramFollowerHistoryWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetInstagramFollowerHistory");
+
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InstagramAccountInsightsResponse>("/v1/analytics/instagram/follower-history", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetInstagramFollowerHistory", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get LinkedIn aggregate stats Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope. Saves (POST_SAVE) and sends (POST_SEND) are available for personal accounts; organization pages always return 0 for these two metrics because LinkedIn does not expose them on the organization analytics endpoint.
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn personal account</param>
         /// <param name="aggregation">TOTAL (default, lifetime totals) or DAILY (time series). MEMBERS_REACHED not available with DAILY. (optional, default to TOTAL)</param>
         /// <param name="startDate">Start date (YYYY-MM-DD). If omitted, returns lifetime analytics. (optional)</param>
         /// <param name="endDate">End date (YYYY-MM-DD, exclusive). Defaults to today if omitted. (optional)</param>
-        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE. Omit for all. (optional)</param>
+        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE, POST_SAVE, POST_SEND. Omit for all. (optional)</param>
         /// <returns>GetLinkedInAggregateAnalytics200Response</returns>
         public GetLinkedInAggregateAnalytics200Response GetLinkedInAggregateAnalytics(string accountId, string? aggregation = default, DateOnly? startDate = default, DateOnly? endDate = default, string? metrics = default)
         {
@@ -2752,14 +3402,14 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get LinkedIn aggregate stats Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope.
+        /// Get LinkedIn aggregate stats Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope. Saves (POST_SAVE) and sends (POST_SEND) are available for personal accounts; organization pages always return 0 for these two metrics because LinkedIn does not expose them on the organization analytics endpoint.
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn personal account</param>
         /// <param name="aggregation">TOTAL (default, lifetime totals) or DAILY (time series). MEMBERS_REACHED not available with DAILY. (optional, default to TOTAL)</param>
         /// <param name="startDate">Start date (YYYY-MM-DD). If omitted, returns lifetime analytics. (optional)</param>
         /// <param name="endDate">End date (YYYY-MM-DD, exclusive). Defaults to today if omitted. (optional)</param>
-        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE. Omit for all. (optional)</param>
+        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE, POST_SAVE, POST_SEND. Omit for all. (optional)</param>
         /// <returns>ApiResponse of GetLinkedInAggregateAnalytics200Response</returns>
         public Zernio.Client.ApiResponse<GetLinkedInAggregateAnalytics200Response> GetLinkedInAggregateAnalyticsWithHttpInfo(string accountId, string? aggregation = default, DateOnly? startDate = default, DateOnly? endDate = default, string? metrics = default)
         {
@@ -2821,14 +3471,14 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get LinkedIn aggregate stats Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope.
+        /// Get LinkedIn aggregate stats Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope. Saves (POST_SAVE) and sends (POST_SEND) are available for personal accounts; organization pages always return 0 for these two metrics because LinkedIn does not expose them on the organization analytics endpoint.
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn personal account</param>
         /// <param name="aggregation">TOTAL (default, lifetime totals) or DAILY (time series). MEMBERS_REACHED not available with DAILY. (optional, default to TOTAL)</param>
         /// <param name="startDate">Start date (YYYY-MM-DD). If omitted, returns lifetime analytics. (optional)</param>
         /// <param name="endDate">End date (YYYY-MM-DD, exclusive). Defaults to today if omitted. (optional)</param>
-        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE. Omit for all. (optional)</param>
+        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE, POST_SAVE, POST_SEND. Omit for all. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetLinkedInAggregateAnalytics200Response</returns>
         public async System.Threading.Tasks.Task<GetLinkedInAggregateAnalytics200Response> GetLinkedInAggregateAnalyticsAsync(string accountId, string? aggregation = default, DateOnly? startDate = default, DateOnly? endDate = default, string? metrics = default, System.Threading.CancellationToken cancellationToken = default)
@@ -2838,14 +3488,14 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get LinkedIn aggregate stats Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope.
+        /// Get LinkedIn aggregate stats Returns aggregate analytics across all posts for a LinkedIn personal account. Only includes posts published through Zernio (LinkedIn API limitation). Org accounts should use /v1/analytics instead. Requires r_member_postAnalytics scope. Saves (POST_SAVE) and sends (POST_SEND) are available for personal accounts; organization pages always return 0 for these two metrics because LinkedIn does not expose them on the organization analytics endpoint.
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn personal account</param>
         /// <param name="aggregation">TOTAL (default, lifetime totals) or DAILY (time series). MEMBERS_REACHED not available with DAILY. (optional, default to TOTAL)</param>
         /// <param name="startDate">Start date (YYYY-MM-DD). If omitted, returns lifetime analytics. (optional)</param>
         /// <param name="endDate">End date (YYYY-MM-DD, exclusive). Defaults to today if omitted. (optional)</param>
-        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE. Omit for all. (optional)</param>
+        /// <param name="metrics">Comma-separated metrics: IMPRESSION, MEMBERS_REACHED, REACTION, COMMENT, RESHARE, POST_SAVE, POST_SEND. Omit for all. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetLinkedInAggregateAnalytics200Response)</returns>
         public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetLinkedInAggregateAnalytics200Response>> GetLinkedInAggregateAnalyticsWithHttpInfoAsync(string accountId, string? aggregation = default, DateOnly? startDate = default, DateOnly? endDate = default, string? metrics = default, System.Threading.CancellationToken cancellationToken = default)
@@ -2911,7 +3561,182 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get LinkedIn post stats Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts.
+        /// Get LinkedIn organization page aggregate analytics Returns aggregate analytics for a LinkedIn organization page. Parallel to /v1/accounts/{id}/linkedin-aggregate-analytics (which handles personal accounts only). Backed by LinkedIn&#39;s organizationalEntityShareStatistics, organizationalEntityFollowerStatistics, and organizationPageStatistics endpoints.  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  Scope requirements: r_organization_social, r_organization_followers, and r_organization_admin must all be present on the account. Accounts connected before these scopes were included in the OAuth flow will return 412 with a reauth hint.  Enforced by this endpoint:   - Page-view metrics accept only metricType&#x3D;total_value (LinkedIn omits per-day     segmentation even when the API is called with DAY granularity, so a time-series     response would be meaningless).   - Date range capped at 89 days.  LinkedIn-side platform limits (not re-enforced here, but worth knowing for larger ranges in a future release):   - Follower stats: rolling 12-month window, end must be no later than 2 days ago.   - Share stats: rolling 12-month window. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the LinkedIn organization account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;impressions,clicks,engagement_rate,organic_followers_gained,followers_gained,followers_lost\&quot;.  Share statistics (support both total_value and time_series):   - impressions   - unique_impressions   - clicks   - likes   - comments   - shares   - engagement_rate       (0..1, LinkedIn-computed)  Follower-gain statistics (support total_value and time_series):   - organic_followers_gained   (per-day organic gains for time_series; sum of organic gains over the range for total_value)   - paid_followers_gained      (per-day paid gains for time_series; sum of paid gains over the range for total_value)  Page-view statistics (total_value ONLY - LinkedIn platform limit):   - page_views_total   - page_views_overview   - page_views_careers   - page_views_jobs   - page_views_life  Zernio-synthesized from daily follower snapshots:   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType"> (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        public InstagramAccountInsightsResponse GetLinkedInOrgAggregateAnalytics(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = GetLinkedInOrgAggregateAnalyticsWithHttpInfo(accountId, metrics, since, until, metricType);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get LinkedIn organization page aggregate analytics Returns aggregate analytics for a LinkedIn organization page. Parallel to /v1/accounts/{id}/linkedin-aggregate-analytics (which handles personal accounts only). Backed by LinkedIn&#39;s organizationalEntityShareStatistics, organizationalEntityFollowerStatistics, and organizationPageStatistics endpoints.  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  Scope requirements: r_organization_social, r_organization_followers, and r_organization_admin must all be present on the account. Accounts connected before these scopes were included in the OAuth flow will return 412 with a reauth hint.  Enforced by this endpoint:   - Page-view metrics accept only metricType&#x3D;total_value (LinkedIn omits per-day     segmentation even when the API is called with DAY granularity, so a time-series     response would be meaningless).   - Date range capped at 89 days.  LinkedIn-side platform limits (not re-enforced here, but worth knowing for larger ranges in a future release):   - Follower stats: rolling 12-month window, end must be no later than 2 days ago.   - Share stats: rolling 12-month window. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the LinkedIn organization account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;impressions,clicks,engagement_rate,organic_followers_gained,followers_gained,followers_lost\&quot;.  Share statistics (support both total_value and time_series):   - impressions   - unique_impressions   - clicks   - likes   - comments   - shares   - engagement_rate       (0..1, LinkedIn-computed)  Follower-gain statistics (support total_value and time_series):   - organic_followers_gained   (per-day organic gains for time_series; sum of organic gains over the range for total_value)   - paid_followers_gained      (per-day paid gains for time_series; sum of paid gains over the range for total_value)  Page-view statistics (total_value ONLY - LinkedIn platform limit):   - page_views_total   - page_views_overview   - page_views_careers   - page_views_jobs   - page_views_life  Zernio-synthesized from daily follower snapshots:   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType"> (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        public Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> GetLinkedInOrgAggregateAnalyticsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetLinkedInOrgAggregateAnalytics");
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InstagramAccountInsightsResponse>("/v1/analytics/linkedin/org-aggregate-analytics", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLinkedInOrgAggregateAnalytics", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get LinkedIn organization page aggregate analytics Returns aggregate analytics for a LinkedIn organization page. Parallel to /v1/accounts/{id}/linkedin-aggregate-analytics (which handles personal accounts only). Backed by LinkedIn&#39;s organizationalEntityShareStatistics, organizationalEntityFollowerStatistics, and organizationPageStatistics endpoints.  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  Scope requirements: r_organization_social, r_organization_followers, and r_organization_admin must all be present on the account. Accounts connected before these scopes were included in the OAuth flow will return 412 with a reauth hint.  Enforced by this endpoint:   - Page-view metrics accept only metricType&#x3D;total_value (LinkedIn omits per-day     segmentation even when the API is called with DAY granularity, so a time-series     response would be meaningless).   - Date range capped at 89 days.  LinkedIn-side platform limits (not re-enforced here, but worth knowing for larger ranges in a future release):   - Follower stats: rolling 12-month window, end must be no later than 2 days ago.   - Share stats: rolling 12-month window. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the LinkedIn organization account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;impressions,clicks,engagement_rate,organic_followers_gained,followers_gained,followers_lost\&quot;.  Share statistics (support both total_value and time_series):   - impressions   - unique_impressions   - clicks   - likes   - comments   - shares   - engagement_rate       (0..1, LinkedIn-computed)  Follower-gain statistics (support total_value and time_series):   - organic_followers_gained   (per-day organic gains for time_series; sum of organic gains over the range for total_value)   - paid_followers_gained      (per-day paid gains for time_series; sum of paid gains over the range for total_value)  Page-view statistics (total_value ONLY - LinkedIn platform limit):   - page_views_total   - page_views_overview   - page_views_careers   - page_views_jobs   - page_views_life  Zernio-synthesized from daily follower snapshots:   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType"> (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        public async System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetLinkedInOrgAggregateAnalyticsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = await GetLinkedInOrgAggregateAnalyticsWithHttpInfoAsync(accountId, metrics, since, until, metricType, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get LinkedIn organization page aggregate analytics Returns aggregate analytics for a LinkedIn organization page. Parallel to /v1/accounts/{id}/linkedin-aggregate-analytics (which handles personal accounts only). Backed by LinkedIn&#39;s organizationalEntityShareStatistics, organizationalEntityFollowerStatistics, and organizationPageStatistics endpoints.  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  Scope requirements: r_organization_social, r_organization_followers, and r_organization_admin must all be present on the account. Accounts connected before these scopes were included in the OAuth flow will return 412 with a reauth hint.  Enforced by this endpoint:   - Page-view metrics accept only metricType&#x3D;total_value (LinkedIn omits per-day     segmentation even when the API is called with DAY granularity, so a time-series     response would be meaningless).   - Date range capped at 89 days.  LinkedIn-side platform limits (not re-enforced here, but worth knowing for larger ranges in a future release):   - Follower stats: rolling 12-month window, end must be no later than 2 days ago.   - Share stats: rolling 12-month window. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the LinkedIn organization account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;impressions,clicks,engagement_rate,organic_followers_gained,followers_gained,followers_lost\&quot;.  Share statistics (support both total_value and time_series):   - impressions   - unique_impressions   - clicks   - likes   - comments   - shares   - engagement_rate       (0..1, LinkedIn-computed)  Follower-gain statistics (support total_value and time_series):   - organic_followers_gained   (per-day organic gains for time_series; sum of organic gains over the range for total_value)   - paid_followers_gained      (per-day paid gains for time_series; sum of paid gains over the range for total_value)  Page-view statistics (total_value ONLY - LinkedIn platform limit):   - page_views_total   - page_views_overview   - page_views_careers   - page_views_jobs   - page_views_life  Zernio-synthesized from daily follower snapshots:   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType"> (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<InstagramAccountInsightsResponse>> GetLinkedInOrgAggregateAnalyticsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetLinkedInOrgAggregateAnalytics");
+
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InstagramAccountInsightsResponse>("/v1/analytics/linkedin/org-aggregate-analytics", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetLinkedInOrgAggregateAnalytics", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get LinkedIn post stats Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts. Saves and sends are only populated for personal accounts (LinkedIn does not expose these metrics on the organization analytics endpoint).
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn account</param>
@@ -2924,7 +3749,7 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get LinkedIn post stats Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts.
+        /// Get LinkedIn post stats Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts. Saves and sends are only populated for personal accounts (LinkedIn does not expose these metrics on the organization analytics endpoint).
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn account</param>
@@ -2979,7 +3804,7 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get LinkedIn post stats Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts.
+        /// Get LinkedIn post stats Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts. Saves and sends are only populated for personal accounts (LinkedIn does not expose these metrics on the organization analytics endpoint).
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn account</param>
@@ -2993,7 +3818,7 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get LinkedIn post stats Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts.
+        /// Get LinkedIn post stats Returns analytics for a specific LinkedIn post by URN. Works for both personal and organization accounts. Saves and sends are only populated for personal accounts (LinkedIn does not expose these metrics on the organization analytics endpoint).
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The ID of the LinkedIn account</param>
@@ -3510,6 +4335,356 @@ namespace Zernio.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetPostingFrequency", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get TikTok account-level insights Returns account-level TikTok insights from /v2/user/info/ (live) plus historical time series joined from Zernio&#39;s daily snapshotter (AccountStats).  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on and the user.info.stats scope on the account (412 if missing).  Scope intentionally narrow. TikTok&#39;s public API exposes only the four counter metrics below. The deep metrics that live in TikTok Studio are NOT available on any public TikTok API, even for Business accounts:   - profile_views   - account-level impressions / reach   - follower inflow / outflow breakdown   - video watch time, average watch time, full-watched rate   - impression_sources (FYP / Following / Hashtag / Search / Personal profile)  TikTok&#39;s Research API doesn&#39;t expose those fields either, and is restricted to non-commercial academic use per TikTok&#39;s eligibility policy. There is no public API workaround. Post-level metrics (views, likes, comments, shares per video) are available via /v1/analytics?postId&#x3D;... from TikTok&#39;s /v2/video/query/. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the TikTok account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,likes_count,video_count,followers_gained,followers_lost\&quot;.  Live from /v2/user/info/ (requires user.info.stats scope):   - follower_count  (cumulative; time series joined from AccountStats)   - following_count (cumulative; time series joined from AccountStats.metadata)   - likes_count     (cumulative; time series joined from AccountStats.metadata)   - video_count     (cumulative; time series joined from AccountStats.metadata)  Zernio-synthesized:   - followers_gained  (sum of positive daily follower deltas)   - followers_lost    (sum of absolute negative daily deltas)  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns the latest cumulative counter value. \&quot;time_series\&quot; returns daily values joined from AccountStats snapshots.  (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        public InstagramAccountInsightsResponse GetTikTokAccountInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = GetTikTokAccountInsightsWithHttpInfo(accountId, metrics, since, until, metricType);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get TikTok account-level insights Returns account-level TikTok insights from /v2/user/info/ (live) plus historical time series joined from Zernio&#39;s daily snapshotter (AccountStats).  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on and the user.info.stats scope on the account (412 if missing).  Scope intentionally narrow. TikTok&#39;s public API exposes only the four counter metrics below. The deep metrics that live in TikTok Studio are NOT available on any public TikTok API, even for Business accounts:   - profile_views   - account-level impressions / reach   - follower inflow / outflow breakdown   - video watch time, average watch time, full-watched rate   - impression_sources (FYP / Following / Hashtag / Search / Personal profile)  TikTok&#39;s Research API doesn&#39;t expose those fields either, and is restricted to non-commercial academic use per TikTok&#39;s eligibility policy. There is no public API workaround. Post-level metrics (views, likes, comments, shares per video) are available via /v1/analytics?postId&#x3D;... from TikTok&#39;s /v2/video/query/. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the TikTok account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,likes_count,video_count,followers_gained,followers_lost\&quot;.  Live from /v2/user/info/ (requires user.info.stats scope):   - follower_count  (cumulative; time series joined from AccountStats)   - following_count (cumulative; time series joined from AccountStats.metadata)   - likes_count     (cumulative; time series joined from AccountStats.metadata)   - video_count     (cumulative; time series joined from AccountStats.metadata)  Zernio-synthesized:   - followers_gained  (sum of positive daily follower deltas)   - followers_lost    (sum of absolute negative daily deltas)  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns the latest cumulative counter value. \&quot;time_series\&quot; returns daily values joined from AccountStats snapshots.  (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        public Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> GetTikTokAccountInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetTikTokAccountInsights");
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InstagramAccountInsightsResponse>("/v1/analytics/tiktok/account-insights", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTikTokAccountInsights", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get TikTok account-level insights Returns account-level TikTok insights from /v2/user/info/ (live) plus historical time series joined from Zernio&#39;s daily snapshotter (AccountStats).  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on and the user.info.stats scope on the account (412 if missing).  Scope intentionally narrow. TikTok&#39;s public API exposes only the four counter metrics below. The deep metrics that live in TikTok Studio are NOT available on any public TikTok API, even for Business accounts:   - profile_views   - account-level impressions / reach   - follower inflow / outflow breakdown   - video watch time, average watch time, full-watched rate   - impression_sources (FYP / Following / Hashtag / Search / Personal profile)  TikTok&#39;s Research API doesn&#39;t expose those fields either, and is restricted to non-commercial academic use per TikTok&#39;s eligibility policy. There is no public API workaround. Post-level metrics (views, likes, comments, shares per video) are available via /v1/analytics?postId&#x3D;... from TikTok&#39;s /v2/video/query/. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the TikTok account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,likes_count,video_count,followers_gained,followers_lost\&quot;.  Live from /v2/user/info/ (requires user.info.stats scope):   - follower_count  (cumulative; time series joined from AccountStats)   - following_count (cumulative; time series joined from AccountStats.metadata)   - likes_count     (cumulative; time series joined from AccountStats.metadata)   - video_count     (cumulative; time series joined from AccountStats.metadata)  Zernio-synthesized:   - followers_gained  (sum of positive daily follower deltas)   - followers_lost    (sum of absolute negative daily deltas)  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns the latest cumulative counter value. \&quot;time_series\&quot; returns daily values joined from AccountStats snapshots.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        public async System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetTikTokAccountInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = await GetTikTokAccountInsightsWithHttpInfoAsync(accountId, metrics, since, until, metricType, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get TikTok account-level insights Returns account-level TikTok insights from /v2/user/info/ (live) plus historical time series joined from Zernio&#39;s daily snapshotter (AccountStats).  Response shape matches /v1/analytics/instagram/account-insights. Max 89 days, defaults to last 30 days. Requires the Analytics add-on and the user.info.stats scope on the account (412 if missing).  Scope intentionally narrow. TikTok&#39;s public API exposes only the four counter metrics below. The deep metrics that live in TikTok Studio are NOT available on any public TikTok API, even for Business accounts:   - profile_views   - account-level impressions / reach   - follower inflow / outflow breakdown   - video watch time, average watch time, full-watched rate   - impression_sources (FYP / Following / Hashtag / Search / Personal profile)  TikTok&#39;s Research API doesn&#39;t expose those fields either, and is restricted to non-commercial academic use per TikTok&#39;s eligibility policy. There is no public API workaround. Post-level metrics (views, likes, comments, shares per video) are available via /v1/analytics?postId&#x3D;... from TikTok&#39;s /v2/video/query/. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the TikTok account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;follower_count,likes_count,video_count,followers_gained,followers_lost\&quot;.  Live from /v2/user/info/ (requires user.info.stats scope):   - follower_count  (cumulative; time series joined from AccountStats)   - following_count (cumulative; time series joined from AccountStats.metadata)   - likes_count     (cumulative; time series joined from AccountStats.metadata)   - video_count     (cumulative; time series joined from AccountStats.metadata)  Zernio-synthesized:   - followers_gained  (sum of positive daily follower deltas)   - followers_lost    (sum of absolute negative daily deltas)  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; returns the latest cumulative counter value. \&quot;time_series\&quot; returns daily values joined from AccountStats snapshots.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<InstagramAccountInsightsResponse>> GetTikTokAccountInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetTikTokAccountInsights");
+
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InstagramAccountInsightsResponse>("/v1/analytics/tiktok/account-insights", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetTikTokAccountInsights", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get YouTube channel-level insights Returns channel-scoped aggregate metrics from YouTube Analytics API v2. Saves you from looping /v1/analytics/youtube/daily-views over every video when you only need channel totals.  Response shape matches /v1/analytics/instagram/account-insights so the same client handling works. Requires yt-analytics.readonly scope (412 with reauthorizeUrl if missing). Data has a 2-3 day delay (endDate is clamped accordingly). Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  NOT exposed: impressions (Studio thumbnail impressions) and impressionsClickThroughRate. YouTube Analytics API v2 does not expose these for any principal type, not channel owners, not Partner Program channels, not content owners with CMS access. The only way to get them is Studio CSV export. This is a Google-side limitation. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;views,estimatedMinutesWatched,subscribersGained,subscribersLost\&quot;.  Live YouTube Analytics v2 metrics:   - views   - estimatedMinutesWatched   - averageViewDuration          (ratio - weighted mean computed across days)   - subscribersGained   - subscribersLost  Zernio-synthesized from daily follower snapshots (cross-platform parity):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. YouTube Analytics has a 2-3 day delay, so the fetch is internally clamped to 3 days ago; any requested range extending beyond that returns zero values for the tail days. The response&#39;s dateRange.until field reflects your requested value.  (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals. \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>InstagramAccountInsightsResponse</returns>
+        public InstagramAccountInsightsResponse GetYouTubeChannelInsights(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = GetYouTubeChannelInsightsWithHttpInfo(accountId, metrics, since, until, metricType);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get YouTube channel-level insights Returns channel-scoped aggregate metrics from YouTube Analytics API v2. Saves you from looping /v1/analytics/youtube/daily-views over every video when you only need channel totals.  Response shape matches /v1/analytics/instagram/account-insights so the same client handling works. Requires yt-analytics.readonly scope (412 with reauthorizeUrl if missing). Data has a 2-3 day delay (endDate is clamped accordingly). Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  NOT exposed: impressions (Studio thumbnail impressions) and impressionsClickThroughRate. YouTube Analytics API v2 does not expose these for any principal type, not channel owners, not Partner Program channels, not content owners with CMS access. The only way to get them is Studio CSV export. This is a Google-side limitation. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;views,estimatedMinutesWatched,subscribersGained,subscribersLost\&quot;.  Live YouTube Analytics v2 metrics:   - views   - estimatedMinutesWatched   - averageViewDuration          (ratio - weighted mean computed across days)   - subscribersGained   - subscribersLost  Zernio-synthesized from daily follower snapshots (cross-platform parity):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. YouTube Analytics has a 2-3 day delay, so the fetch is internally clamped to 3 days ago; any requested range extending beyond that returns zero values for the tail days. The response&#39;s dateRange.until field reflects your requested value.  (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals. \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <returns>ApiResponse of InstagramAccountInsightsResponse</returns>
+        public Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> GetYouTubeChannelInsightsWithHttpInfo(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetYouTubeChannelInsights");
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<InstagramAccountInsightsResponse>("/v1/analytics/youtube/channel-insights", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetYouTubeChannelInsights", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get YouTube channel-level insights Returns channel-scoped aggregate metrics from YouTube Analytics API v2. Saves you from looping /v1/analytics/youtube/daily-views over every video when you only need channel totals.  Response shape matches /v1/analytics/instagram/account-insights so the same client handling works. Requires yt-analytics.readonly scope (412 with reauthorizeUrl if missing). Data has a 2-3 day delay (endDate is clamped accordingly). Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  NOT exposed: impressions (Studio thumbnail impressions) and impressionsClickThroughRate. YouTube Analytics API v2 does not expose these for any principal type, not channel owners, not Partner Program channels, not content owners with CMS access. The only way to get them is Studio CSV export. This is a Google-side limitation. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;views,estimatedMinutesWatched,subscribersGained,subscribersLost\&quot;.  Live YouTube Analytics v2 metrics:   - views   - estimatedMinutesWatched   - averageViewDuration          (ratio - weighted mean computed across days)   - subscribersGained   - subscribersLost  Zernio-synthesized from daily follower snapshots (cross-platform parity):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. YouTube Analytics has a 2-3 day delay, so the fetch is internally clamped to 3 days ago; any requested range extending beyond that returns zero values for the tail days. The response&#39;s dateRange.until field reflects your requested value.  (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals. \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of InstagramAccountInsightsResponse</returns>
+        public async System.Threading.Tasks.Task<InstagramAccountInsightsResponse> GetYouTubeChannelInsightsAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Zernio.Client.ApiResponse<InstagramAccountInsightsResponse> localVarResponse = await GetYouTubeChannelInsightsWithHttpInfoAsync(accountId, metrics, since, until, metricType, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get YouTube channel-level insights Returns channel-scoped aggregate metrics from YouTube Analytics API v2. Saves you from looping /v1/analytics/youtube/daily-views over every video when you only need channel totals.  Response shape matches /v1/analytics/instagram/account-insights so the same client handling works. Requires yt-analytics.readonly scope (412 with reauthorizeUrl if missing). Data has a 2-3 day delay (endDate is clamped accordingly). Max 89 days, defaults to last 30 days. Requires the Analytics add-on.  NOT exposed: impressions (Studio thumbnail impressions) and impressionsClickThroughRate. YouTube Analytics API v2 does not expose these for any principal type, not channel owners, not Partner Program channels, not content owners with CMS access. The only way to get them is Studio CSV export. This is a Google-side limitation. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">The Zernio SocialAccount ID for the YouTube account.</param>
+        /// <param name="metrics">Comma-separated list. Defaults to \&quot;views,estimatedMinutesWatched,subscribersGained,subscribersLost\&quot;.  Live YouTube Analytics v2 metrics:   - views   - estimatedMinutesWatched   - averageViewDuration          (ratio - weighted mean computed across days)   - subscribersGained   - subscribersLost  Zernio-synthesized from daily follower snapshots (cross-platform parity):   - followers_gained   - followers_lost  (optional)</param>
+        /// <param name="since">Start date (YYYY-MM-DD). Defaults to 30 days ago. (optional)</param>
+        /// <param name="until">End date (YYYY-MM-DD). Defaults to today. YouTube Analytics has a 2-3 day delay, so the fetch is internally clamped to 3 days ago; any requested range extending beyond that returns zero values for the tail days. The response&#39;s dateRange.until field reflects your requested value.  (optional)</param>
+        /// <param name="metricType">\&quot;total_value\&quot; (default) returns aggregated totals. \&quot;time_series\&quot; returns per-day values in the \&quot;values\&quot; array.  (optional, default to total_value)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (InstagramAccountInsightsResponse)</returns>
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<InstagramAccountInsightsResponse>> GetYouTubeChannelInsightsWithHttpInfoAsync(string accountId, string? metrics = default, DateOnly? since = default, DateOnly? until = default, string? metricType = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AnalyticsApi->GetYouTubeChannelInsights");
+
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (metrics != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metrics", metrics));
+            }
+            if (since != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "since", since));
+            }
+            if (until != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "until", until));
+            }
+            if (metricType != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "metricType", metricType));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<InstagramAccountInsightsResponse>("/v1/analytics/youtube/channel-insights", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetYouTubeChannelInsights", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

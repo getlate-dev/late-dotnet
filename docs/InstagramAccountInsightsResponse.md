@@ -1,4 +1,5 @@
 # Zernio.Model.InstagramAccountInsightsResponse
+Shared account-insights response envelope used by every platform-level analytics endpoint (/v1/analytics/{facebook|instagram|youtube|linkedin|tiktok}/_*). The name is historical - the shape was first shipped for Instagram and every new platform endpoint reuses it for response-shape consistency. The platform field echoes back which platform served the response. 
 
 ## Properties
 
@@ -6,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Success** | **bool** |  | [optional] 
 **AccountId** | **string** | The Zernio SocialAccount ID | [optional] 
-**Platform** | **string** |  | [optional] 
+**Platform** | **string** | Platform that served this response. | [optional] 
 **DateRange** | [**InstagramAccountInsightsResponseDateRange**](InstagramAccountInsightsResponseDateRange.md) |  | [optional] 
 **MetricType** | **string** |  | [optional] 
 **Breakdown** | **string** | Breakdown dimension used (only present when breakdown was requested) | [optional] 

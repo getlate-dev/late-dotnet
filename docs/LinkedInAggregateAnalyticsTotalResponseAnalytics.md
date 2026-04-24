@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Reactions** | **int** | Total reactions across all posts | [optional] 
 **Comments** | **int** | Total comments across all posts | [optional] 
 **Shares** | **int** | Total reshares across all posts | [optional] 
+**Saves** | **int** | Total times posts were saved (personal accounts only) | [optional] 
+**Sends** | **int** | Total times posts were sent via LinkedIn messaging (personal accounts only) | [optional] 
 **EngagementRate** | **decimal** | Overall engagement rate as percentage | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

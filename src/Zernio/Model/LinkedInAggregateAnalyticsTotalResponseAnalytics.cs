@@ -41,14 +41,18 @@ namespace Zernio.Model
         /// <param name="reactions">Total reactions across all posts.</param>
         /// <param name="comments">Total comments across all posts.</param>
         /// <param name="shares">Total reshares across all posts.</param>
+        /// <param name="saves">Total times posts were saved (personal accounts only).</param>
+        /// <param name="sends">Total times posts were sent via LinkedIn messaging (personal accounts only).</param>
         /// <param name="engagementRate">Overall engagement rate as percentage.</param>
-        public LinkedInAggregateAnalyticsTotalResponseAnalytics(int impressions = default, int reach = default, int reactions = default, int comments = default, int shares = default, decimal engagementRate = default)
+        public LinkedInAggregateAnalyticsTotalResponseAnalytics(int impressions = default, int reach = default, int reactions = default, int comments = default, int shares = default, int saves = default, int sends = default, decimal engagementRate = default)
         {
             this.Impressions = impressions;
             this.Reach = reach;
             this.Reactions = reactions;
             this.Comments = comments;
             this.Shares = shares;
+            this.Saves = saves;
+            this.Sends = sends;
             this.EngagementRate = engagementRate;
         }
 
@@ -88,6 +92,20 @@ namespace Zernio.Model
         public int Shares { get; set; }
 
         /// <summary>
+        /// Total times posts were saved (personal accounts only)
+        /// </summary>
+        /// <value>Total times posts were saved (personal accounts only)</value>
+        [DataMember(Name = "saves", EmitDefaultValue = false)]
+        public int Saves { get; set; }
+
+        /// <summary>
+        /// Total times posts were sent via LinkedIn messaging (personal accounts only)
+        /// </summary>
+        /// <value>Total times posts were sent via LinkedIn messaging (personal accounts only)</value>
+        [DataMember(Name = "sends", EmitDefaultValue = false)]
+        public int Sends { get; set; }
+
+        /// <summary>
         /// Overall engagement rate as percentage
         /// </summary>
         /// <value>Overall engagement rate as percentage</value>
@@ -107,6 +125,8 @@ namespace Zernio.Model
             sb.Append("  Reactions: ").Append(Reactions).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  Shares: ").Append(Shares).Append("\n");
+            sb.Append("  Saves: ").Append(Saves).Append("\n");
+            sb.Append("  Sends: ").Append(Sends).Append("\n");
             sb.Append("  EngagementRate: ").Append(EngagementRate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

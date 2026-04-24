@@ -41,16 +41,20 @@ namespace Zernio.Model
         /// <param name="likes">Reactions on the post.</param>
         /// <param name="comments">Comments on the post.</param>
         /// <param name="shares">Reshares of the post.</param>
+        /// <param name="saves">Times the post was saved (personal accounts only; 0 for organization accounts).</param>
+        /// <param name="sends">Times the post was sent via LinkedIn messaging (personal accounts only; 0 for organization accounts).</param>
         /// <param name="clicks">Clicks on the post (organization accounts only).</param>
         /// <param name="views">Video views (video posts only).</param>
         /// <param name="engagementRate">Engagement rate as percentage.</param>
-        public GetLinkedInPostAnalytics200ResponseAnalytics(int impressions = default, int reach = default, int likes = default, int comments = default, int shares = default, int clicks = default, int views = default, decimal engagementRate = default)
+        public GetLinkedInPostAnalytics200ResponseAnalytics(int impressions = default, int reach = default, int likes = default, int comments = default, int shares = default, int saves = default, int sends = default, int clicks = default, int views = default, decimal engagementRate = default)
         {
             this.Impressions = impressions;
             this.Reach = reach;
             this.Likes = likes;
             this.Comments = comments;
             this.Shares = shares;
+            this.Saves = saves;
+            this.Sends = sends;
             this.Clicks = clicks;
             this.Views = views;
             this.EngagementRate = engagementRate;
@@ -92,6 +96,20 @@ namespace Zernio.Model
         public int Shares { get; set; }
 
         /// <summary>
+        /// Times the post was saved (personal accounts only; 0 for organization accounts)
+        /// </summary>
+        /// <value>Times the post was saved (personal accounts only; 0 for organization accounts)</value>
+        [DataMember(Name = "saves", EmitDefaultValue = false)]
+        public int Saves { get; set; }
+
+        /// <summary>
+        /// Times the post was sent via LinkedIn messaging (personal accounts only; 0 for organization accounts)
+        /// </summary>
+        /// <value>Times the post was sent via LinkedIn messaging (personal accounts only; 0 for organization accounts)</value>
+        [DataMember(Name = "sends", EmitDefaultValue = false)]
+        public int Sends { get; set; }
+
+        /// <summary>
         /// Clicks on the post (organization accounts only)
         /// </summary>
         /// <value>Clicks on the post (organization accounts only)</value>
@@ -125,6 +143,8 @@ namespace Zernio.Model
             sb.Append("  Likes: ").Append(Likes).Append("\n");
             sb.Append("  Comments: ").Append(Comments).Append("\n");
             sb.Append("  Shares: ").Append(Shares).Append("\n");
+            sb.Append("  Saves: ").Append(Saves).Append("\n");
+            sb.Append("  Sends: ").Append(Sends).Append("\n");
             sb.Append("  Clicks: ").Append(Clicks).Append("\n");
             sb.Append("  Views: ").Append(Views).Append("\n");
             sb.Append("  EngagementRate: ").Append(EngagementRate).Append("\n");

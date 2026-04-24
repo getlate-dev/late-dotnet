@@ -122,6 +122,22 @@ namespace Zernio.Test.Api
         }
 
         /// <summary>
+        /// Test GetFacebookPageInsights
+        /// </summary>
+        [Fact]
+        public void GetFacebookPageInsightsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string accountId = null;
+            //string? metrics = null;
+            //DateOnly? since = null;
+            //DateOnly? until = null;
+            //string? metricType = null;
+            //var response = instance.GetFacebookPageInsights(accountId, metrics, since, until, metricType);
+            //Assert.IsType<InstagramAccountInsightsResponse>(response);
+        }
+
+        /// <summary>
         /// Test GetFollowerStats
         /// </summary>
         [Fact]
@@ -199,6 +215,22 @@ namespace Zernio.Test.Api
         }
 
         /// <summary>
+        /// Test GetInstagramFollowerHistory
+        /// </summary>
+        [Fact]
+        public void GetInstagramFollowerHistoryTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string accountId = null;
+            //string? metrics = null;
+            //DateOnly? since = null;
+            //DateOnly? until = null;
+            //string? metricType = null;
+            //var response = instance.GetInstagramFollowerHistory(accountId, metrics, since, until, metricType);
+            //Assert.IsType<InstagramAccountInsightsResponse>(response);
+        }
+
+        /// <summary>
         /// Test GetLinkedInAggregateAnalytics
         /// </summary>
         [Fact]
@@ -212,6 +244,22 @@ namespace Zernio.Test.Api
             //string? metrics = null;
             //var response = instance.GetLinkedInAggregateAnalytics(accountId, aggregation, startDate, endDate, metrics);
             //Assert.IsType<GetLinkedInAggregateAnalytics200Response>(response);
+        }
+
+        /// <summary>
+        /// Test GetLinkedInOrgAggregateAnalytics
+        /// </summary>
+        [Fact]
+        public void GetLinkedInOrgAggregateAnalyticsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string accountId = null;
+            //string? metrics = null;
+            //DateOnly? since = null;
+            //DateOnly? until = null;
+            //string? metricType = null;
+            //var response = instance.GetLinkedInOrgAggregateAnalytics(accountId, metrics, since, until, metricType);
+            //Assert.IsType<InstagramAccountInsightsResponse>(response);
         }
 
         /// <summary>
@@ -268,6 +316,38 @@ namespace Zernio.Test.Api
             //string? source = null;
             //var response = instance.GetPostingFrequency(platform, profileId, source);
             //Assert.IsType<GetPostingFrequency200Response>(response);
+        }
+
+        /// <summary>
+        /// Test GetTikTokAccountInsights
+        /// </summary>
+        [Fact]
+        public void GetTikTokAccountInsightsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string accountId = null;
+            //string? metrics = null;
+            //DateOnly? since = null;
+            //DateOnly? until = null;
+            //string? metricType = null;
+            //var response = instance.GetTikTokAccountInsights(accountId, metrics, since, until, metricType);
+            //Assert.IsType<InstagramAccountInsightsResponse>(response);
+        }
+
+        /// <summary>
+        /// Test GetYouTubeChannelInsights
+        /// </summary>
+        [Fact]
+        public void GetYouTubeChannelInsightsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string accountId = null;
+            //string? metrics = null;
+            //DateOnly? since = null;
+            //DateOnly? until = null;
+            //string? metricType = null;
+            //var response = instance.GetYouTubeChannelInsights(accountId, metrics, since, until, metricType);
+            //Assert.IsType<InstagramAccountInsightsResponse>(response);
         }
 
         /// <summary>

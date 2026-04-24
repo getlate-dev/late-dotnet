@@ -90,5 +90,23 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'Shares'
         }
+
+        /// <summary>
+        /// Test the property 'Saves'
+        /// </summary>
+        [Fact]
+        public void SavesTest()
+        {
+            // TODO unit test for the property 'Saves'
+        }
+
+        /// <summary>
+        /// Test the property 'Sends'
+        /// </summary>
+        [Fact]
+        public void SendsTest()
+        {
+            // TODO unit test for the property 'Sends'
+        }
     }
 }
