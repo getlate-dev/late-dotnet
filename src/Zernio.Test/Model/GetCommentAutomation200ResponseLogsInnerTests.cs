@@ -119,6 +119,24 @@ namespace Zernio.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'CommentReplyStatus'
+        /// </summary>
+        [Fact]
+        public void CommentReplyStatusTest()
+        {
+            // TODO unit test for the property 'CommentReplyStatus'
+        }
+
+        /// <summary>
+        /// Test the property 'CommentReplyError'
+        /// </summary>
+        [Fact]
+        public void CommentReplyErrorTest()
+        {
+            // TODO unit test for the property 'CommentReplyError'
+        }
+
+        /// <summary>
         /// Test the property 'CreatedAt'
         /// </summary>
         [Fact]

@@ -34,8 +34,9 @@ namespace Zernio.Model
     public partial class GetCommentAutomation200ResponseLogsInner : IValidatableObject
     {
         /// <summary>
-        /// Defines Status
+        /// DM outcome
         /// </summary>
+        /// <value>DM outcome</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
@@ -60,10 +61,44 @@ namespace Zernio.Model
 
 
         /// <summary>
-        /// Gets or Sets Status
+        /// DM outcome
         /// </summary>
+        /// <value>DM outcome</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
+        /// <summary>
+        /// Outcome of the optional public reply on the triggering comment. &#39;skipped&#39; if no commentReply was configured or if the DM failed (the public reply is not attempted in that case).
+        /// </summary>
+        /// <value>Outcome of the optional public reply on the triggering comment. &#39;skipped&#39; if no commentReply was configured or if the DM failed (the public reply is not attempted in that case).</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CommentReplyStatusEnum
+        {
+            /// <summary>
+            /// Enum Sent for value: sent
+            /// </summary>
+            [EnumMember(Value = "sent")]
+            Sent = 1,
+
+            /// <summary>
+            /// Enum Failed for value: failed
+            /// </summary>
+            [EnumMember(Value = "failed")]
+            Failed = 2,
+
+            /// <summary>
+            /// Enum Skipped for value: skipped
+            /// </summary>
+            [EnumMember(Value = "skipped")]
+            Skipped = 3
+        }
+
+
+        /// <summary>
+        /// Outcome of the optional public reply on the triggering comment. &#39;skipped&#39; if no commentReply was configured or if the DM failed (the public reply is not attempted in that case).
+        /// </summary>
+        /// <value>Outcome of the optional public reply on the triggering comment. &#39;skipped&#39; if no commentReply was configured or if the DM failed (the public reply is not attempted in that case).</value>
+        [DataMember(Name = "commentReplyStatus", EmitDefaultValue = false)]
+        public CommentReplyStatusEnum? CommentReplyStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="GetCommentAutomation200ResponseLogsInner" /> class.
         /// </summary>
@@ -72,10 +107,12 @@ namespace Zernio.Model
         /// <param name="commenterId">commenterId.</param>
         /// <param name="commenterName">commenterName.</param>
         /// <param name="commentText">commentText.</param>
-        /// <param name="status">status.</param>
-        /// <param name="error">error.</param>
+        /// <param name="status">DM outcome.</param>
+        /// <param name="error">DM error message if status is failed.</param>
+        /// <param name="commentReplyStatus">Outcome of the optional public reply on the triggering comment. &#39;skipped&#39; if no commentReply was configured or if the DM failed (the public reply is not attempted in that case)..</param>
+        /// <param name="commentReplyError">Public-reply error message if commentReplyStatus is failed.</param>
         /// <param name="createdAt">createdAt.</param>
-        public GetCommentAutomation200ResponseLogsInner(string id = default, string commentId = default, string commenterId = default, string commenterName = default, string commentText = default, StatusEnum? status = default, string error = default, DateTime createdAt = default)
+        public GetCommentAutomation200ResponseLogsInner(string id = default, string commentId = default, string commenterId = default, string commenterName = default, string commentText = default, StatusEnum? status = default, string error = default, CommentReplyStatusEnum? commentReplyStatus = default, string commentReplyError = default, DateTime createdAt = default)
         {
             this.Id = id;
             this.CommentId = commentId;
@@ -84,6 +121,8 @@ namespace Zernio.Model
             this.CommentText = commentText;
             this.Status = status;
             this.Error = error;
+            this.CommentReplyStatus = commentReplyStatus;
+            this.CommentReplyError = commentReplyError;
             this.CreatedAt = createdAt;
         }
 
@@ -118,10 +157,18 @@ namespace Zernio.Model
         public string CommentText { get; set; }
 
         /// <summary>
-        /// Gets or Sets Error
+        /// DM error message if status is failed
         /// </summary>
+        /// <value>DM error message if status is failed</value>
         [DataMember(Name = "error", EmitDefaultValue = false)]
         public string Error { get; set; }
+
+        /// <summary>
+        /// Public-reply error message if commentReplyStatus is failed
+        /// </summary>
+        /// <value>Public-reply error message if commentReplyStatus is failed</value>
+        [DataMember(Name = "commentReplyError", EmitDefaultValue = false)]
+        public string CommentReplyError { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedAt
@@ -144,6 +191,8 @@ namespace Zernio.Model
             sb.Append("  CommentText: ").Append(CommentText).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
+            sb.Append("  CommentReplyStatus: ").Append(CommentReplyStatus).Append("\n");
+            sb.Append("  CommentReplyError: ").Append(CommentReplyError).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
