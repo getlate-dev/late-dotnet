@@ -324,5 +324,14 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'AdvantageAudience'
         }
+
+        /// <summary>
+        /// Test the property 'Gender'
+        /// </summary>
+        [Fact]
+        public void GenderTest()
+        {
+            // TODO unit test for the property 'Gender'
+        }
     }
 }

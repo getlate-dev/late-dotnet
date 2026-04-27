@@ -244,6 +244,39 @@ namespace Zernio.Model
         [DataMember(Name = "advantageAudience", EmitDefaultValue = false)]
         public AdvantageAudienceEnum? AdvantageAudience { get; set; }
         /// <summary>
+        /// Meta only. Restrict the audience by gender. &#39;male&#39; targets men only, &#39;female&#39; targets women only, &#39;all&#39; (default) targets everyone. Ignored by non-Meta platforms.
+        /// </summary>
+        /// <value>Meta only. Restrict the audience by gender. &#39;male&#39; targets men only, &#39;female&#39; targets women only, &#39;all&#39; (default) targets everyone. Ignored by non-Meta platforms.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum GenderEnum
+        {
+            /// <summary>
+            /// Enum All for value: all
+            /// </summary>
+            [EnumMember(Value = "all")]
+            All = 1,
+
+            /// <summary>
+            /// Enum Male for value: male
+            /// </summary>
+            [EnumMember(Value = "male")]
+            Male = 2,
+
+            /// <summary>
+            /// Enum Female for value: female
+            /// </summary>
+            [EnumMember(Value = "female")]
+            Female = 3
+        }
+
+
+        /// <summary>
+        /// Meta only. Restrict the audience by gender. &#39;male&#39; targets men only, &#39;female&#39; targets women only, &#39;all&#39; (default) targets everyone. Ignored by non-Meta platforms.
+        /// </summary>
+        /// <value>Meta only. Restrict the audience by gender. &#39;male&#39; targets men only, &#39;female&#39; targets women only, &#39;all&#39; (default) targets everyone. Ignored by non-Meta platforms.</value>
+        [DataMember(Name = "gender", EmitDefaultValue = false)]
+        public GenderEnum? Gender { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="CreateStandaloneAdRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
@@ -281,7 +314,8 @@ namespace Zernio.Model
         /// <param name="additionalHeadlines">Google Search RSA only. Extra headlines..</param>
         /// <param name="additionalDescriptions">Google Search RSA only. Extra descriptions..</param>
         /// <param name="advantageAudience">Meta only. Controls the Advantage audience feature (targeting_automation). 0 &#x3D; disabled (default), 1 &#x3D; enabled. Meta Marketing API requires this field on all ad set creation requests..</param>
-        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum? goal = default, decimal budgetAmount = default, BudgetTypeEnum? budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, CreateStandaloneAdRequestImages images = default, CreateStandaloneAdRequestVideo video = default, List<CreateStandaloneAdRequestCreativesInner> creatives = default, string adSetId = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default)
+        /// <param name="gender">Meta only. Restrict the audience by gender. &#39;male&#39; targets men only, &#39;female&#39; targets women only, &#39;all&#39; (default) targets everyone. Ignored by non-Meta platforms. (default to GenderEnum.All).</param>
+        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum? goal = default, decimal budgetAmount = default, BudgetTypeEnum? budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, CreateStandaloneAdRequestImages images = default, CreateStandaloneAdRequestVideo video = default, List<CreateStandaloneAdRequestCreativesInner> creatives = default, string adSetId = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default, GenderEnum? gender = GenderEnum.All)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -328,6 +362,7 @@ namespace Zernio.Model
             this.AdditionalHeadlines = additionalHeadlines;
             this.AdditionalDescriptions = additionalDescriptions;
             this.AdvantageAudience = advantageAudience;
+            this.Gender = gender;
         }
 
         /// <summary>
@@ -534,6 +569,7 @@ namespace Zernio.Model
             sb.Append("  AdditionalHeadlines: ").Append(AdditionalHeadlines).Append("\n");
             sb.Append("  AdditionalDescriptions: ").Append(AdditionalDescriptions).Append("\n");
             sb.Append("  AdvantageAudience: ").Append(AdvantageAudience).Append("\n");
+            sb.Append("  Gender: ").Append(Gender).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
