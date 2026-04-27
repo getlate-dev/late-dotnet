@@ -115,6 +115,10 @@ docs/CreateContact200Response.md
 docs/CreateContact200ResponseChannel.md
 docs/CreateContact200ResponseContact.md
 docs/CreateContactRequest.md
+docs/CreateCtwaAd201Response.md
+docs/CreateCtwaAdRequest.md
+docs/CreateCtwaAdRequestInterestsInner.md
+docs/CreateCtwaAdRequestVideo.md
 docs/CreateCustomField200Response.md
 docs/CreateCustomFieldRequest.md
 docs/CreateGoogleBusinessMedia200Response.md
@@ -645,6 +649,8 @@ docs/SendInboxMessageRequestTemplateElementsInnerButtonsInner.md
 docs/SendPrivateReplyToComment200Response.md
 docs/SendPrivateReplyToCommentRequest.md
 docs/SendTypingIndicatorRequest.md
+docs/SendWhatsAppConversion200Response.md
+docs/SendWhatsAppConversionRequest.md
 docs/SendWhatsAppFlowMessage200Response.md
 docs/SendWhatsAppFlowMessageRequest.md
 docs/SendWhatsAppFlowMessageRequestFlowActionPayload.md
@@ -997,6 +1003,10 @@ src/Zernio.Test/Model/CreateContact200ResponseChannelTests.cs
 src/Zernio.Test/Model/CreateContact200ResponseContactTests.cs
 src/Zernio.Test/Model/CreateContact200ResponseTests.cs
 src/Zernio.Test/Model/CreateContactRequestTests.cs
+src/Zernio.Test/Model/CreateCtwaAd201ResponseTests.cs
+src/Zernio.Test/Model/CreateCtwaAdRequestInterestsInnerTests.cs
+src/Zernio.Test/Model/CreateCtwaAdRequestTests.cs
+src/Zernio.Test/Model/CreateCtwaAdRequestVideoTests.cs
 src/Zernio.Test/Model/CreateCustomField200ResponseTests.cs
 src/Zernio.Test/Model/CreateCustomFieldRequestTests.cs
 src/Zernio.Test/Model/CreateGoogleBusinessMedia200ResponseTests.cs
@@ -1508,6 +1518,8 @@ src/Zernio.Test/Model/SendInboxMessageRequestTests.cs
 src/Zernio.Test/Model/SendPrivateReplyToComment200ResponseTests.cs
 src/Zernio.Test/Model/SendPrivateReplyToCommentRequestTests.cs
 src/Zernio.Test/Model/SendTypingIndicatorRequestTests.cs
+src/Zernio.Test/Model/SendWhatsAppConversion200ResponseTests.cs
+src/Zernio.Test/Model/SendWhatsAppConversionRequestTests.cs
 src/Zernio.Test/Model/SendWhatsAppFlowMessage200ResponseTests.cs
 src/Zernio.Test/Model/SendWhatsAppFlowMessageRequestFlowActionPayloadTests.cs
 src/Zernio.Test/Model/SendWhatsAppFlowMessageRequestHeaderTests.cs
@@ -1868,6 +1880,10 @@ src/Zernio/Model/CreateContact200Response.cs
 src/Zernio/Model/CreateContact200ResponseChannel.cs
 src/Zernio/Model/CreateContact200ResponseContact.cs
 src/Zernio/Model/CreateContactRequest.cs
+src/Zernio/Model/CreateCtwaAd201Response.cs
+src/Zernio/Model/CreateCtwaAdRequest.cs
+src/Zernio/Model/CreateCtwaAdRequestInterestsInner.cs
+src/Zernio/Model/CreateCtwaAdRequestVideo.cs
 src/Zernio/Model/CreateCustomField200Response.cs
 src/Zernio/Model/CreateCustomFieldRequest.cs
 src/Zernio/Model/CreateGoogleBusinessMedia200Response.cs
@@ -2379,6 +2395,8 @@ src/Zernio/Model/SendInboxMessageRequestTemplateElementsInnerButtonsInner.cs
 src/Zernio/Model/SendPrivateReplyToComment200Response.cs
 src/Zernio/Model/SendPrivateReplyToCommentRequest.cs
 src/Zernio/Model/SendTypingIndicatorRequest.cs
+src/Zernio/Model/SendWhatsAppConversion200Response.cs
+src/Zernio/Model/SendWhatsAppConversionRequest.cs
 src/Zernio/Model/SendWhatsAppFlowMessage200Response.cs
 src/Zernio/Model/SendWhatsAppFlowMessageRequest.cs
 src/Zernio/Model/SendWhatsAppFlowMessageRequestFlowActionPayload.cs

@@ -67,6 +67,18 @@ namespace Zernio.Test.Api
         }
 
         /// <summary>
+        /// Test CreateCtwaAd
+        /// </summary>
+        [Fact]
+        public void CreateCtwaAdTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //CreateCtwaAdRequest createCtwaAdRequest = null;
+            //var response = instance.CreateCtwaAd(createCtwaAdRequest);
+            //Assert.IsType<CreateCtwaAd201Response>(response);
+        }
+
+        /// <summary>
         /// Test CreateStandaloneAd
         /// </summary>
         [Fact]
@@ -200,6 +212,18 @@ namespace Zernio.Test.Api
             //SendConversionsRequest sendConversionsRequest = null;
             //var response = instance.SendConversions(sendConversionsRequest);
             //Assert.IsType<SendConversions200Response>(response);
+        }
+
+        /// <summary>
+        /// Test SendWhatsAppConversion
+        /// </summary>
+        [Fact]
+        public void SendWhatsAppConversionTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //SendWhatsAppConversionRequest sendWhatsAppConversionRequest = null;
+            //var response = instance.SendWhatsAppConversion(sendWhatsAppConversionRequest);
+            //Assert.IsType<SendWhatsAppConversion200Response>(response);
         }
 
         /// <summary>

@@ -263,6 +263,18 @@ namespace Zernio.Test.Api
         }
 
         /// <summary>
+        /// Test SendWhatsAppConversion
+        /// </summary>
+        [Fact]
+        public void SendWhatsAppConversionTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //SendWhatsAppConversionRequest sendWhatsAppConversionRequest = null;
+            //var response = instance.SendWhatsAppConversion(sendWhatsAppConversionRequest);
+            //Assert.IsType<SendWhatsAppConversion200Response>(response);
+        }
+
+        /// <summary>
         /// Test UpdateWhatsAppBusinessProfile
         /// </summary>
         [Fact]
