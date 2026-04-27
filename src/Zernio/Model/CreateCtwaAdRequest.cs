@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// In addition to the &#x60;required&#x60; list, **exactly one of &#x60;imageUrl&#x60; or &#x60;video&#x60; must be supplied** (mutually exclusive). The route enforces this at the Zod boundary; OpenAPI&#39;s &#x60;required&#x60; cannot express OR-required cleanly. 
+    /// In addition to the &#x60;required&#x60; list, exactly one of &#x60;imageUrl&#x60; or &#x60;video&#x60; must be supplied (they are mutually exclusive). The route enforces this at the Zod boundary; OpenAPI&#39;s &#x60;required&#x60; cannot express OR-required cleanly. 
     /// </summary>
     [DataContract(Name = "createCtwaAd_request")]
     public partial class CreateCtwaAdRequest : IValidatableObject
@@ -132,7 +132,7 @@ namespace Zernio.Model
         /// <param name="video">video.</param>
         /// <param name="budgetAmount">Budget amount in the ad account&#39;s currency major units (e.g. dollars for USD, not cents). Must be &gt; 0.  (required).</param>
         /// <param name="budgetType">budgetType (required).</param>
-        /// <param name="currency">ISO 4217 currency code matching the ad account&#39;s currency (e.g. &#x60;USD&#x60;). Optional — Meta infers from the ad account when omitted. .</param>
+        /// <param name="currency">ISO 4217 currency code matching the ad account&#39;s currency (e.g. &#x60;USD&#x60;). Optional; Meta infers from the ad account when omitted. .</param>
         /// <param name="endDate">ISO 8601 datetime. Required when &#x60;budgetType&#x60; is &#x60;lifetime&#x60;. .</param>
         /// <param name="countries">ISO 3166-1 alpha-2 country codes. Defaults to &#x60;[\&quot;US\&quot;]&#x60;..</param>
         /// <param name="ageMin">ageMin.</param>
@@ -243,9 +243,9 @@ namespace Zernio.Model
         public decimal BudgetAmount { get; set; }
 
         /// <summary>
-        /// ISO 4217 currency code matching the ad account&#39;s currency (e.g. &#x60;USD&#x60;). Optional — Meta infers from the ad account when omitted. 
+        /// ISO 4217 currency code matching the ad account&#39;s currency (e.g. &#x60;USD&#x60;). Optional; Meta infers from the ad account when omitted. 
         /// </summary>
-        /// <value>ISO 4217 currency code matching the ad account&#39;s currency (e.g. &#x60;USD&#x60;). Optional — Meta infers from the ad account when omitted. </value>
+        /// <value>ISO 4217 currency code matching the ad account&#39;s currency (e.g. &#x60;USD&#x60;). Optional; Meta infers from the ad account when omitted. </value>
         [DataMember(Name = "currency", EmitDefaultValue = false)]
         public string Currency { get; set; }
 

@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// In addition to the &#x60;required&#x60; list, **at least one of &#x60;conversationId&#x60; or &#x60;phoneE164&#x60; must be supplied** (used to resolve the originating CTWA conversation). The route enforces this at the Zod boundary; OpenAPI&#39;s &#x60;required&#x60; cannot express OR-required cleanly. 
+    /// In addition to the &#x60;required&#x60; list, at least one of &#x60;conversationId&#x60; or &#x60;phoneE164&#x60; must be supplied (used to resolve the originating CTWA conversation). The route enforces this at the Zod boundary; OpenAPI&#39;s &#x60;required&#x60; cannot express OR-required cleanly. 
     /// </summary>
     [DataContract(Name = "sendWhatsAppConversion_request")]
     public partial class SendWhatsAppConversionRequest : IValidatableObject
