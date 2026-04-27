@@ -130,7 +130,10 @@ namespace Zernio.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string conversationId = null;
             //string accountId = null;
-            //var response = instance.GetInboxConversationMessages(conversationId, accountId);
+            //int? limit = null;
+            //string? cursor = null;
+            //string? sortOrder = null;
+            //var response = instance.GetInboxConversationMessages(conversationId, accountId, limit, cursor, sortOrder);
             //Assert.IsType<GetInboxConversationMessages200Response>(response);
         }
 

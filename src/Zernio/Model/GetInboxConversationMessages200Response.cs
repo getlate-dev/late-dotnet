@@ -34,14 +34,45 @@ namespace Zernio.Model
     public partial class GetInboxConversationMessages200Response : IValidatableObject
     {
         /// <summary>
+        /// Sort order actually applied to the returned page. May differ from the requested &#x60;sortOrder&#x60; for Twitter, Facebook and Bluesky (always &#x60;desc&#x60; regardless of request). 
+        /// </summary>
+        /// <value>Sort order actually applied to the returned page. May differ from the requested &#x60;sortOrder&#x60; for Twitter, Facebook and Bluesky (always &#x60;desc&#x60; regardless of request). </value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum SortOrderAppliedEnum
+        {
+            /// <summary>
+            /// Enum Asc for value: asc
+            /// </summary>
+            [EnumMember(Value = "asc")]
+            Asc = 1,
+
+            /// <summary>
+            /// Enum Desc for value: desc
+            /// </summary>
+            [EnumMember(Value = "desc")]
+            Desc = 2
+        }
+
+
+        /// <summary>
+        /// Sort order actually applied to the returned page. May differ from the requested &#x60;sortOrder&#x60; for Twitter, Facebook and Bluesky (always &#x60;desc&#x60; regardless of request). 
+        /// </summary>
+        /// <value>Sort order actually applied to the returned page. May differ from the requested &#x60;sortOrder&#x60; for Twitter, Facebook and Bluesky (always &#x60;desc&#x60; regardless of request). </value>
+        [DataMember(Name = "sortOrderApplied", EmitDefaultValue = false)]
+        public SortOrderAppliedEnum? SortOrderApplied { get; set; }
+        /// <summary>
         /// Initializes a new instance of the <see cref="GetInboxConversationMessages200Response" /> class.
         /// </summary>
         /// <param name="status">status.</param>
+        /// <param name="pagination">pagination.</param>
+        /// <param name="sortOrderApplied">Sort order actually applied to the returned page. May differ from the requested &#x60;sortOrder&#x60; for Twitter, Facebook and Bluesky (always &#x60;desc&#x60; regardless of request). .</param>
         /// <param name="messages">messages.</param>
         /// <param name="lastUpdated">lastUpdated.</param>
-        public GetInboxConversationMessages200Response(string status = default, List<GetInboxConversationMessages200ResponseMessagesInner> messages = default, DateTime lastUpdated = default)
+        public GetInboxConversationMessages200Response(string status = default, GetInboxConversationMessages200ResponsePagination pagination = default, SortOrderAppliedEnum? sortOrderApplied = default, List<GetInboxConversationMessages200ResponseMessagesInner> messages = default, DateTime lastUpdated = default)
         {
             this.Status = status;
+            this.Pagination = pagination;
+            this.SortOrderApplied = sortOrderApplied;
             this.Messages = messages;
             this.LastUpdated = lastUpdated;
         }
@@ -51,6 +82,12 @@ namespace Zernio.Model
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public string Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pagination
+        /// </summary>
+        [DataMember(Name = "pagination", EmitDefaultValue = false)]
+        public GetInboxConversationMessages200ResponsePagination Pagination { get; set; }
 
         /// <summary>
         /// Gets or Sets Messages
@@ -73,6 +110,8 @@ namespace Zernio.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class GetInboxConversationMessages200Response {\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
+            sb.Append("  Pagination: ").Append(Pagination).Append("\n");
+            sb.Append("  SortOrderApplied: ").Append(SortOrderApplied).Append("\n");
             sb.Append("  Messages: ").Append(Messages).Append("\n");
             sb.Append("  LastUpdated: ").Append(LastUpdated).Append("\n");
             sb.Append("}\n");

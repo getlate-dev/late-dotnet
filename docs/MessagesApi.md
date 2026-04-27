@@ -543,11 +543,11 @@ catch (ApiException e)
 
 <a id="getinboxconversationmessages"></a>
 # **GetInboxConversationMessages**
-> GetInboxConversationMessages200Response GetInboxConversationMessages (string conversationId, string accountId)
+> GetInboxConversationMessages200Response GetInboxConversationMessages (string conversationId, string accountId, int? limit = null, string? cursor = null, string? sortOrder = null)
 
 List messages
 
-Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X's encrypted \"X Chat\" messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass `pagination.nextCursor` from a prior response back as the `cursor` query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to `asc` (oldest first, chat style). For the \"show me the latest messages\" pattern, pass `?sortOrder=desc&limit=N`. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field `sortOrderApplied` tells you what was actually applied.  Reddit threads are paginated client-side because Reddit's API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit's inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X's encrypted \"X Chat\" messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
 
 ### Example
 ```csharp
@@ -575,11 +575,14 @@ namespace Example
             var apiInstance = new MessagesApi(httpClient, config, httpClientHandler);
             var conversationId = "conversationId_example";  // string | The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.
             var accountId = "accountId_example";  // string | Social account ID
+            var limit = 100;  // int? | Number of messages to return per page. Default 100, max 100. (optional)  (default to 100)
+            var cursor = "cursor_example";  // string? | Opaque pagination cursor. Pass `pagination.nextCursor` from a prior response. (optional) 
+            var sortOrder = "asc";  // string? | Order of returned messages. Default `asc` (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See `sortOrderApplied` in the response.  (optional)  (default to asc)
 
             try
             {
                 // List messages
-                GetInboxConversationMessages200Response result = apiInstance.GetInboxConversationMessages(conversationId, accountId);
+                GetInboxConversationMessages200Response result = apiInstance.GetInboxConversationMessages(conversationId, accountId, limit, cursor, sortOrder);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -600,7 +603,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List messages
-    ApiResponse<GetInboxConversationMessages200Response> response = apiInstance.GetInboxConversationMessagesWithHttpInfo(conversationId, accountId);
+    ApiResponse<GetInboxConversationMessages200Response> response = apiInstance.GetInboxConversationMessagesWithHttpInfo(conversationId, accountId, limit, cursor, sortOrder);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -619,6 +622,9 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **conversationId** | **string** | The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID. |  |
 | **accountId** | **string** | Social account ID |  |
+| **limit** | **int?** | Number of messages to return per page. Default 100, max 100. | [optional] [default to 100] |
+| **cursor** | **string?** | Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. | [optional]  |
+| **sortOrder** | **string?** | Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  | [optional] [default to asc] |
 
 ### Return type
 

@@ -135,5 +135,14 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'FlowResponseData'
         }
+
+        /// <summary>
+        /// Test the property 'Referral'
+        /// </summary>
+        [Fact]
+        public void ReferralTest()
+        {
+            // TODO unit test for the property 'Referral'
+        }
     }
 }

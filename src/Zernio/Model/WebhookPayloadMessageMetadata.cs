@@ -78,7 +78,8 @@ namespace Zernio.Model
         /// <param name="buttonPayload">WhatsApp only. Payload attached to a tapped template button. Template buttons emit a plain &#x60;button&#x60; webhook (not an interactive reply), so &#x60;interactiveType&#x60; is empty while this field is populated. .</param>
         /// <param name="flowResponseJson">WhatsApp only. Raw &#x60;nfm_reply.response_json&#x60; string returned by a Flow submission. Useful if you need the exact wire payload; for typed access use &#x60;flowResponseData&#x60; instead. .</param>
         /// <param name="flowResponseData">WhatsApp only. Parsed Flow response JSON. Populated when &#x60;flowResponseJson&#x60; is valid JSON; otherwise omitted. Keys and value types depend on the specific Flow that was submitted. .</param>
-        public WebhookPayloadMessageMetadata(string quickReplyPayload = default, string postbackPayload = default, string postbackTitle = default, string callbackData = default, InteractiveTypeEnum? interactiveType = default, string interactiveId = default, string buttonPayload = default, string flowResponseJson = default, Dictionary<string, Object> flowResponseData = default)
+        /// <param name="referral">referral.</param>
+        public WebhookPayloadMessageMetadata(string quickReplyPayload = default, string postbackPayload = default, string postbackTitle = default, string callbackData = default, InteractiveTypeEnum? interactiveType = default, string interactiveId = default, string buttonPayload = default, string flowResponseJson = default, Dictionary<string, Object> flowResponseData = default, WebhookPayloadMessageMetadataReferral referral = default)
         {
             this.QuickReplyPayload = quickReplyPayload;
             this.PostbackPayload = postbackPayload;
@@ -89,6 +90,7 @@ namespace Zernio.Model
             this.ButtonPayload = buttonPayload;
             this.FlowResponseJson = flowResponseJson;
             this.FlowResponseData = flowResponseData;
+            this.Referral = referral;
         }
 
         /// <summary>
@@ -148,6 +150,12 @@ namespace Zernio.Model
         public Dictionary<string, Object> FlowResponseData { get; set; }
 
         /// <summary>
+        /// Gets or Sets Referral
+        /// </summary>
+        [DataMember(Name = "referral", EmitDefaultValue = false)]
+        public WebhookPayloadMessageMetadataReferral Referral { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -164,6 +172,7 @@ namespace Zernio.Model
             sb.Append("  ButtonPayload: ").Append(ButtonPayload).Append("\n");
             sb.Append("  FlowResponseJson: ").Append(FlowResponseJson).Append("\n");
             sb.Append("  FlowResponseData: ").Append(FlowResponseData).Append("\n");
+            sb.Append("  Referral: ").Append(Referral).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

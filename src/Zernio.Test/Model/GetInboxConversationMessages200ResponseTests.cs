@@ -65,6 +65,24 @@ namespace Zernio.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Pagination'
+        /// </summary>
+        [Fact]
+        public void PaginationTest()
+        {
+            // TODO unit test for the property 'Pagination'
+        }
+
+        /// <summary>
+        /// Test the property 'SortOrderApplied'
+        /// </summary>
+        [Fact]
+        public void SortOrderAppliedTest()
+        {
+            // TODO unit test for the property 'SortOrderApplied'
+        }
+
+        /// <summary>
         /// Test the property 'Messages'
         /// </summary>
         [Fact]

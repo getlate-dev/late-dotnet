@@ -322,6 +322,7 @@ docs/GetInboxConversationMessages200ResponseMessagesInnerAttachmentsInner.md
 docs/GetInboxConversationMessages200ResponseMessagesInnerDeliveryError.md
 docs/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInner.md
 docs/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInnerAttachmentsInner.md
+docs/GetInboxConversationMessages200ResponsePagination.md
 docs/GetInboxPostComments200Response.md
 docs/GetInboxPostComments200ResponseCommentsInner.md
 docs/GetInboxPostComments200ResponseCommentsInnerFrom.md
@@ -829,6 +830,7 @@ docs/WebhookPayloadMessageMessage.md
 docs/WebhookPayloadMessageMessageSender.md
 docs/WebhookPayloadMessageMessageSenderInstagramProfile.md
 docs/WebhookPayloadMessageMetadata.md
+docs/WebhookPayloadMessageMetadataReferral.md
 docs/WebhookPayloadMessageSent.md
 docs/WebhookPayloadMessageSentMessage.md
 docs/WebhookPayloadMessageSentMessageSender.md
@@ -1200,6 +1202,7 @@ src/Zernio.Test/Model/GetInboxConversationMessages200ResponseMessagesInnerDelive
 src/Zernio.Test/Model/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInnerAttachmentsInnerTests.cs
 src/Zernio.Test/Model/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInnerTests.cs
 src/Zernio.Test/Model/GetInboxConversationMessages200ResponseMessagesInnerTests.cs
+src/Zernio.Test/Model/GetInboxConversationMessages200ResponsePaginationTests.cs
 src/Zernio.Test/Model/GetInboxConversationMessages200ResponseTests.cs
 src/Zernio.Test/Model/GetInboxPostComments200ResponseCommentsInnerFromTests.cs
 src/Zernio.Test/Model/GetInboxPostComments200ResponseCommentsInnerTests.cs
@@ -1689,6 +1692,7 @@ src/Zernio.Test/Model/WebhookPayloadMessageEditedTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageMessageSenderInstagramProfileTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageMessageSenderTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageMessageTests.cs
+src/Zernio.Test/Model/WebhookPayloadMessageMetadataReferralTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageMetadataTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageSentMessageSenderTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageSentMessageTests.cs
@@ -2078,6 +2082,7 @@ src/Zernio/Model/GetInboxConversationMessages200ResponseMessagesInnerAttachments
 src/Zernio/Model/GetInboxConversationMessages200ResponseMessagesInnerDeliveryError.cs
 src/Zernio/Model/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInner.cs
 src/Zernio/Model/GetInboxConversationMessages200ResponseMessagesInnerEditHistoryInnerAttachmentsInner.cs
+src/Zernio/Model/GetInboxConversationMessages200ResponsePagination.cs
 src/Zernio/Model/GetInboxPostComments200Response.cs
 src/Zernio/Model/GetInboxPostComments200ResponseCommentsInner.cs
 src/Zernio/Model/GetInboxPostComments200ResponseCommentsInnerFrom.cs
@@ -2569,6 +2574,7 @@ src/Zernio/Model/WebhookPayloadMessageMessage.cs
 src/Zernio/Model/WebhookPayloadMessageMessageSender.cs
 src/Zernio/Model/WebhookPayloadMessageMessageSenderInstagramProfile.cs
 src/Zernio/Model/WebhookPayloadMessageMetadata.cs
+src/Zernio/Model/WebhookPayloadMessageMetadataReferral.cs
 src/Zernio/Model/WebhookPayloadMessageSent.cs
 src/Zernio/Model/WebhookPayloadMessageSentMessage.cs
 src/Zernio/Model/WebhookPayloadMessageSentMessageSender.cs

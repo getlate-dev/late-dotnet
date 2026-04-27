@@ -151,25 +151,31 @@ namespace Zernio.Api
         /// List messages
         /// </summary>
         /// <remarks>
-        /// Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+        /// Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass &#x60;pagination.nextCursor&#x60; from a prior response back as the &#x60;cursor&#x60; query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to &#x60;asc&#x60; (oldest first, chat style). For the \&quot;show me the latest messages\&quot; pattern, pass &#x60;?sortOrder&#x3D;desc&amp;limit&#x3D;N&#x60;. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field &#x60;sortOrderApplied&#x60; tells you what was actually applied.  Reddit threads are paginated client-side because Reddit&#39;s API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit&#39;s inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
         /// <param name="accountId">Social account ID</param>
+        /// <param name="limit">Number of messages to return per page. Default 100, max 100. (optional, default to 100)</param>
+        /// <param name="cursor">Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. (optional)</param>
+        /// <param name="sortOrder">Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  (optional, default to asc)</param>
         /// <returns>GetInboxConversationMessages200Response</returns>
-        GetInboxConversationMessages200Response GetInboxConversationMessages(string conversationId, string accountId);
+        GetInboxConversationMessages200Response GetInboxConversationMessages(string conversationId, string accountId, int? limit = default, string? cursor = default, string? sortOrder = default);
 
         /// <summary>
         /// List messages
         /// </summary>
         /// <remarks>
-        /// Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+        /// Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass &#x60;pagination.nextCursor&#x60; from a prior response back as the &#x60;cursor&#x60; query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to &#x60;asc&#x60; (oldest first, chat style). For the \&quot;show me the latest messages\&quot; pattern, pass &#x60;?sortOrder&#x3D;desc&amp;limit&#x3D;N&#x60;. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field &#x60;sortOrderApplied&#x60; tells you what was actually applied.  Reddit threads are paginated client-side because Reddit&#39;s API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit&#39;s inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
         /// <param name="accountId">Social account ID</param>
+        /// <param name="limit">Number of messages to return per page. Default 100, max 100. (optional, default to 100)</param>
+        /// <param name="cursor">Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. (optional)</param>
+        /// <param name="sortOrder">Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  (optional, default to asc)</param>
         /// <returns>ApiResponse of GetInboxConversationMessages200Response</returns>
-        ApiResponse<GetInboxConversationMessages200Response> GetInboxConversationMessagesWithHttpInfo(string conversationId, string accountId);
+        ApiResponse<GetInboxConversationMessages200Response> GetInboxConversationMessagesWithHttpInfo(string conversationId, string accountId, int? limit = default, string? cursor = default, string? sortOrder = default);
         /// <summary>
         /// List conversations
         /// </summary>
@@ -462,27 +468,33 @@ namespace Zernio.Api
         /// List messages
         /// </summary>
         /// <remarks>
-        /// Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+        /// Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass &#x60;pagination.nextCursor&#x60; from a prior response back as the &#x60;cursor&#x60; query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to &#x60;asc&#x60; (oldest first, chat style). For the \&quot;show me the latest messages\&quot; pattern, pass &#x60;?sortOrder&#x3D;desc&amp;limit&#x3D;N&#x60;. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field &#x60;sortOrderApplied&#x60; tells you what was actually applied.  Reddit threads are paginated client-side because Reddit&#39;s API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit&#39;s inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
         /// <param name="accountId">Social account ID</param>
+        /// <param name="limit">Number of messages to return per page. Default 100, max 100. (optional, default to 100)</param>
+        /// <param name="cursor">Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. (optional)</param>
+        /// <param name="sortOrder">Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  (optional, default to asc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetInboxConversationMessages200Response</returns>
-        System.Threading.Tasks.Task<GetInboxConversationMessages200Response> GetInboxConversationMessagesAsync(string conversationId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetInboxConversationMessages200Response> GetInboxConversationMessagesAsync(string conversationId, string accountId, int? limit = default, string? cursor = default, string? sortOrder = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List messages
         /// </summary>
         /// <remarks>
-        /// Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+        /// Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass &#x60;pagination.nextCursor&#x60; from a prior response back as the &#x60;cursor&#x60; query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to &#x60;asc&#x60; (oldest first, chat style). For the \&quot;show me the latest messages\&quot; pattern, pass &#x60;?sortOrder&#x3D;desc&amp;limit&#x3D;N&#x60;. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field &#x60;sortOrderApplied&#x60; tells you what was actually applied.  Reddit threads are paginated client-side because Reddit&#39;s API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit&#39;s inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
         /// <param name="accountId">Social account ID</param>
+        /// <param name="limit">Number of messages to return per page. Default 100, max 100. (optional, default to 100)</param>
+        /// <param name="cursor">Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. (optional)</param>
+        /// <param name="sortOrder">Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  (optional, default to asc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetInboxConversationMessages200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetInboxConversationMessages200Response>> GetInboxConversationMessagesWithHttpInfoAsync(string conversationId, string accountId, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetInboxConversationMessages200Response>> GetInboxConversationMessagesWithHttpInfoAsync(string conversationId, string accountId, int? limit = default, string? cursor = default, string? sortOrder = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// List conversations
         /// </summary>
@@ -1600,26 +1612,32 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+        /// List messages Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass &#x60;pagination.nextCursor&#x60; from a prior response back as the &#x60;cursor&#x60; query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to &#x60;asc&#x60; (oldest first, chat style). For the \&quot;show me the latest messages\&quot; pattern, pass &#x60;?sortOrder&#x3D;desc&amp;limit&#x3D;N&#x60;. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field &#x60;sortOrderApplied&#x60; tells you what was actually applied.  Reddit threads are paginated client-side because Reddit&#39;s API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit&#39;s inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
         /// <param name="accountId">Social account ID</param>
+        /// <param name="limit">Number of messages to return per page. Default 100, max 100. (optional, default to 100)</param>
+        /// <param name="cursor">Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. (optional)</param>
+        /// <param name="sortOrder">Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  (optional, default to asc)</param>
         /// <returns>GetInboxConversationMessages200Response</returns>
-        public GetInboxConversationMessages200Response GetInboxConversationMessages(string conversationId, string accountId)
+        public GetInboxConversationMessages200Response GetInboxConversationMessages(string conversationId, string accountId, int? limit = default, string? cursor = default, string? sortOrder = default)
         {
-            Zernio.Client.ApiResponse<GetInboxConversationMessages200Response> localVarResponse = GetInboxConversationMessagesWithHttpInfo(conversationId, accountId);
+            Zernio.Client.ApiResponse<GetInboxConversationMessages200Response> localVarResponse = GetInboxConversationMessagesWithHttpInfo(conversationId, accountId, limit, cursor, sortOrder);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+        /// List messages Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass &#x60;pagination.nextCursor&#x60; from a prior response back as the &#x60;cursor&#x60; query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to &#x60;asc&#x60; (oldest first, chat style). For the \&quot;show me the latest messages\&quot; pattern, pass &#x60;?sortOrder&#x3D;desc&amp;limit&#x3D;N&#x60;. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field &#x60;sortOrderApplied&#x60; tells you what was actually applied.  Reddit threads are paginated client-side because Reddit&#39;s API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit&#39;s inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
         /// <param name="accountId">Social account ID</param>
+        /// <param name="limit">Number of messages to return per page. Default 100, max 100. (optional, default to 100)</param>
+        /// <param name="cursor">Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. (optional)</param>
+        /// <param name="sortOrder">Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  (optional, default to asc)</param>
         /// <returns>ApiResponse of GetInboxConversationMessages200Response</returns>
-        public Zernio.Client.ApiResponse<GetInboxConversationMessages200Response> GetInboxConversationMessagesWithHttpInfo(string conversationId, string accountId)
+        public Zernio.Client.ApiResponse<GetInboxConversationMessages200Response> GetInboxConversationMessagesWithHttpInfo(string conversationId, string accountId, int? limit = default, string? cursor = default, string? sortOrder = default)
         {
             // verify the required parameter 'conversationId' is set
             if (conversationId == null)
@@ -1647,6 +1665,18 @@ namespace Zernio.Api
 
             localVarRequestOptions.PathParameters.Add("conversationId", Zernio.Client.ClientUtils.ParameterToString(conversationId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (cursor != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "cursor", cursor));
+            }
+            if (sortOrder != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "sortOrder", sortOrder));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required
@@ -1668,28 +1698,34 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+        /// List messages Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass &#x60;pagination.nextCursor&#x60; from a prior response back as the &#x60;cursor&#x60; query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to &#x60;asc&#x60; (oldest first, chat style). For the \&quot;show me the latest messages\&quot; pattern, pass &#x60;?sortOrder&#x3D;desc&amp;limit&#x3D;N&#x60;. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field &#x60;sortOrderApplied&#x60; tells you what was actually applied.  Reddit threads are paginated client-side because Reddit&#39;s API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit&#39;s inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
         /// <param name="accountId">Social account ID</param>
+        /// <param name="limit">Number of messages to return per page. Default 100, max 100. (optional, default to 100)</param>
+        /// <param name="cursor">Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. (optional)</param>
+        /// <param name="sortOrder">Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  (optional, default to asc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetInboxConversationMessages200Response</returns>
-        public async System.Threading.Tasks.Task<GetInboxConversationMessages200Response> GetInboxConversationMessagesAsync(string conversationId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetInboxConversationMessages200Response> GetInboxConversationMessagesAsync(string conversationId, string accountId, int? limit = default, string? cursor = default, string? sortOrder = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Zernio.Client.ApiResponse<GetInboxConversationMessages200Response> localVarResponse = await GetInboxConversationMessagesWithHttpInfoAsync(conversationId, accountId, cancellationToken).ConfigureAwait(false);
+            Zernio.Client.ApiResponse<GetInboxConversationMessages200Response> localVarResponse = await GetInboxConversationMessagesWithHttpInfoAsync(conversationId, accountId, limit, cursor, sortOrder, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// List messages Fetch messages for a specific conversation. Requires accountId query parameter.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
+        /// List messages Fetch messages for a specific conversation, with cursor-based pagination and ordering control.  Pagination: pass &#x60;pagination.nextCursor&#x60; from a prior response back as the &#x60;cursor&#x60; query param to fetch the next page. The cursor is opaque; do not parse or construct it client-side.  Sort order: defaults to &#x60;asc&#x60; (oldest first, chat style). For the \&quot;show me the latest messages\&quot; pattern, pass &#x60;?sortOrder&#x3D;desc&amp;limit&#x3D;N&#x60;. For Twitter, Facebook and Bluesky, the upstream APIs only return newest-first and have no order parameter — sort order is best-effort and only reverses items within a single page (pages still walk newest→oldest). The response field &#x60;sortOrderApplied&#x60; tells you what was actually applied.  Reddit threads are paginated client-side because Reddit&#39;s API has no per-thread cursor. Very long threads may be upstream-truncated by Reddit&#39;s inbox/sent windows (~100 most-recent items each); this is a Reddit platform limitation.  Twitter/X limitation: X&#39;s encrypted \&quot;X Chat\&quot; messages are not accessible via the API. Conversations where the other participant uses encrypted X Chat may only show your outgoing messages. See the list conversations endpoint for more details. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="conversationId">The conversation ID (id field from list conversations endpoint). This is the platform-specific conversation identifier, not an internal database ID.</param>
         /// <param name="accountId">Social account ID</param>
+        /// <param name="limit">Number of messages to return per page. Default 100, max 100. (optional, default to 100)</param>
+        /// <param name="cursor">Opaque pagination cursor. Pass &#x60;pagination.nextCursor&#x60; from a prior response. (optional)</param>
+        /// <param name="sortOrder">Order of returned messages. Default &#x60;asc&#x60; (oldest first, chat style). For Twitter, Facebook and Bluesky, only intra-page ordering is affected — pages always walk newest→oldest. See &#x60;sortOrderApplied&#x60; in the response.  (optional, default to asc)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetInboxConversationMessages200Response)</returns>
-        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetInboxConversationMessages200Response>> GetInboxConversationMessagesWithHttpInfoAsync(string conversationId, string accountId, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetInboxConversationMessages200Response>> GetInboxConversationMessagesWithHttpInfoAsync(string conversationId, string accountId, int? limit = default, string? cursor = default, string? sortOrder = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'conversationId' is set
             if (conversationId == null)
@@ -1719,6 +1755,18 @@ namespace Zernio.Api
 
             localVarRequestOptions.PathParameters.Add("conversationId", Zernio.Client.ClientUtils.ParameterToString(conversationId)); // path parameter
             localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+            if (cursor != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "cursor", cursor));
+            }
+            if (sortOrder != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "sortOrder", sortOrder));
+            }
 
             // authentication (bearerAuth) required
             // bearer authentication required
