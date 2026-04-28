@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **BidAmount** | **decimal** | Max bid cap (Meta only) | [optional] 
 **Tracking** | [**BoostPostRequestTracking**](BoostPostRequestTracking.md) |  | [optional] 
 **SpecialAdCategories** | **List&lt;BoostPostRequest.SpecialAdCategoriesEnum&gt;** | Meta only. Required for housing, employment, credit, or political ads. | [optional] 
+**DsaBeneficiary** | **string** | Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states.  | [optional] 
+**DsaPayor** | **string** | Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer).  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

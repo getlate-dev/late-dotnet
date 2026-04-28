@@ -142,7 +142,9 @@ namespace Zernio.Model
         /// <param name="bidAmount">Max bid cap (Meta only).</param>
         /// <param name="tracking">tracking.</param>
         /// <param name="specialAdCategories">Meta only. Required for housing, employment, credit, or political ads..</param>
-        public BoostPostRequest(string postId = default, string platformPostId = default, string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, BoostPostRequestBudget budget = default, string currency = default, BoostPostRequestSchedule schedule = default, BoostPostRequestTargeting targeting = default, decimal bidAmount = default, BoostPostRequestTracking tracking = default, List<SpecialAdCategoriesEnum> specialAdCategories = default)
+        /// <param name="dsaBeneficiary">Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. .</param>
+        /// <param name="dsaPayor">Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). .</param>
+        public BoostPostRequest(string postId = default, string platformPostId = default, string accountId = default, string adAccountId = default, string name = default, GoalEnum goal = default, BoostPostRequestBudget budget = default, string currency = default, BoostPostRequestSchedule schedule = default, BoostPostRequestTargeting targeting = default, decimal bidAmount = default, BoostPostRequestTracking tracking = default, List<SpecialAdCategoriesEnum> specialAdCategories = default, string dsaBeneficiary = default, string dsaPayor = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -177,6 +179,8 @@ namespace Zernio.Model
             this.BidAmount = bidAmount;
             this.Tracking = tracking;
             this.SpecialAdCategories = specialAdCategories;
+            this.DsaBeneficiary = dsaBeneficiary;
+            this.DsaPayor = dsaPayor;
         }
 
         /// <summary>
@@ -261,6 +265,20 @@ namespace Zernio.Model
         public List<BoostPostRequest.SpecialAdCategoriesEnum> SpecialAdCategories { get; set; }
 
         /// <summary>
+        /// Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. 
+        /// </summary>
+        /// <value>Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. </value>
+        [DataMember(Name = "dsaBeneficiary", EmitDefaultValue = false)]
+        public string DsaBeneficiary { get; set; }
+
+        /// <summary>
+        /// Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). 
+        /// </summary>
+        /// <value>Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). </value>
+        [DataMember(Name = "dsaPayor", EmitDefaultValue = false)]
+        public string DsaPayor { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -281,6 +299,8 @@ namespace Zernio.Model
             sb.Append("  BidAmount: ").Append(BidAmount).Append("\n");
             sb.Append("  Tracking: ").Append(Tracking).Append("\n");
             sb.Append("  SpecialAdCategories: ").Append(SpecialAdCategories).Append("\n");
+            sb.Append("  DsaBeneficiary: ").Append(DsaBeneficiary).Append("\n");
+            sb.Append("  DsaPayor: ").Append(DsaPayor).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -305,6 +325,18 @@ namespace Zernio.Model
             if (this.Name != null && this.Name.Length > 255)
             {
                 yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // DsaBeneficiary (string) maxLength
+            if (this.DsaBeneficiary != null && this.DsaBeneficiary.Length > 100)
+            {
+                yield return new ValidationResult("Invalid value for DsaBeneficiary, length must be less than 100.", new [] { "DsaBeneficiary" });
+            }
+
+            // DsaPayor (string) maxLength
+            if (this.DsaPayor != null && this.DsaPayor.Length > 100)
+            {
+                yield return new ValidationResult("Invalid value for DsaPayor, length must be less than 100.", new [] { "DsaPayor" });
             }
 
             yield break;

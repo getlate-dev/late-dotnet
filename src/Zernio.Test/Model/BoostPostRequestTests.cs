@@ -171,5 +171,23 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'SpecialAdCategories'
         }
+
+        /// <summary>
+        /// Test the property 'DsaBeneficiary'
+        /// </summary>
+        [Fact]
+        public void DsaBeneficiaryTest()
+        {
+            // TODO unit test for the property 'DsaBeneficiary'
+        }
+
+        /// <summary>
+        /// Test the property 'DsaPayor'
+        /// </summary>
+        [Fact]
+        public void DsaPayorTest()
+        {
+            // TODO unit test for the property 'DsaPayor'
+        }
     }
 }

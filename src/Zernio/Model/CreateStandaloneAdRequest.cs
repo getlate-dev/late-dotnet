@@ -315,7 +315,9 @@ namespace Zernio.Model
         /// <param name="additionalDescriptions">Google Search RSA only. Extra descriptions..</param>
         /// <param name="advantageAudience">Meta only. Controls the Advantage audience feature (targeting_automation). 0 &#x3D; disabled (default), 1 &#x3D; enabled. Meta Marketing API requires this field on all ad set creation requests..</param>
         /// <param name="gender">Meta only. Restrict the audience by gender. &#39;male&#39; targets men only, &#39;female&#39; targets women only, &#39;all&#39; (default) targets everyone. Ignored by non-Meta platforms. (default to GenderEnum.All).</param>
-        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum? goal = default, decimal budgetAmount = default, BudgetTypeEnum? budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, CreateStandaloneAdRequestImages images = default, CreateStandaloneAdRequestVideo video = default, List<CreateStandaloneAdRequestCreativesInner> creatives = default, string adSetId = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default, GenderEnum? gender = GenderEnum.All)
+        /// <param name="dsaBeneficiary">Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. .</param>
+        /// <param name="dsaPayor">Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). .</param>
+        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum? goal = default, decimal budgetAmount = default, BudgetTypeEnum? budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, CreateStandaloneAdRequestImages images = default, CreateStandaloneAdRequestVideo video = default, List<CreateStandaloneAdRequestCreativesInner> creatives = default, string adSetId = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default, GenderEnum? gender = GenderEnum.All, string dsaBeneficiary = default, string dsaPayor = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -363,6 +365,8 @@ namespace Zernio.Model
             this.AdditionalDescriptions = additionalDescriptions;
             this.AdvantageAudience = advantageAudience;
             this.Gender = gender;
+            this.DsaBeneficiary = dsaBeneficiary;
+            this.DsaPayor = dsaPayor;
         }
 
         /// <summary>
@@ -532,6 +536,20 @@ namespace Zernio.Model
         public List<string> AdditionalDescriptions { get; set; }
 
         /// <summary>
+        /// Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. 
+        /// </summary>
+        /// <value>Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. </value>
+        [DataMember(Name = "dsaBeneficiary", EmitDefaultValue = false)]
+        public string DsaBeneficiary { get; set; }
+
+        /// <summary>
+        /// Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). 
+        /// </summary>
+        /// <value>Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). </value>
+        [DataMember(Name = "dsaPayor", EmitDefaultValue = false)]
+        public string DsaPayor { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -570,6 +588,8 @@ namespace Zernio.Model
             sb.Append("  AdditionalDescriptions: ").Append(AdditionalDescriptions).Append("\n");
             sb.Append("  AdvantageAudience: ").Append(AdvantageAudience).Append("\n");
             sb.Append("  Gender: ").Append(Gender).Append("\n");
+            sb.Append("  DsaBeneficiary: ").Append(DsaBeneficiary).Append("\n");
+            sb.Append("  DsaPayor: ").Append(DsaPayor).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -630,6 +650,18 @@ namespace Zernio.Model
             if (this.AgeMax < (int)13)
             {
                 yield return new ValidationResult("Invalid value for AgeMax, must be a value greater than or equal to 13.", new [] { "AgeMax" });
+            }
+
+            // DsaBeneficiary (string) maxLength
+            if (this.DsaBeneficiary != null && this.DsaBeneficiary.Length > 100)
+            {
+                yield return new ValidationResult("Invalid value for DsaBeneficiary, length must be less than 100.", new [] { "DsaBeneficiary" });
+            }
+
+            // DsaPayor (string) maxLength
+            if (this.DsaPayor != null && this.DsaPayor.Length > 100)
+            {
+                yield return new ValidationResult("Invalid value for DsaPayor, length must be less than 100.", new [] { "DsaPayor" });
             }
 
             yield break;

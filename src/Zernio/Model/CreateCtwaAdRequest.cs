@@ -141,7 +141,9 @@ namespace Zernio.Model
         /// <param name="audienceId">Custom audience ID to target..</param>
         /// <param name="advantageAudience">Meta&#39;s Advantage+ audience expansion. &#x60;0&#x60; (default) keeps targeting strict; &#x60;1&#x60; lets Meta expand beyond the supplied targeting when its delivery system finds better matches. Always sent on CREATE (Meta requires it). .</param>
         /// <param name="objective">Defaults to &#x60;OUTCOME_ENGAGEMENT&#x60; (the broadly-supported CTWA objective). &#x60;OUTCOME_SALES&#x60; and &#x60;OUTCOME_LEADS&#x60; require additional account configuration (Dataset linked to the WABA for sales) and may be rejected by Meta if missing. .</param>
-        public CreateCtwaAdRequest(string accountId = default, string adAccountId = default, string name = default, string headline = default, string body = default, string imageUrl = default, CreateCtwaAdRequestVideo video = default, decimal budgetAmount = default, BudgetTypeEnum budgetType = default, string currency = default, DateTime endDate = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<CreateCtwaAdRequestInterestsInner> interests = default, string audienceId = default, AdvantageAudienceEnum? advantageAudience = default, ObjectiveEnum? objective = default)
+        /// <param name="dsaBeneficiary">Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. .</param>
+        /// <param name="dsaPayor">Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). .</param>
+        public CreateCtwaAdRequest(string accountId = default, string adAccountId = default, string name = default, string headline = default, string body = default, string imageUrl = default, CreateCtwaAdRequestVideo video = default, decimal budgetAmount = default, BudgetTypeEnum budgetType = default, string currency = default, DateTime endDate = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<CreateCtwaAdRequestInterestsInner> interests = default, string audienceId = default, AdvantageAudienceEnum? advantageAudience = default, ObjectiveEnum? objective = default, string dsaBeneficiary = default, string dsaPayor = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -186,6 +188,8 @@ namespace Zernio.Model
             this.AudienceId = audienceId;
             this.AdvantageAudience = advantageAudience;
             this.Objective = objective;
+            this.DsaBeneficiary = dsaBeneficiary;
+            this.DsaPayor = dsaPayor;
         }
 
         /// <summary>
@@ -289,6 +293,20 @@ namespace Zernio.Model
         public string AudienceId { get; set; }
 
         /// <summary>
+        /// Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. 
+        /// </summary>
+        /// <value>Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. </value>
+        [DataMember(Name = "dsaBeneficiary", EmitDefaultValue = false)]
+        public string DsaBeneficiary { get; set; }
+
+        /// <summary>
+        /// Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). 
+        /// </summary>
+        /// <value>Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). </value>
+        [DataMember(Name = "dsaPayor", EmitDefaultValue = false)]
+        public string DsaPayor { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -314,6 +332,8 @@ namespace Zernio.Model
             sb.Append("  AudienceId: ").Append(AudienceId).Append("\n");
             sb.Append("  AdvantageAudience: ").Append(AdvantageAudience).Append("\n");
             sb.Append("  Objective: ").Append(Objective).Append("\n");
+            sb.Append("  DsaBeneficiary: ").Append(DsaBeneficiary).Append("\n");
+            sb.Append("  DsaPayor: ").Append(DsaPayor).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -410,6 +430,18 @@ namespace Zernio.Model
             if (this.AgeMax < (int)13)
             {
                 yield return new ValidationResult("Invalid value for AgeMax, must be a value greater than or equal to 13.", new [] { "AgeMax" });
+            }
+
+            // DsaBeneficiary (string) maxLength
+            if (this.DsaBeneficiary != null && this.DsaBeneficiary.Length > 100)
+            {
+                yield return new ValidationResult("Invalid value for DsaBeneficiary, length must be less than 100.", new [] { "DsaBeneficiary" });
+            }
+
+            // DsaPayor (string) maxLength
+            if (this.DsaPayor != null && this.DsaPayor.Length > 100)
+            {
+                yield return new ValidationResult("Invalid value for DsaPayor, length must be less than 100.", new [] { "DsaPayor" });
             }
 
             yield break;
