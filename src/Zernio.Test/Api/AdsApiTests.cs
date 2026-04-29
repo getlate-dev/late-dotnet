@@ -241,18 +241,6 @@ namespace Zernio.Test.Api
         }
 
         /// <summary>
-        /// Test TriggerAdsInitialSync
-        /// </summary>
-        [Fact]
-        public void TriggerAdsInitialSyncTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest = null;
-            //var response = instance.TriggerAdsInitialSync(triggerAdsInitialSyncRequest);
-            //Assert.IsType<TriggerAdsInitialSync202Response>(response);
-        }
-
-        /// <summary>
         /// Test UpdateAd
         /// </summary>
         [Fact]

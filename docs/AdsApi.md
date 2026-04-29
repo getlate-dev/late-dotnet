@@ -18,7 +18,6 @@ All URIs are relative to *https://zernio.com/api*
 | [**SearchAdInterests**](AdsApi.md#searchadinterests) | **GET** /v1/ads/interests | Search targeting interests |
 | [**SendConversions**](AdsApi.md#sendconversions) | **POST** /v1/ads/conversions | Send conversion events to an ad platform |
 | [**SendWhatsAppConversion**](AdsApi.md#sendwhatsappconversion) | **POST** /v1/whatsapp/conversions | Send WhatsApp conversion event |
-| [**TriggerAdsInitialSync**](AdsApi.md#triggeradsinitialsync) | **POST** /v1/ads/sync/initial | Re-sync an ads account |
 | [**UpdateAd**](AdsApi.md#updatead) | **PUT** /v1/ads/{adId} | Update ad |
 
 <a id="boostpost"></a>
@@ -1473,108 +1472,6 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **404** | Conversation not found. |  -  |
 | **422** | Configuration missing (no &#x60;metaCapiDatasetId&#x60; / &#x60;connectedFacebookPageId&#x60; on the account) OR the resolved conversation has no captured &#x60;ctwa_clid&#x60;.  |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="triggeradsinitialsync"></a>
-# **TriggerAdsInitialSync**
-> TriggerAdsInitialSync202Response TriggerAdsInitialSync (TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest)
-
-Re-sync an ads account
-
-Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the `account.ads.initial_sync_completed` webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return `202` with `status: \"already_queued\"` and the prior trace ID. 
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using Zernio.Api;
-using Zernio.Client;
-using Zernio.Model;
-
-namespace Example
-{
-    public class TriggerAdsInitialSyncExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://zernio.com/api";
-            // Configure Bearer token for authorization: bearerAuth
-            config.AccessToken = "YOUR_BEARER_TOKEN";
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new AdsApi(httpClient, config, httpClientHandler);
-            var triggerAdsInitialSyncRequest = new TriggerAdsInitialSyncRequest(); // TriggerAdsInitialSyncRequest | 
-
-            try
-            {
-                // Re-sync an ads account
-                TriggerAdsInitialSync202Response result = apiInstance.TriggerAdsInitialSync(triggerAdsInitialSyncRequest);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AdsApi.TriggerAdsInitialSync: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the TriggerAdsInitialSyncWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Re-sync an ads account
-    ApiResponse<TriggerAdsInitialSync202Response> response = apiInstance.TriggerAdsInitialSyncWithHttpInfo(triggerAdsInitialSyncRequest);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AdsApi.TriggerAdsInitialSyncWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **triggerAdsInitialSyncRequest** | [**TriggerAdsInitialSyncRequest**](TriggerAdsInitialSyncRequest.md) |  |  |
-
-### Return type
-
-[**TriggerAdsInitialSync202Response**](TriggerAdsInitialSync202Response.md)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **202** | Sync queued (or already-queued debounce hit) |  -  |
-| **400** | Invalid input |  -  |
-| **401** | Unauthorized |  -  |
-| **404** | Ads SocialAccount not found |  -  |
-| **503** | Sync queue not configured on this environment |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -674,8 +674,6 @@ docs/TelegramPlatformData.md
 docs/TestWebhookRequest.md
 docs/ThreadsPlatformData.md
 docs/TikTokPlatformData.md
-docs/TriggerAdsInitialSync202Response.md
-docs/TriggerAdsInitialSyncRequest.md
 docs/TwitterEngagementApi.md
 docs/TwitterPlatformData.md
 docs/TwitterPlatformDataPoll.md
@@ -1551,8 +1549,6 @@ src/Zernio.Test/Model/TelegramPlatformDataTests.cs
 src/Zernio.Test/Model/TestWebhookRequestTests.cs
 src/Zernio.Test/Model/ThreadsPlatformDataTests.cs
 src/Zernio.Test/Model/TikTokPlatformDataTests.cs
-src/Zernio.Test/Model/TriggerAdsInitialSync202ResponseTests.cs
-src/Zernio.Test/Model/TriggerAdsInitialSyncRequestTests.cs
 src/Zernio.Test/Model/TwitterPlatformDataPollTests.cs
 src/Zernio.Test/Model/TwitterPlatformDataTests.cs
 src/Zernio.Test/Model/TwitterPlatformDataThreadItemsInnerTests.cs
@@ -2437,8 +2433,6 @@ src/Zernio/Model/TelegramPlatformData.cs
 src/Zernio/Model/TestWebhookRequest.cs
 src/Zernio/Model/ThreadsPlatformData.cs
 src/Zernio/Model/TikTokPlatformData.cs
-src/Zernio/Model/TriggerAdsInitialSync202Response.cs
-src/Zernio/Model/TriggerAdsInitialSyncRequest.cs
 src/Zernio/Model/TwitterPlatformData.cs
 src/Zernio/Model/TwitterPlatformDataPoll.cs
 src/Zernio/Model/TwitterPlatformDataThreadItemsInner.cs

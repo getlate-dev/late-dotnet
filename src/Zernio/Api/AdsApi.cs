@@ -359,27 +359,6 @@ namespace Zernio.Api
         /// <returns>ApiResponse of SendWhatsAppConversion200Response</returns>
         ApiResponse<SendWhatsAppConversion200Response> SendWhatsAppConversionWithHttpInfo(SendWhatsAppConversionRequest sendWhatsAppConversionRequest);
         /// <summary>
-        /// Re-sync an ads account
-        /// </summary>
-        /// <remarks>
-        /// Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the &#x60;account.ads.initial_sync_completed&#x60; webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return &#x60;202&#x60; with &#x60;status: \&quot;already_queued\&quot;&#x60; and the prior trace ID. 
-        /// </remarks>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="triggerAdsInitialSyncRequest"></param>
-        /// <returns>TriggerAdsInitialSync202Response</returns>
-        TriggerAdsInitialSync202Response TriggerAdsInitialSync(TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest);
-
-        /// <summary>
-        /// Re-sync an ads account
-        /// </summary>
-        /// <remarks>
-        /// Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the &#x60;account.ads.initial_sync_completed&#x60; webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return &#x60;202&#x60; with &#x60;status: \&quot;already_queued\&quot;&#x60; and the prior trace ID. 
-        /// </remarks>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="triggerAdsInitialSyncRequest"></param>
-        /// <returns>ApiResponse of TriggerAdsInitialSync202Response</returns>
-        ApiResponse<TriggerAdsInitialSync202Response> TriggerAdsInitialSyncWithHttpInfo(TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest);
-        /// <summary>
         /// Update ad
         /// </summary>
         /// <remarks>
@@ -769,29 +748,6 @@ namespace Zernio.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SendWhatsAppConversion200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<SendWhatsAppConversion200Response>> SendWhatsAppConversionWithHttpInfoAsync(SendWhatsAppConversionRequest sendWhatsAppConversionRequest, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Re-sync an ads account
-        /// </summary>
-        /// <remarks>
-        /// Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the &#x60;account.ads.initial_sync_completed&#x60; webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return &#x60;202&#x60; with &#x60;status: \&quot;already_queued\&quot;&#x60; and the prior trace ID. 
-        /// </remarks>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="triggerAdsInitialSyncRequest"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TriggerAdsInitialSync202Response</returns>
-        System.Threading.Tasks.Task<TriggerAdsInitialSync202Response> TriggerAdsInitialSyncAsync(TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Re-sync an ads account
-        /// </summary>
-        /// <remarks>
-        /// Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the &#x60;account.ads.initial_sync_completed&#x60; webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return &#x60;202&#x60; with &#x60;status: \&quot;already_queued\&quot;&#x60; and the prior trace ID. 
-        /// </remarks>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="triggerAdsInitialSyncRequest"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TriggerAdsInitialSync202Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TriggerAdsInitialSync202Response>> TriggerAdsInitialSyncWithHttpInfoAsync(TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update ad
         /// </summary>
@@ -3028,135 +2984,6 @@ namespace Zernio.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SendWhatsAppConversion", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Re-sync an ads account Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the &#x60;account.ads.initial_sync_completed&#x60; webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return &#x60;202&#x60; with &#x60;status: \&quot;already_queued\&quot;&#x60; and the prior trace ID. 
-        /// </summary>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="triggerAdsInitialSyncRequest"></param>
-        /// <returns>TriggerAdsInitialSync202Response</returns>
-        public TriggerAdsInitialSync202Response TriggerAdsInitialSync(TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest)
-        {
-            Zernio.Client.ApiResponse<TriggerAdsInitialSync202Response> localVarResponse = TriggerAdsInitialSyncWithHttpInfo(triggerAdsInitialSyncRequest);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Re-sync an ads account Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the &#x60;account.ads.initial_sync_completed&#x60; webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return &#x60;202&#x60; with &#x60;status: \&quot;already_queued\&quot;&#x60; and the prior trace ID. 
-        /// </summary>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="triggerAdsInitialSyncRequest"></param>
-        /// <returns>ApiResponse of TriggerAdsInitialSync202Response</returns>
-        public Zernio.Client.ApiResponse<TriggerAdsInitialSync202Response> TriggerAdsInitialSyncWithHttpInfo(TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest)
-        {
-            // verify the required parameter 'triggerAdsInitialSyncRequest' is set
-            if (triggerAdsInitialSyncRequest == null)
-                throw new Zernio.Client.ApiException(400, "Missing required parameter 'triggerAdsInitialSyncRequest' when calling AdsApi->TriggerAdsInitialSync");
-
-            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = triggerAdsInitialSyncRequest;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<TriggerAdsInitialSync202Response>("/v1/ads/sync/initial", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("TriggerAdsInitialSync", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Re-sync an ads account Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the &#x60;account.ads.initial_sync_completed&#x60; webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return &#x60;202&#x60; with &#x60;status: \&quot;already_queued\&quot;&#x60; and the prior trace ID. 
-        /// </summary>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="triggerAdsInitialSyncRequest"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TriggerAdsInitialSync202Response</returns>
-        public async System.Threading.Tasks.Task<TriggerAdsInitialSync202Response> TriggerAdsInitialSyncAsync(TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            Zernio.Client.ApiResponse<TriggerAdsInitialSync202Response> localVarResponse = await TriggerAdsInitialSyncWithHttpInfoAsync(triggerAdsInitialSyncRequest, cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Re-sync an ads account Enqueue a full re-sync (discovery + 90-day metrics backfill) for one ads SocialAccount. Returns immediately with a trace ID; subscribe to the &#x60;account.ads.initial_sync_completed&#x60; webhook for completion.  Use this when: - the customer changed which TikTok Business Center / Meta ad account a   token can reach and wants Zernio to discover the new ads, - a previous sync errored out and the customer wants a clean retry, - the customer rotated permissions on the platform side.  Per-account 1h debounce: subsequent calls within an hour return &#x60;202&#x60; with &#x60;status: \&quot;already_queued\&quot;&#x60; and the prior trace ID. 
-        /// </summary>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="triggerAdsInitialSyncRequest"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TriggerAdsInitialSync202Response)</returns>
-        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<TriggerAdsInitialSync202Response>> TriggerAdsInitialSyncWithHttpInfoAsync(TriggerAdsInitialSyncRequest triggerAdsInitialSyncRequest, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'triggerAdsInitialSyncRequest' is set
-            if (triggerAdsInitialSyncRequest == null)
-                throw new Zernio.Client.ApiException(400, "Missing required parameter 'triggerAdsInitialSyncRequest' when calling AdsApi->TriggerAdsInitialSync");
-
-
-            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = triggerAdsInitialSyncRequest;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TriggerAdsInitialSync202Response>("/v1/ads/sync/initial", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("TriggerAdsInitialSync", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
