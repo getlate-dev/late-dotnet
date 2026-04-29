@@ -37,7 +37,7 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio account ID (from /v1/accounts)</param>
         /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
-        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  (optional)</param>
         /// <returns>GetGoogleBusinessLocationDetails200Response</returns>
         GetGoogleBusinessLocationDetails200Response GetGoogleBusinessLocationDetails(string accountId, string? locationId = default, string? readMask = default);
 
@@ -50,7 +50,7 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio account ID (from /v1/accounts)</param>
         /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
-        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessLocationDetails200Response</returns>
         ApiResponse<GetGoogleBusinessLocationDetails200Response> GetGoogleBusinessLocationDetailsWithHttpInfo(string accountId, string? locationId = default, string? readMask = default);
         /// <summary>
@@ -96,7 +96,7 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio account ID (from /v1/accounts)</param>
         /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
-        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessLocationDetails200Response</returns>
         System.Threading.Tasks.Task<GetGoogleBusinessLocationDetails200Response> GetGoogleBusinessLocationDetailsAsync(string accountId, string? locationId = default, string? readMask = default, System.Threading.CancellationToken cancellationToken = default);
@@ -110,7 +110,7 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio account ID (from /v1/accounts)</param>
         /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
-        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessLocationDetails200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<GetGoogleBusinessLocationDetails200Response>> GetGoogleBusinessLocationDetailsWithHttpInfoAsync(string accountId, string? locationId = default, string? readMask = default, System.Threading.CancellationToken cancellationToken = default);
@@ -360,7 +360,7 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio account ID (from /v1/accounts)</param>
         /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
-        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  (optional)</param>
         /// <returns>GetGoogleBusinessLocationDetails200Response</returns>
         public GetGoogleBusinessLocationDetails200Response GetGoogleBusinessLocationDetails(string accountId, string? locationId = default, string? readMask = default)
         {
@@ -374,7 +374,7 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio account ID (from /v1/accounts)</param>
         /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
-        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  (optional)</param>
         /// <returns>ApiResponse of GetGoogleBusinessLocationDetails200Response</returns>
         public Zernio.Client.ApiResponse<GetGoogleBusinessLocationDetails200Response> GetGoogleBusinessLocationDetailsWithHttpInfo(string accountId, string? locationId = default, string? readMask = default)
         {
@@ -433,7 +433,7 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio account ID (from /v1/accounts)</param>
         /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
-        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetGoogleBusinessLocationDetails200Response</returns>
         public async System.Threading.Tasks.Task<GetGoogleBusinessLocationDetails200Response> GetGoogleBusinessLocationDetailsAsync(string accountId, string? locationId = default, string? readMask = default, System.Threading.CancellationToken cancellationToken = default)
@@ -448,7 +448,7 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="accountId">The Zernio account ID (from /v1/accounts)</param>
         /// <param name="locationId">Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. (optional)</param>
-        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional)</param>
+        /// <param name="readMask">Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetGoogleBusinessLocationDetails200Response)</returns>
         public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetGoogleBusinessLocationDetails200Response>> GetGoogleBusinessLocationDetailsWithHttpInfoAsync(string accountId, string? locationId = default, string? readMask = default, System.Threading.CancellationToken cancellationToken = default)

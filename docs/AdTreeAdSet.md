@@ -13,7 +13,9 @@ Name | Type | Description | Notes
 **AdSetBudget** | [**AdTreeAdSetAdSetBudget**](AdTreeAdSetAdSetBudget.md) |  | [optional] 
 **Metrics** | [**AdMetrics**](AdMetrics.md) |  | [optional] 
 **OptimizationGoal** | **string** | Meta ad set optimization goal (e.g. OFFSITE_CONVERSIONS, VALUE, LEAD_GENERATION) | [optional] 
-**BidStrategy** | **string** | Bid strategy for this ad set (overrides campaign level when set) | [optional] 
+**BidStrategy** | **BidStrategy** | Bid strategy for this ad set (overrides campaign level when set) | [optional] 
+**BidAmount** | **decimal** | Bid cap in whole currency units. Populated when bidStrategy is LOWEST_COST_WITH_BID_CAP or COST_CAP. | [optional] 
+**RoasAverageFloor** | **decimal** | Minimum ROAS as a decimal multiplier (2.0 &#x3D; 2.0x). Populated when bidStrategy is LOWEST_COST_WITH_MIN_ROAS. | [optional] 
 **PromotedObject** | [**AdTreeAdSetPromotedObject**](AdTreeAdSetPromotedObject.md) |  | [optional] 
 **Ads** | [**List&lt;Ad&gt;**](Ad.md) | Individual ads within this ad set (capped at 100). Returns a subset of Ad fields from the aggregation (core fields like _id, name, platform, status, budget, metrics, creative, goal are included; targeting and schedule may be absent). | [optional] 
 

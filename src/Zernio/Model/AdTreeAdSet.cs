@@ -40,6 +40,13 @@ namespace Zernio.Model
         /// <value>Derived from child ad statuses</value>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public AdStatus? Status { get; set; }
+
+        /// <summary>
+        /// Bid strategy for this ad set (overrides campaign level when set)
+        /// </summary>
+        /// <value>Bid strategy for this ad set (overrides campaign level when set)</value>
+        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
+        public BidStrategy? BidStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AdTreeAdSet" /> class.
         /// </summary>
@@ -52,9 +59,11 @@ namespace Zernio.Model
         /// <param name="metrics">metrics.</param>
         /// <param name="optimizationGoal">Meta ad set optimization goal (e.g. OFFSITE_CONVERSIONS, VALUE, LEAD_GENERATION).</param>
         /// <param name="bidStrategy">Bid strategy for this ad set (overrides campaign level when set).</param>
+        /// <param name="bidAmount">Bid cap in whole currency units. Populated when bidStrategy is LOWEST_COST_WITH_BID_CAP or COST_CAP..</param>
+        /// <param name="roasAverageFloor">Minimum ROAS as a decimal multiplier (2.0 &#x3D; 2.0x). Populated when bidStrategy is LOWEST_COST_WITH_MIN_ROAS..</param>
         /// <param name="promotedObject">promotedObject.</param>
         /// <param name="ads">Individual ads within this ad set (capped at 100). Returns a subset of Ad fields from the aggregation (core fields like _id, name, platform, status, budget, metrics, creative, goal are included; targeting and schedule may be absent)..</param>
-        public AdTreeAdSet(string platformAdSetId = default, string adSetName = default, AdStatus? status = default, int adCount = default, AdTreeAdSetBudget budget = default, AdTreeAdSetAdSetBudget adSetBudget = default, AdMetrics metrics = default, string optimizationGoal = default, string bidStrategy = default, AdTreeAdSetPromotedObject promotedObject = default, List<Ad> ads = default)
+        public AdTreeAdSet(string platformAdSetId = default, string adSetName = default, AdStatus? status = default, int adCount = default, AdTreeAdSetBudget budget = default, AdTreeAdSetAdSetBudget adSetBudget = default, AdMetrics metrics = default, string optimizationGoal = default, BidStrategy? bidStrategy = default, decimal bidAmount = default, decimal roasAverageFloor = default, AdTreeAdSetPromotedObject promotedObject = default, List<Ad> ads = default)
         {
             this.PlatformAdSetId = platformAdSetId;
             this.AdSetName = adSetName;
@@ -65,6 +74,8 @@ namespace Zernio.Model
             this.Metrics = metrics;
             this.OptimizationGoal = optimizationGoal;
             this.BidStrategy = bidStrategy;
+            this.BidAmount = bidAmount;
+            this.RoasAverageFloor = roasAverageFloor;
             this.PromotedObject = promotedObject;
             this.Ads = ads;
         }
@@ -113,11 +124,18 @@ namespace Zernio.Model
         public string OptimizationGoal { get; set; }
 
         /// <summary>
-        /// Bid strategy for this ad set (overrides campaign level when set)
+        /// Bid cap in whole currency units. Populated when bidStrategy is LOWEST_COST_WITH_BID_CAP or COST_CAP.
         /// </summary>
-        /// <value>Bid strategy for this ad set (overrides campaign level when set)</value>
-        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
-        public string BidStrategy { get; set; }
+        /// <value>Bid cap in whole currency units. Populated when bidStrategy is LOWEST_COST_WITH_BID_CAP or COST_CAP.</value>
+        [DataMember(Name = "bidAmount", EmitDefaultValue = false)]
+        public decimal BidAmount { get; set; }
+
+        /// <summary>
+        /// Minimum ROAS as a decimal multiplier (2.0 &#x3D; 2.0x). Populated when bidStrategy is LOWEST_COST_WITH_MIN_ROAS.
+        /// </summary>
+        /// <value>Minimum ROAS as a decimal multiplier (2.0 &#x3D; 2.0x). Populated when bidStrategy is LOWEST_COST_WITH_MIN_ROAS.</value>
+        [DataMember(Name = "roasAverageFloor", EmitDefaultValue = false)]
+        public decimal RoasAverageFloor { get; set; }
 
         /// <summary>
         /// Gets or Sets PromotedObject
@@ -149,6 +167,8 @@ namespace Zernio.Model
             sb.Append("  Metrics: ").Append(Metrics).Append("\n");
             sb.Append("  OptimizationGoal: ").Append(OptimizationGoal).Append("\n");
             sb.Append("  BidStrategy: ").Append(BidStrategy).Append("\n");
+            sb.Append("  BidAmount: ").Append(BidAmount).Append("\n");
+            sb.Append("  RoasAverageFloor: ").Append(RoasAverageFloor).Append("\n");
             sb.Append("  PromotedObject: ").Append(PromotedObject).Append("\n");
             sb.Append("  Ads: ").Append(Ads).Append("\n");
             sb.Append("}\n");

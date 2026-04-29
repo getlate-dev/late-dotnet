@@ -53,6 +53,7 @@ docs/ApproveWhatsAppGroupJoinRequestsRequest.md
 docs/BatchGetGoogleBusinessReviews200Response.md
 docs/BatchGetGoogleBusinessReviews200ResponseLocationReviewsInner.md
 docs/BatchGetGoogleBusinessReviewsRequest.md
+docs/BidStrategy.md
 docs/BlueskyPlatformData.md
 docs/BookmarkPost200Response.md
 docs/BookmarkPostRequest.md
@@ -949,6 +950,7 @@ src/Zernio.Test/Model/ApproveWhatsAppGroupJoinRequestsRequestTests.cs
 src/Zernio.Test/Model/BatchGetGoogleBusinessReviews200ResponseLocationReviewsInnerTests.cs
 src/Zernio.Test/Model/BatchGetGoogleBusinessReviews200ResponseTests.cs
 src/Zernio.Test/Model/BatchGetGoogleBusinessReviewsRequestTests.cs
+src/Zernio.Test/Model/BidStrategyTests.cs
 src/Zernio.Test/Model/BlueskyPlatformDataTests.cs
 src/Zernio.Test/Model/BookmarkPost200ResponseTests.cs
 src/Zernio.Test/Model/BookmarkPostRequestTests.cs
@@ -1829,6 +1831,7 @@ src/Zernio/Model/ApproveWhatsAppGroupJoinRequestsRequest.cs
 src/Zernio/Model/BatchGetGoogleBusinessReviews200Response.cs
 src/Zernio/Model/BatchGetGoogleBusinessReviews200ResponseLocationReviewsInner.cs
 src/Zernio/Model/BatchGetGoogleBusinessReviewsRequest.cs
+src/Zernio/Model/BidStrategy.cs
 src/Zernio/Model/BlueskyPlatformData.cs
 src/Zernio/Model/BookmarkPost200Response.cs
 src/Zernio/Model/BookmarkPostRequest.cs

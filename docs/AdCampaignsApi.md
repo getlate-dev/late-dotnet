@@ -9,9 +9,9 @@ All URIs are relative to *https://zernio.com/api*
 | [**DuplicateAdCampaign**](AdCampaignsApi.md#duplicateadcampaign) | **POST** /v1/ads/campaigns/{campaignId}/duplicate | Duplicate a campaign |
 | [**GetAdTree**](AdCampaignsApi.md#getadtree) | **GET** /v1/ads/tree | Get campaign tree |
 | [**ListAdCampaigns**](AdCampaignsApi.md#listadcampaigns) | **GET** /v1/ads/campaigns | List campaigns |
-| [**UpdateAdCampaign**](AdCampaignsApi.md#updateadcampaign) | **PUT** /v1/ads/campaigns/{campaignId} | Update a campaign (budget) |
+| [**UpdateAdCampaign**](AdCampaignsApi.md#updateadcampaign) | **PUT** /v1/ads/campaigns/{campaignId} | Update a campaign (budget and/or bid strategy) |
 | [**UpdateAdCampaignStatus**](AdCampaignsApi.md#updateadcampaignstatus) | **PUT** /v1/ads/campaigns/{campaignId}/status | Pause or resume a campaign |
-| [**UpdateAdSet**](AdCampaignsApi.md#updateadset) | **PUT** /v1/ads/ad-sets/{adSetId} | Update an ad set (budget and/or status) |
+| [**UpdateAdSet**](AdCampaignsApi.md#updateadset) | **PUT** /v1/ads/ad-sets/{adSetId} | Update an ad set (budget, status, and/or bid strategy) |
 | [**UpdateAdSetStatus**](AdCampaignsApi.md#updateadsetstatus) | **PUT** /v1/ads/ad-sets/{adSetId}/status | Pause or resume a single ad set |
 
 <a id="bulkupdateadcampaignstatus"></a>
@@ -557,9 +557,9 @@ catch (ApiException e)
 # **UpdateAdCampaign**
 > UpdateAdCampaign200Response UpdateAdCampaign (string campaignId, UpdateAdCampaignRequest updateAdCampaignRequest)
 
-Update a campaign (budget)
+Update a campaign (budget and/or bid strategy)
 
-Campaign-level edits. Currently supports updating the CBO (Campaign Budget Optimization) budget. For ABO campaigns (where the budget lives on the ad set), use PUT /v1/ads/ad-sets/{adSetId} instead — this endpoint will return 409 with code BUDGET_LEVEL_MISMATCH.  Meta-only for now. Other platforms return 501 Not Implemented. 
+Campaign-level edits. At least one of `budget` or `bidStrategy` is required.  - `budget` updates the CBO (Campaign Budget Optimization) budget. For ABO campaigns   (where the budget lives on the ad set), use PUT /v1/ads/ad-sets/{adSetId} instead — this endpoint   will return 409 with code BUDGET_LEVEL_MISMATCH. - `bidStrategy` sets the campaign-level default bid strategy. Per Meta's spec, `bid_amount` and   `bid_constraints` do NOT exist at the campaign level — pass them via PUT /v1/ads/ad-sets/{adSetId}.  Meta-only for now. Other platforms return 501 Not Implemented. 
 
 ### Example
 ```csharp
@@ -590,7 +590,7 @@ namespace Example
 
             try
             {
-                // Update a campaign (budget)
+                // Update a campaign (budget and/or bid strategy)
                 UpdateAdCampaign200Response result = apiInstance.UpdateAdCampaign(campaignId, updateAdCampaignRequest);
                 Debug.WriteLine(result);
             }
@@ -611,7 +611,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update a campaign (budget)
+    // Update a campaign (budget and/or bid strategy)
     ApiResponse<UpdateAdCampaign200Response> response = apiInstance.UpdateAdCampaignWithHttpInfo(campaignId, updateAdCampaignRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -649,7 +649,7 @@ catch (ApiException e)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Campaign budget updated |  -  |
+| **200** | Campaign updated |  -  |
 | **400** | Invalid input |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Campaign not found |  -  |
@@ -765,9 +765,9 @@ catch (ApiException e)
 # **UpdateAdSet**
 > UpdateAdSet200Response UpdateAdSet (string adSetId, UpdateAdSetRequest updateAdSetRequest)
 
-Update an ad set (budget and/or status)
+Update an ad set (budget, status, and/or bid strategy)
 
-Ad-set-level writes. Use this for ABO budget updates and ad-set-scoped pause/resume. Provide `budget` and/or `status` in the body.  When updating `budget` on an ABO campaign: if the parent campaign is CBO, the response is 409 with code BUDGET_LEVEL_MISMATCH — route to PUT /v1/ads/campaigns/{campaignId} instead. 
+Ad-set-level writes. Use this for ABO budget updates, ad-set-scoped pause/resume, and bid-strategy edits. At least one of `budget`, `status`, or `bidStrategy` is required.  Bid strategy compatibility (per Meta's spec): - `LOWEST_COST_WITHOUT_CAP`: no `bidAmount`, no `roasAverageFloor`. - `LOWEST_COST_WITH_BID_CAP` / `COST_CAP`: `bidAmount` REQUIRED (whole currency units). - `LOWEST_COST_WITH_MIN_ROAS`: `roasAverageFloor` REQUIRED (decimal multiplier, e.g. 2.0 = 2.0x ROAS).  When updating `budget` on an ABO campaign: if the parent campaign is CBO, the response is 409 with code BUDGET_LEVEL_MISMATCH — route to PUT /v1/ads/campaigns/{campaignId} instead. 
 
 ### Example
 ```csharp
@@ -798,7 +798,7 @@ namespace Example
 
             try
             {
-                // Update an ad set (budget and/or status)
+                // Update an ad set (budget, status, and/or bid strategy)
                 UpdateAdSet200Response result = apiInstance.UpdateAdSet(adSetId, updateAdSetRequest);
                 Debug.WriteLine(result);
             }
@@ -819,7 +819,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Update an ad set (budget and/or status)
+    // Update an ad set (budget, status, and/or bid strategy)
     ApiResponse<UpdateAdSet200Response> response = apiInstance.UpdateAdSetWithHttpInfo(adSetId, updateAdSetRequest);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -862,6 +862,7 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **404** | Ad set not found |  -  |
 | **409** | Campaign is CBO — route to /v1/ads/campaigns/{campaignId} instead |  -  |
+| **501** | bidStrategy not supported on the platform (Meta + TikTok only) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

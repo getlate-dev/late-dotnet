@@ -52,17 +52,25 @@ namespace Zernio.Model
         /// </summary>
         [DataMember(Name = "budgetLevel", EmitDefaultValue = false)]
         public BudgetLevelEnum? BudgetLevel { get; set; }
+
+        /// <summary>
+        /// Gets or Sets BidStrategy
+        /// </summary>
+        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
+        public BidStrategy? BidStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateAdCampaign200Response" /> class.
         /// </summary>
         /// <param name="updated">updated.</param>
         /// <param name="budget">budget.</param>
         /// <param name="budgetLevel">budgetLevel.</param>
-        public UpdateAdCampaign200Response(int updated = default, AdBudget budget = default, BudgetLevelEnum? budgetLevel = default)
+        /// <param name="bidStrategy">bidStrategy.</param>
+        public UpdateAdCampaign200Response(int updated = default, AdBudget budget = default, BudgetLevelEnum? budgetLevel = default, BidStrategy? bidStrategy = default)
         {
             this.Updated = updated;
             this.Budget = budget;
             this.BudgetLevel = budgetLevel;
+            this.BidStrategy = bidStrategy;
         }
 
         /// <summary>
@@ -88,6 +96,7 @@ namespace Zernio.Model
             sb.Append("  Updated: ").Append(Updated).Append("\n");
             sb.Append("  Budget: ").Append(Budget).Append("\n");
             sb.Append("  BudgetLevel: ").Append(BudgetLevel).Append("\n");
+            sb.Append("  BidStrategy: ").Append(BidStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

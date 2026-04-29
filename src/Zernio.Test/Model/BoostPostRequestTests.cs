@@ -146,12 +146,30 @@ namespace Zernio.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'BidStrategy'
+        /// </summary>
+        [Fact]
+        public void BidStrategyTest()
+        {
+            // TODO unit test for the property 'BidStrategy'
+        }
+
+        /// <summary>
         /// Test the property 'BidAmount'
         /// </summary>
         [Fact]
         public void BidAmountTest()
         {
             // TODO unit test for the property 'BidAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'RoasAverageFloor'
+        /// </summary>
+        [Fact]
+        public void RoasAverageFloorTest()
+        {
+            // TODO unit test for the property 'RoasAverageFloor'
         }
 
         /// <summary>
@@ -170,6 +188,24 @@ namespace Zernio.Test.Model
         public void SpecialAdCategoriesTest()
         {
             // TODO unit test for the property 'SpecialAdCategories'
+        }
+
+        /// <summary>
+        /// Test the property 'LinkUrl'
+        /// </summary>
+        [Fact]
+        public void LinkUrlTest()
+        {
+            // TODO unit test for the property 'LinkUrl'
+        }
+
+        /// <summary>
+        /// Test the property 'CallToAction'
+        /// </summary>
+        [Fact]
+        public void CallToActionTest()
+        {
+            // TODO unit test for the property 'CallToAction'
         }
 
         /// <summary>

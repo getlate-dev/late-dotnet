@@ -81,5 +81,14 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'BudgetLevel'
         }
+
+        /// <summary>
+        /// Test the property 'BidStrategy'
+        /// </summary>
+        [Fact]
+        public void BidStrategyTest()
+        {
+            // TODO unit test for the property 'BidStrategy'
+        }
     }
 }

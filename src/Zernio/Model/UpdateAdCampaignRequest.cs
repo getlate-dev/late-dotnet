@@ -58,6 +58,13 @@ namespace Zernio.Model
         /// </summary>
         [DataMember(Name = "platform", IsRequired = true, EmitDefaultValue = true)]
         public PlatformEnum Platform { get; set; }
+
+        /// <summary>
+        /// Campaign-level default. Ad sets inherit this unless they override.
+        /// </summary>
+        /// <value>Campaign-level default. Ad sets inherit this unless they override.</value>
+        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
+        public BidStrategy? BidStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateAdCampaignRequest" /> class.
         /// </summary>
@@ -67,22 +74,19 @@ namespace Zernio.Model
         /// Initializes a new instance of the <see cref="UpdateAdCampaignRequest" /> class.
         /// </summary>
         /// <param name="platform">platform (required).</param>
-        /// <param name="budget">budget (required).</param>
-        public UpdateAdCampaignRequest(PlatformEnum platform = default, UpdateAdCampaignRequestBudget budget = default)
+        /// <param name="budget">budget.</param>
+        /// <param name="bidStrategy">Campaign-level default. Ad sets inherit this unless they override..</param>
+        public UpdateAdCampaignRequest(PlatformEnum platform = default, UpdateAdCampaignRequestBudget budget = default, BidStrategy? bidStrategy = default)
         {
             this.Platform = platform;
-            // to ensure "budget" is required (not null)
-            if (budget == null)
-            {
-                throw new ArgumentNullException("budget is a required property for UpdateAdCampaignRequest and cannot be null");
-            }
             this.Budget = budget;
+            this.BidStrategy = bidStrategy;
         }
 
         /// <summary>
         /// Gets or Sets Budget
         /// </summary>
-        [DataMember(Name = "budget", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "budget", EmitDefaultValue = false)]
         public UpdateAdCampaignRequestBudget Budget { get; set; }
 
         /// <summary>
@@ -95,6 +99,7 @@ namespace Zernio.Model
             sb.Append("class UpdateAdCampaignRequest {\n");
             sb.Append("  Platform: ").Append(Platform).Append("\n");
             sb.Append("  Budget: ").Append(Budget).Append("\n");
+            sb.Append("  BidStrategy: ").Append(BidStrategy).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

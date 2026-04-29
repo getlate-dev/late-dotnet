@@ -41,7 +41,7 @@ namespace Example
             var apiInstance = new GMBLocationDetailsApi(httpClient, config, httpClientHandler);
             var accountId = "accountId_example";  // string | The Zernio account ID (from /v1/accounts)
             var locationId = "locationId_example";  // string? | Override which location to query. If omitted, uses the account's selected location. Use GET /gmb-locations to list valid IDs. (optional) 
-            var readMask = "readMask_example";  // string? | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. (optional) 
+            var readMask = "readMask_example";  // string? | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. `title` and `metadata` are always included in the response so the `location` summary block can be populated, even if you omit them here. Note: `location` is a derived response field, not a Google readMask value, passing it returns 400.  (optional) 
 
             try
             {
@@ -86,7 +86,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **accountId** | **string** | The Zernio account ID (from /v1/accounts) |  |
 | **locationId** | **string?** | Override which location to query. If omitted, uses the account&#39;s selected location. Use GET /gmb-locations to list valid IDs. | [optional]  |
-| **readMask** | **string?** | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. | [optional]  |
+| **readMask** | **string?** | Comma-separated fields to return. Available: name, title, phoneNumbers, categories, storefrontAddress, websiteUri, regularHours, specialHours, serviceArea, serviceItems, profile, openInfo, metadata, moreHours. &#x60;title&#x60; and &#x60;metadata&#x60; are always included in the response so the &#x60;location&#x60; summary block can be populated, even if you omit them here. Note: &#x60;location&#x60; is a derived response field, not a Google readMask value, passing it returns 400.  | [optional]  |
 
 ### Return type
 
@@ -106,7 +106,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Location details fetched successfully |  -  |
-| **400** | Invalid request |  -  |
+| **400** | Invalid request. Most commonly raised when the readMask query includes a value that is not a valid Google Business Information field (e.g. &#x60;location&#x60;, which is a response-only derived field).  |  -  |
 | **401** | Unauthorized or token expired |  -  |
 | **404** | Resource not found |  -  |
 

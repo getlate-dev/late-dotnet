@@ -276,6 +276,13 @@ namespace Zernio.Model
         /// <value>Meta only. Restrict the audience by gender. &#39;male&#39; targets men only, &#39;female&#39; targets women only, &#39;all&#39; (default) targets everyone. Ignored by non-Meta platforms.</value>
         [DataMember(Name = "gender", EmitDefaultValue = false)]
         public GenderEnum? Gender { get; set; }
+
+        /// <summary>
+        /// Meta bid strategy applied to the ad set.
+        /// </summary>
+        /// <value>Meta bid strategy applied to the ad set.</value>
+        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
+        public BidStrategy? BidStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateStandaloneAdRequest" /> class.
         /// </summary>
@@ -300,7 +307,7 @@ namespace Zernio.Model
         /// <param name="images">images.</param>
         /// <param name="video">video.</param>
         /// <param name="creatives">Meta-only. When present, switches to the multi-creative shape: creates 1 campaign + 1 ad set + N ads (one per entry here). Top-level &#x60;headline&#x60; / &#x60;body&#x60; / &#x60;imageUrl&#x60; / &#x60;linkUrl&#x60; / &#x60;callToAction&#x60; are ignored in this mode. Mutually exclusive with &#x60;adSetId&#x60;. .</param>
-        /// <param name="adSetId">Meta-only. When present, switches to the attach shape: adds one new ad to this existing ad set without creating a new campaign. Budget, targeting, goal, and schedule are inherited from the ad set on Meta. Mutually exclusive with &#x60;creatives[]&#x60;. .</param>
+        /// <param name="adSetId">Meta-only. When present, switches to the attach shape: adds one new ad to this existing ad set without creating a new campaign. Budget, targeting, goal, schedule, AND bid strategy are inherited from the ad set on Meta — passing &#x60;bidStrategy&#x60; in attach mode returns 400. To change an existing ad set&#39;s bid, use &#x60;PUT /v1/ads/ad-sets/{adSetId}&#x60;. Mutually exclusive with &#x60;creatives[]&#x60;. .</param>
         /// <param name="businessName">Google Display only.</param>
         /// <param name="boardId">Pinterest only. Board ID (auto-creates if not provided)..</param>
         /// <param name="countries">countries.</param>
@@ -315,9 +322,12 @@ namespace Zernio.Model
         /// <param name="additionalDescriptions">Google Search RSA only. Extra descriptions..</param>
         /// <param name="advantageAudience">Meta only. Controls the Advantage audience feature (targeting_automation). 0 &#x3D; disabled (default), 1 &#x3D; enabled. Meta Marketing API requires this field on all ad set creation requests..</param>
         /// <param name="gender">Meta only. Restrict the audience by gender. &#39;male&#39; targets men only, &#39;female&#39; targets women only, &#39;all&#39; (default) targets everyone. Ignored by non-Meta platforms. (default to GenderEnum.All).</param>
+        /// <param name="bidStrategy">Meta bid strategy applied to the ad set..</param>
+        /// <param name="bidAmount">Bid cap in WHOLE currency units (USD: 5 &#x3D; $5.00; JPY: 100 &#x3D; ¥100). Required when &#x60;bidStrategy&#x60; is &#x60;LOWEST_COST_WITH_BID_CAP&#x60; or &#x60;COST_CAP&#x60;. .</param>
+        /// <param name="roasAverageFloor">Minimum ROAS as a decimal multiplier (e.g. 2.0 &#x3D; 2.0x ROAS). Required when &#x60;bidStrategy&#x60; is &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;. Sent to Meta as &#x60;bid_constraints.roas_average_floor&#x60; × 10000. .</param>
         /// <param name="dsaBeneficiary">Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. .</param>
         /// <param name="dsaPayor">Name of the legal entity paying for the ad. Required by Meta when targeting EU users (DSA Article 26). Note Meta API spelling: dsa_payor (not dsa_payer). .</param>
-        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum? goal = default, decimal budgetAmount = default, BudgetTypeEnum? budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, CreateStandaloneAdRequestImages images = default, CreateStandaloneAdRequestVideo video = default, List<CreateStandaloneAdRequestCreativesInner> creatives = default, string adSetId = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default, GenderEnum? gender = GenderEnum.All, string dsaBeneficiary = default, string dsaPayor = default)
+        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum? goal = default, decimal budgetAmount = default, BudgetTypeEnum? budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, CreateStandaloneAdRequestImages images = default, CreateStandaloneAdRequestVideo video = default, List<CreateStandaloneAdRequestCreativesInner> creatives = default, string adSetId = default, string businessName = default, string boardId = default, List<string> countries = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default, GenderEnum? gender = GenderEnum.All, BidStrategy? bidStrategy = default, decimal bidAmount = default, decimal roasAverageFloor = default, string dsaBeneficiary = default, string dsaPayor = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -365,6 +375,9 @@ namespace Zernio.Model
             this.AdditionalDescriptions = additionalDescriptions;
             this.AdvantageAudience = advantageAudience;
             this.Gender = gender;
+            this.BidStrategy = bidStrategy;
+            this.BidAmount = bidAmount;
+            this.RoasAverageFloor = roasAverageFloor;
             this.DsaBeneficiary = dsaBeneficiary;
             this.DsaPayor = dsaPayor;
         }
@@ -455,9 +468,9 @@ namespace Zernio.Model
         public List<CreateStandaloneAdRequestCreativesInner> Creatives { get; set; }
 
         /// <summary>
-        /// Meta-only. When present, switches to the attach shape: adds one new ad to this existing ad set without creating a new campaign. Budget, targeting, goal, and schedule are inherited from the ad set on Meta. Mutually exclusive with &#x60;creatives[]&#x60;. 
+        /// Meta-only. When present, switches to the attach shape: adds one new ad to this existing ad set without creating a new campaign. Budget, targeting, goal, schedule, AND bid strategy are inherited from the ad set on Meta — passing &#x60;bidStrategy&#x60; in attach mode returns 400. To change an existing ad set&#39;s bid, use &#x60;PUT /v1/ads/ad-sets/{adSetId}&#x60;. Mutually exclusive with &#x60;creatives[]&#x60;. 
         /// </summary>
-        /// <value>Meta-only. When present, switches to the attach shape: adds one new ad to this existing ad set without creating a new campaign. Budget, targeting, goal, and schedule are inherited from the ad set on Meta. Mutually exclusive with &#x60;creatives[]&#x60;. </value>
+        /// <value>Meta-only. When present, switches to the attach shape: adds one new ad to this existing ad set without creating a new campaign. Budget, targeting, goal, schedule, AND bid strategy are inherited from the ad set on Meta — passing &#x60;bidStrategy&#x60; in attach mode returns 400. To change an existing ad set&#39;s bid, use &#x60;PUT /v1/ads/ad-sets/{adSetId}&#x60;. Mutually exclusive with &#x60;creatives[]&#x60;. </value>
         [DataMember(Name = "adSetId", EmitDefaultValue = false)]
         public string AdSetId { get; set; }
 
@@ -536,6 +549,20 @@ namespace Zernio.Model
         public List<string> AdditionalDescriptions { get; set; }
 
         /// <summary>
+        /// Bid cap in WHOLE currency units (USD: 5 &#x3D; $5.00; JPY: 100 &#x3D; ¥100). Required when &#x60;bidStrategy&#x60; is &#x60;LOWEST_COST_WITH_BID_CAP&#x60; or &#x60;COST_CAP&#x60;. 
+        /// </summary>
+        /// <value>Bid cap in WHOLE currency units (USD: 5 &#x3D; $5.00; JPY: 100 &#x3D; ¥100). Required when &#x60;bidStrategy&#x60; is &#x60;LOWEST_COST_WITH_BID_CAP&#x60; or &#x60;COST_CAP&#x60;. </value>
+        [DataMember(Name = "bidAmount", EmitDefaultValue = false)]
+        public decimal BidAmount { get; set; }
+
+        /// <summary>
+        /// Minimum ROAS as a decimal multiplier (e.g. 2.0 &#x3D; 2.0x ROAS). Required when &#x60;bidStrategy&#x60; is &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;. Sent to Meta as &#x60;bid_constraints.roas_average_floor&#x60; × 10000. 
+        /// </summary>
+        /// <value>Minimum ROAS as a decimal multiplier (e.g. 2.0 &#x3D; 2.0x ROAS). Required when &#x60;bidStrategy&#x60; is &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;. Sent to Meta as &#x60;bid_constraints.roas_average_floor&#x60; × 10000. </value>
+        [DataMember(Name = "roasAverageFloor", EmitDefaultValue = false)]
+        public decimal RoasAverageFloor { get; set; }
+
+        /// <summary>
         /// Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. 
         /// </summary>
         /// <value>Name of the legal entity benefiting from the ad. Required by Meta when targeting EU users (DSA Article 26). Not enforced at schema level; enforced server-side when targeting intersects EU member states. </value>
@@ -588,6 +615,9 @@ namespace Zernio.Model
             sb.Append("  AdditionalDescriptions: ").Append(AdditionalDescriptions).Append("\n");
             sb.Append("  AdvantageAudience: ").Append(AdvantageAudience).Append("\n");
             sb.Append("  Gender: ").Append(Gender).Append("\n");
+            sb.Append("  BidStrategy: ").Append(BidStrategy).Append("\n");
+            sb.Append("  BidAmount: ").Append(BidAmount).Append("\n");
+            sb.Append("  RoasAverageFloor: ").Append(RoasAverageFloor).Append("\n");
             sb.Append("  DsaBeneficiary: ").Append(DsaBeneficiary).Append("\n");
             sb.Append("  DsaPayor: ").Append(DsaPayor).Append("\n");
             sb.Append("}\n");

@@ -77,6 +77,12 @@ namespace Zernio.Model
         /// </summary>
         [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
+
+        /// <summary>
+        /// Gets or Sets BidStrategy
+        /// </summary>
+        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
+        public BidStrategy? BidStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateAdSet200Response" /> class.
         /// </summary>
@@ -85,13 +91,19 @@ namespace Zernio.Model
         /// <param name="status">status.</param>
         /// <param name="statusUpdated">statusUpdated.</param>
         /// <param name="statusSkipped">statusSkipped.</param>
-        public UpdateAdSet200Response(AdBudget budget = default, BudgetLevelEnum? budgetLevel = default, StatusEnum? status = default, int statusUpdated = default, int statusSkipped = default)
+        /// <param name="bidStrategy">bidStrategy.</param>
+        /// <param name="bidAmount">bidAmount.</param>
+        /// <param name="roasAverageFloor">roasAverageFloor.</param>
+        public UpdateAdSet200Response(AdBudget budget = default, BudgetLevelEnum? budgetLevel = default, StatusEnum? status = default, int statusUpdated = default, int statusSkipped = default, BidStrategy? bidStrategy = default, decimal bidAmount = default, decimal roasAverageFloor = default)
         {
             this.Budget = budget;
             this.BudgetLevel = budgetLevel;
             this.Status = status;
             this.StatusUpdated = statusUpdated;
             this.StatusSkipped = statusSkipped;
+            this.BidStrategy = bidStrategy;
+            this.BidAmount = bidAmount;
+            this.RoasAverageFloor = roasAverageFloor;
         }
 
         /// <summary>
@@ -113,6 +125,18 @@ namespace Zernio.Model
         public int StatusSkipped { get; set; }
 
         /// <summary>
+        /// Gets or Sets BidAmount
+        /// </summary>
+        [DataMember(Name = "bidAmount", EmitDefaultValue = false)]
+        public decimal BidAmount { get; set; }
+
+        /// <summary>
+        /// Gets or Sets RoasAverageFloor
+        /// </summary>
+        [DataMember(Name = "roasAverageFloor", EmitDefaultValue = false)]
+        public decimal RoasAverageFloor { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -125,6 +149,9 @@ namespace Zernio.Model
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  StatusUpdated: ").Append(StatusUpdated).Append("\n");
             sb.Append("  StatusSkipped: ").Append(StatusSkipped).Append("\n");
+            sb.Append("  BidStrategy: ").Append(BidStrategy).Append("\n");
+            sb.Append("  BidAmount: ").Append(BidAmount).Append("\n");
+            sb.Append("  RoasAverageFloor: ").Append(RoasAverageFloor).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

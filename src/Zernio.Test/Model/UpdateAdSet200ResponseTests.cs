@@ -99,5 +99,32 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'StatusSkipped'
         }
+
+        /// <summary>
+        /// Test the property 'BidStrategy'
+        /// </summary>
+        [Fact]
+        public void BidStrategyTest()
+        {
+            // TODO unit test for the property 'BidStrategy'
+        }
+
+        /// <summary>
+        /// Test the property 'BidAmount'
+        /// </summary>
+        [Fact]
+        public void BidAmountTest()
+        {
+            // TODO unit test for the property 'BidAmount'
+        }
+
+        /// <summary>
+        /// Test the property 'RoasAverageFloor'
+        /// </summary>
+        [Fact]
+        public void RoasAverageFloorTest()
+        {
+            // TODO unit test for the property 'RoasAverageFloor'
+        }
     }
 }

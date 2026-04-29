@@ -169,9 +169,9 @@ Class | Method | HTTP request | Description
 *AdCampaignsApi* | [**DuplicateAdCampaign**](docs/AdCampaignsApi.md#duplicateadcampaign) | **POST** /v1/ads/campaigns/{campaignId}/duplicate | Duplicate a campaign
 *AdCampaignsApi* | [**GetAdTree**](docs/AdCampaignsApi.md#getadtree) | **GET** /v1/ads/tree | Get campaign tree
 *AdCampaignsApi* | [**ListAdCampaigns**](docs/AdCampaignsApi.md#listadcampaigns) | **GET** /v1/ads/campaigns | List campaigns
-*AdCampaignsApi* | [**UpdateAdCampaign**](docs/AdCampaignsApi.md#updateadcampaign) | **PUT** /v1/ads/campaigns/{campaignId} | Update a campaign (budget)
+*AdCampaignsApi* | [**UpdateAdCampaign**](docs/AdCampaignsApi.md#updateadcampaign) | **PUT** /v1/ads/campaigns/{campaignId} | Update a campaign (budget and/or bid strategy)
 *AdCampaignsApi* | [**UpdateAdCampaignStatus**](docs/AdCampaignsApi.md#updateadcampaignstatus) | **PUT** /v1/ads/campaigns/{campaignId}/status | Pause or resume a campaign
-*AdCampaignsApi* | [**UpdateAdSet**](docs/AdCampaignsApi.md#updateadset) | **PUT** /v1/ads/ad-sets/{adSetId} | Update an ad set (budget and/or status)
+*AdCampaignsApi* | [**UpdateAdSet**](docs/AdCampaignsApi.md#updateadset) | **PUT** /v1/ads/ad-sets/{adSetId} | Update an ad set (budget, status, and/or bid strategy)
 *AdCampaignsApi* | [**UpdateAdSetStatus**](docs/AdCampaignsApi.md#updateadsetstatus) | **PUT** /v1/ads/ad-sets/{adSetId}/status | Pause or resume a single ad set
 *AdsApi* | [**BoostPost**](docs/AdsApi.md#boostpost) | **POST** /v1/ads/boost | Boost post as ad
 *AdsApi* | [**CreateCtwaAd**](docs/AdsApi.md#createctwaad) | **POST** /v1/ads/ctwa | Create Click-to-WhatsApp ad
@@ -451,6 +451,7 @@ Class | Method | HTTP request | Description
  - [Model.BatchGetGoogleBusinessReviews200Response](docs/BatchGetGoogleBusinessReviews200Response.md)
  - [Model.BatchGetGoogleBusinessReviews200ResponseLocationReviewsInner](docs/BatchGetGoogleBusinessReviews200ResponseLocationReviewsInner.md)
  - [Model.BatchGetGoogleBusinessReviewsRequest](docs/BatchGetGoogleBusinessReviewsRequest.md)
+ - [Model.BidStrategy](docs/BidStrategy.md)
  - [Model.BlueskyPlatformData](docs/BlueskyPlatformData.md)
  - [Model.BookmarkPost200Response](docs/BookmarkPost200Response.md)
  - [Model.BookmarkPostRequest](docs/BookmarkPostRequest.md)

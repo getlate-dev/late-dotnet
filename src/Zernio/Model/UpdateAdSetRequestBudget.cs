@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// Omit if only toggling status
+    /// Omit if not updating budget
     /// </summary>
     [DataContract(Name = "updateAdSet_request_budget")]
     public partial class UpdateAdSetRequestBudget : IValidatableObject

@@ -176,6 +176,13 @@ namespace Zernio.Model
         /// <value>Available goals vary by platform. Meta (Facebook/Instagram) and TikTok support all 7. LinkedIn supports all except app_promotion. Twitter/X supports engagement, traffic, awareness, video_views, app_promotion. Pinterest and Google Ads support only engagement, traffic, awareness, video_views.</value>
         [DataMember(Name = "goal", EmitDefaultValue = false)]
         public GoalEnum? Goal { get; set; }
+
+        /// <summary>
+        /// Ad-set bid strategy (overrides campaign level on Meta). Populated for Meta and TikTok. TikTok&#39;s native &#x60;bid_type&#x60; is normalized to the cross-platform Meta enum: &#x60;BID_TYPE_NO_BID&#x60; -&gt; &#x60;LOWEST_COST_WITHOUT_CAP&#x60;, &#x60;BID_TYPE_CUSTOM&#x60; -&gt; &#x60;LOWEST_COST_WITH_BID_CAP&#x60;, deep_bid_type&#x3D;MIN_ROAS or roas_bid&gt;0 -&gt; &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;, &#x60;BID_TYPE_MAX_CONVERSION&#x60; -&gt; &#x60;LOWEST_COST_WITHOUT_CAP&#x60;. 
+        /// </summary>
+        /// <value>Ad-set bid strategy (overrides campaign level on Meta). Populated for Meta and TikTok. TikTok&#39;s native &#x60;bid_type&#x60; is normalized to the cross-platform Meta enum: &#x60;BID_TYPE_NO_BID&#x60; -&gt; &#x60;LOWEST_COST_WITHOUT_CAP&#x60;, &#x60;BID_TYPE_CUSTOM&#x60; -&gt; &#x60;LOWEST_COST_WITH_BID_CAP&#x60;, deep_bid_type&#x3D;MIN_ROAS or roas_bid&gt;0 -&gt; &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;, &#x60;BID_TYPE_MAX_CONVERSION&#x60; -&gt; &#x60;LOWEST_COST_WITHOUT_CAP&#x60;. </value>
+        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
+        public BidStrategy? BidStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Ad" /> class.
         /// </summary>
@@ -196,7 +203,9 @@ namespace Zernio.Model
         /// <param name="adSetName">adSetName.</param>
         /// <param name="platformObjective">Raw Meta campaign objective (e.g. OUTCOME_SALES, OUTCOME_LEADS, OUTCOME_TRAFFIC). Only present for Meta ads..</param>
         /// <param name="optimizationGoal">Meta ad set optimization goal (e.g. OFFSITE_CONVERSIONS, VALUE, LEAD_GENERATION, LINK_CLICKS). Only present for Meta ads..</param>
-        /// <param name="bidStrategy">Bid strategy (e.g. LOWEST_COST_WITHOUT_CAP, COST_CAP, LOWEST_COST_WITH_MIN_ROAS). Ad set level overrides campaign level. Only present for Meta ads..</param>
+        /// <param name="bidStrategy">Ad-set bid strategy (overrides campaign level on Meta). Populated for Meta and TikTok. TikTok&#39;s native &#x60;bid_type&#x60; is normalized to the cross-platform Meta enum: &#x60;BID_TYPE_NO_BID&#x60; -&gt; &#x60;LOWEST_COST_WITHOUT_CAP&#x60;, &#x60;BID_TYPE_CUSTOM&#x60; -&gt; &#x60;LOWEST_COST_WITH_BID_CAP&#x60;, deep_bid_type&#x3D;MIN_ROAS or roas_bid&gt;0 -&gt; &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;, &#x60;BID_TYPE_MAX_CONVERSION&#x60; -&gt; &#x60;LOWEST_COST_WITHOUT_CAP&#x60;. .</param>
+        /// <param name="bidAmount">Bid cap in WHOLE currency units of the ad account (USD: 5 &#x3D; $5.00; JPY: 100 &#x3D; ¥100). Populated when bidStrategy is &#x60;LOWEST_COST_WITH_BID_CAP&#x60; or &#x60;COST_CAP&#x60;. &#x60;null&#x60; for auto-bid (&#x60;LOWEST_COST_WITHOUT_CAP&#x60;).  - Meta source: &#x60;bid_amount&#x60; on the ad set (smallest-denomination int, decoded here). - TikTok source: priority order &#x60;bid_price&#x60; -&gt; &#x60;conversion_bid_price&#x60; -&gt; &#x60;deep_cpa_bid&#x60;   (whichever is set on the ad group). TikTok stores all three in whole currency units.  Source: facebook-business-sdk-codegen api_specs/specs/AdSet.json (&#x60;bid_amount&#x60;). .</param>
+        /// <param name="roasAverageFloor">Minimum ROAS as a decimal multiplier (2.0 &#x3D; 2.0x ROAS). Populated when bidStrategy is &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;.  - Meta source: decoded from &#x60;bid_constraints.roas_average_floor&#x60; (Meta stores as   fixed-point int × 10000; we return the decimal). - TikTok source: &#x60;roas_bid&#x60; on the ad group (already a decimal).  Source: facebook-business-sdk-codegen api_specs/specs/AdCampaignBidConstraint.json. .</param>
         /// <param name="promotedObject">promotedObject.</param>
         /// <param name="creative">creative.</param>
         /// <param name="targeting">targeting.</param>
@@ -204,7 +213,7 @@ namespace Zernio.Model
         /// <param name="rejectionReason">rejectionReason.</param>
         /// <param name="createdAt">createdAt.</param>
         /// <param name="updatedAt">updatedAt.</param>
-        public Ad(string id = default, string name = default, PlatformEnum? platform = default, AdStatus? status = default, AdTypeEnum? adType = default, GoalEnum? goal = default, bool isExternal = default, AdBudget budget = default, AdMetrics metrics = default, string platformAdId = default, string platformAdAccountId = default, string platformCampaignId = default, string platformAdSetId = default, string campaignName = default, string adSetName = default, string platformObjective = default, string optimizationGoal = default, string bidStrategy = default, AdPromotedObject promotedObject = default, AdCreative creative = default, Object targeting = default, AdSchedule schedule = default, string rejectionReason = default, DateTime createdAt = default, DateTime updatedAt = default)
+        public Ad(string id = default, string name = default, PlatformEnum? platform = default, AdStatus? status = default, AdTypeEnum? adType = default, GoalEnum? goal = default, bool isExternal = default, AdBudget budget = default, AdMetrics metrics = default, string platformAdId = default, string platformAdAccountId = default, string platformCampaignId = default, string platformAdSetId = default, string campaignName = default, string adSetName = default, string platformObjective = default, string optimizationGoal = default, BidStrategy? bidStrategy = default, decimal bidAmount = default, decimal roasAverageFloor = default, AdPromotedObject promotedObject = default, AdCreative creative = default, Object targeting = default, AdSchedule schedule = default, string rejectionReason = default, DateTime createdAt = default, DateTime updatedAt = default)
         {
             this.Id = id;
             this.Name = name;
@@ -224,6 +233,8 @@ namespace Zernio.Model
             this.PlatformObjective = platformObjective;
             this.OptimizationGoal = optimizationGoal;
             this.BidStrategy = bidStrategy;
+            this.BidAmount = bidAmount;
+            this.RoasAverageFloor = roasAverageFloor;
             this.PromotedObject = promotedObject;
             this.Creative = creative;
             this.Targeting = targeting;
@@ -321,14 +332,24 @@ namespace Zernio.Model
         public string OptimizationGoal { get; set; }
 
         /// <summary>
-        /// Bid strategy (e.g. LOWEST_COST_WITHOUT_CAP, COST_CAP, LOWEST_COST_WITH_MIN_ROAS). Ad set level overrides campaign level. Only present for Meta ads.
+        /// Bid cap in WHOLE currency units of the ad account (USD: 5 &#x3D; $5.00; JPY: 100 &#x3D; ¥100). Populated when bidStrategy is &#x60;LOWEST_COST_WITH_BID_CAP&#x60; or &#x60;COST_CAP&#x60;. &#x60;null&#x60; for auto-bid (&#x60;LOWEST_COST_WITHOUT_CAP&#x60;).  - Meta source: &#x60;bid_amount&#x60; on the ad set (smallest-denomination int, decoded here). - TikTok source: priority order &#x60;bid_price&#x60; -&gt; &#x60;conversion_bid_price&#x60; -&gt; &#x60;deep_cpa_bid&#x60;   (whichever is set on the ad group). TikTok stores all three in whole currency units.  Source: facebook-business-sdk-codegen api_specs/specs/AdSet.json (&#x60;bid_amount&#x60;). 
         /// </summary>
-        /// <value>Bid strategy (e.g. LOWEST_COST_WITHOUT_CAP, COST_CAP, LOWEST_COST_WITH_MIN_ROAS). Ad set level overrides campaign level. Only present for Meta ads.</value>
+        /// <value>Bid cap in WHOLE currency units of the ad account (USD: 5 &#x3D; $5.00; JPY: 100 &#x3D; ¥100). Populated when bidStrategy is &#x60;LOWEST_COST_WITH_BID_CAP&#x60; or &#x60;COST_CAP&#x60;. &#x60;null&#x60; for auto-bid (&#x60;LOWEST_COST_WITHOUT_CAP&#x60;).  - Meta source: &#x60;bid_amount&#x60; on the ad set (smallest-denomination int, decoded here). - TikTok source: priority order &#x60;bid_price&#x60; -&gt; &#x60;conversion_bid_price&#x60; -&gt; &#x60;deep_cpa_bid&#x60;   (whichever is set on the ad group). TikTok stores all three in whole currency units.  Source: facebook-business-sdk-codegen api_specs/specs/AdSet.json (&#x60;bid_amount&#x60;). </value>
         /*
-        <example>LOWEST_COST_WITHOUT_CAP</example>
+        <example>5</example>
         */
-        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
-        public string BidStrategy { get; set; }
+        [DataMember(Name = "bidAmount", EmitDefaultValue = false)]
+        public decimal BidAmount { get; set; }
+
+        /// <summary>
+        /// Minimum ROAS as a decimal multiplier (2.0 &#x3D; 2.0x ROAS). Populated when bidStrategy is &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;.  - Meta source: decoded from &#x60;bid_constraints.roas_average_floor&#x60; (Meta stores as   fixed-point int × 10000; we return the decimal). - TikTok source: &#x60;roas_bid&#x60; on the ad group (already a decimal).  Source: facebook-business-sdk-codegen api_specs/specs/AdCampaignBidConstraint.json. 
+        /// </summary>
+        /// <value>Minimum ROAS as a decimal multiplier (2.0 &#x3D; 2.0x ROAS). Populated when bidStrategy is &#x60;LOWEST_COST_WITH_MIN_ROAS&#x60;.  - Meta source: decoded from &#x60;bid_constraints.roas_average_floor&#x60; (Meta stores as   fixed-point int × 10000; we return the decimal). - TikTok source: &#x60;roas_bid&#x60; on the ad group (already a decimal).  Source: facebook-business-sdk-codegen api_specs/specs/AdCampaignBidConstraint.json. </value>
+        /*
+        <example>2.0</example>
+        */
+        [DataMember(Name = "roasAverageFloor", EmitDefaultValue = false)]
+        public decimal RoasAverageFloor { get; set; }
 
         /// <summary>
         /// Gets or Sets PromotedObject
@@ -398,6 +419,8 @@ namespace Zernio.Model
             sb.Append("  PlatformObjective: ").Append(PlatformObjective).Append("\n");
             sb.Append("  OptimizationGoal: ").Append(OptimizationGoal).Append("\n");
             sb.Append("  BidStrategy: ").Append(BidStrategy).Append("\n");
+            sb.Append("  BidAmount: ").Append(BidAmount).Append("\n");
+            sb.Append("  RoasAverageFloor: ").Append(RoasAverageFloor).Append("\n");
             sb.Append("  PromotedObject: ").Append(PromotedObject).Append("\n");
             sb.Append("  Creative: ").Append(Creative).Append("\n");
             sb.Append("  Targeting: ").Append(Targeting).Append("\n");

@@ -161,6 +161,13 @@ namespace Zernio.Model
         /// <value>Canonical CBO/ABO indicator. See AdTreeCampaign.budgetLevel.</value>
         [DataMember(Name = "budgetLevel", EmitDefaultValue = false)]
         public BudgetLevelEnum? BudgetLevel { get; set; }
+
+        /// <summary>
+        /// Campaign-level bid strategy. Ad sets inherit this unless they override.
+        /// </summary>
+        /// <value>Campaign-level bid strategy. Ad sets inherit this unless they override.</value>
+        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
+        public BidStrategy? BidStrategy { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AdCampaign" /> class.
         /// </summary>
@@ -183,11 +190,13 @@ namespace Zernio.Model
         /// <param name="profileId">profileId.</param>
         /// <param name="platformObjective">Raw Meta campaign objective (e.g. OUTCOME_SALES, OUTCOME_LEADS, OUTCOME_TRAFFIC).</param>
         /// <param name="optimizationGoal">Meta optimization goal shared across ad sets, or comma-separated values when ad sets differ (e.g. OFFSITE_CONVERSIONS, VALUE, LEAD_GENERATION).</param>
-        /// <param name="bidStrategy">Campaign-level bid strategy (e.g. LOWEST_COST_WITHOUT_CAP, COST_CAP, LOWEST_COST_WITH_MIN_ROAS).</param>
+        /// <param name="bidStrategy">Campaign-level bid strategy. Ad sets inherit this unless they override..</param>
+        /// <param name="bidAmount">Representative bid cap from the top-spending ad set (whole currency units). Populated when bidStrategy is LOWEST_COST_WITH_BID_CAP or COST_CAP..</param>
+        /// <param name="roasAverageFloor">Representative ROAS floor from the top-spending ad set. Decimal multiplier (2.0 &#x3D; 2.0x)..</param>
         /// <param name="promotedObject">promotedObject.</param>
         /// <param name="earliestAd">earliestAd.</param>
         /// <param name="latestAd">latestAd.</param>
-        public AdCampaign(string platformCampaignId = default, PlatformEnum? platform = default, string campaignName = default, AdStatus? status = default, ReviewStatusEnum? reviewStatus = default, string platformCampaignStatus = default, List<Object> campaignIssuesInfo = default, int adCount = default, AdCampaignBudget budget = default, AdCampaignCampaignBudget campaignBudget = default, BudgetLevelEnum? budgetLevel = default, bool isBudgetScheduleEnabled = false, string currency = default, AdMetrics metrics = default, string platformAdAccountId = default, string accountId = default, string profileId = default, string platformObjective = default, string optimizationGoal = default, string bidStrategy = default, AdTreeCampaignPromotedObject promotedObject = default, DateTime earliestAd = default, DateTime latestAd = default)
+        public AdCampaign(string platformCampaignId = default, PlatformEnum? platform = default, string campaignName = default, AdStatus? status = default, ReviewStatusEnum? reviewStatus = default, string platformCampaignStatus = default, List<Object> campaignIssuesInfo = default, int adCount = default, AdCampaignBudget budget = default, AdCampaignCampaignBudget campaignBudget = default, BudgetLevelEnum? budgetLevel = default, bool isBudgetScheduleEnabled = false, string currency = default, AdMetrics metrics = default, string platformAdAccountId = default, string accountId = default, string profileId = default, string platformObjective = default, string optimizationGoal = default, BidStrategy? bidStrategy = default, decimal bidAmount = default, decimal roasAverageFloor = default, AdTreeCampaignPromotedObject promotedObject = default, DateTime earliestAd = default, DateTime latestAd = default)
         {
             this.PlatformCampaignId = platformCampaignId;
             this.Platform = platform;
@@ -209,6 +218,8 @@ namespace Zernio.Model
             this.PlatformObjective = platformObjective;
             this.OptimizationGoal = optimizationGoal;
             this.BidStrategy = bidStrategy;
+            this.BidAmount = bidAmount;
+            this.RoasAverageFloor = roasAverageFloor;
             this.PromotedObject = promotedObject;
             this.EarliestAd = earliestAd;
             this.LatestAd = latestAd;
@@ -311,11 +322,18 @@ namespace Zernio.Model
         public string OptimizationGoal { get; set; }
 
         /// <summary>
-        /// Campaign-level bid strategy (e.g. LOWEST_COST_WITHOUT_CAP, COST_CAP, LOWEST_COST_WITH_MIN_ROAS)
+        /// Representative bid cap from the top-spending ad set (whole currency units). Populated when bidStrategy is LOWEST_COST_WITH_BID_CAP or COST_CAP.
         /// </summary>
-        /// <value>Campaign-level bid strategy (e.g. LOWEST_COST_WITHOUT_CAP, COST_CAP, LOWEST_COST_WITH_MIN_ROAS)</value>
-        [DataMember(Name = "bidStrategy", EmitDefaultValue = false)]
-        public string BidStrategy { get; set; }
+        /// <value>Representative bid cap from the top-spending ad set (whole currency units). Populated when bidStrategy is LOWEST_COST_WITH_BID_CAP or COST_CAP.</value>
+        [DataMember(Name = "bidAmount", EmitDefaultValue = false)]
+        public decimal BidAmount { get; set; }
+
+        /// <summary>
+        /// Representative ROAS floor from the top-spending ad set. Decimal multiplier (2.0 &#x3D; 2.0x).
+        /// </summary>
+        /// <value>Representative ROAS floor from the top-spending ad set. Decimal multiplier (2.0 &#x3D; 2.0x).</value>
+        [DataMember(Name = "roasAverageFloor", EmitDefaultValue = false)]
+        public decimal RoasAverageFloor { get; set; }
 
         /// <summary>
         /// Gets or Sets PromotedObject
@@ -363,6 +381,8 @@ namespace Zernio.Model
             sb.Append("  PlatformObjective: ").Append(PlatformObjective).Append("\n");
             sb.Append("  OptimizationGoal: ").Append(OptimizationGoal).Append("\n");
             sb.Append("  BidStrategy: ").Append(BidStrategy).Append("\n");
+            sb.Append("  BidAmount: ").Append(BidAmount).Append("\n");
+            sb.Append("  RoasAverageFloor: ").Append(RoasAverageFloor).Append("\n");
             sb.Append("  PromotedObject: ").Append(PromotedObject).Append("\n");
             sb.Append("  EarliestAd: ").Append(EarliestAd).Append("\n");
             sb.Append("  LatestAd: ").Append(LatestAd).Append("\n");
