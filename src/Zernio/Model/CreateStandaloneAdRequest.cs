@@ -118,9 +118,9 @@ namespace Zernio.Model
         [DataMember(Name = "budgetType", EmitDefaultValue = false)]
         public BudgetTypeEnum? BudgetType { get; set; }
         /// <summary>
-        /// Required on legacy + attach shapes. Meta only.
+        /// Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms.
         /// </summary>
-        /// <value>Required on legacy + attach shapes. Meta only.</value>
+        /// <value>Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CallToActionEnum
         {
@@ -187,9 +187,9 @@ namespace Zernio.Model
 
 
         /// <summary>
-        /// Required on legacy + attach shapes. Meta only.
+        /// Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms.
         /// </summary>
-        /// <value>Required on legacy + attach shapes. Meta only.</value>
+        /// <value>Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms.</value>
         [DataMember(Name = "callToAction", EmitDefaultValue = false)]
         public CallToActionEnum? CallToAction { get; set; }
         /// <summary>
@@ -301,7 +301,7 @@ namespace Zernio.Model
         /// <param name="headline">Required for Meta, Google, and Pinterest on legacy + attach shapes (skip for multi-creative — use &#x60;creatives[].headline&#x60;). Ignored for TikTok and X/Twitter. Max: Meta&#x3D;255, Google&#x3D;30, Pinterest&#x3D;100..</param>
         /// <param name="longHeadline">Google Display only. Defaults to &#x60;headline&#x60; if omitted..</param>
         /// <param name="body">Required on legacy + attach shapes. For X/Twitter this is the tweet text (max 280 chars including a ~24-char URL when &#x60;linkUrl&#x60; is set). Max: Google&#x3D;90, Pinterest&#x3D;500..</param>
-        /// <param name="callToAction">Required on legacy + attach shapes. Meta only..</param>
+        /// <param name="callToAction">Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms..</param>
         /// <param name="linkUrl">Required on legacy + attach shapes. Skip for multi-creative..</param>
         /// <param name="imageUrl">Image creative for Meta/Google/Pinterest on legacy + attach shapes (mutually exclusive with &#x60;video&#x60;). Not required for Google Search campaigns. For TikTok, this field carries the VIDEO URL (the TikTok ads endpoint is video-only; the field retains the &#x60;imageUrl&#x60; name for cross-platform consistency). Ignored for X/Twitter. For Google Display, treated as the landscape image (alias of &#x60;images.landscape&#x60;); supply &#x60;images.square&#x60; alongside or the request is rejected..</param>
         /// <param name="images">images.</param>
