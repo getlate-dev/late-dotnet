@@ -185,6 +185,7 @@ Class | Method | HTTP request | Description
 *AdsApi* | [**ListAdsBusinessCenters**](docs/AdsApi.md#listadsbusinesscenters) | **GET** /v1/ads/business-centers | List TikTok Business Centers
 *AdsApi* | [**ListConversionDestinations**](docs/AdsApi.md#listconversiondestinations) | **GET** /v1/accounts/{accountId}/conversion-destinations | List destinations for the Conversions API
 *AdsApi* | [**SearchAdInterests**](docs/AdsApi.md#searchadinterests) | **GET** /v1/ads/interests | Search targeting interests
+*AdsApi* | [**SearchAdTargetingLocations**](docs/AdsApi.md#searchadtargetinglocations) | **GET** /v1/ads/targeting/search | Search geo targeting locations (Meta)
 *AdsApi* | [**SendConversions**](docs/AdsApi.md#sendconversions) | **POST** /v1/ads/conversions | Send conversion events to an ad platform
 *AdsApi* | [**SendWhatsAppConversion**](docs/AdsApi.md#sendwhatsappconversion) | **POST** /v1/whatsapp/conversions | Send WhatsApp conversion event
 *AdsApi* | [**UpdateAd**](docs/AdsApi.md#updatead) | **PUT** /v1/ads/{adId} | Update ad
@@ -548,10 +549,12 @@ Class | Method | HTTP request | Description
  - [Model.CreateStandaloneAd201ResponseOneOf](docs/CreateStandaloneAd201ResponseOneOf.md)
  - [Model.CreateStandaloneAd201ResponseOneOf1](docs/CreateStandaloneAd201ResponseOneOf1.md)
  - [Model.CreateStandaloneAdRequest](docs/CreateStandaloneAdRequest.md)
+ - [Model.CreateStandaloneAdRequestCitiesInner](docs/CreateStandaloneAdRequestCitiesInner.md)
  - [Model.CreateStandaloneAdRequestCreativesInner](docs/CreateStandaloneAdRequestCreativesInner.md)
  - [Model.CreateStandaloneAdRequestCreativesInnerVideo](docs/CreateStandaloneAdRequestCreativesInnerVideo.md)
  - [Model.CreateStandaloneAdRequestImages](docs/CreateStandaloneAdRequestImages.md)
  - [Model.CreateStandaloneAdRequestPromotedObject](docs/CreateStandaloneAdRequestPromotedObject.md)
+ - [Model.CreateStandaloneAdRequestRegionsInner](docs/CreateStandaloneAdRequestRegionsInner.md)
  - [Model.CreateStandaloneAdRequestVideo](docs/CreateStandaloneAdRequestVideo.md)
  - [Model.CreateWebhookSettingsRequest](docs/CreateWebhookSettingsRequest.md)
  - [Model.CreateWhatsAppFlow200Response](docs/CreateWhatsAppFlow200Response.md)
@@ -977,6 +980,9 @@ Class | Method | HTTP request | Description
  - [Model.ScheduleBroadcastRequest](docs/ScheduleBroadcastRequest.md)
  - [Model.SearchAdInterests200Response](docs/SearchAdInterests200Response.md)
  - [Model.SearchAdInterests200ResponseInterestsInner](docs/SearchAdInterests200ResponseInterestsInner.md)
+ - [Model.SearchAdTargetingLocations200Response](docs/SearchAdTargetingLocations200Response.md)
+ - [Model.SearchAdTargetingLocations200ResponseResultsInner](docs/SearchAdTargetingLocations200ResponseResultsInner.md)
+ - [Model.SearchAdTargetingLocations200ResponseResultsInnerRegionId](docs/SearchAdTargetingLocations200ResponseResultsInnerRegionId.md)
  - [Model.SearchReddit200Response](docs/SearchReddit200Response.md)
  - [Model.SelectFacebookPage200Response](docs/SelectFacebookPage200Response.md)
  - [Model.SelectFacebookPage200ResponseAccount](docs/SelectFacebookPage200ResponseAccount.md)

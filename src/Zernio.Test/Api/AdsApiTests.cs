@@ -217,6 +217,22 @@ namespace Zernio.Test.Api
         }
 
         /// <summary>
+        /// Test SearchAdTargetingLocations
+        /// </summary>
+        [Fact]
+        public void SearchAdTargetingLocationsTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string accountId = null;
+            //string q = null;
+            //string? type = null;
+            //string? countryCode = null;
+            //int? limit = null;
+            //var response = instance.SearchAdTargetingLocations(accountId, q, type, countryCode, limit);
+            //Assert.IsType<SearchAdTargetingLocations200Response>(response);
+        }
+
+        /// <summary>
         /// Test SendConversions
         /// </summary>
         [Fact]

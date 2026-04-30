@@ -317,6 +317,35 @@ namespace Zernio.Api
         /// <returns>ApiResponse of SearchAdInterests200Response</returns>
         ApiResponse<SearchAdInterests200Response> SearchAdInterestsWithHttpInfo(string q, string accountId);
         /// <summary>
+        /// Search geo targeting locations (Meta)
+        /// </summary>
+        /// <remarks>
+        /// Resolve a human-readable location name into Meta&#39;s opaque &#x60;key&#x60; used in &#x60;targeting.cities[]&#x60; / &#x60;targeting.regions[]&#x60; on &#x60;POST /v1/ads/create&#x60; (and the same fields under &#x60;targeting.geo_locations&#x60; on &#x60;POST /v1/ads/boost&#x60;). Wraps Meta&#39;s &#x60;/search?type&#x3D;adgeolocation&#x60; endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta&#39;s docs, &#x60;q&#x60; must contain only the locality name (e.g. &#x60;\&quot;Amsterdam\&quot;&#x60;, not &#x60;\&quot;Amsterdam, NL\&quot;&#x60;). Use &#x60;countryCode&#x60; to disambiguate when the same name exists in multiple countries. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">Social account ID (must be a connected Facebook or Instagram account).</param>
+        /// <param name="q">Location name. Locality only — no region/country suffix.</param>
+        /// <param name="type">Type of location to search. Defaults to city. (optional, default to city)</param>
+        /// <param name="countryCode">ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional)</param>
+        /// <param name="limit">Maximum results to return. (optional, default to 25)</param>
+        /// <returns>SearchAdTargetingLocations200Response</returns>
+        SearchAdTargetingLocations200Response SearchAdTargetingLocations(string accountId, string q, string? type = default, string? countryCode = default, int? limit = default);
+
+        /// <summary>
+        /// Search geo targeting locations (Meta)
+        /// </summary>
+        /// <remarks>
+        /// Resolve a human-readable location name into Meta&#39;s opaque &#x60;key&#x60; used in &#x60;targeting.cities[]&#x60; / &#x60;targeting.regions[]&#x60; on &#x60;POST /v1/ads/create&#x60; (and the same fields under &#x60;targeting.geo_locations&#x60; on &#x60;POST /v1/ads/boost&#x60;). Wraps Meta&#39;s &#x60;/search?type&#x3D;adgeolocation&#x60; endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta&#39;s docs, &#x60;q&#x60; must contain only the locality name (e.g. &#x60;\&quot;Amsterdam\&quot;&#x60;, not &#x60;\&quot;Amsterdam, NL\&quot;&#x60;). Use &#x60;countryCode&#x60; to disambiguate when the same name exists in multiple countries. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">Social account ID (must be a connected Facebook or Instagram account).</param>
+        /// <param name="q">Location name. Locality only — no region/country suffix.</param>
+        /// <param name="type">Type of location to search. Defaults to city. (optional, default to city)</param>
+        /// <param name="countryCode">ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional)</param>
+        /// <param name="limit">Maximum results to return. (optional, default to 25)</param>
+        /// <returns>ApiResponse of SearchAdTargetingLocations200Response</returns>
+        ApiResponse<SearchAdTargetingLocations200Response> SearchAdTargetingLocationsWithHttpInfo(string accountId, string q, string? type = default, string? countryCode = default, int? limit = default);
+        /// <summary>
         /// Send conversion events to an ad platform
         /// </summary>
         /// <remarks>
@@ -702,6 +731,37 @@ namespace Zernio.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SearchAdInterests200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<SearchAdInterests200Response>> SearchAdInterestsWithHttpInfoAsync(string q, string accountId, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Search geo targeting locations (Meta)
+        /// </summary>
+        /// <remarks>
+        /// Resolve a human-readable location name into Meta&#39;s opaque &#x60;key&#x60; used in &#x60;targeting.cities[]&#x60; / &#x60;targeting.regions[]&#x60; on &#x60;POST /v1/ads/create&#x60; (and the same fields under &#x60;targeting.geo_locations&#x60; on &#x60;POST /v1/ads/boost&#x60;). Wraps Meta&#39;s &#x60;/search?type&#x3D;adgeolocation&#x60; endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta&#39;s docs, &#x60;q&#x60; must contain only the locality name (e.g. &#x60;\&quot;Amsterdam\&quot;&#x60;, not &#x60;\&quot;Amsterdam, NL\&quot;&#x60;). Use &#x60;countryCode&#x60; to disambiguate when the same name exists in multiple countries. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">Social account ID (must be a connected Facebook or Instagram account).</param>
+        /// <param name="q">Location name. Locality only — no region/country suffix.</param>
+        /// <param name="type">Type of location to search. Defaults to city. (optional, default to city)</param>
+        /// <param name="countryCode">ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional)</param>
+        /// <param name="limit">Maximum results to return. (optional, default to 25)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchAdTargetingLocations200Response</returns>
+        System.Threading.Tasks.Task<SearchAdTargetingLocations200Response> SearchAdTargetingLocationsAsync(string accountId, string q, string? type = default, string? countryCode = default, int? limit = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Search geo targeting locations (Meta)
+        /// </summary>
+        /// <remarks>
+        /// Resolve a human-readable location name into Meta&#39;s opaque &#x60;key&#x60; used in &#x60;targeting.cities[]&#x60; / &#x60;targeting.regions[]&#x60; on &#x60;POST /v1/ads/create&#x60; (and the same fields under &#x60;targeting.geo_locations&#x60; on &#x60;POST /v1/ads/boost&#x60;). Wraps Meta&#39;s &#x60;/search?type&#x3D;adgeolocation&#x60; endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta&#39;s docs, &#x60;q&#x60; must contain only the locality name (e.g. &#x60;\&quot;Amsterdam\&quot;&#x60;, not &#x60;\&quot;Amsterdam, NL\&quot;&#x60;). Use &#x60;countryCode&#x60; to disambiguate when the same name exists in multiple countries. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">Social account ID (must be a connected Facebook or Instagram account).</param>
+        /// <param name="q">Location name. Locality only — no region/country suffix.</param>
+        /// <param name="type">Type of location to search. Defaults to city. (optional, default to city)</param>
+        /// <param name="countryCode">ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional)</param>
+        /// <param name="limit">Maximum results to return. (optional, default to 25)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchAdTargetingLocations200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SearchAdTargetingLocations200Response>> SearchAdTargetingLocationsWithHttpInfoAsync(string accountId, string q, string? type = default, string? countryCode = default, int? limit = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Send conversion events to an ad platform
         /// </summary>
@@ -2726,6 +2786,183 @@ namespace Zernio.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("SearchAdInterests", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search geo targeting locations (Meta) Resolve a human-readable location name into Meta&#39;s opaque &#x60;key&#x60; used in &#x60;targeting.cities[]&#x60; / &#x60;targeting.regions[]&#x60; on &#x60;POST /v1/ads/create&#x60; (and the same fields under &#x60;targeting.geo_locations&#x60; on &#x60;POST /v1/ads/boost&#x60;). Wraps Meta&#39;s &#x60;/search?type&#x3D;adgeolocation&#x60; endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta&#39;s docs, &#x60;q&#x60; must contain only the locality name (e.g. &#x60;\&quot;Amsterdam\&quot;&#x60;, not &#x60;\&quot;Amsterdam, NL\&quot;&#x60;). Use &#x60;countryCode&#x60; to disambiguate when the same name exists in multiple countries. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">Social account ID (must be a connected Facebook or Instagram account).</param>
+        /// <param name="q">Location name. Locality only — no region/country suffix.</param>
+        /// <param name="type">Type of location to search. Defaults to city. (optional, default to city)</param>
+        /// <param name="countryCode">ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional)</param>
+        /// <param name="limit">Maximum results to return. (optional, default to 25)</param>
+        /// <returns>SearchAdTargetingLocations200Response</returns>
+        public SearchAdTargetingLocations200Response SearchAdTargetingLocations(string accountId, string q, string? type = default, string? countryCode = default, int? limit = default)
+        {
+            Zernio.Client.ApiResponse<SearchAdTargetingLocations200Response> localVarResponse = SearchAdTargetingLocationsWithHttpInfo(accountId, q, type, countryCode, limit);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search geo targeting locations (Meta) Resolve a human-readable location name into Meta&#39;s opaque &#x60;key&#x60; used in &#x60;targeting.cities[]&#x60; / &#x60;targeting.regions[]&#x60; on &#x60;POST /v1/ads/create&#x60; (and the same fields under &#x60;targeting.geo_locations&#x60; on &#x60;POST /v1/ads/boost&#x60;). Wraps Meta&#39;s &#x60;/search?type&#x3D;adgeolocation&#x60; endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta&#39;s docs, &#x60;q&#x60; must contain only the locality name (e.g. &#x60;\&quot;Amsterdam\&quot;&#x60;, not &#x60;\&quot;Amsterdam, NL\&quot;&#x60;). Use &#x60;countryCode&#x60; to disambiguate when the same name exists in multiple countries. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">Social account ID (must be a connected Facebook or Instagram account).</param>
+        /// <param name="q">Location name. Locality only — no region/country suffix.</param>
+        /// <param name="type">Type of location to search. Defaults to city. (optional, default to city)</param>
+        /// <param name="countryCode">ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional)</param>
+        /// <param name="limit">Maximum results to return. (optional, default to 25)</param>
+        /// <returns>ApiResponse of SearchAdTargetingLocations200Response</returns>
+        public Zernio.Client.ApiResponse<SearchAdTargetingLocations200Response> SearchAdTargetingLocationsWithHttpInfo(string accountId, string q, string? type = default, string? countryCode = default, int? limit = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AdsApi->SearchAdTargetingLocations");
+
+            // verify the required parameter 'q' is set
+            if (q == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'q' when calling AdsApi->SearchAdTargetingLocations");
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (countryCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "countryCode", countryCode));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<SearchAdTargetingLocations200Response>("/v1/ads/targeting/search", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchAdTargetingLocations", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Search geo targeting locations (Meta) Resolve a human-readable location name into Meta&#39;s opaque &#x60;key&#x60; used in &#x60;targeting.cities[]&#x60; / &#x60;targeting.regions[]&#x60; on &#x60;POST /v1/ads/create&#x60; (and the same fields under &#x60;targeting.geo_locations&#x60; on &#x60;POST /v1/ads/boost&#x60;). Wraps Meta&#39;s &#x60;/search?type&#x3D;adgeolocation&#x60; endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta&#39;s docs, &#x60;q&#x60; must contain only the locality name (e.g. &#x60;\&quot;Amsterdam\&quot;&#x60;, not &#x60;\&quot;Amsterdam, NL\&quot;&#x60;). Use &#x60;countryCode&#x60; to disambiguate when the same name exists in multiple countries. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">Social account ID (must be a connected Facebook or Instagram account).</param>
+        /// <param name="q">Location name. Locality only — no region/country suffix.</param>
+        /// <param name="type">Type of location to search. Defaults to city. (optional, default to city)</param>
+        /// <param name="countryCode">ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional)</param>
+        /// <param name="limit">Maximum results to return. (optional, default to 25)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of SearchAdTargetingLocations200Response</returns>
+        public async System.Threading.Tasks.Task<SearchAdTargetingLocations200Response> SearchAdTargetingLocationsAsync(string accountId, string q, string? type = default, string? countryCode = default, int? limit = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Zernio.Client.ApiResponse<SearchAdTargetingLocations200Response> localVarResponse = await SearchAdTargetingLocationsWithHttpInfoAsync(accountId, q, type, countryCode, limit, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Search geo targeting locations (Meta) Resolve a human-readable location name into Meta&#39;s opaque &#x60;key&#x60; used in &#x60;targeting.cities[]&#x60; / &#x60;targeting.regions[]&#x60; on &#x60;POST /v1/ads/create&#x60; (and the same fields under &#x60;targeting.geo_locations&#x60; on &#x60;POST /v1/ads/boost&#x60;). Wraps Meta&#39;s &#x60;/search?type&#x3D;adgeolocation&#x60; endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta&#39;s docs, &#x60;q&#x60; must contain only the locality name (e.g. &#x60;\&quot;Amsterdam\&quot;&#x60;, not &#x60;\&quot;Amsterdam, NL\&quot;&#x60;). Use &#x60;countryCode&#x60; to disambiguate when the same name exists in multiple countries. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="accountId">Social account ID (must be a connected Facebook or Instagram account).</param>
+        /// <param name="q">Location name. Locality only — no region/country suffix.</param>
+        /// <param name="type">Type of location to search. Defaults to city. (optional, default to city)</param>
+        /// <param name="countryCode">ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional)</param>
+        /// <param name="limit">Maximum results to return. (optional, default to 25)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (SearchAdTargetingLocations200Response)</returns>
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<SearchAdTargetingLocations200Response>> SearchAdTargetingLocationsWithHttpInfoAsync(string accountId, string q, string? type = default, string? countryCode = default, int? limit = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'accountId' is set
+            if (accountId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'accountId' when calling AdsApi->SearchAdTargetingLocations");
+
+            // verify the required parameter 'q' is set
+            if (q == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'q' when calling AdsApi->SearchAdTargetingLocations");
+
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "q", q));
+            if (type != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "type", type));
+            }
+            if (countryCode != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "countryCode", countryCode));
+            }
+            if (limit != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<SearchAdTargetingLocations200Response>("/v1/ads/targeting/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SearchAdTargetingLocations", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

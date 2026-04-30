@@ -236,6 +236,24 @@ namespace Zernio.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Cities'
+        /// </summary>
+        [Fact]
+        public void CitiesTest()
+        {
+            // TODO unit test for the property 'Cities'
+        }
+
+        /// <summary>
+        /// Test the property 'Regions'
+        /// </summary>
+        [Fact]
+        public void RegionsTest()
+        {
+            // TODO unit test for the property 'Regions'
+        }
+
+        /// <summary>
         /// Test the property 'AgeMin'
         /// </summary>
         [Fact]

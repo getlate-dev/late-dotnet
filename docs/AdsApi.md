@@ -16,6 +16,7 @@ All URIs are relative to *https://zernio.com/api*
 | [**ListAdsBusinessCenters**](AdsApi.md#listadsbusinesscenters) | **GET** /v1/ads/business-centers | List TikTok Business Centers |
 | [**ListConversionDestinations**](AdsApi.md#listconversiondestinations) | **GET** /v1/accounts/{accountId}/conversion-destinations | List destinations for the Conversions API |
 | [**SearchAdInterests**](AdsApi.md#searchadinterests) | **GET** /v1/ads/interests | Search targeting interests |
+| [**SearchAdTargetingLocations**](AdsApi.md#searchadtargetinglocations) | **GET** /v1/ads/targeting/search | Search geo targeting locations (Meta) |
 | [**SendConversions**](AdsApi.md#sendconversions) | **POST** /v1/ads/conversions | Send conversion events to an ad platform |
 | [**SendWhatsAppConversion**](AdsApi.md#sendwhatsappconversion) | **POST** /v1/whatsapp/conversions | Send WhatsApp conversion event |
 | [**UpdateAd**](AdsApi.md#updatead) | **PUT** /v1/ads/{adId} | Update ad |
@@ -1268,6 +1269,116 @@ catch (ApiException e)
 | **200** | Matching interests |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Ads add-on required |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="searchadtargetinglocations"></a>
+# **SearchAdTargetingLocations**
+> SearchAdTargetingLocations200Response SearchAdTargetingLocations (string accountId, string q, string? type = null, string? countryCode = null, int? limit = null)
+
+Search geo targeting locations (Meta)
+
+Resolve a human-readable location name into Meta's opaque `key` used in `targeting.cities[]` / `targeting.regions[]` on `POST /v1/ads/create` (and the same fields under `targeting.geo_locations` on `POST /v1/ads/boost`). Wraps Meta's `/search?type=adgeolocation` endpoint.  Meta-only for now. Other platforms have their own location id systems and are not exposed here.  Per Meta's docs, `q` must contain only the locality name (e.g. `\"Amsterdam\"`, not `\"Amsterdam, NL\"`). Use `countryCode` to disambiguate when the same name exists in multiple countries. 
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using Zernio.Api;
+using Zernio.Client;
+using Zernio.Model;
+
+namespace Example
+{
+    public class SearchAdTargetingLocationsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://zernio.com/api";
+            // Configure Bearer token for authorization: bearerAuth
+            config.AccessToken = "YOUR_BEARER_TOKEN";
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new AdsApi(httpClient, config, httpClientHandler);
+            var accountId = "accountId_example";  // string | Social account ID (must be a connected Facebook or Instagram account).
+            var q = "q_example";  // string | Location name. Locality only — no region/country suffix.
+            var type = "country";  // string? | Type of location to search. Defaults to city. (optional)  (default to city)
+            var countryCode = "countryCode_example";  // string? | ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. (optional) 
+            var limit = 25;  // int? | Maximum results to return. (optional)  (default to 25)
+
+            try
+            {
+                // Search geo targeting locations (Meta)
+                SearchAdTargetingLocations200Response result = apiInstance.SearchAdTargetingLocations(accountId, q, type, countryCode, limit);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling AdsApi.SearchAdTargetingLocations: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the SearchAdTargetingLocationsWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Search geo targeting locations (Meta)
+    ApiResponse<SearchAdTargetingLocations200Response> response = apiInstance.SearchAdTargetingLocationsWithHttpInfo(accountId, q, type, countryCode, limit);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling AdsApi.SearchAdTargetingLocationsWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **accountId** | **string** | Social account ID (must be a connected Facebook or Instagram account). |  |
+| **q** | **string** | Location name. Locality only — no region/country suffix. |  |
+| **type** | **string?** | Type of location to search. Defaults to city. | [optional] [default to city] |
+| **countryCode** | **string?** | ISO 3166-1 alpha-2 country code (e.g. NL) to scope the search. | [optional]  |
+| **limit** | **int?** | Maximum results to return. | [optional] [default to 25] |
+
+### Return type
+
+[**SearchAdTargetingLocations200Response**](SearchAdTargetingLocations200Response.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Matching locations |  -  |
+| **400** | Missing or invalid query parameters |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Ads add-on required |  -  |
+| **404** | Account not found, or platform does not support targeting search (Meta only) |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
