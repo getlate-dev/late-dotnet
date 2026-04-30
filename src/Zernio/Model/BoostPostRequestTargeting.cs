@@ -62,7 +62,7 @@ namespace Zernio.Model
         /// </summary>
         /// <param name="ageMin">ageMin.</param>
         /// <param name="ageMax">ageMax.</param>
-        /// <param name="countries">countries.</param>
+        /// <param name="countries">ISO country codes. Required for TikTok boosts (TikTok&#39;s ad group requires location_ids); optional on other platforms..</param>
         /// <param name="interests">Interest objects from /v1/ads/interests. Each must include id and name..</param>
         /// <param name="advantageAudience">Meta only. 0 &#x3D; disabled (default), 1 &#x3D; enabled..</param>
         public BoostPostRequestTargeting(int ageMin = default, int ageMax = default, List<string> countries = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, AdvantageAudienceEnum? advantageAudience = default)
@@ -87,8 +87,9 @@ namespace Zernio.Model
         public int AgeMax { get; set; }
 
         /// <summary>
-        /// Gets or Sets Countries
+        /// ISO country codes. Required for TikTok boosts (TikTok&#39;s ad group requires location_ids); optional on other platforms.
         /// </summary>
+        /// <value>ISO country codes. Required for TikTok boosts (TikTok&#39;s ad group requires location_ids); optional on other platforms.</value>
         [DataMember(Name = "countries", EmitDefaultValue = false)]
         public List<string> Countries { get; set; }
 
