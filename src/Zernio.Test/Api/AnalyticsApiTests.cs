@@ -85,8 +85,9 @@ namespace Zernio.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string? platform = null;
             //string? profileId = null;
+            //string? accountId = null;
             //string? source = null;
-            //var response = instance.GetBestTimeToPost(platform, profileId, source);
+            //var response = instance.GetBestTimeToPost(platform, profileId, accountId, source);
             //Assert.IsType<GetBestTimeToPost200Response>(response);
         }
 
@@ -99,8 +100,9 @@ namespace Zernio.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string? platform = null;
             //string? profileId = null;
+            //string? accountId = null;
             //string? source = null;
-            //var response = instance.GetContentDecay(platform, profileId, source);
+            //var response = instance.GetContentDecay(platform, profileId, accountId, source);
             //Assert.IsType<GetContentDecay200Response>(response);
         }
 
@@ -313,8 +315,9 @@ namespace Zernio.Test.Api
             // TODO uncomment below to test the method and replace null with proper value
             //string? platform = null;
             //string? profileId = null;
+            //string? accountId = null;
             //string? source = null;
-            //var response = instance.GetPostingFrequency(platform, profileId, source);
+            //var response = instance.GetPostingFrequency(platform, profileId, accountId, source);
             //Assert.IsType<GetPostingFrequency200Response>(response);
         }
 

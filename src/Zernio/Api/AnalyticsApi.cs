@@ -78,9 +78,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetBestTimeToPost200Response</returns>
-        GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default, string? source = default);
+        GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default, string? accountId = default, string? source = default);
 
         /// <summary>
         /// Get best times to post
@@ -91,9 +92,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetBestTimeToPost200Response</returns>
-        ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default, string? source = default);
+        ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, string? source = default);
         /// <summary>
         /// Get content performance decay
         /// </summary>
@@ -103,9 +105,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetContentDecay200Response</returns>
-        GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default, string? source = default);
+        GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default, string? accountId = default, string? source = default);
 
         /// <summary>
         /// Get content performance decay
@@ -116,9 +119,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetContentDecay200Response</returns>
-        ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default, string? source = default);
+        ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, string? source = default);
         /// <summary>
         /// Get daily aggregated metrics
         /// </summary>
@@ -489,9 +493,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetPostingFrequency200Response</returns>
-        GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default, string? source = default);
+        GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default, string? accountId = default, string? source = default);
 
         /// <summary>
         /// Get frequency vs engagement
@@ -502,9 +507,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetPostingFrequency200Response</returns>
-        ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default, string? source = default);
+        ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, string? source = default);
         /// <summary>
         /// Get TikTok account-level insights
         /// </summary>
@@ -678,10 +684,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBestTimeToPost200Response</returns>
-        System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get best times to post
@@ -692,10 +699,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBestTimeToPost200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get content performance decay
         /// </summary>
@@ -705,10 +713,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetContentDecay200Response</returns>
-        System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get content performance decay
@@ -719,10 +728,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetContentDecay200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get daily aggregated metrics
         /// </summary>
@@ -1119,10 +1129,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPostingFrequency200Response</returns>
-        System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get frequency vs engagement
@@ -1133,10 +1144,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPostingFrequency200Response)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get TikTok account-level insights
         /// </summary>
@@ -1721,11 +1733,12 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetBestTimeToPost200Response</returns>
-        public GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default, string? source = default)
+        public GetBestTimeToPost200Response GetBestTimeToPost(string? platform = default, string? profileId = default, string? accountId = default, string? source = default)
         {
-            Zernio.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = GetBestTimeToPostWithHttpInfo(platform, profileId, source);
+            Zernio.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = GetBestTimeToPostWithHttpInfo(platform, profileId, accountId, source);
             return localVarResponse.Data;
         }
 
@@ -1735,9 +1748,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetBestTimeToPost200Response</returns>
-        public Zernio.Client.ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default, string? source = default)
+        public Zernio.Client.ApiResponse<GetBestTimeToPost200Response> GetBestTimeToPostWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, string? source = default)
         {
             Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
 
@@ -1762,6 +1776,10 @@ namespace Zernio.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (source != null)
             {
@@ -1793,12 +1811,13 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetBestTimeToPost200Response</returns>
-        public async System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetBestTimeToPost200Response> GetBestTimeToPostAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Zernio.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = await GetBestTimeToPostWithHttpInfoAsync(platform, profileId, source, cancellationToken).ConfigureAwait(false);
+            Zernio.Client.ApiResponse<GetBestTimeToPost200Response> localVarResponse = await GetBestTimeToPostWithHttpInfoAsync(platform, profileId, accountId, source, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1808,10 +1827,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetBestTimeToPost200Response)</returns>
-        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetBestTimeToPost200Response>> GetBestTimeToPostWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
@@ -1838,6 +1858,10 @@ namespace Zernio.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (source != null)
             {
@@ -1870,11 +1894,12 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetContentDecay200Response</returns>
-        public GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default, string? source = default)
+        public GetContentDecay200Response GetContentDecay(string? platform = default, string? profileId = default, string? accountId = default, string? source = default)
         {
-            Zernio.Client.ApiResponse<GetContentDecay200Response> localVarResponse = GetContentDecayWithHttpInfo(platform, profileId, source);
+            Zernio.Client.ApiResponse<GetContentDecay200Response> localVarResponse = GetContentDecayWithHttpInfo(platform, profileId, accountId, source);
             return localVarResponse.Data;
         }
 
@@ -1884,9 +1909,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetContentDecay200Response</returns>
-        public Zernio.Client.ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default, string? source = default)
+        public Zernio.Client.ApiResponse<GetContentDecay200Response> GetContentDecayWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, string? source = default)
         {
             Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
 
@@ -1911,6 +1937,10 @@ namespace Zernio.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (source != null)
             {
@@ -1942,12 +1972,13 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetContentDecay200Response</returns>
-        public async System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetContentDecay200Response> GetContentDecayAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Zernio.Client.ApiResponse<GetContentDecay200Response> localVarResponse = await GetContentDecayWithHttpInfoAsync(platform, profileId, source, cancellationToken).ConfigureAwait(false);
+            Zernio.Client.ApiResponse<GetContentDecay200Response> localVarResponse = await GetContentDecayWithHttpInfoAsync(platform, profileId, accountId, source, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1957,10 +1988,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetContentDecay200Response)</returns>
-        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetContentDecay200Response>> GetContentDecayWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
@@ -1987,6 +2019,10 @@ namespace Zernio.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (source != null)
             {
@@ -4198,11 +4234,12 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>GetPostingFrequency200Response</returns>
-        public GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default, string? source = default)
+        public GetPostingFrequency200Response GetPostingFrequency(string? platform = default, string? profileId = default, string? accountId = default, string? source = default)
         {
-            Zernio.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = GetPostingFrequencyWithHttpInfo(platform, profileId, source);
+            Zernio.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = GetPostingFrequencyWithHttpInfo(platform, profileId, accountId, source);
             return localVarResponse.Data;
         }
 
@@ -4212,9 +4249,10 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <returns>ApiResponse of GetPostingFrequency200Response</returns>
-        public Zernio.Client.ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default, string? source = default)
+        public Zernio.Client.ApiResponse<GetPostingFrequency200Response> GetPostingFrequencyWithHttpInfo(string? platform = default, string? profileId = default, string? accountId = default, string? source = default)
         {
             Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
 
@@ -4239,6 +4277,10 @@ namespace Zernio.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (source != null)
             {
@@ -4270,12 +4312,13 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GetPostingFrequency200Response</returns>
-        public async System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<GetPostingFrequency200Response> GetPostingFrequencyAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            Zernio.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = await GetPostingFrequencyWithHttpInfoAsync(platform, profileId, source, cancellationToken).ConfigureAwait(false);
+            Zernio.Client.ApiResponse<GetPostingFrequency200Response> localVarResponse = await GetPostingFrequencyWithHttpInfoAsync(platform, profileId, accountId, source, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4285,10 +4328,11 @@ namespace Zernio.Api
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="platform">Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. (optional)</param>
         /// <param name="profileId">Filter by profile ID. Omit for all profiles. (optional)</param>
+        /// <param name="accountId">Filter by social account ID. Omit for all accounts. (optional)</param>
         /// <param name="source">Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. (optional, default to all)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GetPostingFrequency200Response)</returns>
-        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<GetPostingFrequency200Response>> GetPostingFrequencyWithHttpInfoAsync(string? platform = default, string? profileId = default, string? accountId = default, string? source = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
@@ -4315,6 +4359,10 @@ namespace Zernio.Api
             if (profileId != null)
             {
                 localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            }
+            if (accountId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "accountId", accountId));
             }
             if (source != null)
             {

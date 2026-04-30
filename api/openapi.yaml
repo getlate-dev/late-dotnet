@@ -1859,6 +1859,14 @@ paths:
         schema:
           type: string
         style: form
+      - description: Filter by social account ID. Omit for all accounts.
+        explode: true
+        in: query
+        name: accountId
+        required: false
+        schema:
+          type: string
+        style: form
       - description: "Filter by post origin. \"late\" for posts published via Zernio,\
           \ \"external\" for posts imported from platforms."
         explode: true
@@ -1929,6 +1937,14 @@ paths:
         explode: true
         in: query
         name: profileId
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by social account ID. Omit for all accounts.
+        explode: true
+        in: query
+        name: accountId
         required: false
         schema:
           type: string
@@ -2019,6 +2035,14 @@ paths:
         explode: true
         in: query
         name: profileId
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by social account ID. Omit for all accounts.
+        explode: true
+        in: query
+        name: accountId
         required: false
         schema:
           type: string

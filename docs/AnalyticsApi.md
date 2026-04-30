@@ -153,7 +153,7 @@ catch (ApiException e)
 
 <a id="getbesttimetopost"></a>
 # **GetBestTimeToPost**
-> GetBestTimeToPost200Response GetBestTimeToPost (string? platform = null, string? profileId = null, string? source = null)
+> GetBestTimeToPost200Response GetBestTimeToPost (string? platform = null, string? profileId = null, string? accountId = null, string? source = null)
 
 Get best times to post
 
@@ -185,12 +185,13 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
+            var accountId = "accountId_example";  // string? | Filter by social account ID. Omit for all accounts. (optional) 
             var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Zernio, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
                 // Get best times to post
-                GetBestTimeToPost200Response result = apiInstance.GetBestTimeToPost(platform, profileId, source);
+                GetBestTimeToPost200Response result = apiInstance.GetBestTimeToPost(platform, profileId, accountId, source);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -211,7 +212,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get best times to post
-    ApiResponse<GetBestTimeToPost200Response> response = apiInstance.GetBestTimeToPostWithHttpInfo(platform, profileId, source);
+    ApiResponse<GetBestTimeToPost200Response> response = apiInstance.GetBestTimeToPostWithHttpInfo(platform, profileId, accountId, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -230,6 +231,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
+| **accountId** | **string?** | Filter by social account ID. Omit for all accounts. | [optional]  |
 | **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
@@ -257,7 +259,7 @@ catch (ApiException e)
 
 <a id="getcontentdecay"></a>
 # **GetContentDecay**
-> GetContentDecay200Response GetContentDecay (string? platform = null, string? profileId = null, string? source = null)
+> GetContentDecay200Response GetContentDecay (string? platform = null, string? profileId = null, string? accountId = null, string? source = null)
 
 Get content performance decay
 
@@ -289,12 +291,13 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
+            var accountId = "accountId_example";  // string? | Filter by social account ID. Omit for all accounts. (optional) 
             var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Zernio, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
                 // Get content performance decay
-                GetContentDecay200Response result = apiInstance.GetContentDecay(platform, profileId, source);
+                GetContentDecay200Response result = apiInstance.GetContentDecay(platform, profileId, accountId, source);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -315,7 +318,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get content performance decay
-    ApiResponse<GetContentDecay200Response> response = apiInstance.GetContentDecayWithHttpInfo(platform, profileId, source);
+    ApiResponse<GetContentDecay200Response> response = apiInstance.GetContentDecayWithHttpInfo(platform, profileId, accountId, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -334,6 +337,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
+| **accountId** | **string?** | Filter by social account ID. Omit for all accounts. | [optional]  |
 | **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
@@ -1779,7 +1783,7 @@ catch (ApiException e)
 
 <a id="getpostingfrequency"></a>
 # **GetPostingFrequency**
-> GetPostingFrequency200Response GetPostingFrequency (string? platform = null, string? profileId = null, string? source = null)
+> GetPostingFrequency200Response GetPostingFrequency (string? platform = null, string? profileId = null, string? accountId = null, string? source = null)
 
 Get frequency vs engagement
 
@@ -1811,12 +1815,13 @@ namespace Example
             var apiInstance = new AnalyticsApi(httpClient, config, httpClientHandler);
             var platform = "platform_example";  // string? | Filter by platform (e.g. \"instagram\", \"tiktok\"). Omit for all platforms. (optional) 
             var profileId = "profileId_example";  // string? | Filter by profile ID. Omit for all profiles. (optional) 
+            var accountId = "accountId_example";  // string? | Filter by social account ID. Omit for all accounts. (optional) 
             var source = "all";  // string? | Filter by post origin. \"late\" for posts published via Zernio, \"external\" for posts imported from platforms. (optional)  (default to all)
 
             try
             {
                 // Get frequency vs engagement
-                GetPostingFrequency200Response result = apiInstance.GetPostingFrequency(platform, profileId, source);
+                GetPostingFrequency200Response result = apiInstance.GetPostingFrequency(platform, profileId, accountId, source);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1837,7 +1842,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get frequency vs engagement
-    ApiResponse<GetPostingFrequency200Response> response = apiInstance.GetPostingFrequencyWithHttpInfo(platform, profileId, source);
+    ApiResponse<GetPostingFrequency200Response> response = apiInstance.GetPostingFrequencyWithHttpInfo(platform, profileId, accountId, source);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1856,6 +1861,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **platform** | **string?** | Filter by platform (e.g. \&quot;instagram\&quot;, \&quot;tiktok\&quot;). Omit for all platforms. | [optional]  |
 | **profileId** | **string?** | Filter by profile ID. Omit for all profiles. | [optional]  |
+| **accountId** | **string?** | Filter by social account ID. Omit for all accounts. | [optional]  |
 | **source** | **string?** | Filter by post origin. \&quot;late\&quot; for posts published via Zernio, \&quot;external\&quot; for posts imported from platforms. | [optional] [default to all] |
 
 ### Return type
