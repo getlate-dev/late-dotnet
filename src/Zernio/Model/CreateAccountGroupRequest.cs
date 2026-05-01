@@ -42,8 +42,9 @@ namespace Zernio.Model
         /// Initializes a new instance of the <see cref="CreateAccountGroupRequest" /> class.
         /// </summary>
         /// <param name="name">name (required).</param>
+        /// <param name="profileId">ID of the profile this group belongs to. All accountIds must belong to this profile. (required).</param>
         /// <param name="accountIds">accountIds (required).</param>
-        public CreateAccountGroupRequest(string name = default, List<string> accountIds = default)
+        public CreateAccountGroupRequest(string name = default, string profileId = default, List<string> accountIds = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -51,6 +52,12 @@ namespace Zernio.Model
                 throw new ArgumentNullException("name is a required property for CreateAccountGroupRequest and cannot be null");
             }
             this.Name = name;
+            // to ensure "profileId" is required (not null)
+            if (profileId == null)
+            {
+                throw new ArgumentNullException("profileId is a required property for CreateAccountGroupRequest and cannot be null");
+            }
+            this.ProfileId = profileId;
             // to ensure "accountIds" is required (not null)
             if (accountIds == null)
             {
@@ -64,6 +71,13 @@ namespace Zernio.Model
         /// </summary>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// ID of the profile this group belongs to. All accountIds must belong to this profile.
+        /// </summary>
+        /// <value>ID of the profile this group belongs to. All accountIds must belong to this profile.</value>
+        [DataMember(Name = "profileId", IsRequired = true, EmitDefaultValue = true)]
+        public string ProfileId { get; set; }
 
         /// <summary>
         /// Gets or Sets AccountIds
@@ -80,6 +94,7 @@ namespace Zernio.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CreateAccountGroupRequest {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  ProfileId: ").Append(ProfileId).Append("\n");
             sb.Append("  AccountIds: ").Append(AccountIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
