@@ -17,7 +17,7 @@ All URIs are relative to *https://zernio.com/api*
 
 Create comment-to-DM automation
 
-Create a keyword-triggered DM automation on an Instagram or Facebook post. When someone comments a matching keyword, they automatically receive a DM. Only one active automation per post is allowed. 
+Create a keyword-triggered DM automation on an Instagram or Facebook account. When someone comments a matching keyword, they automatically receive a DM.  Two modes:   * **Per-post** — set `platformPostId` to scope the automation to one specific post.     Only one active per-post automation is allowed per post.   * **Account-wide (\"any post\")** — omit `platformPostId` (and `postId`). The automation     evaluates every comment on every post on the account. You can stack unlimited     account-wide automations, each with its own keyword set, and they all run     independently. Per-post automations take priority on their post. 
 
 ### Example
 ```csharp
@@ -108,7 +108,7 @@ catch (ApiException e)
 | **200** | Automation created |  -  |
 | **400** | Validation error |  -  |
 | **401** | Unauthorized |  -  |
-| **409** | Active automation already exists for this post |  -  |
+| **409** | Active per-post automation already exists for this platformPostId. Does not apply to account-wide automations. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

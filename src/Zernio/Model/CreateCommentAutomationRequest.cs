@@ -68,8 +68,8 @@ namespace Zernio.Model
         /// </summary>
         /// <param name="profileId">profileId (required).</param>
         /// <param name="accountId">Instagram or Facebook account ID (required).</param>
-        /// <param name="platformPostId">Platform media/post ID (required).</param>
-        /// <param name="postId">Zernio post ID (optional).</param>
+        /// <param name="platformPostId">Platform media/post ID. Omit for an account-wide (any-post) automation..</param>
+        /// <param name="postId">Zernio post ID. Required only when also targeting a specific post via platformPostId..</param>
         /// <param name="postTitle">Post content snippet for display.</param>
         /// <param name="name">Automation label (required).</param>
         /// <param name="keywords">Trigger keywords (empty &#x3D; any comment triggers).</param>
@@ -90,12 +90,6 @@ namespace Zernio.Model
                 throw new ArgumentNullException("accountId is a required property for CreateCommentAutomationRequest and cannot be null");
             }
             this.AccountId = accountId;
-            // to ensure "platformPostId" is required (not null)
-            if (platformPostId == null)
-            {
-                throw new ArgumentNullException("platformPostId is a required property for CreateCommentAutomationRequest and cannot be null");
-            }
-            this.PlatformPostId = platformPostId;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -108,6 +102,7 @@ namespace Zernio.Model
                 throw new ArgumentNullException("dmMessage is a required property for CreateCommentAutomationRequest and cannot be null");
             }
             this.DmMessage = dmMessage;
+            this.PlatformPostId = platformPostId;
             this.PostId = postId;
             this.PostTitle = postTitle;
             this.Keywords = keywords;
@@ -129,16 +124,16 @@ namespace Zernio.Model
         public string AccountId { get; set; }
 
         /// <summary>
-        /// Platform media/post ID
+        /// Platform media/post ID. Omit for an account-wide (any-post) automation.
         /// </summary>
-        /// <value>Platform media/post ID</value>
-        [DataMember(Name = "platformPostId", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Platform media/post ID. Omit for an account-wide (any-post) automation.</value>
+        [DataMember(Name = "platformPostId", EmitDefaultValue = false)]
         public string PlatformPostId { get; set; }
 
         /// <summary>
-        /// Zernio post ID (optional)
+        /// Zernio post ID. Required only when also targeting a specific post via platformPostId.
         /// </summary>
-        /// <value>Zernio post ID (optional)</value>
+        /// <value>Zernio post ID. Required only when also targeting a specific post via platformPostId.</value>
         [DataMember(Name = "postId", EmitDefaultValue = false)]
         public string PostId { get; set; }
 
