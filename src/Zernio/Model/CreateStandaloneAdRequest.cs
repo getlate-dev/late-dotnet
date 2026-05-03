@@ -118,9 +118,9 @@ namespace Zernio.Model
         [DataMember(Name = "budgetType", EmitDefaultValue = false)]
         public BudgetTypeEnum? BudgetType { get; set; }
         /// <summary>
-        /// Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms. Ignored on Meta when &#x60;leadGenFormId&#x60; is set — lead ads force CTA type to SIGN_UP.
+        /// Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms.
         /// </summary>
-        /// <value>Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms. Ignored on Meta when &#x60;leadGenFormId&#x60; is set — lead ads force CTA type to SIGN_UP.</value>
+        /// <value>Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms.</value>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum CallToActionEnum
         {
@@ -187,9 +187,9 @@ namespace Zernio.Model
 
 
         /// <summary>
-        /// Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms. Ignored on Meta when &#x60;leadGenFormId&#x60; is set — lead ads force CTA type to SIGN_UP.
+        /// Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms.
         /// </summary>
-        /// <value>Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms. Ignored on Meta when &#x60;leadGenFormId&#x60; is set — lead ads force CTA type to SIGN_UP.</value>
+        /// <value>Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms.</value>
         [DataMember(Name = "callToAction", EmitDefaultValue = false)]
         public CallToActionEnum? CallToAction { get; set; }
         /// <summary>
@@ -328,8 +328,7 @@ namespace Zernio.Model
         /// <param name="headline">Required for Meta, Google, and Pinterest on legacy + attach shapes (skip for multi-creative — use &#x60;creatives[].headline&#x60;). Ignored for TikTok and X/Twitter. Max: Meta&#x3D;255, Google&#x3D;30, Pinterest&#x3D;100..</param>
         /// <param name="longHeadline">Google Display only. Defaults to &#x60;headline&#x60; if omitted..</param>
         /// <param name="body">Required on legacy + attach shapes. For X/Twitter this is the tweet text (max 280 chars including a ~24-char URL when &#x60;linkUrl&#x60; is set). Max: Google&#x3D;90, Pinterest&#x3D;500..</param>
-        /// <param name="callToAction">Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms. Ignored on Meta when &#x60;leadGenFormId&#x60; is set — lead ads force CTA type to SIGN_UP..</param>
-        /// <param name="leadGenFormId">Meta-only. Attaches a Lead Gen (Instant) Form to the creative. Required when &#x60;goal&#x3D;\&quot;lead_generation\&quot;&#x60;. Force-overrides the CTA to SIGN_UP. Create a form first via POST /v1/ads/lead-forms. On the multi-creative shape this can also be set per &#x60;creatives[i]&#x60; to A/B different forms inside one ad set..</param>
+        /// <param name="callToAction">Required on legacy + attach shapes for Meta. Honoured on TikTok too — passes through to the Spark Ad creative&#39;s &#x60;call_to_action&#x60;. Ignored by other platforms..</param>
         /// <param name="linkUrl">Required on legacy + attach shapes. Skip for multi-creative..</param>
         /// <param name="imageUrl">Image creative for Meta/Google/Pinterest on legacy + attach shapes (mutually exclusive with &#x60;video&#x60;). Not required for Google Search campaigns. For TikTok, this field carries the VIDEO URL (the TikTok ads endpoint is video-only; the field retains the &#x60;imageUrl&#x60; name for cross-platform consistency). Ignored for X/Twitter. For Google Display, treated as the landscape image (alias of &#x60;images.landscape&#x60;); supply &#x60;images.square&#x60; alongside or the request is rejected..</param>
         /// <param name="images">images.</param>
@@ -360,7 +359,7 @@ namespace Zernio.Model
         /// <param name="brandIdentity">brandIdentity.</param>
         /// <param name="identityType">TikTok only. Forces the identity attribution on the ad:    - &#x60;TT_USER&#x60;: the posting account&#39;s open_id (real @username     branding). Requires a connected TikTok posting account     on the same profile.   - &#x60;CUSTOMIZED_USER&#x60;: synthetic Brand Identity (display     name + avatar). Requires a configured Brand Identity     (cached on the &#x60;tiktokads&#x60; SocialAccount via     &#x60;PATCH /v1/connect/tiktok-ads&#x60;) or an inline     &#x60;brandIdentity&#x60; to create one on the fly.  When omitted, defaults to &#x60;TT_USER&#x60; if a posting account is connected on this profile, else &#x60;CUSTOMIZED_USER&#x60;. Spark Ads (&#x60;POST /v1/ads/boost&#x60;) always use &#x60;TT_USER&#x60; regardless of this field — TikTok requires the original organic post&#39;s author identity for Spark. .</param>
         /// <param name="promotedObject">promotedObject.</param>
-        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum? goal = default, decimal budgetAmount = default, BudgetTypeEnum? budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string leadGenFormId = default, string linkUrl = default, string imageUrl = default, CreateStandaloneAdRequestImages images = default, CreateStandaloneAdRequestVideo video = default, List<CreateStandaloneAdRequestCreativesInner> creatives = default, string adSetId = default, string businessName = default, string boardId = default, List<string> countries = default, List<CreateStandaloneAdRequestCitiesInner> cities = default, List<CreateStandaloneAdRequestRegionsInner> regions = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default, GenderEnum? gender = GenderEnum.All, BidStrategy? bidStrategy = default, decimal bidAmount = default, decimal roasAverageFloor = default, string dsaBeneficiary = default, string dsaPayor = default, CreateStandaloneAdRequestBrandIdentity brandIdentity = default, IdentityTypeEnum? identityType = default, CreateStandaloneAdRequestPromotedObject promotedObject = default)
+        public CreateStandaloneAdRequest(string accountId = default, string adAccountId = default, string name = default, GoalEnum? goal = default, decimal budgetAmount = default, BudgetTypeEnum? budgetType = default, string currency = default, string headline = default, string longHeadline = default, string body = default, CallToActionEnum? callToAction = default, string linkUrl = default, string imageUrl = default, CreateStandaloneAdRequestImages images = default, CreateStandaloneAdRequestVideo video = default, List<CreateStandaloneAdRequestCreativesInner> creatives = default, string adSetId = default, string businessName = default, string boardId = default, List<string> countries = default, List<CreateStandaloneAdRequestCitiesInner> cities = default, List<CreateStandaloneAdRequestRegionsInner> regions = default, int ageMin = default, int ageMax = default, List<UpdateAdRequestTargetingInterestsInner> interests = default, DateTime endDate = default, string audienceId = default, CampaignTypeEnum? campaignType = CampaignTypeEnum.Display, List<string> keywords = default, List<string> additionalHeadlines = default, List<string> additionalDescriptions = default, AdvantageAudienceEnum? advantageAudience = default, GenderEnum? gender = GenderEnum.All, BidStrategy? bidStrategy = default, decimal bidAmount = default, decimal roasAverageFloor = default, string dsaBeneficiary = default, string dsaPayor = default, CreateStandaloneAdRequestBrandIdentity brandIdentity = default, IdentityTypeEnum? identityType = default, CreateStandaloneAdRequestPromotedObject promotedObject = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -388,7 +387,6 @@ namespace Zernio.Model
             this.LongHeadline = longHeadline;
             this.Body = body;
             this.CallToAction = callToAction;
-            this.LeadGenFormId = leadGenFormId;
             this.LinkUrl = linkUrl;
             this.ImageUrl = imageUrl;
             this.Images = images;
@@ -472,13 +470,6 @@ namespace Zernio.Model
         /// <value>Required on legacy + attach shapes. For X/Twitter this is the tweet text (max 280 chars including a ~24-char URL when &#x60;linkUrl&#x60; is set). Max: Google&#x3D;90, Pinterest&#x3D;500.</value>
         [DataMember(Name = "body", EmitDefaultValue = false)]
         public string Body { get; set; }
-
-        /// <summary>
-        /// Meta-only. Attaches a Lead Gen (Instant) Form to the creative. Required when &#x60;goal&#x3D;\&quot;lead_generation\&quot;&#x60;. Force-overrides the CTA to SIGN_UP. Create a form first via POST /v1/ads/lead-forms. On the multi-creative shape this can also be set per &#x60;creatives[i]&#x60; to A/B different forms inside one ad set.
-        /// </summary>
-        /// <value>Meta-only. Attaches a Lead Gen (Instant) Form to the creative. Required when &#x60;goal&#x3D;\&quot;lead_generation\&quot;&#x60;. Force-overrides the CTA to SIGN_UP. Create a form first via POST /v1/ads/lead-forms. On the multi-creative shape this can also be set per &#x60;creatives[i]&#x60; to A/B different forms inside one ad set.</value>
-        [DataMember(Name = "leadGenFormId", EmitDefaultValue = false)]
-        public string LeadGenFormId { get; set; }
 
         /// <summary>
         /// Required on legacy + attach shapes. Skip for multi-creative.
@@ -668,7 +659,6 @@ namespace Zernio.Model
             sb.Append("  LongHeadline: ").Append(LongHeadline).Append("\n");
             sb.Append("  Body: ").Append(Body).Append("\n");
             sb.Append("  CallToAction: ").Append(CallToAction).Append("\n");
-            sb.Append("  LeadGenFormId: ").Append(LeadGenFormId).Append("\n");
             sb.Append("  LinkUrl: ").Append(LinkUrl).Append("\n");
             sb.Append("  ImageUrl: ").Append(ImageUrl).Append("\n");
             sb.Append("  Images: ").Append(Images).Append("\n");

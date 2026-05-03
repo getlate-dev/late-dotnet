@@ -113,27 +113,6 @@ namespace Zernio.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> OnCommentReceivedWithHttpInfo(WebhookPayloadComment webhookPayloadComment);
         /// <summary>
-        /// Lead received event
-        /// </summary>
-        /// <remarks>
-        /// Fired when a Meta Lead Gen (Instant) Form receives a new submission. Delivered in real time via Meta&#39;s &#x60;leadgen&#x60; page webhook. Requires the Ads add-on; subscribers without it are filtered at delivery time. 
-        /// </remarks>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webhookPayloadLeadReceived"></param>
-        /// <returns></returns>
-        void OnLeadReceived(WebhookPayloadLeadReceived webhookPayloadLeadReceived);
-
-        /// <summary>
-        /// Lead received event
-        /// </summary>
-        /// <remarks>
-        /// Fired when a Meta Lead Gen (Instant) Form receives a new submission. Delivered in real time via Meta&#39;s &#x60;leadgen&#x60; page webhook. Requires the Ads add-on; subscribers without it are filtered at delivery time. 
-        /// </remarks>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webhookPayloadLeadReceived"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> OnLeadReceivedWithHttpInfo(WebhookPayloadLeadReceived webhookPayloadLeadReceived);
-        /// <summary>
         /// Message deleted event
         /// </summary>
         /// <remarks>
@@ -570,29 +549,6 @@ namespace Zernio.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> OnCommentReceivedWithHttpInfoAsync(WebhookPayloadComment webhookPayloadComment, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Lead received event
-        /// </summary>
-        /// <remarks>
-        /// Fired when a Meta Lead Gen (Instant) Form receives a new submission. Delivered in real time via Meta&#39;s &#x60;leadgen&#x60; page webhook. Requires the Ads add-on; subscribers without it are filtered at delivery time. 
-        /// </remarks>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webhookPayloadLeadReceived"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task OnLeadReceivedAsync(WebhookPayloadLeadReceived webhookPayloadLeadReceived, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Lead received event
-        /// </summary>
-        /// <remarks>
-        /// Fired when a Meta Lead Gen (Instant) Form receives a new submission. Delivered in real time via Meta&#39;s &#x60;leadgen&#x60; page webhook. Requires the Ads add-on; subscribers without it are filtered at delivery time. 
-        /// </remarks>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webhookPayloadLeadReceived"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> OnLeadReceivedWithHttpInfoAsync(WebhookPayloadLeadReceived webhookPayloadLeadReceived, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Message deleted event
         /// </summary>
@@ -1668,131 +1624,6 @@ namespace Zernio.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("OnCommentReceived", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Lead received event Fired when a Meta Lead Gen (Instant) Form receives a new submission. Delivered in real time via Meta&#39;s &#x60;leadgen&#x60; page webhook. Requires the Ads add-on; subscribers without it are filtered at delivery time. 
-        /// </summary>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webhookPayloadLeadReceived"></param>
-        /// <returns></returns>
-        public void OnLeadReceived(WebhookPayloadLeadReceived webhookPayloadLeadReceived)
-        {
-            OnLeadReceivedWithHttpInfo(webhookPayloadLeadReceived);
-        }
-
-        /// <summary>
-        /// Lead received event Fired when a Meta Lead Gen (Instant) Form receives a new submission. Delivered in real time via Meta&#39;s &#x60;leadgen&#x60; page webhook. Requires the Ads add-on; subscribers without it are filtered at delivery time. 
-        /// </summary>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webhookPayloadLeadReceived"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public Zernio.Client.ApiResponse<Object> OnLeadReceivedWithHttpInfo(WebhookPayloadLeadReceived webhookPayloadLeadReceived)
-        {
-            // verify the required parameter 'webhookPayloadLeadReceived' is set
-            if (webhookPayloadLeadReceived == null)
-                throw new Zernio.Client.ApiException(400, "Missing required parameter 'webhookPayloadLeadReceived' when calling WebhookEventsApi->OnLeadReceived");
-
-            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = webhookPayloadLeadReceived;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/lead.received", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OnLeadReceived", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Lead received event Fired when a Meta Lead Gen (Instant) Form receives a new submission. Delivered in real time via Meta&#39;s &#x60;leadgen&#x60; page webhook. Requires the Ads add-on; subscribers without it are filtered at delivery time. 
-        /// </summary>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webhookPayloadLeadReceived"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task OnLeadReceivedAsync(WebhookPayloadLeadReceived webhookPayloadLeadReceived, System.Threading.CancellationToken cancellationToken = default)
-        {
-            await OnLeadReceivedWithHttpInfoAsync(webhookPayloadLeadReceived, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Lead received event Fired when a Meta Lead Gen (Instant) Form receives a new submission. Delivered in real time via Meta&#39;s &#x60;leadgen&#x60; page webhook. Requires the Ads add-on; subscribers without it are filtered at delivery time. 
-        /// </summary>
-        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="webhookPayloadLeadReceived"></param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<Object>> OnLeadReceivedWithHttpInfoAsync(WebhookPayloadLeadReceived webhookPayloadLeadReceived, System.Threading.CancellationToken cancellationToken = default)
-        {
-            // verify the required parameter 'webhookPayloadLeadReceived' is set
-            if (webhookPayloadLeadReceived == null)
-                throw new Zernio.Client.ApiException(400, "Missing required parameter 'webhookPayloadLeadReceived' when calling WebhookEventsApi->OnLeadReceived");
-
-
-            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-            };
-
-
-            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = webhookPayloadLeadReceived;
-
-            // authentication (bearerAuth) required
-            // bearer authentication required
-            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/lead.received", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("OnLeadReceived", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

@@ -137,15 +137,6 @@ docs/CreateInboxConversation422Response.md
 docs/CreateInboxConversationRequest.md
 docs/CreateInviteToken201Response.md
 docs/CreateInviteTokenRequest.md
-docs/CreateLeadForm201Response.md
-docs/CreateLeadFormBody.md
-docs/CreateLeadFormBodyContextCard.md
-docs/CreateLeadFormBodyLegalContent.md
-docs/CreateLeadFormBodyLegalContentCustomDisclaimer.md
-docs/CreateLeadFormTestLead200Response.md
-docs/CreateLeadFormTestLead200ResponseTestLead.md
-docs/CreateLeadFormTestLeadRequest.md
-docs/CreateLeadFormTestLeadRequestFieldDataInner.md
 docs/CreatePost409Response.md
 docs/CreatePost409ResponseDetails.md
 docs/CreatePost429Response.md
@@ -196,7 +187,6 @@ docs/DeleteGoogleBusinessPlaceAction200Response.md
 docs/DeleteInboxComment200Response.md
 docs/DeleteInboxReviewReply200Response.md
 docs/DeleteInboxReviewReplyRequest.md
-docs/DeleteLeadForm200Response.md
 docs/DeleteQueueSlot200Response.md
 docs/DiscordApi.md
 docs/DiscordPlatformData.md
@@ -349,7 +339,6 @@ docs/GetInboxPostComments200ResponseCommentsInnerFrom.md
 docs/GetInboxPostComments200ResponseMeta.md
 docs/GetInboxPostComments200ResponsePagination.md
 docs/GetInstagramAccountInsights404Response.md
-docs/GetLeadForm200Response.md
 docs/GetLinkedInAggregateAnalytics200Response.md
 docs/GetLinkedInAggregateAnalytics400Response.md
 docs/GetLinkedInAggregateAnalytics402Response.md
@@ -462,13 +451,6 @@ docs/InstagramPlatformData.md
 docs/InstagramPlatformDataTrialParams.md
 docs/InstagramPlatformDataUserTagsInner.md
 docs/InvitesApi.md
-docs/Lead.md
-docs/LeadFieldDataInner.md
-docs/LeadFormResponseMeta.md
-docs/LeadFormsApi.md
-docs/LeadGenForm.md
-docs/LeadGenFormQuestion.md
-docs/LeadGenFormQuestionOptionsInner.md
 docs/LikeInboxComment200Response.md
 docs/LikeInboxCommentRequest.md
 docs/LinkedInAggregateAnalyticsDailyResponse.md
@@ -528,8 +510,6 @@ docs/ListInboxReviews200ResponseDataInner.md
 docs/ListInboxReviews200ResponseDataInnerReply.md
 docs/ListInboxReviews200ResponseDataInnerReviewer.md
 docs/ListInboxReviews200ResponseSummary.md
-docs/ListLeadFormLeads200Response.md
-docs/ListLeadForms200Response.md
 docs/ListLinkedInOrganizations200Response.md
 docs/ListLinkedInOrganizations200ResponseOrganizationsInner.md
 docs/ListLogs200Response.md
@@ -777,7 +757,6 @@ docs/UpdateGoogleBusinessServicesRequestServiceItemsInner.md
 docs/UpdateInboxConversation200Response.md
 docs/UpdateInboxConversation200ResponseData.md
 docs/UpdateInboxConversationRequest.md
-docs/UpdateLeadFormRequest.md
 docs/UpdateLinkedInOrganizationRequest.md
 docs/UpdatePinterestBoardsRequest.md
 docs/UpdatePostMetadata200Response.md
@@ -854,8 +833,6 @@ docs/WebhookPayloadCommentComment.md
 docs/WebhookPayloadCommentCommentAd.md
 docs/WebhookPayloadCommentCommentAuthor.md
 docs/WebhookPayloadCommentPost.md
-docs/WebhookPayloadLeadReceived.md
-docs/WebhookPayloadLeadReceivedAccount.md
 docs/WebhookPayloadMessage.md
 docs/WebhookPayloadMessageAccount.md
 docs/WebhookPayloadMessageConversation.md
@@ -925,7 +902,6 @@ src/Zernio.Test/Api/GMBPlaceActionsApiTests.cs
 src/Zernio.Test/Api/GMBReviewsApiTests.cs
 src/Zernio.Test/Api/GMBServicesApiTests.cs
 src/Zernio.Test/Api/InvitesApiTests.cs
-src/Zernio.Test/Api/LeadFormsApiTests.cs
 src/Zernio.Test/Api/LinkedInMentionsApiTests.cs
 src/Zernio.Test/Api/LogsApiTests.cs
 src/Zernio.Test/Api/MediaApiTests.cs
@@ -1066,15 +1042,6 @@ src/Zernio.Test/Model/CreateInboxConversation422ResponseTests.cs
 src/Zernio.Test/Model/CreateInboxConversationRequestTests.cs
 src/Zernio.Test/Model/CreateInviteToken201ResponseTests.cs
 src/Zernio.Test/Model/CreateInviteTokenRequestTests.cs
-src/Zernio.Test/Model/CreateLeadForm201ResponseTests.cs
-src/Zernio.Test/Model/CreateLeadFormBodyContextCardTests.cs
-src/Zernio.Test/Model/CreateLeadFormBodyLegalContentCustomDisclaimerTests.cs
-src/Zernio.Test/Model/CreateLeadFormBodyLegalContentTests.cs
-src/Zernio.Test/Model/CreateLeadFormBodyTests.cs
-src/Zernio.Test/Model/CreateLeadFormTestLead200ResponseTestLeadTests.cs
-src/Zernio.Test/Model/CreateLeadFormTestLead200ResponseTests.cs
-src/Zernio.Test/Model/CreateLeadFormTestLeadRequestFieldDataInnerTests.cs
-src/Zernio.Test/Model/CreateLeadFormTestLeadRequestTests.cs
 src/Zernio.Test/Model/CreatePost409ResponseDetailsTests.cs
 src/Zernio.Test/Model/CreatePost409ResponseTests.cs
 src/Zernio.Test/Model/CreatePost429ResponseTests.cs
@@ -1124,7 +1091,6 @@ src/Zernio.Test/Model/DeleteGoogleBusinessPlaceAction200ResponseTests.cs
 src/Zernio.Test/Model/DeleteInboxComment200ResponseTests.cs
 src/Zernio.Test/Model/DeleteInboxReviewReply200ResponseTests.cs
 src/Zernio.Test/Model/DeleteInboxReviewReplyRequestTests.cs
-src/Zernio.Test/Model/DeleteLeadForm200ResponseTests.cs
 src/Zernio.Test/Model/DeleteQueueSlot200ResponseTests.cs
 src/Zernio.Test/Model/DiscordPlatformDataEmbedsInnerAuthorTests.cs
 src/Zernio.Test/Model/DiscordPlatformDataEmbedsInnerFieldsInnerTests.cs
@@ -1269,7 +1235,6 @@ src/Zernio.Test/Model/GetInboxPostComments200ResponseMetaTests.cs
 src/Zernio.Test/Model/GetInboxPostComments200ResponsePaginationTests.cs
 src/Zernio.Test/Model/GetInboxPostComments200ResponseTests.cs
 src/Zernio.Test/Model/GetInstagramAccountInsights404ResponseTests.cs
-src/Zernio.Test/Model/GetLeadForm200ResponseTests.cs
 src/Zernio.Test/Model/GetLinkedInAggregateAnalytics200ResponseTests.cs
 src/Zernio.Test/Model/GetLinkedInAggregateAnalytics400ResponseTests.cs
 src/Zernio.Test/Model/GetLinkedInAggregateAnalytics402ResponseTests.cs
@@ -1381,12 +1346,6 @@ src/Zernio.Test/Model/InstagramDemographicsResponseTests.cs
 src/Zernio.Test/Model/InstagramPlatformDataTests.cs
 src/Zernio.Test/Model/InstagramPlatformDataTrialParamsTests.cs
 src/Zernio.Test/Model/InstagramPlatformDataUserTagsInnerTests.cs
-src/Zernio.Test/Model/LeadFieldDataInnerTests.cs
-src/Zernio.Test/Model/LeadFormResponseMetaTests.cs
-src/Zernio.Test/Model/LeadGenFormQuestionOptionsInnerTests.cs
-src/Zernio.Test/Model/LeadGenFormQuestionTests.cs
-src/Zernio.Test/Model/LeadGenFormTests.cs
-src/Zernio.Test/Model/LeadTests.cs
 src/Zernio.Test/Model/LikeInboxComment200ResponseTests.cs
 src/Zernio.Test/Model/LikeInboxCommentRequestTests.cs
 src/Zernio.Test/Model/LinkedInAggregateAnalyticsDailyResponseAnalyticsImpressionsInnerTests.cs
@@ -1445,8 +1404,6 @@ src/Zernio.Test/Model/ListInboxReviews200ResponseDataInnerReviewerTests.cs
 src/Zernio.Test/Model/ListInboxReviews200ResponseDataInnerTests.cs
 src/Zernio.Test/Model/ListInboxReviews200ResponseSummaryTests.cs
 src/Zernio.Test/Model/ListInboxReviews200ResponseTests.cs
-src/Zernio.Test/Model/ListLeadFormLeads200ResponseTests.cs
-src/Zernio.Test/Model/ListLeadForms200ResponseTests.cs
 src/Zernio.Test/Model/ListLinkedInOrganizations200ResponseOrganizationsInnerTests.cs
 src/Zernio.Test/Model/ListLinkedInOrganizations200ResponseTests.cs
 src/Zernio.Test/Model/ListLogs200ResponseLogsInnerTests.cs
@@ -1684,7 +1641,6 @@ src/Zernio.Test/Model/UpdateGoogleBusinessServicesRequestTests.cs
 src/Zernio.Test/Model/UpdateInboxConversation200ResponseDataTests.cs
 src/Zernio.Test/Model/UpdateInboxConversation200ResponseTests.cs
 src/Zernio.Test/Model/UpdateInboxConversationRequestTests.cs
-src/Zernio.Test/Model/UpdateLeadFormRequestTests.cs
 src/Zernio.Test/Model/UpdateLinkedInOrganizationRequestTests.cs
 src/Zernio.Test/Model/UpdatePinterestBoardsRequestTests.cs
 src/Zernio.Test/Model/UpdatePostMetadata200ResponseTests.cs
@@ -1756,8 +1712,6 @@ src/Zernio.Test/Model/WebhookPayloadCommentCommentAuthorTests.cs
 src/Zernio.Test/Model/WebhookPayloadCommentCommentTests.cs
 src/Zernio.Test/Model/WebhookPayloadCommentPostTests.cs
 src/Zernio.Test/Model/WebhookPayloadCommentTests.cs
-src/Zernio.Test/Model/WebhookPayloadLeadReceivedAccountTests.cs
-src/Zernio.Test/Model/WebhookPayloadLeadReceivedTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageAccountTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageConversationTests.cs
 src/Zernio.Test/Model/WebhookPayloadMessageDeletedTests.cs
@@ -1824,7 +1778,6 @@ src/Zernio/Api/GMBPlaceActionsApi.cs
 src/Zernio/Api/GMBReviewsApi.cs
 src/Zernio/Api/GMBServicesApi.cs
 src/Zernio/Api/InvitesApi.cs
-src/Zernio/Api/LeadFormsApi.cs
 src/Zernio/Api/LinkedInMentionsApi.cs
 src/Zernio/Api/LogsApi.cs
 src/Zernio/Api/MediaApi.cs
@@ -1983,15 +1936,6 @@ src/Zernio/Model/CreateInboxConversation422Response.cs
 src/Zernio/Model/CreateInboxConversationRequest.cs
 src/Zernio/Model/CreateInviteToken201Response.cs
 src/Zernio/Model/CreateInviteTokenRequest.cs
-src/Zernio/Model/CreateLeadForm201Response.cs
-src/Zernio/Model/CreateLeadFormBody.cs
-src/Zernio/Model/CreateLeadFormBodyContextCard.cs
-src/Zernio/Model/CreateLeadFormBodyLegalContent.cs
-src/Zernio/Model/CreateLeadFormBodyLegalContentCustomDisclaimer.cs
-src/Zernio/Model/CreateLeadFormTestLead200Response.cs
-src/Zernio/Model/CreateLeadFormTestLead200ResponseTestLead.cs
-src/Zernio/Model/CreateLeadFormTestLeadRequest.cs
-src/Zernio/Model/CreateLeadFormTestLeadRequestFieldDataInner.cs
 src/Zernio/Model/CreatePost409Response.cs
 src/Zernio/Model/CreatePost409ResponseDetails.cs
 src/Zernio/Model/CreatePost429Response.cs
@@ -2041,7 +1985,6 @@ src/Zernio/Model/DeleteGoogleBusinessPlaceAction200Response.cs
 src/Zernio/Model/DeleteInboxComment200Response.cs
 src/Zernio/Model/DeleteInboxReviewReply200Response.cs
 src/Zernio/Model/DeleteInboxReviewReplyRequest.cs
-src/Zernio/Model/DeleteLeadForm200Response.cs
 src/Zernio/Model/DeleteQueueSlot200Response.cs
 src/Zernio/Model/DiscordPlatformData.cs
 src/Zernio/Model/DiscordPlatformDataEmbedsInner.cs
@@ -2186,7 +2129,6 @@ src/Zernio/Model/GetInboxPostComments200ResponseCommentsInnerFrom.cs
 src/Zernio/Model/GetInboxPostComments200ResponseMeta.cs
 src/Zernio/Model/GetInboxPostComments200ResponsePagination.cs
 src/Zernio/Model/GetInstagramAccountInsights404Response.cs
-src/Zernio/Model/GetLeadForm200Response.cs
 src/Zernio/Model/GetLinkedInAggregateAnalytics200Response.cs
 src/Zernio/Model/GetLinkedInAggregateAnalytics400Response.cs
 src/Zernio/Model/GetLinkedInAggregateAnalytics402Response.cs
@@ -2298,12 +2240,6 @@ src/Zernio/Model/InstagramDemographicsResponseDemographicsValueInner.cs
 src/Zernio/Model/InstagramPlatformData.cs
 src/Zernio/Model/InstagramPlatformDataTrialParams.cs
 src/Zernio/Model/InstagramPlatformDataUserTagsInner.cs
-src/Zernio/Model/Lead.cs
-src/Zernio/Model/LeadFieldDataInner.cs
-src/Zernio/Model/LeadFormResponseMeta.cs
-src/Zernio/Model/LeadGenForm.cs
-src/Zernio/Model/LeadGenFormQuestion.cs
-src/Zernio/Model/LeadGenFormQuestionOptionsInner.cs
 src/Zernio/Model/LikeInboxComment200Response.cs
 src/Zernio/Model/LikeInboxCommentRequest.cs
 src/Zernio/Model/LinkedInAggregateAnalyticsDailyResponse.cs
@@ -2362,8 +2298,6 @@ src/Zernio/Model/ListInboxReviews200ResponseDataInner.cs
 src/Zernio/Model/ListInboxReviews200ResponseDataInnerReply.cs
 src/Zernio/Model/ListInboxReviews200ResponseDataInnerReviewer.cs
 src/Zernio/Model/ListInboxReviews200ResponseSummary.cs
-src/Zernio/Model/ListLeadFormLeads200Response.cs
-src/Zernio/Model/ListLeadForms200Response.cs
 src/Zernio/Model/ListLinkedInOrganizations200Response.cs
 src/Zernio/Model/ListLinkedInOrganizations200ResponseOrganizationsInner.cs
 src/Zernio/Model/ListLogs200Response.cs
@@ -2601,7 +2535,6 @@ src/Zernio/Model/UpdateGoogleBusinessServicesRequestServiceItemsInner.cs
 src/Zernio/Model/UpdateInboxConversation200Response.cs
 src/Zernio/Model/UpdateInboxConversation200ResponseData.cs
 src/Zernio/Model/UpdateInboxConversationRequest.cs
-src/Zernio/Model/UpdateLeadFormRequest.cs
 src/Zernio/Model/UpdateLinkedInOrganizationRequest.cs
 src/Zernio/Model/UpdatePinterestBoardsRequest.cs
 src/Zernio/Model/UpdatePostMetadata200Response.cs
@@ -2674,8 +2607,6 @@ src/Zernio/Model/WebhookPayloadCommentComment.cs
 src/Zernio/Model/WebhookPayloadCommentCommentAd.cs
 src/Zernio/Model/WebhookPayloadCommentCommentAuthor.cs
 src/Zernio/Model/WebhookPayloadCommentPost.cs
-src/Zernio/Model/WebhookPayloadLeadReceived.cs
-src/Zernio/Model/WebhookPayloadLeadReceivedAccount.cs
 src/Zernio/Model/WebhookPayloadMessage.cs
 src/Zernio/Model/WebhookPayloadMessageAccount.cs
 src/Zernio/Model/WebhookPayloadMessageConversation.cs

@@ -108,14 +108,5 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'CallToAction'
         }
-
-        /// <summary>
-        /// Test the property 'LeadGenFormId'
-        /// </summary>
-        [Fact]
-        public void LeadGenFormIdTest()
-        {
-            // TODO unit test for the property 'LeadGenFormId'
-        }
     }
 }

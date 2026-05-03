@@ -120,8 +120,7 @@ namespace Zernio.Model
         /// <param name="video">video.</param>
         /// <param name="linkUrl">linkUrl (required).</param>
         /// <param name="callToAction">callToAction (required).</param>
-        /// <param name="leadGenFormId">Per-creative Lead Gen Form ID. Wins over the top-level &#x60;leadGenFormId&#x60; so each ad in a campaign can A/B a different form. Forces CTA to SIGN_UP..</param>
-        public CreateStandaloneAdRequestCreativesInner(string headline = default, string body = default, string imageUrl = default, CreateStandaloneAdRequestCreativesInnerVideo video = default, string linkUrl = default, CallToActionEnum callToAction = default, string leadGenFormId = default)
+        public CreateStandaloneAdRequestCreativesInner(string headline = default, string body = default, string imageUrl = default, CreateStandaloneAdRequestCreativesInnerVideo video = default, string linkUrl = default, CallToActionEnum callToAction = default)
         {
             // to ensure "headline" is required (not null)
             if (headline == null)
@@ -144,7 +143,6 @@ namespace Zernio.Model
             this.CallToAction = callToAction;
             this.ImageUrl = imageUrl;
             this.Video = video;
-            this.LeadGenFormId = leadGenFormId;
         }
 
         /// <summary>
@@ -179,13 +177,6 @@ namespace Zernio.Model
         public string LinkUrl { get; set; }
 
         /// <summary>
-        /// Per-creative Lead Gen Form ID. Wins over the top-level &#x60;leadGenFormId&#x60; so each ad in a campaign can A/B a different form. Forces CTA to SIGN_UP.
-        /// </summary>
-        /// <value>Per-creative Lead Gen Form ID. Wins over the top-level &#x60;leadGenFormId&#x60; so each ad in a campaign can A/B a different form. Forces CTA to SIGN_UP.</value>
-        [DataMember(Name = "leadGenFormId", EmitDefaultValue = false)]
-        public string LeadGenFormId { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -199,7 +190,6 @@ namespace Zernio.Model
             sb.Append("  Video: ").Append(Video).Append("\n");
             sb.Append("  LinkUrl: ").Append(LinkUrl).Append("\n");
             sb.Append("  CallToAction: ").Append(CallToAction).Append("\n");
-            sb.Append("  LeadGenFormId: ").Append(LeadGenFormId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

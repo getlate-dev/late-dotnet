@@ -99,17 +99,6 @@ namespace Zernio.Test.Api
         }
 
         /// <summary>
-        /// Test OnLeadReceived
-        /// </summary>
-        [Fact]
-        public void OnLeadReceivedTest()
-        {
-            // TODO uncomment below to test the method and replace null with proper value
-            //WebhookPayloadLeadReceived webhookPayloadLeadReceived = null;
-            //instance.OnLeadReceived(webhookPayloadLeadReceived);
-        }
-
-        /// <summary>
         /// Test OnMessageDeleted
         /// </summary>
         [Fact]
