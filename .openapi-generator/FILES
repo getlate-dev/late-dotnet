@@ -80,6 +80,9 @@ docs/CancelBroadcast200ResponseBroadcast.md
 docs/CommentAutomationsApi.md
 docs/CommentsApi.md
 docs/CompleteTelegramConnect200Response.md
+docs/CompleteWhatsAppPhoneSelection200Response.md
+docs/CompleteWhatsAppPhoneSelection200ResponseAccount.md
+docs/CompleteWhatsAppPhoneSelectionRequest.md
 docs/ConfigureTikTokAdsBrandIdentity200Response.md
 docs/ConfigureTikTokAdsBrandIdentityRequest.md
 docs/ConnectAds200Response.md
@@ -538,6 +541,8 @@ docs/ListWhatsAppGroupChats200ResponsePaging.md
 docs/ListWhatsAppGroupChats200ResponsePagingCursors.md
 docs/ListWhatsAppGroupJoinRequests200Response.md
 docs/ListWhatsAppGroupJoinRequests200ResponseJoinRequestsInner.md
+docs/ListWhatsAppPhoneNumbers200Response.md
+docs/ListWhatsAppPhoneNumbers200ResponsePhoneNumbersInner.md
 docs/LogsApi.md
 docs/MediaApi.md
 docs/MediaItem.md
@@ -998,6 +1003,9 @@ src/Zernio.Test/Model/BusinessCenterTests.cs
 src/Zernio.Test/Model/CancelBroadcast200ResponseBroadcastTests.cs
 src/Zernio.Test/Model/CancelBroadcast200ResponseTests.cs
 src/Zernio.Test/Model/CompleteTelegramConnect200ResponseTests.cs
+src/Zernio.Test/Model/CompleteWhatsAppPhoneSelection200ResponseAccountTests.cs
+src/Zernio.Test/Model/CompleteWhatsAppPhoneSelection200ResponseTests.cs
+src/Zernio.Test/Model/CompleteWhatsAppPhoneSelectionRequestTests.cs
 src/Zernio.Test/Model/ConfigureTikTokAdsBrandIdentity200ResponseTests.cs
 src/Zernio.Test/Model/ConfigureTikTokAdsBrandIdentityRequestTests.cs
 src/Zernio.Test/Model/ConnectAds200ResponseOneOf1Tests.cs
@@ -1443,6 +1451,8 @@ src/Zernio.Test/Model/ListWhatsAppGroupChats200ResponsePagingTests.cs
 src/Zernio.Test/Model/ListWhatsAppGroupChats200ResponseTests.cs
 src/Zernio.Test/Model/ListWhatsAppGroupJoinRequests200ResponseJoinRequestsInnerTests.cs
 src/Zernio.Test/Model/ListWhatsAppGroupJoinRequests200ResponseTests.cs
+src/Zernio.Test/Model/ListWhatsAppPhoneNumbers200ResponsePhoneNumbersInnerTests.cs
+src/Zernio.Test/Model/ListWhatsAppPhoneNumbers200ResponseTests.cs
 src/Zernio.Test/Model/MediaItemTests.cs
 src/Zernio.Test/Model/MediaUploadResponseTests.cs
 src/Zernio.Test/Model/MoneyTests.cs
@@ -1903,6 +1913,9 @@ src/Zernio/Model/BusinessCenter.cs
 src/Zernio/Model/CancelBroadcast200Response.cs
 src/Zernio/Model/CancelBroadcast200ResponseBroadcast.cs
 src/Zernio/Model/CompleteTelegramConnect200Response.cs
+src/Zernio/Model/CompleteWhatsAppPhoneSelection200Response.cs
+src/Zernio/Model/CompleteWhatsAppPhoneSelection200ResponseAccount.cs
+src/Zernio/Model/CompleteWhatsAppPhoneSelectionRequest.cs
 src/Zernio/Model/ConfigureTikTokAdsBrandIdentity200Response.cs
 src/Zernio/Model/ConfigureTikTokAdsBrandIdentityRequest.cs
 src/Zernio/Model/ConnectAds200Response.cs
@@ -2348,6 +2361,8 @@ src/Zernio/Model/ListWhatsAppGroupChats200ResponsePaging.cs
 src/Zernio/Model/ListWhatsAppGroupChats200ResponsePagingCursors.cs
 src/Zernio/Model/ListWhatsAppGroupJoinRequests200Response.cs
 src/Zernio/Model/ListWhatsAppGroupJoinRequests200ResponseJoinRequestsInner.cs
+src/Zernio/Model/ListWhatsAppPhoneNumbers200Response.cs
+src/Zernio/Model/ListWhatsAppPhoneNumbers200ResponsePhoneNumbersInner.cs
 src/Zernio/Model/MediaItem.cs
 src/Zernio/Model/MediaUploadResponse.cs
 src/Zernio/Model/Money.cs

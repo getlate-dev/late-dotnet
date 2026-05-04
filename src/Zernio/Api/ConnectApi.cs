@@ -50,6 +50,29 @@ namespace Zernio.Api
         /// <returns>ApiResponse of CompleteTelegramConnect200Response</returns>
         ApiResponse<CompleteTelegramConnect200Response> CompleteTelegramConnectWithHttpInfo(string code);
         /// <summary>
+        /// Complete WhatsApp phone number selection
+        /// </summary>
+        /// <remarks>
+        /// Bind a specific WhatsApp phone number to the Zernio profile after the user picks one from &#x60;listWhatsAppPhoneNumbers&#x60;. Exchanges the short-lived OAuth token for a long-lived token, subscribes the WABA to webhooks, and creates the SocialAccount. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="completeWhatsAppPhoneSelectionRequest"></param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (optional)</param>
+        /// <returns>CompleteWhatsAppPhoneSelection200Response</returns>
+        CompleteWhatsAppPhoneSelection200Response CompleteWhatsAppPhoneSelection(CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest, string? xConnectToken = default);
+
+        /// <summary>
+        /// Complete WhatsApp phone number selection
+        /// </summary>
+        /// <remarks>
+        /// Bind a specific WhatsApp phone number to the Zernio profile after the user picks one from &#x60;listWhatsAppPhoneNumbers&#x60;. Exchanges the short-lived OAuth token for a long-lived token, subscribes the WABA to webhooks, and creates the SocialAccount. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="completeWhatsAppPhoneSelectionRequest"></param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (optional)</param>
+        /// <returns>ApiResponse of CompleteWhatsAppPhoneSelection200Response</returns>
+        ApiResponse<CompleteWhatsAppPhoneSelection200Response> CompleteWhatsAppPhoneSelectionWithHttpInfo(CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest, string? xConnectToken = default);
+        /// <summary>
         /// Configure TikTok Ads Brand Identity
         /// </summary>
         /// <remarks>
@@ -239,7 +262,7 @@ namespace Zernio.Api
         /// Get pending OAuth data
         /// </summary>
         /// <remarks>
-        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
+        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL.  **Scope**: This endpoint is used only for LinkedIn organizations and Snapchat profiles, where the selection list is too large to fit in URL params. WhatsApp, Facebook, Pinterest, Google Business and other platforms pass selection state directly via URL query params on the redirect (&#x60;profileId&#x60;, &#x60;tempToken&#x60;, &#x60;step&#x60;), no pending record is created, so this endpoint will return 404 for those flows. Use the platform-specific selection endpoint instead (e.g. &#x60;/v1/connect/whatsapp/select-phone-number&#x60;).  Token is one-time use and expires after 10 minutes. No authentication required. 
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -250,7 +273,7 @@ namespace Zernio.Api
         /// Get pending OAuth data
         /// </summary>
         /// <remarks>
-        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
+        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL.  **Scope**: This endpoint is used only for LinkedIn organizations and Snapchat profiles, where the selection list is too large to fit in URL params. WhatsApp, Facebook, Pinterest, Google Business and other platforms pass selection state directly via URL query params on the redirect (&#x60;profileId&#x60;, &#x60;tempToken&#x60;, &#x60;step&#x60;), no pending record is created, so this endpoint will return 404 for those flows. Use the platform-specific selection endpoint instead (e.g. &#x60;/v1/connect/whatsapp/select-phone-number&#x60;).  Token is one-time use and expires after 10 minutes. No authentication required. 
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -529,6 +552,31 @@ namespace Zernio.Api
         /// <returns>ApiResponse of ListSnapchatProfiles200Response</returns>
         ApiResponse<ListSnapchatProfiles200Response> ListSnapchatProfilesWithHttpInfo(string xConnectToken, string profileId, string tempToken);
         /// <summary>
+        /// List WhatsApp phone numbers for selection
+        /// </summary>
+        /// <remarks>
+        /// Fetch the WhatsApp phone numbers available across the user&#39;s WhatsApp Business Accounts (WABAs) after a headless OAuth flow.  WhatsApp OAuth grants access at the WABA level. When a connected WABA has 2 or more phone numbers, you must call this endpoint to list them and then &#x60;POST /v1/connect/whatsapp/select-phone-number&#x60; to bind one to the Zernio profile. Single-phone WABAs auto-complete during the OAuth callback and never reach this endpoint.  Use the &#x60;profileId&#x60; and &#x60;tempToken&#x60; returned in the headless redirect (&#x60;step&#x3D;select_phone_number&#x60;).  Alternative: if you already know &#x60;wabaId&#x60; and &#x60;phoneNumberId&#x60; (e.g. from Meta Business Suite), use &#x60;connectWhatsAppCredentials&#x60; instead, which skips this two-step flow. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="profileId">The Zernio profile ID from the headless redirect</param>
+        /// <param name="tempToken">The temporary access token from the headless redirect</param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (used when the bearer token is scoped to a different user) (optional)</param>
+        /// <returns>ListWhatsAppPhoneNumbers200Response</returns>
+        ListWhatsAppPhoneNumbers200Response ListWhatsAppPhoneNumbers(string profileId, string tempToken, string? xConnectToken = default);
+
+        /// <summary>
+        /// List WhatsApp phone numbers for selection
+        /// </summary>
+        /// <remarks>
+        /// Fetch the WhatsApp phone numbers available across the user&#39;s WhatsApp Business Accounts (WABAs) after a headless OAuth flow.  WhatsApp OAuth grants access at the WABA level. When a connected WABA has 2 or more phone numbers, you must call this endpoint to list them and then &#x60;POST /v1/connect/whatsapp/select-phone-number&#x60; to bind one to the Zernio profile. Single-phone WABAs auto-complete during the OAuth callback and never reach this endpoint.  Use the &#x60;profileId&#x60; and &#x60;tempToken&#x60; returned in the headless redirect (&#x60;step&#x3D;select_phone_number&#x60;).  Alternative: if you already know &#x60;wabaId&#x60; and &#x60;phoneNumberId&#x60; (e.g. from Meta Business Suite), use &#x60;connectWhatsAppCredentials&#x60; instead, which skips this two-step flow. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="profileId">The Zernio profile ID from the headless redirect</param>
+        /// <param name="tempToken">The temporary access token from the headless redirect</param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (used when the bearer token is scoped to a different user) (optional)</param>
+        /// <returns>ApiResponse of ListWhatsAppPhoneNumbers200Response</returns>
+        ApiResponse<ListWhatsAppPhoneNumbers200Response> ListWhatsAppPhoneNumbersWithHttpInfo(string profileId, string tempToken, string? xConnectToken = default);
+        /// <summary>
         /// Select Facebook page
         /// </summary>
         /// <remarks>
@@ -806,6 +854,31 @@ namespace Zernio.Api
         /// <returns>Task of ApiResponse (CompleteTelegramConnect200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<CompleteTelegramConnect200Response>> CompleteTelegramConnectWithHttpInfoAsync(string code, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Complete WhatsApp phone number selection
+        /// </summary>
+        /// <remarks>
+        /// Bind a specific WhatsApp phone number to the Zernio profile after the user picks one from &#x60;listWhatsAppPhoneNumbers&#x60;. Exchanges the short-lived OAuth token for a long-lived token, subscribes the WABA to webhooks, and creates the SocialAccount. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="completeWhatsAppPhoneSelectionRequest"></param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompleteWhatsAppPhoneSelection200Response</returns>
+        System.Threading.Tasks.Task<CompleteWhatsAppPhoneSelection200Response> CompleteWhatsAppPhoneSelectionAsync(CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest, string? xConnectToken = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Complete WhatsApp phone number selection
+        /// </summary>
+        /// <remarks>
+        /// Bind a specific WhatsApp phone number to the Zernio profile after the user picks one from &#x60;listWhatsAppPhoneNumbers&#x60;. Exchanges the short-lived OAuth token for a long-lived token, subscribes the WABA to webhooks, and creates the SocialAccount. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="completeWhatsAppPhoneSelectionRequest"></param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompleteWhatsAppPhoneSelection200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CompleteWhatsAppPhoneSelection200Response>> CompleteWhatsAppPhoneSelectionWithHttpInfoAsync(CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest, string? xConnectToken = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Configure TikTok Ads Brand Identity
         /// </summary>
         /// <remarks>
@@ -1011,7 +1084,7 @@ namespace Zernio.Api
         /// Get pending OAuth data
         /// </summary>
         /// <remarks>
-        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
+        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL.  **Scope**: This endpoint is used only for LinkedIn organizations and Snapchat profiles, where the selection list is too large to fit in URL params. WhatsApp, Facebook, Pinterest, Google Business and other platforms pass selection state directly via URL query params on the redirect (&#x60;profileId&#x60;, &#x60;tempToken&#x60;, &#x60;step&#x60;), no pending record is created, so this endpoint will return 404 for those flows. Use the platform-specific selection endpoint instead (e.g. &#x60;/v1/connect/whatsapp/select-phone-number&#x60;).  Token is one-time use and expires after 10 minutes. No authentication required. 
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -1023,7 +1096,7 @@ namespace Zernio.Api
         /// Get pending OAuth data
         /// </summary>
         /// <remarks>
-        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
+        /// Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL.  **Scope**: This endpoint is used only for LinkedIn organizations and Snapchat profiles, where the selection list is too large to fit in URL params. WhatsApp, Facebook, Pinterest, Google Business and other platforms pass selection state directly via URL query params on the redirect (&#x60;profileId&#x60;, &#x60;tempToken&#x60;, &#x60;step&#x60;), no pending record is created, so this endpoint will return 404 for those flows. Use the platform-specific selection endpoint instead (e.g. &#x60;/v1/connect/whatsapp/select-phone-number&#x60;).  Token is one-time use and expires after 10 minutes. No authentication required. 
         /// </remarks>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -1326,6 +1399,33 @@ namespace Zernio.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ListSnapchatProfiles200Response)</returns>
         System.Threading.Tasks.Task<ApiResponse<ListSnapchatProfiles200Response>> ListSnapchatProfilesWithHttpInfoAsync(string xConnectToken, string profileId, string tempToken, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// List WhatsApp phone numbers for selection
+        /// </summary>
+        /// <remarks>
+        /// Fetch the WhatsApp phone numbers available across the user&#39;s WhatsApp Business Accounts (WABAs) after a headless OAuth flow.  WhatsApp OAuth grants access at the WABA level. When a connected WABA has 2 or more phone numbers, you must call this endpoint to list them and then &#x60;POST /v1/connect/whatsapp/select-phone-number&#x60; to bind one to the Zernio profile. Single-phone WABAs auto-complete during the OAuth callback and never reach this endpoint.  Use the &#x60;profileId&#x60; and &#x60;tempToken&#x60; returned in the headless redirect (&#x60;step&#x3D;select_phone_number&#x60;).  Alternative: if you already know &#x60;wabaId&#x60; and &#x60;phoneNumberId&#x60; (e.g. from Meta Business Suite), use &#x60;connectWhatsAppCredentials&#x60; instead, which skips this two-step flow. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="profileId">The Zernio profile ID from the headless redirect</param>
+        /// <param name="tempToken">The temporary access token from the headless redirect</param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (used when the bearer token is scoped to a different user) (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListWhatsAppPhoneNumbers200Response</returns>
+        System.Threading.Tasks.Task<ListWhatsAppPhoneNumbers200Response> ListWhatsAppPhoneNumbersAsync(string profileId, string tempToken, string? xConnectToken = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// List WhatsApp phone numbers for selection
+        /// </summary>
+        /// <remarks>
+        /// Fetch the WhatsApp phone numbers available across the user&#39;s WhatsApp Business Accounts (WABAs) after a headless OAuth flow.  WhatsApp OAuth grants access at the WABA level. When a connected WABA has 2 or more phone numbers, you must call this endpoint to list them and then &#x60;POST /v1/connect/whatsapp/select-phone-number&#x60; to bind one to the Zernio profile. Single-phone WABAs auto-complete during the OAuth callback and never reach this endpoint.  Use the &#x60;profileId&#x60; and &#x60;tempToken&#x60; returned in the headless redirect (&#x60;step&#x3D;select_phone_number&#x60;).  Alternative: if you already know &#x60;wabaId&#x60; and &#x60;phoneNumberId&#x60; (e.g. from Meta Business Suite), use &#x60;connectWhatsAppCredentials&#x60; instead, which skips this two-step flow. 
+        /// </remarks>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="profileId">The Zernio profile ID from the headless redirect</param>
+        /// <param name="tempToken">The temporary access token from the headless redirect</param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (used when the bearer token is scoped to a different user) (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListWhatsAppPhoneNumbers200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListWhatsAppPhoneNumbers200Response>> ListWhatsAppPhoneNumbersWithHttpInfoAsync(string profileId, string tempToken, string? xConnectToken = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Select Facebook page
         /// </summary>
@@ -1927,6 +2027,147 @@ namespace Zernio.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("CompleteTelegramConnect", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Complete WhatsApp phone number selection Bind a specific WhatsApp phone number to the Zernio profile after the user picks one from &#x60;listWhatsAppPhoneNumbers&#x60;. Exchanges the short-lived OAuth token for a long-lived token, subscribes the WABA to webhooks, and creates the SocialAccount. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="completeWhatsAppPhoneSelectionRequest"></param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (optional)</param>
+        /// <returns>CompleteWhatsAppPhoneSelection200Response</returns>
+        public CompleteWhatsAppPhoneSelection200Response CompleteWhatsAppPhoneSelection(CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest, string? xConnectToken = default)
+        {
+            Zernio.Client.ApiResponse<CompleteWhatsAppPhoneSelection200Response> localVarResponse = CompleteWhatsAppPhoneSelectionWithHttpInfo(completeWhatsAppPhoneSelectionRequest, xConnectToken);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Complete WhatsApp phone number selection Bind a specific WhatsApp phone number to the Zernio profile after the user picks one from &#x60;listWhatsAppPhoneNumbers&#x60;. Exchanges the short-lived OAuth token for a long-lived token, subscribes the WABA to webhooks, and creates the SocialAccount. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="completeWhatsAppPhoneSelectionRequest"></param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (optional)</param>
+        /// <returns>ApiResponse of CompleteWhatsAppPhoneSelection200Response</returns>
+        public Zernio.Client.ApiResponse<CompleteWhatsAppPhoneSelection200Response> CompleteWhatsAppPhoneSelectionWithHttpInfo(CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest, string? xConnectToken = default)
+        {
+            // verify the required parameter 'completeWhatsAppPhoneSelectionRequest' is set
+            if (completeWhatsAppPhoneSelectionRequest == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'completeWhatsAppPhoneSelectionRequest' when calling ConnectApi->CompleteWhatsAppPhoneSelection");
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (xConnectToken != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Connect-Token", Zernio.Client.ClientUtils.ParameterToString(xConnectToken)); // header parameter
+            }
+            localVarRequestOptions.Data = completeWhatsAppPhoneSelectionRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<CompleteWhatsAppPhoneSelection200Response>("/v1/connect/whatsapp/select-phone-number", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CompleteWhatsAppPhoneSelection", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Complete WhatsApp phone number selection Bind a specific WhatsApp phone number to the Zernio profile after the user picks one from &#x60;listWhatsAppPhoneNumbers&#x60;. Exchanges the short-lived OAuth token for a long-lived token, subscribes the WABA to webhooks, and creates the SocialAccount. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="completeWhatsAppPhoneSelectionRequest"></param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of CompleteWhatsAppPhoneSelection200Response</returns>
+        public async System.Threading.Tasks.Task<CompleteWhatsAppPhoneSelection200Response> CompleteWhatsAppPhoneSelectionAsync(CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest, string? xConnectToken = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Zernio.Client.ApiResponse<CompleteWhatsAppPhoneSelection200Response> localVarResponse = await CompleteWhatsAppPhoneSelectionWithHttpInfoAsync(completeWhatsAppPhoneSelectionRequest, xConnectToken, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Complete WhatsApp phone number selection Bind a specific WhatsApp phone number to the Zernio profile after the user picks one from &#x60;listWhatsAppPhoneNumbers&#x60;. Exchanges the short-lived OAuth token for a long-lived token, subscribes the WABA to webhooks, and creates the SocialAccount. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="completeWhatsAppPhoneSelectionRequest"></param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (CompleteWhatsAppPhoneSelection200Response)</returns>
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<CompleteWhatsAppPhoneSelection200Response>> CompleteWhatsAppPhoneSelectionWithHttpInfoAsync(CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest, string? xConnectToken = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'completeWhatsAppPhoneSelectionRequest' is set
+            if (completeWhatsAppPhoneSelectionRequest == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'completeWhatsAppPhoneSelectionRequest' when calling ConnectApi->CompleteWhatsAppPhoneSelection");
+
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            if (xConnectToken != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Connect-Token", Zernio.Client.ClientUtils.ParameterToString(xConnectToken)); // header parameter
+            }
+            localVarRequestOptions.Data = completeWhatsAppPhoneSelectionRequest;
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<CompleteWhatsAppPhoneSelection200Response>("/v1/connect/whatsapp/select-phone-number", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("CompleteWhatsAppPhoneSelection", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -3068,7 +3309,7 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
+        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL.  **Scope**: This endpoint is used only for LinkedIn organizations and Snapchat profiles, where the selection list is too large to fit in URL params. WhatsApp, Facebook, Pinterest, Google Business and other platforms pass selection state directly via URL query params on the redirect (&#x60;profileId&#x60;, &#x60;tempToken&#x60;, &#x60;step&#x60;), no pending record is created, so this endpoint will return 404 for those flows. Use the platform-specific selection endpoint instead (e.g. &#x60;/v1/connect/whatsapp/select-phone-number&#x60;).  Token is one-time use and expires after 10 minutes. No authentication required. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -3080,7 +3321,7 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
+        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL.  **Scope**: This endpoint is used only for LinkedIn organizations and Snapchat profiles, where the selection list is too large to fit in URL params. WhatsApp, Facebook, Pinterest, Google Business and other platforms pass selection state directly via URL query params on the redirect (&#x60;profileId&#x60;, &#x60;tempToken&#x60;, &#x60;step&#x60;), no pending record is created, so this endpoint will return 404 for those flows. Use the platform-specific selection endpoint instead (e.g. &#x60;/v1/connect/whatsapp/select-phone-number&#x60;).  Token is one-time use and expires after 10 minutes. No authentication required. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -3129,7 +3370,7 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
+        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL.  **Scope**: This endpoint is used only for LinkedIn organizations and Snapchat profiles, where the selection list is too large to fit in URL params. WhatsApp, Facebook, Pinterest, Google Business and other platforms pass selection state directly via URL query params on the redirect (&#x60;profileId&#x60;, &#x60;tempToken&#x60;, &#x60;step&#x60;), no pending record is created, so this endpoint will return 404 for those flows. Use the platform-specific selection endpoint instead (e.g. &#x60;/v1/connect/whatsapp/select-phone-number&#x60;).  Token is one-time use and expires after 10 minutes. No authentication required. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -3142,7 +3383,7 @@ namespace Zernio.Api
         }
 
         /// <summary>
-        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL. One-time use, expires after 10 minutes. No authentication required.
+        /// Get pending OAuth data Fetch pending OAuth data for headless mode using the pendingDataToken from the redirect URL.  **Scope**: This endpoint is used only for LinkedIn organizations and Snapchat profiles, where the selection list is too large to fit in URL params. WhatsApp, Facebook, Pinterest, Google Business and other platforms pass selection state directly via URL query params on the redirect (&#x60;profileId&#x60;, &#x60;tempToken&#x60;, &#x60;step&#x60;), no pending record is created, so this endpoint will return 404 for those flows. Use the platform-specific selection endpoint instead (e.g. &#x60;/v1/connect/whatsapp/select-phone-number&#x60;).  Token is one-time use and expires after 10 minutes. No authentication required. 
         /// </summary>
         /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="token">The pending data token from the OAuth redirect URL (pendingDataToken parameter)</param>
@@ -4868,6 +5109,159 @@ namespace Zernio.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ListSnapchatProfiles", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List WhatsApp phone numbers for selection Fetch the WhatsApp phone numbers available across the user&#39;s WhatsApp Business Accounts (WABAs) after a headless OAuth flow.  WhatsApp OAuth grants access at the WABA level. When a connected WABA has 2 or more phone numbers, you must call this endpoint to list them and then &#x60;POST /v1/connect/whatsapp/select-phone-number&#x60; to bind one to the Zernio profile. Single-phone WABAs auto-complete during the OAuth callback and never reach this endpoint.  Use the &#x60;profileId&#x60; and &#x60;tempToken&#x60; returned in the headless redirect (&#x60;step&#x3D;select_phone_number&#x60;).  Alternative: if you already know &#x60;wabaId&#x60; and &#x60;phoneNumberId&#x60; (e.g. from Meta Business Suite), use &#x60;connectWhatsAppCredentials&#x60; instead, which skips this two-step flow. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="profileId">The Zernio profile ID from the headless redirect</param>
+        /// <param name="tempToken">The temporary access token from the headless redirect</param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (used when the bearer token is scoped to a different user) (optional)</param>
+        /// <returns>ListWhatsAppPhoneNumbers200Response</returns>
+        public ListWhatsAppPhoneNumbers200Response ListWhatsAppPhoneNumbers(string profileId, string tempToken, string? xConnectToken = default)
+        {
+            Zernio.Client.ApiResponse<ListWhatsAppPhoneNumbers200Response> localVarResponse = ListWhatsAppPhoneNumbersWithHttpInfo(profileId, tempToken, xConnectToken);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List WhatsApp phone numbers for selection Fetch the WhatsApp phone numbers available across the user&#39;s WhatsApp Business Accounts (WABAs) after a headless OAuth flow.  WhatsApp OAuth grants access at the WABA level. When a connected WABA has 2 or more phone numbers, you must call this endpoint to list them and then &#x60;POST /v1/connect/whatsapp/select-phone-number&#x60; to bind one to the Zernio profile. Single-phone WABAs auto-complete during the OAuth callback and never reach this endpoint.  Use the &#x60;profileId&#x60; and &#x60;tempToken&#x60; returned in the headless redirect (&#x60;step&#x3D;select_phone_number&#x60;).  Alternative: if you already know &#x60;wabaId&#x60; and &#x60;phoneNumberId&#x60; (e.g. from Meta Business Suite), use &#x60;connectWhatsAppCredentials&#x60; instead, which skips this two-step flow. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="profileId">The Zernio profile ID from the headless redirect</param>
+        /// <param name="tempToken">The temporary access token from the headless redirect</param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (used when the bearer token is scoped to a different user) (optional)</param>
+        /// <returns>ApiResponse of ListWhatsAppPhoneNumbers200Response</returns>
+        public Zernio.Client.ApiResponse<ListWhatsAppPhoneNumbers200Response> ListWhatsAppPhoneNumbersWithHttpInfo(string profileId, string tempToken, string? xConnectToken = default)
+        {
+            // verify the required parameter 'profileId' is set
+            if (profileId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'profileId' when calling ConnectApi->ListWhatsAppPhoneNumbers");
+
+            // verify the required parameter 'tempToken' is set
+            if (tempToken == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'tempToken' when calling ConnectApi->ListWhatsAppPhoneNumbers");
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "tempToken", tempToken));
+            if (xConnectToken != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Connect-Token", Zernio.Client.ClientUtils.ParameterToString(xConnectToken)); // header parameter
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<ListWhatsAppPhoneNumbers200Response>("/v1/connect/whatsapp/select-phone-number", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListWhatsAppPhoneNumbers", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// List WhatsApp phone numbers for selection Fetch the WhatsApp phone numbers available across the user&#39;s WhatsApp Business Accounts (WABAs) after a headless OAuth flow.  WhatsApp OAuth grants access at the WABA level. When a connected WABA has 2 or more phone numbers, you must call this endpoint to list them and then &#x60;POST /v1/connect/whatsapp/select-phone-number&#x60; to bind one to the Zernio profile. Single-phone WABAs auto-complete during the OAuth callback and never reach this endpoint.  Use the &#x60;profileId&#x60; and &#x60;tempToken&#x60; returned in the headless redirect (&#x60;step&#x3D;select_phone_number&#x60;).  Alternative: if you already know &#x60;wabaId&#x60; and &#x60;phoneNumberId&#x60; (e.g. from Meta Business Suite), use &#x60;connectWhatsAppCredentials&#x60; instead, which skips this two-step flow. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="profileId">The Zernio profile ID from the headless redirect</param>
+        /// <param name="tempToken">The temporary access token from the headless redirect</param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (used when the bearer token is scoped to a different user) (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ListWhatsAppPhoneNumbers200Response</returns>
+        public async System.Threading.Tasks.Task<ListWhatsAppPhoneNumbers200Response> ListWhatsAppPhoneNumbersAsync(string profileId, string tempToken, string? xConnectToken = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            Zernio.Client.ApiResponse<ListWhatsAppPhoneNumbers200Response> localVarResponse = await ListWhatsAppPhoneNumbersWithHttpInfoAsync(profileId, tempToken, xConnectToken, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List WhatsApp phone numbers for selection Fetch the WhatsApp phone numbers available across the user&#39;s WhatsApp Business Accounts (WABAs) after a headless OAuth flow.  WhatsApp OAuth grants access at the WABA level. When a connected WABA has 2 or more phone numbers, you must call this endpoint to list them and then &#x60;POST /v1/connect/whatsapp/select-phone-number&#x60; to bind one to the Zernio profile. Single-phone WABAs auto-complete during the OAuth callback and never reach this endpoint.  Use the &#x60;profileId&#x60; and &#x60;tempToken&#x60; returned in the headless redirect (&#x60;step&#x3D;select_phone_number&#x60;).  Alternative: if you already know &#x60;wabaId&#x60; and &#x60;phoneNumberId&#x60; (e.g. from Meta Business Suite), use &#x60;connectWhatsAppCredentials&#x60; instead, which skips this two-step flow. 
+        /// </summary>
+        /// <exception cref="Zernio.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="profileId">The Zernio profile ID from the headless redirect</param>
+        /// <param name="tempToken">The temporary access token from the headless redirect</param>
+        /// <param name="xConnectToken">Alternative auth for API users&#39; end customers (used when the bearer token is scoped to a different user) (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (ListWhatsAppPhoneNumbers200Response)</returns>
+        public async System.Threading.Tasks.Task<Zernio.Client.ApiResponse<ListWhatsAppPhoneNumbers200Response>> ListWhatsAppPhoneNumbersWithHttpInfoAsync(string profileId, string tempToken, string? xConnectToken = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'profileId' is set
+            if (profileId == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'profileId' when calling ConnectApi->ListWhatsAppPhoneNumbers");
+
+            // verify the required parameter 'tempToken' is set
+            if (tempToken == null)
+                throw new Zernio.Client.ApiException(400, "Missing required parameter 'tempToken' when calling ConnectApi->ListWhatsAppPhoneNumbers");
+
+
+            Zernio.Client.RequestOptions localVarRequestOptions = new Zernio.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = Zernio.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Zernio.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "profileId", profileId));
+            localVarRequestOptions.QueryParameters.Add(Zernio.Client.ClientUtils.ParameterToMultiMap("", "tempToken", tempToken));
+            if (xConnectToken != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("X-Connect-Token", Zernio.Client.ClientUtils.ParameterToString(xConnectToken)); // header parameter
+            }
+
+            // authentication (bearerAuth) required
+            // bearer authentication required
+            if (!string.IsNullOrEmpty(this.Configuration.AccessToken) && !localVarRequestOptions.HeaderParameters.ContainsKey("Authorization"))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + this.Configuration.AccessToken);
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListWhatsAppPhoneNumbers200Response>("/v1/connect/whatsapp/select-phone-number", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ListWhatsAppPhoneNumbers", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

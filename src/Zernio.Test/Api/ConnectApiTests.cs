@@ -67,6 +67,19 @@ namespace Zernio.Test.Api
         }
 
         /// <summary>
+        /// Test CompleteWhatsAppPhoneSelection
+        /// </summary>
+        [Fact]
+        public void CompleteWhatsAppPhoneSelectionTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //CompleteWhatsAppPhoneSelectionRequest completeWhatsAppPhoneSelectionRequest = null;
+            //string? xConnectToken = null;
+            //var response = instance.CompleteWhatsAppPhoneSelection(completeWhatsAppPhoneSelectionRequest, xConnectToken);
+            //Assert.IsType<CompleteWhatsAppPhoneSelection200Response>(response);
+        }
+
+        /// <summary>
         /// Test ConfigureTikTokAdsBrandIdentity
         /// </summary>
         [Fact]
@@ -334,6 +347,20 @@ namespace Zernio.Test.Api
             //string tempToken = null;
             //var response = instance.ListSnapchatProfiles(xConnectToken, profileId, tempToken);
             //Assert.IsType<ListSnapchatProfiles200Response>(response);
+        }
+
+        /// <summary>
+        /// Test ListWhatsAppPhoneNumbers
+        /// </summary>
+        [Fact]
+        public void ListWhatsAppPhoneNumbersTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string profileId = null;
+            //string tempToken = null;
+            //string? xConnectToken = null;
+            //var response = instance.ListWhatsAppPhoneNumbers(profileId, tempToken, xConnectToken);
+            //Assert.IsType<ListWhatsAppPhoneNumbers200Response>(response);
         }
 
         /// <summary>
