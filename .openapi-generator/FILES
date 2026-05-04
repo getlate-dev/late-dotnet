@@ -440,6 +440,8 @@ docs/InitiateTelegramConnect200ResponseAccount.md
 docs/InitiateTelegramConnectRequest.md
 docs/InlineObject.md
 docs/InlineObject1.md
+docs/InlineObject2.md
+docs/InlineObject2Details.md
 docs/InstagramAccountInsightsResponse.md
 docs/InstagramAccountInsightsResponseDateRange.md
 docs/InstagramAccountInsightsResponseMetricsValue.md
@@ -695,9 +697,11 @@ docs/UnlikeInboxComment200Response.md
 docs/UnpublishPost200Response.md
 docs/UnpublishPostRequest.md
 docs/UpdateAccount200Response.md
+docs/UpdateAccount200ResponseXCapabilities.md
 docs/UpdateAccountGroup200Response.md
 docs/UpdateAccountGroupRequest.md
 docs/UpdateAccountRequest.md
+docs/UpdateAccountRequestXCapabilities.md
 docs/UpdateAd200Response.md
 docs/UpdateAdCampaign200Response.md
 docs/UpdateAdCampaignRequest.md
@@ -794,7 +798,9 @@ docs/UploadedFile.md
 docs/UsageApi.md
 docs/UsageStats.md
 docs/UsageStatsLimits.md
+docs/UsageStatsSpend.md
 docs/UsageStatsUsage.md
+docs/UsageStatsUsageXApiCalls.md
 docs/User.md
 docs/UserGetResponse.md
 docs/UsersApi.md
@@ -869,6 +875,10 @@ docs/WhatsAppHeaderComponentExample.md
 docs/WhatsAppPhoneNumbersApi.md
 docs/WhatsAppTemplateButton.md
 docs/WhatsAppTemplateComponent.md
+docs/XApiOperation.md
+docs/XApiOperationTriggeredByInner.md
+docs/XApiPricing.md
+docs/XApiPricingTiersInner.md
 docs/YouTubeDailyViewsResponse.md
 docs/YouTubeDailyViewsResponseDailyViewsInner.md
 docs/YouTubeDailyViewsResponseDateRange.md
@@ -1336,6 +1346,8 @@ src/Zernio.Test/Model/InitiateTelegramConnect200ResponseAccountTests.cs
 src/Zernio.Test/Model/InitiateTelegramConnect200ResponseTests.cs
 src/Zernio.Test/Model/InitiateTelegramConnectRequestTests.cs
 src/Zernio.Test/Model/InlineObject1Tests.cs
+src/Zernio.Test/Model/InlineObject2DetailsTests.cs
+src/Zernio.Test/Model/InlineObject2Tests.cs
 src/Zernio.Test/Model/InlineObjectTests.cs
 src/Zernio.Test/Model/InstagramAccountInsightsResponseDateRangeTests.cs
 src/Zernio.Test/Model/InstagramAccountInsightsResponseMetricsValueBreakdownsInnerTests.cs
@@ -1580,9 +1592,11 @@ src/Zernio.Test/Model/UnlikeInboxComment200ResponseTests.cs
 src/Zernio.Test/Model/UnpublishPost200ResponseTests.cs
 src/Zernio.Test/Model/UnpublishPostRequestTests.cs
 src/Zernio.Test/Model/UpdateAccount200ResponseTests.cs
+src/Zernio.Test/Model/UpdateAccount200ResponseXCapabilitiesTests.cs
 src/Zernio.Test/Model/UpdateAccountGroup200ResponseTests.cs
 src/Zernio.Test/Model/UpdateAccountGroupRequestTests.cs
 src/Zernio.Test/Model/UpdateAccountRequestTests.cs
+src/Zernio.Test/Model/UpdateAccountRequestXCapabilitiesTests.cs
 src/Zernio.Test/Model/UpdateAd200ResponseTests.cs
 src/Zernio.Test/Model/UpdateAdCampaign200ResponseTests.cs
 src/Zernio.Test/Model/UpdateAdCampaignRequestBudgetTests.cs
@@ -1677,8 +1691,10 @@ src/Zernio.Test/Model/UploadWhatsAppFlowJsonRequestFlowJsonTests.cs
 src/Zernio.Test/Model/UploadWhatsAppFlowJsonRequestTests.cs
 src/Zernio.Test/Model/UploadedFileTests.cs
 src/Zernio.Test/Model/UsageStatsLimitsTests.cs
+src/Zernio.Test/Model/UsageStatsSpendTests.cs
 src/Zernio.Test/Model/UsageStatsTests.cs
 src/Zernio.Test/Model/UsageStatsUsageTests.cs
+src/Zernio.Test/Model/UsageStatsUsageXApiCallsTests.cs
 src/Zernio.Test/Model/UserGetResponseTests.cs
 src/Zernio.Test/Model/UserTests.cs
 src/Zernio.Test/Model/UsersListResponseTests.cs
@@ -1746,6 +1762,10 @@ src/Zernio.Test/Model/WhatsAppHeaderComponentExampleTests.cs
 src/Zernio.Test/Model/WhatsAppHeaderComponentTests.cs
 src/Zernio.Test/Model/WhatsAppTemplateButtonTests.cs
 src/Zernio.Test/Model/WhatsAppTemplateComponentTests.cs
+src/Zernio.Test/Model/XApiOperationTests.cs
+src/Zernio.Test/Model/XApiOperationTriggeredByInnerTests.cs
+src/Zernio.Test/Model/XApiPricingTests.cs
+src/Zernio.Test/Model/XApiPricingTiersInnerTests.cs
 src/Zernio.Test/Model/YouTubeDailyViewsResponseDailyViewsInnerTests.cs
 src/Zernio.Test/Model/YouTubeDailyViewsResponseDateRangeTests.cs
 src/Zernio.Test/Model/YouTubeDailyViewsResponseScopeStatusTests.cs
@@ -2232,6 +2252,8 @@ src/Zernio/Model/InitiateTelegramConnect200ResponseAccount.cs
 src/Zernio/Model/InitiateTelegramConnectRequest.cs
 src/Zernio/Model/InlineObject.cs
 src/Zernio/Model/InlineObject1.cs
+src/Zernio/Model/InlineObject2.cs
+src/Zernio/Model/InlineObject2Details.cs
 src/Zernio/Model/InstagramAccountInsightsResponse.cs
 src/Zernio/Model/InstagramAccountInsightsResponseDateRange.cs
 src/Zernio/Model/InstagramAccountInsightsResponseMetricsValue.cs
@@ -2475,9 +2497,11 @@ src/Zernio/Model/UnlikeInboxComment200Response.cs
 src/Zernio/Model/UnpublishPost200Response.cs
 src/Zernio/Model/UnpublishPostRequest.cs
 src/Zernio/Model/UpdateAccount200Response.cs
+src/Zernio/Model/UpdateAccount200ResponseXCapabilities.cs
 src/Zernio/Model/UpdateAccountGroup200Response.cs
 src/Zernio/Model/UpdateAccountGroupRequest.cs
 src/Zernio/Model/UpdateAccountRequest.cs
+src/Zernio/Model/UpdateAccountRequestXCapabilities.cs
 src/Zernio/Model/UpdateAd200Response.cs
 src/Zernio/Model/UpdateAdCampaign200Response.cs
 src/Zernio/Model/UpdateAdCampaignRequest.cs
@@ -2573,7 +2597,9 @@ src/Zernio/Model/UploadWhatsAppFlowJsonRequestFlowJson.cs
 src/Zernio/Model/UploadedFile.cs
 src/Zernio/Model/UsageStats.cs
 src/Zernio/Model/UsageStatsLimits.cs
+src/Zernio/Model/UsageStatsSpend.cs
 src/Zernio/Model/UsageStatsUsage.cs
+src/Zernio/Model/UsageStatsUsageXApiCalls.cs
 src/Zernio/Model/User.cs
 src/Zernio/Model/UserGetResponse.cs
 src/Zernio/Model/UsersListResponse.cs
@@ -2641,6 +2667,10 @@ src/Zernio/Model/WhatsAppHeaderComponent.cs
 src/Zernio/Model/WhatsAppHeaderComponentExample.cs
 src/Zernio/Model/WhatsAppTemplateButton.cs
 src/Zernio/Model/WhatsAppTemplateComponent.cs
+src/Zernio/Model/XApiOperation.cs
+src/Zernio/Model/XApiOperationTriggeredByInner.cs
+src/Zernio/Model/XApiPricing.cs
+src/Zernio/Model/XApiPricingTiersInner.cs
 src/Zernio/Model/YouTubeDailyViewsResponse.cs
 src/Zernio/Model/YouTubeDailyViewsResponseDailyViewsInner.cs
 src/Zernio/Model/YouTubeDailyViewsResponseDateRange.cs

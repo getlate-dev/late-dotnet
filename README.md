@@ -360,6 +360,7 @@ Class | Method | HTTP request | Description
 *TwitterEngagementApi* | [**UndoRetweet**](docs/TwitterEngagementApi.md#undoretweet) | **DELETE** /v1/twitter/retweet | Undo retweet
 *TwitterEngagementApi* | [**UnfollowUser**](docs/TwitterEngagementApi.md#unfollowuser) | **DELETE** /v1/twitter/follow | Unfollow a user
 *UsageApi* | [**GetUsageStats**](docs/UsageApi.md#getusagestats) | **GET** /v1/usage-stats | Get plan and usage stats
+*UsageApi* | [**GetXApiPricing**](docs/UsageApi.md#getxapipricing) | **GET** /v1/billing/x-pricing | Get X/Twitter API pricing table
 *UsersApi* | [**GetUser**](docs/UsersApi.md#getuser) | **GET** /v1/users/{userId} | Get user
 *UsersApi* | [**ListUsers**](docs/UsersApi.md#listusers) | **GET** /v1/users | List users
 *ValidateApi* | [**ValidateMedia**](docs/ValidateApi.md#validatemedia) | **POST** /v1/tools/validate/media | Validate media URL
@@ -827,6 +828,8 @@ Class | Method | HTTP request | Description
  - [Model.InitiateTelegramConnectRequest](docs/InitiateTelegramConnectRequest.md)
  - [Model.InlineObject](docs/InlineObject.md)
  - [Model.InlineObject1](docs/InlineObject1.md)
+ - [Model.InlineObject2](docs/InlineObject2.md)
+ - [Model.InlineObject2Details](docs/InlineObject2Details.md)
  - [Model.InstagramAccountInsightsResponse](docs/InstagramAccountInsightsResponse.md)
  - [Model.InstagramAccountInsightsResponseDateRange](docs/InstagramAccountInsightsResponseDateRange.md)
  - [Model.InstagramAccountInsightsResponseMetricsValue](docs/InstagramAccountInsightsResponseMetricsValue.md)
@@ -1070,9 +1073,11 @@ Class | Method | HTTP request | Description
  - [Model.UnpublishPost200Response](docs/UnpublishPost200Response.md)
  - [Model.UnpublishPostRequest](docs/UnpublishPostRequest.md)
  - [Model.UpdateAccount200Response](docs/UpdateAccount200Response.md)
+ - [Model.UpdateAccount200ResponseXCapabilities](docs/UpdateAccount200ResponseXCapabilities.md)
  - [Model.UpdateAccountGroup200Response](docs/UpdateAccountGroup200Response.md)
  - [Model.UpdateAccountGroupRequest](docs/UpdateAccountGroupRequest.md)
  - [Model.UpdateAccountRequest](docs/UpdateAccountRequest.md)
+ - [Model.UpdateAccountRequestXCapabilities](docs/UpdateAccountRequestXCapabilities.md)
  - [Model.UpdateAd200Response](docs/UpdateAd200Response.md)
  - [Model.UpdateAdCampaign200Response](docs/UpdateAdCampaign200Response.md)
  - [Model.UpdateAdCampaignRequest](docs/UpdateAdCampaignRequest.md)
@@ -1168,7 +1173,9 @@ Class | Method | HTTP request | Description
  - [Model.UploadedFile](docs/UploadedFile.md)
  - [Model.UsageStats](docs/UsageStats.md)
  - [Model.UsageStatsLimits](docs/UsageStatsLimits.md)
+ - [Model.UsageStatsSpend](docs/UsageStatsSpend.md)
  - [Model.UsageStatsUsage](docs/UsageStatsUsage.md)
+ - [Model.UsageStatsUsageXApiCalls](docs/UsageStatsUsageXApiCalls.md)
  - [Model.User](docs/User.md)
  - [Model.UserGetResponse](docs/UserGetResponse.md)
  - [Model.UsersListResponse](docs/UsersListResponse.md)
@@ -1236,6 +1243,10 @@ Class | Method | HTTP request | Description
  - [Model.WhatsAppHeaderComponentExample](docs/WhatsAppHeaderComponentExample.md)
  - [Model.WhatsAppTemplateButton](docs/WhatsAppTemplateButton.md)
  - [Model.WhatsAppTemplateComponent](docs/WhatsAppTemplateComponent.md)
+ - [Model.XApiOperation](docs/XApiOperation.md)
+ - [Model.XApiOperationTriggeredByInner](docs/XApiOperationTriggeredByInner.md)
+ - [Model.XApiPricing](docs/XApiPricing.md)
+ - [Model.XApiPricingTiersInner](docs/XApiPricingTiersInner.md)
  - [Model.YouTubeDailyViewsResponse](docs/YouTubeDailyViewsResponse.md)
  - [Model.YouTubeDailyViewsResponseDailyViewsInner](docs/YouTubeDailyViewsResponseDailyViewsInner.md)
  - [Model.YouTubeDailyViewsResponseDateRange](docs/YouTubeDailyViewsResponseDateRange.md)

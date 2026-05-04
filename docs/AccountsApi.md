@@ -640,7 +640,7 @@ catch (ApiException e)
 
 Update account
 
-Updates a connected social account's display name or username override.
+Updates a connected social account's display name or username override.  For X/Twitter accounts on usage-based billing, also accepts an `xCapabilities` object to toggle background API operations that incur X API pass-through costs. Both fields are opt-in (default `false`) — when off, no analytics syncs or DM polling are performed for that account, and no API call is metered for those operations. Publishing and deleting posts are always available regardless of these toggles. Setting `xCapabilities` on a non-X account returns 400. 
 
 ### Example
 ```csharp
@@ -731,7 +731,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Updated |  -  |
-| **400** | Invalid request |  -  |
+| **400** | Invalid request (e.g. xCapabilities on a non-X account) |  -  |
 | **401** | Unauthorized |  -  |
 | **404** | Resource not found |  -  |
 

@@ -64,5 +64,16 @@ namespace Zernio.Test.Api
             //var response = instance.GetUsageStats();
             //Assert.IsType<UsageStats>(response);
         }
+
+        /// <summary>
+        /// Test GetXApiPricing
+        /// </summary>
+        [Fact]
+        public void GetXApiPricingTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //var response = instance.GetXApiPricing();
+            //Assert.IsType<XApiPricing>(response);
+        }
     }
 }

@@ -28,49 +28,33 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// UpdateAccount200Response
+    /// Echo of the resulting &#x60;xCapabilities&#x60; state, returned only when the request body included an &#x60;xCapabilities&#x60; object. 
     /// </summary>
-    [DataContract(Name = "updateAccount_200_response")]
-    public partial class UpdateAccount200Response : IValidatableObject
+    [DataContract(Name = "updateAccount_200_response_xCapabilities")]
+    public partial class UpdateAccount200ResponseXCapabilities : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateAccount200Response" /> class.
+        /// Initializes a new instance of the <see cref="UpdateAccount200ResponseXCapabilities" /> class.
         /// </summary>
-        /// <param name="message">message.</param>
-        /// <param name="username">username.</param>
-        /// <param name="displayName">displayName.</param>
-        /// <param name="xCapabilities">xCapabilities.</param>
-        public UpdateAccount200Response(string message = default, string username = default, string displayName = default, UpdateAccount200ResponseXCapabilities xCapabilities = default)
+        /// <param name="analytics">analytics.</param>
+        /// <param name="inbox">inbox.</param>
+        public UpdateAccount200ResponseXCapabilities(bool analytics = default, bool inbox = default)
         {
-            this.Message = message;
-            this.Username = username;
-            this.DisplayName = displayName;
-            this.XCapabilities = xCapabilities;
+            this.Analytics = analytics;
+            this.Inbox = inbox;
         }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Gets or Sets Analytics
         /// </summary>
-        [DataMember(Name = "message", EmitDefaultValue = false)]
-        public string Message { get; set; }
+        [DataMember(Name = "analytics", EmitDefaultValue = true)]
+        public bool Analytics { get; set; }
 
         /// <summary>
-        /// Gets or Sets Username
+        /// Gets or Sets Inbox
         /// </summary>
-        [DataMember(Name = "username", EmitDefaultValue = false)]
-        public string Username { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DisplayName
-        /// </summary>
-        [DataMember(Name = "displayName", EmitDefaultValue = false)]
-        public string DisplayName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets XCapabilities
-        /// </summary>
-        [DataMember(Name = "xCapabilities", EmitDefaultValue = false)]
-        public UpdateAccount200ResponseXCapabilities XCapabilities { get; set; }
+        [DataMember(Name = "inbox", EmitDefaultValue = true)]
+        public bool Inbox { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +63,9 @@ namespace Zernio.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateAccount200Response {\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Username: ").Append(Username).Append("\n");
-            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
-            sb.Append("  XCapabilities: ").Append(XCapabilities).Append("\n");
+            sb.Append("class UpdateAccount200ResponseXCapabilities {\n");
+            sb.Append("  Analytics: ").Append(Analytics).Append("\n");
+            sb.Append("  Inbox: ").Append(Inbox).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

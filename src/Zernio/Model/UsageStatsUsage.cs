@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// UsageStatsUsage
+    /// Per-period usage counts. Fields present depend on &#x60;billingSystem&#x60;: Stripe returns &#x60;uploads&#x60; / &#x60;profiles&#x60; / &#x60;lastReset&#x60;; Metronome returns &#x60;connectedAccounts&#x60; / &#x60;xApiCalls&#x60; / &#x60;xApiCallsByOperation&#x60;. 
     /// </summary>
     [DataContract(Name = "UsageStats_usage")]
     public partial class UsageStatsUsage : IValidatableObject
@@ -36,33 +36,65 @@ namespace Zernio.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageStatsUsage" /> class.
         /// </summary>
-        /// <param name="uploads">uploads.</param>
-        /// <param name="profiles">profiles.</param>
-        /// <param name="lastReset">lastReset.</param>
-        public UsageStatsUsage(int uploads = default, int profiles = default, DateTime lastReset = default)
+        /// <param name="uploads">Stripe users only. Uploads consumed in the current period..</param>
+        /// <param name="profiles">Stripe users only. Profiles currently owned..</param>
+        /// <param name="lastReset">Stripe users only..</param>
+        /// <param name="connectedAccounts">Metronome users only. Accounts currently connected across the team..</param>
+        /// <param name="xApiCalls">xApiCalls.</param>
+        /// <param name="xApiCallsByOperation">Metronome users only. Per-operation X API call counts keyed by operation (e.g. &#x60;posts_read&#x60;, &#x60;content_create&#x60;). Resolve each key to price and metadata via &#x60;GET /v1/billing/x-pricing&#x60;. .</param>
+        public UsageStatsUsage(int uploads = default, int profiles = default, DateTime lastReset = default, int connectedAccounts = default, UsageStatsUsageXApiCalls xApiCalls = default, Dictionary<string, int> xApiCallsByOperation = default)
         {
             this.Uploads = uploads;
             this.Profiles = profiles;
             this.LastReset = lastReset;
+            this.ConnectedAccounts = connectedAccounts;
+            this.XApiCalls = xApiCalls;
+            this.XApiCallsByOperation = xApiCallsByOperation;
         }
 
         /// <summary>
-        /// Gets or Sets Uploads
+        /// Stripe users only. Uploads consumed in the current period.
         /// </summary>
+        /// <value>Stripe users only. Uploads consumed in the current period.</value>
         [DataMember(Name = "uploads", EmitDefaultValue = false)]
         public int Uploads { get; set; }
 
         /// <summary>
-        /// Gets or Sets Profiles
+        /// Stripe users only. Profiles currently owned.
         /// </summary>
+        /// <value>Stripe users only. Profiles currently owned.</value>
         [DataMember(Name = "profiles", EmitDefaultValue = false)]
         public int Profiles { get; set; }
 
         /// <summary>
-        /// Gets or Sets LastReset
+        /// Stripe users only.
         /// </summary>
+        /// <value>Stripe users only.</value>
         [DataMember(Name = "lastReset", EmitDefaultValue = false)]
         public DateTime LastReset { get; set; }
+
+        /// <summary>
+        /// Metronome users only. Accounts currently connected across the team.
+        /// </summary>
+        /// <value>Metronome users only. Accounts currently connected across the team.</value>
+        [DataMember(Name = "connectedAccounts", EmitDefaultValue = false)]
+        public int ConnectedAccounts { get; set; }
+
+        /// <summary>
+        /// Gets or Sets XApiCalls
+        /// </summary>
+        [DataMember(Name = "xApiCalls", EmitDefaultValue = false)]
+        public UsageStatsUsageXApiCalls XApiCalls { get; set; }
+
+        /// <summary>
+        /// Metronome users only. Per-operation X API call counts keyed by operation (e.g. &#x60;posts_read&#x60;, &#x60;content_create&#x60;). Resolve each key to price and metadata via &#x60;GET /v1/billing/x-pricing&#x60;. 
+        /// </summary>
+        /// <value>Metronome users only. Per-operation X API call counts keyed by operation (e.g. &#x60;posts_read&#x60;, &#x60;content_create&#x60;). Resolve each key to price and metadata via &#x60;GET /v1/billing/x-pricing&#x60;. </value>
+        /*
+        <example>{posts_read&#x3D;42, content_create&#x3D;7, dm_interaction_create&#x3D;1}</example>
+        */
+        [DataMember(Name = "xApiCallsByOperation", EmitDefaultValue = false)]
+        public Dictionary<string, int> XApiCallsByOperation { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,6 +107,9 @@ namespace Zernio.Model
             sb.Append("  Uploads: ").Append(Uploads).Append("\n");
             sb.Append("  Profiles: ").Append(Profiles).Append("\n");
             sb.Append("  LastReset: ").Append(LastReset).Append("\n");
+            sb.Append("  ConnectedAccounts: ").Append(ConnectedAccounts).Append("\n");
+            sb.Append("  XApiCalls: ").Append(XApiCalls).Append("\n");
+            sb.Append("  XApiCallsByOperation: ").Append(XApiCallsByOperation).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

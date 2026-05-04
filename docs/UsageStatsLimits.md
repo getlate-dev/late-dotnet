@@ -1,4 +1,5 @@
 # Zernio.Model.UsageStatsLimits
+Plan limits. For Metronome users both fields are `-1` (unlimited).
 
 ## Properties
 

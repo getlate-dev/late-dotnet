@@ -81,5 +81,32 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'LastReset'
         }
+
+        /// <summary>
+        /// Test the property 'ConnectedAccounts'
+        /// </summary>
+        [Fact]
+        public void ConnectedAccountsTest()
+        {
+            // TODO unit test for the property 'ConnectedAccounts'
+        }
+
+        /// <summary>
+        /// Test the property 'XApiCalls'
+        /// </summary>
+        [Fact]
+        public void XApiCallsTest()
+        {
+            // TODO unit test for the property 'XApiCalls'
+        }
+
+        /// <summary>
+        /// Test the property 'XApiCallsByOperation'
+        /// </summary>
+        [Fact]
+        public void XApiCallsByOperationTest()
+        {
+            // TODO unit test for the property 'XApiCallsByOperation'
+        }
     }
 }

@@ -28,49 +28,44 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// UpdateAccount200Response
+    /// Metronome users only. Aggregated X API call counts bucketed by price tier (backward-compat). For per-operation breakdown use &#x60;xApiCallsByOperation&#x60;. 
     /// </summary>
-    [DataContract(Name = "updateAccount_200_response")]
-    public partial class UpdateAccount200Response : IValidatableObject
+    [DataContract(Name = "UsageStats_usage_xApiCalls")]
+    public partial class UsageStatsUsageXApiCalls : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UpdateAccount200Response" /> class.
+        /// Initializes a new instance of the <see cref="UsageStatsUsageXApiCalls" /> class.
         /// </summary>
-        /// <param name="message">message.</param>
-        /// <param name="username">username.</param>
-        /// <param name="displayName">displayName.</param>
-        /// <param name="xCapabilities">xCapabilities.</param>
-        public UpdateAccount200Response(string message = default, string username = default, string displayName = default, UpdateAccount200ResponseXCapabilities xCapabilities = default)
+        /// <param name="xApi005">Calls at $0.005 per call (reads, list mgmt, bookmarks, etc.).</param>
+        /// <param name="xApi010">Calls at $0.010 per call (publish/delete, DM reads, follows).</param>
+        /// <param name="xApi015">Calls at $0.015 per call (sending DMs, follow actions).</param>
+        public UsageStatsUsageXApiCalls(int xApi005 = default, int xApi010 = default, int xApi015 = default)
         {
-            this.Message = message;
-            this.Username = username;
-            this.DisplayName = displayName;
-            this.XCapabilities = xCapabilities;
+            this.XApi005 = xApi005;
+            this.XApi010 = xApi010;
+            this.XApi015 = xApi015;
         }
 
         /// <summary>
-        /// Gets or Sets Message
+        /// Calls at $0.005 per call (reads, list mgmt, bookmarks, etc.)
         /// </summary>
-        [DataMember(Name = "message", EmitDefaultValue = false)]
-        public string Message { get; set; }
+        /// <value>Calls at $0.005 per call (reads, list mgmt, bookmarks, etc.)</value>
+        [DataMember(Name = "x_api_005", EmitDefaultValue = false)]
+        public int XApi005 { get; set; }
 
         /// <summary>
-        /// Gets or Sets Username
+        /// Calls at $0.010 per call (publish/delete, DM reads, follows)
         /// </summary>
-        [DataMember(Name = "username", EmitDefaultValue = false)]
-        public string Username { get; set; }
+        /// <value>Calls at $0.010 per call (publish/delete, DM reads, follows)</value>
+        [DataMember(Name = "x_api_010", EmitDefaultValue = false)]
+        public int XApi010 { get; set; }
 
         /// <summary>
-        /// Gets or Sets DisplayName
+        /// Calls at $0.015 per call (sending DMs, follow actions)
         /// </summary>
-        [DataMember(Name = "displayName", EmitDefaultValue = false)]
-        public string DisplayName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets XCapabilities
-        /// </summary>
-        [DataMember(Name = "xCapabilities", EmitDefaultValue = false)]
-        public UpdateAccount200ResponseXCapabilities XCapabilities { get; set; }
+        /// <value>Calls at $0.015 per call (sending DMs, follow actions)</value>
+        [DataMember(Name = "x_api_015", EmitDefaultValue = false)]
+        public int XApi015 { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +74,10 @@ namespace Zernio.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class UpdateAccount200Response {\n");
-            sb.Append("  Message: ").Append(Message).Append("\n");
-            sb.Append("  Username: ").Append(Username).Append("\n");
-            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
-            sb.Append("  XCapabilities: ").Append(XCapabilities).Append("\n");
+            sb.Append("class UsageStatsUsageXApiCalls {\n");
+            sb.Append("  XApi005: ").Append(XApi005).Append("\n");
+            sb.Append("  XApi010: ").Append(XApi010).Append("\n");
+            sb.Append("  XApi015: ").Append(XApi015).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

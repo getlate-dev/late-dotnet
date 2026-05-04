@@ -56,6 +56,15 @@ namespace Zernio.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'BillingSystem'
+        /// </summary>
+        [Fact]
+        public void BillingSystemTest()
+        {
+            // TODO unit test for the property 'BillingSystem'
+        }
+
+        /// <summary>
         /// Test the property 'PlanName'
         /// </summary>
         [Fact]
@@ -92,6 +101,42 @@ namespace Zernio.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'HasAccess'
+        /// </summary>
+        [Fact]
+        public void HasAccessTest()
+        {
+            // TODO unit test for the property 'HasAccess'
+        }
+
+        /// <summary>
+        /// Test the property 'CustomerId'
+        /// </summary>
+        [Fact]
+        public void CustomerIdTest()
+        {
+            // TODO unit test for the property 'CustomerId'
+        }
+
+        /// <summary>
+        /// Test the property 'IsInvitedUser'
+        /// </summary>
+        [Fact]
+        public void IsInvitedUserTest()
+        {
+            // TODO unit test for the property 'IsInvitedUser'
+        }
+
+        /// <summary>
+        /// Test the property 'AutoUpgradeEnabled'
+        /// </summary>
+        [Fact]
+        public void AutoUpgradeEnabledTest()
+        {
+            // TODO unit test for the property 'AutoUpgradeEnabled'
+        }
+
+        /// <summary>
         /// Test the property 'Limits'
         /// </summary>
         [Fact]
@@ -107,6 +152,15 @@ namespace Zernio.Test.Model
         public void UsageTest()
         {
             // TODO unit test for the property 'Usage'
+        }
+
+        /// <summary>
+        /// Test the property 'Spend'
+        /// </summary>
+        [Fact]
+        public void SpendTest()
+        {
+            // TODO unit test for the property 'Spend'
         }
     }
 }

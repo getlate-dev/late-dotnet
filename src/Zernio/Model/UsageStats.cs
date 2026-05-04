@@ -28,11 +28,38 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// UsageStats
+    /// Plan and usage stats. The response shape depends on &#x60;billingSystem&#x60;:   * Stripe users (default): per-period counters like &#x60;usage.uploads&#x60; and     &#x60;usage.profiles&#x60; are returned, scoped by the plan&#39;s &#x60;limits&#x60;.   * Metronome users (usage-based): &#x60;limits&#x60; are unlimited (-1). The     &#x60;usage&#x60; block carries connected-account and per-X-operation counts,     and the &#x60;spend&#x60; block carries current-period costs plus the X cap. 
     /// </summary>
     [DataContract(Name = "UsageStats")]
     public partial class UsageStats : IValidatableObject
     {
+        /// <summary>
+        /// Which billing system the account is on. Shape of &#x60;usage&#x60;/&#x60;spend&#x60; differs.
+        /// </summary>
+        /// <value>Which billing system the account is on. Shape of &#x60;usage&#x60;/&#x60;spend&#x60; differs.</value>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum BillingSystemEnum
+        {
+            /// <summary>
+            /// Enum Stripe for value: stripe
+            /// </summary>
+            [EnumMember(Value = "stripe")]
+            Stripe = 1,
+
+            /// <summary>
+            /// Enum Metronome for value: metronome
+            /// </summary>
+            [EnumMember(Value = "metronome")]
+            Metronome = 2
+        }
+
+
+        /// <summary>
+        /// Which billing system the account is on. Shape of &#x60;usage&#x60;/&#x60;spend&#x60; differs.
+        /// </summary>
+        /// <value>Which billing system the account is on. Shape of &#x60;usage&#x60;/&#x60;spend&#x60; differs.</value>
+        [DataMember(Name = "billingSystem", EmitDefaultValue = false)]
+        public BillingSystemEnum? BillingSystem { get; set; }
         /// <summary>
         /// Defines BillingPeriod
         /// </summary>
@@ -61,20 +88,32 @@ namespace Zernio.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageStats" /> class.
         /// </summary>
+        /// <param name="billingSystem">Which billing system the account is on. Shape of &#x60;usage&#x60;/&#x60;spend&#x60; differs..</param>
         /// <param name="planName">planName.</param>
         /// <param name="billingPeriod">billingPeriod.</param>
         /// <param name="signupDate">signupDate.</param>
         /// <param name="billingAnchorDay">Day of month (1-31) when the billing cycle resets.</param>
+        /// <param name="hasAccess">True if the account is in good standing. False for past-due/unpaid/paused subscriptions..</param>
+        /// <param name="customerId">Stripe customer ID, when present..</param>
+        /// <param name="isInvitedUser">True if this is a team member; limits/usage reflect the account owner..</param>
+        /// <param name="autoUpgradeEnabled">Stripe-only. Always false for Metronome users..</param>
         /// <param name="limits">limits.</param>
         /// <param name="usage">usage.</param>
-        public UsageStats(string planName = default, BillingPeriodEnum? billingPeriod = default, DateTime signupDate = default, int billingAnchorDay = default, UsageStatsLimits limits = default, UsageStatsUsage usage = default)
+        /// <param name="spend">spend.</param>
+        public UsageStats(BillingSystemEnum? billingSystem = default, string planName = default, BillingPeriodEnum? billingPeriod = default, DateTime signupDate = default, int billingAnchorDay = default, bool hasAccess = default, string customerId = default, bool isInvitedUser = default, bool autoUpgradeEnabled = default, UsageStatsLimits limits = default, UsageStatsUsage usage = default, UsageStatsSpend spend = default)
         {
+            this.BillingSystem = billingSystem;
             this.PlanName = planName;
             this.BillingPeriod = billingPeriod;
             this.SignupDate = signupDate;
             this.BillingAnchorDay = billingAnchorDay;
+            this.HasAccess = hasAccess;
+            this.CustomerId = customerId;
+            this.IsInvitedUser = isInvitedUser;
+            this.AutoUpgradeEnabled = autoUpgradeEnabled;
             this.Limits = limits;
             this.Usage = usage;
+            this.Spend = spend;
         }
 
         /// <summary>
@@ -97,6 +136,34 @@ namespace Zernio.Model
         public int BillingAnchorDay { get; set; }
 
         /// <summary>
+        /// True if the account is in good standing. False for past-due/unpaid/paused subscriptions.
+        /// </summary>
+        /// <value>True if the account is in good standing. False for past-due/unpaid/paused subscriptions.</value>
+        [DataMember(Name = "hasAccess", EmitDefaultValue = true)]
+        public bool HasAccess { get; set; }
+
+        /// <summary>
+        /// Stripe customer ID, when present.
+        /// </summary>
+        /// <value>Stripe customer ID, when present.</value>
+        [DataMember(Name = "customerId", EmitDefaultValue = false)]
+        public string CustomerId { get; set; }
+
+        /// <summary>
+        /// True if this is a team member; limits/usage reflect the account owner.
+        /// </summary>
+        /// <value>True if this is a team member; limits/usage reflect the account owner.</value>
+        [DataMember(Name = "isInvitedUser", EmitDefaultValue = true)]
+        public bool IsInvitedUser { get; set; }
+
+        /// <summary>
+        /// Stripe-only. Always false for Metronome users.
+        /// </summary>
+        /// <value>Stripe-only. Always false for Metronome users.</value>
+        [DataMember(Name = "autoUpgradeEnabled", EmitDefaultValue = true)]
+        public bool AutoUpgradeEnabled { get; set; }
+
+        /// <summary>
         /// Gets or Sets Limits
         /// </summary>
         [DataMember(Name = "limits", EmitDefaultValue = false)]
@@ -109,6 +176,12 @@ namespace Zernio.Model
         public UsageStatsUsage Usage { get; set; }
 
         /// <summary>
+        /// Gets or Sets Spend
+        /// </summary>
+        [DataMember(Name = "spend", EmitDefaultValue = false)]
+        public UsageStatsSpend Spend { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -116,12 +189,18 @@ namespace Zernio.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class UsageStats {\n");
+            sb.Append("  BillingSystem: ").Append(BillingSystem).Append("\n");
             sb.Append("  PlanName: ").Append(PlanName).Append("\n");
             sb.Append("  BillingPeriod: ").Append(BillingPeriod).Append("\n");
             sb.Append("  SignupDate: ").Append(SignupDate).Append("\n");
             sb.Append("  BillingAnchorDay: ").Append(BillingAnchorDay).Append("\n");
+            sb.Append("  HasAccess: ").Append(HasAccess).Append("\n");
+            sb.Append("  CustomerId: ").Append(CustomerId).Append("\n");
+            sb.Append("  IsInvitedUser: ").Append(IsInvitedUser).Append("\n");
+            sb.Append("  AutoUpgradeEnabled: ").Append(AutoUpgradeEnabled).Append("\n");
             sb.Append("  Limits: ").Append(Limits).Append("\n");
             sb.Append("  Usage: ").Append(Usage).Append("\n");
+            sb.Append("  Spend: ").Append(Spend).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

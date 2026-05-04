@@ -38,10 +38,12 @@ namespace Zernio.Model
         /// </summary>
         /// <param name="username">username.</param>
         /// <param name="displayName">displayName.</param>
-        public UpdateAccountRequest(string username = default, string displayName = default)
+        /// <param name="xCapabilities">xCapabilities.</param>
+        public UpdateAccountRequest(string username = default, string displayName = default, UpdateAccountRequestXCapabilities xCapabilities = default)
         {
             this.Username = username;
             this.DisplayName = displayName;
+            this.XCapabilities = xCapabilities;
         }
 
         /// <summary>
@@ -57,6 +59,12 @@ namespace Zernio.Model
         public string DisplayName { get; set; }
 
         /// <summary>
+        /// Gets or Sets XCapabilities
+        /// </summary>
+        [DataMember(Name = "xCapabilities", EmitDefaultValue = false)]
+        public UpdateAccountRequestXCapabilities XCapabilities { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -66,6 +74,7 @@ namespace Zernio.Model
             sb.Append("class UpdateAccountRequest {\n");
             sb.Append("  Username: ").Append(Username).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  XCapabilities: ").Append(XCapabilities).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

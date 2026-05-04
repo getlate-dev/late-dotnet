@@ -28,7 +28,7 @@ using OpenAPIDateConverter = Zernio.Client.OpenAPIDateConverter;
 namespace Zernio.Model
 {
     /// <summary>
-    /// UsageStatsLimits
+    /// Plan limits. For Metronome users both fields are &#x60;-1&#x60; (unlimited).
     /// </summary>
     [DataContract(Name = "UsageStats_limits")]
     public partial class UsageStatsLimits : IValidatableObject
