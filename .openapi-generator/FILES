@@ -670,6 +670,10 @@ docs/SendInboxMessageRequestTemplateElementsInner.md
 docs/SendInboxMessageRequestTemplateElementsInnerButtonsInner.md
 docs/SendPrivateReplyToComment200Response.md
 docs/SendPrivateReplyToCommentRequest.md
+docs/SendPrivateReplyToCommentRequestButtonsInner.md
+docs/SendPrivateReplyToCommentRequestButtonsInnerOneOf.md
+docs/SendPrivateReplyToCommentRequestButtonsInnerOneOf1.md
+docs/SendPrivateReplyToCommentRequestButtonsInnerOneOf2.md
 docs/SendPrivateReplyToCommentRequestQuickRepliesInner.md
 docs/SendTypingIndicatorRequest.md
 docs/SendWhatsAppConversion200Response.md
@@ -1571,6 +1575,10 @@ src/Zernio.Test/Model/SendInboxMessageRequestTemplateElementsInnerTests.cs
 src/Zernio.Test/Model/SendInboxMessageRequestTemplateTests.cs
 src/Zernio.Test/Model/SendInboxMessageRequestTests.cs
 src/Zernio.Test/Model/SendPrivateReplyToComment200ResponseTests.cs
+src/Zernio.Test/Model/SendPrivateReplyToCommentRequestButtonsInnerOneOf1Tests.cs
+src/Zernio.Test/Model/SendPrivateReplyToCommentRequestButtonsInnerOneOf2Tests.cs
+src/Zernio.Test/Model/SendPrivateReplyToCommentRequestButtonsInnerOneOfTests.cs
+src/Zernio.Test/Model/SendPrivateReplyToCommentRequestButtonsInnerTests.cs
 src/Zernio.Test/Model/SendPrivateReplyToCommentRequestQuickRepliesInnerTests.cs
 src/Zernio.Test/Model/SendPrivateReplyToCommentRequestTests.cs
 src/Zernio.Test/Model/SendTypingIndicatorRequestTests.cs
@@ -2482,6 +2490,10 @@ src/Zernio/Model/SendInboxMessageRequestTemplateElementsInner.cs
 src/Zernio/Model/SendInboxMessageRequestTemplateElementsInnerButtonsInner.cs
 src/Zernio/Model/SendPrivateReplyToComment200Response.cs
 src/Zernio/Model/SendPrivateReplyToCommentRequest.cs
+src/Zernio/Model/SendPrivateReplyToCommentRequestButtonsInner.cs
+src/Zernio/Model/SendPrivateReplyToCommentRequestButtonsInnerOneOf.cs
+src/Zernio/Model/SendPrivateReplyToCommentRequestButtonsInnerOneOf1.cs
+src/Zernio/Model/SendPrivateReplyToCommentRequestButtonsInnerOneOf2.cs
 src/Zernio/Model/SendPrivateReplyToCommentRequestQuickRepliesInner.cs
 src/Zernio/Model/SendTypingIndicatorRequest.cs
 src/Zernio/Model/SendWhatsAppConversion200Response.cs

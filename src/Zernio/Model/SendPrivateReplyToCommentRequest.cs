@@ -43,8 +43,9 @@ namespace Zernio.Model
         /// </summary>
         /// <param name="accountId">The social account ID (Instagram or Facebook) (required).</param>
         /// <param name="message">The message text to send as a private DM (required).</param>
-        /// <param name="quickReplies">Optional quick-reply chips appended to the message. Visible only in the Instagram and Messenger apps (not on web). Maximum 13 entries. .</param>
-        public SendPrivateReplyToCommentRequest(string accountId = default, string message = default, List<SendPrivateReplyToCommentRequestQuickRepliesInner> quickReplies = default)
+        /// <param name="quickReplies">Optional quick-reply chips appended to the message. Visible only in the Instagram and Messenger apps (not on web). Maximum 13 entries. Mutually exclusive with &#x60;buttons&#x60;. Note: chips do NOT render in the Instagram Message Requests folder where DMs from non-followers land — use &#x60;buttons&#x60; instead for cold reach. .</param>
+        /// <param name="buttons">Optional 1-3 inline buttons rendered as part of the same message bubble via Meta&#39;s button_template. Visible in the Instagram Message Requests folder (unlike quick replies). Mutually exclusive with &#x60;quickReplies&#x60;. .</param>
+        public SendPrivateReplyToCommentRequest(string accountId = default, string message = default, List<SendPrivateReplyToCommentRequestQuickRepliesInner> quickReplies = default, List<SendPrivateReplyToCommentRequestButtonsInner> buttons = default)
         {
             // to ensure "accountId" is required (not null)
             if (accountId == null)
@@ -59,6 +60,7 @@ namespace Zernio.Model
             }
             this.Message = message;
             this.QuickReplies = quickReplies;
+            this.Buttons = buttons;
         }
 
         /// <summary>
@@ -76,11 +78,18 @@ namespace Zernio.Model
         public string Message { get; set; }
 
         /// <summary>
-        /// Optional quick-reply chips appended to the message. Visible only in the Instagram and Messenger apps (not on web). Maximum 13 entries. 
+        /// Optional quick-reply chips appended to the message. Visible only in the Instagram and Messenger apps (not on web). Maximum 13 entries. Mutually exclusive with &#x60;buttons&#x60;. Note: chips do NOT render in the Instagram Message Requests folder where DMs from non-followers land — use &#x60;buttons&#x60; instead for cold reach. 
         /// </summary>
-        /// <value>Optional quick-reply chips appended to the message. Visible only in the Instagram and Messenger apps (not on web). Maximum 13 entries. </value>
+        /// <value>Optional quick-reply chips appended to the message. Visible only in the Instagram and Messenger apps (not on web). Maximum 13 entries. Mutually exclusive with &#x60;buttons&#x60;. Note: chips do NOT render in the Instagram Message Requests folder where DMs from non-followers land — use &#x60;buttons&#x60; instead for cold reach. </value>
         [DataMember(Name = "quickReplies", EmitDefaultValue = false)]
         public List<SendPrivateReplyToCommentRequestQuickRepliesInner> QuickReplies { get; set; }
+
+        /// <summary>
+        /// Optional 1-3 inline buttons rendered as part of the same message bubble via Meta&#39;s button_template. Visible in the Instagram Message Requests folder (unlike quick replies). Mutually exclusive with &#x60;quickReplies&#x60;. 
+        /// </summary>
+        /// <value>Optional 1-3 inline buttons rendered as part of the same message bubble via Meta&#39;s button_template. Visible in the Instagram Message Requests folder (unlike quick replies). Mutually exclusive with &#x60;quickReplies&#x60;. </value>
+        [DataMember(Name = "buttons", EmitDefaultValue = false)]
+        public List<SendPrivateReplyToCommentRequestButtonsInner> Buttons { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -93,6 +102,7 @@ namespace Zernio.Model
             sb.Append("  AccountId: ").Append(AccountId).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  QuickReplies: ").Append(QuickReplies).Append("\n");
+            sb.Append("  Buttons: ").Append(Buttons).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

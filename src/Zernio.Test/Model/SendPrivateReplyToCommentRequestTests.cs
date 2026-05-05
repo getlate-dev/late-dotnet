@@ -81,5 +81,14 @@ namespace Zernio.Test.Model
         {
             // TODO unit test for the property 'QuickReplies'
         }
+
+        /// <summary>
+        /// Test the property 'Buttons'
+        /// </summary>
+        [Fact]
+        public void ButtonsTest()
+        {
+            // TODO unit test for the property 'Buttons'
+        }
     }
 }
