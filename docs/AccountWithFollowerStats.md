@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] 
-**Platform** | **string** |  | [optional] 
-**ProfileId** | [**SocialAccountProfileId**](SocialAccountProfileId.md) |  | [optional] 
+**Id** | **string** |  | 
+**Platform** | **string** |  | 
+**ProfileId** | [**SocialAccountProfileId**](SocialAccountProfileId.md) |  | 
 **Username** | **string** |  | [optional] 
 **DisplayName** | **string** |  | [optional] 
 **ProfilePicture** | **string** | URL to the account&#39;s profile picture on the platform. May be null if the platform does not provide one. | [optional] 
 **ProfileUrl** | **string** | Full profile URL for the connected account on its platform. | [optional] 
-**IsActive** | **bool** |  | [optional] 
+**IsActive** | **bool** |  | 
 **FollowersCount** | **decimal** | Follower count (only included if user has analytics add-on) | [optional] 
 **FollowersLastUpdated** | **DateTime** | Last time follower count was updated (only included if user has analytics add-on) | [optional] 
 **ParentAccountId** | **string** | Reference to the parent posting SocialAccount. Set for ads accounts that share or derive from a posting account&#39;s OAuth token. null for standalone ads (Google Ads) and all posting accounts.  | [optional] 

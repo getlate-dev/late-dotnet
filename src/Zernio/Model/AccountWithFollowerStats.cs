@@ -170,19 +170,24 @@ namespace Zernio.Model
         /// <summary>
         /// Gets or Sets Platform
         /// </summary>
-        [DataMember(Name = "platform", EmitDefaultValue = false)]
-        public PlatformEnum? Platform { get; set; }
+        [DataMember(Name = "platform", IsRequired = true, EmitDefaultValue = true)]
+        public PlatformEnum Platform { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AccountWithFollowerStats" /> class.
         /// </summary>
-        /// <param name="id">id.</param>
-        /// <param name="platform">platform.</param>
-        /// <param name="profileId">profileId.</param>
+        [JsonConstructorAttribute]
+        protected AccountWithFollowerStats() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountWithFollowerStats" /> class.
+        /// </summary>
+        /// <param name="id">id (required).</param>
+        /// <param name="platform">platform (required).</param>
+        /// <param name="profileId">profileId (required).</param>
         /// <param name="username">username.</param>
         /// <param name="displayName">displayName.</param>
         /// <param name="profilePicture">URL to the account&#39;s profile picture on the platform. May be null if the platform does not provide one..</param>
         /// <param name="profileUrl">Full profile URL for the connected account on its platform..</param>
-        /// <param name="isActive">isActive.</param>
+        /// <param name="isActive">isActive (required).</param>
         /// <param name="followersCount">Follower count (only included if user has analytics add-on).</param>
         /// <param name="followersLastUpdated">Last time follower count was updated (only included if user has analytics add-on).</param>
         /// <param name="parentAccountId">Reference to the parent posting SocialAccount. Set for ads accounts that share or derive from a posting account&#39;s OAuth token. null for standalone ads (Google Ads) and all posting accounts. .</param>
@@ -194,16 +199,26 @@ namespace Zernio.Model
         /// <param name="growthPercentage">Percentage growth.</param>
         /// <param name="dataPoints">Number of historical snapshots.</param>
         /// <param name="accountStats">accountStats.</param>
-        public AccountWithFollowerStats(string id = default, PlatformEnum? platform = default, SocialAccountProfileId profileId = default, string username = default, string displayName = default, string profilePicture = default, string profileUrl = default, bool isActive = default, decimal followersCount = default, DateTime followersLastUpdated = default, string parentAccountId = default, bool enabled = default, Object metadata = default, decimal currentFollowers = default, DateTime lastUpdated = default, decimal growth = default, decimal growthPercentage = default, decimal dataPoints = default, AccountWithFollowerStatsAllOfAccountStats accountStats = default)
+        public AccountWithFollowerStats(string id = default, PlatformEnum platform = default, SocialAccountProfileId profileId = default, string username = default, string displayName = default, string profilePicture = default, string profileUrl = default, bool isActive = default, decimal followersCount = default, DateTime followersLastUpdated = default, string parentAccountId = default, bool enabled = default, Object metadata = default, decimal currentFollowers = default, DateTime lastUpdated = default, decimal growth = default, decimal growthPercentage = default, decimal dataPoints = default, AccountWithFollowerStatsAllOfAccountStats accountStats = default)
         {
+            // to ensure "id" is required (not null)
+            if (id == null)
+            {
+                throw new ArgumentNullException("id is a required property for AccountWithFollowerStats and cannot be null");
+            }
             this.Id = id;
             this.Platform = platform;
+            // to ensure "profileId" is required (not null)
+            if (profileId == null)
+            {
+                throw new ArgumentNullException("profileId is a required property for AccountWithFollowerStats and cannot be null");
+            }
             this.ProfileId = profileId;
+            this.IsActive = isActive;
             this.Username = username;
             this.DisplayName = displayName;
             this.ProfilePicture = profilePicture;
             this.ProfileUrl = profileUrl;
-            this.IsActive = isActive;
             this.FollowersCount = followersCount;
             this.FollowersLastUpdated = followersLastUpdated;
             this.ParentAccountId = parentAccountId;
@@ -220,13 +235,13 @@ namespace Zernio.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name = "_id", EmitDefaultValue = false)]
+        [DataMember(Name = "_id", IsRequired = true, EmitDefaultValue = true)]
         public string Id { get; set; }
 
         /// <summary>
         /// Gets or Sets ProfileId
         /// </summary>
-        [DataMember(Name = "profileId", EmitDefaultValue = false)]
+        [DataMember(Name = "profileId", IsRequired = true, EmitDefaultValue = true)]
         public SocialAccountProfileId ProfileId { get; set; }
 
         /// <summary>
@@ -258,7 +273,7 @@ namespace Zernio.Model
         /// <summary>
         /// Gets or Sets IsActive
         /// </summary>
-        [DataMember(Name = "isActive", EmitDefaultValue = true)]
+        [DataMember(Name = "isActive", IsRequired = true, EmitDefaultValue = true)]
         public bool IsActive { get; set; }
 
         /// <summary>

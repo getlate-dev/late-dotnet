@@ -19149,6 +19149,11 @@ components:
             - wabaId: WhatsApp Business Account ID
             - phoneNumberId: Meta phone number ID
           type: object
+      required:
+      - _id
+      - isActive
+      - platform
+      - profileId
     AccountWithFollowerStats:
       allOf:
       - $ref: "#/components/schemas/SocialAccount"
@@ -24942,6 +24947,9 @@ components:
           allOf:
           - $ref: "#/components/schemas/Pagination"
           description: Only present when page/limit params are provided
+      required:
+      - accounts
+      - hasAnalyticsAccess
     getFollowerStats_200_response_stats_value_inner:
       example:
         date: 2000-01-23

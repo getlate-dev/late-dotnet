@@ -36,11 +36,21 @@ namespace Zernio.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ListAccounts200Response" /> class.
         /// </summary>
-        /// <param name="accounts">accounts.</param>
-        /// <param name="hasAnalyticsAccess">Whether user has analytics add-on access.</param>
+        [JsonConstructorAttribute]
+        protected ListAccounts200Response() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAccounts200Response" /> class.
+        /// </summary>
+        /// <param name="accounts">accounts (required).</param>
+        /// <param name="hasAnalyticsAccess">Whether user has analytics add-on access (required).</param>
         /// <param name="pagination">Only present when page/limit params are provided.</param>
         public ListAccounts200Response(List<SocialAccount> accounts = default, bool hasAnalyticsAccess = default, Pagination pagination = default)
         {
+            // to ensure "accounts" is required (not null)
+            if (accounts == null)
+            {
+                throw new ArgumentNullException("accounts is a required property for ListAccounts200Response and cannot be null");
+            }
             this.Accounts = accounts;
             this.HasAnalyticsAccess = hasAnalyticsAccess;
             this.Pagination = pagination;
@@ -49,14 +59,14 @@ namespace Zernio.Model
         /// <summary>
         /// Gets or Sets Accounts
         /// </summary>
-        [DataMember(Name = "accounts", EmitDefaultValue = false)]
+        [DataMember(Name = "accounts", IsRequired = true, EmitDefaultValue = true)]
         public List<SocialAccount> Accounts { get; set; }
 
         /// <summary>
         /// Whether user has analytics add-on access
         /// </summary>
         /// <value>Whether user has analytics add-on access</value>
-        [DataMember(Name = "hasAnalyticsAccess", EmitDefaultValue = true)]
+        [DataMember(Name = "hasAnalyticsAccess", IsRequired = true, EmitDefaultValue = true)]
         public bool HasAnalyticsAccess { get; set; }
 
         /// <summary>
